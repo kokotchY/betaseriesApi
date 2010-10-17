@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.kokotchy.betaSeriesAPI;
 
 import java.util.LinkedList;
@@ -11,38 +8,40 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 /**
+ * Handler to parse the resulting document
+ * 
  * @author kokotchy
  * 
  */
 public class BetaSerieHandler extends DefaultHandler {
 
 	/**
-	 * 
+	 * Buffer
 	 */
 	private StringBuffer buffer;
 
 	/**
-	 * 
+	 * If in errors section
 	 */
 	private boolean inErrors;
 
 	/**
-	 * 
+	 * If there is an error code
 	 */
 	private boolean error = false;
 
 	/**
-	 * 
+	 * List of errors
 	 */
 	private List<BetaSerieError> errors = new LinkedList<BetaSerieError>();
 
 	/**
-	 * 
+	 * Current parsed error
 	 */
 	private BetaSerieError currentError;
 
 	/**
-	 * 
+	 * Token of the user
 	 */
 	private String token;
 
@@ -72,6 +71,8 @@ public class BetaSerieHandler extends DefaultHandler {
 	}
 
 	/**
+	 * Return the parsed errors
+	 * 
 	 * @return the errors
 	 */
 	public List<BetaSerieError> getErrors() {
@@ -79,32 +80,45 @@ public class BetaSerieHandler extends DefaultHandler {
 	}
 
 	/**
+	 * Return the parsed token
+	 * 
 	 * @return the token
 	 */
 	public String getToken() {
 		return token;
 	}
 
+	/**
+	 * Return true if there is error, false otherwise
+	 * 
+	 * @return True if there is errors, false otherwise
+	 */
 	public boolean isError() {
 		return errors.size() > 0 || error;
 	}
 
 	/**
-	 * @return
+	 * Read a boolean
+	 * 
+	 * @return Boolean
 	 */
 	private boolean readBoolean() {
 		return readInt() == 1;
 	}
 
 	/**
-	 * @return
+	 * Read an int
+	 * 
+	 * @return Integer
 	 */
 	private int readInt() {
 		return Integer.parseInt(readString());
 	}
 
 	/**
-	 * @return
+	 * Read a string
+	 * 
+	 * @return String
 	 */
 	private String readString() {
 		if (buffer != null) {

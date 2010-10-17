@@ -14,38 +14,47 @@ import com.kokotchy.betaSeriesAPI.model.Season;
 import com.kokotchy.betaSeriesAPI.model.Show;
 
 /**
- * @author kokotchy
+ * Shows API
  * 
+ * @author kokotchy
  */
 public class Shows {
 
 	/**
-	 * 
+	 * API Key
 	 */
 	private String apiKey;
 
 	/**
+	 * Create the shows api with the given key
+	 * 
 	 * @param apiKey
+	 *            API Key
 	 */
 	public Shows(String apiKey) {
 		this.apiKey = apiKey;
 	}
 
 	/**
+	 * Display the show from the given url
+	 * 
 	 * @param url
+	 *            Url of the show
 	 */
 	public Show display(String url) {
 		Document document = Utils.executeQuery("shows/display/" + url + ".xml",
 				apiKey);
-		// if (document.selectSingleNode("/root/code").getText().equals("1")) {
-		return Show.createShow(document.selectSingleNode("/root/show"));
-		// } else {
-		// return null;
-		// }
+		if (Utils.hasErrors(document)) {
+			return Show.createShow(document.selectSingleNode("/root/show"));
+		}
+
+		return null;
 	}
 
 	/**
-	 * @return
+	 * Display all available shows
+	 * 
+	 * @return List of shows
 	 */
 	public List<Show> displayAll() {
 		Document document = Utils.executeQuery("shows/display/all.xml", apiKey);
@@ -58,27 +67,40 @@ public class Shows {
 	}
 
 	/**
+	 * Return the episodes of the given url
+	 * 
 	 * @param url
-	 * @return
+	 *            Url of the show
+	 * @return List of seasons with the episodes
 	 */
 	public List<Season> getEpisodes(String url) {
 		return getEpisodesFromSeason(url, -1);
 	}
 
 	/**
+	 * Return the episodes of the show for the given season
+	 * 
 	 * @param url
+	 *            Url of the show
 	 * @param seasonNb
-	 * @return
+	 *            Number of the season
+	 * @return Season with the episodes
 	 */
 	public Season getEpisodes(String url, int seasonNb) {
 		return getEpisodesFromSeason(url, seasonNb).get(0);
 	}
 
 	/**
+	 * Return the episodes from the given season. If seasonNb is < 0, then
+	 * retrieve all seasons
+	 * 
 	 * @param url
+	 *            Url of the show
 	 * @param seasonNb
-	 * @return
+	 *            Number of the season
+	 * @return List of seasons with the episodes
 	 */
+	@SuppressWarnings("unchecked")
 	private List<Season> getEpisodesFromSeason(String url, int seasonNb) {
 		Document document = null;
 		if (seasonNb > 0) {
@@ -107,8 +129,11 @@ public class Shows {
 	}
 
 	/**
+	 * Search for episodes with the given title
+	 * 
 	 * @param title
-	 * @return
+	 *            Title to search
+	 * @return List of shows with the matching title
 	 */
 	public List<Show> search(String title) {
 		Map<String, String> params = new HashMap<String, String>();

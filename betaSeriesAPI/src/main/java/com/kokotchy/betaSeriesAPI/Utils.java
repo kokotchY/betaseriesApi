@@ -10,6 +10,7 @@ import java.net.URLConnection;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.dom4j.Document;
@@ -18,25 +19,36 @@ import org.dom4j.DocumentHelper;
 import org.dom4j.Node;
 
 /**
+ * Utils
+ * 
  * @author kokotchy
  * 
  */
 public class Utils {
 
 	/**
+	 * Execute the action to betaserie server with the api key
+	 * 
 	 * @param action
+	 *            Action to execute
 	 * @param apiKey
-	 * @return
+	 *            API Key
+	 * @return Resulting document
 	 */
 	public static Document executeQuery(String action, String apiKey) {
 		return executeQuery(action, apiKey, new HashMap<String, String>());
 	}
 
 	/**
+	 * Execute the action to betaserie server with the api key and params
+	 * 
 	 * @param action
+	 *            Action to execute
 	 * @param apiKey
+	 *            API Key
 	 * @param params
-	 * @return
+	 *            Parameters to the query
+	 * @return Resulting document
 	 */
 	public static Document executeQuery(String action, String apiKey,
 			Map<String, String> params) {
@@ -58,27 +70,27 @@ public class Utils {
 
 			return DocumentHelper.parseText(xmlResponse);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (DocumentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
 	}
 
 	/**
-	 * @param pass
-	 * @return
+	 * Return the md5 of the given text
+	 * 
+	 * @param text
+	 *            Text to get hash
+	 * @return md5 hash of the text
 	 */
-	public static String getMD5(String pass) {
+	public static String getMD5(String text) {
 		try {
 			String result = "";
 			MessageDigest msgDigest = MessageDigest.getInstance("MD5");
-			msgDigest.update(pass.getBytes("UTF-8"));
+			msgDigest.update(text.getBytes("UTF-8"));
 			byte[] digest = msgDigest.digest();
 			for (int i = 0; i < digest.length; i++) {
 				int value = digest[i];
@@ -89,10 +101,8 @@ public class Utils {
 			}
 			return result;
 		} catch (NoSuchAlgorithmException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -100,10 +110,13 @@ public class Utils {
 	}
 
 	/**
+	 * Return the parameters to the form key=val&(key=val)*
+	 * 
 	 * @param params
-	 * @return
+	 *            Params to get as string
+	 * @return String representation of the parameters
 	 */
-	public static Object getParamAsString(Map<String, String> params) {
+	public static String getParamAsString(Map<String, String> params) {
 		String result = "";
 		int idx = 0;
 		int size = params.size();
@@ -118,9 +131,26 @@ public class Utils {
 	}
 
 	/**
+	 * Return true if the document has errors, false otherwise
+	 * 
+	 * @param document
+	 *            Document to check
+	 * @return True if there is errors, false otherwise
+	 */
+	@SuppressWarnings("unchecked")
+	public static boolean hasErrors(Document document) {
+		List<Node> selectNodes = document.selectNodes("/root/errors/error");
+		return selectNodes.size() > 0;
+	}
+
+	/**
+	 * Read the element of the node
+	 * 
 	 * @param node
+	 *            Node
 	 * @param string
-	 * @return
+	 *            Element to retrieve
+	 * @return Value of the element of the node
 	 */
 	public static String readNode(Node node, String string) {
 		Node selectedNode = node.selectSingleNode(string);

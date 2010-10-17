@@ -1,8 +1,9 @@
 package com.kokotchy.betaSeriesAPI.api;
 
 /**
- * @author kokotchy
+ * Subtitles API
  * 
+ * @author kokotchy
  */
 public class Subtitles {
 

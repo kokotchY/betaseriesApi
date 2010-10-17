@@ -8,23 +8,31 @@ import org.dom4j.Node;
 import com.kokotchy.betaSeriesAPI.Utils;
 
 /**
- * @author kokotchy
+ * Show
  * 
+ * @author kokotchy
  */
 public class Show {
 
 	/**
-	 * @author kokotchy
+	 * Status of a show
 	 * 
+	 * TODO Translate in english
+	 * 
+	 * @author kokotchy
 	 */
 	public enum ShowStatus {
 		EN_COURS, FINI
 	};
 
 	/**
+	 * Create a show from a node
+	 * 
 	 * @param node
-	 * @return
+	 *            Node
+	 * @return Show
 	 */
+	@SuppressWarnings("unchecked")
 	public static Show createShow(Node node) {
 		Show show = new Show();
 		show.setTitle(Utils.readNode(node, "title"));
@@ -40,45 +48,49 @@ public class Show {
 	}
 
 	/**
-	 * 
+	 * Url of the show
 	 */
 	private String url;
 
 	/**
-	 * 
+	 * Title of the show
 	 */
 	private String title;
 
 	/**
-	 * 
+	 * Description of the show
 	 */
 	private String description;
 
 	/**
-	 * 
+	 * Status of the show
 	 */
 	private ShowStatus status;
 
 	/**
-	 * 
+	 * Banner of the show
 	 */
 	private String banner;
 
 	/**
-	 * 
+	 * List of genres of the show
 	 */
 	private List<String> genres;
 
 	/**
-	 * 
+	 * Create a new show
 	 */
 	public Show() {
 		this(null, null);
 	}
 
 	/**
+	 * Create a new show
+	 * 
 	 * @param url
+	 *            Url of the show
 	 * @param title
+	 *            Title of the show
 	 */
 	public Show(String url, String title) {
 		this.url = url;
@@ -87,13 +99,18 @@ public class Show {
 	}
 
 	/**
+	 * Add the genre
+	 * 
 	 * @param genre
+	 *            Genre of the show
 	 */
 	public void addGenre(String genre) {
 		genres.add(genre);
 	}
 
 	/**
+	 * Return the banner of the show
+	 * 
 	 * @return the banner
 	 */
 	public String getBanner() {
@@ -101,6 +118,8 @@ public class Show {
 	}
 
 	/**
+	 * Return the description
+	 * 
 	 * @return the description
 	 */
 	public String getDescription() {
@@ -108,6 +127,8 @@ public class Show {
 	}
 
 	/**
+	 * Return the genres of the show
+	 * 
 	 * @return the genres
 	 */
 	public List<String> getGenres() {
@@ -115,6 +136,8 @@ public class Show {
 	}
 
 	/**
+	 * Return the status of the show
+	 * 
 	 * @return the status
 	 */
 	public ShowStatus getStatus() {
@@ -122,6 +145,8 @@ public class Show {
 	}
 
 	/**
+	 * Set the title of the show
+	 * 
 	 * @return the title
 	 */
 	public String getTitle() {
@@ -129,6 +154,8 @@ public class Show {
 	}
 
 	/**
+	 * Return the url of the show
+	 * 
 	 * @return the url
 	 */
 	public String getUrl() {
@@ -136,6 +163,8 @@ public class Show {
 	}
 
 	/**
+	 * Set the banner of the show
+	 * 
 	 * @param banner
 	 *            the banner to set
 	 */
@@ -144,6 +173,8 @@ public class Show {
 	}
 
 	/**
+	 * Set the description of the show
+	 * 
 	 * @param description
 	 *            the description to set
 	 */
@@ -152,6 +183,8 @@ public class Show {
 	}
 
 	/**
+	 * Set the status of the show
+	 * 
 	 * @param status
 	 *            the status to set
 	 */
@@ -160,7 +193,10 @@ public class Show {
 	}
 
 	/**
+	 * Set the status of the show
+	 * 
 	 * @param status
+	 *            Name of the status
 	 */
 	private void setStatus(String status) {
 		if (status != null) {
@@ -173,6 +209,8 @@ public class Show {
 	}
 
 	/**
+	 * Set the title of the show
+	 * 
 	 * @param title
 	 *            the title to set
 	 */
@@ -181,6 +219,8 @@ public class Show {
 	}
 
 	/**
+	 * Set the url of the show
+	 * 
 	 * @param url
 	 *            the url to set
 	 */

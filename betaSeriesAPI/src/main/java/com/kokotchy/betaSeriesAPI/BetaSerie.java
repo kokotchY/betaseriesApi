@@ -10,34 +10,40 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * BetaSerie api
+ * 
  * @author kokotchy
  * 
  */
 public class BetaSerie {
 
 	/**
-	 * 
+	 * API Key
 	 */
 	private String API_KEY = "debfa5c405f5";
 
 	/**
-	 * 
+	 * User to connect
 	 */
 	private String user;
 
 	/**
-	 * 
+	 * Password of the user
 	 */
 	private String pass;
 
 	/**
-	 * 
+	 * Token of the logged user
 	 */
 	private String userToken = null;
 
 	/**
-	 * @param pass
+	 * Create a new beta serie
+	 * 
 	 * @param user
+	 *            User
+	 * @param pass
+	 *            Password
 	 * 
 	 */
 	public BetaSerie(String user, String pass) {
@@ -46,7 +52,9 @@ public class BetaSerie {
 	}
 
 	/**
-	 * @return
+	 * Login the user
+	 * 
+	 * @return True if the user is logged, false otherwise
 	 */
 	public boolean login() {
 		Map<String, String> params = new HashMap<String, String>();
@@ -82,16 +90,12 @@ public class BetaSerie {
 			// }
 			// }
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			// } catch (ParserConfigurationException e) {
-			// // TODO Auto-generated catch block
 			// e.printStackTrace();
 			// } catch (SAXException e) {
-			// // TODO Auto-generated catch block
 			// e.printStackTrace();
 		}
 		System.out.println("Token: " + userToken);

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.kokotchy.betaSeriesAPI.model;
 
 import org.dom4j.Node;
@@ -8,14 +5,19 @@ import org.dom4j.Node;
 import com.kokotchy.betaSeriesAPI.Utils;
 
 /**
+ * Episode API
+ * 
  * @author kokotchy
  * 
  */
 public class Episode {
 
 	/**
+	 * Create an episode from the node
+	 * 
 	 * @param node
-	 * @return
+	 *            Node
+	 * @return Episode from the node
 	 */
 	public static Episode createEpisode(Node node) {
 		Episode episode = new Episode();
@@ -33,31 +35,35 @@ public class Episode {
 	}
 
 	/**
-	 * 
+	 * Number of the episode
 	 */
 	private String nb;
 
 	/**
-	 * 
+	 * Date of the episode
 	 */
 	private int date;
 
 	/**
-	 * 
+	 * Title of the episode
 	 */
 	private String title;
 
 	/**
-	 * 
+	 * Description of the episode
 	 */
 	private String description;
 
 	/**
+	 * TODO Change to url
 	 * 
+	 * Url of a screen of the episode
 	 */
 	private String screen;
 
 	/**
+	 * Return the date of the episode
+	 * 
 	 * @return the date
 	 */
 	public int getDate() {
@@ -65,6 +71,8 @@ public class Episode {
 	}
 
 	/**
+	 * Return the description of the episode
+	 * 
 	 * @return the description
 	 */
 	public String getDescription() {
@@ -72,6 +80,8 @@ public class Episode {
 	}
 
 	/**
+	 * Return the number of the episode
+	 * 
 	 * @return the nb
 	 */
 	public String getNb() {
@@ -79,6 +89,8 @@ public class Episode {
 	}
 
 	/**
+	 * Return the screen url of the episode
+	 * 
 	 * @return the screen
 	 */
 	public String getScreen() {
@@ -86,6 +98,8 @@ public class Episode {
 	}
 
 	/**
+	 * Return the title of the episode
+	 * 
 	 * @return the title
 	 */
 	public String getTitle() {
@@ -93,6 +107,8 @@ public class Episode {
 	}
 
 	/**
+	 * Set the date of the episode
+	 * 
 	 * @param date
 	 *            the date to set
 	 */
@@ -101,6 +117,8 @@ public class Episode {
 	}
 
 	/**
+	 * Set the description of the episode
+	 * 
 	 * @param description
 	 *            the description to set
 	 */
@@ -109,6 +127,8 @@ public class Episode {
 	}
 
 	/**
+	 * Set the number of the episode
+	 * 
 	 * @param nb
 	 *            the nb to set
 	 */
@@ -117,6 +137,8 @@ public class Episode {
 	}
 
 	/**
+	 * Set the screen url of the episode
+	 * 
 	 * @param screen
 	 *            the screen to set
 	 */
@@ -125,6 +147,8 @@ public class Episode {
 	}
 
 	/**
+	 * Set the title of the episode
+	 * 
 	 * @param title
 	 *            the title to set
 	 */

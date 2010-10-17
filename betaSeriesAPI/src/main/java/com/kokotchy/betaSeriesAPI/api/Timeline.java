@@ -1,8 +1,9 @@
 package com.kokotchy.betaSeriesAPI.api;
 
 /**
- * @author kokotchy
+ * Timeline API
  * 
+ * @author kokotchy
  */
 public class Timeline {
 
