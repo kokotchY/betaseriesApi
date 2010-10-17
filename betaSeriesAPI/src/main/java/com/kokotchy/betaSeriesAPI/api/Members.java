@@ -14,7 +14,7 @@ import com.kokotchy.betaSeriesAPI.Utils;
  * @author kokotchy
  * 
  */
-public class Members {
+public class Members implements IMembers {
 
 	/**
 	 * API Key
@@ -36,14 +36,7 @@ public class Members {
 		this.apiKey = apiKey;
 	}
 
-	/**
-	 * Auth the user with his login and password
-	 * 
-	 * @param login
-	 *            Login of the user
-	 * @param password
-	 *            Password of the user
-	 */
+	@Override
 	public boolean auth(String login, String password) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("login", login);
@@ -58,10 +51,14 @@ public class Members {
 		return false;
 	}
 
-	/**
-	 * Destroy the token of the user
-	 */
+	@Override
 	public void destroy() {
+
+	}
+
+	@Override
+	public void getEpisodes(String token, SubtitleLanguage subtitleLanguage) {
+		// TODO Auto-generated method stub
 
 	}
 
@@ -74,19 +71,19 @@ public class Members {
 		return token;
 	}
 
-	/**
-	 * TODO Fill it
-	 */
+	@Override
 	public void infos() {
 
 	}
 
-	/**
-	 * TODO Fill it
-	 * 
-	 * @param user
-	 */
+	@Override
 	public void infos(String user) {
+
+	}
+
+	@Override
+	public void setWatched(String token, String url, int season, int episode) {
+		// TODO Auto-generated method stub
 
 	}
 }

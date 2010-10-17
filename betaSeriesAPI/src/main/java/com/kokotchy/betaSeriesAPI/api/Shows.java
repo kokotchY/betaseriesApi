@@ -18,7 +18,7 @@ import com.kokotchy.betaSeriesAPI.model.Show;
  * 
  * @author kokotchy
  */
-public class Shows {
+public class Shows implements IShows {
 
 	/**
 	 * API Key
@@ -35,12 +35,16 @@ public class Shows {
 		this.apiKey = apiKey;
 	}
 
-	/**
-	 * Display the show from the given url
-	 * 
-	 * @param url
-	 *            Url of the show
-	 */
+	@Override
+	public boolean add(String url, String token) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("token", token);
+		Document document = Utils.executeQuery("shows/add/" + url + ".xml",
+				apiKey, params);
+		return !Utils.hasErrors(document);
+	}
+
+	@Override
 	public Show display(String url) {
 		Document document = Utils.executeQuery("shows/display/" + url + ".xml",
 				apiKey);
@@ -51,11 +55,8 @@ public class Shows {
 		return null;
 	}
 
-	/**
-	 * Display all available shows
-	 * 
-	 * @return List of shows
-	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public List<Show> displayAll() {
 		Document document = Utils.executeQuery("shows/display/all.xml", apiKey);
 		List<Show> result = new LinkedList<Show>();
@@ -66,26 +67,12 @@ public class Shows {
 		return result;
 	}
 
-	/**
-	 * Return the episodes of the given url
-	 * 
-	 * @param url
-	 *            Url of the show
-	 * @return List of seasons with the episodes
-	 */
+	@Override
 	public List<Season> getEpisodes(String url) {
 		return getEpisodesFromSeason(url, -1);
 	}
 
-	/**
-	 * Return the episodes of the show for the given season
-	 * 
-	 * @param url
-	 *            Url of the show
-	 * @param seasonNb
-	 *            Number of the season
-	 * @return Season with the episodes
-	 */
+	@Override
 	public Season getEpisodes(String url, int seasonNb) {
 		return getEpisodesFromSeason(url, seasonNb).get(0);
 	}
@@ -128,13 +115,17 @@ public class Shows {
 		return result;
 	}
 
-	/**
-	 * Search for episodes with the given title
-	 * 
-	 * @param title
-	 *            Title to search
-	 * @return List of shows with the matching title
-	 */
+	@Override
+	public boolean remove(String url, String token) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("token", token);
+		Document document = Utils.executeQuery("shows/remove/" + url + ".xml",
+				apiKey, params);
+		return !Utils.hasErrors(document);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
 	public List<Show> search(String title) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("title", title);
