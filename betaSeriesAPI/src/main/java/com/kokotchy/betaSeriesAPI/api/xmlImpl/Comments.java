@@ -1,6 +1,9 @@
 package com.kokotchy.betaSeriesAPI.api.xmlImpl;
 
+import java.util.List;
+
 import com.kokotchy.betaSeriesAPI.api.IComments;
+import com.kokotchy.betaSeriesAPI.model.Comment;
 
 /**
  * Comments api
@@ -11,21 +14,21 @@ import com.kokotchy.betaSeriesAPI.api.IComments;
 public class Comments implements IComments {
 
 	@Override
-	public void getComments(String url) {
+	public List<Comment> getComments(String url) {
 		// TODO Auto-generated method stub
-
+		return null;
 	}
 
 	@Override
-	public void getComments(String url, int season, int episode) {
+	public List<Comment> getComments(String url, int season, int episode) {
 		// TODO Auto-generated method stub
-
+		return null;
 	}
 
 	@Override
-	public void getUserComments(String login) {
+	public List<Comment> getUserComments(String login) {
 		// TODO Auto-generated method stub
-
+		return null;
 	}
 
 	@Override
@@ -41,8 +44,20 @@ public class Comments implements IComments {
 	}
 
 	@Override
+	public void postComment(String url, String text, int season, int episode) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
 	public void postComment(String url, String text, int responseTo,
 			int season, int episode) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void postUserComment(String login, String text) {
 		// TODO Auto-generated method stub
 
 	}

@@ -6,16 +6,20 @@ import com.kokotchy.betaSeriesAPI.model.Season;
 import com.kokotchy.betaSeriesAPI.model.Show;
 
 /**
+ * Interface to the shows
+ * 
  * @author kokotchy
  */
 public interface IShows {
 
 	/**
-	 * TODO Fill it
+	 * Add the given show to the logged user
 	 * 
 	 * @param url
+	 *            Url of the show
 	 * @param token
-	 * @return
+	 *            Token
+	 * @return True if the show is added, false otherwise
 	 */
 	public boolean add(String url, String token);
 
@@ -24,6 +28,7 @@ public interface IShows {
 	 * 
 	 * @param url
 	 *            Url of the show
+	 * @return Show
 	 */
 	public Show display(String url);
 
@@ -55,11 +60,13 @@ public interface IShows {
 	public Season getEpisodes(String url, int seasonNb);
 
 	/**
-	 * TODO Fill it
+	 * Remove the show from the logged user
 	 * 
 	 * @param url
+	 *            Url of the show
 	 * @param token
-	 * @return
+	 *            Token
+	 * @return True if the show is removed, false otherwise
 	 */
 	public boolean remove(String url, String token);
 

@@ -1,30 +1,43 @@
-/**
- * 
- */
 package com.kokotchy.betaSeriesAPI.api;
 
+import java.util.List;
+
+import com.kokotchy.betaSeriesAPI.model.Subtitle;
 
 /**
- * TODO Fill it
+ * Interface to the subtitles
  * 
  * @author kokotchy
  */
 public interface ISubtitles {
 
 	/**
+	 * Return the last subtitles retrieved by BetaSeries, limited by 100.
+	 * 
 	 * @param url
+	 *            Url of the show
 	 * @param nb
+	 *            Number of subtitle to retrieve
 	 * @param subtitleLanguage
+	 *            Language needed for the subtitles
+	 * @return List of subtitles
 	 */
-	public void getLastSubtitles(String url, int nb,
+	public List<Subtitle> getLastSubtitles(String url, int nb,
 			SubtitleLanguage subtitleLanguage);
 
 	/**
+	 * Return the subtitles retrieved by BetaSeries for the given show.
+	 * 
 	 * @param url
+	 *            Url of the show
 	 * @param subtitleLanguage
+	 *            Language needed for the subtitles
 	 * @param season
+	 *            Season of the episode
 	 * @param episode
+	 *            Episode
+	 * @return List of subtitles for the episode
 	 */
-	public void show(String url, SubtitleLanguage subtitleLanguage, int season,
-			int episode);
+	public List<Subtitle> show(String url, SubtitleLanguage subtitleLanguage,
+			int season, int episode);
 }

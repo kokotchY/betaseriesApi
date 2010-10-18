@@ -1,6 +1,7 @@
 package com.kokotchy.betaSeriesAPI.api.xmlImpl;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.dom4j.Document;
@@ -9,6 +10,9 @@ import org.dom4j.Node;
 import com.kokotchy.betaSeriesAPI.Utils;
 import com.kokotchy.betaSeriesAPI.api.IMembers;
 import com.kokotchy.betaSeriesAPI.api.SubtitleLanguage;
+import com.kokotchy.betaSeriesAPI.model.Episode;
+import com.kokotchy.betaSeriesAPI.model.Member;
+import com.kokotchy.betaSeriesAPI.model.Notification;
 
 /**
  * Members API
@@ -59,15 +63,16 @@ public class Members implements IMembers {
 	}
 
 	@Override
-	public void getEpisodes(String token, SubtitleLanguage subtitleLanguage) {
+	public List<Episode> getEpisodes(String token,
+			SubtitleLanguage subtitleLanguage) {
 		// TODO Auto-generated method stub
-
+		return null;
 	}
 
 	@Override
-	public void getNotifications(boolean seen, int nb, int lastId) {
+	public List<Notification> getNotifications(boolean seen, int nb, int lastId) {
 		// TODO Auto-generated method stub
-
+		return null;
 	}
 
 	/**
@@ -80,12 +85,20 @@ public class Members implements IMembers {
 	}
 
 	@Override
-	public void infos() {
-
+	public Member infos(String token) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public void infos(String user) {
+	public Member infosOfUser(String user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void resetViewedShow(String token, String url) {
+		// TODO Auto-generated method stub
 
 	}
 
