@@ -9,10 +9,10 @@ import org.dom4j.Node;
 
 import com.kokotchy.betaSeriesAPI.Utils;
 import com.kokotchy.betaSeriesAPI.api.IMembers;
-import com.kokotchy.betaSeriesAPI.api.SubtitleLanguage;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 import com.kokotchy.betaSeriesAPI.model.Member;
 import com.kokotchy.betaSeriesAPI.model.Notification;
+import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
 
 /**
  * Members API

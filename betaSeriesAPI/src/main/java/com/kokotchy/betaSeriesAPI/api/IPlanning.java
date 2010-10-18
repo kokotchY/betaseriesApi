@@ -1,19 +1,21 @@
 package com.kokotchy.betaSeriesAPI.api;
 
-import com.kokotchy.betaSeriesAPI.model.Planning;
+import java.util.List;
+
+import com.kokotchy.betaSeriesAPI.model.Episode;
 
 /**
  * Interface to the general of user planning
  * 
  * @author kokotchy
  */
-public interface IPlannings {
+public interface IPlanning {
 	/**
 	 * Return the general planning
 	 * 
-	 * @return Planning
+	 * @return List of episodes
 	 */
-	public Planning getGeneralPlanning();
+	public List<Episode> getGeneralPlanning();
 
 	/**
 	 * Return the planning of the logged user
@@ -24,7 +26,7 @@ public interface IPlannings {
 	 *            Token of the user
 	 * @return Planning of the user
 	 */
-	public Planning getMemberPlanning(boolean unseen, String token);
+	public List<Episode> getMemberPlanning(boolean unseen, String token);
 
 	/**
 	 * Return the planning of the user
@@ -35,5 +37,5 @@ public interface IPlannings {
 	 *            If only unseen has to be return
 	 * @return Planning of the user
 	 */
-	public Planning getMemberPlanning(String login, boolean unseen);
+	public List<Episode> getMemberPlanning(String login, boolean unseen);
 }

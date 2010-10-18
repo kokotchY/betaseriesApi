@@ -2,8 +2,7 @@ package com.kokotchy.betaSeriesAPI.model;
 
 /**
  * @author kokotchy
- * 
  */
-public class Planning {
-
+public enum EventType {
+	MARKAS, ADD_SERIE
 }

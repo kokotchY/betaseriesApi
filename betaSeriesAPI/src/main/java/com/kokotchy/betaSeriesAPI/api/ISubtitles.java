@@ -3,6 +3,7 @@ package com.kokotchy.betaSeriesAPI.api;
 import java.util.List;
 
 import com.kokotchy.betaSeriesAPI.model.Subtitle;
+import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
 
 /**
  * Interface to the subtitles

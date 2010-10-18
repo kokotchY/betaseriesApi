@@ -5,6 +5,7 @@ import java.util.List;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 import com.kokotchy.betaSeriesAPI.model.Member;
 import com.kokotchy.betaSeriesAPI.model.Notification;
+import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
 
 /**
  * Interface for members to authenticate, retrieve informations, ...

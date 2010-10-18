@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.kokotchy.betaSeriesAPI.api;
+package com.kokotchy.betaSeriesAPI.model;
 
 /**
  * @author kokotchy
