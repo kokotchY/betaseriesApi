@@ -15,6 +15,18 @@ public interface ISubtitles {
 	/**
 	 * Return the last subtitles retrieved by BetaSeries, limited by 100.
 	 * 
+	 * @param nb
+	 *            Number of subtitle to retrieve
+	 * @param subtitleLanguage
+	 *            Language needed for the subtitles
+	 * @return List of subtitles
+	 */
+	public List<Subtitle> getLastSubtitles(int nb,
+			SubtitleLanguage subtitleLanguage);
+
+	/**
+	 * Return the last subtitles retrieved by BetaSeries, limited by 100.
+	 * 
 	 * @param url
 	 *            Url of the show
 	 * @param nb

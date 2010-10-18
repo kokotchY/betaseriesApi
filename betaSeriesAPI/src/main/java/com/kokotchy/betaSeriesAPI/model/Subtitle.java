@@ -1,10 +1,40 @@
 package com.kokotchy.betaSeriesAPI.model;
 
+import org.dom4j.Node;
+
+import com.kokotchy.betaSeriesAPI.Utils;
+
 /**
  * @author kokotchy
  * 
  */
 public class Subtitle {
+
+	/**
+	 * @param node
+	 * @return
+	 */
+	public static Subtitle createSubtitle(Node node) {
+		Subtitle subtitle = new Subtitle();
+		subtitle.setTitle(Utils.readNode(node, "title"));
+		subtitle.setSeason(Integer.parseInt(Utils.readNode(node, "season")));
+		subtitle.setEpisode(Integer.parseInt(Utils.readNode(node, "episode")));
+
+		String language = Utils.readNode(node, "language");
+		if (language.equals("VF")) {
+			subtitle.setLanguage(SubtitleLanguage.VF);
+		} else if (language.equals("VO")) {
+			subtitle.setLanguage(SubtitleLanguage.VO);
+		} else if (language.equals("VOVF")) {
+			subtitle.setLanguage(SubtitleLanguage.VOVF);
+		}
+
+		subtitle.setSource(Utils.readNode(node, "source"));
+		subtitle.setFile(Utils.readNode(node, "file"));
+		subtitle.setUrl(Utils.readNode(node, "url"));
+
+		return subtitle;
+	}
 
 	/**
 	 * 
@@ -144,5 +174,16 @@ public class Subtitle {
 	 */
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
 	}
 }

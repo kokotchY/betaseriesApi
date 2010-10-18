@@ -78,4 +78,15 @@ public class Member {
 	public void setStats(Stats stats) {
 		this.stats = stats;
 	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
 }

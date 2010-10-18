@@ -85,4 +85,15 @@ public class Notification {
 	public void setSeen(boolean seen) {
 		this.seen = seen;
 	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
 }
