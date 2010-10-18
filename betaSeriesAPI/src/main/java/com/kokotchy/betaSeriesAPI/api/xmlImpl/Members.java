@@ -1,4 +1,4 @@
-package com.kokotchy.betaSeriesAPI.api;
+package com.kokotchy.betaSeriesAPI.api.xmlImpl;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,6 +7,8 @@ import org.dom4j.Document;
 import org.dom4j.Node;
 
 import com.kokotchy.betaSeriesAPI.Utils;
+import com.kokotchy.betaSeriesAPI.api.IMembers;
+import com.kokotchy.betaSeriesAPI.api.SubtitleLanguage;
 
 /**
  * Members API

@@ -1,4 +1,7 @@
-package com.kokotchy.betaSeriesAPI.api;
+package com.kokotchy.betaSeriesAPI.api.xmlImpl;
+
+import com.kokotchy.betaSeriesAPI.api.ISubtitles;
+import com.kokotchy.betaSeriesAPI.api.SubtitleLanguage;
 
 /**
  * Subtitles API

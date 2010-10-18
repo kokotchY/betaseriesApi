@@ -1,4 +1,6 @@
-package com.kokotchy.betaSeriesAPI.api;
+package com.kokotchy.betaSeriesAPI.api.xmlImpl;
+
+import com.kokotchy.betaSeriesAPI.api.IPlanning;
 
 /**
  * Planning API
