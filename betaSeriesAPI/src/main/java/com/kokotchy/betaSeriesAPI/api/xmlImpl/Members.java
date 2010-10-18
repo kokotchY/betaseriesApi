@@ -64,6 +64,12 @@ public class Members implements IMembers {
 
 	}
 
+	@Override
+	public void getNotifications(boolean seen, int nb, int lastId) {
+		// TODO Auto-generated method stub
+
+	}
+
 	/**
 	 * Return the token of the user
 	 * 

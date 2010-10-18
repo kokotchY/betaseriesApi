@@ -1,6 +1,5 @@
 package com.kokotchy.betaSeriesAPI.api;
 
-
 /**
  * @author kokotchy
  * 
@@ -25,6 +24,13 @@ public interface IMembers {
 	 * @param showType
 	 */
 	public void getEpisodes(String token, SubtitleLanguage subtitleLanguage);
+
+	/**
+	 * @param seen
+	 * @param nb
+	 * @param lastId
+	 */
+	public void getNotifications(boolean seen, int nb, int lastId);
 
 	/**
 	 * TODO Fill it
