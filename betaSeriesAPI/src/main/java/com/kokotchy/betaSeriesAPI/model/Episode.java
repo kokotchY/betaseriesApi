@@ -34,6 +34,7 @@ public class Episode {
 		episode.setTitle(Utils.readString(node, "title"));
 		episode.setDescription(Utils.readString(node, "description"));
 		episode.setScreen(Utils.readString(node, "screen"));
+		episode.setShow(Utils.readString(node, "show"));
 
 		List<Node> subsNode = node.selectNodes("subs/sub");
 		for (Node sub : subsNode) {
@@ -47,6 +48,11 @@ public class Episode {
 	 * Number of the episode
 	 */
 	private String nb;
+
+	/**
+	 * Show of the episode
+	 */
+	private String show;
 
 	/**
 	 * Date of the episode
@@ -129,6 +135,13 @@ public class Episode {
 	}
 
 	/**
+	 * @return the show
+	 */
+	public String getShow() {
+		return show;
+	}
+
+	/**
 	 * Return the subtitles for the episode
 	 * 
 	 * @return the subtitles
@@ -187,6 +200,14 @@ public class Episode {
 	}
 
 	/**
+	 * @param show
+	 *            the show to set
+	 */
+	public void setShow(String show) {
+		this.show = show;
+	}
+
+	/**
 	 * Set the title of the episode
 	 * 
 	 * @param title
@@ -198,8 +219,8 @@ public class Episode {
 
 	@Override
 	public String toString() {
-		String format = "[%s] %s";
-		return String.format(format, nb, title);
+		String format = "[%s - %s] %s";
+		return String.format(format, show, nb, title);
 	}
 
 }
