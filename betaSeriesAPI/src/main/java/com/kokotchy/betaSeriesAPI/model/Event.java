@@ -1,37 +1,40 @@
 package com.kokotchy.betaSeriesAPI.model;
 
 /**
- * @author kokotchy
+ * Model of an event
  * 
+ * @author kokotchy
  */
 public class Event {
 
 	/**
-	 * 
+	 * Type of the event
 	 */
 	private EventType type;
 
 	/**
-	 * 
+	 * Reference (???)
 	 */
 	private String ref;
 
 	/**
-	 * 
+	 * Login of the author of the event
 	 */
 	private String login;
 
 	/**
-	 * 
+	 * Event
 	 */
 	private String event;
 
 	/**
-	 * 
+	 * Date
 	 */
 	private int date;
 
 	/**
+	 * Return the date
+	 * 
 	 * @return the date
 	 */
 	public int getDate() {
@@ -39,6 +42,8 @@ public class Event {
 	}
 
 	/**
+	 * Return the event
+	 * 
 	 * @return the event
 	 */
 	public String getEvent() {
@@ -46,6 +51,8 @@ public class Event {
 	}
 
 	/**
+	 * Return the login
+	 * 
 	 * @return the login
 	 */
 	public String getLogin() {
@@ -53,6 +60,8 @@ public class Event {
 	}
 
 	/**
+	 * Return the ref
+	 * 
 	 * @return the ref
 	 */
 	public String getRef() {
@@ -60,6 +69,8 @@ public class Event {
 	}
 
 	/**
+	 * return the type
+	 * 
 	 * @return the type
 	 */
 	public EventType getType() {
@@ -67,6 +78,8 @@ public class Event {
 	}
 
 	/**
+	 * Set the date
+	 * 
 	 * @param date
 	 *            the date to set
 	 */
@@ -75,6 +88,8 @@ public class Event {
 	}
 
 	/**
+	 * Set the event
+	 * 
 	 * @param event
 	 *            the event to set
 	 */
@@ -83,6 +98,8 @@ public class Event {
 	}
 
 	/**
+	 * Set the login
+	 * 
 	 * @param login
 	 *            the login to set
 	 */
@@ -91,6 +108,8 @@ public class Event {
 	}
 
 	/**
+	 * Set the ref
+	 * 
 	 * @param ref
 	 *            the ref to set
 	 */
@@ -99,6 +118,8 @@ public class Event {
 	}
 
 	/**
+	 * Set the type
+	 * 
 	 * @param type
 	 *            the type to set
 	 */
@@ -106,11 +127,15 @@ public class Event {
 		this.type = type;
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * Set the type
 	 * 
-	 * @see java.lang.Object#toString()
+	 * @param type
+	 *            the type to set
 	 */
+	public void setType(String type) {
+	}
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

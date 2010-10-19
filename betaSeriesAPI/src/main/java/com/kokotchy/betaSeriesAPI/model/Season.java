@@ -80,11 +80,6 @@ public class Season {
 		this.number = number;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

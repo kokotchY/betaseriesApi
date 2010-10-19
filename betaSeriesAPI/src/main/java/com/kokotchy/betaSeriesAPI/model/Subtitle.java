@@ -5,8 +5,9 @@ import org.dom4j.Node;
 import com.kokotchy.betaSeriesAPI.Utils;
 
 /**
- * @author kokotchy
+ * Model of a subtitle
  * 
+ * @author kokotchy
  */
 public class Subtitle {
 
@@ -178,7 +179,6 @@ public class Subtitle {
 
 	/*
 	 * (non-Javadoc)
-	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

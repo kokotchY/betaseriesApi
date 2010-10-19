@@ -1,47 +1,51 @@
 package com.kokotchy.betaSeriesAPI.model;
 
 /**
- * @author kokotchy
+ * Model of statistics
  * 
+ * @author kokotchy
  */
 public class Stats {
 
 	/**
-	 * 
+	 * Number of shows
 	 */
 	private int shows;
 
 	/**
-	 * 
+	 * Number of seasons
 	 */
 	private int seasons;
 
 	/**
-	 * 
+	 * Number of episodes
 	 */
 	private int episodes;
 
 	/**
+	 * General progress of episodes
 	 * TODO Better type
 	 */
 	private String progress;
 
 	/**
-	 * 
+	 * Remaining episodes to watch
 	 */
 	private int episodesToWatch;
 
 	/**
-	 * 
+	 * Time spended watching episodes
 	 */
 	private String timeOnTv;
 
 	/**
-	 * 
+	 * Remaining time to watch remaining episodes
 	 */
 	private String timeToSpend;
 
 	/**
+	 * Return number of episodes
+	 * 
 	 * @return the episodes
 	 */
 	public int getEpisodes() {
@@ -49,6 +53,8 @@ public class Stats {
 	}
 
 	/**
+	 * Return number of episodes to watch
+	 * 
 	 * @return the episodesToWatch
 	 */
 	public int getEpisodesToWatch() {
@@ -56,6 +62,8 @@ public class Stats {
 	}
 
 	/**
+	 * Return general progress
+	 * 
 	 * @return the progress
 	 */
 	public String getProgress() {
@@ -63,6 +71,8 @@ public class Stats {
 	}
 
 	/**
+	 * Return number of seasons
+	 * 
 	 * @return the seasons
 	 */
 	public int getSeasons() {
@@ -70,6 +80,8 @@ public class Stats {
 	}
 
 	/**
+	 * Return number of shows
+	 * 
 	 * @return the shows
 	 */
 	public int getShows() {
@@ -77,6 +89,8 @@ public class Stats {
 	}
 
 	/**
+	 * Return time spend watching episodes
+	 * 
 	 * @return the timeOnTv
 	 */
 	public String getTimeOnTv() {
@@ -84,6 +98,8 @@ public class Stats {
 	}
 
 	/**
+	 * Return time to spend to watch remaining episodes
+	 * 
 	 * @return the timeToSpend
 	 */
 	public String getTimeToSpend() {
@@ -91,6 +107,8 @@ public class Stats {
 	}
 
 	/**
+	 * Set the number of episodes
+	 * 
 	 * @param episodes
 	 *            the episodes to set
 	 */
@@ -99,6 +117,8 @@ public class Stats {
 	}
 
 	/**
+	 * Set the number of episodes to watch
+	 * 
 	 * @param episodesToWatch
 	 *            the episodesToWatch to set
 	 */
@@ -107,6 +127,8 @@ public class Stats {
 	}
 
 	/**
+	 * Set the general progress
+	 * 
 	 * @param progress
 	 *            the progress to set
 	 */
@@ -115,6 +137,8 @@ public class Stats {
 	}
 
 	/**
+	 * Set the number of seasons
+	 * 
 	 * @param seasons
 	 *            the seasons to set
 	 */
@@ -123,6 +147,8 @@ public class Stats {
 	}
 
 	/**
+	 * Set the number of shows
+	 * 
 	 * @param shows
 	 *            the shows to set
 	 */
@@ -131,6 +157,8 @@ public class Stats {
 	}
 
 	/**
+	 * Set the time spended watching episodes
+	 * 
 	 * @param timeOnTv
 	 *            the timeOnTv to set
 	 */
@@ -139,6 +167,8 @@ public class Stats {
 	}
 
 	/**
+	 * Set the time to spend to watch remaining episodes
+	 * 
 	 * @param timeToSpend
 	 *            the timeToSpend to set
 	 */
@@ -146,11 +176,6 @@ public class Stats {
 		this.timeToSpend = timeToSpend;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

@@ -3,31 +3,36 @@ package com.kokotchy.betaSeriesAPI.model;
 import java.util.List;
 
 /**
+ * Model of a member
+ * 
  * @author kokotchy
  */
 public class Member {
 
 	/**
-	 * 
+	 * Login of the member
 	 */
 	private String login;
 
 	/**
-	 * 
+	 * Avatar of the user
 	 */
 	private String avatar;
 
 	/**
-	 * 
+	 * Statistics about the user
+	 * TODO Remove stats object an include directly in Member model
 	 */
 	private Stats stats;
 
 	/**
-	 * 
+	 * List of shows followed by the member
 	 */
 	private List<Show> shows;
 
 	/**
+	 * Return the avatar
+	 * 
 	 * @return the avatar
 	 */
 	public String getAvatar() {
@@ -35,6 +40,8 @@ public class Member {
 	}
 
 	/**
+	 * Return the login
+	 * 
 	 * @return the login
 	 */
 	public String getLogin() {
@@ -42,6 +49,8 @@ public class Member {
 	}
 
 	/**
+	 * Return the shows
+	 * 
 	 * @return the shows
 	 */
 	public List<Show> getShows() {
@@ -49,6 +58,8 @@ public class Member {
 	}
 
 	/**
+	 * Return statistics
+	 * 
 	 * @return the stats
 	 */
 	public Stats getStats() {
@@ -56,6 +67,8 @@ public class Member {
 	}
 
 	/**
+	 * Return avatar
+	 * 
 	 * @param avatar
 	 *            the avatar to set
 	 */
@@ -64,6 +77,8 @@ public class Member {
 	}
 
 	/**
+	 * Set login
+	 * 
 	 * @param login
 	 *            the login to set
 	 */
@@ -72,6 +87,8 @@ public class Member {
 	}
 
 	/**
+	 * Set stats
+	 * 
 	 * @param stats
 	 *            the stats to set
 	 */
@@ -79,11 +96,16 @@ public class Member {
 		this.stats = stats;
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 * Add the given show
 	 * 
-	 * @see java.lang.Object#toString()
+	 * @param show
+	 *            Show
 	 */
+	public void addShow(Show show) {
+		shows.add(show);
+	}
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

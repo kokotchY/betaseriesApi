@@ -21,12 +21,15 @@ import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
 public class Subtitles implements ISubtitles {
 
 	/**
-	 * 
+	 * Api key
 	 */
 	private String apiKey;
 
 	/**
+	 * Create new subtitle api with the given key
+	 * 
 	 * @param apiKey
+	 *            Key
 	 */
 	public Subtitles(String apiKey) {
 		this.apiKey = apiKey;
@@ -45,11 +48,18 @@ public class Subtitles implements ISubtitles {
 	}
 
 	/**
+	 * Return the last subtitles. If the url is not null, return subtitles for the show.
+	 * If the nb is greater than 0, limit the number of subtitles
+	 * 
 	 * @param url
+	 *            Url of the show
 	 * @param nb
+	 *            Number of subtitle
 	 * @param subtitleLanguage
-	 * @return
+	 *            Language needed for the subtitles.
+	 * @return List of subtitles
 	 */
+	@SuppressWarnings("unchecked")
 	private List<Subtitle> getLastSubtitlesFromShow(String url, int nb,
 			SubtitleLanguage subtitleLanguage) {
 		Map<String, String> params = new HashMap<String, String>();
@@ -81,6 +91,7 @@ public class Subtitles implements ISubtitles {
 		return subtitles;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Subtitle> show(String url, SubtitleLanguage subtitleLanguage,
 			int season, int episode) {

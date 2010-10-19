@@ -1,16 +1,13 @@
 package com.kokotchy.betaSeriesAPI.model;
 
 /**
- * @author kokotchy
+ * Model of a comment
+ * TODO Fill it
  * 
+ * @author kokotchy
  */
 public class Comment {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

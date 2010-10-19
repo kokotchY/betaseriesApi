@@ -1,32 +1,35 @@
 package com.kokotchy.betaSeriesAPI.model;
 
 /**
- * @author kokotchy
+ * Model of a notification
  * 
+ * @author kokotchy
  */
 public class Notification {
 
 	/**
-	 * 
+	 * Id of the notification
 	 */
 	private int id;
 
 	/**
-	 * 
+	 * Content of the notification
 	 */
 	private String html;
 
 	/**
-	 * 
+	 * Date of the notification
 	 */
 	private int date;
 
 	/**
-	 * 
+	 * Seen flag of the notification
 	 */
 	private boolean seen;
 
 	/**
+	 * Return the date
+	 * 
 	 * @return the date
 	 */
 	public int getDate() {
@@ -34,6 +37,8 @@ public class Notification {
 	}
 
 	/**
+	 * Return the content
+	 * 
 	 * @return the html
 	 */
 	public String getHtml() {
@@ -41,6 +46,8 @@ public class Notification {
 	}
 
 	/**
+	 * Return the id
+	 * 
 	 * @return the id
 	 */
 	public int getId() {
@@ -48,6 +55,8 @@ public class Notification {
 	}
 
 	/**
+	 * If the notification is seen
+	 * 
 	 * @return the seen
 	 */
 	public boolean isSeen() {
@@ -55,6 +64,8 @@ public class Notification {
 	}
 
 	/**
+	 * Set the date
+	 * 
 	 * @param date
 	 *            the date to set
 	 */
@@ -63,6 +74,8 @@ public class Notification {
 	}
 
 	/**
+	 * Set the html
+	 * 
 	 * @param html
 	 *            the html to set
 	 */
@@ -71,6 +84,8 @@ public class Notification {
 	}
 
 	/**
+	 * Set the id
+	 * 
 	 * @param id
 	 *            the id to set
 	 */
@@ -79,6 +94,8 @@ public class Notification {
 	}
 
 	/**
+	 * Set if the notifictaion is seen
+	 * 
 	 * @param seen
 	 *            the seen to set
 	 */
@@ -86,11 +103,6 @@ public class Notification {
 		this.seen = seen;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

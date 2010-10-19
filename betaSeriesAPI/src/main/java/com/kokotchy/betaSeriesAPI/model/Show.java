@@ -8,7 +8,7 @@ import org.dom4j.Node;
 import com.kokotchy.betaSeriesAPI.Utils;
 
 /**
- * Show
+ * Model of a Show
  * 
  * @author kokotchy
  */
@@ -16,13 +16,13 @@ public class Show {
 
 	/**
 	 * Status of a show
-	 * 
 	 * TODO Translate in english
 	 * 
 	 * @author kokotchy
 	 */
 	public enum ShowStatus {
-		EN_COURS, FINI
+		EN_COURS,
+		FINI,
 	};
 
 	/**
@@ -95,7 +95,7 @@ public class Show {
 	public Show(String url, String title) {
 		this.url = url;
 		this.title = title;
-		this.genres = new LinkedList<String>();
+		genres = new LinkedList<String>();
 	}
 
 	/**
