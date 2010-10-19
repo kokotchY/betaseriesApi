@@ -12,6 +12,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -54,20 +55,21 @@ public class Utils {
 			Map<String, String> params) {
 		String uriPattern = "http://api.betaseries.com/%s?%s";
 		params.put("key", apiKey);
+		URL url = null;
+		URLConnection connection = null;
 		try {
-			URL url = new URL(String.format(uriPattern, action,
+			url = new URL(String.format(uriPattern, action,
 					getParamAsString(params)));
-			URLConnection connection = url.openConnection();
+			connection = url.openConnection();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					connection.getInputStream()));
-			String xmlResponse = "";
+			StringBuffer buffer = new StringBuffer();
 			String line = "";
 			while ((line = reader.readLine()) != null) {
-				xmlResponse += line;
+				buffer.append(line);
 			}
-
+			String xmlResponse = buffer.toString();
 			System.out.println("XML Response: " + xmlResponse);
-
 			return DocumentHelper.parseText(xmlResponse);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
@@ -75,6 +77,12 @@ public class Utils {
 			e.printStackTrace();
 		} catch (DocumentException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				connection.getInputStream().close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		return null;
 	}
@@ -88,7 +96,7 @@ public class Utils {
 	 */
 	public static String getMD5(String text) {
 		try {
-			String result = "";
+			StringBuffer buffer = new StringBuffer();
 			MessageDigest msgDigest = MessageDigest.getInstance("MD5");
 			msgDigest.update(text.getBytes("UTF-8"));
 			byte[] digest = msgDigest.digest();
@@ -97,9 +105,9 @@ public class Utils {
 				if (value < 0) {
 					value += 256;
 				}
-				result += Integer.toHexString(value);
+				buffer.append(Integer.toHexString(value));
 			}
-			return result;
+			return buffer.toString();
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 		} catch (UnsupportedEncodingException e) {
@@ -117,17 +125,18 @@ public class Utils {
 	 * @return String representation of the parameters
 	 */
 	public static String getParamAsString(Map<String, String> params) {
-		String result = "";
+		StringBuffer buffer = new StringBuffer();
 		int idx = 0;
 		int size = params.size();
-		for (String key : params.keySet()) {
-			String value = params.get(key);
-			result += key + "=" + value;
+
+		for (Entry<String, String> entry : params.entrySet()) {
+			buffer.append(entry.getKey() + "=" + entry.getValue());
 			if (++idx < size) {
-				result += "&";
+				buffer.append("&");
 			}
 		}
-		return result;
+
+		return buffer.toString();
 	}
 
 	/**
