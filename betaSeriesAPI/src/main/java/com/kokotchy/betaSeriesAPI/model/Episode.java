@@ -1,5 +1,8 @@
 package com.kokotchy.betaSeriesAPI.model;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import org.dom4j.Node;
 
 import com.kokotchy.betaSeriesAPI.Utils;
@@ -19,18 +22,24 @@ public class Episode {
 	 *            Node
 	 * @return Episode from the node
 	 */
+	@SuppressWarnings("unchecked")
 	public static Episode createEpisode(Node node) {
 		Episode episode = new Episode();
-		episode.setNb(Utils.readNode(node, "number"));
-		String value = Utils.readNode(node, "date");
-		if (value != null) {
-			episode.setDate(Integer.parseInt(value));
-		} else {
-			episode.setDate(0);
+		String number = Utils.readString(node, "number");
+		if (number == null) {
+			number = Utils.readString(node, "episode");
 		}
-		episode.setTitle(Utils.readNode(node, "title"));
-		episode.setDescription(Utils.readNode(node, "description"));
-		episode.setScreen(Utils.readNode(node, "screen"));
+		episode.setNb(number);
+		episode.setDate(Utils.readInt(node, "date"));
+		episode.setTitle(Utils.readString(node, "title"));
+		episode.setDescription(Utils.readString(node, "description"));
+		episode.setScreen(Utils.readString(node, "screen"));
+
+		List<Node> subsNode = node.selectNodes("subs/sub");
+		for (Node sub : subsNode) {
+			episode.addSubtitle(Subtitle.createSubtitle(sub));
+		}
+
 		return episode;
 	}
 
@@ -60,6 +69,28 @@ public class Episode {
 	 * Url of a screen of the episode
 	 */
 	private String screen;
+
+	/**
+	 * List of subtitles for the episodes
+	 */
+	private List<Subtitle> subtitles;
+
+	/**
+	 * Create a new episode
+	 */
+	public Episode() {
+		subtitles = new LinkedList<Subtitle>();
+	}
+
+	/**
+	 * Add subtitle to the episode
+	 * 
+	 * @param subtitle
+	 *            Subtitle
+	 */
+	public void addSubtitle(Subtitle subtitle) {
+		subtitles.add(subtitle);
+	}
 
 	/**
 	 * Return the date of the episode
@@ -95,6 +126,15 @@ public class Episode {
 	 */
 	public String getScreen() {
 		return screen;
+	}
+
+	/**
+	 * Return the subtitles for the episode
+	 * 
+	 * @return the subtitles
+	 */
+	public List<Subtitle> getSubtitles() {
+		return subtitles;
 	}
 
 	/**

@@ -104,8 +104,7 @@ public class Shows implements IShows {
 		List<Node> seasons = document.selectNodes("/root/seasons/season");
 		List<Season> result = new LinkedList<Season>();
 		for (Node node : seasons) {
-			Season season = new Season(Integer.parseInt(node.selectSingleNode(
-					"number").getText()));
+			Season season = new Season(Utils.readInt(node, "number"));
 			List<Node> episodes = node.selectNodes("episodes/episode");
 			for (Node episodeNode : episodes) {
 				Episode episode = Episode.createEpisode(episodeNode);

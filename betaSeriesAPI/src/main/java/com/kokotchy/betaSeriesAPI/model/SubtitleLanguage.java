@@ -1,12 +1,10 @@
-/**
- * 
- */
 package com.kokotchy.betaSeriesAPI.model;
 
 /**
- * @author kokotchy
+ * Language of a subtitle
  * 
+ * @author kokotchy
  */
 public enum SubtitleLanguage {
-	VO, VF, VOVF, ALL
+	VO, VF, VOVF, ALL, UNKNOWN
 }

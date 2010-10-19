@@ -35,14 +35,14 @@ public class Show {
 	@SuppressWarnings("unchecked")
 	public static Show createShow(Node node) {
 		Show show = new Show();
-		show.setTitle(Utils.readNode(node, "title"));
-		show.setUrl(Utils.readNode(node, "url"));
-		show.setDescription(Utils.readNode(node, "description"));
-		show.setStatus(Utils.readNode(node, "status"));
-		show.setBanner(Utils.readNode(node, "banner"));
+		show.setTitle(Utils.readString(node, "title"));
+		show.setUrl(Utils.readString(node, "url"));
+		show.setDescription(Utils.readString(node, "description"));
+		show.setStatus(Utils.readString(node, "status"));
+		show.setBanner(Utils.readString(node, "banner"));
 		List<Node> genres = node.selectNodes("genres");
 		for (Node nodeGenre : genres) {
-			show.addGenre(Utils.readNode(nodeGenre, "genre"));
+			show.addGenre(Utils.readString(nodeGenre, "genre"));
 		}
 		return show;
 	}

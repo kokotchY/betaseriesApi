@@ -12,67 +12,80 @@ import com.kokotchy.betaSeriesAPI.Utils;
 public class Subtitle {
 
 	/**
+	 * Create a new subtitle from the node
+	 * 
 	 * @param node
-	 * @return
+	 *            Node
+	 * @return Subtitle
 	 */
 	public static Subtitle createSubtitle(Node node) {
 		Subtitle subtitle = new Subtitle();
-		subtitle.setTitle(Utils.readNode(node, "title"));
-		subtitle.setSeason(Integer.parseInt(Utils.readNode(node, "season")));
-		subtitle.setEpisode(Integer.parseInt(Utils.readNode(node, "episode")));
+		subtitle.setTitle(Utils.readString(node, "title"));
+		subtitle.setSeason(Utils.readInt(node, "season"));
+		subtitle.setEpisode(Utils.readInt(node, "episode"));
 
-		String language = Utils.readNode(node, "language");
-		if (language.equals("VF")) {
-			subtitle.setLanguage(SubtitleLanguage.VF);
-		} else if (language.equals("VO")) {
-			subtitle.setLanguage(SubtitleLanguage.VO);
-		} else if (language.equals("VOVF")) {
-			subtitle.setLanguage(SubtitleLanguage.VOVF);
+		String language = Utils.readString(node, "language");
+		if (language != null) {
+			if (language.equals("VF")) {
+				subtitle.setLanguage(SubtitleLanguage.VF);
+			} else if (language.equals("VO")) {
+				subtitle.setLanguage(SubtitleLanguage.VO);
+			} else if (language.equals("VOVF")) {
+				subtitle.setLanguage(SubtitleLanguage.VOVF);
+			} else {
+				subtitle.setLanguage(SubtitleLanguage.UNKNOWN);
+			}
+		} else {
+			subtitle.setLanguage(SubtitleLanguage.UNKNOWN);
 		}
 
-		subtitle.setSource(Utils.readNode(node, "source"));
-		subtitle.setFile(Utils.readNode(node, "file"));
-		subtitle.setUrl(Utils.readNode(node, "url"));
+		subtitle.setSource(Utils.readString(node, "source"));
+		subtitle.setFile(Utils.readString(node, "file"));
+		subtitle.setUrl(Utils.readString(node, "url"));
 
 		return subtitle;
 	}
 
 	/**
-	 * 
+	 * Title
 	 */
 	private String title;
 
 	/**
-	 * 
+	 * Season
 	 */
 	private int season;
 
 	/**
-	 * 
+	 * Episode
 	 */
 	private int episode;
 
 	/**
-	 * 
+	 * Language
 	 */
 	private SubtitleLanguage language;
 
 	/**
-	 * 
+	 * Source
 	 */
 	private String source;
 
 	/**
-	 * 
+	 * File
 	 */
 	private String file;
 
 	/**
+	 * Url to the subtitle
+	 * 
 	 * TODO Change to url
 	 */
 	private String url;
 
 	/**
+	 * Return the episode
+	 * 
 	 * @return the episode
 	 */
 	public int getEpisode() {
@@ -80,6 +93,8 @@ public class Subtitle {
 	}
 
 	/**
+	 * Return the file
+	 * 
 	 * @return the file
 	 */
 	public String getFile() {
@@ -87,6 +102,8 @@ public class Subtitle {
 	}
 
 	/**
+	 * Return the language
+	 * 
 	 * @return the language
 	 */
 	public SubtitleLanguage getLanguage() {
@@ -94,6 +111,8 @@ public class Subtitle {
 	}
 
 	/**
+	 * Return the season
+	 * 
 	 * @return the season
 	 */
 	public int getSeason() {
@@ -101,6 +120,8 @@ public class Subtitle {
 	}
 
 	/**
+	 * Return the source
+	 * 
 	 * @return the source
 	 */
 	public String getSource() {
@@ -108,6 +129,8 @@ public class Subtitle {
 	}
 
 	/**
+	 * Return the title
+	 * 
 	 * @return the title
 	 */
 	public String getTitle() {
@@ -115,6 +138,8 @@ public class Subtitle {
 	}
 
 	/**
+	 * Return the url
+	 * 
 	 * @return the url
 	 */
 	public String getUrl() {
@@ -122,6 +147,8 @@ public class Subtitle {
 	}
 
 	/**
+	 * Set the episode
+	 * 
 	 * @param episode
 	 *            the episode to set
 	 */
@@ -130,6 +157,8 @@ public class Subtitle {
 	}
 
 	/**
+	 * Set the file
+	 * 
 	 * @param file
 	 *            the file to set
 	 */
@@ -138,6 +167,8 @@ public class Subtitle {
 	}
 
 	/**
+	 * Set the language
+	 * 
 	 * @param language
 	 *            the language to set
 	 */
@@ -146,6 +177,8 @@ public class Subtitle {
 	}
 
 	/**
+	 * Return the season
+	 * 
 	 * @param season
 	 *            the season to set
 	 */
@@ -154,6 +187,8 @@ public class Subtitle {
 	}
 
 	/**
+	 * Set the source
+	 * 
 	 * @param source
 	 *            the source to set
 	 */
@@ -162,6 +197,8 @@ public class Subtitle {
 	}
 
 	/**
+	 * Set the title
+	 * 
 	 * @param title
 	 *            the title to set
 	 */
@@ -170,6 +207,8 @@ public class Subtitle {
 	}
 
 	/**
+	 * Set the url
+	 * 
 	 * @param url
 	 *            the url to set
 	 */
@@ -177,10 +216,6 @@ public class Subtitle {
 		this.url = url;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

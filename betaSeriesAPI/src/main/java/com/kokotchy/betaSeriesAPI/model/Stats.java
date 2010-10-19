@@ -1,11 +1,34 @@
 package com.kokotchy.betaSeriesAPI.model;
 
+import org.dom4j.Node;
+
+import com.kokotchy.betaSeriesAPI.Utils;
+
 /**
  * Model of statistics
  * 
  * @author kokotchy
  */
 public class Stats {
+
+	/**
+	 * Create a new stat from the node
+	 * 
+	 * @param node
+	 *            Node
+	 * @return Stat
+	 */
+	public static Stats createStats(Node node) {
+		Stats stats = new Stats();
+		stats.setShows(Utils.readInt(node, "shows"));
+		stats.setSeasons(Utils.readInt(node, "seasons"));
+		stats.setEpisodes(Utils.readInt(node, "episodes"));
+		stats.setProgress(Utils.readString(node, "progress"));
+		stats.setEpisodesToWatch(Utils.readInt(node, "episodes_to_watch"));
+		stats.setTimeOnTv(Utils.readString(node, "time_on_tv"));
+		stats.setTimeToSpend(Utils.readString(node, "time_to_spend"));
+		return stats;
+	}
 
 	/**
 	 * Number of shows
@@ -24,6 +47,7 @@ public class Stats {
 
 	/**
 	 * General progress of episodes
+	 * 
 	 * TODO Better type
 	 */
 	private String progress;
@@ -178,7 +202,15 @@ public class Stats {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		String pattern = "%s = %s\n";
+		String result = "";
+		result += String.format(pattern, "shows", shows);
+		result += String.format(pattern, "seasons", seasons);
+		result += String.format(pattern, "episodes", episodes);
+		result += String.format(pattern, "progress", progress);
+		result += String.format(pattern, "episodes_to_watch", episodesToWatch);
+		result += String.format(pattern, "time_on_tv", timeOnTv);
+		result += String.format(pattern, "time_to_spend", timeToSpend);
+		return result;
 	}
 }

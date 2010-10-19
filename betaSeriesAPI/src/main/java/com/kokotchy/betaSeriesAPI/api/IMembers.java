@@ -47,12 +47,42 @@ public interface IMembers {
 	 * 
 	 * @param seen
 	 *            Flag to return already seen notification or not
+	 * @return List of notifications
+	 */
+	public List<Notification> getNotifications(boolean seen);
+
+	/**
+	 * Return the notification received by the member.
+	 * 
+	 * @param seen
+	 *            Flag to return already seen notification or not
+	 * @param nb
+	 *            Number of notification
+	 * @return List of notifications
+	 */
+	public List<Notification> getNotifications(boolean seen, int nb);
+
+	/**
+	 * Return the notification received by the member.
+	 * 
+	 * @param seen
+	 *            Flag to return already seen notification or not
 	 * @param nb
 	 *            Number of notification
 	 * @param lastId
 	 *            Start of the last notification
+	 * @return List of notifications
 	 */
 	public List<Notification> getNotifications(boolean seen, int nb, int lastId);
+
+	/**
+	 * Return the notification received by the member.
+	 * 
+	 * @param nb
+	 *            Number of notification
+	 * @return List of notifications
+	 */
+	public List<Notification> getNotifications(int nb);
 
 	/**
 	 * Return information about the logged user

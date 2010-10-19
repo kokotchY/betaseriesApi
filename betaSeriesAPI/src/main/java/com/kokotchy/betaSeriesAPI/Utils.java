@@ -144,6 +144,37 @@ public class Utils {
 	}
 
 	/**
+	 * Read a boolean from the node
+	 * 
+	 * @param node
+	 *            Node
+	 * @param name
+	 *            Name of the key
+	 * @return True if the value is 1, false otherwise
+	 */
+	public static boolean readBoolean(Node node, String name) {
+		return readInt(node, name) == 1;
+	}
+
+	/**
+	 * Read an int from the node
+	 * 
+	 * @param node
+	 *            Node
+	 * @param name
+	 *            Name of the key
+	 * @return Integer
+	 */
+	public static int readInt(Node node, String name) {
+		String text = readString(node, name);
+		if (text != null) {
+			return Integer.parseInt(text);
+		} else {
+			return -1;
+		}
+	}
+
+	/**
 	 * Read the element of the node
 	 * 
 	 * @param node
@@ -152,7 +183,7 @@ public class Utils {
 	 *            Element to retrieve
 	 * @return Value of the element of the node
 	 */
-	public static String readNode(Node node, String string) {
+	public static String readString(Node node, String string) {
 		Node selectedNode = node.selectSingleNode(string);
 		if (selectedNode != null) {
 			return selectedNode.getText();

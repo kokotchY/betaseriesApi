@@ -1,11 +1,28 @@
 package com.kokotchy.betaSeriesAPI.model;
 
+import org.dom4j.Node;
+
+import com.kokotchy.betaSeriesAPI.Utils;
+
 /**
  * Model of a notification
  * 
  * @author kokotchy
  */
 public class Notification {
+
+	/**
+	 * @param node
+	 * @return
+	 */
+	public static Notification createNotification(Node node) {
+		Notification notification = new Notification();
+		notification.setId(Utils.readInt(node, "id"));
+		notification.setHtml(Utils.readString(node, "html"));
+		notification.setDate(Utils.readInt(node, "date"));
+		notification.setSeen(Utils.readBoolean(node, "seen"));
+		return notification;
+	}
 
 	/**
 	 * Id of the notification
@@ -105,7 +122,6 @@ public class Notification {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return String.format("%s[%d] %s", !seen ? "*" : "", id, html);
 	}
 }
