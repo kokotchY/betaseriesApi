@@ -49,26 +49,6 @@ public interface ITimelines {
 	public List<Event> getHomeTimeline(int nb);
 
 	/**
-	 * Return the timeline of the logged user (max 100)
-	 * 
-	 * @param token
-	 *            Token
-	 * @return List of event
-	 */
-	public List<Event> getTimeline(String token);
-
-	/**
-	 * Return the timeline of the logged user limited by the number
-	 * 
-	 * @param token
-	 *            Token
-	 * @param nb
-	 *            Number of event
-	 * @return List of event
-	 */
-	public List<Event> getTimeline(String token, int nb);
-
-	/**
 	 * Return the timeline of the given user (max 100)
 	 * 
 	 * @param user

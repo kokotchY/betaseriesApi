@@ -1,11 +1,32 @@
 package com.kokotchy.betaSeriesAPI.model;
 
+import org.dom4j.Node;
+
+import com.kokotchy.betaSeriesAPI.Utils;
+
 /**
  * Model of an event
  * 
  * @author kokotchy
  */
 public class Event {
+
+	/**
+	 * Create a new event from a node
+	 * 
+	 * @param node
+	 *            Node
+	 * @return Event
+	 */
+	public static Event createEvent(Node node) {
+		Event event = new Event();
+		event.setType(Utils.readString(node, "type"));
+		event.setRef(Utils.readString(node, "ref"));
+		event.setLogin(Utils.readString(node, "login"));
+		event.setHtml(Utils.readString(node, "html"));
+		event.setDate(Utils.readInt(node, "date"));
+		return event;
+	}
 
 	/**
 	 * Type of the event
@@ -33,6 +54,11 @@ public class Event {
 	private int date;
 
 	/**
+	 * Html
+	 */
+	private String html;
+
+	/**
 	 * Return the date
 	 * 
 	 * @return the date
@@ -48,6 +74,15 @@ public class Event {
 	 */
 	public String getEvent() {
 		return event;
+	}
+
+	/**
+	 *Return the html
+	 * 
+	 * @return Return the html to get
+	 */
+	public String getHtml() {
+		return html;
 	}
 
 	/**
@@ -98,6 +133,16 @@ public class Event {
 	}
 
 	/**
+	 * Set the html
+	 * 
+	 * @param html
+	 *            Html
+	 */
+	public void setHtml(String html) {
+		this.html = html;
+	}
+
+	/**
 	 * Set the login
 	 * 
 	 * @param login
@@ -134,6 +179,9 @@ public class Event {
 	 *            the type to set
 	 */
 	public void setType(String type) {
+		if (type.equals("markas")) {
+			setType(EventType.MARKAS);
+		}
 	}
 
 	@Override

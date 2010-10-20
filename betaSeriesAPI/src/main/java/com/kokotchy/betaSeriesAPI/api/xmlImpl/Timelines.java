@@ -1,7 +1,14 @@
 package com.kokotchy.betaSeriesAPI.api.xmlImpl;
 
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
+import org.dom4j.Document;
+import org.dom4j.Node;
+
+import com.kokotchy.betaSeriesAPI.Utils;
 import com.kokotchy.betaSeriesAPI.api.ITimelines;
 import com.kokotchy.betaSeriesAPI.model.Event;
 
@@ -12,52 +19,75 @@ import com.kokotchy.betaSeriesAPI.model.Event;
  */
 public class Timelines implements ITimelines {
 
+	/**
+	 * API Key
+	 */
+	private String apiKey;
+
+	/**
+	 * Timelines
+	 * 
+	 * @param apiKey
+	 *            API key
+	 */
+	public Timelines(String apiKey) {
+		this.apiKey = apiKey;
+	}
+
 	@Override
 	public List<Event> getFriendsTimeline(String token) {
-		// TODO Auto-generated method stub
-		return null;
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("token", token);
+		return getTimeline(Utils.executeQuery("timeline/friends.xml", apiKey, params));
 	}
 
 	@Override
 	public List<Event> getFriendsTimeline(String token, int nb) {
-		// TODO Auto-generated method stub
-		return null;
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("token", token);
+		params.put("number", "" + nb);
+		return getTimeline(Utils.executeQuery("timeline/friends.xml", apiKey, params));
 	}
 
 	@Override
 	public List<Event> getHomeTimeline() {
-		// TODO Auto-generated method stub
-		return null;
+		return getTimeline(Utils.executeQuery("timeline/home.xml", apiKey));
+	}
+
+	/**
+	 * Return the timeline from the document
+	 * 
+	 * @param document
+	 *            Document
+	 * @return List of event
+	 */
+	@SuppressWarnings("unchecked")
+	private List<Event> getTimeline(Document document) {
+		List<Event> events = new LinkedList<Event>();
+		List<Node> nodes = document.selectNodes("/root/timeline/item");
+		for (Node node : nodes) {
+			events.add(Event.createEvent(node));
+		}
+		return events;
 	}
 
 	@Override
 	public List<Event> getHomeTimeline(int nb) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Event> getTimeline(String token) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Event> getTimeline(String token, int nb) {
-		// TODO Auto-generated method stub
-		return null;
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("number", "" + nb);
+		return getTimeline(Utils.executeQuery("timeline/home.xml", apiKey, params));
 	}
 
 	@Override
 	public List<Event> getTimelineOfUser(String user) {
-		// TODO Auto-generated method stub
-		return null;
+		return getTimeline(Utils.executeQuery("timeline/member/" + user + ".xml", apiKey));
 	}
 
 	@Override
 	public List<Event> getTimelineOfUser(String user, int nb) {
-		// TODO Auto-generated method stub
-		return null;
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("number", "" + nb);
+		return getTimeline(Utils.executeQuery("timeline/member/" + user + ".xml", apiKey, params));
 	}
 
 }
