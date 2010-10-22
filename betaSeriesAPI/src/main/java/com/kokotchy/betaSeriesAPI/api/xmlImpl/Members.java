@@ -19,7 +19,6 @@ import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
  * Members API
  * 
  * @author kokotchy
- * 
  */
 public class Members implements IMembers {
 
@@ -50,7 +49,7 @@ public class Members implements IMembers {
 		params.put("password", Utils.getMD5(password));
 		Document document = Utils.executeQuery("members/auth.xml", apiKey,
 				params);
-		if (document.selectSingleNode("/root/code").getText().equals("1")) {
+		if (!Utils.hasErrors(document)) {
 			Node tokenNode = document.selectSingleNode("/root/member/token");
 			token = tokenNode.getText();
 			return true;
@@ -140,7 +139,6 @@ public class Members implements IMembers {
 
 	/**
 	 * Return the notifications with the given parameter.
-	 * 
 	 * Conditions for the parameters to be used:
 	 * <ul>
 	 * <li>seen has not to be null</li>

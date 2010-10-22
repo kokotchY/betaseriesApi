@@ -16,15 +16,20 @@ import com.kokotchy.betaSeriesAPI.model.Episode;
  * Planning API
  * 
  * @author kokotchy
- * 
  */
 public class Planning implements IPlanning {
 
 	/**
-	 * 
+	 * Api key
 	 */
 	private String apiKey;
 
+	/**
+	 * Create a new planning with the key
+	 * 
+	 * @param apiKey
+	 *            Api key
+	 */
 	public Planning(String apiKey) {
 		this.apiKey = apiKey;
 	}
@@ -45,8 +50,14 @@ public class Planning implements IPlanning {
 	}
 
 	/**
+	 * Return the planning. If all parameters are null, return the general planning.
+	 * Unseen parameter used to select only unseen episodes.
+	 * Token is used for the identified user if identifiedUser, or the login of the user if not identifiedUser
+	 * 
 	 * @param unseen
+	 *            Only uneseen erpisode
 	 * @param token
+	 *            If identifiedUser => identified user toke, otherwise login of the member
 	 * @param identifiedUser
 	 * @return
 	 */

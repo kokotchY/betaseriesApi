@@ -91,24 +91,19 @@ public class Shows implements IShows {
 	@SuppressWarnings("unchecked")
 	private List<Season> getEpisodesFromSeason(String url, int seasonNb) {
 		Document document = null;
+		Map<String, String> params = new HashMap<String, String>();
 		if (seasonNb > 0) {
-			Map<String, String> params = new HashMap<String, String>();
 			params.put("season", "" + seasonNb);
-			document = Utils.executeQuery("shows/episodes/" + url + ".xml",
-					apiKey, params);
-		} else {
-			document = Utils.executeQuery("shows/episodes/" + url + ".xml",
-					apiKey);
 		}
-
+		document = Utils.executeQuery("shows/episodes/" + url + ".xml",
+				apiKey, params);
 		List<Node> seasons = document.selectNodes("/root/seasons/season");
 		List<Season> result = new LinkedList<Season>();
 		for (Node node : seasons) {
 			Season season = new Season(Utils.readInt(node, "number"));
 			List<Node> episodes = node.selectNodes("episodes/episode");
 			for (Node episodeNode : episodes) {
-				Episode episode = Episode.createEpisode(episodeNode);
-				season.addEpisode(episode);
+				season.addEpisode(Episode.createEpisode(episodeNode));
 			}
 			result.add(season);
 		}
@@ -132,12 +127,10 @@ public class Shows implements IShows {
 		Document document = Utils.executeQuery("shows/search.xml", apiKey,
 				params);
 		List<Show> shows = new LinkedList<Show>();
-		if (document.selectSingleNode("/root/code").getText().equals("1")) {
+		if (!Utils.hasErrors(document)) {
 			List<Node> nodes = document.selectNodes("/root/shows/show");
 			for (Node showNode : nodes) {
-				Show show = new Show();
-				show.setUrl(showNode.selectSingleNode("url").getText());
-				show.setTitle(showNode.selectSingleNode("title").getText());
+				Show show = Show.createShow(showNode);
 				shows.add(show);
 			}
 		}

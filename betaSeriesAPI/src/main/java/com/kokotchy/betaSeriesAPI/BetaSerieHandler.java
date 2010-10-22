@@ -7,6 +7,8 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import com.kokotchy.betaSeriesAPI.model.Error;
+
 /**
  * Handler to parse the resulting document
  * 
@@ -33,12 +35,12 @@ public class BetaSerieHandler extends DefaultHandler {
 	/**
 	 * List of errors
 	 */
-	private List<BetaSerieError> errors = new LinkedList<BetaSerieError>();
+	private List<Error> errors = new LinkedList<Error>();
 
 	/**
 	 * Current parsed error
 	 */
-	private BetaSerieError currentError;
+	private Error currentError;
 
 	/**
 	 * Token of the user
@@ -75,7 +77,7 @@ public class BetaSerieHandler extends DefaultHandler {
 	 * 
 	 * @return the errors
 	 */
-	public List<BetaSerieError> getErrors() {
+	public List<Error> getErrors() {
 		return errors;
 	}
 
@@ -139,7 +141,7 @@ public class BetaSerieHandler extends DefaultHandler {
 		} else if (qName.equals("error")) {
 			int code = Integer.parseInt(attributes.getValue(attributes
 					.getIndex("code")));
-			currentError = new BetaSerieError(code);
+			currentError = new Error(code);
 			buffer = new StringBuffer();
 		} else if (qName.equals("token")) {
 			buffer = new StringBuffer();

@@ -10,6 +10,7 @@ import java.net.URLConnection;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -19,13 +20,19 @@ import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Node;
 
+import com.kokotchy.betaSeriesAPI.model.Error;
+
 /**
  * Utils
  * 
  * @author kokotchy
- * 
  */
 public class Utils {
+
+	/**
+	 *
+	 */
+	private static String host = "api.betaseries.com";
 
 	/**
 	 * Execute the action to betaserie server with the api key
@@ -53,12 +60,12 @@ public class Utils {
 	 */
 	public static Document executeQuery(String action, String apiKey,
 			Map<String, String> params) {
-		String uriPattern = "http://api.betaseries.com/%s?%s";
+		String uriPattern = "http://%s/%s?%s";
 		params.put("key", apiKey);
 		URL url = null;
 		URLConnection connection = null;
 		try {
-			url = new URL(String.format(uriPattern, action,
+			url = new URL(String.format(uriPattern, host, action,
 					getParamAsString(params)));
 			connection = url.openConnection();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
@@ -88,6 +95,23 @@ public class Utils {
 	}
 
 	/**
+	 * Return the errors from the document
+	 * 
+	 * @param document
+	 *            Document
+	 * @return List of error
+	 */
+	@SuppressWarnings("unchecked")
+	public static List<Error> getErrors(Document document) {
+		List<Error> errors = new LinkedList<Error>();
+		List<Node> nodes = document.selectNodes("/root/errors/error");
+		for (Node node : nodes) {
+			errors.add(Error.createError(node));
+		}
+		return errors;
+	}
+
+	/**
 	 * Return the md5 of the given text
 	 * 
 	 * @param text
@@ -100,8 +124,8 @@ public class Utils {
 			MessageDigest msgDigest = MessageDigest.getInstance("MD5");
 			msgDigest.update(text.getBytes("UTF-8"));
 			byte[] digest = msgDigest.digest();
-			for (int i = 0; i < digest.length; i++) {
-				int value = digest[i];
+			for (byte element : digest) {
+				int value = element;
 				if (value < 0) {
 					value += 256;
 				}
@@ -148,6 +172,7 @@ public class Utils {
 	 */
 	@SuppressWarnings("unchecked")
 	public static boolean hasErrors(Document document) {
+		// return document.selectSingleNode("/root/code").getText().equals("0");
 		List<Node> selectNodes = document.selectNodes("/root/errors/error");
 		return selectNodes.size() > 0;
 	}
@@ -198,5 +223,14 @@ public class Utils {
 			return selectedNode.getText();
 		}
 		return null;
+	}
+
+	/**
+	 * TODO Fill it
+	 * Set the field with the given value
+	 * host
+	 */
+	public static void setHost(String host) {
+		Utils.host = host;
 	}
 }
