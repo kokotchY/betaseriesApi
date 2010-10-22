@@ -64,12 +64,13 @@ public class Utils {
 		params.put("key", apiKey);
 		URL url = null;
 		URLConnection connection = null;
+		BufferedReader reader = null;
 		try {
 			url = new URL(String.format(uriPattern, host, action,
 					getParamAsString(params)));
 			connection = url.openConnection();
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					connection.getInputStream()));
+			reader = new BufferedReader(new InputStreamReader(connection
+					.getInputStream()));
 			StringBuffer buffer = new StringBuffer();
 			String line = "";
 			while ((line = reader.readLine()) != null) {
@@ -87,6 +88,7 @@ public class Utils {
 		} finally {
 			try {
 				connection.getInputStream().close();
+				reader.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -226,9 +228,7 @@ public class Utils {
 	}
 
 	/**
-	 * TODO Fill it
-	 * Set the field with the given value
-	 * host
+	 * TODO Fill it Set the field with the given value host
 	 */
 	public static void setHost(String host) {
 		Utils.host = host;
