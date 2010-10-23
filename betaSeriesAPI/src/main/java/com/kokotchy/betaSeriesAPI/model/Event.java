@@ -186,7 +186,7 @@ public class Event {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		String format = "[%s] %s";
+		return String.format(format, type, event);
 	}
 }

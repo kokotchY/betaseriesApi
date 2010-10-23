@@ -218,7 +218,7 @@ public class Subtitle {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		String format = "[%s] S%dE%d %s";
+		return String.format(format, language, season, episode, title);
 	}
 }

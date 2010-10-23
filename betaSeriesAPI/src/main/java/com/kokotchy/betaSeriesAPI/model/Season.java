@@ -82,8 +82,7 @@ public class Season {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "S" + number;
 	}
 
 }
