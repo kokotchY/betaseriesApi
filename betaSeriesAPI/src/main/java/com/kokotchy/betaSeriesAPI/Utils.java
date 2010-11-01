@@ -30,6 +30,11 @@ import com.kokotchy.betaSeriesAPI.model.Error;
 public class Utils {
 
 	/**
+	 * TODO Fill it
+	 */
+	private static final String USER_AGENT = "kokotchY Java API";
+
+	/**
 	 *
 	 */
 	private static String host = "api.betaseries.com";
@@ -69,6 +74,7 @@ public class Utils {
 			url = new URL(String.format(uriPattern, host, action,
 					getParamAsString(params)));
 			connection = url.openConnection();
+			connection.setRequestProperty("User-Agent", USER_AGENT);
 			reader = new BufferedReader(new InputStreamReader(connection
 					.getInputStream()));
 			StringBuffer buffer = new StringBuffer();

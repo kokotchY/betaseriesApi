@@ -15,14 +15,12 @@ import com.kokotchy.betaSeriesAPI.Utils;
 public class Show {
 
 	/**
-	 * Status of a show
-	 * TODO Translate in english
+	 * Status of a show TODO Translate in english
 	 * 
 	 * @author kokotchy
 	 */
 	public enum ShowStatus {
-		EN_COURS,
-		FINI,
+		CONTINUING, ENDED,
 	};
 
 	/**
@@ -201,9 +199,9 @@ public class Show {
 	private void setStatus(String status) {
 		if (status != null) {
 			if (status.equals("encours")) {
-				setStatus(ShowStatus.EN_COURS);
+				setStatus(ShowStatus.CONTINUING);
 			} else if (status.equals("fini")) {
-				setStatus(ShowStatus.FINI);
+				setStatus(ShowStatus.ENDED);
 			}
 		}
 	}

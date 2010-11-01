@@ -25,8 +25,8 @@ public class Stats {
 		stats.setEpisodes(Utils.readInt(node, "episodes"));
 		stats.setProgress(Utils.readString(node, "progress"));
 		stats.setEpisodesToWatch(Utils.readInt(node, "episodes_to_watch"));
-		stats.setTimeOnTv(Utils.readString(node, "time_on_tv"));
-		stats.setTimeToSpend(Utils.readString(node, "time_to_spend"));
+		stats.setTimeOnTv(Utils.readInt(node, "time_on_tv"));
+		stats.setTimeToSpend(Utils.readInt(node, "time_to_spend"));
 		return stats;
 	}
 
@@ -60,12 +60,12 @@ public class Stats {
 	/**
 	 * Time spended watching episodes
 	 */
-	private String timeOnTv;
+	private int timeOnTv;
 
 	/**
 	 * Remaining time to watch remaining episodes
 	 */
-	private String timeToSpend;
+	private int timeToSpend;
 
 	/**
 	 * Return number of episodes
@@ -117,7 +117,7 @@ public class Stats {
 	 * 
 	 * @return the timeOnTv
 	 */
-	public String getTimeOnTv() {
+	public int getTimeOnTv() {
 		return timeOnTv;
 	}
 
@@ -126,7 +126,7 @@ public class Stats {
 	 * 
 	 * @return the timeToSpend
 	 */
-	public String getTimeToSpend() {
+	public int getTimeToSpend() {
 		return timeToSpend;
 	}
 
@@ -181,12 +181,12 @@ public class Stats {
 	}
 
 	/**
-	 * Set the time spended watching episodes
+	 * Set the time spended watching episodes (in seconds)
 	 * 
 	 * @param timeOnTv
 	 *            the timeOnTv to set
 	 */
-	public void setTimeOnTv(String timeOnTv) {
+	public void setTimeOnTv(int timeOnTv) {
 		this.timeOnTv = timeOnTv;
 	}
 
@@ -196,7 +196,7 @@ public class Stats {
 	 * @param timeToSpend
 	 *            the timeToSpend to set
 	 */
-	public void setTimeToSpend(String timeToSpend) {
+	public void setTimeToSpend(int timeToSpend) {
 		this.timeToSpend = timeToSpend;
 	}
 

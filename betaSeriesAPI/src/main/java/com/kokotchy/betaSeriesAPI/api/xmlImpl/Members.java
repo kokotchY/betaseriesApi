@@ -138,8 +138,8 @@ public class Members implements IMembers {
 	}
 
 	/**
-	 * Return the notifications with the given parameter.
-	 * Conditions for the parameters to be used:
+	 * Return the notifications with the given parameter. Conditions for the
+	 * parameters to be used:
 	 * <ul>
 	 * <li>seen has not to be null</li>
 	 * <li>nb greater than 0</li>
@@ -196,6 +196,16 @@ public class Members implements IMembers {
 	@Override
 	public Member infosOfUser(String user) {
 		return getInfosForUser(user, false);
+	}
+
+	@Override
+	public boolean isActive(String token) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("token", token);
+		Document document = Utils.executeQuery("members/is_active.xml", apiKey,
+				params);
+		Node node = document.selectSingleNode("/root");
+		return Utils.readBoolean(node, "code");
 	}
 
 	@Override

@@ -103,6 +103,14 @@ public interface IMembers {
 	public Member infosOfUser(String user);
 
 	/**
+	 * TODO Fill it
+	 * 
+	 * @param token
+	 * @return
+	 */
+	public boolean isActive(String token);
+
+	/**
 	 * Reset the serie
 	 * 
 	 * @param token
