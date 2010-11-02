@@ -49,7 +49,7 @@ public class Shows implements IShows {
 	public Show display(String url) {
 		Document document = Utils.executeQuery("shows/display/" + url + ".xml",
 				apiKey);
-		if (Utils.hasErrors(document)) {
+		if (!Utils.hasErrors(document)) {
 			return Show.createShow(document.selectSingleNode("/root/show"));
 		}
 
@@ -95,8 +95,8 @@ public class Shows implements IShows {
 		if (seasonNb > 0) {
 			params.put("season", "" + seasonNb);
 		}
-		document = Utils.executeQuery("shows/episodes/" + url + ".xml",
-				apiKey, params);
+		document = Utils.executeQuery("shows/episodes/" + url + ".xml", apiKey,
+				params);
 		List<Node> seasons = document.selectNodes("/root/seasons/season");
 		List<Season> result = new LinkedList<Season>();
 		for (Node node : seasons) {

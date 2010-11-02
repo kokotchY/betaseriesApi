@@ -8,7 +8,7 @@ import org.dom4j.Node;
 import com.kokotchy.betaSeriesAPI.Utils;
 
 /**
- * TODO Fill it
+ * A version of the api
  * 
  * @author kokotchy
  * 
@@ -16,10 +16,11 @@ import com.kokotchy.betaSeriesAPI.Utils;
 public class Version {
 
 	/**
-	 * TODO Fill it
+	 * Create a version from the node
 	 * 
 	 * @param node
-	 * @return
+	 *            Node
+	 * @return Version
 	 */
 	@SuppressWarnings("unchecked")
 	public static Version createVersion(Node node) {
@@ -35,26 +36,27 @@ public class Version {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Date
 	 */
 	private int date;
 
 	/**
-	 * TODO Fill it
+	 * List of changes
 	 */
 	private List<Change> changes = new LinkedList<Change>();
 
 	/**
-	 * TODO Fill it
+	 * Add a change
 	 * 
 	 * @param change
+	 *            Change
 	 */
 	private void addChange(Change change) {
 		changes.add(change);
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the changes
 	 * 
 	 * @return the changes
 	 */
@@ -63,7 +65,7 @@ public class Version {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the date
 	 * 
 	 * @return the date
 	 */
@@ -72,17 +74,7 @@ public class Version {
 	}
 
 	/**
-	 * TODO Fill it
-	 * 
-	 * @param changes
-	 *            the changes to set
-	 */
-	public void setChanges(List<Change> changes) {
-		this.changes = changes;
-	}
-
-	/**
-	 * TODO Fill it
+	 * Set the date
 	 * 
 	 * @param date
 	 *            the date to set

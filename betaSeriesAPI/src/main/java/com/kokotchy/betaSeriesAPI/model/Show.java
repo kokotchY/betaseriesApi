@@ -15,7 +15,7 @@ import com.kokotchy.betaSeriesAPI.Utils;
 public class Show {
 
 	/**
-	 * Status of a show TODO Translate in english
+	 * Status of a show
 	 * 
 	 * @author kokotchy
 	 */
@@ -38,12 +38,18 @@ public class Show {
 		show.setDescription(Utils.readString(node, "description"));
 		show.setStatus(Utils.readString(node, "status"));
 		show.setBanner(Utils.readString(node, "banner"));
+		show.setIdTvdb(Utils.readInt(node, "id_thetvdb"));
 		List<Node> genres = node.selectNodes("genres");
 		for (Node nodeGenre : genres) {
 			show.addGenre(Utils.readString(nodeGenre, "genre"));
 		}
 		return show;
 	}
+
+	/**
+	 * Id of the show on tvdb
+	 */
+	private int idTvdb;
 
 	/**
 	 * Url of the show
@@ -134,6 +140,15 @@ public class Show {
 	}
 
 	/**
+	 * Return the id of the show on tv db
+	 * 
+	 * @return the idTvdb
+	 */
+	public int getIdTvdb() {
+		return idTvdb;
+	}
+
+	/**
 	 * Return the status of the show
 	 * 
 	 * @return the status
@@ -178,6 +193,16 @@ public class Show {
 	 */
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	/**
+	 * Set the id of the show on tv db
+	 * 
+	 * @param idTvdb
+	 *            the idTvdb to set
+	 */
+	public void setIdTvdb(int idTvdb) {
+		this.idTvdb = idTvdb;
 	}
 
 	/**

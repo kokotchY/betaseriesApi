@@ -5,7 +5,7 @@ import org.dom4j.Node;
 import com.kokotchy.betaSeriesAPI.Utils;
 
 /**
- * TODO Fill it
+ * Change in the api
  * 
  * @author kokotchy
  * 
@@ -13,10 +13,11 @@ import com.kokotchy.betaSeriesAPI.Utils;
 public class Change {
 
 	/**
-	 * TODO Fill it
+	 * Create a new change from the node
 	 * 
 	 * @param node
-	 * @return
+	 *            Node
+	 * @return Change
 	 */
 	public static Change createChange(Node node) {
 		Change change = new Change();
@@ -26,17 +27,17 @@ public class Change {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Type of change
 	 */
 	private String type;
 
 	/**
-	 * TODO Fill it
+	 * Value of change
 	 */
 	private String value;
 
 	/**
-	 * TODO Fill it
+	 * Return the type of the change
 	 * 
 	 * @return the type
 	 */
@@ -45,7 +46,7 @@ public class Change {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the value of the change
 	 * 
 	 * @return the value
 	 */
@@ -54,7 +55,7 @@ public class Change {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Set the type of the change
 	 * 
 	 * @param type
 	 *            the type to set
@@ -64,7 +65,7 @@ public class Change {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Set the value of the change
 	 * 
 	 * @param value
 	 *            the value to set

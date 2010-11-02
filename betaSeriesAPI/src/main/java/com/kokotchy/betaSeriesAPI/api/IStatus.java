@@ -3,7 +3,7 @@ package com.kokotchy.betaSeriesAPI.api;
 import com.kokotchy.betaSeriesAPI.model.StatusInfo;
 
 /**
- * TODO Fill it
+ * Status of the site
  * 
  * @author kokotchy
  * 
@@ -11,9 +11,9 @@ import com.kokotchy.betaSeriesAPI.model.StatusInfo;
 public interface IStatus {
 
 	/**
-	 * TODO Fill it
+	 * Return the status of the site
 	 * 
-	 * @return
+	 * @return Status information
 	 */
 	public StatusInfo getStatus();
 }

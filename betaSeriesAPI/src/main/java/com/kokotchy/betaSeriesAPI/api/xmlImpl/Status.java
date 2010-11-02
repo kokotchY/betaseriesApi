@@ -7,7 +7,7 @@ import com.kokotchy.betaSeriesAPI.api.IStatus;
 import com.kokotchy.betaSeriesAPI.model.StatusInfo;
 
 /**
- * TODO Fill it
+ * Status of the website
  * 
  * @author kokotchy
  * 
@@ -15,14 +15,15 @@ import com.kokotchy.betaSeriesAPI.model.StatusInfo;
 public class Status implements IStatus {
 
 	/**
-	 * TODO Fill it
+	 * Api key
 	 */
 	private String apiKey;
 
 	/**
-	 * TODO Fill it
+	 * Create the status with the apiKey
 	 * 
 	 * @param apiKey
+	 *            Api key
 	 */
 	public Status(String apiKey) {
 		this.apiKey = apiKey;

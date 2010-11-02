@@ -9,7 +9,7 @@ import org.dom4j.Node;
 import com.kokotchy.betaSeriesAPI.Utils;
 
 /**
- * TODO Fill it
+ * Informations about the site
  * 
  * @author kokotchy
  * 
@@ -17,10 +17,11 @@ import com.kokotchy.betaSeriesAPI.Utils;
 public class StatusInfo {
 
 	/**
-	 * TODO Fill it
+	 * Create the status informations from the document
 	 * 
 	 * @param document
-	 * @return
+	 *            Document
+	 * @return Status informations
 	 */
 	@SuppressWarnings("unchecked")
 	public static StatusInfo createStatusInfo(Document document) {
@@ -46,50 +47,52 @@ public class StatusInfo {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Status of the database
 	 */
 	private String databaseStatus;
 
 	/**
-	 * TODO Fill it
+	 * Status of the website
 	 */
 	private String websiteStatus;
 
 	/**
-	 * TODO Fill it
+	 * Version of the api
 	 */
 	private String version;
 
 	/**
-	 * TODO Fill it
+	 * List of versions
 	 */
 	private List<Version> versions = new LinkedList<Version>();
 
 	/**
-	 * TODO Fill it
+	 * List of files
 	 */
 	private List<VersionFile> files = new LinkedList<VersionFile>();
 
 	/**
-	 * TODO Fill it
+	 * Add the version
 	 * 
 	 * @param version
+	 *            Version
 	 */
 	public void addVersion(Version version) {
 		versions.add(version);
 	}
 
 	/**
-	 * TODO Fill it
+	 * Add the version file
 	 * 
 	 * @param file
+	 *            File
 	 */
 	public void addVersionFile(VersionFile file) {
 		files.add(file);
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the status of the database
 	 * 
 	 * @return the databaseStatus
 	 */
@@ -98,7 +101,7 @@ public class StatusInfo {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the files
 	 * 
 	 * @return the files
 	 */
@@ -107,7 +110,7 @@ public class StatusInfo {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the version
 	 * 
 	 * @return the version
 	 */
@@ -116,7 +119,7 @@ public class StatusInfo {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the versions
 	 * 
 	 * @return the versions
 	 */
@@ -125,7 +128,7 @@ public class StatusInfo {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the status of the website
 	 * 
 	 * @return the websiteStatus
 	 */
@@ -134,7 +137,7 @@ public class StatusInfo {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Set the database status
 	 * 
 	 * @param databaseStatus
 	 */
@@ -143,17 +146,7 @@ public class StatusInfo {
 	}
 
 	/**
-	 * TODO Fill it
-	 * 
-	 * @param files
-	 *            the files to set
-	 */
-	public void setFiles(List<VersionFile> files) {
-		this.files = files;
-	}
-
-	/**
-	 * TODO Fill it
+	 * Set the version
 	 * 
 	 * @param version
 	 *            the version to set
@@ -163,17 +156,7 @@ public class StatusInfo {
 	}
 
 	/**
-	 * TODO Fill it
-	 * 
-	 * @param versions
-	 *            the versions to set
-	 */
-	public void setVersions(List<Version> versions) {
-		this.versions = versions;
-	}
-
-	/**
-	 * TODO Fill it
+	 * Set the status of the website
 	 * 
 	 * @param websiteStatus
 	 */

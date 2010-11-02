@@ -5,7 +5,7 @@ import org.dom4j.Node;
 import com.kokotchy.betaSeriesAPI.Utils;
 
 /**
- * TODO Fill it
+ * Version of a file
  * 
  * @author kokotchy
  * 
@@ -13,10 +13,11 @@ import com.kokotchy.betaSeriesAPI.Utils;
 public class VersionFile {
 
 	/**
-	 * TODO Fill it
+	 * Create a version file from node
 	 * 
 	 * @param node
-	 * @return
+	 *            Node
+	 * @return Version file
 	 */
 	public static VersionFile createVersionFile(Node node) {
 		VersionFile versionFile = new VersionFile();
@@ -26,17 +27,17 @@ public class VersionFile {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Name of the file
 	 */
 	private String name;
 
 	/**
-	 * TODO Fill it
+	 * Date of last change
 	 */
 	private int lastChange;
 
 	/**
-	 * TODO Fill it
+	 * Return the last change date
 	 * 
 	 * @return the lastChange
 	 */
@@ -45,7 +46,7 @@ public class VersionFile {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the name
 	 * 
 	 * @return the name
 	 */
@@ -54,7 +55,7 @@ public class VersionFile {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Set the last change
 	 * 
 	 * @param lastChange
 	 *            the lastChange to set
@@ -64,7 +65,7 @@ public class VersionFile {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Set the name
 	 * 
 	 * @param name
 	 *            the name to set

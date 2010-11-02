@@ -30,12 +30,12 @@ import com.kokotchy.betaSeriesAPI.model.Error;
 public class Utils {
 
 	/**
-	 * TODO Fill it
+	 * User agent
 	 */
 	private static final String USER_AGENT = "kokotchY Java API";
 
 	/**
-	 *
+	 * Host to connect
 	 */
 	private static String host = "api.betaseries.com";
 
@@ -234,7 +234,10 @@ public class Utils {
 	}
 
 	/**
-	 * TODO Fill it Set the field with the given value host
+	 * Set the host to connect
+	 * 
+	 * @param host
+	 *            Host
 	 */
 	public static void setHost(String host) {
 		Utils.host = host;

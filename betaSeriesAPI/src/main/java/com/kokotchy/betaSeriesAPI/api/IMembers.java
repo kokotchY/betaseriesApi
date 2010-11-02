@@ -103,10 +103,11 @@ public interface IMembers {
 	public Member infosOfUser(String user);
 
 	/**
-	 * TODO Fill it
+	 * Return true if the user is still active, false otherwise
 	 * 
 	 * @param token
-	 * @return
+	 *            Token of the user
+	 * @return True if active, false otherwise
 	 */
 	public boolean isActive(String token);
 
