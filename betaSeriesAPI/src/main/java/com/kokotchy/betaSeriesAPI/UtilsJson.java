@@ -30,6 +30,7 @@ public class UtilsJson {
 	public static JSONObject executeQuery(String action, String apiKey,
 			Map<String, String> params) {
 		params.put("key", apiKey);
+		BufferedReader reader = null;
 		try {
 			// String urlPattern = "http://%s/%s?%s";
 			// String host = "api.betaseries.com";
@@ -37,7 +38,7 @@ public class UtilsJson {
 			// .getParamAsString(params)));
 			File file = new File("/home/kokotchy/Desktop/betaseriejson/"
 					+ action);
-			BufferedReader reader = new BufferedReader(new FileReader(file));
+			reader = new BufferedReader(new FileReader(file));
 			String line = "";
 			StringBuffer json = new StringBuffer();
 			while ((line = reader.readLine()) != null) {
@@ -54,6 +55,13 @@ public class UtilsJson {
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			try {
+				reader.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return null;
 	}
