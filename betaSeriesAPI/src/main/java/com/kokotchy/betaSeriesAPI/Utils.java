@@ -137,7 +137,11 @@ public class Utils {
 				if (value < 0) {
 					value += 256;
 				}
-				buffer.append(Integer.toHexString(value));
+				if (value < 10) {
+					buffer.append("0" + Integer.toHexString(value));
+				} else {
+					buffer.append(Integer.toHexString(value));
+				}
 			}
 			return buffer.toString();
 		} catch (NoSuchAlgorithmException e) {

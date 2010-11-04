@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.dom4j.Node;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.Utils;
 
@@ -14,6 +16,25 @@ import com.kokotchy.betaSeriesAPI.Utils;
  * 
  */
 public class Episode {
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param json
+	 * @return
+	 */
+	public static Episode createEpisode(JSONObject json) {
+		Episode episode = new Episode();
+		try {
+			episode.setShow(json.getString("show"));
+			episode.setNb(json.getString("episode"));
+			episode.setShowUrl(json.getString("url"));
+			episode.setDate(json.getInt("date"));
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return episode;
+	}
 
 	/**
 	 * Create an episode from the node
@@ -48,6 +69,11 @@ public class Episode {
 	 * Number of the episode
 	 */
 	private String nb;
+
+	/**
+	 * TODO Fill it
+	 */
+	private String showUrl;
 
 	/**
 	 * Show of the episode
@@ -142,6 +168,15 @@ public class Episode {
 	}
 
 	/**
+	 * TODO Fill it
+	 * 
+	 * @return the showUrl
+	 */
+	public String getShowUrl() {
+		return showUrl;
+	}
+
+	/**
 	 * Return the subtitles for the episode
 	 * 
 	 * @return the subtitles
@@ -205,6 +240,16 @@ public class Episode {
 	 */
 	public void setShow(String show) {
 		this.show = show;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param showUrl
+	 *            the showUrl to set
+	 */
+	public void setShowUrl(String showUrl) {
+		this.showUrl = showUrl;
 	}
 
 	/**
