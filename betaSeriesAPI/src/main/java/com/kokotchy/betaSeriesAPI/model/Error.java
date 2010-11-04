@@ -2,7 +2,7 @@ package com.kokotchy.betaSeriesAPI.model;
 
 import org.dom4j.Node;
 
-import com.kokotchy.betaSeriesAPI.Utils;
+import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
  * Model of an error
@@ -19,7 +19,7 @@ public class Error {
 	 * @return Error
 	 */
 	public static Error createError(Node node) {
-		Error error = new Error(Utils.readInt(node, "#code"));
+		Error error = new Error(UtilsXml.readInt(node, "#code"));
 		error.setText(node.getText());
 		return error;
 	}

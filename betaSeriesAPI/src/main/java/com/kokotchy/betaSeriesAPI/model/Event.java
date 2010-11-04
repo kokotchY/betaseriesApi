@@ -2,7 +2,7 @@ package com.kokotchy.betaSeriesAPI.model;
 
 import org.dom4j.Node;
 
-import com.kokotchy.betaSeriesAPI.Utils;
+import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
  * Model of an event
@@ -20,11 +20,11 @@ public class Event {
 	 */
 	public static Event createEvent(Node node) {
 		Event event = new Event();
-		event.setType(Utils.readString(node, "type"));
-		event.setRef(Utils.readString(node, "ref"));
-		event.setLogin(Utils.readString(node, "login"));
-		event.setHtml(Utils.readString(node, "html"));
-		event.setDate(Utils.readInt(node, "date"));
+		event.setType(UtilsXml.readString(node, "type"));
+		event.setRef(UtilsXml.readString(node, "ref"));
+		event.setLogin(UtilsXml.readString(node, "login"));
+		event.setHtml(UtilsXml.readString(node, "html"));
+		event.setDate(UtilsXml.readInt(node, "date"));
 		return event;
 	}
 

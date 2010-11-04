@@ -8,7 +8,7 @@ import java.util.Map;
 import org.dom4j.Document;
 import org.dom4j.Node;
 
-import com.kokotchy.betaSeriesAPI.Utils;
+import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.api.IPlanning;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 
@@ -66,7 +66,7 @@ public class Planning implements IPlanning {
 			Boolean identifiedUser) {
 		Document document = null;
 		if (unseen == null && token == null && identifiedUser == null) {
-			document = Utils.executeQuery("planning/general.xml", apiKey);
+			document = UtilsXml.executeQuery("planning/general.xml", apiKey);
 		} else {
 			Map<String, String> params = new HashMap<String, String>();
 			String action;
@@ -79,7 +79,7 @@ public class Planning implements IPlanning {
 			} else {
 				action = "planning/member/" + token + ".xml";
 			}
-			document = Utils.executeQuery(action, apiKey, params);
+			document = UtilsXml.executeQuery(action, apiKey, params);
 		}
 
 		List<Node> nodes = document.selectNodes("/root/planning/episode");

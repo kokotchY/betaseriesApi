@@ -2,7 +2,7 @@ package com.kokotchy.betaSeriesAPI.model;
 
 import org.dom4j.Node;
 
-import com.kokotchy.betaSeriesAPI.Utils;
+import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
  * Version of a file
@@ -21,8 +21,8 @@ public class VersionFile {
 	 */
 	public static VersionFile createVersionFile(Node node) {
 		VersionFile versionFile = new VersionFile();
-		versionFile.setLastChange(Utils.readInt(node, "last_change"));
-		versionFile.setName(Utils.readString(node, "name"));
+		versionFile.setLastChange(UtilsXml.readInt(node, "last_change"));
+		versionFile.setName(UtilsXml.readString(node, "name"));
 		return versionFile;
 	}
 

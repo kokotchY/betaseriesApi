@@ -7,7 +7,7 @@ import org.dom4j.Node;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.kokotchy.betaSeriesAPI.Utils;
+import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
  * Episode API
@@ -46,16 +46,16 @@ public class Episode {
 	@SuppressWarnings("unchecked")
 	public static Episode createEpisode(Node node) {
 		Episode episode = new Episode();
-		String number = Utils.readString(node, "number");
+		String number = UtilsXml.readString(node, "number");
 		if (number == null) {
-			number = Utils.readString(node, "episode");
+			number = UtilsXml.readString(node, "episode");
 		}
 		episode.setNb(number);
-		episode.setDate(Utils.readInt(node, "date"));
-		episode.setTitle(Utils.readString(node, "title"));
-		episode.setDescription(Utils.readString(node, "description"));
-		episode.setScreen(Utils.readString(node, "screen"));
-		episode.setShow(Utils.readString(node, "show"));
+		episode.setDate(UtilsXml.readInt(node, "date"));
+		episode.setTitle(UtilsXml.readString(node, "title"));
+		episode.setDescription(UtilsXml.readString(node, "description"));
+		episode.setScreen(UtilsXml.readString(node, "screen"));
+		episode.setShow(UtilsXml.readString(node, "show"));
 
 		List<Node> subsNode = node.selectNodes("subs/sub");
 		for (Node sub : subsNode) {

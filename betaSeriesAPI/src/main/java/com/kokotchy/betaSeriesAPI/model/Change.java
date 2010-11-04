@@ -2,7 +2,7 @@ package com.kokotchy.betaSeriesAPI.model;
 
 import org.dom4j.Node;
 
-import com.kokotchy.betaSeriesAPI.Utils;
+import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
  * Change in the api
@@ -21,8 +21,8 @@ public class Change {
 	 */
 	public static Change createChange(Node node) {
 		Change change = new Change();
-		change.setType(Utils.readString(node, "type"));
-		change.setValue(Utils.readString(node, "value"));
+		change.setType(UtilsXml.readString(node, "type"));
+		change.setValue(UtilsXml.readString(node, "value"));
 		return change;
 	}
 

@@ -9,6 +9,7 @@ import org.dom4j.Document;
 import org.dom4j.Node;
 
 import com.kokotchy.betaSeriesAPI.Utils;
+import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.api.IMembers;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 import com.kokotchy.betaSeriesAPI.model.Member;
@@ -47,9 +48,9 @@ public class Members implements IMembers {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("login", login);
 		params.put("password", Utils.getMD5(password));
-		Document document = Utils.executeQuery("members/auth.xml", apiKey,
+		Document document = UtilsXml.executeQuery("members/auth.xml", apiKey,
 				params);
-		if (!Utils.hasErrors(document)) {
+		if (!UtilsXml.hasErrors(document)) {
 			Node tokenNode = document.selectSingleNode("/root/member/token");
 			token = tokenNode.getText();
 			return true;
@@ -61,7 +62,7 @@ public class Members implements IMembers {
 	public void destroy() {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
-		Utils.executeQuery("members/destroy.xml", apiKey, params);
+		UtilsXml.executeQuery("members/destroy.xml", apiKey, params);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -83,7 +84,7 @@ public class Members implements IMembers {
 		List<Episode> result = new LinkedList<Episode>();
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
-		Document document = Utils.executeQuery("members/episodes/" + lang
+		Document document = UtilsXml.executeQuery("members/episodes/" + lang
 				+ ".xml", apiKey, params);
 		List<Node> nodes = document.selectNodes("/root/episodes/episode");
 		for (Node node : nodes) {
@@ -107,12 +108,13 @@ public class Members implements IMembers {
 	private Member getInfosForUser(String user, boolean identifiedUser) {
 		Document document;
 		if (!identifiedUser) {
-			document = Utils.executeQuery("members/infos/" + user + ".xml",
+			document = UtilsXml.executeQuery("members/infos/" + user + ".xml",
 					apiKey);
 		} else {
 			Map<String, String> params = new HashMap<String, String>();
 			params.put("token", user);
-			document = Utils.executeQuery("members/infos.xml", apiKey, params);
+			document = UtilsXml.executeQuery("members/infos.xml", apiKey,
+					params);
 		}
 		return Member.createMember(document.selectSingleNode("/root/member"));
 	}
@@ -168,7 +170,7 @@ public class Members implements IMembers {
 			params.put("last_id", "" + lastId);
 		}
 		params.put("token", token);
-		Document document = Utils.executeQuery("members/notifications.xml",
+		Document document = UtilsXml.executeQuery("members/notifications.xml",
 				apiKey, params);
 		List<Node> nodes = document
 				.selectNodes("/root/notifications/notification");
@@ -202,10 +204,10 @@ public class Members implements IMembers {
 	public boolean isActive(String token) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
-		Document document = Utils.executeQuery("members/is_active.xml", apiKey,
-				params);
+		Document document = UtilsXml.executeQuery("members/is_active.xml",
+				apiKey, params);
 		Node node = document.selectSingleNode("/root");
-		return Utils.readBoolean(node, "code");
+		return UtilsXml.readBoolean(node, "code");
 	}
 
 	@Override
@@ -219,6 +221,7 @@ public class Members implements IMembers {
 		params.put("season", "" + season);
 		params.put("episode", "" + episode);
 		params.put("token", token);
-		Utils.executeQuery("members/watched/" + url + ".xml", apiKey, params);
+		UtilsXml
+				.executeQuery("members/watched/" + url + ".xml", apiKey, params);
 	}
 }

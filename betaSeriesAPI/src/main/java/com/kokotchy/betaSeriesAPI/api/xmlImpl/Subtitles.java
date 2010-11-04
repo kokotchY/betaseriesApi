@@ -8,7 +8,7 @@ import java.util.Map;
 import org.dom4j.Document;
 import org.dom4j.Node;
 
-import com.kokotchy.betaSeriesAPI.Utils;
+import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.api.ISubtitles;
 import com.kokotchy.betaSeriesAPI.model.Subtitle;
 import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
@@ -83,7 +83,7 @@ public class Subtitles implements ISubtitles {
 		} else {
 			action = "subtitles/last.xml";
 		}
-		Document document = Utils.executeQuery(action, apiKey, params);
+		Document document = UtilsXml.executeQuery(action, apiKey, params);
 		List<Node> nodes = document.selectNodes("/root/subtitles/subtitle");
 		for (Node node : nodes) {
 			subtitles.add(Subtitle.createSubtitle(node));
@@ -111,7 +111,7 @@ public class Subtitles implements ISubtitles {
 			break;
 		}
 
-		Document document = Utils.executeQuery(
+		Document document = UtilsXml.executeQuery(
 				"subtitles/show/" + url + ".xml", apiKey, params);
 		List<Node> nodes = document.selectNodes("/root/subtitles/subtitle");
 		List<Subtitle> subtitles = new LinkedList<Subtitle>();

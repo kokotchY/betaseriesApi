@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.dom4j.Node;
 
-import com.kokotchy.betaSeriesAPI.Utils;
+import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
  * A version of the api
@@ -25,7 +25,7 @@ public class Version {
 	@SuppressWarnings("unchecked")
 	public static Version createVersion(Node node) {
 		Version version = new Version();
-		version.setDate(Utils.readInt(node, "date"));
+		version.setDate(UtilsXml.readInt(node, "date"));
 
 		List<Node> changes = node.selectNodes("changes/change");
 		for (Node changeNode : changes) {

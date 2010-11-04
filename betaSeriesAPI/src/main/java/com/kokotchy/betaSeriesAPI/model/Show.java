@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.dom4j.Node;
 
-import com.kokotchy.betaSeriesAPI.Utils;
+import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
  * Model of a Show
@@ -24,15 +24,15 @@ public class Show {
 	@SuppressWarnings("unchecked")
 	public static Show createShow(Node node) {
 		Show show = new Show();
-		show.setTitle(Utils.readString(node, "title"));
-		show.setUrl(Utils.readString(node, "url"));
-		show.setDescription(Utils.readString(node, "description"));
-		show.setStatus(Utils.readString(node, "status"));
-		show.setBanner(Utils.readString(node, "banner"));
-		show.setIdTvdb(Utils.readInt(node, "id_thetvdb"));
+		show.setTitle(UtilsXml.readString(node, "title"));
+		show.setUrl(UtilsXml.readString(node, "url"));
+		show.setDescription(UtilsXml.readString(node, "description"));
+		show.setStatus(UtilsXml.readString(node, "status"));
+		show.setBanner(UtilsXml.readString(node, "banner"));
+		show.setIdTvdb(UtilsXml.readInt(node, "id_thetvdb"));
 		List<Node> genres = node.selectNodes("genres");
 		for (Node nodeGenre : genres) {
-			show.addGenre(Utils.readString(nodeGenre, "genre"));
+			show.addGenre(UtilsXml.readString(nodeGenre, "genre"));
 		}
 		return show;
 	}

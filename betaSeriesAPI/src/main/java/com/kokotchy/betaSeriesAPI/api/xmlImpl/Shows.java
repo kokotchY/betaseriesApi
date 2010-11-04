@@ -8,7 +8,7 @@ import java.util.Map;
 import org.dom4j.Document;
 import org.dom4j.Node;
 
-import com.kokotchy.betaSeriesAPI.Utils;
+import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.api.IShows;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 import com.kokotchy.betaSeriesAPI.model.Season;
@@ -40,16 +40,16 @@ public class Shows implements IShows {
 	public boolean add(String url, String token) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
-		Document document = Utils.executeQuery("shows/add/" + url + ".xml",
+		Document document = UtilsXml.executeQuery("shows/add/" + url + ".xml",
 				apiKey, params);
-		return !Utils.hasErrors(document);
+		return !UtilsXml.hasErrors(document);
 	}
 
 	@Override
 	public Show display(String url) {
-		Document document = Utils.executeQuery("shows/display/" + url + ".xml",
+		Document document = UtilsXml.executeQuery("shows/display/" + url + ".xml",
 				apiKey);
-		if (!Utils.hasErrors(document)) {
+		if (!UtilsXml.hasErrors(document)) {
 			return Show.createShow(document.selectSingleNode("/root/show"));
 		}
 
@@ -59,7 +59,7 @@ public class Shows implements IShows {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Show> displayAll() {
-		Document document = Utils.executeQuery("shows/display/all.xml", apiKey);
+		Document document = UtilsXml.executeQuery("shows/display/all.xml", apiKey);
 		List<Show> result = new LinkedList<Show>();
 		List<Node> nodes = document.selectNodes("/root/shows/show");
 		for (Node node : nodes) {
@@ -95,12 +95,12 @@ public class Shows implements IShows {
 		if (seasonNb > 0) {
 			params.put("season", "" + seasonNb);
 		}
-		document = Utils.executeQuery("shows/episodes/" + url + ".xml", apiKey,
+		document = UtilsXml.executeQuery("shows/episodes/" + url + ".xml", apiKey,
 				params);
 		List<Node> seasons = document.selectNodes("/root/seasons/season");
 		List<Season> result = new LinkedList<Season>();
 		for (Node node : seasons) {
-			Season season = new Season(Utils.readInt(node, "number"));
+			Season season = new Season(UtilsXml.readInt(node, "number"));
 			List<Node> episodes = node.selectNodes("episodes/episode");
 			for (Node episodeNode : episodes) {
 				season.addEpisode(Episode.createEpisode(episodeNode));
@@ -114,9 +114,9 @@ public class Shows implements IShows {
 	public boolean remove(String url, String token) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
-		Document document = Utils.executeQuery("shows/remove/" + url + ".xml",
+		Document document = UtilsXml.executeQuery("shows/remove/" + url + ".xml",
 				apiKey, params);
-		return !Utils.hasErrors(document);
+		return !UtilsXml.hasErrors(document);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -124,10 +124,10 @@ public class Shows implements IShows {
 	public List<Show> search(String title) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("title", title);
-		Document document = Utils.executeQuery("shows/search.xml", apiKey,
+		Document document = UtilsXml.executeQuery("shows/search.xml", apiKey,
 				params);
 		List<Show> shows = new LinkedList<Show>();
-		if (!Utils.hasErrors(document)) {
+		if (!UtilsXml.hasErrors(document)) {
 			List<Node> nodes = document.selectNodes("/root/shows/show");
 			for (Node showNode : nodes) {
 				Show show = Show.createShow(showNode);

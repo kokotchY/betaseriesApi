@@ -2,7 +2,7 @@ package com.kokotchy.betaSeriesAPI.model;
 
 import org.dom4j.Node;
 
-import com.kokotchy.betaSeriesAPI.Utils;
+import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
  * Model of a subtitle
@@ -20,11 +20,11 @@ public class Subtitle {
 	 */
 	public static Subtitle createSubtitle(Node node) {
 		Subtitle subtitle = new Subtitle();
-		subtitle.setTitle(Utils.readString(node, "title"));
-		subtitle.setSeason(Utils.readInt(node, "season"));
-		subtitle.setEpisode(Utils.readInt(node, "episode"));
+		subtitle.setTitle(UtilsXml.readString(node, "title"));
+		subtitle.setSeason(UtilsXml.readInt(node, "season"));
+		subtitle.setEpisode(UtilsXml.readInt(node, "episode"));
 
-		String language = Utils.readString(node, "language");
+		String language = UtilsXml.readString(node, "language");
 		if (language != null) {
 			if (language.equals("VF")) {
 				subtitle.setLanguage(SubtitleLanguage.VF);
@@ -39,9 +39,9 @@ public class Subtitle {
 			subtitle.setLanguage(SubtitleLanguage.UNKNOWN);
 		}
 
-		subtitle.setSource(Utils.readString(node, "source"));
-		subtitle.setFile(Utils.readString(node, "file"));
-		subtitle.setUrl(Utils.readString(node, "url"));
+		subtitle.setSource(UtilsXml.readString(node, "source"));
+		subtitle.setFile(UtilsXml.readString(node, "file"));
+		subtitle.setUrl(UtilsXml.readString(node, "url"));
 
 		return subtitle;
 	}

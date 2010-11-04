@@ -2,7 +2,7 @@ package com.kokotchy.betaSeriesAPI.model;
 
 import org.dom4j.Node;
 
-import com.kokotchy.betaSeriesAPI.Utils;
+import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
  * Model of statistics
@@ -20,13 +20,13 @@ public class Stats {
 	 */
 	public static Stats createStats(Node node) {
 		Stats stats = new Stats();
-		stats.setShows(Utils.readInt(node, "shows"));
-		stats.setSeasons(Utils.readInt(node, "seasons"));
-		stats.setEpisodes(Utils.readInt(node, "episodes"));
-		stats.setProgress(Utils.readString(node, "progress"));
-		stats.setEpisodesToWatch(Utils.readInt(node, "episodes_to_watch"));
-		stats.setTimeOnTv(Utils.readInt(node, "time_on_tv"));
-		stats.setTimeToSpend(Utils.readInt(node, "time_to_spend"));
+		stats.setShows(UtilsXml.readInt(node, "shows"));
+		stats.setSeasons(UtilsXml.readInt(node, "seasons"));
+		stats.setEpisodes(UtilsXml.readInt(node, "episodes"));
+		stats.setProgress(UtilsXml.readString(node, "progress"));
+		stats.setEpisodesToWatch(UtilsXml.readInt(node, "episodes_to_watch"));
+		stats.setTimeOnTv(UtilsXml.readInt(node, "time_on_tv"));
+		stats.setTimeToSpend(UtilsXml.readInt(node, "time_to_spend"));
 		return stats;
 	}
 

@@ -6,7 +6,7 @@ import java.util.List;
 import org.dom4j.Document;
 import org.dom4j.Node;
 
-import com.kokotchy.betaSeriesAPI.Utils;
+import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
  * Informations about the site
@@ -27,11 +27,11 @@ public class StatusInfo {
 	public static StatusInfo createStatusInfo(Document document) {
 		StatusInfo statusInfo = new StatusInfo();
 		Node websiteNode = document.selectSingleNode("/root/website");
-		statusInfo.setWebsiteStatus(Utils.readString(websiteNode, "status"));
-		statusInfo.setDatabaseStatus(Utils.readString(websiteNode, "database"));
+		statusInfo.setWebsiteStatus(UtilsXml.readString(websiteNode, "status"));
+		statusInfo.setDatabaseStatus(UtilsXml.readString(websiteNode, "database"));
 
 		Node apiNode = document.selectSingleNode("/root/api");
-		statusInfo.setVersion(Utils.readString(apiNode, "version"));
+		statusInfo.setVersion(UtilsXml.readString(apiNode, "version"));
 		List<Node> versions = apiNode.selectNodes("versions/version");
 		for (Node node : versions) {
 			Version version = Version.createVersion(node);

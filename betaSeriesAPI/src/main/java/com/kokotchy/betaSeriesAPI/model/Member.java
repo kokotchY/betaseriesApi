@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.dom4j.Node;
 
-import com.kokotchy.betaSeriesAPI.Utils;
+import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
  * Model of a member
@@ -24,8 +24,8 @@ public class Member {
 	@SuppressWarnings("unchecked")
 	public static Member createMember(Node node) {
 		Member member = new Member();
-		member.setLogin(Utils.readString(node, "login"));
-		member.setAvatar(Utils.readString(node, "avatar"));
+		member.setLogin(UtilsXml.readString(node, "login"));
+		member.setAvatar(UtilsXml.readString(node, "avatar"));
 		member.setStats(Stats.createStats(node.selectSingleNode("stats")));
 		List<Node> shows = node.selectNodes("shows/show");
 		for (Node show : shows) {

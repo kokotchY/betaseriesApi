@@ -8,7 +8,7 @@ import java.util.Map;
 import org.dom4j.Document;
 import org.dom4j.Node;
 
-import com.kokotchy.betaSeriesAPI.Utils;
+import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.api.ITimelines;
 import com.kokotchy.betaSeriesAPI.model.Event;
 
@@ -38,7 +38,7 @@ public class Timelines implements ITimelines {
 	public List<Event> getFriendsTimeline(String token) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
-		return getTimeline(Utils.executeQuery("timeline/friends.xml", apiKey, params));
+		return getTimeline(UtilsXml.executeQuery("timeline/friends.xml", apiKey, params));
 	}
 
 	@Override
@@ -46,12 +46,12 @@ public class Timelines implements ITimelines {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
 		params.put("number", "" + nb);
-		return getTimeline(Utils.executeQuery("timeline/friends.xml", apiKey, params));
+		return getTimeline(UtilsXml.executeQuery("timeline/friends.xml", apiKey, params));
 	}
 
 	@Override
 	public List<Event> getHomeTimeline() {
-		return getTimeline(Utils.executeQuery("timeline/home.xml", apiKey));
+		return getTimeline(UtilsXml.executeQuery("timeline/home.xml", apiKey));
 	}
 
 	/**
@@ -75,19 +75,19 @@ public class Timelines implements ITimelines {
 	public List<Event> getHomeTimeline(int nb) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("number", "" + nb);
-		return getTimeline(Utils.executeQuery("timeline/home.xml", apiKey, params));
+		return getTimeline(UtilsXml.executeQuery("timeline/home.xml", apiKey, params));
 	}
 
 	@Override
 	public List<Event> getTimelineOfUser(String user) {
-		return getTimeline(Utils.executeQuery("timeline/member/" + user + ".xml", apiKey));
+		return getTimeline(UtilsXml.executeQuery("timeline/member/" + user + ".xml", apiKey));
 	}
 
 	@Override
 	public List<Event> getTimelineOfUser(String user, int nb) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("number", "" + nb);
-		return getTimeline(Utils.executeQuery("timeline/member/" + user + ".xml", apiKey, params));
+		return getTimeline(UtilsXml.executeQuery("timeline/member/" + user + ".xml", apiKey, params));
 	}
 
 }

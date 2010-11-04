@@ -2,7 +2,7 @@ package com.kokotchy.betaSeriesAPI.model;
 
 import org.dom4j.Node;
 
-import com.kokotchy.betaSeriesAPI.Utils;
+import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
  * Model of a notification
@@ -17,10 +17,10 @@ public class Notification {
 	 */
 	public static Notification createNotification(Node node) {
 		Notification notification = new Notification();
-		notification.setId(Utils.readInt(node, "id"));
-		notification.setHtml(Utils.readString(node, "html"));
-		notification.setDate(Utils.readInt(node, "date"));
-		notification.setSeen(Utils.readBoolean(node, "seen"));
+		notification.setId(UtilsXml.readInt(node, "id"));
+		notification.setHtml(UtilsXml.readString(node, "html"));
+		notification.setDate(UtilsXml.readInt(node, "date"));
+		notification.setSeen(UtilsXml.readBoolean(node, "seen"));
 		return notification;
 	}
 
