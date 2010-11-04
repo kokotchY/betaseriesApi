@@ -69,7 +69,7 @@ public class Subtitle {
 	/**
 	 * Source
 	 */
-	private String source;
+	private SubtitleSource source;
 
 	/**
 	 * File
@@ -124,7 +124,7 @@ public class Subtitle {
 	 * 
 	 * @return the source
 	 */
-	public String getSource() {
+	public SubtitleSource getSource() {
 		return source;
 	}
 
@@ -187,12 +187,33 @@ public class Subtitle {
 	}
 
 	/**
+	 * TODO Fill it
+	 * 
+	 * @param source
+	 */
+	public void setSource(String source) {
+		if (source != null) {
+			if (source.equals("addic7ed")) {
+				setSource(SubtitleSource.ADDIC7ED);
+			} else if (source.equals("seriessub")) {
+				setSource(SubtitleSource.SERIESSUB);
+			} else if (source.equals("soustitres")) {
+				setSource(SubtitleSource.SOUSTITRES);
+			} else if (source.equals("tvsubtitles")) {
+				setSource(SubtitleSource.TVSUBTITLES);
+			} else if (source.equals("usub")) {
+				setSource(SubtitleSource.USUB);
+			}
+		}
+	}
+
+	/**
 	 * Set the source
 	 * 
 	 * @param source
 	 *            the source to set
 	 */
-	public void setSource(String source) {
+	public void setSource(SubtitleSource source) {
 		this.source = source;
 	}
 

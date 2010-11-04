@@ -179,8 +179,34 @@ public class Event {
 	 *            the type to set
 	 */
 	public void setType(String type) {
-		if (type.equals("markas")) {
+		if (type.equals("friend_add")) {
+			setType(EventType.FRIEND_ADD);
+		} else if (type.equals("friend_delete")) {
+			setType(EventType.FRIEND_DELETE);
+		} else if (type.equals("markas")) {
 			setType(EventType.MARKAS);
+		} else if (type.equals("add_serie")) {
+			setType(EventType.ADD_SERIE);
+		} else if (type.equals("del_serie")) {
+			setType(EventType.DEL_SERIE);
+		} else if (type.equals("archive")) {
+			setType(EventType.ARCHIVE);
+		} else if (type.equals("unarchive")) {
+			setType(EventType.UNARCHIVE);
+		} else if (type.equals("recommandation")) {
+			setType(EventType.RECOMMANDATION);
+		} else if (type.equals("recommandation_decline")) {
+			setType(EventType.RECOMMANDATION_DECLINE);
+		} else if (type.equals("recommandation_accept")) {
+			setType(EventType.RECOMMANDATION_ACCEPT);
+		} else if (type.equals("inscription")) {
+			setType(EventType.INSCRIPTION);
+		} else if (type.equals("update")) {
+			setType(EventType.UPDATE);
+		} else if (type.equals("subtitles")) {
+			setType(EventType.SUBTITLES);
+		} else if (type.equals("comment")) {
+			setType(EventType.COMMENT);
 		}
 	}
 

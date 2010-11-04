@@ -15,15 +15,6 @@ import com.kokotchy.betaSeriesAPI.Utils;
 public class Show {
 
 	/**
-	 * Status of a show
-	 * 
-	 * @author kokotchy
-	 */
-	public enum ShowStatus {
-		CONTINUING, ENDED,
-	};
-
-	/**
 	 * Create a show from a node
 	 * 
 	 * @param node
@@ -221,12 +212,16 @@ public class Show {
 	 * @param status
 	 *            Name of the status
 	 */
-	private void setStatus(String status) {
+	public void setStatus(String status) {
 		if (status != null) {
-			if (status.equals("encours")) {
+			if (status.equals("Continuing")) {
 				setStatus(ShowStatus.CONTINUING);
-			} else if (status.equals("fini")) {
+			} else if (status.equals("Ended")) {
 				setStatus(ShowStatus.ENDED);
+			} else if (status.equals("On Hiatus")) {
+				setStatus(ShowStatus.ON_HIATUS);
+			} else if (status.equals("Other")) {
+				setStatus(ShowStatus.OTHER);
 			}
 		}
 	}
