@@ -51,12 +51,10 @@ public class Members implements IMembers {
 		params.put("password", Utils.getMD5(password));
 		JSONObject object = UtilsJson.executeQuery("members/auth.json", apiKey,
 				params);
-		try {
-			token = object.getJSONObject("root").getJSONObject("member")
-					.getString("token");
+		if (!UtilsJson.hasErrors(object)) {
+			token = UtilsJson.getJSONStringFromPath(object,
+					"/root/member/token");
 			return true;
-		} catch (JSONException e) {
-			e.printStackTrace();
 		}
 		return false;
 	}
@@ -103,26 +101,79 @@ public class Members implements IMembers {
 
 	@Override
 	public List<Notification> getNotifications(boolean seen) {
-		// TODO Auto-generated method stub
-		return null;
+		return getNotificationsWithParameters(seen, -1, -1);
 	}
 
 	@Override
 	public List<Notification> getNotifications(boolean seen, int nb) {
-		// TODO Auto-generated method stub
-		return null;
+		return getNotificationsWithParameters(seen, nb, -1);
 	}
 
 	@Override
 	public List<Notification> getNotifications(boolean seen, int nb, int lastId) {
-		// TODO Auto-generated method stub
-		return null;
+		return getNotificationsWithParameters(seen, nb, lastId);
 	}
 
 	@Override
 	public List<Notification> getNotifications(int nb) {
-		// TODO Auto-generated method stub
-		return null;
+		return getNotificationsWithParameters(null, nb, -1);
+	}
+
+	/**
+	 * Return the notifications with the given parameter. Conditions for the
+	 * parameters to be used:
+	 * <ul>
+	 * <li>seen has not to be null</li>
+	 * <li>nb greater than 0</li>
+	 * <li>lastId greater than 0</li>
+	 * </ul>
+	 * 
+	 * @param seen
+	 *            If the notification has to be already seen or not
+	 * @param nb
+	 *            Number of notification
+	 * @param lastId
+	 *            Start of notification
+	 * @return List of notification
+	 */
+	@SuppressWarnings("unchecked")
+	private List<Notification> getNotificationsWithParameters(Boolean seen,
+			int nb, int lastId) {
+		Map<String, String> params = new HashMap<String, String>();
+		if (seen != null) {
+			params.put("seen", seen ? "yes" : "no");
+		}
+		if (nb > 0) {
+			params.put("number", "" + nb);
+		}
+		if (lastId > 0) {
+			params.put("last_id", "" + lastId);
+		}
+		params.put("token", token);
+		List<Notification> notifications = new LinkedList<Notification>();
+		// Document document =
+		// UtilsXml.executeQuery("members/notifications.xml",
+		// apiKey, params);
+		// List<Node> nodes = document
+		// .selectNodes("/root/notifications/notification");
+		// for (Node node : nodes) {
+		// notifications.add(Notification.createNotification(node));
+		// }
+		JSONObject jsonObject = UtilsJson.executeQuery(
+				"members/notifications.json", apiKey, params);
+		JSONArray notificationsArray = UtilsJson.getJSONArrayFromPath(
+				jsonObject, "/root/notifications");
+		try {
+			for (int i = 0; i < notificationsArray.length(); i++) {
+				JSONObject notification = notificationsArray.getJSONObject(i);
+				notifications
+						.add(Notification.createNotification(notification));
+			}
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return notifications;
 	}
 
 	/**

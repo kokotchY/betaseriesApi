@@ -67,20 +67,86 @@ public class UtilsJson {
 	 */
 	public static JSONArray getJSONArrayFromPath(JSONObject jsonObject,
 			String path) {
-		String[] split = path.split("/");
-		JSONObject object = jsonObject;
 		try {
-			for (int i = 0; i < split.length - 1; i++) {
-				String part = split[i].trim();
-				if (!part.isEmpty()) {
-					object = jsonObject.getJSONObject(part);
-				}
-			}
-			return object.getJSONArray(split[split.length - 1]);
+			String[] split = path.split("/");
+			return getLastObject(jsonObject, split).getJSONArray(
+					split[split.length - 1]);
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
 
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
+	 * @param path
+	 * @return
+	 */
+	public static boolean getJSONBooleanFromPath(JSONObject jsonObject,
+			String path) {
+		return getJSONIntFromPath(jsonObject, path) == 1;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
+	 * @param path
+	 * @return
+	 */
+	public static int getJSONIntFromPath(JSONObject jsonObject, String path) {
+		return Integer.parseInt(getJSONStringFromPath(jsonObject, path));
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
+	 * @param path
+	 * @return
+	 */
+	public static String getJSONStringFromPath(JSONObject jsonObject,
+			String path) {
+		String[] split = path.split("/");
+		try {
+			return getLastObject(jsonObject, split).getString(
+					split[split.length - 1]);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
+	 * @param split
+	 * @return
+	 * @throws JSONException
+	 */
+	private static JSONObject getLastObject(JSONObject jsonObject,
+			String[] split) throws JSONException {
+		JSONObject object = jsonObject;
+		for (int i = 0; i < split.length - 1; i++) {
+			String part = split[i].trim();
+			if (!part.isEmpty()) {
+				object = object.getJSONObject(part);
+			}
+		}
+		return object;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param object
+	 * @return
+	 */
+	public static boolean hasErrors(JSONObject object) {
+		return getJSONIntFromPath(object, "/root/code") == 0;
+	}
 }

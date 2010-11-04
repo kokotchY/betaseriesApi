@@ -1,7 +1,10 @@
 package com.kokotchy.betaSeriesAPI.model;
 
 import org.dom4j.Node;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
@@ -10,6 +13,27 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
  * @author kokotchy
  */
 public class Notification {
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
+	 * @return
+	 */
+	public static Notification createNotification(JSONObject jsonObject) {
+		Notification notification = new Notification();
+		try {
+			notification.setId(jsonObject.getInt("id"));
+			notification.setHtml(jsonObject.getString("html"));
+			notification.setDate(jsonObject.getInt("date"));
+			notification.setSeen(UtilsJson.getJSONBooleanFromPath(jsonObject,
+					"seen"));
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return notification;
+	}
 
 	/**
 	 * @param node
