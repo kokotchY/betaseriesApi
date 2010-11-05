@@ -1,6 +1,8 @@
 package com.kokotchy.betaSeriesAPI.model;
 
 import org.dom4j.Node;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
@@ -10,6 +12,29 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
  * @author kokotchy
  */
 public class Stats {
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
+	 * @return
+	 */
+	public static Stats createStats(JSONObject jsonObject) {
+		Stats stats = new Stats();
+		try {
+			stats.setShows(jsonObject.getInt("shows"));
+			stats.setSeasons(jsonObject.getInt("seasons"));
+			stats.setEpisodes(jsonObject.getInt("episodes"));
+			stats.setProgress(jsonObject.getString("progress"));
+			stats.setEpisodesToWatch(jsonObject.getInt("episodes_to_watch"));
+			stats.setTimeOnTv(jsonObject.getInt("time_on_tv"));
+			stats.setTimeToSpend(jsonObject.getInt("time_to_spend"));
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return stats;
+	}
 
 	/**
 	 * Create a new stat from the node

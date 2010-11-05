@@ -4,7 +4,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.dom4j.Node;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
@@ -13,6 +17,35 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
  * @author kokotchy
  */
 public class Show {
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param show
+	 * @return
+	 */
+	public static Show createShow(JSONObject jsonObject) {
+		Show show = new Show();
+		try {
+			show.setTitle(UtilsJson.getStringValue(jsonObject, "title"));
+			show.setUrl(UtilsJson.getStringValue(jsonObject, "url"));
+			show.setDescription(UtilsJson.getStringValue(jsonObject,
+					"description"));
+			show.setStatus(UtilsJson.getStringValue(jsonObject, "status"));
+			show.setBanner(UtilsJson.getStringValue(jsonObject, "banner"));
+			show.setIdTvdb(UtilsJson.getIntValue(jsonObject, "id_thetvdb"));
+			JSONArray genresArray = UtilsJson
+					.getJSONArray(jsonObject, "genres");
+			for (int i = 0; i < genresArray.length(); i++) {
+				JSONObject genre = genresArray.getJSONObject(i);
+				show.addGenre(UtilsJson.getStringValue(genre, "genre"));
+			}
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return show;
+	}
 
 	/**
 	 * Create a show from a node

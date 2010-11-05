@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.json.JSONArray;
@@ -18,6 +19,17 @@ import org.json.JSONObject;
  * 
  */
 public class UtilsJson {
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param action
+	 * @param apiKey
+	 * @return
+	 */
+	public static JSONObject executeQuery(String action, String apiKey) {
+		return executeQuery(action, apiKey, new HashMap<String, String>());
+	}
 
 	/**
 	 * TODO Fill it
@@ -70,6 +82,43 @@ public class UtilsJson {
 	 * TODO Fill it
 	 * 
 	 * @param jsonObject
+	 * @param name
+	 * @return
+	 */
+	public static int getIntValue(JSONObject jsonObject, String name) {
+		if (jsonObject.has(name)) {
+			try {
+				return jsonObject.getInt(name);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return 0;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
+	 * @param name
+	 * @return
+	 */
+	public static JSONArray getJSONArray(JSONObject jsonObject, String name) {
+		if (jsonObject.has(name)) {
+			try {
+				return jsonObject.getJSONArray(name);
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+		}
+		return new JSONArray();
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
 	 * @param path
 	 * @return
 	 */
@@ -112,6 +161,45 @@ public class UtilsJson {
 	 * TODO Fill it
 	 * 
 	 * @param jsonObject
+	 * @param name
+	 * @return
+	 */
+	public static JSONObject getJSONObject(JSONObject jsonObject, String name) {
+		if (jsonObject.has(name)) {
+			try {
+				return jsonObject.getJSONObject(name);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
+	 * @param path
+	 * @return
+	 */
+	public static JSONObject getJSONObjectFromPath(JSONObject jsonObject,
+			String path) {
+		String[] split = path.split("/");
+		try {
+			return getLastObject(jsonObject, split).getJSONObject(
+					split[split.length - 1]);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
 	 * @param path
 	 * @return
 	 */
@@ -146,6 +234,25 @@ public class UtilsJson {
 			}
 		}
 		return object;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
+	 * @param name
+	 * @return
+	 * @throws JSONException
+	 */
+	public static String getStringValue(JSONObject jsonObject, String name) {
+		if (jsonObject.has(name)) {
+			try {
+				return jsonObject.getString(name);
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
 	}
 
 	/**

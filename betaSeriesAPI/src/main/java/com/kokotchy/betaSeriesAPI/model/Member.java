@@ -4,7 +4,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.dom4j.Node;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
@@ -13,6 +17,31 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
  * @author kokotchy
  */
 public class Member {
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
+	 * @return
+	 */
+	public static Member createMember(JSONObject jsonObject) {
+		Member member = new Member();
+		try {
+			member.setLogin(UtilsJson.getStringValue(jsonObject, "login"));
+			member.setAvatar(UtilsJson.getStringValue(jsonObject, "avatar"));
+			member.setStats(Stats.createStats(UtilsJson.getJSONObject(
+					jsonObject, "stats")));
+			JSONArray showsArray = UtilsJson.getJSONArray(jsonObject, "shows");
+			for (int i = 0; i < showsArray.length(); i++) {
+				JSONObject show = showsArray.getJSONObject(i);
+				member.addShow(Show.createShow(show));
+			}
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return member;
+	}
 
 	/**
 	 * Create the member from the node

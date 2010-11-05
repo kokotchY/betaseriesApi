@@ -99,6 +99,33 @@ public class Members implements IMembers {
 		return result;
 	}
 
+	/**
+	 * Return the information about the user. If it is the identified user,
+	 * identifiedUser has to be true and user has to be the token. If
+	 * identifiedUser is false, then the user is the login of the user to
+	 * retrieve.
+	 * 
+	 * @param user
+	 *            User or token to retrieve
+	 * @param identifiedUser
+	 *            If user if the user or the token
+	 * @return Member informations
+	 */
+	private Member getInfosForUser(String user, boolean identifiedUser) {
+		JSONObject jsonObject;
+		if (!identifiedUser) {
+			jsonObject = UtilsJson.executeQuery("members/infos/" + user
+					+ ".json", apiKey);
+		} else {
+			Map<String, String> params = new HashMap<String, String>();
+			params.put("token", user);
+			jsonObject = UtilsJson.executeQuery("members/infos.json", apiKey,
+					params);
+		}
+		return Member.createMember(UtilsJson.getJSONObjectFromPath(jsonObject,
+				"/root/member"));
+	}
+
 	@Override
 	public List<Notification> getNotifications(boolean seen) {
 		return getNotificationsWithParameters(seen, -1, -1);
@@ -136,7 +163,6 @@ public class Members implements IMembers {
 	 *            Start of notification
 	 * @return List of notification
 	 */
-	@SuppressWarnings("unchecked")
 	private List<Notification> getNotificationsWithParameters(Boolean seen,
 			int nb, int lastId) {
 		Map<String, String> params = new HashMap<String, String>();
@@ -151,14 +177,6 @@ public class Members implements IMembers {
 		}
 		params.put("token", token);
 		List<Notification> notifications = new LinkedList<Notification>();
-		// Document document =
-		// UtilsXml.executeQuery("members/notifications.xml",
-		// apiKey, params);
-		// List<Node> nodes = document
-		// .selectNodes("/root/notifications/notification");
-		// for (Node node : nodes) {
-		// notifications.add(Notification.createNotification(node));
-		// }
 		JSONObject jsonObject = UtilsJson.executeQuery(
 				"members/notifications.json", apiKey, params);
 		JSONArray notificationsArray = UtilsJson.getJSONArrayFromPath(
@@ -187,14 +205,12 @@ public class Members implements IMembers {
 
 	@Override
 	public Member infos(String token) {
-		// TODO Auto-generated method stub
-		return null;
+		return getInfosForUser(token, true);
 	}
 
 	@Override
 	public Member infosOfUser(String user) {
-		// TODO Auto-generated method stub
-		return null;
+		return getInfosForUser(user, false);
 	}
 
 	@Override
