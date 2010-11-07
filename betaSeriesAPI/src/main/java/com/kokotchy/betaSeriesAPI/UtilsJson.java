@@ -267,7 +267,7 @@ public class UtilsJson {
 		JSONObject object = jsonObject;
 		for (int i = 0; i < split.length - 1; i++) {
 			String part = split[i].trim();
-			if (!part.isEmpty()) {
+			if (part.length() != 0) {
 				object = object.getJSONObject(part);
 			}
 		}
