@@ -1,7 +1,9 @@
 package com.kokotchy.betaSeriesAPI.model;
 
 import org.dom4j.Node;
+import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
@@ -11,6 +13,19 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
  * 
  */
 public class Change {
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param changeObject
+	 * @return
+	 */
+	public static Change createChange(JSONObject changeObject) {
+		Change change = new Change();
+		change.setType(UtilsJson.getStringValue(changeObject, "type"));
+		change.setValue(UtilsJson.getStringValue(changeObject, "value"));
+		return change;
+	}
 
 	/**
 	 * Create a new change from the node

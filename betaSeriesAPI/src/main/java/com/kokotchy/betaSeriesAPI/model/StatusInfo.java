@@ -5,7 +5,11 @@ import java.util.List;
 
 import org.dom4j.Document;
 import org.dom4j.Node;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
@@ -28,7 +32,8 @@ public class StatusInfo {
 		StatusInfo statusInfo = new StatusInfo();
 		Node websiteNode = document.selectSingleNode("/root/website");
 		statusInfo.setWebsiteStatus(UtilsXml.readString(websiteNode, "status"));
-		statusInfo.setDatabaseStatus(UtilsXml.readString(websiteNode, "database"));
+		statusInfo.setDatabaseStatus(UtilsXml.readString(websiteNode,
+				"database"));
 
 		Node apiNode = document.selectSingleNode("/root/api");
 		statusInfo.setVersion(UtilsXml.readString(apiNode, "version"));
@@ -42,6 +47,45 @@ public class StatusInfo {
 		for (Node node : files) {
 			VersionFile file = VersionFile.createVersionFile(node);
 			statusInfo.addVersionFile(file);
+		}
+		return statusInfo;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
+	 * @return
+	 */
+	public static StatusInfo createStatusInfo(JSONObject jsonObject) {
+		StatusInfo statusInfo = new StatusInfo();
+		JSONObject websiteObject = UtilsJson.getJSONObjectFromPath(jsonObject,
+				"/root/website");
+		statusInfo.setWebsiteStatus(UtilsJson.getStringValue(websiteObject,
+				"status"));
+		statusInfo.setDatabaseStatus(UtilsJson.getStringValue(websiteObject,
+				"database"));
+
+		JSONObject apiObject = UtilsJson.getJSONObjectFromPath(jsonObject,
+				"/root/api");
+		statusInfo.setVersion(UtilsJson.getStringValue(apiObject, "version"));
+		JSONArray versionsArray = UtilsJson.getJSONArray(apiObject, "versions");
+		try {
+			for (int i = 0; i < versionsArray.length(); i++) {
+				JSONObject versionObject = versionsArray.getJSONObject(i);
+				Version version = Version.createVersion(versionObject);
+				statusInfo.addVersion(version);
+			}
+
+			JSONArray filesArray = UtilsJson.getJSONArray(apiObject, "files");
+			for (int i = 0; i < filesArray.length(); i++) {
+				JSONObject fileObject = filesArray.getJSONObject(i);
+				VersionFile file = VersionFile.createVersionFile(fileObject);
+				statusInfo.addVersionFile(file);
+			}
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return statusInfo;
 	}

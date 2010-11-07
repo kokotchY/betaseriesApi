@@ -1,7 +1,9 @@
 package com.kokotchy.betaSeriesAPI.model;
 
 import org.dom4j.Node;
+import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
@@ -11,6 +13,20 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
  * 
  */
 public class VersionFile {
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param fileObject
+	 * @return
+	 */
+	public static VersionFile createVersionFile(JSONObject fileObject) {
+		VersionFile versionFile = new VersionFile();
+		versionFile.setLastChange(UtilsJson.getIntValue(fileObject,
+				"last_change"));
+		versionFile.setName(UtilsJson.getStringValue(fileObject, "name"));
+		return versionFile;
+	}
 
 	/**
 	 * Create a version file from node

@@ -4,7 +4,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.dom4j.Node;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
@@ -14,6 +18,30 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
  * 
  */
 public class Version {
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param versionObject
+	 * @return
+	 */
+	public static Version createVersion(JSONObject versionObject) {
+		Version version = new Version();
+		version.setDate(UtilsJson.getIntValue(versionObject, "date"));
+
+		JSONArray changesArray = UtilsJson.getJSONArray(versionObject,
+				"changes");
+		try {
+			for (int i = 0; i < changesArray.length(); i++) {
+				JSONObject changeObject = changesArray.getJSONObject(i);
+				version.addChange(Change.createChange(changeObject));
+			}
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+
+		return version;
+	}
 
 	/**
 	 * Create a version from the node
