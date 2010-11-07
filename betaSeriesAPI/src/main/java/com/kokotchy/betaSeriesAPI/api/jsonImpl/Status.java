@@ -1,5 +1,8 @@
 package com.kokotchy.betaSeriesAPI.api.jsonImpl;
 
+import org.json.JSONObject;
+
+import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.api.IStatus;
 import com.kokotchy.betaSeriesAPI.model.StatusInfo;
 
@@ -27,8 +30,8 @@ public class Status implements IStatus {
 
 	@Override
 	public StatusInfo getStatus() {
-		// TODO Auto-generated method stub
-		return null;
+		JSONObject jsonObject = UtilsJson.executeQuery("status.json", apiKey);
+		return StatusInfo.createStatusInfo(jsonObject);
 	}
 
 }
