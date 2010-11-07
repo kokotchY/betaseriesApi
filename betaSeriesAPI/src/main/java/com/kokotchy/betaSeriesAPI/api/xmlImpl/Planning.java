@@ -50,23 +50,25 @@ public class Planning implements IPlanning {
 	}
 
 	/**
-	 * Return the planning. If all parameters are null, return the general planning.
-	 * Unseen parameter used to select only unseen episodes.
-	 * Token is used for the identified user if identifiedUser, or the login of the user if not identifiedUser
+	 * Return the planning. If all parameters are null, return the general
+	 * planning. Unseen parameter used to select only unseen episodes. Token is
+	 * used for the identified user if identifiedUser, or the login of the user
+	 * if not identifiedUser
 	 * 
 	 * @param unseen
 	 *            Only uneseen erpisode
 	 * @param token
-	 *            If identifiedUser => identified user toke, otherwise login of the member
+	 *            If identifiedUser => identified user toke, otherwise login of
+	 *            the member
 	 * @param identifiedUser
-	 * @return
+	 * @return List of episodes
 	 */
 	@SuppressWarnings("unchecked")
 	private List<Episode> getPlanning(Boolean unseen, String token,
 			Boolean identifiedUser) {
 		Document document = null;
 		if (unseen == null && token == null && identifiedUser == null) {
-			document = UtilsXml.executeQuery("planning/general.xml", apiKey);
+			document = UtilsXml.executeQuery("planning/home.xml", apiKey);
 		} else {
 			Map<String, String> params = new HashMap<String, String>();
 			String action;

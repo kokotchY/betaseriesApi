@@ -15,10 +15,11 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
 public class Notification {
 
 	/**
-	 * TODO Fill it
+	 * Create a notification from json object
 	 * 
 	 * @param jsonObject
-	 * @return
+	 *            JSON object
+	 * @return Notification
 	 */
 	public static Notification createNotification(JSONObject jsonObject) {
 		Notification notification = new Notification();
@@ -29,15 +30,17 @@ public class Notification {
 			notification.setSeen(UtilsJson.getJSONBooleanFromPath(jsonObject,
 					"seen"));
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return notification;
 	}
 
 	/**
+	 * Create a notification from a node
+	 * 
 	 * @param node
-	 * @return
+	 *            Node
+	 * @return Notification
 	 */
 	public static Notification createNotification(Node node) {
 		Notification notification = new Notification();

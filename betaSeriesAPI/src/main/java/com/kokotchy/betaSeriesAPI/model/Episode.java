@@ -4,9 +4,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.dom4j.Node;
-import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
@@ -25,14 +25,11 @@ public class Episode {
 	 */
 	public static Episode createEpisode(JSONObject json) {
 		Episode episode = new Episode();
-		try {
-			episode.setShow(json.getString("show"));
-			episode.setNb(json.getString("episode"));
-			episode.setShowUrl(json.getString("url"));
-			episode.setDate(json.getInt("date"));
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
+		episode.setShow(UtilsJson.getStringValue(json, "show"));
+		episode.setNb(UtilsJson.getStringValue(json, "number"));
+		episode.setShowUrl(UtilsJson.getStringValue(json, "url"));
+		episode.setDate(UtilsJson.getIntValue(json, "date"));
+		episode.setTitle(UtilsJson.getStringValue(json, "title"));
 		return episode;
 	}
 

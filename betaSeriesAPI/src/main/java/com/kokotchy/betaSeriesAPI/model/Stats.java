@@ -14,10 +14,11 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
 public class Stats {
 
 	/**
-	 * TODO Fill it
+	 * Create stats from json Object
 	 * 
 	 * @param jsonObject
-	 * @return
+	 *            JSON Object
+	 * @return Stats
 	 */
 	public static Stats createStats(JSONObject jsonObject) {
 		Stats stats = new Stats();
@@ -30,7 +31,6 @@ public class Stats {
 			stats.setTimeOnTv(jsonObject.getInt("time_on_tv"));
 			stats.setTimeToSpend(jsonObject.getInt("time_to_spend"));
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return stats;

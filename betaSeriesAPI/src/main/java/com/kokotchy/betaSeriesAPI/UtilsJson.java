@@ -4,7 +4,10 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,44 +16,67 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * TODO Fill it
+ * Utils to handle json file
  * 
  * @author kokotchy
- * 
  */
 public class UtilsJson {
 
 	/**
+	 * Debug option
+	 */
+	public static boolean debug = false;
+
+	/**
 	 * TODO Fill it
+	 */
+	public static String debugPath;
+
+	/**
+	 * Execute the action with the api key
 	 * 
 	 * @param action
+	 *            Action to execute
 	 * @param apiKey
-	 * @return
+	 *            Api key
+	 * @return Resulting object
 	 */
 	public static JSONObject executeQuery(String action, String apiKey) {
 		return executeQuery(action, apiKey, new HashMap<String, String>());
 	}
 
 	/**
-	 * TODO Fill it
+	 * Execute the action with the api key and the params
 	 * 
 	 * @param action
+	 *            Action to execute
 	 * @param apiKey
+	 *            Api key
 	 * @param params
-	 * @return
+	 *            Parameters
+	 * @return Resulting object
 	 */
 	public static JSONObject executeQuery(String action, String apiKey,
 			Map<String, String> params) {
 		params.put("key", apiKey);
 		BufferedReader reader = null;
 		try {
-			// String urlPattern = "http://%s/%s?%s";
-			// String host = "api.betaseries.com";
-			// URL url = new URL(String.format(urlPattern, host, action, Utils
-			// .getParamAsString(params)));
-			File file = new File("/home/kokotchy/Desktop/betaseriejson/"
-					+ action);
-			reader = new BufferedReader(new FileReader(file));
+			if (!action.endsWith(".json")) {
+				action += ".json";
+			}
+			if (debug) {
+				System.out.println("Debug mode activated, use file");
+				File file = new File(debugPath + action);
+				reader = new BufferedReader(new FileReader(file));
+			} else {
+				String urlPattern = "http://%s/%s?%s";
+				String host = "api.betaseries.com";
+				URL url = new URL(String.format(urlPattern, host, action, Utils
+						.getParamAsString(params)));
+				URLConnection connection = url.openConnection();
+				reader = new BufferedReader(new InputStreamReader(connection
+						.getInputStream()));
+			}
 			String line = "";
 			StringBuffer json = new StringBuffer();
 			while ((line = reader.readLine()) != null) {
@@ -59,19 +85,15 @@ public class UtilsJson {
 			JSONObject result = new JSONObject(json.toString());
 			return result;
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			try {
 				reader.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -79,18 +101,19 @@ public class UtilsJson {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the int value with the given name
 	 * 
 	 * @param jsonObject
+	 *            Json object
 	 * @param name
-	 * @return
+	 *            Name
+	 * @return Int value
 	 */
 	public static int getIntValue(JSONObject jsonObject, String name) {
 		if (jsonObject.has(name)) {
 			try {
 				return jsonObject.getInt(name);
 			} catch (JSONException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -98,11 +121,13 @@ public class UtilsJson {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return a json array with the given name
 	 * 
 	 * @param jsonObject
+	 *            Json object
 	 * @param name
-	 * @return
+	 *            Name
+	 * @return JSON array
 	 */
 	public static JSONArray getJSONArray(JSONObject jsonObject, String name) {
 		if (jsonObject.has(name)) {
@@ -116,11 +141,15 @@ public class UtilsJson {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the json array from the given path (similar to xpath)
+	 * 
+	 * 
 	 * 
 	 * @param jsonObject
+	 *            Json object
 	 * @param path
-	 * @return
+	 *            Path
+	 * @return Json Array
 	 */
 	public static JSONArray getJSONArrayFromPath(JSONObject jsonObject,
 			String path) {
@@ -135,11 +164,13 @@ public class UtilsJson {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return a boolean from a path (1 = true, 0 = false)
 	 * 
 	 * @param jsonObject
+	 *            Json object
 	 * @param path
-	 * @return
+	 *            Path
+	 * @return Boolean value
 	 */
 	public static boolean getJSONBooleanFromPath(JSONObject jsonObject,
 			String path) {
@@ -147,29 +178,32 @@ public class UtilsJson {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return an int from the given path
 	 * 
 	 * @param jsonObject
+	 *            Json object
 	 * @param path
-	 * @return
+	 *            Path to the value
+	 * @return Int value
 	 */
 	public static int getJSONIntFromPath(JSONObject jsonObject, String path) {
 		return Integer.parseInt(getJSONStringFromPath(jsonObject, path));
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the json object from the jsonObject with the name
 	 * 
 	 * @param jsonObject
+	 *            Json object
 	 * @param name
-	 * @return
+	 *            Name
+	 * @return Json object
 	 */
 	public static JSONObject getJSONObject(JSONObject jsonObject, String name) {
 		if (jsonObject.has(name)) {
 			try {
 				return jsonObject.getJSONObject(name);
 			} catch (JSONException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -177,11 +211,13 @@ public class UtilsJson {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the json object from the path
 	 * 
 	 * @param jsonObject
+	 *            Json object
 	 * @param path
-	 * @return
+	 *            Path to the object
+	 * @return Json object
 	 */
 	public static JSONObject getJSONObjectFromPath(JSONObject jsonObject,
 			String path) {
@@ -190,18 +226,19 @@ public class UtilsJson {
 			return getLastObject(jsonObject, split).getJSONObject(
 					split[split.length - 1]);
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the string value from the path
 	 * 
 	 * @param jsonObject
+	 *            Json object
 	 * @param path
-	 * @return
+	 *            Path
+	 * @return String value
 	 */
 	public static String getJSONStringFromPath(JSONObject jsonObject,
 			String path) {
@@ -210,18 +247,19 @@ public class UtilsJson {
 			return getLastObject(jsonObject, split).getString(
 					split[split.length - 1]);
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the last object from the path
 	 * 
 	 * @param jsonObject
+	 *            Json object
 	 * @param split
-	 * @return
+	 *            Part of the apth
+	 * @return Json Object
 	 * @throws JSONException
 	 */
 	private static JSONObject getLastObject(JSONObject jsonObject,
@@ -237,11 +275,13 @@ public class UtilsJson {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the string value from the json object
 	 * 
 	 * @param jsonObject
+	 *            Json object
 	 * @param name
-	 * @return
+	 *            Name of the string
+	 * @return String value
 	 * @throws JSONException
 	 */
 	public static String getStringValue(JSONObject jsonObject, String name) {
@@ -256,12 +296,33 @@ public class UtilsJson {
 	}
 
 	/**
+	 * Return true if the document has errors, false otherwise
+	 * 
+	 * @param jsonObject
+	 *            Json object
+	 * @return Return true if there is an error, false otherwise
+	 */
+	public static boolean hasErrors(JSONObject jsonObject) {
+		return getJSONIntFromPath(jsonObject, "/root/code") == 0;
+	}
+
+	/**
+	 * Set debug option
+	 * 
+	 * @param debug
+	 *            the debug to set
+	 */
+	public static void setDebug(boolean debug) {
+		UtilsJson.debug = debug;
+	}
+
+	/**
 	 * TODO Fill it
 	 * 
-	 * @param object
-	 * @return
+	 * @param debugPath
+	 *            the debugPath to set
 	 */
-	public static boolean hasErrors(JSONObject object) {
-		return getJSONIntFromPath(object, "/root/code") == 0;
+	public static void setDebugPath(String debugPath) {
+		UtilsJson.debugPath = debugPath;
 	}
 }

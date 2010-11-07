@@ -18,27 +18,27 @@ import com.kokotchy.betaSeriesAPI.model.Notification;
 import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
 
 /**
- * TODO Fill it
+ * Members API
  * 
  * @author kokotchy
- * 
  */
 public class Members implements IMembers {
 
 	/**
-	 * TODO Fill it
+	 * API Key
 	 */
 	private String apiKey;
 
 	/**
-	 * TODO Fill it
+	 * Token of logged user
 	 */
 	private String token;
 
 	/**
-	 * TODO Fill it
+	 * Create new members api with the given key
 	 * 
 	 * @param apiKey
+	 *            API key
 	 */
 	public Members(String apiKey) {
 		this.apiKey = apiKey;
@@ -188,14 +188,13 @@ public class Members implements IMembers {
 						.add(Notification.createNotification(notification));
 			}
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return notifications;
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the token of the user
 	 * 
 	 * @return the token
 	 */
@@ -215,20 +214,26 @@ public class Members implements IMembers {
 
 	@Override
 	public boolean isActive(String token) {
-		// TODO Auto-generated method stub
-		return false;
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("token", token);
+		JSONObject jsonObject = UtilsJson.executeQuery(
+				"members/is_active.json", apiKey, params);
+		return !UtilsJson.hasErrors(jsonObject);
 	}
 
 	@Override
 	public void resetViewedShow(String token, String url) {
-		// TODO Auto-generated method stub
-
+		setWatched(token, url, 0, 0);
 	}
 
 	@Override
 	public void setWatched(String token, String url, int season, int episode) {
-		// TODO Auto-generated method stub
-
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("season", "" + season);
+		params.put("episode", "" + episode);
+		params.put("token", token);
+		UtilsJson.executeQuery("members/watched/" + url + ".json", apiKey,
+				params);
 	}
 
 }

@@ -19,10 +19,11 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
 public class Member {
 
 	/**
-	 * TODO Fill it
+	 * Create member object from json object
 	 * 
 	 * @param jsonObject
-	 * @return
+	 *            JSON object
+	 * @return Member
 	 */
 	public static Member createMember(JSONObject jsonObject) {
 		Member member = new Member();
@@ -37,7 +38,6 @@ public class Member {
 				member.addShow(Show.createShow(show));
 			}
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return member;
