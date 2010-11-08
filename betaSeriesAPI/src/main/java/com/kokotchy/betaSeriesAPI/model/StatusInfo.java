@@ -71,14 +71,16 @@ public class StatusInfo {
 		statusInfo.setVersion(UtilsJson.getStringValue(apiObject, "version"));
 		JSONArray versionsArray = UtilsJson.getJSONArray(apiObject, "versions");
 		try {
-			for (int i = 0; i < versionsArray.length(); i++) {
+			int versionLength = versionsArray.length();
+			for (int i = 0; i < versionLength; i++) {
 				JSONObject versionObject = versionsArray.getJSONObject(i);
 				Version version = Version.createVersion(versionObject);
 				statusInfo.addVersion(version);
 			}
 
 			JSONArray filesArray = UtilsJson.getJSONArray(apiObject, "files");
-			for (int i = 0; i < filesArray.length(); i++) {
+			int fileLength = filesArray.length();
+			for (int i = 0; i < fileLength; i++) {
 				JSONObject fileObject = filesArray.getJSONObject(i);
 				VersionFile file = VersionFile.createVersionFile(fileObject);
 				statusInfo.addVersionFile(file);

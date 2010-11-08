@@ -10,15 +10,15 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
  * Version of a file
  * 
  * @author kokotchy
- * 
  */
 public class VersionFile {
 
 	/**
-	 * TODO Fill it
+	 * Create a new VersionFile from the json object
 	 * 
 	 * @param fileObject
-	 * @return
+	 *            json object
+	 * @return VersionFile
 	 */
 	public static VersionFile createVersionFile(JSONObject fileObject) {
 		VersionFile versionFile = new VersionFile();

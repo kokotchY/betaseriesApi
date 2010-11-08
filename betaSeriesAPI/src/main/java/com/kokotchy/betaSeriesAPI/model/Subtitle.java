@@ -78,7 +78,6 @@ public class Subtitle {
 
 	/**
 	 * Url to the subtitle
-	 * 
 	 * TODO Change to url
 	 */
 	private String url;
@@ -187,9 +186,10 @@ public class Subtitle {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Set the source of the subtitle
 	 * 
 	 * @param source
+	 *            Source
 	 */
 	public void setSource(String source) {
 		if (source != null) {

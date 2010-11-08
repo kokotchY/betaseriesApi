@@ -89,7 +89,8 @@ public class Members implements IMembers {
 		try {
 			JSONArray episodes = UtilsJson.getJSONArrayFromPath(jsonObject,
 					"/root/episodes");
-			for (int i = 0; i < episodes.length(); i++) {
+			int length = episodes.length();
+			for (int i = 0; i < length; i++) {
 				JSONObject episode = episodes.getJSONObject(i);
 				result.add(Episode.createEpisode(episode));
 			}
@@ -182,7 +183,8 @@ public class Members implements IMembers {
 		JSONArray notificationsArray = UtilsJson.getJSONArrayFromPath(
 				jsonObject, "/root/notifications");
 		try {
-			for (int i = 0; i < notificationsArray.length(); i++) {
+			int length = notificationsArray.length();
+			for (int i = 0; i < length; i++) {
 				JSONObject notification = notificationsArray.getJSONObject(i);
 				notifications
 						.add(Notification.createNotification(notification));

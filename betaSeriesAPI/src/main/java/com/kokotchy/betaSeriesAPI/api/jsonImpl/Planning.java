@@ -14,22 +14,22 @@ import com.kokotchy.betaSeriesAPI.api.IPlanning;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 
 /**
- * TODO Fill it
+ * Planning API
  * 
  * @author kokotchy
- * 
  */
 public class Planning implements IPlanning {
 
 	/**
-	 * TODO Fill it
+	 * Api key
 	 */
 	private String apiKey;
 
 	/**
-	 * TODO Fill it
+	 * Create a new planning with the key
 	 * 
 	 * @param apiKey
+	 *            Api key
 	 */
 	public Planning(String apiKey) {
 		this.apiKey = apiKey;
@@ -89,7 +89,8 @@ public class Planning implements IPlanning {
 				jsonObject, "/root/planning");
 		List<Episode> episodes = new LinkedList<Episode>();
 		try {
-			for (int i = 0; i < jsonArrayFromPath.length(); i++) {
+			int length = jsonArrayFromPath.length();
+			for (int i = 0; i < length; i++) {
 				JSONObject object = jsonArrayFromPath.getJSONObject(i);
 				episodes.add(Episode.createEpisode(object));
 			}

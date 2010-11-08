@@ -13,15 +13,15 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
  * Episode API
  * 
  * @author kokotchy
- * 
  */
 public class Episode {
 
 	/**
-	 * TODO Fill it
+	 * Create a new episode from the json object
 	 * 
 	 * @param json
-	 * @return
+	 *            json object
+	 * @return Episode
 	 */
 	public static Episode createEpisode(JSONObject json) {
 		Episode episode = new Episode();
@@ -68,7 +68,7 @@ public class Episode {
 	private String nb;
 
 	/**
-	 * TODO Fill it
+	 * Url of the show
 	 */
 	private String showUrl;
 
@@ -94,7 +94,6 @@ public class Episode {
 
 	/**
 	 * TODO Change to url
-	 * 
 	 * Url of a screen of the episode
 	 */
 	private String screen;
@@ -165,7 +164,7 @@ public class Episode {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the url of the show
 	 * 
 	 * @return the showUrl
 	 */
@@ -240,7 +239,7 @@ public class Episode {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Set the url of the show
 	 * 
 	 * @param showUrl
 	 *            the showUrl to set

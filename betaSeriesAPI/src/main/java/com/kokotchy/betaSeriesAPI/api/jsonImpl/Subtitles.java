@@ -7,22 +7,22 @@ import com.kokotchy.betaSeriesAPI.model.Subtitle;
 import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
 
 /**
- * TODO Fill it
+ * Subtitles API
  * 
  * @author kokotchy
- * 
  */
 public class Subtitles implements ISubtitles {
 
 	/**
-	 * TODO Fill it
+	 * Api key
 	 */
 	private String apiKey;
 
 	/**
-	 * TODO Fill it
+	 * Create new subtitle api with the given key
 	 * 
 	 * @param apiKey
+	 *            Key
 	 */
 	public Subtitles(String apiKey) {
 		this.apiKey = apiKey;

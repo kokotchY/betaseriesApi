@@ -10,15 +10,15 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
  * Change in the api
  * 
  * @author kokotchy
- * 
  */
 public class Change {
 
 	/**
-	 * TODO Fill it
+	 * Create a new change from the json object
 	 * 
 	 * @param changeObject
-	 * @return
+	 *            json object
+	 * @return Change
 	 */
 	public static Change createChange(JSONObject changeObject) {
 		Change change = new Change();

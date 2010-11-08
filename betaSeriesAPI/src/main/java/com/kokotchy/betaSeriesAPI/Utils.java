@@ -7,10 +7,9 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 /**
- * TODO Fill it
+ * Utils class
  * 
  * @author kokotchy
- * 
  */
 public class Utils {
 

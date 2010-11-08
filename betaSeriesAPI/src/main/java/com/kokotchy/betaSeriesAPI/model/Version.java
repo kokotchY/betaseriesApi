@@ -15,15 +15,15 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
  * A version of the api
  * 
  * @author kokotchy
- * 
  */
 public class Version {
 
 	/**
-	 * TODO Fill it
+	 * Create a new version from the json object
 	 * 
 	 * @param versionObject
-	 * @return
+	 *            json object
+	 * @return Version
 	 */
 	public static Version createVersion(JSONObject versionObject) {
 		Version version = new Version();
@@ -32,7 +32,8 @@ public class Version {
 		JSONArray changesArray = UtilsJson.getJSONArray(versionObject,
 				"changes");
 		try {
-			for (int i = 0; i < changesArray.length(); i++) {
+			int length = changesArray.length();
+			for (int i = 0; i < length; i++) {
 				JSONObject changeObject = changesArray.getJSONObject(i);
 				version.addChange(Change.createChange(changeObject));
 			}

@@ -16,22 +16,22 @@ import com.kokotchy.betaSeriesAPI.model.Season;
 import com.kokotchy.betaSeriesAPI.model.Show;
 
 /**
- * TODO Fill it
+ * Shows API
  * 
  * @author kokotchy
- * 
  */
 public class Shows implements IShows {
 
 	/**
-	 * TODO Fill it
+	 * API Key
 	 */
 	private String apiKey;
 
 	/**
-	 * TODO Fill it
+	 * Create the shows api with the given key
 	 * 
 	 * @param apiKey
+	 *            API Key
 	 */
 	public Shows(String apiKey) {
 		this.apiKey = apiKey;
@@ -65,7 +65,8 @@ public class Shows implements IShows {
 		JSONArray jsonArrayFromPath = UtilsJson.getJSONArrayFromPath(
 				jsonObject, "/root/shows");
 		try {
-			for (int i = 0; i < jsonArrayFromPath.length(); i++) {
+			int length = jsonArrayFromPath.length();
+			for (int i = 0; i < length; i++) {
 				result.add(Show.createShow(jsonArrayFromPath.getJSONObject(i)));
 			}
 		} catch (JSONException e) {
@@ -106,13 +107,15 @@ public class Shows implements IShows {
 				"/root/seasons");
 		List<Season> result = new LinkedList<Season>();
 		try {
-			for (int i = 0; i < seasonsArray.length(); i++) {
+			int seasonsLength = seasonsArray.length();
+			for (int i = 0; i < seasonsLength; i++) {
 				JSONObject seasonObject = seasonsArray.getJSONObject(i);
 				Season season = new Season(UtilsJson.getIntValue(seasonObject,
 						"number"));
 				JSONArray episodesArray = UtilsJson.getJSONArray(seasonObject,
 						"episodes");
-				for (int j = 0; j < episodesArray.length(); j++) {
+				int episodesLength = episodesArray.length();
+				for (int j = 0; j < episodesLength; j++) {
 					JSONObject episodeObject = episodesArray.getJSONObject(j);
 					season.addEpisode(Episode.createEpisode(episodeObject));
 				}
@@ -144,7 +147,8 @@ public class Shows implements IShows {
 			try {
 				JSONArray showsArray = UtilsJson.getJSONArrayFromPath(
 						jsonObject, "/root/shows");
-				for (int i = 0; i < showsArray.length(); i++) {
+				int length = showsArray.length();
+				for (int i = 0; i < length; i++) {
 					Show show = Show.createShow(showsArray.getJSONObject(i));
 					shows.add(show);
 				}

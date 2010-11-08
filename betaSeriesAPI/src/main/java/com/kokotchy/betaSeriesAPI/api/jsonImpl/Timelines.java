@@ -6,7 +6,7 @@ import com.kokotchy.betaSeriesAPI.api.ITimelines;
 import com.kokotchy.betaSeriesAPI.model.Event;
 
 /**
- * TODO Fill it
+ * Timeline API
  * 
  * @author kokotchy
  * 
@@ -14,14 +14,15 @@ import com.kokotchy.betaSeriesAPI.model.Event;
 public class Timelines implements ITimelines {
 
 	/**
-	 * TODO Fill it
+	 * API Key
 	 */
 	private String apiKey;
 
 	/**
-	 * TODO Fill it
+	 * Timelines
 	 * 
 	 * @param apiKey
+	 *            API key
 	 */
 	public Timelines(String apiKey) {
 		this.apiKey = apiKey;

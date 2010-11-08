@@ -28,7 +28,7 @@ public class UtilsJson {
 	public static boolean debug = false;
 
 	/**
-	 * TODO Fill it
+	 * Directory containing example of json
 	 */
 	public static String debugPath;
 
@@ -142,8 +142,6 @@ public class UtilsJson {
 
 	/**
 	 * Return the json array from the given path (similar to xpath)
-	 * 
-	 * 
 	 * 
 	 * @param jsonObject
 	 *            Json object
@@ -317,7 +315,7 @@ public class UtilsJson {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Define the debuging path
 	 * 
 	 * @param debugPath
 	 *            the debugPath to set
