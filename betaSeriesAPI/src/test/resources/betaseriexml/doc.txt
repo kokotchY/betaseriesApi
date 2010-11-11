@@ -1,0 +1,123 @@
+shows.search
+------------
+
+shows: show*
+
+show:
+    string url: url of the show
+    string title: name of the show
+
+shows.display.X
+---------------
+
+show:
+    string title: title of the show
+    int id_thetvdb: id of the show on tvdb
+    string url: url of the show
+    text description: description of the show
+    enum status: status of the show (Continuing, Ended, ?)
+    url banner: image of the show
+    list genres: genre*, list of genres
+
+string genre: a genre for the show
+
+shows.episodes.X
+----------------
+
+seasons: season*
+
+season:
+    int number: number of the season
+    list episodes: episode*, list of episodes
+
+episode:
+    int episode: number of the episode
+    string number: number of the episode with the season
+    timestamp date: date of the episode
+    string title: title of the episode
+    text description: description of the episode
+    url screen: a screen of the episode
+
+subtitles.last
+subtitles.show.X
+--------------
+
+subtitles: subtitle*
+
+subtitle:
+    string title: title of the episode
+    int season: number of the season of the episode
+    int episode: number of the episode
+    string language: language of the subtitle
+    enum source: source of the subtitle (tvsubtitles, ...)
+    file file: name of the file of the subtitle
+    url url: url to the subtitle
+
+planning.general
+planning.member
+----------------
+
+planning: episode*
+
+episode:
+    string number: number of the episode with the season
+    timestamp date: date of the episode
+    string show: name of the show of the subtitle
+    string url: url of the show
+    string title: title of the episode
+
+members.infos
+-------------
+
+member:
+    string login: login of the member
+    url avatar: url to the avatar
+    stats:
+        int shows: number of shows followed
+        int seasons: number of seasons
+        int episodes: number of episodes
+        string progress: general progress
+        int episodes_to_watch: number of episodes to watch
+        timestamp time_on_tv: seconds spended watching shows
+        timestamp time_to_send: remaining time to spend
+    shows: show*
+
+show:
+    string url: url of the show
+    string title: title of the show
+    boolean archive: show archived (1), or not (0)
+
+members.episodes.all
+--------------------
+
+episodes: episode*
+
+episode:
+    string show: name of the show
+    string episode: episode of the shwo with the season
+    string url: url of the show
+    string title: title of the episode
+    timestamp date: date of the episode
+
+members.notifications
+---------------------
+
+notifications: notification*
+
+notification:
+    int id: id of the notification
+    text html: content of the notification
+    timestamp date: date of the notification
+    boolean seen: if notification is seen (1) or not (0)
+
+timeline.home
+-------------
+
+timeline: item*
+
+item:
+    enum type: type of the item (markas, recommandation, ?)
+    string ref: reference for the item
+    string login: login of the user
+    text html: content of the item
+    timestamp date: date of the item

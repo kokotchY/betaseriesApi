@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <key>debfa5c405f5</key>
+ <token>6668bb6944a5</token>
+ <member>
+  <login>kokotchY</login>
+  <avatar/>
+  <stats>
+   <shows>53</shows>
+   <seasons>172</seasons>
+   <episodes>2844</episodes>
+   <progress>95,81 %</progress>
+   <episodes_to_watch>126</episodes_to_watch>
+   <time_on_tv>138925</time_on_tv>
+   <time_to_spend>6060</time_to_spend>
+  </stats>
+  <shows>
+   <show>
+    <url>futurama</url>
+    <title>Futurama</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>ghostintheshellstandalonecomplex</url>
+    <title>Ghost in the Shell: Stand Alone Complex</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>haven</url>
+    <title>Haven</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>humantarget2010</url>
+    <title>Human Target (2010)</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>nikita</url>
+    <title>Nikita</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>noordinaryfamily</url>
+    <title>No Ordinary Family</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>rubicon</url>
+    <title>Rubicon</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>theevent</url>
+    <title>The Event</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>thepillarsoftheearth</url>
+    <title>The Pillars of the Earth</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>thewire</url>
+    <title>The Wire</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>undercovers</url>
+    <title>Undercovers</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>warehouse13</url>
+    <title>Warehouse 13</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>caprica</url>
+    <title>Caprica</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>chuck</url>
+    <title>Chuck</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>criminalminds</url>
+    <title>Criminal Minds</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>dexter</url>
+    <title>Dexter</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>eureka</url>
+    <title>Eureka</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>flashpoint</url>
+    <title>Flashpoint</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>fringe</url>
+    <title>Fringe</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>house</url>
+    <title>House</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>himym</url>
+    <title>How I Met Your Mother</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>lietome</url>
+    <title>Lie to Me</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>ncis</url>
+    <title>NCIS</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>ncislosangeles</url>
+    <title>NCIS: Los Angeles</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>bigbangtheory</url>
+    <title>The Big Bang Theory</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>thementalist</url>
+    <title>The Mentalist</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>theofficeus</url>
+    <title>The Office US</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>simpsons</url>
+    <title>The Simpsons</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>thesopranos</url>
+    <title>The Sopranos</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>trueblood</url>
+    <title>True Blood</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>v2009</url>
+    <title>V (2009)</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>fullmetalalchemistbrotherhood</url>
+    <title>Fullmetal Alchemist: Brotherhood</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>itcrowd</url>
+    <title>The IT Crowd</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>battlestargalactica</url>
+    <title>Battlestar Galactica</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>eleventhhourus</url>
+    <title>Eleventh Hour (US)</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>farscape</url>
+    <title>Farscape</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>firefly</url>
+    <title>Firefly</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>flashforward2009</url>
+    <title>Flash Forward (2009)</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>greek</url>
+    <title>Greek</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>heroes</url>
+    <title>Heroes</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>jericho</url>
+    <title>Jericho</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>johndoe</url>
+    <title>John Doe</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>knightrider2008</url>
+    <title>Knight Rider 2008</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>kylexy</url>
+    <title>Kyle XY</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>life</url>
+    <title>Life</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>lifeonmarsuk</url>
+    <title>Life On Mars (UK)</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>lost</url>
+    <title>Lost</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>spartacus</url>
+    <title>Spartacus</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>the4400</url>
+    <title>The 4400</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>thelostroom</url>
+    <title>The Lost Room</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>thetudors</url>
+    <title>The Tudors</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>theunit</url>
+    <title>The Unit</title>
+    <archive>1</archive>
+   </show>
+   <show>
+    <url>weeds</url>
+    <title>Weeds</title>
+    <archive>1</archive>
+   </show>
+  </shows>
+ </member>
+ <code>1</code>
+ <errors/>
+</root>
