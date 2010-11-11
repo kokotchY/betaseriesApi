@@ -4,6 +4,7 @@ import org.dom4j.Node;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.HashCodeUtil;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
@@ -92,6 +93,14 @@ public class Stats {
 	 */
 	private int timeToSpend;
 
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Stats)) {
+			return false;
+		}
+		return hashCode() == obj.hashCode();
+	}
+
 	/**
 	 * Return number of episodes
 	 * 
@@ -153,6 +162,19 @@ public class Stats {
 	 */
 	public int getTimeToSpend() {
 		return timeToSpend;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = HashCodeUtil.SEED;
+		result = HashCodeUtil.hash(result, shows);
+		result = HashCodeUtil.hash(result, seasons);
+		result = HashCodeUtil.hash(result, episodes);
+		result = HashCodeUtil.hash(result, progress);
+		result = HashCodeUtil.hash(result, episodesToWatch);
+		result = HashCodeUtil.hash(result, timeOnTv);
+		result = HashCodeUtil.hash(result, timeToSpend);
+		return result;
 	}
 
 	/**

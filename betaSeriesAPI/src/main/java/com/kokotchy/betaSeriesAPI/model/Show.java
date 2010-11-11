@@ -6,6 +6,7 @@ import java.util.List;
 import org.dom4j.Node;
 import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.HashCodeUtil;
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
@@ -126,6 +127,14 @@ public class Show {
 		genres.add(genre);
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Show)) {
+			return false;
+		}
+		return hashCode() == obj.hashCode();
+	}
+
 	/**
 	 * Return the banner of the show
 	 * 
@@ -187,6 +196,19 @@ public class Show {
 	 */
 	public String getUrl() {
 		return url;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = HashCodeUtil.SEED;
+		result = HashCodeUtil.hash(result, idTvdb);
+		result = HashCodeUtil.hash(result, url);
+		result = HashCodeUtil.hash(result, title);
+		result = HashCodeUtil.hash(result, description);
+		result = HashCodeUtil.hash(result, status);
+		result = HashCodeUtil.hash(result, banner);
+		result = HashCodeUtil.hash(result, genres);
+		return result;
 	}
 
 	/**

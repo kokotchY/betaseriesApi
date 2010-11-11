@@ -2,6 +2,7 @@ package com.kokotchy.betaSeriesAPI.model;
 
 import org.dom4j.Node;
 
+import com.kokotchy.betaSeriesAPI.HashCodeUtil;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
@@ -77,10 +78,17 @@ public class Subtitle {
 	private String file;
 
 	/**
-	 * Url to the subtitle
-	 * TODO Change to url
+	 * Url to the subtitle TODO Change to url
 	 */
 	private String url;
+
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Subtitle)) {
+			return false;
+		}
+		return hashCode() == obj.hashCode();
+	}
 
 	/**
 	 * Return the episode
@@ -143,6 +151,18 @@ public class Subtitle {
 	 */
 	public String getUrl() {
 		return url;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = HashCodeUtil.SEED;
+		result = HashCodeUtil.hash(result, title);
+		result = HashCodeUtil.hash(result, season);
+		result = HashCodeUtil.hash(result, episode);
+		result = HashCodeUtil.hash(result, language);
+		result = HashCodeUtil.hash(result, source);
+		result = HashCodeUtil.hash(result, url);
+		return result;
 	}
 
 	/**

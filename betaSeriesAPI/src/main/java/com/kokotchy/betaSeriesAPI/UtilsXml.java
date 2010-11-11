@@ -1,6 +1,8 @@
 package com.kokotchy.betaSeriesAPI;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
@@ -36,6 +38,16 @@ public class UtilsXml {
 	private static String host = "api.betaseries.com";
 
 	/**
+	 * TODO Fill it
+	 */
+	private static String debugPath = null;
+
+	/**
+	 * TODO Fill it
+	 */
+	private static boolean debug = false;
+
+	/**
 	 * Execute the action to betaserie server with the api key
 	 * 
 	 * @param action
@@ -67,12 +79,17 @@ public class UtilsXml {
 		URLConnection connection = null;
 		BufferedReader reader = null;
 		try {
-			url = new URL(String.format(uriPattern, host, action, Utils
-					.getParamAsString(params)));
-			connection = url.openConnection();
-			connection.setRequestProperty("User-Agent", USER_AGENT);
-			reader = new BufferedReader(new InputStreamReader(connection
-					.getInputStream()));
+			if (debug) {
+				reader = new BufferedReader(new FileReader(new File(debugPath,
+						action)));
+			} else {
+				url = new URL(String.format(uriPattern, host, action, Utils
+						.getParamAsString(params)));
+				connection = url.openConnection();
+				connection.setRequestProperty("User-Agent", USER_AGENT);
+				reader = new BufferedReader(new InputStreamReader(connection
+						.getInputStream()));
+			}
 			StringBuffer buffer = new StringBuffer();
 			String line = "";
 			while ((line = reader.readLine()) != null) {
@@ -89,7 +106,9 @@ public class UtilsXml {
 			e.printStackTrace();
 		} finally {
 			try {
-				connection.getInputStream().close();
+				if (connection != null) {
+					connection.getInputStream().close();
+				}
 				reader.close();
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -175,6 +194,24 @@ public class UtilsXml {
 			return selectedNode.getText();
 		}
 		return null;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param debug
+	 */
+	public static void setDebug(boolean debug) {
+		UtilsXml.debug = debug;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param debugDirectory
+	 */
+	public static void setDebugPath(String debugPath) {
+		UtilsXml.debugPath = debugPath;
 	}
 
 	/**

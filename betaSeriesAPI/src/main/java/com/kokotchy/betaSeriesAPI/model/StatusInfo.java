@@ -9,6 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.HashCodeUtil;
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
@@ -137,6 +138,14 @@ public class StatusInfo {
 		files.add(file);
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof StatusInfo)) {
+			return false;
+		}
+		return hashCode() == obj.hashCode();
+	}
+
 	/**
 	 * Return the status of the database
 	 * 
@@ -180,6 +189,17 @@ public class StatusInfo {
 	 */
 	public String getWebsiteStatus() {
 		return websiteStatus;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = HashCodeUtil.SEED;
+		result = HashCodeUtil.hash(result, databaseStatus);
+		result = HashCodeUtil.hash(result, websiteStatus);
+		result = HashCodeUtil.hash(result, version);
+		result = HashCodeUtil.hash(result, versions);
+		result = HashCodeUtil.hash(result, files);
+		return result;
 	}
 
 	/**

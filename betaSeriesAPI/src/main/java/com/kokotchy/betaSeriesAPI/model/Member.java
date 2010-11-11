@@ -8,6 +8,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.HashCodeUtil;
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
@@ -95,6 +96,14 @@ public class Member {
 		shows.add(show);
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Member)) {
+			return false;
+		}
+		return hashCode() == obj.hashCode();
+	}
+
 	/**
 	 * Return the avatar
 	 * 
@@ -129,6 +138,18 @@ public class Member {
 	 */
 	public Stats getStats() {
 		return stats;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = HashCodeUtil.SEED;
+		result = HashCodeUtil.hash(result, login);
+		result = HashCodeUtil.hash(result, avatar);
+		result = HashCodeUtil.hash(result, stats);
+		for (Show show : shows) {
+			result = HashCodeUtil.hash(result, show);
+		}
+		return result;
 	}
 
 	/**
