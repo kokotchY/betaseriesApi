@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <key>debfa5c405f5</key>
+ <timeline>
+  <item>
+   <date>1289467560</date>
+   <html>a gagn&amp;eacute; le badge Vieux briscard.</html>
+   <type>badge</type>
+   <ref>vieux_briscard</ref>
+   <login>delphiki</login>
+  </item>
+  <item>
+   <date>1289467560</date>
+   <html>a gagn&amp;eacute; le badge Martine Aubry.</html>
+   <type>badge</type>
+   <ref>martine_aubry</ref>
+   <login>delphiki</login>
+  </item>
+  <item>
+   <date>1289467558</date>
+   <html>a gagn&amp;eacute; le badge D&amp;eacute;butant.</html>
+   <type>badge</type>
+   <ref>debutant</ref>
+   <login>delphiki</login>
+  </item>
+  <item>
+   <date>1289467558</date>
+   <html>a gagn&amp;eacute; le badge Amateur.</html>
+   <type>badge</type>
+   <ref>amateur</ref>
+   <login>delphiki</login>
+  </item>
+  <item>
+   <date>1289467558</date>
+   <html>a gagn&amp;eacute; le badge Rattrapage.</html>
+   <type>badge</type>
+   <ref>rattrapage</ref>
+   <login>delphiki</login>
+  </item>
+  <item>
+   <date>1289467558</date>
+   <html>a gagn&amp;eacute; le badge S&amp;eacute;rievore.</html>
+   <type>badge</type>
+   <ref>serievore</ref>
+   <login>delphiki</login>
+  </item>
+  <item>
+   <date>1289467558</date>
+   <html>a gagn&amp;eacute; le badge Ecole buissoni&amp;egrave;re.</html>
+   <type>badge</type>
+   <ref>ecole_buissoniere</ref>
+   <login>delphiki</login>
+  </item>
+  <item>
+   <date>1289467558</date>
+   <html>a gagn&amp;eacute; le badge Planqu&amp;eacute;.</html>
+   <type>badge</type>
+   <ref>planque</ref>
+   <login>delphiki</login>
+  </item>
+  <item>
+   <date>1289467558</date>
+   <html>a gagn&amp;eacute; le badge Einstein.</html>
+   <type>badge</type>
+   <ref>einstein</ref>
+   <login>delphiki</login>
+  </item>
+  <item>
+   <date>1289467558</date>
+   <html>a gagn&amp;eacute; le badge Flashmob.</html>
+   <type>badge</type>
+   <ref>flashmob</ref>
+   <login>delphiki</login>
+  </item>
+ </timeline>
+ <code>1</code>
+ <errors/>
+</root>

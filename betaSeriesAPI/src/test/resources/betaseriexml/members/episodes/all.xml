@@ -340,28 +340,55 @@
    <date>1105138800</date>
   </episode>
   <episode>
-   <show>Nikita</show>
-   <episode>S01E07</episode>
-   <url>nikita</url>
-   <title>The Recruit</title>
-   <date>1288216800</date>
+   <show>No Ordinary Family</show>
+   <episode>S01E06</episode>
+   <url>noordinaryfamily</url>
+   <title>No Ordinary Visitors</title>
+   <date>1289257200</date>
    <subs>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/271307</url>
-     <filename>Nikita_1x07_HDTV.en.zip</filename>
+     <url>http://www.betaseries.com/srt/277628</url>
+     <filename>No Ordinary Family_1x06_HDTV.LOL.e[...].en.zip</filename>
      <source>tvsubtitles</source>
     </sub>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/271321</url>
-     <filename>Nikita_1x07_720p HDTV.en.zip</filename>
+     <url>http://www.betaseries.com/srt/277621</url>
+     <filename>No Ordinary Family - 01x06 - No Or[...]ors.srt</filename>
+     <source>addic7ed</source>
+    </sub>
+   </subs>
+  </episode>
+  <episode>
+   <show>The Event</show>
+   <episode>S01E07</episode>
+   <url>theevent</url>
+   <title>I Know Who You Are</title>
+   <date>1289170800</date>
+   <subs>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/276970</url>
+     <filename>The Event_1x07_HDTV.LOL.en.zip</filename>
      <source>tvsubtitles</source>
     </sub>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/271195</url>
-     <filename>Nikita - 01x07 - The Recruit.srt</filename>
+     <url>http://www.betaseries.com/srt/277089</url>
+     <filename>The Event_1x07_720p HDTV.en.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/278069</url>
+     <filename>The Event_1x07_HDTV.LOL.fr.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/276963</url>
+     <filename>The Event - 01x07 - I Know Who You[...]Are.srt</filename>
      <source>addic7ed</source>
     </sub>
    </subs>
@@ -390,6 +417,12 @@
      <url>http://www.betaseries.com/srt/241697</url>
      <filename>The.Pillars.of.the.Earth.S01E05.72[...].en.zip</filename>
      <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/277887</url>
+     <filename>The.Pillars.of.The.Earth.1x05.FR.F[...]FBK.zip</filename>
+     <source>soustitres</source>
     </sub>
    </subs>
   </episode>
@@ -476,21 +509,54 @@
   </episode>
   <episode>
    <show>Undercovers</show>
-   <episode>S01E06</episode>
+   <episode>S01E07</episode>
    <url>undercovers</url>
-   <title>Xerxes</title>
-   <date>1288130400</date>
+   <title>Assassin</title>
+   <date>1288738800</date>
    <subs>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/270754</url>
-     <filename>Undercovers_1x06_HDTV.en.zip</filename>
+     <url>http://www.betaseries.com/srt/274422</url>
+     <filename>Undercovers_1x07_HDTV.en.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VOVF</language>
+     <url>http://www.betaseries.com/srt/277789</url>
+     <filename>Undercovers.1x07.ENFR.AGT.zip</filename>
+     <source>soustitres</source>
+    </sub>
+    <sub>
+     <language>VOVF</language>
+     <url>http://www.betaseries.com/srt/277824</url>
+     <filename>Undercovers.1x07.ENFR.AGT.TAG.zip</filename>
+     <source>usub</source>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/274338</url>
+     <filename>Undercovers - 01x07 - Assassin.srt</filename>
+     <source>addic7ed</source>
+    </sub>
+   </subs>
+  </episode>
+  <episode>
+   <show>Undercovers</show>
+   <episode>S01E08</episode>
+   <url>undercovers</url>
+   <title>Crashed</title>
+   <date>1289343600</date>
+   <subs>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/278132</url>
+     <filename>Undercovers_1x08_HDTV.en.zip</filename>
      <source>tvsubtitles</source>
     </sub>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/270733</url>
-     <filename>Undercovers - 01x06 - Xerxes.srt</filename>
+     <url>http://www.betaseries.com/srt/278041</url>
+     <filename>Undercovers - 01x08 - Crashed.srt</filename>
      <source>addic7ed</source>
     </sub>
    </subs>
@@ -607,68 +673,11 @@
      <filename>Caprica_1x13_HDTV.FQM.1.0.fr.zip</filename>
      <source>tvsubtitles</source>
     </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>Chuck</show>
-   <episode>S04E06</episode>
-   <url>chuck</url>
-   <title>Chuck Versus the Aisle of Terror</title>
-   <date>1287957600</date>
-   <subs>
     <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/271881</url>
-     <filename>Chuck_4x06_HDTV.LOL.fr(2).zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/270229</url>
-     <filename>Chuck_4x06_720p HDTV.Chuck.S04E06.[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/269942</url>
-     <filename>Chuck_4x06_HDTV.LOL.fr(1).zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/269935</url>
-     <filename>Chuck_4x06_720p HDTV.CTU.fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/269830</url>
-     <filename>Chuck_4x06_HDTV.LOL.fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/269823</url>
-     <filename>Chuck_4x06_720p HDTV.720P.fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/269711</url>
-     <filename>Chuck_4x06_HDTV.LOL.en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/269963</url>
-     <filename>Chuck.4x06.FR.FBK.zip</filename>
-     <source>usub</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/269515</url>
-     <filename>Chuck - 04x06 - Chuck Versus the A[...]ror.srt</filename>
-     <source>addic7ed</source>
+     <language>VOVF</language>
+     <url>http://www.betaseries.com/srt/274667</url>
+     <filename>Caprica.1x13.ENFR.FBK.zip</filename>
+     <source>soustitres</source>
     </sub>
    </subs>
   </episode>
@@ -680,10 +689,34 @@
    <date>1288566000</date>
    <subs>
     <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/273449</url>
-     <filename>Chuck_4x07_HDTV.LOL.en.zip</filename>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/273687</url>
+     <filename>Chuck_4x07_720p HDTV.720P.fr.zip</filename>
      <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/273694</url>
+     <filename>Chuck_4x07_HDTV.LOL.fr.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/273722</url>
+     <filename>Chuck_4x07_720p HDTV.DiMENSiON.fr.[...].fr.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/273729</url>
+     <filename>Chuck_4x07_HDTV.LOL.fr(1).zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/273750</url>
+     <filename>Chuck.4x07.FR.FBK.zip</filename>
+     <source>usub</source>
     </sub>
     <sub>
      <language>VO</language>
@@ -694,41 +727,23 @@
    </subs>
   </episode>
   <episode>
-   <show>Dexter</show>
-   <episode>S04E05</episode>
-   <url>dexter</url>
-   <title>Dirty Harry</title>
-   <date>1256421600</date>
+   <show>Criminal Minds</show>
+   <episode>S06E08</episode>
+   <url>criminalminds</url>
+   <title>Reflection of Desire</title>
+   <date>1289343600</date>
    <subs>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/140239</url>
-     <filename>Dexter_4x05_HDTV.FQM.en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/140383</url>
-     <filename>Dexter_4x05_720p HDTV.dexter.s04e0[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/140407</url>
-     <filename>Dexter_4x05_HDTV.FQM.VF.fr.zip</filename>
+     <url>http://www.betaseries.com/srt/278216</url>
+     <filename>Criminal Minds_6x08_HDTV.LOL.en.zip</filename>
      <source>tvsubtitles</source>
     </sub>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/140479</url>
-     <filename>Dexter_4x05_720p HDTV.ORENJi.en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/186181</url>
-     <filename>Dexter.4x05.FR.FBK.zip</filename>
-     <source>soustitres</source>
+     <url>http://www.betaseries.com/srt/278055</url>
+     <filename>Criminal Minds - 06x08 - Reflectio[...]ire.srt</filename>
+     <source>addic7ed</source>
     </sub>
    </subs>
   </episode>
@@ -1342,15 +1357,9 @@
    <show>Dexter</show>
    <episode>S05E06</episode>
    <url>dexter</url>
-   <title>Everything is Illuminated</title>
+   <title>Everything is Illumenated</title>
    <date>1288476000</date>
    <subs>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/273113</url>
-     <filename>Dexter.5x06.FR.FBK.zip</filename>
-     <source>soustitres</source>
-    </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/272770</url>
@@ -1376,6 +1385,12 @@
      <source>tvsubtitles</source>
     </sub>
     <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/273113</url>
+     <filename>Dexter.5x06.FR.FBK.zip</filename>
+     <source>soustitres</source>
+    </sub>
+    <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/272749</url>
      <filename>Dexter - 05x06 - Everything Is Ill[...]ted.srt</filename>
@@ -1384,38 +1399,334 @@
    </subs>
   </episode>
   <episode>
-   <show>How I Met Your Mother</show>
-   <episode>S06E07</episode>
-   <url>himym</url>
-   <title>Canning Randy</title>
-   <date>1288566000</date>
+   <show>Dexter</show>
+   <episode>S05E07</episode>
+   <url>dexter</url>
+   <title>Circle Us</title>
+   <date>1289084400</date>
    <subs>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/273505</url>
-     <filename>How.I.Met.Your.Mother.6x07.EN.HIMY[...]MYM.zip</filename>
+     <url>http://www.betaseries.com/srt/276466</url>
+     <filename>Dexter_5x07_HDTV.en.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/276627</url>
+     <filename>Dexter_5x07_HDTV.Dexter S05E07.FRE[...].fr.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/276641</url>
+     <filename>Dexter_5x07_HDTV.FEVER.fr.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/276669</url>
+     <filename>Dexter_5x07_720p HDTV.CTU.fr.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/276697</url>
+     <filename>Dexter_5x07_HDTV.Dexter S05E07.Fev[...].fr.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/276732</url>
+     <filename>Dexter_5x07_HDTV.FEVER.fr(1).zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/277341</url>
+     <filename>Dexter.5x07.FR.FBK.zip</filename>
      <source>soustitres</source>
     </sub>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/273379</url>
-     <filename>How I Met Your Mother_6x07_HDTV.LO[...].en.zip</filename>
+     <url>http://www.betaseries.com/srt/276452</url>
+     <filename>Dexter - 05x07 - Circle Us.srt</filename>
+     <source>addic7ed</source>
+    </sub>
+   </subs>
+  </episode>
+  <episode>
+   <show>House</show>
+   <episode>S07E06</episode>
+   <url>house</url>
+   <title>Office Politics</title>
+   <date>1289170800</date>
+   <subs>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/276991</url>
+     <filename>House M.D._7x06_HDTV.LOL.en.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/277418</url>
+     <filename>House M.D._7x06_HDTV.LOL.fr(2).zip</filename>
      <source>tvsubtitles</source>
     </sub>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/273288</url>
-     <filename>How I Met Your Mother - 06x07 - Ca[...]ndy.srt</filename>
+     <url>http://www.betaseries.com/srt/276956</url>
+     <filename>House - 07x06 - Office Politics.srt</filename>
+     <source>addic7ed</source>
+    </sub>
+   </subs>
+  </episode>
+  <episode>
+   <show>How I Met Your Mother</show>
+   <episode>S06E08</episode>
+   <url>himym</url>
+   <title>Natural History</title>
+   <date>1289170800</date>
+   <subs>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/277950</url>
+     <filename>How I Met Your Mother_6x08_720p HD[...].fr.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/277649</url>
+     <filename>How I Met Your Mother_6x08_HDTV.Ad[...](1).zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/277320</url>
+     <filename>How I Met Your Mother_6x08_HDTV.fr[...].fr.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/277257</url>
+     <filename>How I Met Your Mother_6x08_HDTV.Ho[...].en.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/277208</url>
+     <filename>How I Met Your Mother_6x08_HDTV.Ad[...].fr.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/277173</url>
+     <filename>How I Met Your Mother_6x08_HDTV.fe[...].en.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/277159</url>
+     <filename>How I Met Your Mother_6x08_HDTV.FE[...].en.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/277145</url>
+     <filename>How I Met Your Mother_6x08_HDTV.Fe[...].en.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/277404</url>
+     <filename>How.I.Met.Your.Mother.6x08.FR.WTFM[...]TFM.zip</filename>
+     <source>usub</source>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/276935</url>
+     <filename>How I Met Your Mother - 06x08 - Na[...]ory.srt</filename>
+     <source>addic7ed</source>
+    </sub>
+   </subs>
+  </episode>
+  <episode>
+   <show>Lie to Me</show>
+   <episode>S03E05</episode>
+   <url>lietome</url>
+   <title>The Canary's Song</title>
+   <date>1289170800</date>
+   <subs>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/276984</url>
+     <filename>Lie To Me_3x05_HDTV.LOL.en.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/277733</url>
+     <filename>Lie.To.Me.3x05.EN.LTT.zip</filename>
+     <source>usub</source>
+    </sub>
+   </subs>
+  </episode>
+  <episode>
+   <show>NCIS</show>
+   <episode>S08E07</episode>
+   <url>ncis</url>
+   <title>Broken Arrow</title>
+   <date>1289257200</date>
+   <subs>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/277537</url>
+     <filename>NCIS_8x07_HDTV.en.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/277474</url>
+     <filename>NCIS - 08x07 - Broken Arrow.srt</filename>
+     <source>addic7ed</source>
+    </sub>
+   </subs>
+  </episode>
+  <episode>
+   <show>NCIS: Los Angeles</show>
+   <episode>S02E08</episode>
+   <url>ncislosangeles</url>
+   <title>Bounty</title>
+   <date>1289257200</date>
+   <subs>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/277908</url>
+     <filename>NCIS Los Angeles_2x08_HDTV.LOL-.en[...].en.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+   </subs>
+  </episode>
+  <episode>
+   <show>The Big Bang Theory</show>
+   <episode>S04E07</episode>
+   <url>bigbangtheory</url>
+   <title>The Apology Insufficiency</title>
+   <date>1288825200</date>
+   <subs>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/275066</url>
+     <filename>The Big Bang Theory_4x07_HDTV.FQM.[...].en.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/275150</url>
+     <filename>The Big Bang Theory_4x07_720p HDTV[...].fr.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/275157</url>
+     <filename>The Big Bang Theory_4x07_HDTV.FQM.[...].fr.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/275199</url>
+     <filename>The Big Bang Theory_4x07_HDTV.FQM.[...](1).zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/277117</url>
+     <filename>The Big Bang Theory_4x07_HDTV.FQM.[...](2).zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VOVF</language>
+     <url>http://www.betaseries.com/srt/276172</url>
+     <filename>The.Big.Bang.Theory.4x07.ENFR.TBBT[...]BBT.zip</filename>
+     <source>usub</source>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/274793</url>
+     <filename>The Big Bang Theory - 04x07 - The [...]ncy.srt</filename>
+     <source>addic7ed</source>
+    </sub>
+   </subs>
+  </episode>
+  <episode>
+   <show>The Mentalist</show>
+   <episode>S03E07</episode>
+   <url>thementalist</url>
+   <title>Red Hot </title>
+   <date>1288825200</date>
+   <subs>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/275045</url>
+     <filename>The Mentalist_3x07_HDTV.en.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/276676</url>
+     <filename>The Mentalist_3x07_HDTV.FQM.fr.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VOVF</language>
+     <url>http://www.betaseries.com/srt/276655</url>
+     <filename>The.Mentalist.3x07.ENFR.RJT.zip</filename>
+     <source>soustitres</source>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/275003</url>
+     <filename>The Mentalist - 03x07 - Red Hot.srt</filename>
      <source>addic7ed</source>
     </sub>
    </subs>
   </episode>
   <episode>
    <show>The Office US</show>
-   <episode>S07E06</episode>
+   <episode>S07E07</episode>
    <url>theofficeus</url>
-   <title>Costume Contest</title>
-   <date>1288216800</date>
+   <title>Christening</title>
+   <date>1288825200</date>
+   <subs>
+    <sub>
+     <language>VOVF</language>
+     <url>http://www.betaseries.com/srt/277985</url>
+     <filename>The.Office.U.S.7x07.ENFR.FBK.zip</filename>
+     <source>soustitres</source>
+    </sub>
+   </subs>
+  </episode>
+  <episode>
+   <show>The Simpsons</show>
+   <episode>S22E04</episode>
+   <url>simpsons</url>
+   <title>Treehouse of Horror XXI</title>
+   <date>1289084400</date>
+   <subs>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/276536</url>
+     <filename>The Simpsons_22x04_HDTV.LOL.en.zip</filename>
+     <source>tvsubtitles</source>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/276403</url>
+     <filename>The Simpsons - 22x04 - Treehouse o[...]XXI.srt</filename>
+     <source>addic7ed</source>
+    </sub>
+   </subs>
   </episode>
   <episode>
    <show>The Sopranos</show>
