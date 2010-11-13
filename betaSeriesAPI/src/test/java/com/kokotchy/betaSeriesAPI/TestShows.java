@@ -45,7 +45,7 @@ public class TestShows extends TestCase {
 		List<Show> displayAllJson = showsJson.displayAll();
 		List<Show> displayAllXml = showsXml.displayAll();
 		assertEquals(displayAllXml.size(), displayAllJson.size());
-		assertTrue(displayAllJson.equals(displayAllXml));
+		assertEquals(displayAllXml, displayAllJson);
 	}
 
 	/**
