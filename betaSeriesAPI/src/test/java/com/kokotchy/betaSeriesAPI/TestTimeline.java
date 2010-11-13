@@ -121,6 +121,19 @@ public class TestTimeline extends TestCase {
 	public void testTimelineHome() {
 		List<Event> homeTimelineJson = timelinesJson.getHomeTimeline();
 		List<Event> homeTimelineXml = timelinesXml.getHomeTimeline();
+		for (Event event : homeTimelineXml) {
+			for (Event event2 : homeTimelineJson) {
+				if ((event2.getDate() == event.getDate())
+						&& (event2.getRef().equals(event.getRef()))) {
+					if (event.equals(event2)) {
+						assertTrue(true);
+						break;
+					} else {
+						fail("Not equals " + event + "," + event2);
+					}
+				}
+			}
+		}
 		assertEquals(homeTimelineXml, homeTimelineJson);
 	}
 

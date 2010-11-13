@@ -1,8 +1,10 @@
 package com.kokotchy.betaSeriesAPI.model;
 
 import org.dom4j.Node;
+import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.HashCodeUtil;
+import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
@@ -11,6 +13,22 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
  * @author kokotchy
  */
 public class Event {
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
+	 * @return
+	 */
+	public static Event createEvent(JSONObject jsonObject) {
+		Event event = new Event();
+		event.setType(UtilsJson.getStringValue(jsonObject, "type"));
+		event.setRef(UtilsJson.getStringValue(jsonObject, "ref"));
+		event.setLogin(UtilsJson.getStringValue(jsonObject, "login"));
+		event.setHtml(UtilsJson.getStringValue(jsonObject, "html"));
+		event.setDate(UtilsJson.getIntValue(jsonObject, "date"));
+		return event;
+	}
 
 	/**
 	 * Create a new event from a node
@@ -44,10 +62,10 @@ public class Event {
 	 */
 	private String login;
 
-	/**
-	 * Event
-	 */
-	private String event;
+	// /**
+	// * Event
+	// */
+	// private String event;
 
 	/**
 	 * Date
@@ -76,14 +94,14 @@ public class Event {
 		return date;
 	}
 
-	/**
-	 * Return the event
-	 * 
-	 * @return the event
-	 */
-	public String getEvent() {
-		return event;
-	}
+	// /**
+	// * Return the event
+	// *
+	// * @return the event
+	// */
+	// public String getEvent() {
+	// return event;
+	// }
 
 	/**
 	 *Return the html
@@ -127,7 +145,7 @@ public class Event {
 		result = HashCodeUtil.hash(result, type);
 		result = HashCodeUtil.hash(result, ref);
 		result = HashCodeUtil.hash(result, login);
-		result = HashCodeUtil.hash(result, event);
+		// result = HashCodeUtil.hash(result, event);
 		result = HashCodeUtil.hash(result, date);
 		result = HashCodeUtil.hash(result, html);
 		return result;
@@ -143,15 +161,15 @@ public class Event {
 		this.date = date;
 	}
 
-	/**
-	 * Set the event
-	 * 
-	 * @param event
-	 *            the event to set
-	 */
-	public void setEvent(String event) {
-		this.event = event;
-	}
+	// /**
+	// * Set the event
+	// *
+	// * @param event
+	// * the event to set
+	// */
+	// public void setEvent(String event) {
+	// this.event = event;
+	// }
 
 	/**
 	 * Set the html
@@ -234,6 +252,6 @@ public class Event {
 	@Override
 	public String toString() {
 		String format = "[%s] %s";
-		return String.format(format, type, event);
+		return String.format(format, type, html);
 	}
 }
