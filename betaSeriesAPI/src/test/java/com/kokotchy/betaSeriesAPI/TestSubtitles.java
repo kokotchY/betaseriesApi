@@ -43,7 +43,7 @@ public class TestSubtitles extends TestCase {
 	/**
 	 * Test the last subtitles
 	 */
-	public void testLastSubtitles() {
+	public void testSubtitlesLast() {
 		List<Subtitle> lastSubtitlesJson = subtitlesJson.getLastSubtitles(5,
 				SubtitleLanguage.ALL);
 		List<Subtitle> lastSubtitlesXml = subtitlesXml.getLastSubtitles(5,
@@ -52,13 +52,69 @@ public class TestSubtitles extends TestCase {
 	}
 
 	/**
+	 * Test last subtitles for two json
+	 */
+	public void testSubtitlesLastJson() {
+		List<Subtitle> lastSubtitlesJson = subtitlesJson.getLastSubtitles(5,
+				SubtitleLanguage.ALL);
+		List<Subtitle> lastSubtitlesJson2 = subtitlesJson.getLastSubtitles(5,
+				SubtitleLanguage.ALL);
+		assertEquals(lastSubtitlesJson, lastSubtitlesJson2);
+	}
+
+	/**
 	 * Test last subtitles for two xml
 	 */
-	public void testXmlLastSubtitles() {
+	public void testSubtitlesLastXml() {
 		List<Subtitle> lastSubtitlesXml = subtitlesXml.getLastSubtitles(5,
 				SubtitleLanguage.ALL);
 		List<Subtitle> lastSubtitlesXml2 = subtitlesXml.getLastSubtitles(5,
 				SubtitleLanguage.ALL);
 		assertEquals(lastSubtitlesXml, lastSubtitlesXml2);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testSubtitlesShowDexter() {
+		String url = "dexter";
+		SubtitleLanguage subtitle = SubtitleLanguage.VF;
+		int season = 1;
+		int episode = -1;
+		List<Subtitle> subtitlesListXml = subtitlesXml.show(url, subtitle,
+				season, episode);
+		List<Subtitle> subtitlesListJson = subtitlesJson.show(url, subtitle,
+				season, episode);
+		assertEquals(subtitlesListXml, subtitlesListJson);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testSubtitlesShowDexterJson() {
+		String url = "dexter";
+		SubtitleLanguage subtitle = SubtitleLanguage.VF;
+		int season = 1;
+		int episode = -1;
+		List<Subtitle> subtitlesListJson2 = subtitlesJson.show(url, subtitle,
+				season, episode);
+		List<Subtitle> subtitlesListJson = subtitlesJson.show(url, subtitle,
+				season, episode);
+		assertEquals(subtitlesListJson, subtitlesListJson2);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testSubtitlesShowDexterXml() {
+		String url = "dexter";
+		SubtitleLanguage subtitle = SubtitleLanguage.VF;
+		int season = 1;
+		int episode = -1;
+		List<Subtitle> subtitlesListXml = subtitlesXml.show(url, subtitle,
+				season, episode);
+		List<Subtitle> subtitlesListXml2 = subtitlesXml.show(url, subtitle,
+				season, episode);
+		assertEquals(subtitlesListXml, subtitlesListXml2);
 	}
 }

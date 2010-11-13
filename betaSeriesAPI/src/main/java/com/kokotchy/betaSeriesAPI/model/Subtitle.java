@@ -1,8 +1,10 @@
 package com.kokotchy.betaSeriesAPI.model;
 
 import org.dom4j.Node;
+import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.HashCodeUtil;
+import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
@@ -11,6 +13,40 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
  * @author kokotchy
  */
 public class Subtitle {
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
+	 * @return
+	 */
+	public static Subtitle createSubtitle(JSONObject jsonObject) {
+		Subtitle subtitle = new Subtitle();
+		subtitle.setTitle(UtilsJson.getStringValue(jsonObject, "title"));
+		subtitle.setSeason(UtilsJson.getIntValue(jsonObject, "season"));
+		subtitle.setEpisode(UtilsJson.getIntValue(jsonObject, "episode"));
+
+		String language = UtilsJson.getStringValue(jsonObject, "language");
+		if (language != null) {
+			if (language.equals("VF")) {
+				subtitle.setLanguage(SubtitleLanguage.VF);
+			} else if (language.equals("VO")) {
+				subtitle.setLanguage(SubtitleLanguage.VO);
+			} else if (language.equals("VOVF")) {
+				subtitle.setLanguage(SubtitleLanguage.VOVF);
+			} else {
+				subtitle.setLanguage(SubtitleLanguage.UNKNOWN);
+			}
+		} else {
+			subtitle.setLanguage(SubtitleLanguage.UNKNOWN);
+		}
+
+		subtitle.setSource(UtilsJson.getStringValue(jsonObject, "source"));
+		subtitle.setFile(UtilsJson.getStringValue(jsonObject, "file"));
+		subtitle.setUrl(UtilsJson.getStringValue(jsonObject, "url"));
+
+		return subtitle;
+	}
 
 	/**
 	 * Create a new subtitle from the node
