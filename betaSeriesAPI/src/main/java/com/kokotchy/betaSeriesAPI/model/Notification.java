@@ -4,6 +4,7 @@ import org.dom4j.Node;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.HashCodeUtil;
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
@@ -71,6 +72,14 @@ public class Notification {
 	 */
 	private boolean seen;
 
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Notification)) {
+			return false;
+		}
+		return hashCode() == obj.hashCode();
+	}
+
 	/**
 	 * Return the date
 	 * 
@@ -96,6 +105,16 @@ public class Notification {
 	 */
 	public int getId() {
 		return id;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = HashCodeUtil.SEED;
+		result = HashCodeUtil.hash(result, id);
+		result = HashCodeUtil.hash(result, html);
+		result = HashCodeUtil.hash(result, date);
+		result = HashCodeUtil.hash(result, seen);
+		return result;
 	}
 
 	/**

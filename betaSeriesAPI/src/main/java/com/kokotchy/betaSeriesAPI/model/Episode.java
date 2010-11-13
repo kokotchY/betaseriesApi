@@ -6,6 +6,7 @@ import java.util.List;
 import org.dom4j.Node;
 import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.HashCodeUtil;
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
@@ -53,6 +54,7 @@ public class Episode {
 		episode.setDescription(UtilsXml.readString(node, "description"));
 		episode.setScreen(UtilsXml.readString(node, "screen"));
 		episode.setShow(UtilsXml.readString(node, "show"));
+		episode.setShowUrl(UtilsXml.readString(node, "url"));
 
 		List<Node> subsNode = node.selectNodes("subs/sub");
 		for (Node sub : subsNode) {
@@ -93,8 +95,7 @@ public class Episode {
 	private String description;
 
 	/**
-	 * TODO Change to url
-	 * Url of a screen of the episode
+	 * TODO Change to url Url of a screen of the episode
 	 */
 	private String screen;
 
@@ -118,6 +119,14 @@ public class Episode {
 	 */
 	public void addSubtitle(Subtitle subtitle) {
 		subtitles.add(subtitle);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Episode)) {
+			return false;
+		}
+		return hashCode() == obj.hashCode();
 	}
 
 	/**
@@ -190,6 +199,20 @@ public class Episode {
 		return title;
 	}
 
+	@Override
+	public int hashCode() {
+		int result = HashCodeUtil.SEED;
+		result = HashCodeUtil.hash(result, nb);
+		result = HashCodeUtil.hash(result, showUrl);
+		result = HashCodeUtil.hash(result, show);
+		result = HashCodeUtil.hash(result, date);
+		result = HashCodeUtil.hash(result, title);
+		result = HashCodeUtil.hash(result, description);
+		result = HashCodeUtil.hash(result, screen);
+		result = HashCodeUtil.hash(result, subtitles);
+		return result;
+	}
+
 	/**
 	 * Set the date of the episode
 	 * 
@@ -255,6 +278,9 @@ public class Episode {
 	 *            the title to set
 	 */
 	public void setTitle(String title) {
+		if (!title.equals(title.trim())) {
+			System.out.println("Problem...");
+		}
 		this.title = title;
 	}
 

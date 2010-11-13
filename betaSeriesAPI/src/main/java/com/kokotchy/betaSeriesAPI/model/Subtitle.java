@@ -161,6 +161,7 @@ public class Subtitle {
 		result = HashCodeUtil.hash(result, episode);
 		result = HashCodeUtil.hash(result, language);
 		result = HashCodeUtil.hash(result, source);
+		result = HashCodeUtil.hash(result, file);
 		result = HashCodeUtil.hash(result, url);
 		return result;
 	}

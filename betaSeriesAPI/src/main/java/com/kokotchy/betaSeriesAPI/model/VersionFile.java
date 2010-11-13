@@ -3,6 +3,7 @@ package com.kokotchy.betaSeriesAPI.model;
 import org.dom4j.Node;
 import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.HashCodeUtil;
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
@@ -52,6 +53,14 @@ public class VersionFile {
 	 */
 	private int lastChange;
 
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof VersionFile)) {
+			return false;
+		}
+		return hashCode() == obj.hashCode();
+	}
+
 	/**
 	 * Return the last change date
 	 * 
@@ -68,6 +77,14 @@ public class VersionFile {
 	 */
 	public String getName() {
 		return name;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = HashCodeUtil.SEED;
+		result = HashCodeUtil.hash(result, name);
+		result = HashCodeUtil.hash(result, lastChange);
+		return result;
 	}
 
 	/**

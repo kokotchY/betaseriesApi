@@ -3,6 +3,8 @@ package com.kokotchy.betaSeriesAPI.model;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.kokotchy.betaSeriesAPI.HashCodeUtil;
+
 /**
  * Season of a show
  * 
@@ -41,6 +43,14 @@ public class Season {
 		episodes.put(episode.getNb(), episode);
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Season)) {
+			return false;
+		}
+		return hashCode() == obj.hashCode();
+	}
+
 	/**
 	 * Return the episode with the given number
 	 * 
@@ -68,6 +78,14 @@ public class Season {
 	 */
 	public int getNumber() {
 		return number;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = HashCodeUtil.SEED;
+		result = HashCodeUtil.hash(result, number);
+		result = HashCodeUtil.hash(result, episodes);
+		return result;
 	}
 
 	/**

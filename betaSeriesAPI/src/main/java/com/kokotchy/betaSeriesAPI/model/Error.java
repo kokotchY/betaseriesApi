@@ -2,6 +2,7 @@ package com.kokotchy.betaSeriesAPI.model;
 
 import org.dom4j.Node;
 
+import com.kokotchy.betaSeriesAPI.HashCodeUtil;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
@@ -67,6 +68,14 @@ public class Error {
 		this(-1, text);
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Error)) {
+			return false;
+		}
+		return hashCode() == obj.hashCode();
+	}
+
 	/**
 	 * Return the code of the error
 	 * 
@@ -83,6 +92,14 @@ public class Error {
 	 */
 	public String getText() {
 		return text;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = HashCodeUtil.SEED;
+		result = HashCodeUtil.hash(result, code);
+		result = HashCodeUtil.hash(result, text);
+		return result;
 	}
 
 	/**

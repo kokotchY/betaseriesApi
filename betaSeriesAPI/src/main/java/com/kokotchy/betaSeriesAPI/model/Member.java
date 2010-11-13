@@ -146,9 +146,7 @@ public class Member {
 		result = HashCodeUtil.hash(result, login);
 		result = HashCodeUtil.hash(result, avatar);
 		result = HashCodeUtil.hash(result, stats);
-		for (Show show : shows) {
-			result = HashCodeUtil.hash(result, show);
-		}
+		result = HashCodeUtil.hash(result, shows);
 		return result;
 	}
 

@@ -3,6 +3,7 @@ package com.kokotchy.betaSeriesAPI.model;
 import org.dom4j.Node;
 import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.HashCodeUtil;
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
@@ -12,7 +13,6 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
  * @author kokotchy
  */
 public class Change {
-
 	/**
 	 * Create a new change from the json object
 	 * 
@@ -51,6 +51,14 @@ public class Change {
 	 */
 	private String value;
 
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Change)) {
+			return false;
+		}
+		return hashCode() == obj.hashCode();
+	}
+
 	/**
 	 * Return the type of the change
 	 * 
@@ -67,6 +75,14 @@ public class Change {
 	 */
 	public String getValue() {
 		return value;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = HashCodeUtil.SEED;
+		result = HashCodeUtil.hash(result, type);
+		result = HashCodeUtil.hash(result, value);
+		return result;
 	}
 
 	/**

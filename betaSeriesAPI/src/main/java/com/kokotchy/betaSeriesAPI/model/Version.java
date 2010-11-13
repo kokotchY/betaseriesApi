@@ -8,6 +8,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.HashCodeUtil;
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
@@ -84,6 +85,14 @@ public class Version {
 		changes.add(change);
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Version)) {
+			return false;
+		}
+		return hashCode() == obj.hashCode();
+	}
+
 	/**
 	 * Return the changes
 	 * 
@@ -100,6 +109,14 @@ public class Version {
 	 */
 	public int getDate() {
 		return date;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = HashCodeUtil.SEED;
+		result = HashCodeUtil.hash(result, date);
+		result = HashCodeUtil.hash(result, changes);
+		return result;
 	}
 
 	/**

@@ -40,7 +40,11 @@ public class TestStatus extends TestCase {
 	 * Test status
 	 */
 	public void testStatus() {
-		assertEquals(statusXml.getStatus(), statusJson.getStatus());
+		StatusInfo statusInfoXml = statusXml.getStatus();
+		StatusInfo statusInfoJson = statusJson.getStatus();
+		assertEquals(statusInfoXml.getFiles(), statusInfoJson.getFiles());
+		assertEquals(statusInfoXml.getVersions(), statusInfoJson.getVersions());
+		assertEquals(statusInfoXml, statusInfoJson);
 	}
 
 	/**

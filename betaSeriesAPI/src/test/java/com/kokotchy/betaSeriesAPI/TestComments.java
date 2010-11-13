@@ -34,4 +34,10 @@ public class TestComments extends TestCase {
 				+ "/src/test/resources/betaseriexml/");
 	}
 
+	/**
+	 * TODO Fill it
+	 */
+	public void testTrivial() {
+		assertTrue(true);
+	}
 }
