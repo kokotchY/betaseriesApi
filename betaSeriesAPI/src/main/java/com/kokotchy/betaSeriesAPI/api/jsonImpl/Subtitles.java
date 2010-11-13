@@ -2,6 +2,8 @@ package com.kokotchy.betaSeriesAPI.api.jsonImpl;
 
 import java.util.List;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 import com.kokotchy.betaSeriesAPI.api.ISubtitles;
 import com.kokotchy.betaSeriesAPI.model.Subtitle;
 import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
@@ -31,22 +33,19 @@ public class Subtitles implements ISubtitles {
 	@Override
 	public List<Subtitle> getLastSubtitles(int nb,
 			SubtitleLanguage subtitleLanguage) {
-		// TODO Auto-generated method stub
-		return null;
+		throw new NotImplementedException();
 	}
 
 	@Override
 	public List<Subtitle> getLastSubtitles(String url, int nb,
 			SubtitleLanguage subtitleLanguage) {
-		// TODO Auto-generated method stub
-		return null;
+		throw new NotImplementedException();
 	}
 
 	@Override
 	public List<Subtitle> show(String url, SubtitleLanguage subtitleLanguage,
 			int season, int episode) {
-		// TODO Auto-generated method stub
-		return null;
+		throw new NotImplementedException();
 	}
 
 }

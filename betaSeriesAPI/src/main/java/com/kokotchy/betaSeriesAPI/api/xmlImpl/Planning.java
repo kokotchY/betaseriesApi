@@ -68,7 +68,7 @@ public class Planning implements IPlanning {
 			Boolean identifiedUser) {
 		Document document = null;
 		if (unseen == null && token == null && identifiedUser == null) {
-			document = UtilsXml.executeQuery("planning/home.xml", apiKey);
+			document = UtilsXml.executeQuery("planning/general.xml", apiKey);
 		} else {
 			Map<String, String> params = new HashMap<String, String>();
 			String action;

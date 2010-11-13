@@ -2,6 +2,7 @@ package com.kokotchy.betaSeriesAPI.model;
 
 import org.dom4j.Node;
 
+import com.kokotchy.betaSeriesAPI.HashCodeUtil;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
@@ -58,6 +59,14 @@ public class Event {
 	 */
 	private String html;
 
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Event)) {
+			return false;
+		}
+		return hashCode() == obj.hashCode();
+	}
+
 	/**
 	 * Return the date
 	 * 
@@ -110,6 +119,18 @@ public class Event {
 	 */
 	public EventType getType() {
 		return type;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = HashCodeUtil.SEED;
+		result = HashCodeUtil.hash(result, type);
+		result = HashCodeUtil.hash(result, ref);
+		result = HashCodeUtil.hash(result, login);
+		result = HashCodeUtil.hash(result, event);
+		result = HashCodeUtil.hash(result, date);
+		result = HashCodeUtil.hash(result, html);
+		return result;
 	}
 
 	/**

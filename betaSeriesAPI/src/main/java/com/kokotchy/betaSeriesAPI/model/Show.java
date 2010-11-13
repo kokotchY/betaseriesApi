@@ -34,7 +34,9 @@ public class Show {
 		show.setStatus(UtilsJson.getStringValue(jsonObject, "status"));
 		show.setBanner(UtilsJson.getStringValue(jsonObject, "banner"));
 		show.setIdTvdb(UtilsJson.getIntValue(jsonObject, "id_thetvdb"));
-		show.addGenre(UtilsJson.getStringValue(jsonObject, "genres/genre"));
+		// TODO Uncomment
+		// show.addGenre(UtilsJson.getStringValue(jsonObject, "genres/genre"));
+		show.setArchived(UtilsJson.getBooleanValue(jsonObject, "archive"));
 		return show;
 	}
 
@@ -54,10 +56,12 @@ public class Show {
 		show.setStatus(UtilsXml.readString(node, "status"));
 		show.setBanner(UtilsXml.readString(node, "banner"));
 		show.setIdTvdb(UtilsXml.readInt(node, "id_thetvdb"));
-		List<Node> genres = node.selectNodes("genres");
-		for (Node nodeGenre : genres) {
-			show.addGenre(UtilsXml.readString(nodeGenre, "genre"));
-		}
+		// TODO Uncomment
+		// List<Node> genres = node.selectNodes("genres");
+		// for (Node nodeGenre : genres) {
+		// show.addGenre(UtilsXml.readString(nodeGenre, "genre"));
+		// }
+		show.setArchived(UtilsXml.readBoolean(node, "archive"));
 		return show;
 	}
 
@@ -95,6 +99,11 @@ public class Show {
 	 * List of genres of the show
 	 */
 	private List<String> genres;
+
+	/**
+	 * TODO Fill it
+	 */
+	private boolean archived;
 
 	/**
 	 * Create a new show
@@ -208,7 +217,27 @@ public class Show {
 		result = HashCodeUtil.hash(result, status);
 		result = HashCodeUtil.hash(result, banner);
 		result = HashCodeUtil.hash(result, genres);
+		result = HashCodeUtil.hash(result, archived);
 		return result;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @return the archived
+	 */
+	public boolean isArchived() {
+		return archived;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param archived
+	 *            the archived to set
+	 */
+	public void setArchived(boolean archived) {
+		this.archived = archived;
 	}
 
 	/**

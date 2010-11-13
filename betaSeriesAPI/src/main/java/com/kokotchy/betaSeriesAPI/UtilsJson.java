@@ -101,6 +101,17 @@ public class UtilsJson {
 	}
 
 	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
+	 * @param name
+	 * @return
+	 */
+	public static boolean getBooleanValue(JSONObject jsonObject, String name) {
+		return getIntValue(jsonObject, name) == 1;
+	}
+
+	/**
 	 * Return the int value with the given name
 	 * 
 	 * @param jsonObject
@@ -117,7 +128,7 @@ public class UtilsJson {
 				e.printStackTrace();
 			}
 		}
-		return 0;
+		return -1;
 	}
 
 	/**

@@ -47,11 +47,18 @@ public class TestStatus extends TestCase {
 	/**
 	 * TODO Fill it
 	 */
-	public void testStatusXml() {
+	public void testStatusEqualsJson() {
+		StatusInfo status = statusJson.getStatus();
+		StatusInfo status2 = statusJson.getStatus();
+		assertEquals(status, status2);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testStatusEqualsXml() {
 		StatusInfo status = statusXml.getStatus();
 		StatusInfo status2 = statusXml.getStatus();
-		System.out.println(status.hashCode());
-		System.out.println(status2.hashCode());
 		assertEquals(status, status2);
 	}
 }

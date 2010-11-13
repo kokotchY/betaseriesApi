@@ -191,7 +191,7 @@ public class UtilsXml {
 	public static String readString(Node node, String string) {
 		Node selectedNode = node.selectSingleNode(string);
 		if (selectedNode != null) {
-			return selectedNode.getText();
+			return EntityDecoder.htmlToChar(selectedNode.getText());
 		}
 		return null;
 	}
