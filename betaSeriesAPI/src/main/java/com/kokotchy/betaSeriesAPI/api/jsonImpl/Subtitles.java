@@ -79,9 +79,9 @@ public class Subtitles implements ISubtitles {
 		List<Subtitle> subtitles = new LinkedList<Subtitle>();
 		String action = null;
 		if (url != null) {
-			action = "subtitles/last/" + url + ".json";
+			action = "subtitles/last/" + url;
 		} else {
-			action = "subtitles/last.json";
+			action = "subtitles/last";
 		}
 		JSONObject jsonObject = UtilsJson.executeQuery(action, apiKey, params);
 
@@ -118,8 +118,8 @@ public class Subtitles implements ISubtitles {
 			break;
 		}
 
-		JSONObject jsonObject = UtilsJson.executeQuery("subtitles/show/" + url
-				+ ".json", apiKey, params);
+		JSONObject jsonObject = UtilsJson.executeQuery("subtitles/show/" + url,
+				apiKey, params);
 		JSONArray subtitlesArray = UtilsJson.getJSONArrayFromPath(jsonObject,
 				"/root/subtitles");
 		List<Subtitle> subtitles = new LinkedList<Subtitle>();

@@ -48,8 +48,8 @@ public class Subtitles implements ISubtitles {
 	}
 
 	/**
-	 * Return the last subtitles. If the url is not null, return subtitles for the show.
-	 * If the nb is greater than 0, limit the number of subtitles
+	 * Return the last subtitles. If the url is not null, return subtitles for
+	 * the show. If the nb is greater than 0, limit the number of subtitles
 	 * 
 	 * @param url
 	 *            Url of the show
@@ -79,9 +79,9 @@ public class Subtitles implements ISubtitles {
 		List<Subtitle> subtitles = new LinkedList<Subtitle>();
 		String action = null;
 		if (url != null) {
-			action = "subtitles/last/" + url + ".xml";
+			action = "subtitles/last/" + url;
 		} else {
-			action = "subtitles/last.xml";
+			action = "subtitles/last";
 		}
 		Document document = UtilsXml.executeQuery(action, apiKey, params);
 		List<Node> nodes = document.selectNodes("/root/subtitles/subtitle");
@@ -111,8 +111,8 @@ public class Subtitles implements ISubtitles {
 			break;
 		}
 
-		Document document = UtilsXml.executeQuery(
-				"subtitles/show/" + url + ".xml", apiKey, params);
+		Document document = UtilsXml.executeQuery("subtitles/show/" + url,
+				apiKey, params);
 		List<Node> nodes = document.selectNodes("/root/subtitles/subtitle");
 		List<Subtitle> subtitles = new LinkedList<Subtitle>();
 		for (Node node : nodes) {

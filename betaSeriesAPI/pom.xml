@@ -48,6 +48,18 @@
     </dependency>
   </dependencies>
   
+  <developers>
+  	<developer>
+  		<id>kokotchy</id>
+  		<name>Sébastien Canart</name>
+  		<email>kokotchy@gmail.com</email>
+  	</developer>
+  </developers>
+  <scm>
+  	<connection>scm:svn:http://localhost/svn/betaserieApi/trunk/betaSeriesAPI</connection>
+  	<developerConnection>scm:svn:http://localhost/svn/betaserieApi/trunk/betaSeriesAPI</developerConnection>
+  	<url>scm:svn:http://localhost/svn/betaserieApi/trunk/betaSeriesAPI</url>
+  </scm>
   <build>
   	<plugins>
   		<plugin>
@@ -56,8 +68,27 @@
     		<configuration>
         		<source>1.6</source>
         		<target>1.6</target>
+        		<encoding>UTF-8</encoding>
     		</configuration>
   		</plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                        <nonFilteredFileExtensions>
+                            <nonFilteredFileExtension>json</nonFilteredFileExtension>
+                            <nonFilteredFileExtension>xml</nonFilteredFileExtension>
+                        </nonFilteredFileExtensions>
+                    </configuration>
+                </plugin>
   	</plugins>
   </build>
 </project>

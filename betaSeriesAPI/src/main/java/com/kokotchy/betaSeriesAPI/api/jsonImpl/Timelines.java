@@ -40,8 +40,8 @@ public class Timelines implements ITimelines {
 	public List<Event> getFriendsTimeline(String token) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
-		return getTimeline(UtilsJson.executeQuery("timeline/friends.json",
-				apiKey, params));
+		return getTimeline(UtilsJson.executeQuery("timeline/friends", apiKey,
+				params));
 	}
 
 	@Override
@@ -49,20 +49,20 @@ public class Timelines implements ITimelines {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
 		params.put("number", "" + nb);
-		return getTimeline(UtilsJson.executeQuery("timeline/friends.json",
-				apiKey, params));
+		return getTimeline(UtilsJson.executeQuery("timeline/friends", apiKey,
+				params));
 	}
 
 	@Override
 	public List<Event> getHomeTimeline() {
-		return getTimeline(UtilsJson.executeQuery("timeline/home.json", apiKey));
+		return getTimeline(UtilsJson.executeQuery("timeline/home", apiKey));
 	}
 
 	@Override
 	public List<Event> getHomeTimeline(int nb) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("number", "" + nb);
-		return getTimeline(UtilsJson.executeQuery("timeline/home.json", apiKey,
+		return getTimeline(UtilsJson.executeQuery("timeline/home", apiKey,
 				params));
 	}
 
@@ -90,15 +90,15 @@ public class Timelines implements ITimelines {
 
 	@Override
 	public List<Event> getTimelineOfUser(String user) {
-		return getTimeline(UtilsJson.executeQuery("timeline/member/" + user
-				+ ".json", apiKey));
+		return getTimeline(UtilsJson.executeQuery("timeline/member/" + user,
+				apiKey));
 	}
 
 	@Override
 	public List<Event> getTimelineOfUser(String user, int nb) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("number", "" + nb);
-		return getTimeline(UtilsJson.executeQuery("timeline/member/" + user
-				+ ".json", apiKey, params));
+		return getTimeline(UtilsJson.executeQuery("timeline/member/" + user,
+				apiKey, params));
 	}
 }

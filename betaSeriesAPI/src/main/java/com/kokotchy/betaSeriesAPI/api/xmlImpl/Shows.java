@@ -40,14 +40,14 @@ public class Shows implements IShows {
 	public boolean add(String url, String token) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
-		Document document = UtilsXml.executeQuery("shows/add/" + url + ".xml",
-				apiKey, params);
+		Document document = UtilsXml.executeQuery("shows/add/" + url, apiKey,
+				params);
 		return !UtilsXml.hasErrors(document);
 	}
 
 	@Override
 	public Show display(String url) {
-		Document document = UtilsXml.executeQuery("shows/display/" + url + ".xml",
+		Document document = UtilsXml.executeQuery("shows/display/" + url,
 				apiKey);
 		if (!UtilsXml.hasErrors(document)) {
 			return Show.createShow(document.selectSingleNode("/root/show"));
@@ -59,7 +59,7 @@ public class Shows implements IShows {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Show> displayAll() {
-		Document document = UtilsXml.executeQuery("shows/display/all.xml", apiKey);
+		Document document = UtilsXml.executeQuery("shows/display/all", apiKey);
 		List<Show> result = new LinkedList<Show>();
 		List<Node> nodes = document.selectNodes("/root/shows/show");
 		for (Node node : nodes) {
@@ -95,7 +95,7 @@ public class Shows implements IShows {
 		if (seasonNb > 0) {
 			params.put("season", "" + seasonNb);
 		}
-		document = UtilsXml.executeQuery("shows/episodes/" + url + ".xml", apiKey,
+		document = UtilsXml.executeQuery("shows/episodes/" + url, apiKey,
 				params);
 		List<Node> seasons = document.selectNodes("/root/seasons/season");
 		List<Season> result = new LinkedList<Season>();
@@ -114,7 +114,7 @@ public class Shows implements IShows {
 	public boolean remove(String url, String token) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
-		Document document = UtilsXml.executeQuery("shows/remove/" + url + ".xml",
+		Document document = UtilsXml.executeQuery("shows/remove/" + url,
 				apiKey, params);
 		return !UtilsXml.hasErrors(document);
 	}
@@ -124,7 +124,7 @@ public class Shows implements IShows {
 	public List<Show> search(String title) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("title", title);
-		Document document = UtilsXml.executeQuery("shows/search.xml", apiKey,
+		Document document = UtilsXml.executeQuery("shows/search", apiKey,
 				params);
 		List<Show> shows = new LinkedList<Show>();
 		if (!UtilsXml.hasErrors(document)) {

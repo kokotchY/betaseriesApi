@@ -30,7 +30,7 @@ public class Status implements IStatus {
 
 	@Override
 	public StatusInfo getStatus() {
-		JSONObject jsonObject = UtilsJson.executeQuery("status.json", apiKey);
+		JSONObject jsonObject = UtilsJson.executeQuery("status", apiKey);
 		return StatusInfo.createStatusInfo(jsonObject);
 	}
 

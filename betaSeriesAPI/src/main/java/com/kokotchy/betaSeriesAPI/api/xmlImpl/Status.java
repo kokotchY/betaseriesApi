@@ -31,7 +31,7 @@ public class Status implements IStatus {
 
 	@Override
 	public StatusInfo getStatus() {
-		Document document = UtilsXml.executeQuery("status.xml", apiKey);
+		Document document = UtilsXml.executeQuery("status", apiKey);
 		return StatusInfo.createStatusInfo(document);
 	}
 

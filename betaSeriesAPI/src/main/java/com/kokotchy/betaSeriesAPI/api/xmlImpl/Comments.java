@@ -2,9 +2,8 @@ package com.kokotchy.betaSeriesAPI.api.xmlImpl;
 
 import java.util.List;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import com.kokotchy.betaSeriesAPI.api.IComments;
+import com.kokotchy.betaSeriesAPI.api.NotImplementedException;
 import com.kokotchy.betaSeriesAPI.model.Comment;
 
 /**

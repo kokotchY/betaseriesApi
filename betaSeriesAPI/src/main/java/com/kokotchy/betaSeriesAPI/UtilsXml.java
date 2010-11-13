@@ -79,6 +79,10 @@ public class UtilsXml {
 		URLConnection connection = null;
 		BufferedReader reader = null;
 		try {
+			if (action.endsWith(".xml")) {
+				throw new RuntimeException("Don't use extension");
+			}
+			action += ".xml";
 			if (debug) {
 				reader = new BufferedReader(new FileReader(new File(debugPath,
 						action)));
@@ -96,7 +100,9 @@ public class UtilsXml {
 				buffer.append(line);
 			}
 			String xmlResponse = buffer.toString();
-			System.out.println("XML Response: " + xmlResponse);
+			if (debug) {
+				System.out.println("XML Response: " + xmlResponse);
+			}
 			return DocumentHelper.parseText(xmlResponse);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
@@ -109,7 +115,9 @@ public class UtilsXml {
 				if (connection != null) {
 					connection.getInputStream().close();
 				}
-				reader.close();
+				if (reader != null) {
+					reader.close();
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

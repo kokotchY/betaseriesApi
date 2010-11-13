@@ -61,9 +61,10 @@ public class UtilsJson {
 		params.put("key", apiKey);
 		BufferedReader reader = null;
 		try {
-			if (!action.endsWith(".json")) {
-				action += ".json";
+			if (action.endsWith(".json")) {
+				throw new RuntimeException("Don't use extension");
 			}
+			action += ".json";
 			if (debug) {
 				System.out.println("Debug mode activated, use file");
 				File file = new File(debugPath + action);
@@ -92,7 +93,9 @@ public class UtilsJson {
 			e.printStackTrace();
 		} finally {
 			try {
-				reader.close();
+				if (reader != null) {
+					reader.close();
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

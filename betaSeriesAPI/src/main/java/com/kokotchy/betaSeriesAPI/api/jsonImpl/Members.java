@@ -49,7 +49,7 @@ public class Members implements IMembers {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("login", login);
 		params.put("password", Utils.getMD5(password));
-		JSONObject object = UtilsJson.executeQuery("members/auth.json", apiKey,
+		JSONObject object = UtilsJson.executeQuery("members/auth", apiKey,
 				params);
 		if (!UtilsJson.hasErrors(object)) {
 			token = UtilsJson.getJSONStringFromPath(object,
@@ -63,7 +63,7 @@ public class Members implements IMembers {
 	public void destroy() {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
-		UtilsJson.executeQuery("members/destroy.xml", apiKey, params);
+		UtilsJson.executeQuery("members/destroy", apiKey, params);
 	}
 
 	@Override
@@ -85,7 +85,7 @@ public class Members implements IMembers {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
 		JSONObject jsonObject = UtilsJson.executeQuery("members/episodes/"
-				+ lang + ".json", apiKey, params);
+				+ lang, apiKey, params);
 		try {
 			JSONArray episodes = UtilsJson.getJSONArrayFromPath(jsonObject,
 					"/root/episodes");
@@ -115,13 +115,13 @@ public class Members implements IMembers {
 	private Member getInfosForUser(String user, boolean identifiedUser) {
 		JSONObject jsonObject;
 		if (!identifiedUser) {
-			jsonObject = UtilsJson.executeQuery("members/infos/" + user
-					+ ".json", apiKey);
+			jsonObject = UtilsJson
+					.executeQuery("members/infos/" + user, apiKey);
 		} else {
 			Map<String, String> params = new HashMap<String, String>();
 			params.put("token", user);
-			jsonObject = UtilsJson.executeQuery("members/infos.json", apiKey,
-					params);
+			jsonObject = UtilsJson
+					.executeQuery("members/infos", apiKey, params);
 		}
 		return Member.createMember(UtilsJson.getJSONObjectFromPath(jsonObject,
 				"/root/member"));
@@ -178,8 +178,8 @@ public class Members implements IMembers {
 		}
 		params.put("token", token);
 		List<Notification> notifications = new LinkedList<Notification>();
-		JSONObject jsonObject = UtilsJson.executeQuery(
-				"members/notifications.json", apiKey, params);
+		JSONObject jsonObject = UtilsJson.executeQuery("members/notifications",
+				apiKey, params);
 		JSONArray notificationsArray = UtilsJson.getJSONArrayFromPath(
 				jsonObject, "/root/notifications");
 		try {
@@ -218,8 +218,8 @@ public class Members implements IMembers {
 	public boolean isActive(String token) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
-		JSONObject jsonObject = UtilsJson.executeQuery(
-				"members/is_active.json", apiKey, params);
+		JSONObject jsonObject = UtilsJson.executeQuery("members/is_active",
+				apiKey, params);
 		return !UtilsJson.hasErrors(jsonObject);
 	}
 
@@ -234,8 +234,7 @@ public class Members implements IMembers {
 		params.put("season", "" + season);
 		params.put("episode", "" + episode);
 		params.put("token", token);
-		UtilsJson.executeQuery("members/watched/" + url + ".json", apiKey,
-				params);
+		UtilsJson.executeQuery("members/watched/" + url, apiKey, params);
 	}
 
 }

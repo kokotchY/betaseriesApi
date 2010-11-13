@@ -68,8 +68,7 @@ public class Planning implements IPlanning {
 			Boolean identifiedUser) {
 		JSONObject jsonObject = null;
 		if (unseen == null && token == null && identifiedUser == null) {
-			jsonObject = UtilsJson
-					.executeQuery("planning/general.json", apiKey);
+			jsonObject = UtilsJson.executeQuery("planning/general", apiKey);
 		} else {
 			Map<String, String> params = new HashMap<String, String>();
 			String action;
@@ -78,9 +77,9 @@ public class Planning implements IPlanning {
 			}
 			if (identifiedUser) {
 				params.put("token", token);
-				action = "planning/member.json";
+				action = "planning/member";
 			} else {
-				action = "planning/member/" + token + ".json";
+				action = "planning/member/" + token;
 			}
 			jsonObject = UtilsJson.executeQuery(action, apiKey, params);
 		}

@@ -41,15 +41,15 @@ public class Shows implements IShows {
 	public boolean add(String url, String token) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
-		JSONObject jsonObject = UtilsJson.executeQuery("shows/add/" + url
-				+ ".json", apiKey, params);
+		JSONObject jsonObject = UtilsJson.executeQuery("shows/add/" + url,
+				apiKey, params);
 		return !UtilsJson.hasErrors(jsonObject);
 	}
 
 	@Override
 	public Show display(String url) {
-		JSONObject jsonObject = UtilsJson.executeQuery("shows/display/" + url
-				+ ".json", apiKey);
+		JSONObject jsonObject = UtilsJson.executeQuery("shows/display/" + url,
+				apiKey);
 		if (!UtilsJson.hasErrors(jsonObject)) {
 			return Show.createShow(UtilsJson.getJSONObjectFromPath(jsonObject,
 					"/root/show"));
@@ -60,8 +60,8 @@ public class Shows implements IShows {
 	@Override
 	public List<Show> displayAll() {
 		List<Show> result = new LinkedList<Show>();
-		JSONObject jsonObject = UtilsJson.executeQuery(
-				"shows/display/all.json", apiKey);
+		JSONObject jsonObject = UtilsJson.executeQuery("shows/display/all",
+				apiKey);
 		JSONArray jsonArrayFromPath = UtilsJson.getJSONArrayFromPath(
 				jsonObject, "/root/shows");
 		try {
@@ -101,8 +101,8 @@ public class Shows implements IShows {
 		if (seasonNb > 0) {
 			params.put("season", "" + seasonNb);
 		}
-		jsonObject = UtilsJson.executeQuery("shows/episodes/" + url + ".json",
-				apiKey, params);
+		jsonObject = UtilsJson.executeQuery("shows/episodes/" + url, apiKey,
+				params);
 		JSONArray seasonsArray = UtilsJson.getJSONArrayFromPath(jsonObject,
 				"/root/seasons");
 		List<Season> result = new LinkedList<Season>();
@@ -131,8 +131,8 @@ public class Shows implements IShows {
 	public boolean remove(String url, String token) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
-		JSONObject jsonObject = UtilsJson.executeQuery("shows/remove/" + url
-				+ ".json", apiKey, params);
+		JSONObject jsonObject = UtilsJson.executeQuery("shows/remove/" + url,
+				apiKey, params);
 		return !UtilsJson.hasErrors(jsonObject);
 	}
 
@@ -140,8 +140,8 @@ public class Shows implements IShows {
 	public List<Show> search(String title) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("title", title);
-		JSONObject jsonObject = UtilsJson.executeQuery("shows/search.json",
-				apiKey, params);
+		JSONObject jsonObject = UtilsJson.executeQuery("shows/search", apiKey,
+				params);
 		List<Show> shows = new LinkedList<Show>();
 		if (!UtilsJson.hasErrors(jsonObject)) {
 			try {
