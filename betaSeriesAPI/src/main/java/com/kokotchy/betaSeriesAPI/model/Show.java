@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.dom4j.Node;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.HashCodeUtil;
@@ -36,6 +38,16 @@ public class Show {
 		show.setIdTvdb(UtilsJson.getIntValue(jsonObject, "id_thetvdb"));
 		// TODO Uncomment
 		// show.addGenre(UtilsJson.getStringValue(jsonObject, "genres/genre"));
+		JSONArray genres = UtilsJson.getJSONArray(jsonObject, "genres");
+		int length = genres.length();
+		try {
+			for (int i = 0; i < length; i++) {
+				show.addGenre(UtilsJson.getStringValue(genres.getJSONObject(i),
+						"genre"));
+			}
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
 		show.setArchived(UtilsJson.getBooleanValue(jsonObject, "archive"));
 		return show;
 	}
@@ -56,11 +68,10 @@ public class Show {
 		show.setStatus(UtilsXml.readString(node, "status"));
 		show.setBanner(UtilsXml.readString(node, "banner"));
 		show.setIdTvdb(UtilsXml.readInt(node, "id_thetvdb"));
-		// TODO Uncomment
-		// List<Node> genres = node.selectNodes("genres");
-		// for (Node nodeGenre : genres) {
-		// show.addGenre(UtilsXml.readString(nodeGenre, "genre"));
-		// }
+		List<Node> genres = node.selectNodes("genres/genre");
+		for (Node nodeGenre : genres) {
+			show.addGenre(nodeGenre.getStringValue());
+		}
 		show.setArchived(UtilsXml.readBoolean(node, "archive"));
 		return show;
 	}
