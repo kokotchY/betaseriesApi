@@ -3,26 +3,22 @@ package com.kokotchy.betaSeriesAPI;
 import junit.framework.TestCase;
 
 /**
- * TODO Fill it
+ * Test comments api
  * 
  * @author kokotchy
- * 
  */
 public class TestComments extends TestCase {
 
 	/**
-	 * TODO Fill it
+	 * Comments api for json
 	 */
 	private com.kokotchy.betaSeriesAPI.api.jsonImpl.Comments commentsJson;
 
 	/**
-	 * TODO Fill it
+	 * Comments api for xml
 	 */
 	private com.kokotchy.betaSeriesAPI.api.xmlImpl.Comments commentsXml;
 
-	/**
-	 *
-	 */
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();

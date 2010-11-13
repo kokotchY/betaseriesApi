@@ -5,20 +5,19 @@ import junit.framework.TestCase;
 import com.kokotchy.betaSeriesAPI.model.StatusInfo;
 
 /**
- * TODO Fill it
+ * Test status api
  * 
  * @author kokotchy
- * 
  */
 public class TestStatus extends TestCase {
 
 	/**
-	 * TODO Fill it
+	 * Status api for json
 	 */
 	private com.kokotchy.betaSeriesAPI.api.jsonImpl.Status statusJson;
 
 	/**
-	 * TODO Fill it
+	 * Status api for xml
 	 */
 	private com.kokotchy.betaSeriesAPI.api.xmlImpl.Status statusXml;
 
@@ -38,14 +37,14 @@ public class TestStatus extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test status
 	 */
 	public void testStatus() {
 		assertEquals(statusXml.getStatus(), statusJson.getStatus());
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test status for two json
 	 */
 	public void testStatusEqualsJson() {
 		StatusInfo status = statusJson.getStatus();
@@ -54,7 +53,7 @@ public class TestStatus extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test status for two xml
 	 */
 	public void testStatusEqualsXml() {
 		StatusInfo status = statusXml.getStatus();

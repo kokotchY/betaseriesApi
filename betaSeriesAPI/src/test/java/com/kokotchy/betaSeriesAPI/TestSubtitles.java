@@ -8,7 +8,7 @@ import com.kokotchy.betaSeriesAPI.model.Subtitle;
 import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
 
 /**
- * TODO Fill it
+ * Test subtitles api
  * 
  * @author kokotchy
  * 
@@ -16,18 +16,15 @@ import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
 public class TestSubtitles extends TestCase {
 
 	/**
-	 * TODO Fill it
+	 * Subtitles api for json
 	 */
 	private com.kokotchy.betaSeriesAPI.api.jsonImpl.Subtitles subtitlesJson;
 
 	/**
-	 * TODO Fill it
+	 * Subtitles api for xml
 	 */
 	private com.kokotchy.betaSeriesAPI.api.xmlImpl.Subtitles subtitlesXml;
 
-	/**
-	 *
-	 */
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -44,7 +41,7 @@ public class TestSubtitles extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test the last subtitles
 	 */
 	public void testLastSubtitles() {
 		List<Subtitle> lastSubtitlesJson = subtitlesJson.getLastSubtitles(5,
@@ -55,7 +52,7 @@ public class TestSubtitles extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test last subtitles for two xml
 	 */
 	public void testXmlLastSubtitles() {
 		List<Subtitle> lastSubtitlesXml = subtitlesXml.getLastSubtitles(5,

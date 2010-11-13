@@ -7,15 +7,14 @@ import java.util.Map.Entry;
 import junit.framework.TestCase;
 
 /**
- * TODO Fill it
+ *Test the entity decoder
  * 
  * @author kokotchy
- * 
  */
 public class TestEntityDecoder extends TestCase {
 
 	/**
-	 * TODO Fill it
+	 * Entity convert
 	 */
 	public void testConvertEntity() {
 		Map<String, String> showsTitle = new HashMap<String, String>();

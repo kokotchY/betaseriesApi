@@ -7,26 +7,22 @@ import junit.framework.TestCase;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 
 /**
- * TODO Fill it
+ * Test planning api
  * 
  * @author kokotchy
- * 
  */
 public class TestPlanning extends TestCase {
 
 	/**
-	 * TODO Fill it
+	 * Comments api for json
 	 */
 	private com.kokotchy.betaSeriesAPI.api.jsonImpl.Planning planningJson;
 
 	/**
-	 * TODO Fill it
+	 * Comments api for xml
 	 */
 	private com.kokotchy.betaSeriesAPI.api.xmlImpl.Planning planningXml;
 
-	/**
-	 *
-	 */
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -43,7 +39,7 @@ public class TestPlanning extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test general planning is equals for xml and json
 	 */
 	public void testGeneralPlanning() {
 		List<Episode> generalPlanningJson = planningJson.getGeneralPlanning();
@@ -52,7 +48,7 @@ public class TestPlanning extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test general planning is equals for two json
 	 */
 	public void testGeneralPlanningEqualsJson() {
 		List<Episode> generalPlanningJson = planningJson.getGeneralPlanning();
@@ -61,7 +57,7 @@ public class TestPlanning extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test general planning is equals for two xml
 	 */
 	public void testGeneralPlanningEqualsXml() {
 		List<Episode> generalPlanningXml = planningXml.getGeneralPlanning();
@@ -70,7 +66,7 @@ public class TestPlanning extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test planning for logged user for xml and json
 	 */
 	public void testPlanningLoggedUser() {
 		String token = "6668bb6944a5";
@@ -82,7 +78,7 @@ public class TestPlanning extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test planning for logged user for two json
 	 */
 	public void testPlanningLoggedUserEqualsJson() {
 		String token = "6668bb6944a5";
@@ -94,7 +90,7 @@ public class TestPlanning extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test planning for logged user for two xml
 	 */
 	public void testPlanningLoggedUserEqualsXml() {
 		String token = "6668bb6944a5";
@@ -106,7 +102,7 @@ public class TestPlanning extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test the planning of a user for xml and json
 	 */
 	public void testPlanningUser() {
 		String user = "delphiki";
@@ -118,7 +114,7 @@ public class TestPlanning extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test the planning of a user for two json
 	 */
 	public void testPlanningUserEqualsJson() {
 		String user = "delphiki";
@@ -130,7 +126,7 @@ public class TestPlanning extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test the planning of a user for two xml
 	 */
 	public void testPlanningUserEqualsXml() {
 		String user = "delphiki";

@@ -7,7 +7,7 @@ import junit.framework.TestCase;
 import com.kokotchy.betaSeriesAPI.model.Event;
 
 /**
- * TODO Fill it
+ * Test Timeline api
  * 
  * @author kokotchy
  * 
@@ -15,12 +15,12 @@ import com.kokotchy.betaSeriesAPI.model.Event;
 public class TestTimeline extends TestCase {
 
 	/**
-	 * TODO Fill it
+	 * Timeline api for json
 	 */
 	private com.kokotchy.betaSeriesAPI.api.jsonImpl.Timelines timelinesJson;
 
 	/**
-	 * TODO Fill it
+	 * Timeline api for xml
 	 */
 	private com.kokotchy.betaSeriesAPI.api.xmlImpl.Timelines timelinesXml;
 
@@ -43,7 +43,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test timeline of friends
 	 */
 	public void testTimelineFriends() {
 		String token = "6668bb6944a5";
@@ -54,7 +54,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test timeline of friends for two json
 	 */
 	public void testTimelineFriendsEqualsJson() {
 		String token = "6668bb6944a5";
@@ -66,7 +66,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test timeline of friends for two xml
 	 */
 	public void testTimelineFriendsEqualsXml() {
 		String token = "6668bb6944a5";
@@ -77,7 +77,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test timeline of friends limited
 	 */
 	public void testTimelineFriendsWithNb() {
 		String token = "6668bb6944a5";
@@ -90,7 +90,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test timeline of friends limited for two json
 	 */
 	public void testTimelineFriendsWithNbEqualsJson() {
 		String token = "6668bb6944a5";
@@ -103,7 +103,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test timeline of friends limited for two xml
 	 */
 	public void testTimelineFriendsWithNbEqualsXml() {
 		String token = "6668bb6944a5";
@@ -116,7 +116,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test home timeline
 	 */
 	public void testTimelineHome() {
 		List<Event> homeTimelineJson = timelinesJson.getHomeTimeline();
@@ -125,7 +125,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test home timeline for two json
 	 */
 	public void testTimelineHomeEqualsJson() {
 		List<Event> homeTimelineJson2 = timelinesJson.getHomeTimeline();
@@ -134,7 +134,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test home timeline for two xml
 	 */
 	public void testTimelineHomeEqualsXml() {
 		List<Event> homeTimelineXml2 = timelinesXml.getHomeTimeline();
@@ -143,7 +143,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test home timeline limited
 	 */
 	public void testTimelineHomeWithNb() {
 		int nb = 5;
@@ -153,7 +153,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test home timeline limited for two json
 	 */
 	public void testTimelineHomeWithNbEqualsJson() {
 		int nb = 5;
@@ -163,7 +163,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test home timeline limited for two xml
 	 */
 	public void testTimelineHomeWithNbEqualsXml() {
 		int nb = 5;
@@ -173,7 +173,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test timeline of a user
 	 */
 	public void testTimelineUser() {
 		String user = "delphiki";
@@ -183,7 +183,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test timeline of a user for two json
 	 */
 	public void testTimelineUserEqualsJson() {
 		String user = "delphiki";
@@ -194,7 +194,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test timeline of a user limited for two json
 	 */
 	public void testTimelineUserEqualsJsonWithNb() {
 		String user = "delphiki";
@@ -207,7 +207,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test timeline of a user for two xml
 	 */
 	public void testTimelineUserEqualsXml() {
 		String user = "delphiki";
@@ -217,7 +217,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test timeline of a user limited for two xml
 	 */
 	public void testTimelineUserEqualsXmlWithNb() {
 		String user = "delphiki";
@@ -230,7 +230,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test timeline of a user limited
 	 */
 	public void testTimelineUserWithNb() {
 		String user = "delphiki";

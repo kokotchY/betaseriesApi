@@ -7,26 +7,22 @@ import junit.framework.TestCase;
 import com.kokotchy.betaSeriesAPI.model.Show;
 
 /**
- * TODO Fill it
+ * Test shows api
  * 
  * @author kokotchy
- * 
  */
 public class TestShows extends TestCase {
 
 	/**
-	 * TODO Fill it
+	 * Shows api for json
 	 */
 	private com.kokotchy.betaSeriesAPI.api.jsonImpl.Shows showsJson;
 
 	/**
-	 * TODO Fill it
+	 * Shows api for xml
 	 */
 	private com.kokotchy.betaSeriesAPI.api.xmlImpl.Shows showsXml;
 
-	/**
-	 *
-	 */
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -43,7 +39,7 @@ public class TestShows extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test display of all shows
 	 */
 	public void testShowsDisplayAll() {
 		List<Show> displayAllJson = showsJson.displayAll();
@@ -53,7 +49,7 @@ public class TestShows extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test display of all shows for json
 	 */
 	public void testShowsDisplayAllEqualsJson() {
 		List<Show> displayAllJson = showsJson.displayAll();
@@ -62,7 +58,7 @@ public class TestShows extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test display of all shows for xml
 	 */
 	public void testShowsDisplayAllEqualsXml() {
 		List<Show> displayAllXml = showsXml.displayAll();
@@ -71,7 +67,7 @@ public class TestShows extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test display dexter show informations
 	 */
 	public void testShowsDisplayDexter() {
 		Show dexterJson = showsJson.display("dexter");
@@ -80,7 +76,7 @@ public class TestShows extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test display dexter show informations for json
 	 */
 	public void testShowsDisplayDexterEqualsJson() {
 		Show dexterJson = showsJson.display("dexter");
@@ -89,7 +85,7 @@ public class TestShows extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test display dexter show informations for xml
 	 */
 	public void testShowsDisplayDexterEqualsXml() {
 		Show dexterXml = showsXml.display("dexter");
@@ -98,7 +94,7 @@ public class TestShows extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test equals of two shows
 	 */
 	public void testShowsEquals() {
 		Show show = new Show();
@@ -115,7 +111,7 @@ public class TestShows extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test the search
 	 */
 	public void testShowsSearch() {
 		List<Show> searchJson = showsJson.search("dexter");
@@ -125,7 +121,7 @@ public class TestShows extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test show for two json
 	 */
 	public void testShowsSearchEqualsJson() {
 		List<Show> searchJson = showsJson.search("dexter");
@@ -134,7 +130,7 @@ public class TestShows extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test show for two xml
 	 */
 	public void testShowsSearchEqualsXml() {
 		List<Show> searchXml = showsXml.search("dexter");
