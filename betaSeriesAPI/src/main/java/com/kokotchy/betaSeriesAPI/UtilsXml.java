@@ -38,12 +38,12 @@ public class UtilsXml {
 	private static String host = "api.betaseries.com";
 
 	/**
-	 * TODO Fill it
+	 * Debug path
 	 */
 	private static String debugPath = null;
 
 	/**
-	 * TODO Fill it
+	 * Debug option
 	 */
 	private static boolean debug = false;
 
@@ -197,18 +197,20 @@ public class UtilsXml {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Set the debug option
 	 * 
 	 * @param debug
+	 *            Debug option
 	 */
 	public static void setDebug(boolean debug) {
 		UtilsXml.debug = debug;
 	}
 
 	/**
-	 * TODO Fill it
+	 * Debug directory
 	 * 
 	 * @param debugDirectory
+	 *            Directory having debug files
 	 */
 	public static void setDebugPath(String debugPath) {
 		UtilsXml.debugPath = debugPath;

@@ -101,11 +101,13 @@ public class UtilsJson {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return a boolean value from the json object
 	 * 
 	 * @param jsonObject
+	 *            Json object
 	 * @param name
-	 * @return
+	 *            Name
+	 * @return Boolean value
 	 */
 	public static boolean getBooleanValue(JSONObject jsonObject, String name) {
 		return getIntValue(jsonObject, name) == 1;

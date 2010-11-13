@@ -101,7 +101,7 @@ public class Show {
 	private List<String> genres;
 
 	/**
-	 * TODO Fill it
+	 * Archived state of the show
 	 */
 	private boolean archived;
 
@@ -222,16 +222,16 @@ public class Show {
 	}
 
 	/**
-	 * TODO Fill it
+	 * If the show is archived
 	 * 
-	 * @return the archived
+	 * @return archived state
 	 */
 	public boolean isArchived() {
 		return archived;
 	}
 
 	/**
-	 * TODO Fill it
+	 * Set archived state
 	 * 
 	 * @param archived
 	 *            the archived to set

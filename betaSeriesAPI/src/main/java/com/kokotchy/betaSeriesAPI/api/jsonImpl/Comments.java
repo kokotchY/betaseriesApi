@@ -8,7 +8,7 @@ import com.kokotchy.betaSeriesAPI.api.IComments;
 import com.kokotchy.betaSeriesAPI.model.Comment;
 
 /**
- * TODO Fill it
+ * Comments api
  * 
  * @author kokotchy
  * 

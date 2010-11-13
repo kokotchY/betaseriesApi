@@ -1,10 +1,9 @@
 package com.kokotchy.betaSeriesAPI.model;
 
 /**
- * TODO Fill it
+ * Source of the subtitle
  * 
  * @author kokotchy
- * 
  */
 public enum SubtitleSource {
 	ADDIC7ED, SERIESSUB, SOUSTITRES, TVSUBTITLES, USUB

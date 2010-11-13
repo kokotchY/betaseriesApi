@@ -53,10 +53,11 @@ public class StatusInfo {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Create a status informations from the json object
 	 * 
 	 * @param jsonObject
-	 * @return
+	 *            Json object
+	 * @return Status informations
 	 */
 	public static StatusInfo createStatusInfo(JSONObject jsonObject) {
 		StatusInfo statusInfo = new StatusInfo();
@@ -87,7 +88,6 @@ public class StatusInfo {
 				statusInfo.addVersionFile(file);
 			}
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return statusInfo;
