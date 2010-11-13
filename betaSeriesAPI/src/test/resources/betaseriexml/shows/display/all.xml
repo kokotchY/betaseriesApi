@@ -4055,6 +4055,10 @@
    <title>Martian Successor Nadesico</title>
   </show>
   <show>
+   <url>martin-mystery</url>
+   <title>Martin Mystery</title>
+  </show>
+  <show>
    <url>mash</url>
    <title>M*A*S*H</title>
   </show>
@@ -6243,6 +6247,10 @@
    <title>Spiral</title>
   </show>
   <show>
+   <url>spongebob-squarepants</url>
+   <title>SpongeBob SquarePants</title>
+  </show>
+  <show>
    <url>spooks</url>
    <title>Spooks</title>
   </show>
@@ -6733,6 +6741,10 @@
   <show>
    <url>the-mysterious-cities-of-gold</url>
    <title>The Mysterious Cities of Gold</title>
+  </show>
+  <show>
+   <url>the-new-avengers</url>
+   <title>The New Avengers</title>
   </show>
   <show>
    <url>the-osbournes</url>
