@@ -31,7 +31,7 @@ public class Utils {
 				if (value < 0) {
 					value += 256;
 				}
-				if (value < 10) {
+				if (value <= 14) {
 					buffer.append("0" + Integer.toHexString(value));
 				} else {
 					buffer.append(Integer.toHexString(value));

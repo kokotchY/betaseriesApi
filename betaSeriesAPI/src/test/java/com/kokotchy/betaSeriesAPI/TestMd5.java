@@ -23,7 +23,7 @@ public class TestMd5 extends TestCase {
 		tests.put("5d41402abc4b2a76b9719d911017c592", "hello");
 		tests.put("9c553730ef5b6c8c542bfd31b5e25b69", "&&&");
 		tests.put("2c58e2efe0b6224c7cd839163e214865", "this is a longer test");
-		tests.put("159bd5daa58baad5b81f55fd3063fb25", "12345");
+		tests.put("827ccb0eea8a706c4c34a16891f84e7b", "12345");
 		tests
 				.put(
 						"793e1a2d69ec82959839deb27d775c79",
