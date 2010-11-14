@@ -86,6 +86,8 @@ public class EntityDecoder {
 				encoded.append("&lt;");
 			} else if (c == '>') {
 				encoded.append("&gt;");
+			} else if (c == '&') {
+				encoded.append("&amp;");
 			} else if (c < 128) {
 				encoded.append(c);
 			} else if (c < 256) {

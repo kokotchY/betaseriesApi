@@ -286,8 +286,8 @@ public class Episode {
 
 	@Override
 	public String toString() {
-		String format = "[%s - %s] %s";
-		return String.format(format, show, nb, title);
+		String format = "[%d - %s - %s] %s";
+		return String.format(format, date, show, nb, title);
 	}
 
 }
