@@ -130,4 +130,13 @@ public class BetaSerieApi {
 		}
 		return timeline;
 	}
+
+	/**
+	 * TODO Fill it
+	 * Set the field with the given value
+	 * apiKey
+	 */
+	public static void setApiKey(String apiKey) {
+		BetaSerieApi.apiKey = apiKey;
+	}
 }
