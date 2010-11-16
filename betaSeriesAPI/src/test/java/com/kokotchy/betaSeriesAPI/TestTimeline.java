@@ -10,7 +10,6 @@ import com.kokotchy.betaSeriesAPI.model.Event;
  * Test Timeline api
  * 
  * @author kokotchy
- * 
  */
 public class TestTimeline extends TestCase {
 
@@ -30,15 +29,19 @@ public class TestTimeline extends TestCase {
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
+		String userDir = System.getProperty("user.dir");
+		String key = Utils.getApiKey(userDir);
+		com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi.setApiKey(key);
+		com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi.setApiKey(key);
 		timelinesJson = com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi
 				.getTimelines();
 		timelinesXml = com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi
 				.getTimelines();
 		UtilsJson.setDebug(true);
-		UtilsJson.setDebugPath(System.getProperty("user.dir")
+		UtilsJson.setDebugPath(userDir
 				+ "/src/test/resources/betaseriejson/");
 		UtilsXml.setDebug(true);
-		UtilsXml.setDebugPath(System.getProperty("user.dir")
+		UtilsXml.setDebugPath(userDir
 				+ "/src/test/resources/betaseriexml/");
 	}
 
