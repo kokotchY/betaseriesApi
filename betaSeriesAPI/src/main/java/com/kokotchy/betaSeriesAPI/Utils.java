@@ -68,4 +68,26 @@ public class Utils {
 
 		return buffer.toString();
 	}
+
+	/**
+	 * Return the parameters to the form key=val&(key=val)*
+	 * 
+	 * @param params
+	 *            Params to get as string
+	 * @return String representation of the parameters
+	 */
+	public static String getParamAsString2(Map<String, String> params) {
+		StringBuffer buffer = new StringBuffer();
+		int idx = 0;
+		int size = params.size();
+
+		for (Entry<String, String> entry : params.entrySet()) {
+			buffer.append(entry.getKey() + "=" + entry.getValue());
+			if (++idx < size) {
+				buffer.append("&");
+			}
+		}
+
+		return buffer.toString();
+	}
 }

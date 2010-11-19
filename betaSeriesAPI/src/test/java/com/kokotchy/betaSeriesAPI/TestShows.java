@@ -32,10 +32,10 @@ public class TestShows extends TestCase {
 				.getShows();
 		UtilsJson.setDebug(true);
 		UtilsJson.setDebugPath(System.getProperty("user.dir")
-				+ "/src/test/resources/betaseriejson/");
+				+ "/src/test/resources/json/");
 		UtilsXml.setDebug(true);
 		UtilsXml.setDebugPath(System.getProperty("user.dir")
-				+ "/src/test/resources/betaseriexml/");
+				+ "/src/test/resources/xml/");
 	}
 
 	/**

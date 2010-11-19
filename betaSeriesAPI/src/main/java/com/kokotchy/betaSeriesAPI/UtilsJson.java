@@ -64,12 +64,12 @@ public class UtilsJson {
 			if (action.endsWith(".json")) {
 				throw new RuntimeException("Don't use extension");
 			}
-			action += ".json";
 			if (debug) {
 				System.out.println("Debug mode activated, use file");
-				File file = new File(debugPath + action);
+				File file = getDebugFile(action);
 				reader = new BufferedReader(new FileReader(file));
 			} else {
+				action += ".json";
 				String urlPattern = "http://%s/%s?%s";
 				String host = "api.betaseries.com";
 				URL url = new URL(String.format(urlPattern, host, action, Utils
@@ -114,6 +114,17 @@ public class UtilsJson {
 	 */
 	public static boolean getBooleanValue(JSONObject jsonObject, String name) {
 		return getIntValue(jsonObject, name) == 1;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param action
+	 * @return
+	 */
+	private static File getDebugFile(String action) {
+		File file = new File(debugPath + action);
+		return file;
 	}
 
 	/**
