@@ -26,15 +26,19 @@ public class TestPlanning extends TestCase {
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
+		String userDir = System.getProperty("user.dir");
+		String key = Utils.getApiKey(userDir);
+		com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi.setApiKey(key);
+		com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi.setApiKey(key);
 		planningJson = com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi
 				.getPlanning();
 		planningXml = com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi
 				.getPlanning();
 		UtilsJson.setDebug(true);
-		UtilsJson.setDebugPath(System.getProperty("user.dir")
+		UtilsJson.setDebugPath(userDir
 				+ "/src/test/resources/json/");
 		UtilsXml.setDebug(true);
-		UtilsXml.setDebugPath(System.getProperty("user.dir")
+		UtilsXml.setDebugPath(userDir
 				+ "/src/test/resources/xml/");
 	}
 

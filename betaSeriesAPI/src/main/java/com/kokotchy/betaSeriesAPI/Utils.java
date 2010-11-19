@@ -1,5 +1,10 @@
 package com.kokotchy.betaSeriesAPI;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -12,6 +17,26 @@ import java.util.Map.Entry;
  * @author kokotchy
  */
 public class Utils {
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String API_KEY_FILE = "apiKey.txt";
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param userDir
+	 * @return
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	public static String getApiKey(String userDir) throws FileNotFoundException, IOException {
+		BufferedReader reader = new BufferedReader(new FileReader(new File(userDir, API_KEY_FILE)));
+		String key = reader.readLine().trim();
+		reader.close();
+		return key;
+	}
 
 	/**
 	 * Return the md5 of the given text
