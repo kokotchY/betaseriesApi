@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <key>debfa5c405f5</key>
+ <timeline>
+  <item>
+   <date>1289986543</date>
+   <html>a gagn&amp;eacute; le badge Confirm&amp;eacute;.</html>
+   <type>badge</type>
+   <ref>confirme</ref>
+   <login>delphiki</login>
+  </item>
+  <item>
+   <date>1289986543</date>
+   <html>a gagn&amp;eacute; le badge Surbooking.</html>
+   <type>badge</type>
+   <ref>surbooking</ref>
+   <login>delphiki</login>
+  </item>
+  <item>
+   <date>1289721759</date>
+   <html>a gagn&amp;eacute; le badge Junior.</html>
+   <type>badge</type>
+   <ref>junior</ref>
+   <login>delphiki</login>
+  </item>
+  <item>
+   <date>1289467560</date>
+   <html>a gagn&amp;eacute; le badge Vieux briscard.</html>
+   <type>badge</type>
+   <ref>vieux_briscard</ref>
+   <login>delphiki</login>
+  </item>
+  <item>
+   <date>1289467560</date>
+   <html>a gagn&amp;eacute; le badge Martine Aubry.</html>
+   <type>badge</type>
+   <ref>martine_aubry</ref>
+   <login>delphiki</login>
+  </item>
+ </timeline>
+ <code>1</code>
+ <errors/>
+</root>

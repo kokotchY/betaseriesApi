@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <key>debfa5c405f5</key>
+ <timeline>
+  <item>
+   <type>badge</type>
+   <ref>jerry_seinfeld</ref>
+   <login>Rizwan</login>
+   <html>a gagn&amp;eacute; le badge Jerry Seinfeld.</html>
+   <date>1290272753</date>
+  </item>
+  <item>
+   <type>markas</type>
+   <ref>The Walking Dead</ref>
+   <login>veyne</login>
+   <html>vient de regarder The Walking Dead S01E03 - Tell It to the Frogs.</html>
+   <date>1290272741</date>
+  </item>
+  <item>
+   <type>markas</type>
+   <ref>Two And A Half Men</ref>
+   <login>omok</login>
+   <html>vient de regarder Two And A Half Men S08E09 - A Good Time In Central Africa.</html>
+   <date>1290272727</date>
+  </item>
+  <item>
+   <type>add_serie</type>
+   <ref>No Ordinary Family</ref>
+   <login>Marie75</login>
+   <html>a ajout&amp;eacute; la s&amp;eacute;rie No Ordinary Family &amp;agrave; sa liste.</html>
+   <date>1290272719</date>
+  </item>
+  <item>
+   <type>markas</type>
+   <ref>Robotech</ref>
+   <login>arkarchangelfr</login>
+   <html>vient de regarder Robotech S01E24 - Showdown.</html>
+   <date>1290272708</date>
+  </item>
+ </timeline>
+ <code>1</code>
+ <errors/>
+</root>

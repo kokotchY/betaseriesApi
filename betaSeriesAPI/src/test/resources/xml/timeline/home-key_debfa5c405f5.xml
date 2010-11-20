@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <key>debfa5c405f5</key>
+ <timeline>
+  <item>
+   <type>markas</type>
+   <ref>House</ref>
+   <login>lola_gouttiere</login>
+   <html>vient de regarder House S07E06 - Office Politics.</html>
+   <date>1290272609</date>
+  </item>
+  <item>
+   <type>markas</type>
+   <ref>Merlin</ref>
+   <login>Secif</login>
+   <html>vient de regarder Merlin S03E07 - The Castle of Fyrien.</html>
+   <date>1290272605</date>
+  </item>
+  <item>
+   <type>add_serie</type>
+   <ref>Skins</ref>
+   <login>elsakisou</login>
+   <html>a ajout&amp;eacute; la s&amp;eacute;rie Skins &amp;agrave; sa liste.</html>
+   <date>1290272591</date>
+  </item>
+  <item>
+   <type>markas</type>
+   <ref>Supernatural</ref>
+   <login>evilyoung</login>
+   <html>vient de regarder Supernatural S06E09 - Clap Your Hands If You Believe.</html>
+   <date>1290272578</date>
+  </item>
+  <item>
+   <type>markas</type>
+   <ref>House</ref>
+   <login>Yno</login>
+   <html>vient de regarder House S07E05 - Unplanned Parenthood.</html>
+   <date>1290272556</date>
+  </item>
+  <item>
+   <type>markas</type>
+   <ref>How I Met Your Mother</ref>
+   <login>Gaza</login>
+   <html>vient de regarder How I Met Your Mother S06E09 - Glitter.</html>
+   <date>1290272543</date>
+  </item>
+  <item>
+   <type>markas</type>
+   <ref>The Mentalist</ref>
+   <login>atchoum06</login>
+   <html>vient de regarder The Mentalist S03E09 - Red Moon.</html>
+   <date>1290272528</date>
+  </item>
+  <item>
+   <type>markas</type>
+   <ref>No Ordinary Family</ref>
+   <login>guefine</login>
+   <html>vient de regarder No Ordinary Family S01E07 - No Ordinary Mobster.</html>
+   <date>1290272527</date>
+  </item>
+  <item>
+   <type>badge</type>
+   <ref>capitaine_spock</ref>
+   <login>Cali</login>
+   <html>a gagn&amp;eacute; le badge Capitaine Spock.</html>
+   <date>1290272476</date>
+  </item>
+  <item>
+   <type>markas</type>
+   <ref>Sherlock</ref>
+   <login>montfresnoy</login>
+   <html>vient de regarder Sherlock S01E02 - The Blind Banker.</html>
+   <date>1290272460</date>
+  </item>
+ </timeline>
+ <code>1</code>
+ <errors/>
+</root>
