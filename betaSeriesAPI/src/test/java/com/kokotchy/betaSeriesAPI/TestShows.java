@@ -1,6 +1,6 @@
 package com.kokotchy.betaSeriesAPI;
 
-import java.util.List;
+import java.util.Set;
 
 import junit.framework.TestCase;
 
@@ -35,19 +35,17 @@ public class TestShows extends TestCase {
 		showsXml = com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi
 				.getShows();
 		UtilsJson.setDebug(true);
-		UtilsJson.setDebugPath(userDir
-				+ "/src/test/resources/json/");
+		UtilsJson.setDebugPath(userDir + "/src/test/resources/json/");
 		UtilsXml.setDebug(true);
-		UtilsXml.setDebugPath(userDir
-				+ "/src/test/resources/xml/");
+		UtilsXml.setDebugPath(userDir + "/src/test/resources/xml/");
 	}
 
 	/**
 	 * Test display of all shows
 	 */
 	public void testShowsDisplayAll() {
-		List<Show> displayAllJson = showsJson.displayAll();
-		List<Show> displayAllXml = showsXml.displayAll();
+		Set<Show> displayAllJson = showsJson.displayAll();
+		Set<Show> displayAllXml = showsXml.displayAll();
 		assertEquals(displayAllXml.size(), displayAllJson.size());
 		assertEquals(displayAllXml, displayAllJson);
 	}
@@ -56,8 +54,8 @@ public class TestShows extends TestCase {
 	 * Test display of all shows for json
 	 */
 	public void testShowsDisplayAllEqualsJson() {
-		List<Show> displayAllJson = showsJson.displayAll();
-		List<Show> displayAllJson2 = showsJson.displayAll();
+		Set<Show> displayAllJson = showsJson.displayAll();
+		Set<Show> displayAllJson2 = showsJson.displayAll();
 		assertEquals(displayAllJson, displayAllJson2);
 	}
 
@@ -65,8 +63,8 @@ public class TestShows extends TestCase {
 	 * Test display of all shows for xml
 	 */
 	public void testShowsDisplayAllEqualsXml() {
-		List<Show> displayAllXml = showsXml.displayAll();
-		List<Show> displayAllXml2 = showsXml.displayAll();
+		Set<Show> displayAllXml = showsXml.displayAll();
+		Set<Show> displayAllXml2 = showsXml.displayAll();
 		assertEquals(displayAllXml, displayAllXml2);
 	}
 
@@ -118,8 +116,8 @@ public class TestShows extends TestCase {
 	 * Test the search
 	 */
 	public void testShowsSearch() {
-		List<Show> searchJson = showsJson.search("dexter");
-		List<Show> searchXml = showsXml.search("dexter");
+		Set<Show> searchJson = showsJson.search("dexter");
+		Set<Show> searchXml = showsXml.search("dexter");
 		assertEquals(searchXml.size(), searchJson.size());
 		assertEquals(searchXml, searchJson);
 	}
@@ -128,8 +126,8 @@ public class TestShows extends TestCase {
 	 * Test show for two json
 	 */
 	public void testShowsSearchEqualsJson() {
-		List<Show> searchJson = showsJson.search("dexter");
-		List<Show> searchJson2 = showsJson.search("dexter");
+		Set<Show> searchJson = showsJson.search("dexter");
+		Set<Show> searchJson2 = showsJson.search("dexter");
 		assertEquals(searchJson, searchJson2);
 	}
 
@@ -137,8 +135,8 @@ public class TestShows extends TestCase {
 	 * Test show for two xml
 	 */
 	public void testShowsSearchEqualsXml() {
-		List<Show> searchXml = showsXml.search("dexter");
-		List<Show> searchXml2 = showsXml.search("dexter");
+		Set<Show> searchXml = showsXml.search("dexter");
+		Set<Show> searchXml2 = showsXml.search("dexter");
 		assertEquals(searchXml, searchXml2);
 	}
 }

@@ -1,6 +1,6 @@
 package com.kokotchy.betaSeriesAPI.api;
 
-import java.util.List;
+import java.util.Set;
 
 import com.kokotchy.betaSeriesAPI.model.Subtitle;
 import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
@@ -21,7 +21,7 @@ public interface ISubtitles {
 	 *            Language needed for the subtitles
 	 * @return List of subtitles
 	 */
-	public List<Subtitle> getLastSubtitles(int nb,
+	public Set<Subtitle> getLastSubtitles(int nb,
 			SubtitleLanguage subtitleLanguage);
 
 	/**
@@ -35,7 +35,7 @@ public interface ISubtitles {
 	 *            Language needed for the subtitles
 	 * @return List of subtitles
 	 */
-	public List<Subtitle> getLastSubtitles(String url, int nb,
+	public Set<Subtitle> getLastSubtitles(String url, int nb,
 			SubtitleLanguage subtitleLanguage);
 
 	/**
@@ -51,6 +51,6 @@ public interface ISubtitles {
 	 *            Episode
 	 * @return List of subtitles for the episode
 	 */
-	public List<Subtitle> show(String url, SubtitleLanguage subtitleLanguage,
+	public Set<Subtitle> show(String url, SubtitleLanguage subtitleLanguage,
 			int season, int episode);
 }

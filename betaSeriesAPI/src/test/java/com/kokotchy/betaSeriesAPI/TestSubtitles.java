@@ -1,6 +1,6 @@
 package com.kokotchy.betaSeriesAPI;
 
-import java.util.List;
+import java.util.Set;
 
 import junit.framework.TestCase;
 
@@ -36,20 +36,18 @@ public class TestSubtitles extends TestCase {
 		subtitlesXml = com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi
 				.getSubtitles();
 		UtilsJson.setDebug(true);
-		UtilsJson.setDebugPath(userDir
-				+ "/src/test/resources/json/");
+		UtilsJson.setDebugPath(userDir + "/src/test/resources/json/");
 		UtilsXml.setDebug(true);
-		UtilsXml.setDebugPath(userDir
-				+ "/src/test/resources/xml/");
+		UtilsXml.setDebugPath(userDir + "/src/test/resources/xml/");
 	}
 
 	/**
 	 * Test the last subtitles
 	 */
 	public void testSubtitlesLast() {
-		List<Subtitle> lastSubtitlesJson = subtitlesJson.getLastSubtitles(5,
+		Set<Subtitle> lastSubtitlesJson = subtitlesJson.getLastSubtitles(5,
 				SubtitleLanguage.ALL);
-		List<Subtitle> lastSubtitlesXml = subtitlesXml.getLastSubtitles(5,
+		Set<Subtitle> lastSubtitlesXml = subtitlesXml.getLastSubtitles(5,
 				SubtitleLanguage.ALL);
 		assertEquals(lastSubtitlesXml, lastSubtitlesJson);
 	}
@@ -58,9 +56,9 @@ public class TestSubtitles extends TestCase {
 	 * Test last subtitles for two json
 	 */
 	public void testSubtitlesLastJson() {
-		List<Subtitle> lastSubtitlesJson = subtitlesJson.getLastSubtitles(5,
+		Set<Subtitle> lastSubtitlesJson = subtitlesJson.getLastSubtitles(5,
 				SubtitleLanguage.ALL);
-		List<Subtitle> lastSubtitlesJson2 = subtitlesJson.getLastSubtitles(5,
+		Set<Subtitle> lastSubtitlesJson2 = subtitlesJson.getLastSubtitles(5,
 				SubtitleLanguage.ALL);
 		assertEquals(lastSubtitlesJson, lastSubtitlesJson2);
 	}
@@ -69,9 +67,9 @@ public class TestSubtitles extends TestCase {
 	 * Test last subtitles for two xml
 	 */
 	public void testSubtitlesLastXml() {
-		List<Subtitle> lastSubtitlesXml = subtitlesXml.getLastSubtitles(5,
+		Set<Subtitle> lastSubtitlesXml = subtitlesXml.getLastSubtitles(5,
 				SubtitleLanguage.ALL);
-		List<Subtitle> lastSubtitlesXml2 = subtitlesXml.getLastSubtitles(5,
+		Set<Subtitle> lastSubtitlesXml2 = subtitlesXml.getLastSubtitles(5,
 				SubtitleLanguage.ALL);
 		assertEquals(lastSubtitlesXml, lastSubtitlesXml2);
 	}
@@ -84,9 +82,9 @@ public class TestSubtitles extends TestCase {
 		SubtitleLanguage subtitle = SubtitleLanguage.VF;
 		int season = 1;
 		int episode = -1;
-		List<Subtitle> subtitlesListXml = subtitlesXml.show(url, subtitle,
+		Set<Subtitle> subtitlesListXml = subtitlesXml.show(url, subtitle,
 				season, episode);
-		List<Subtitle> subtitlesListJson = subtitlesJson.show(url, subtitle,
+		Set<Subtitle> subtitlesListJson = subtitlesJson.show(url, subtitle,
 				season, episode);
 		assertEquals(subtitlesListXml, subtitlesListJson);
 	}
@@ -99,9 +97,9 @@ public class TestSubtitles extends TestCase {
 		SubtitleLanguage subtitle = SubtitleLanguage.VF;
 		int season = 1;
 		int episode = -1;
-		List<Subtitle> subtitlesListJson2 = subtitlesJson.show(url, subtitle,
+		Set<Subtitle> subtitlesListJson2 = subtitlesJson.show(url, subtitle,
 				season, episode);
-		List<Subtitle> subtitlesListJson = subtitlesJson.show(url, subtitle,
+		Set<Subtitle> subtitlesListJson = subtitlesJson.show(url, subtitle,
 				season, episode);
 		assertEquals(subtitlesListJson, subtitlesListJson2);
 	}
@@ -114,9 +112,9 @@ public class TestSubtitles extends TestCase {
 		SubtitleLanguage subtitle = SubtitleLanguage.VF;
 		int season = 1;
 		int episode = -1;
-		List<Subtitle> subtitlesListXml = subtitlesXml.show(url, subtitle,
+		Set<Subtitle> subtitlesListXml = subtitlesXml.show(url, subtitle,
 				season, episode);
-		List<Subtitle> subtitlesListXml2 = subtitlesXml.show(url, subtitle,
+		Set<Subtitle> subtitlesListXml2 = subtitlesXml.show(url, subtitle,
 				season, episode);
 		assertEquals(subtitlesListXml, subtitlesListXml2);
 	}

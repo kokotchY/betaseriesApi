@@ -1,6 +1,6 @@
 package com.kokotchy.betaSeriesAPI.api;
 
-import java.util.List;
+import java.util.Set;
 
 import com.kokotchy.betaSeriesAPI.model.Season;
 import com.kokotchy.betaSeriesAPI.model.Show;
@@ -37,7 +37,7 @@ public interface IShows {
 	 * 
 	 * @return List of shows
 	 */
-	public List<Show> displayAll();
+	public Set<Show> displayAll();
 
 	/**
 	 * Return the episodes of the given url
@@ -46,7 +46,7 @@ public interface IShows {
 	 *            Url of the show
 	 * @return List of seasons with the episodes
 	 */
-	public List<Season> getEpisodes(String url);
+	public Set<Season> getEpisodes(String url);
 
 	/**
 	 * Return the episodes of the show for the given season
@@ -77,5 +77,5 @@ public interface IShows {
 	 *            Title to search
 	 * @return List of shows with the matching title
 	 */
-	public List<Show> search(String title);
+	public Set<Show> search(String title);
 }

@@ -1,9 +1,10 @@
 package com.kokotchy.betaSeriesAPI.api.xmlImpl;
 
 import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.dom4j.Document;
 import org.dom4j.Node;
@@ -36,13 +37,13 @@ public class Subtitles implements ISubtitles {
 	}
 
 	@Override
-	public List<Subtitle> getLastSubtitles(int nb,
+	public Set<Subtitle> getLastSubtitles(int nb,
 			SubtitleLanguage subtitleLanguage) {
 		return getLastSubtitles(null, nb, subtitleLanguage);
 	}
 
 	@Override
-	public List<Subtitle> getLastSubtitles(String url, int nb,
+	public Set<Subtitle> getLastSubtitles(String url, int nb,
 			SubtitleLanguage subtitleLanguage) {
 		return getLastSubtitlesFromShow(url, nb, subtitleLanguage);
 	}
@@ -60,7 +61,7 @@ public class Subtitles implements ISubtitles {
 	 * @return List of subtitles
 	 */
 	@SuppressWarnings("unchecked")
-	private List<Subtitle> getLastSubtitlesFromShow(String url, int nb,
+	private Set<Subtitle> getLastSubtitlesFromShow(String url, int nb,
 			SubtitleLanguage subtitleLanguage) {
 		Map<String, String> params = new HashMap<String, String>();
 		if (nb > 0) {
@@ -76,7 +77,7 @@ public class Subtitles implements ISubtitles {
 			break;
 		}
 
-		List<Subtitle> subtitles = new LinkedList<Subtitle>();
+		Set<Subtitle> subtitles = new HashSet<Subtitle>();
 		String action = null;
 		if (url != null) {
 			action = "subtitles/last/" + url;
@@ -93,7 +94,7 @@ public class Subtitles implements ISubtitles {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Subtitle> show(String url, SubtitleLanguage subtitleLanguage,
+	public Set<Subtitle> show(String url, SubtitleLanguage subtitleLanguage,
 			int season, int episode) {
 		Map<String, String> params = new HashMap<String, String>();
 		if (season > 0) {
@@ -114,7 +115,7 @@ public class Subtitles implements ISubtitles {
 		Document document = UtilsXml.executeQuery("subtitles/show/" + url,
 				apiKey, params);
 		List<Node> nodes = document.selectNodes("/root/subtitles/subtitle");
-		List<Subtitle> subtitles = new LinkedList<Subtitle>();
+		Set<Subtitle> subtitles = new HashSet<Subtitle>();
 		for (Node node : nodes) {
 			subtitles.add(Subtitle.createSubtitle(node));
 		}

@@ -1,6 +1,6 @@
 package com.kokotchy.betaSeriesAPI.api;
 
-import java.util.List;
+import java.util.Set;
 
 import com.kokotchy.betaSeriesAPI.model.Episode;
 
@@ -15,7 +15,7 @@ public interface IPlanning {
 	 * 
 	 * @return List of episodes
 	 */
-	public List<Episode> getGeneralPlanning();
+	public Set<Episode> getGeneralPlanning();
 
 	/**
 	 * Return the planning of the logged user
@@ -26,7 +26,7 @@ public interface IPlanning {
 	 *            Token of the user
 	 * @return Planning of the user
 	 */
-	public List<Episode> getMemberPlanning(boolean unseen, String token);
+	public Set<Episode> getMemberPlanning(boolean unseen, String token);
 
 	/**
 	 * Return the planning of the user
@@ -37,5 +37,5 @@ public interface IPlanning {
 	 *            If only unseen has to be return
 	 * @return Planning of the user
 	 */
-	public List<Episode> getMemberPlanning(String login, boolean unseen);
+	public Set<Episode> getMemberPlanning(String login, boolean unseen);
 }

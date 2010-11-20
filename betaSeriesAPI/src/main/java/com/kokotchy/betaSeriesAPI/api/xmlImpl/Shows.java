@@ -1,9 +1,11 @@
 package com.kokotchy.betaSeriesAPI.api.xmlImpl;
 
 import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.dom4j.Document;
 import org.dom4j.Node;
@@ -58,9 +60,9 @@ public class Shows implements IShows {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Show> displayAll() {
+	public Set<Show> displayAll() {
 		Document document = UtilsXml.executeQuery("shows/display/all", apiKey);
-		List<Show> result = new LinkedList<Show>();
+		Set<Show> result = new HashSet<Show>();
 		List<Node> nodes = document.selectNodes("/root/shows/show");
 		for (Node node : nodes) {
 			result.add(Show.createShow(node));
@@ -69,13 +71,18 @@ public class Shows implements IShows {
 	}
 
 	@Override
-	public List<Season> getEpisodes(String url) {
+	public Set<Season> getEpisodes(String url) {
 		return getEpisodesFromSeason(url, -1);
 	}
 
 	@Override
 	public Season getEpisodes(String url, int seasonNb) {
-		return getEpisodesFromSeason(url, seasonNb).get(0);
+		Set<Season> episodesFromSeason = getEpisodesFromSeason(url, seasonNb);
+		Iterator<Season> iterator = episodesFromSeason.iterator();
+		if (iterator.hasNext()) {
+			return iterator.next();
+		}
+		return null;
 	}
 
 	/**
@@ -89,7 +96,7 @@ public class Shows implements IShows {
 	 * @return List of seasons with the episodes
 	 */
 	@SuppressWarnings("unchecked")
-	private List<Season> getEpisodesFromSeason(String url, int seasonNb) {
+	private Set<Season> getEpisodesFromSeason(String url, int seasonNb) {
 		Document document = null;
 		Map<String, String> params = new HashMap<String, String>();
 		if (seasonNb > 0) {
@@ -98,7 +105,7 @@ public class Shows implements IShows {
 		document = UtilsXml.executeQuery("shows/episodes/" + url, apiKey,
 				params);
 		List<Node> seasons = document.selectNodes("/root/seasons/season");
-		List<Season> result = new LinkedList<Season>();
+		Set<Season> result = new HashSet<Season>();
 		for (Node node : seasons) {
 			Season season = new Season(UtilsXml.readInt(node, "number"));
 			List<Node> episodes = node.selectNodes("episodes/episode");
@@ -121,12 +128,12 @@ public class Shows implements IShows {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Show> search(String title) {
+	public Set<Show> search(String title) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("title", title);
 		Document document = UtilsXml.executeQuery("shows/search", apiKey,
 				params);
-		List<Show> shows = new LinkedList<Show>();
+		Set<Show> shows = new HashSet<Show>();
 		if (!UtilsXml.hasErrors(document)) {
 			List<Node> nodes = document.selectNodes("/root/shows/show");
 			for (Node showNode : nodes) {

@@ -1,11 +1,10 @@
 package com.kokotchy.betaSeriesAPI.api.jsonImpl;
 
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -37,13 +36,13 @@ public class Subtitles implements ISubtitles {
 	}
 
 	@Override
-	public List<Subtitle> getLastSubtitles(int nb,
+	public Set<Subtitle> getLastSubtitles(int nb,
 			SubtitleLanguage subtitleLanguage) {
 		return getLastSubtitles(null, nb, subtitleLanguage);
 	}
 
 	@Override
-	public List<Subtitle> getLastSubtitles(String url, int nb,
+	public Set<Subtitle> getLastSubtitles(String url, int nb,
 			SubtitleLanguage subtitleLanguage) {
 		return getLastSubtitlesFromShow(url, nb, subtitleLanguage);
 	}
@@ -60,7 +59,7 @@ public class Subtitles implements ISubtitles {
 	 *            Language needed for the subtitles.
 	 * @return List of subtitles
 	 */
-	private List<Subtitle> getLastSubtitlesFromShow(String url, int nb,
+	private Set<Subtitle> getLastSubtitlesFromShow(String url, int nb,
 			SubtitleLanguage subtitleLanguage) {
 		Map<String, String> params = new HashMap<String, String>();
 		if (nb > 0) {
@@ -76,7 +75,7 @@ public class Subtitles implements ISubtitles {
 			break;
 		}
 
-		List<Subtitle> subtitles = new LinkedList<Subtitle>();
+		Set<Subtitle> subtitles = new HashSet<Subtitle>();
 		String action = null;
 		if (url != null) {
 			action = "subtitles/last/" + url;
@@ -100,7 +99,7 @@ public class Subtitles implements ISubtitles {
 	}
 
 	@Override
-	public List<Subtitle> show(String url, SubtitleLanguage subtitleLanguage,
+	public Set<Subtitle> show(String url, SubtitleLanguage subtitleLanguage,
 			int season, int episode) {
 		Map<String, String> params = new HashMap<String, String>();
 		if (season > 0) {
@@ -120,14 +119,14 @@ public class Subtitles implements ISubtitles {
 
 		JSONObject jsonObject = UtilsJson.executeQuery("subtitles/show/" + url,
 				apiKey, params);
-		JSONArray subtitlesArray = UtilsJson.getJSONArrayFromPath(jsonObject,
+		JSONObject subtitlesList = UtilsJson.getJSONObjectFromPath(jsonObject,
 				"/root/subtitles");
-		List<Subtitle> subtitles = new LinkedList<Subtitle>();
-		int length = subtitlesArray.length();
+		Set<Subtitle> subtitles = new HashSet<Subtitle>();
+		String[] names = JSONObject.getNames(subtitlesList);
 		try {
-			for (int i = 0; i < length; i++) {
-				subtitles.add(Subtitle.createSubtitle(subtitlesArray
-						.getJSONObject(i)));
+			for (String name : names) {
+				subtitles.add(Subtitle.createSubtitle(subtitlesList
+						.getJSONObject(name)));
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();

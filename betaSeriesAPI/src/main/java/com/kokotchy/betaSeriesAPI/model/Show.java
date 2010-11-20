@@ -1,10 +1,10 @@
 package com.kokotchy.betaSeriesAPI.model;
 
-import java.util.LinkedList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.dom4j.Node;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -36,17 +36,16 @@ public class Show {
 		show.setStatus(UtilsJson.getStringValue(jsonObject, "status"));
 		show.setBanner(UtilsJson.getStringValue(jsonObject, "banner"));
 		show.setIdTvdb(UtilsJson.getIntValue(jsonObject, "id_thetvdb"));
-		// TODO Uncomment
-		// show.addGenre(UtilsJson.getStringValue(jsonObject, "genres/genre"));
-		JSONArray genres = UtilsJson.getJSONArray(jsonObject, "genres");
-		int length = genres.length();
-		try {
-			for (int i = 0; i < length; i++) {
-				show.addGenre(UtilsJson.getStringValue(genres.getJSONObject(i),
-						"genre"));
+		JSONObject genres = UtilsJson.getJSONObject(jsonObject, "genres");
+		if (genres != null) {
+			String[] names = JSONObject.getNames(genres);
+			try {
+				for (String name : names) {
+					show.addGenre(genres.getString(name));
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
 			}
-		} catch (JSONException e) {
-			e.printStackTrace();
 		}
 		show.setArchived(UtilsJson.getBooleanValue(jsonObject, "archive"));
 		return show;
@@ -109,7 +108,7 @@ public class Show {
 	/**
 	 * List of genres of the show
 	 */
-	private List<String> genres;
+	private Set<String> genres;
 
 	/**
 	 * Archived state of the show
@@ -134,7 +133,7 @@ public class Show {
 	public Show(String url, String title) {
 		this.url = url;
 		this.title = title;
-		genres = new LinkedList<String>();
+		genres = new HashSet<String>();
 	}
 
 	/**
@@ -178,7 +177,7 @@ public class Show {
 	 * 
 	 * @return the genres
 	 */
-	public List<String> getGenres() {
+	public Set<String> getGenres() {
 		return genres;
 	}
 

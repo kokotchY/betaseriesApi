@@ -1,6 +1,6 @@
 package com.kokotchy.betaSeriesAPI;
 
-import java.util.List;
+import java.util.Set;
 
 import junit.framework.TestCase;
 
@@ -35,19 +35,17 @@ public class TestPlanning extends TestCase {
 		planningXml = com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi
 				.getPlanning();
 		UtilsJson.setDebug(true);
-		UtilsJson.setDebugPath(userDir
-				+ "/src/test/resources/json/");
+		UtilsJson.setDebugPath(userDir + "/src/test/resources/json/");
 		UtilsXml.setDebug(true);
-		UtilsXml.setDebugPath(userDir
-				+ "/src/test/resources/xml/");
+		UtilsXml.setDebugPath(userDir + "/src/test/resources/xml/");
 	}
 
 	/**
 	 * Test general planning is equals for xml and json
 	 */
 	public void testGeneralPlanning() {
-		List<Episode> generalPlanningJson = planningJson.getGeneralPlanning();
-		List<Episode> generalPlanningXml = planningXml.getGeneralPlanning();
+		Set<Episode> generalPlanningJson = planningJson.getGeneralPlanning();
+		Set<Episode> generalPlanningXml = planningXml.getGeneralPlanning();
 		assertEquals(generalPlanningXml, generalPlanningJson);
 	}
 
@@ -55,8 +53,8 @@ public class TestPlanning extends TestCase {
 	 * Test general planning is equals for two json
 	 */
 	public void testGeneralPlanningEqualsJson() {
-		List<Episode> generalPlanningJson = planningJson.getGeneralPlanning();
-		List<Episode> generalPlanningJson2 = planningJson.getGeneralPlanning();
+		Set<Episode> generalPlanningJson = planningJson.getGeneralPlanning();
+		Set<Episode> generalPlanningJson2 = planningJson.getGeneralPlanning();
 		assertEquals(generalPlanningJson, generalPlanningJson2);
 	}
 
@@ -64,8 +62,8 @@ public class TestPlanning extends TestCase {
 	 * Test general planning is equals for two xml
 	 */
 	public void testGeneralPlanningEqualsXml() {
-		List<Episode> generalPlanningXml = planningXml.getGeneralPlanning();
-		List<Episode> generalPlanningXml2 = planningXml.getGeneralPlanning();
+		Set<Episode> generalPlanningXml = planningXml.getGeneralPlanning();
+		Set<Episode> generalPlanningXml2 = planningXml.getGeneralPlanning();
 		assertEquals(generalPlanningXml, generalPlanningXml2);
 	}
 
@@ -74,9 +72,9 @@ public class TestPlanning extends TestCase {
 	 */
 	public void testPlanningLoggedUser() {
 		String token = "6668bb6944a5";
-		List<Episode> memberPlanningJson = planningJson.getMemberPlanning(true,
+		Set<Episode> memberPlanningJson = planningJson.getMemberPlanning(true,
 				token);
-		List<Episode> memberPlanningXml = planningXml.getMemberPlanning(true,
+		Set<Episode> memberPlanningXml = planningXml.getMemberPlanning(true,
 				token);
 		assertEquals(memberPlanningXml, memberPlanningJson);
 	}
@@ -86,10 +84,10 @@ public class TestPlanning extends TestCase {
 	 */
 	public void testPlanningLoggedUserEqualsJson() {
 		String token = "6668bb6944a5";
-		List<Episode> memberPlanningJson = planningJson.getMemberPlanning(true,
+		Set<Episode> memberPlanningJson = planningJson.getMemberPlanning(true,
 				token);
-		List<Episode> memberPlanningJson2 = planningJson.getMemberPlanning(
-				true, token);
+		Set<Episode> memberPlanningJson2 = planningJson.getMemberPlanning(true,
+				token);
 		assertEquals(memberPlanningJson, memberPlanningJson2);
 	}
 
@@ -98,9 +96,9 @@ public class TestPlanning extends TestCase {
 	 */
 	public void testPlanningLoggedUserEqualsXml() {
 		String token = "6668bb6944a5";
-		List<Episode> memberPlanningXml = planningXml.getMemberPlanning(true,
+		Set<Episode> memberPlanningXml = planningXml.getMemberPlanning(true,
 				token);
-		List<Episode> memberPlanningXml2 = planningXml.getMemberPlanning(true,
+		Set<Episode> memberPlanningXml2 = planningXml.getMemberPlanning(true,
 				token);
 		assertEquals(memberPlanningXml, memberPlanningXml2);
 	}
@@ -110,9 +108,9 @@ public class TestPlanning extends TestCase {
 	 */
 	public void testPlanningUser() {
 		String user = "delphiki";
-		List<Episode> memberPlanningJson = planningJson.getMemberPlanning(user,
+		Set<Episode> memberPlanningJson = planningJson.getMemberPlanning(user,
 				true);
-		List<Episode> memberPlanningXml = planningXml.getMemberPlanning(user,
+		Set<Episode> memberPlanningXml = planningXml.getMemberPlanning(user,
 				true);
 		assertEquals(memberPlanningXml, memberPlanningJson);
 	}
@@ -122,10 +120,10 @@ public class TestPlanning extends TestCase {
 	 */
 	public void testPlanningUserEqualsJson() {
 		String user = "delphiki";
-		List<Episode> memberPlanningJson = planningJson.getMemberPlanning(user,
+		Set<Episode> memberPlanningJson = planningJson.getMemberPlanning(user,
 				true);
-		List<Episode> memberPlanningJson2 = planningJson.getMemberPlanning(
-				user, true);
+		Set<Episode> memberPlanningJson2 = planningJson.getMemberPlanning(user,
+				true);
 		assertEquals(memberPlanningJson, memberPlanningJson2);
 	}
 
@@ -134,9 +132,9 @@ public class TestPlanning extends TestCase {
 	 */
 	public void testPlanningUserEqualsXml() {
 		String user = "delphiki";
-		List<Episode> memberPlanningXml = planningXml.getMemberPlanning(user,
+		Set<Episode> memberPlanningXml = planningXml.getMemberPlanning(user,
 				true);
-		List<Episode> memberPlanningXml2 = planningXml.getMemberPlanning(user,
+		Set<Episode> memberPlanningXml2 = planningXml.getMemberPlanning(user,
 				true);
 		assertEquals(memberPlanningXml, memberPlanningXml2);
 	}

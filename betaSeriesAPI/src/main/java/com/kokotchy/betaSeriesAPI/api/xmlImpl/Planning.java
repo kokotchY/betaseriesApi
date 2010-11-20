@@ -1,9 +1,10 @@
 package com.kokotchy.betaSeriesAPI.api.xmlImpl;
 
 import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.dom4j.Document;
 import org.dom4j.Node;
@@ -35,17 +36,17 @@ public class Planning implements IPlanning {
 	}
 
 	@Override
-	public List<Episode> getGeneralPlanning() {
+	public Set<Episode> getGeneralPlanning() {
 		return getPlanning(null, null, null);
 	}
 
 	@Override
-	public List<Episode> getMemberPlanning(boolean unseen, String token) {
+	public Set<Episode> getMemberPlanning(boolean unseen, String token) {
 		return getPlanning(unseen, token, true);
 	}
 
 	@Override
-	public List<Episode> getMemberPlanning(String login, boolean unseen) {
+	public Set<Episode> getMemberPlanning(String login, boolean unseen) {
 		return getPlanning(unseen, login, false);
 	}
 
@@ -64,7 +65,7 @@ public class Planning implements IPlanning {
 	 * @return List of episodes
 	 */
 	@SuppressWarnings("unchecked")
-	private List<Episode> getPlanning(Boolean unseen, String token,
+	private Set<Episode> getPlanning(Boolean unseen, String token,
 			Boolean identifiedUser) {
 		Document document = null;
 		if (unseen == null && token == null && identifiedUser == null) {
@@ -85,7 +86,7 @@ public class Planning implements IPlanning {
 		}
 
 		List<Node> nodes = document.selectNodes("/root/planning/episode");
-		List<Episode> episodes = new LinkedList<Episode>();
+		Set<Episode> episodes = new HashSet<Episode>();
 		for (Node node : nodes) {
 			episodes.add(Episode.createEpisode(node));
 		}

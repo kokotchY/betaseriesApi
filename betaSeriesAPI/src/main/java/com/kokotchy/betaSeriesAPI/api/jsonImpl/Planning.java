@@ -1,11 +1,10 @@
 package com.kokotchy.betaSeriesAPI.api.jsonImpl;
 
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -36,17 +35,17 @@ public class Planning implements IPlanning {
 	}
 
 	@Override
-	public List<Episode> getGeneralPlanning() {
+	public Set<Episode> getGeneralPlanning() {
 		return getPlanning(null, null, null);
 	}
 
 	@Override
-	public List<Episode> getMemberPlanning(boolean unseen, String token) {
+	public Set<Episode> getMemberPlanning(boolean unseen, String token) {
 		return getPlanning(unseen, token, true);
 	}
 
 	@Override
-	public List<Episode> getMemberPlanning(String login, boolean unseen) {
+	public Set<Episode> getMemberPlanning(String login, boolean unseen) {
 		return getPlanning(unseen, login, false);
 	}
 
@@ -64,7 +63,7 @@ public class Planning implements IPlanning {
 	 * @param identifiedUser
 	 * @return List of episodes
 	 */
-	private List<Episode> getPlanning(Boolean unseen, String token,
+	private Set<Episode> getPlanning(Boolean unseen, String token,
 			Boolean identifiedUser) {
 		JSONObject jsonObject = null;
 		if (unseen == null && token == null && identifiedUser == null) {
@@ -84,13 +83,13 @@ public class Planning implements IPlanning {
 			jsonObject = UtilsJson.executeQuery(action, apiKey, params);
 		}
 
-		JSONArray jsonArrayFromPath = UtilsJson.getJSONArrayFromPath(
+		JSONObject generalPlanning = UtilsJson.getJSONObjectFromPath(
 				jsonObject, "/root/planning");
-		List<Episode> episodes = new LinkedList<Episode>();
+		String[] names = JSONObject.getNames(generalPlanning);
+		Set<Episode> episodes = new HashSet<Episode>();
 		try {
-			int length = jsonArrayFromPath.length();
-			for (int i = 0; i < length; i++) {
-				JSONObject object = jsonArrayFromPath.getJSONObject(i);
+			for (String name : names) {
+				JSONObject object = generalPlanning.getJSONObject(name);
 				episodes.add(Episode.createEpisode(object));
 			}
 		} catch (JSONException e) {

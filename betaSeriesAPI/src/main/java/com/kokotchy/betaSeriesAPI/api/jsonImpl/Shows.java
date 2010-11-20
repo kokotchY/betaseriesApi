@@ -1,9 +1,10 @@
 package com.kokotchy.betaSeriesAPI.api.jsonImpl;
 
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -58,16 +59,16 @@ public class Shows implements IShows {
 	}
 
 	@Override
-	public List<Show> displayAll() {
-		List<Show> result = new LinkedList<Show>();
+	public Set<Show> displayAll() {
+		Set<Show> result = new HashSet<Show>();
 		JSONObject jsonObject = UtilsJson.executeQuery("shows/display/all",
 				apiKey);
-		JSONArray jsonArrayFromPath = UtilsJson.getJSONArrayFromPath(
-				jsonObject, "/root/shows");
+		JSONObject shows = UtilsJson.getJSONObjectFromPath(jsonObject,
+				"/root/shows");
+		String[] names = JSONObject.getNames(shows);
 		try {
-			int length = jsonArrayFromPath.length();
-			for (int i = 0; i < length; i++) {
-				result.add(Show.createShow(jsonArrayFromPath.getJSONObject(i)));
+			for (String name : names) {
+				result.add(Show.createShow(shows.getJSONObject(name)));
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -76,13 +77,18 @@ public class Shows implements IShows {
 	}
 
 	@Override
-	public List<Season> getEpisodes(String url) {
+	public Set<Season> getEpisodes(String url) {
 		return getEpisodesFromSeason(url, -1);
 	}
 
 	@Override
 	public Season getEpisodes(String url, int seasonNb) {
-		return getEpisodesFromSeason(url, seasonNb).get(0);
+		Set<Season> episodesFromSeason = getEpisodesFromSeason(url, seasonNb);
+		Iterator<Season> iterator = episodesFromSeason.iterator();
+		if (iterator.hasNext()) {
+			return iterator.next();
+		}
+		return null;
 	}
 
 	/**
@@ -95,7 +101,7 @@ public class Shows implements IShows {
 	 *            Number of the season
 	 * @return List of seasons with the episodes
 	 */
-	private List<Season> getEpisodesFromSeason(String url, int seasonNb) {
+	private Set<Season> getEpisodesFromSeason(String url, int seasonNb) {
 		JSONObject jsonObject = null;
 		Map<String, String> params = new HashMap<String, String>();
 		if (seasonNb > 0) {
@@ -105,7 +111,7 @@ public class Shows implements IShows {
 				params);
 		JSONArray seasonsArray = UtilsJson.getJSONArrayFromPath(jsonObject,
 				"/root/seasons");
-		List<Season> result = new LinkedList<Season>();
+		Set<Season> result = new HashSet<Season>();
 		try {
 			int seasonsLength = seasonsArray.length();
 			for (int i = 0; i < seasonsLength; i++) {
@@ -137,19 +143,19 @@ public class Shows implements IShows {
 	}
 
 	@Override
-	public List<Show> search(String title) {
+	public Set<Show> search(String title) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("title", title);
 		JSONObject jsonObject = UtilsJson.executeQuery("shows/search", apiKey,
 				params);
-		List<Show> shows = new LinkedList<Show>();
+		Set<Show> shows = new HashSet<Show>();
 		if (!UtilsJson.hasErrors(jsonObject)) {
 			try {
-				JSONArray showsArray = UtilsJson.getJSONArrayFromPath(
+				JSONObject showsList = UtilsJson.getJSONObjectFromPath(
 						jsonObject, "/root/shows");
-				int length = showsArray.length();
-				for (int i = 0; i < length; i++) {
-					Show show = Show.createShow(showsArray.getJSONObject(i));
+				String[] names = JSONObject.getNames(showsList);
+				for (String name : names) {
+					Show show = Show.createShow(showsList.getJSONObject(name));
 					shows.add(show);
 				}
 			} catch (JSONException e) {
