@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -31,11 +32,43 @@ public class Utils {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static String getApiKey(String userDir) throws FileNotFoundException, IOException {
-		BufferedReader reader = new BufferedReader(new FileReader(new File(userDir, API_KEY_FILE)));
+	public static String getApiKey(String userDir)
+			throws FileNotFoundException, IOException {
+		BufferedReader reader = new BufferedReader(new FileReader(new File(
+				userDir, API_KEY_FILE)));
 		String key = reader.readLine().trim();
 		reader.close();
 		return key;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param action
+	 * @param params
+	 * @param type
+	 *            Json or xml
+	 * @return
+	 */
+	public static File getDebugFile(String debugPath, String action,
+			Map<String, String> params, String type) {
+		String[] paramsArray = new String[params.size()];
+		int i = 0;
+		for (Entry<String, String> entry : params.entrySet()) {
+			paramsArray[i++] = entry.getKey() + "_" + entry.getValue();
+		}
+		Arrays.sort(paramsArray);
+		StringBuffer buffer = new StringBuffer();
+		for (i = 0; i < paramsArray.length; i++) {
+			buffer.append(paramsArray[i]);
+			if (i < paramsArray.length - 1) {
+				buffer.append("_");
+			}
+		}
+		String patternFilename = "%s-%s.%s";
+		String filename = String.format(patternFilename, action, buffer, type);
+		File file = new File(debugPath, filename);
+		return file;
 	}
 
 	/**
@@ -114,5 +147,37 @@ public class Utils {
 		}
 
 		return buffer.toString();
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param credentials
+	 * @return
+	 */
+	public static String[] loadCredentials(File credentials) {
+		BufferedReader reader = null;
+		String login = null;
+		String password = null;
+		String token = null;
+		try {
+			reader = new BufferedReader(new FileReader(credentials));
+			login = reader.readLine().trim();
+			password = reader.readLine().trim();
+			token = reader.readLine().trim();
+		} catch (FileNotFoundException e) {
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (reader != null) {
+					reader.close();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return new String[] { login, password, token };
 	}
 }

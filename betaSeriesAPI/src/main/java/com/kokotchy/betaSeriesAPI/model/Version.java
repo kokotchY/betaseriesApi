@@ -1,10 +1,10 @@
 package com.kokotchy.betaSeriesAPI.model;
 
-import java.util.LinkedList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.dom4j.Node;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -30,12 +30,11 @@ public class Version {
 		Version version = new Version();
 		version.setDate(UtilsJson.getIntValue(versionObject, "date"));
 
-		JSONArray changesArray = UtilsJson.getJSONArray(versionObject,
-				"changes");
+		JSONObject changes = UtilsJson.getJSONObject(versionObject, "changes");
+		String[] names = JSONObject.getNames(changes);
 		try {
-			int length = changesArray.length();
-			for (int i = 0; i < length; i++) {
-				JSONObject changeObject = changesArray.getJSONObject(i);
+			for (String name : names) {
+				JSONObject changeObject = changes.getJSONObject(name);
 				version.addChange(Change.createChange(changeObject));
 			}
 		} catch (JSONException e) {
@@ -73,7 +72,7 @@ public class Version {
 	/**
 	 * List of changes
 	 */
-	private List<Change> changes = new LinkedList<Change>();
+	private Map<String, Change> changes = new HashMap<String, Change>();
 
 	/**
 	 * Add a change
@@ -82,7 +81,7 @@ public class Version {
 	 *            Change
 	 */
 	private void addChange(Change change) {
-		changes.add(change);
+		changes.put(change.getValue(), change);
 	}
 
 	@Override
@@ -98,7 +97,7 @@ public class Version {
 	 * 
 	 * @return the changes
 	 */
-	public List<Change> getChanges() {
+	public Map<String, Change> getChanges() {
 		return changes;
 	}
 

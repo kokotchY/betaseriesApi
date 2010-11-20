@@ -33,11 +33,9 @@ public class TestStatus extends TestCase {
 		statusXml = com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi
 				.getStatus();
 		UtilsJson.setDebug(true);
-		UtilsJson.setDebugPath(userDir
-				+ "/src/test/resources/json/");
+		UtilsJson.setDebugPath(userDir + "/src/test/resources/json/");
 		UtilsXml.setDebug(true);
-		UtilsXml.setDebugPath(userDir
-				+ "/src/test/resources/xml/");
+		UtilsXml.setDebugPath(userDir + "/src/test/resources/xml/");
 	}
 
 	/**

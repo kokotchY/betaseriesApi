@@ -82,11 +82,12 @@ public class UtilsXml {
 			if (action.endsWith(".xml")) {
 				throw new RuntimeException("Don't use extension");
 			}
-			action += ".xml";
 			if (debug) {
-				reader = new BufferedReader(new FileReader(new File(debugPath,
-						action)));
+				File file = Utils
+						.getDebugFile(debugPath, action, params, "xml");
+				reader = new BufferedReader(new FileReader(file));
 			} else {
+				action += ".xml";
 				url = new URL(String.format(uriPattern, host, action, Utils
 						.getParamAsString(params)));
 				connection = url.openConnection();

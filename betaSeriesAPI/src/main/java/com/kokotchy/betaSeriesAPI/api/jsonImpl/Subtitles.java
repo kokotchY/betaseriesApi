@@ -85,13 +85,13 @@ public class Subtitles implements ISubtitles {
 		}
 		JSONObject jsonObject = UtilsJson.executeQuery(action, apiKey, params);
 
-		JSONArray subtitlesArray = UtilsJson.getJSONArrayFromPath(jsonObject,
+		JSONObject subtitlesList = UtilsJson.getJSONObjectFromPath(jsonObject,
 				"/root/subtitles");
-		int length = subtitlesArray.length();
+		String[] names = JSONObject.getNames(subtitlesList);
 		try {
-			for (int i = 0; i < length; i++) {
-				subtitles.add(Subtitle.createSubtitle(subtitlesArray
-						.getJSONObject(i)));
+			for (String name : names) {
+				subtitles.add(Subtitle.createSubtitle(subtitlesList
+						.getJSONObject(name)));
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();

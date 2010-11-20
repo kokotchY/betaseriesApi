@@ -1,6 +1,5 @@
 package com.kokotchy.betaSeriesAPI;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -48,15 +47,15 @@ public class Main {
 		System.out
 				.println("Database status: " + statusInfo.getDatabaseStatus());
 		System.out.println("Website status: " + statusInfo.getWebsiteStatus());
-		List<Version> versions = statusInfo.getVersions();
+		Map<Integer, Version> versions = statusInfo.getVersions();
 		System.out.println("Version:");
-		for (Version version : versions) {
-			System.out.println("\t" + version);
+		for (Entry<Integer, Version> entry : versions.entrySet()) {
+			System.out.println("\t" + entry);
 		}
-		List<VersionFile> files = statusInfo.getFiles();
+		Map<String, VersionFile> files = statusInfo.getFiles();
 		System.out.println("Files:");
-		for (VersionFile file : files) {
-			System.out.println("\t" + file);
+		for (Entry<String, VersionFile> entry : files.entrySet()) {
+			System.out.println("\t" + entry);
 		}
 	}
 

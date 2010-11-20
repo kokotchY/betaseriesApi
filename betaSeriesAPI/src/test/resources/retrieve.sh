@@ -10,6 +10,6 @@ do
     action=`echo $i | cut -d '|' -f 1`
     actionfile=`echo $action | sed -e 's@/@\.@g'`
     urlfile=http://api.betaseries.com/$action
-    echo "curl -d $parameters $urlfile.xml > $actionfile-$params.xml"
-    echo "curl -d $parameters $urlfile.json > $actionfile-$params.json"
+    curl -d $parameters $urlfile.xml > $actionfile-$params.xml
+    curl -d $parameters $urlfile.json > $actionfile-$params.json
 done

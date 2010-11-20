@@ -1,11 +1,11 @@
 package com.kokotchy.betaSeriesAPI.model;
 
-import java.util.LinkedList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.dom4j.Document;
 import org.dom4j.Node;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -71,19 +71,20 @@ public class StatusInfo {
 		JSONObject apiObject = UtilsJson.getJSONObjectFromPath(jsonObject,
 				"/root/api");
 		statusInfo.setVersion(UtilsJson.getStringValue(apiObject, "version"));
-		JSONArray versionsArray = UtilsJson.getJSONArray(apiObject, "versions");
 		try {
-			int versionLength = versionsArray.length();
-			for (int i = 0; i < versionLength; i++) {
-				JSONObject versionObject = versionsArray.getJSONObject(i);
+			JSONObject versions = UtilsJson
+					.getJSONObject(apiObject, "versions");
+			String[] versionsName = JSONObject.getNames(versions);
+			for (String name : versionsName) {
+				JSONObject versionObject = versions.getJSONObject(name);
 				Version version = Version.createVersion(versionObject);
 				statusInfo.addVersion(version);
 			}
 
-			JSONArray filesArray = UtilsJson.getJSONArray(apiObject, "files");
-			int fileLength = filesArray.length();
-			for (int i = 0; i < fileLength; i++) {
-				JSONObject fileObject = filesArray.getJSONObject(i);
+			JSONObject files = UtilsJson.getJSONObject(apiObject, "files");
+			String[] filesName = JSONObject.getNames(files);
+			for (String name : filesName) {
+				JSONObject fileObject = files.getJSONObject(name);
 				VersionFile file = VersionFile.createVersionFile(fileObject);
 				statusInfo.addVersionFile(file);
 			}
@@ -111,12 +112,12 @@ public class StatusInfo {
 	/**
 	 * List of versions
 	 */
-	private List<Version> versions = new LinkedList<Version>();
+	private Map<Integer, Version> versions = new HashMap<Integer, Version>();
 
 	/**
 	 * List of files
 	 */
-	private List<VersionFile> files = new LinkedList<VersionFile>();
+	private Map<String, VersionFile> files = new HashMap<String, VersionFile>();
 
 	/**
 	 * Add the version
@@ -125,7 +126,7 @@ public class StatusInfo {
 	 *            Version
 	 */
 	public void addVersion(Version version) {
-		versions.add(version);
+		versions.put(version.getDate(), version);
 	}
 
 	/**
@@ -135,7 +136,7 @@ public class StatusInfo {
 	 *            File
 	 */
 	public void addVersionFile(VersionFile file) {
-		files.add(file);
+		files.put(file.getName(), file);
 	}
 
 	@Override
@@ -160,7 +161,7 @@ public class StatusInfo {
 	 * 
 	 * @return the files
 	 */
-	public List<VersionFile> getFiles() {
+	public Map<String, VersionFile> getFiles() {
 		return files;
 	}
 
@@ -178,7 +179,7 @@ public class StatusInfo {
 	 * 
 	 * @return the versions
 	 */
-	public List<Version> getVersions() {
+	public Map<Integer, Version> getVersions() {
 		return versions;
 	}
 

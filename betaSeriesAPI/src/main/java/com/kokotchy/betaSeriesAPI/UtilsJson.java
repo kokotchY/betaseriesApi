@@ -66,7 +66,8 @@ public class UtilsJson {
 			}
 			if (debug) {
 				System.out.println("Debug mode activated, use file");
-				File file = getDebugFile(action);
+				File file = Utils.getDebugFile(debugPath, action, params,
+						"json");
 				reader = new BufferedReader(new FileReader(file));
 			} else {
 				action += ".json";
@@ -114,17 +115,6 @@ public class UtilsJson {
 	 */
 	public static boolean getBooleanValue(JSONObject jsonObject, String name) {
 		return getIntValue(jsonObject, name) == 1;
-	}
-
-	/**
-	 * TODO Fill it
-	 * 
-	 * @param action
-	 * @return
-	 */
-	private static File getDebugFile(String action) {
-		File file = new File(debugPath + action);
-		return file;
 	}
 
 	/**

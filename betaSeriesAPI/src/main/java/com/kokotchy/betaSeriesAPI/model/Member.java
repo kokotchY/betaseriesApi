@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.dom4j.Node;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,9 +32,9 @@ public class Member {
 			member.setAvatar(UtilsJson.getStringValue(jsonObject, "avatar"));
 			member.setStats(Stats.createStats(UtilsJson.getJSONObject(
 					jsonObject, "stats")));
-			JSONArray showsArray = UtilsJson.getJSONArray(jsonObject, "shows");
-			for (int i = 0; i < showsArray.length(); i++) {
-				JSONObject show = showsArray.getJSONObject(i);
+			JSONObject shows = UtilsJson.getJSONObject(jsonObject, "shows");
+			for (String name : JSONObject.getNames(shows)) {
+				JSONObject show = shows.getJSONObject(name);
 				member.addShow(Show.createShow(show));
 			}
 		} catch (JSONException e) {
