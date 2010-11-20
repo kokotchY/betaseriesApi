@@ -36,7 +36,7 @@ public class Utils {
 			throws FileNotFoundException, IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(new File(
 				userDir, API_KEY_FILE)));
-		String key = reader.readLine().trim();
+		String key = readLine(reader);
 		reader.close();
 		return key;
 	}
@@ -162,9 +162,9 @@ public class Utils {
 		String token = null;
 		try {
 			reader = new BufferedReader(new FileReader(credentials));
-			login = reader.readLine().trim();
-			password = reader.readLine().trim();
-			token = reader.readLine().trim();
+			login = readLine(reader);
+			password = readLine(reader);
+			token = readLine(reader);
 		} catch (FileNotFoundException e) {
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -179,5 +179,20 @@ public class Utils {
 		}
 
 		return new String[] { login, password, token };
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param reader
+	 * @return
+	 * @throws IOException
+	 */
+	private static String readLine(BufferedReader reader) throws IOException {
+		String line = reader.readLine();
+		if (line != null) {
+			return line.trim();
+		}
+		return null;
 	}
 }
