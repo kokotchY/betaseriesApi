@@ -1,2 +1,3 @@
 betaSeriesAPI/target
-betaSeriesAPI/src/test/resources/apiKey.txt
+betaSeriesAPI/apiKey.txt
+*.swp
