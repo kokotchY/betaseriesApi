@@ -1,6 +1,6 @@
 package com.kokotchy.betaSeriesAPI.api;
 
-import java.util.List;
+import java.util.Set;
 
 import com.kokotchy.betaSeriesAPI.model.Event;
 
@@ -18,7 +18,7 @@ public interface ITimelines {
 	 *            Token
 	 * @return List of event
 	 */
-	public List<Event> getFriendsTimeline(String token);
+	public Set<Event> getFriendsTimeline(String token);
 
 	/**
 	 * Return the timeline for the friends of the logged user limited by the
@@ -30,14 +30,14 @@ public interface ITimelines {
 	 *            Max number of event
 	 * @return List of event
 	 */
-	public List<Event> getFriendsTimeline(String token, int nb);
+	public Set<Event> getFriendsTimeline(String token, int nb);
 
 	/**
 	 * Return the last events on the website (max 100)
 	 * 
 	 * @return List of event
 	 */
-	public List<Event> getHomeTimeline();
+	public Set<Event> getHomeTimeline();
 
 	/**
 	 * Return the last events on the website limited to the number
@@ -46,7 +46,7 @@ public interface ITimelines {
 	 *            Number of events
 	 * @return List of event
 	 */
-	public List<Event> getHomeTimeline(int nb);
+	public Set<Event> getHomeTimeline(int nb);
 
 	/**
 	 * Return the timeline of the given user (max 100)
@@ -55,7 +55,7 @@ public interface ITimelines {
 	 *            User
 	 * @return List of event
 	 */
-	public List<Event> getTimelineOfUser(String user);
+	public Set<Event> getTimelineOfUser(String user);
 
 	/**
 	 * Return the timeline of the given user limited by the number
@@ -66,5 +66,5 @@ public interface ITimelines {
 	 *            Number of event
 	 * @return List of event
 	 */
-	public List<Event> getTimelineOfUser(String user, int nb);
+	public Set<Event> getTimelineOfUser(String user, int nb);
 }

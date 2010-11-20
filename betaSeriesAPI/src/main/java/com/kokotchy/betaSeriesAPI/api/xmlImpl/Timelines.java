@@ -1,9 +1,10 @@
 package com.kokotchy.betaSeriesAPI.api.xmlImpl;
 
 import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.dom4j.Document;
 import org.dom4j.Node;
@@ -35,7 +36,7 @@ public class Timelines implements ITimelines {
 	}
 
 	@Override
-	public List<Event> getFriendsTimeline(String token) {
+	public Set<Event> getFriendsTimeline(String token) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
 		return getTimeline(UtilsXml.executeQuery("timeline/friends", apiKey,
@@ -43,7 +44,7 @@ public class Timelines implements ITimelines {
 	}
 
 	@Override
-	public List<Event> getFriendsTimeline(String token, int nb) {
+	public Set<Event> getFriendsTimeline(String token, int nb) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
 		params.put("number", "" + nb);
@@ -52,12 +53,12 @@ public class Timelines implements ITimelines {
 	}
 
 	@Override
-	public List<Event> getHomeTimeline() {
+	public Set<Event> getHomeTimeline() {
 		return getTimeline(UtilsXml.executeQuery("timeline/home", apiKey));
 	}
 
 	@Override
-	public List<Event> getHomeTimeline(int nb) {
+	public Set<Event> getHomeTimeline(int nb) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("number", "" + nb);
 		return getTimeline(UtilsXml.executeQuery("timeline/home", apiKey,
@@ -72,8 +73,8 @@ public class Timelines implements ITimelines {
 	 * @return List of event
 	 */
 	@SuppressWarnings("unchecked")
-	private List<Event> getTimeline(Document document) {
-		List<Event> events = new LinkedList<Event>();
+	private Set<Event> getTimeline(Document document) {
+		Set<Event> events = new HashSet<Event>();
 		List<Node> nodes = document.selectNodes("/root/timeline/item");
 		for (Node node : nodes) {
 			events.add(Event.createEvent(node));
@@ -82,13 +83,13 @@ public class Timelines implements ITimelines {
 	}
 
 	@Override
-	public List<Event> getTimelineOfUser(String user) {
+	public Set<Event> getTimelineOfUser(String user) {
 		return getTimeline(UtilsXml.executeQuery("timeline/member/" + user,
 				apiKey));
 	}
 
 	@Override
-	public List<Event> getTimelineOfUser(String user, int nb) {
+	public Set<Event> getTimelineOfUser(String user, int nb) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("number", "" + nb);
 		return getTimeline(UtilsXml.executeQuery("timeline/member/" + user,

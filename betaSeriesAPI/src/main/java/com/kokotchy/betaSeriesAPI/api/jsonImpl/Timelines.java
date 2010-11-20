@@ -1,11 +1,10 @@
 package com.kokotchy.betaSeriesAPI.api.jsonImpl;
 
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -37,7 +36,7 @@ public class Timelines implements ITimelines {
 	}
 
 	@Override
-	public List<Event> getFriendsTimeline(String token) {
+	public Set<Event> getFriendsTimeline(String token) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
 		return getTimeline(UtilsJson.executeQuery("timeline/friends", apiKey,
@@ -45,7 +44,7 @@ public class Timelines implements ITimelines {
 	}
 
 	@Override
-	public List<Event> getFriendsTimeline(String token, int nb) {
+	public Set<Event> getFriendsTimeline(String token, int nb) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
 		params.put("number", "" + nb);
@@ -54,12 +53,12 @@ public class Timelines implements ITimelines {
 	}
 
 	@Override
-	public List<Event> getHomeTimeline() {
+	public Set<Event> getHomeTimeline() {
 		return getTimeline(UtilsJson.executeQuery("timeline/home", apiKey));
 	}
 
 	@Override
-	public List<Event> getHomeTimeline(int nb) {
+	public Set<Event> getHomeTimeline(int nb) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("number", "" + nb);
 		return getTimeline(UtilsJson.executeQuery("timeline/home", apiKey,
@@ -73,14 +72,14 @@ public class Timelines implements ITimelines {
 	 *            Json object
 	 * @return List of event
 	 */
-	private List<Event> getTimeline(JSONObject jsonObject) {
-		List<Event> events = new LinkedList<Event>();
-		JSONArray eventsArray = UtilsJson.getJSONArrayFromPath(jsonObject,
+	private Set<Event> getTimeline(JSONObject jsonObject) {
+		Set<Event> events = new HashSet<Event>();
+		JSONObject eventsList = UtilsJson.getJSONObjectFromPath(jsonObject,
 				"/root/timeline");
-		int length = eventsArray.length();
+		String[] names = JSONObject.getNames(eventsList);
 		try {
-			for (int i = 0; i < length; i++) {
-				events.add(Event.createEvent(eventsArray.getJSONObject(i)));
+			for (String name : names) {
+				events.add(Event.createEvent(eventsList.getJSONObject(name)));
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -89,13 +88,13 @@ public class Timelines implements ITimelines {
 	}
 
 	@Override
-	public List<Event> getTimelineOfUser(String user) {
+	public Set<Event> getTimelineOfUser(String user) {
 		return getTimeline(UtilsJson.executeQuery("timeline/member/" + user,
 				apiKey));
 	}
 
 	@Override
-	public List<Event> getTimelineOfUser(String user, int nb) {
+	public Set<Event> getTimelineOfUser(String user, int nb) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("number", "" + nb);
 		return getTimeline(UtilsJson.executeQuery("timeline/member/" + user,

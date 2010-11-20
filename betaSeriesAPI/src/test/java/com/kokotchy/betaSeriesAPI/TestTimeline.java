@@ -1,6 +1,6 @@
 package com.kokotchy.betaSeriesAPI;
 
-import java.util.List;
+import java.util.Set;
 
 import junit.framework.TestCase;
 
@@ -38,11 +38,9 @@ public class TestTimeline extends TestCase {
 		timelinesXml = com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi
 				.getTimelines();
 		UtilsJson.setDebug(true);
-		UtilsJson.setDebugPath(userDir
-				+ "/src/test/resources/json/");
+		UtilsJson.setDebugPath(userDir + "/src/test/resources/json/");
 		UtilsXml.setDebug(true);
-		UtilsXml.setDebugPath(userDir
-				+ "/src/test/resources/xml/");
+		UtilsXml.setDebugPath(userDir + "/src/test/resources/xml/");
 	}
 
 	/**
@@ -50,9 +48,9 @@ public class TestTimeline extends TestCase {
 	 */
 	public void testTimelineFriends() {
 		String token = "6668bb6944a5";
-		List<Event> friendsTimelineJson = timelinesJson
+		Set<Event> friendsTimelineJson = timelinesJson
 				.getFriendsTimeline(token);
-		List<Event> friendsTimelineXml = timelinesXml.getFriendsTimeline(token);
+		Set<Event> friendsTimelineXml = timelinesXml.getFriendsTimeline(token);
 		assertEquals(friendsTimelineXml, friendsTimelineJson);
 	}
 
@@ -61,9 +59,9 @@ public class TestTimeline extends TestCase {
 	 */
 	public void testTimelineFriendsEqualsJson() {
 		String token = "6668bb6944a5";
-		List<Event> friendsTimelineJson = timelinesJson
+		Set<Event> friendsTimelineJson = timelinesJson
 				.getFriendsTimeline(token);
-		List<Event> friendsTimelineJson2 = timelinesJson
+		Set<Event> friendsTimelineJson2 = timelinesJson
 				.getFriendsTimeline(token);
 		assertEquals(friendsTimelineJson, friendsTimelineJson2);
 	}
@@ -73,9 +71,8 @@ public class TestTimeline extends TestCase {
 	 */
 	public void testTimelineFriendsEqualsXml() {
 		String token = "6668bb6944a5";
-		List<Event> friendsTimelineXml = timelinesXml.getFriendsTimeline(token);
-		List<Event> friendsTimelineXml2 = timelinesXml
-				.getFriendsTimeline(token);
+		Set<Event> friendsTimelineXml = timelinesXml.getFriendsTimeline(token);
+		Set<Event> friendsTimelineXml2 = timelinesXml.getFriendsTimeline(token);
 		assertEquals(friendsTimelineXml, friendsTimelineXml2);
 	}
 
@@ -85,9 +82,9 @@ public class TestTimeline extends TestCase {
 	public void testTimelineFriendsWithNb() {
 		String token = "6668bb6944a5";
 		int nb = 5;
-		List<Event> friendsTimelineJson = timelinesJson.getFriendsTimeline(
+		Set<Event> friendsTimelineJson = timelinesJson.getFriendsTimeline(
 				token, nb);
-		List<Event> friendsTimelineXml = timelinesXml.getFriendsTimeline(token,
+		Set<Event> friendsTimelineXml = timelinesXml.getFriendsTimeline(token,
 				nb);
 		assertEquals(friendsTimelineXml, friendsTimelineJson);
 	}
@@ -98,9 +95,9 @@ public class TestTimeline extends TestCase {
 	public void testTimelineFriendsWithNbEqualsJson() {
 		String token = "6668bb6944a5";
 		int nb = 5;
-		List<Event> friendsTimelineJson = timelinesJson.getFriendsTimeline(
+		Set<Event> friendsTimelineJson = timelinesJson.getFriendsTimeline(
 				token, nb);
-		List<Event> friendsTimelineJson2 = timelinesJson.getFriendsTimeline(
+		Set<Event> friendsTimelineJson2 = timelinesJson.getFriendsTimeline(
 				token, nb);
 		assertEquals(friendsTimelineJson, friendsTimelineJson2);
 	}
@@ -111,10 +108,10 @@ public class TestTimeline extends TestCase {
 	public void testTimelineFriendsWithNbEqualsXml() {
 		String token = "6668bb6944a5";
 		int nb = 5;
-		List<Event> friendsTimelineXml = timelinesXml.getFriendsTimeline(token,
+		Set<Event> friendsTimelineXml = timelinesXml.getFriendsTimeline(token,
 				nb);
-		List<Event> friendsTimelineXml2 = timelinesXml.getFriendsTimeline(
-				token, nb);
+		Set<Event> friendsTimelineXml2 = timelinesXml.getFriendsTimeline(token,
+				nb);
 		assertEquals(friendsTimelineXml, friendsTimelineXml2);
 	}
 
@@ -122,8 +119,8 @@ public class TestTimeline extends TestCase {
 	 * Test home timeline
 	 */
 	public void testTimelineHome() {
-		List<Event> homeTimelineJson = timelinesJson.getHomeTimeline();
-		List<Event> homeTimelineXml = timelinesXml.getHomeTimeline();
+		Set<Event> homeTimelineJson = timelinesJson.getHomeTimeline();
+		Set<Event> homeTimelineXml = timelinesXml.getHomeTimeline();
 		assertEquals(homeTimelineXml, homeTimelineJson);
 	}
 
@@ -131,8 +128,8 @@ public class TestTimeline extends TestCase {
 	 * Test home timeline for two json
 	 */
 	public void testTimelineHomeEqualsJson() {
-		List<Event> homeTimelineJson2 = timelinesJson.getHomeTimeline();
-		List<Event> homeTimelineJson = timelinesJson.getHomeTimeline();
+		Set<Event> homeTimelineJson2 = timelinesJson.getHomeTimeline();
+		Set<Event> homeTimelineJson = timelinesJson.getHomeTimeline();
 		assertEquals(homeTimelineJson, homeTimelineJson2);
 	}
 
@@ -140,8 +137,8 @@ public class TestTimeline extends TestCase {
 	 * Test home timeline for two xml
 	 */
 	public void testTimelineHomeEqualsXml() {
-		List<Event> homeTimelineXml2 = timelinesXml.getHomeTimeline();
-		List<Event> homeTimelineXml = timelinesXml.getHomeTimeline();
+		Set<Event> homeTimelineXml2 = timelinesXml.getHomeTimeline();
+		Set<Event> homeTimelineXml = timelinesXml.getHomeTimeline();
 		assertEquals(homeTimelineXml, homeTimelineXml2);
 	}
 
@@ -150,8 +147,8 @@ public class TestTimeline extends TestCase {
 	 */
 	public void testTimelineHomeWithNb() {
 		int nb = 5;
-		List<Event> homeTimelineJson = timelinesJson.getHomeTimeline(nb);
-		List<Event> homeTimelineXml = timelinesXml.getHomeTimeline(nb);
+		Set<Event> homeTimelineJson = timelinesJson.getHomeTimeline(nb);
+		Set<Event> homeTimelineXml = timelinesXml.getHomeTimeline(nb);
 		assertEquals(homeTimelineXml, homeTimelineJson);
 	}
 
@@ -160,8 +157,8 @@ public class TestTimeline extends TestCase {
 	 */
 	public void testTimelineHomeWithNbEqualsJson() {
 		int nb = 5;
-		List<Event> homeTimelineJson2 = timelinesJson.getHomeTimeline(nb);
-		List<Event> homeTimelineJson = timelinesJson.getHomeTimeline(nb);
+		Set<Event> homeTimelineJson2 = timelinesJson.getHomeTimeline(nb);
+		Set<Event> homeTimelineJson = timelinesJson.getHomeTimeline(nb);
 		assertEquals(homeTimelineJson, homeTimelineJson2);
 	}
 
@@ -170,8 +167,8 @@ public class TestTimeline extends TestCase {
 	 */
 	public void testTimelineHomeWithNbEqualsXml() {
 		int nb = 5;
-		List<Event> homeTimelineXml2 = timelinesXml.getHomeTimeline(nb);
-		List<Event> homeTimelineXml = timelinesXml.getHomeTimeline(nb);
+		Set<Event> homeTimelineXml2 = timelinesXml.getHomeTimeline(nb);
+		Set<Event> homeTimelineXml = timelinesXml.getHomeTimeline(nb);
 		assertEquals(homeTimelineXml, homeTimelineXml2);
 	}
 
@@ -180,8 +177,8 @@ public class TestTimeline extends TestCase {
 	 */
 	public void testTimelineUser() {
 		String user = "delphiki";
-		List<Event> friendsTimelineJson = timelinesJson.getTimelineOfUser(user);
-		List<Event> friendsTimelineXml = timelinesXml.getTimelineOfUser(user);
+		Set<Event> friendsTimelineJson = timelinesJson.getTimelineOfUser(user);
+		Set<Event> friendsTimelineXml = timelinesXml.getTimelineOfUser(user);
 		assertEquals(friendsTimelineXml, friendsTimelineJson);
 	}
 
@@ -190,9 +187,8 @@ public class TestTimeline extends TestCase {
 	 */
 	public void testTimelineUserEqualsJson() {
 		String user = "delphiki";
-		List<Event> friendsTimelineJson2 = timelinesJson
-				.getTimelineOfUser(user);
-		List<Event> friendsTimelineJson = timelinesJson.getTimelineOfUser(user);
+		Set<Event> friendsTimelineJson2 = timelinesJson.getTimelineOfUser(user);
+		Set<Event> friendsTimelineJson = timelinesJson.getTimelineOfUser(user);
 		assertEquals(friendsTimelineJson, friendsTimelineJson2);
 	}
 
@@ -202,9 +198,9 @@ public class TestTimeline extends TestCase {
 	public void testTimelineUserEqualsJsonWithNb() {
 		String user = "delphiki";
 		int nb = 5;
-		List<Event> friendsTimelineJson2 = timelinesJson.getTimelineOfUser(
-				user, nb);
-		List<Event> friendsTimelineJson = timelinesJson.getTimelineOfUser(user,
+		Set<Event> friendsTimelineJson2 = timelinesJson.getTimelineOfUser(user,
+				nb);
+		Set<Event> friendsTimelineJson = timelinesJson.getTimelineOfUser(user,
 				nb);
 		assertEquals(friendsTimelineJson, friendsTimelineJson2);
 	}
@@ -214,8 +210,8 @@ public class TestTimeline extends TestCase {
 	 */
 	public void testTimelineUserEqualsXml() {
 		String user = "delphiki";
-		List<Event> friendsTimelineXml2 = timelinesXml.getTimelineOfUser(user);
-		List<Event> friendsTimelineXml = timelinesXml.getTimelineOfUser(user);
+		Set<Event> friendsTimelineXml2 = timelinesXml.getTimelineOfUser(user);
+		Set<Event> friendsTimelineXml = timelinesXml.getTimelineOfUser(user);
 		assertEquals(friendsTimelineXml, friendsTimelineXml2);
 	}
 
@@ -225,10 +221,10 @@ public class TestTimeline extends TestCase {
 	public void testTimelineUserEqualsXmlWithNb() {
 		String user = "delphiki";
 		int nb = 5;
-		List<Event> friendsTimelineXml2 = timelinesXml.getTimelineOfUser(user,
+		Set<Event> friendsTimelineXml2 = timelinesXml.getTimelineOfUser(user,
 				nb);
-		List<Event> friendsTimelineXml = timelinesXml.getTimelineOfUser(user,
-				nb);
+		Set<Event> friendsTimelineXml = timelinesXml
+				.getTimelineOfUser(user, nb);
 		assertEquals(friendsTimelineXml, friendsTimelineXml2);
 	}
 
@@ -238,10 +234,10 @@ public class TestTimeline extends TestCase {
 	public void testTimelineUserWithNb() {
 		String user = "delphiki";
 		int nb = 5;
-		List<Event> friendsTimelineJson = timelinesJson.getTimelineOfUser(user,
+		Set<Event> friendsTimelineJson = timelinesJson.getTimelineOfUser(user,
 				nb);
-		List<Event> friendsTimelineXml = timelinesXml.getTimelineOfUser(user,
-				nb);
+		Set<Event> friendsTimelineXml = timelinesXml
+				.getTimelineOfUser(user, nb);
 		assertEquals(friendsTimelineXml, friendsTimelineJson);
 	}
 }
