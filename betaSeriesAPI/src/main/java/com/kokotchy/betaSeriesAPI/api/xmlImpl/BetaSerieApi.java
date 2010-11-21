@@ -54,7 +54,7 @@ public class BetaSerieApi {
 	 */
 	public static Comments getComments() {
 		if (comments == null) {
-			comments = new Comments();
+			comments = new Comments(apiKey);
 		}
 		return comments;
 	}

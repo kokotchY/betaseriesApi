@@ -1,7 +1,12 @@
 package com.kokotchy.betaSeriesAPI.api.jsonImpl;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.api.IComments;
 import com.kokotchy.betaSeriesAPI.api.NotImplementedException;
 import com.kokotchy.betaSeriesAPI.model.Comment;
@@ -14,18 +19,45 @@ import com.kokotchy.betaSeriesAPI.model.Comment;
  */
 public class Comments implements IComments {
 
+	/**
+	 * TODO Fill it
+	 */
+	private String apiKey;
+
+	/**
+	 * TODO Fill it
+	 */
+	public Comments(String apiKey) {
+		this.apiKey = apiKey;
+	}
+
 	@Override
-	public List<Comment> getComments(String url) {
+	public Set<Comment> getComments(String url) {
+		JSONObject jsonObject = UtilsJson.executeQuery("comments/shows/" + url,
+				apiKey);
+		JSONObject comments = UtilsJson.getJSONObjectFromPath(jsonObject,
+				"/root/comments");
+		String[] names = JSONObject.getNames(comments);
+		Set<Comment> result = new HashSet<Comment>();
+		try {
+			for (String name : names) {
+				Comment comment = Comment.createComment(comments
+						.getJSONObject(name));
+				result.add(comment);
+			}
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	@Override
+	public Set<Comment> getComments(String url, int season, int episode) {
 		throw new NotImplementedException();
 	}
 
 	@Override
-	public List<Comment> getComments(String url, int season, int episode) {
-		throw new NotImplementedException();
-	}
-
-	@Override
-	public List<Comment> getUserComments(String login) {
+	public Set<Comment> getUserComments(String login) {
 		throw new NotImplementedException();
 	}
 

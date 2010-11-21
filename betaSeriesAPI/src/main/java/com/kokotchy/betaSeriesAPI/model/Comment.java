@@ -1,6 +1,11 @@
 package com.kokotchy.betaSeriesAPI.model;
 
+import org.dom4j.Node;
+import org.json.JSONObject;
+
 import com.kokotchy.betaSeriesAPI.HashCodeUtil;
+import com.kokotchy.betaSeriesAPI.UtilsJson;
+import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
  * Model of a comment
@@ -10,6 +15,38 @@ import com.kokotchy.betaSeriesAPI.HashCodeUtil;
  * @author kokotchy
  */
 public class Comment {
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
+	 * @return
+	 */
+	public static Comment createComment(JSONObject jsonObject) {
+		Comment comment = new Comment();
+		comment.setContent(UtilsJson.getStringValue(jsonObject, "text"));
+		comment.setDate(UtilsJson.getIntValue(jsonObject, "date"));
+		comment.setInnerId(UtilsJson.getIntValue(jsonObject, "inner_id"));
+		comment.setLogin(UtilsJson.getStringValue(jsonObject, "login"));
+		comment.setReplyToId(UtilsJson.getIntValue(jsonObject, "in_reply_to"));
+		return comment;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param node
+	 * @return
+	 */
+	public static Comment createComment(Node node) {
+		Comment comment = new Comment();
+		comment.setContent(UtilsXml.readString(node, "text"));
+		comment.setDate(UtilsXml.readInt(node, "date"));
+		comment.setInnerId(UtilsXml.readInt(node, "inner_id"));
+		comment.setLogin(UtilsXml.readString(node, "login"));
+		comment.setReplyToId(UtilsXml.readInt(node, "in_reply_to"));
+		return comment;
+	}
 
 	/**
 	 * TODO Fill it
@@ -92,6 +129,11 @@ public class Comment {
 	@Override
 	public int hashCode() {
 		int result = HashCodeUtil.SEED;
+		result = HashCodeUtil.hash(result, login);
+		result = HashCodeUtil.hash(result, date);
+		result = HashCodeUtil.hash(result, content);
+		result = HashCodeUtil.hash(result, innerId);
+		result = HashCodeUtil.hash(result, replyToId);
 		return result;
 	}
 
