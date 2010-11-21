@@ -2,7 +2,7 @@ package com.kokotchy.betaSeriesAPI;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
@@ -13,6 +13,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringEscapeUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
@@ -85,7 +86,8 @@ public class UtilsXml {
 			if (debug) {
 				File file = Utils
 						.getDebugFile(debugPath, action, params, "xml");
-				reader = new BufferedReader(new FileReader(file));
+				reader = new BufferedReader(new InputStreamReader(
+						new FileInputStream(file), "UTF-8"));
 			} else {
 				action += ".xml";
 				url = new URL(String.format(uriPattern, host, action, Utils
@@ -102,7 +104,7 @@ public class UtilsXml {
 			}
 			String xmlResponse = buffer.toString();
 			if (debug) {
-				System.out.println("XML Response: " + xmlResponse);
+				 System.out.println("XML Response: " + xmlResponse);
 			}
 			return DocumentHelper.parseText(xmlResponse);
 		} catch (MalformedURLException e) {
@@ -200,7 +202,7 @@ public class UtilsXml {
 	public static String readString(Node node, String string) {
 		Node selectedNode = node.selectSingleNode(string);
 		if (selectedNode != null) {
-			return EntityDecoder.htmlToChar(selectedNode.getText()).trim();
+			return StringEscapeUtils.escapeHtml(selectedNode.getText()).trim();
 		}
 		return null;
 	}

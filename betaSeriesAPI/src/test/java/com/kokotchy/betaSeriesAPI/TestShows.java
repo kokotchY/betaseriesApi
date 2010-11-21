@@ -47,6 +47,20 @@ public class TestShows extends TestCase {
 		Set<Show> displayAllJson = showsJson.displayAll();
 		Set<Show> displayAllXml = showsXml.displayAll();
 		assertEquals(displayAllXml.size(), displayAllJson.size());
+
+		for (Show show : displayAllXml) {
+			for (Show show2 : displayAllJson) {
+				if (show2.getUrl().equals(show.getUrl())) {
+					// if (show.equals(show2)) {
+					// assertTrue(true);
+					// } else {
+					// fail("Not equals " + show + "," + show2);
+					// }
+					assertEquals(show, show2);
+				}
+			}
+		}
+
 		assertEquals(displayAllXml, displayAllJson);
 	}
 

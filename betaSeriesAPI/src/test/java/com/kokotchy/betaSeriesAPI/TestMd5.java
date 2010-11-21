@@ -10,7 +10,6 @@ import junit.framework.TestCase;
  * Test the MD5 function
  * 
  * @author kokotchy
- * 
  */
 public class TestMd5 extends TestCase {
 

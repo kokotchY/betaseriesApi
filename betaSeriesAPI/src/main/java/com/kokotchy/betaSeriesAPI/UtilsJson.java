@@ -2,7 +2,7 @@ package com.kokotchy.betaSeriesAPI;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
@@ -11,6 +11,7 @@ import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.lang.StringEscapeUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -65,10 +66,10 @@ public class UtilsJson {
 				throw new RuntimeException("Don't use extension");
 			}
 			if (debug) {
-				System.out.println("Debug mode activated, use file");
 				File file = Utils.getDebugFile(debugPath, action, params,
 						"json");
-				reader = new BufferedReader(new FileReader(file));
+				reader = new BufferedReader(new InputStreamReader(
+						new FileInputStream(file), "UTF-8"));
 			} else {
 				action += ".json";
 				String urlPattern = "http://%s/%s?%s";
@@ -302,7 +303,7 @@ public class UtilsJson {
 	public static String getStringValue(JSONObject jsonObject, String name) {
 		if (jsonObject.has(name)) {
 			try {
-				return EntityDecoder.htmlToChar(jsonObject.getString(name))
+				return StringEscapeUtils.escapeHtml(jsonObject.getString(name))
 						.trim();
 			} catch (JSONException e) {
 				e.printStackTrace();

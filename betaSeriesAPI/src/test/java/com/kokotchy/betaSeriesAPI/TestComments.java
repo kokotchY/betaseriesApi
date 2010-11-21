@@ -31,11 +31,9 @@ public class TestComments extends TestCase {
 		commentsXml = com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi
 				.getComments();
 		UtilsJson.setDebug(true);
-		UtilsJson.setDebugPath(userDir
-				+ "/src/test/resources/json/");
+		UtilsJson.setDebugPath(userDir + "/src/test/resources/json/");
 		UtilsXml.setDebug(true);
-		UtilsXml.setDebugPath(userDir
-				+ "/src/test/resources/xml/");
+		UtilsXml.setDebugPath(userDir + "/src/test/resources/xml/");
 	}
 
 	/**
