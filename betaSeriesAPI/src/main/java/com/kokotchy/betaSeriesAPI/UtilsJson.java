@@ -26,12 +26,12 @@ public class UtilsJson {
 	/**
 	 * Debug option
 	 */
-	public static boolean debug = false;
+	private static boolean debug = false;
 
 	/**
 	 * Directory containing example of json
 	 */
-	public static String debugPath;
+	private static String debugPath;
 
 	/**
 	 * Execute the action with the api key
