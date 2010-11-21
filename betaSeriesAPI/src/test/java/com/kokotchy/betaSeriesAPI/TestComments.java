@@ -37,7 +37,7 @@ public class TestComments extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Trivial test
 	 */
 	public void testTrivial() {
 		assertTrue(true);

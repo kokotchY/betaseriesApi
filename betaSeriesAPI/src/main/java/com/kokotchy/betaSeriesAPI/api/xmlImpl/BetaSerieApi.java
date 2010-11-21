@@ -132,9 +132,10 @@ public class BetaSerieApi {
 	}
 
 	/**
-	 * TODO Fill it
-	 * Set the field with the given value
-	 * apiKey
+	 * Set the api key to use
+	 * 
+	 * @param apiKey
+	 *            Api key
 	 */
 	public static void setApiKey(String apiKey) {
 		BetaSerieApi.apiKey = apiKey;

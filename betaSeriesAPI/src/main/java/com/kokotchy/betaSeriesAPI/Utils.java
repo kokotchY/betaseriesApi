@@ -20,15 +20,16 @@ import java.util.Map.Entry;
 public class Utils {
 
 	/**
-	 * TODO Fill it
+	 * File containing the api key
 	 */
 	private static final String API_KEY_FILE = "apiKey.txt";
 
 	/**
-	 * TODO Fill it
+	 * Return the api from the file
 	 * 
 	 * @param userDir
-	 * @return
+	 *            User dir containing the file
+	 * @return Api key
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
@@ -42,13 +43,15 @@ public class Utils {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the filename of the test file for the action and params
 	 * 
 	 * @param action
+	 *            Action
 	 * @param params
+	 *            Parameters
 	 * @param type
 	 *            Json or xml
-	 * @return
+	 * @return File path to the test file
 	 */
 	public static File getDebugFile(String debugPath, String action,
 			Map<String, String> params, String type) {
@@ -150,10 +153,17 @@ public class Utils {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the credentials in the file.
+	 * 
+	 * <ul>
+	 * <li>First line: user</li>
+	 * <li>Second line: plain password</li>
+	 * <li>Third line: token</li>
+	 * </ul>
 	 * 
 	 * @param credentials
-	 * @return
+	 *            Credentials file
+	 * @return Credentials
 	 */
 	public static String[] loadCredentials(File credentials) {
 		BufferedReader reader = null;
@@ -182,10 +192,11 @@ public class Utils {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Read a line from the reader
 	 * 
 	 * @param reader
-	 * @return
+	 *            Reader
+	 * @return line from the reader
 	 * @throws IOException
 	 */
 	private static String readLine(BufferedReader reader) throws IOException {

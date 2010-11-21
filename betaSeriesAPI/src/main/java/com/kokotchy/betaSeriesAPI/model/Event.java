@@ -15,10 +15,11 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
 public class Event {
 
 	/**
-	 * TODO Fill it
+	 * Create an event from a json object
 	 * 
 	 * @param jsonObject
-	 * @return
+	 *            Json object
+	 * @return Event
 	 */
 	public static Event createEvent(JSONObject jsonObject) {
 		Event event = new Event();

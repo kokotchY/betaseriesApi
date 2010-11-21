@@ -25,17 +25,17 @@ public class TestMembers extends TestCase {
 	private com.kokotchy.betaSeriesAPI.api.xmlImpl.Members membersXml;
 
 	/**
-	 * TODO Fill it
+	 * Login
 	 */
 	private String login;
 
 	/**
-	 * TODO Fill it
+	 * Password
 	 */
 	private String password;
 
 	/**
-	 * TODO Fill it
+	 * Token
 	 */
 	private String token;
 
@@ -111,7 +111,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test the info of a user
 	 */
 	public void testMembersInfosOfUser() {
 		Member memberXml = membersXml.infosOfUser("delphiki");

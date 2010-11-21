@@ -15,10 +15,11 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
 public class Subtitle {
 
 	/**
-	 * TODO Fill it
+	 * Create a subtitle from the json object
 	 * 
 	 * @param jsonObject
-	 * @return
+	 *            Json object
+	 * @return Subtitle
 	 */
 	public static Subtitle createSubtitle(JSONObject jsonObject) {
 		Subtitle subtitle = new Subtitle();
@@ -114,7 +115,9 @@ public class Subtitle {
 	private String file;
 
 	/**
-	 * Url to the subtitle TODO Change to url
+	 * Url to the subtitle
+	 * 
+	 * TODO Change to url
 	 */
 	private String url;
 

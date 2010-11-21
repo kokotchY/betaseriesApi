@@ -3,7 +3,9 @@ package com.kokotchy.betaSeriesAPI.model;
 import com.kokotchy.betaSeriesAPI.HashCodeUtil;
 
 /**
- * Model of a comment TODO Fill it
+ * Model of a comment
+ * 
+ * TODO Fill it
  * 
  * @author kokotchy
  */

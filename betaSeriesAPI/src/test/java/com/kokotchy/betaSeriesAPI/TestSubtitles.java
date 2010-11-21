@@ -75,7 +75,7 @@ public class TestSubtitles extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test subtitles for the show Dexter
 	 */
 	public void testSubtitlesShowDexter() {
 		String url = "dexter";
@@ -90,7 +90,7 @@ public class TestSubtitles extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test equals for subtitles show Dexter with json
 	 */
 	public void testSubtitlesShowDexterJson() {
 		String url = "dexter";
@@ -105,7 +105,7 @@ public class TestSubtitles extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test equals for subtitles show Dexter with xml
 	 */
 	public void testSubtitlesShowDexterXml() {
 		String url = "dexter";
