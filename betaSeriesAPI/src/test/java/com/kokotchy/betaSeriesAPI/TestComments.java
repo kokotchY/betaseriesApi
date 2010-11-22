@@ -73,6 +73,9 @@ public class TestComments extends TestCase {
 	/**
 	 * TODO Fill it
 	 */
+	/**
+	 * TODO Fill it
+	 */
 	public void testCommentsShowSpecificEpisode() {
 		String url = "himym";
 		int season = 6;
@@ -81,6 +84,20 @@ public class TestComments extends TestCase {
 				episode);
 		Set<Comment> commentsXml = this.commentsXml.getComments(url, season,
 				episode);
+
+		for (Comment comment : commentsXml) {
+			for (Comment comment2 : commentsJson) {
+				if (comment2.getLogin().equals(comment.getLogin())) {
+					if (comment.equals(comment2)) {
+						assertTrue(true);
+					} else {
+						assertEquals(comment.getContent(), comment2.getContent());
+					}
+				}
+			}
+		}
+
+		assertEquals(commentsXml.size(), commentsJson.size());
 		assertEquals(commentsXml, commentsJson);
 	}
 

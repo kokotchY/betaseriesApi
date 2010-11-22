@@ -303,7 +303,7 @@ public class UtilsJson {
 	public static String getStringValue(JSONObject jsonObject, String name) {
 		if (jsonObject.has(name)) {
 			try {
-				return StringEscapeUtils.escapeHtml(jsonObject.getString(name))
+				return StringEscapeUtils.escapeHtml(jsonObject.getString(name).replace("\r", ""))
 						.trim();
 			} catch (JSONException e) {
 				e.printStackTrace();

@@ -1,7 +1,9 @@
 package com.kokotchy.betaSeriesAPI.api.xmlImpl;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.dom4j.Document;
@@ -53,7 +55,7 @@ public class Comments implements IComments {
 		// }
 		// return result;
 
-		Document document = UtilsXml.executeQuery("comments/shows/" + url,
+		Document document = UtilsXml.executeQuery("comments/show/" + url,
 				apiKey);
 		Set<Comment> comments = new HashSet<Comment>();
 		if (!UtilsXml.hasErrors(document)) {
@@ -68,7 +70,17 @@ public class Comments implements IComments {
 
 	@Override
 	public Set<Comment> getComments(String url, int season, int episode) {
-		throw new NotImplementedException();
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("season", "" + season);
+		params.put("episode", "" + episode);
+		Document document = UtilsXml.executeQuery("comments/episode/" + url, apiKey, params);
+		List<Node> comments = document.selectNodes("/root/comments/comment");
+		Set<Comment> result = new HashSet<Comment>();
+		for (Node node : comments) {
+			Comment comment = Comment.createComment(node);
+			result.add(comment);
+		}
+		return result;
 	}
 
 	@Override
