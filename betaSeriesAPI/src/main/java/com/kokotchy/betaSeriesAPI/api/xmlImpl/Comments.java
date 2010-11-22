@@ -35,6 +35,7 @@ public class Comments implements IComments {
 		this.apiKey = apiKey;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public Set<Comment> getComments(String url) {
 		// JSONObject jsonObject = UtilsJson.executeQuery("comments/shows/" +
@@ -68,12 +69,14 @@ public class Comments implements IComments {
 		return comments;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public Set<Comment> getComments(String url, int season, int episode) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("season", "" + season);
 		params.put("episode", "" + episode);
-		Document document = UtilsXml.executeQuery("comments/episode/" + url, apiKey, params);
+		Document document = UtilsXml.executeQuery("comments/episode/" + url,
+				apiKey, params);
 		List<Node> comments = document.selectNodes("/root/comments/comment");
 		Set<Comment> result = new HashSet<Comment>();
 		for (Node node : comments) {
@@ -83,9 +86,18 @@ public class Comments implements IComments {
 		return result;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public Set<Comment> getUserComments(String login) {
-		throw new NotImplementedException();
+		Document document = UtilsXml.executeQuery("comments/member/" + login,
+				apiKey);
+		List<Node> nodes = document.selectNodes("/root/comments/comment");
+		Set<Comment> result = new HashSet<Comment>();
+		for (Node node : nodes) {
+			Comment comment = Comment.createComment(node);
+			result.add(comment);
+		}
+		return result;
 	}
 
 	@Override

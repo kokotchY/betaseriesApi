@@ -56,18 +56,20 @@ public class Comments implements IComments {
 
 	@Override
 	public Set<Comment> getComments(String url, int season, int episode) {
-		// GET http://api.betaseries.com/comments/episode/<url>.xml?season=N&episode=N
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("season", "" + season);
 		params.put("episode", "" + episode);
-		JSONObject jsonObject = UtilsJson.executeQuery("comments/episode/" + url, apiKey, params);
-		JSONObject comments = UtilsJson.getJSONObjectFromPath(jsonObject, "/root/comments");
+		JSONObject jsonObject = UtilsJson.executeQuery("comments/episode/"
+				+ url, apiKey, params);
+		JSONObject comments = UtilsJson.getJSONObjectFromPath(jsonObject,
+				"/root/comments");
 		Set<Comment> result = new HashSet<Comment>();
 		String[] names = JSONObject.getNames(comments);
 		if ((names != null) && (names.length > 0)) {
 			try {
 				for (String name : names) {
-					Comment comment = Comment.createComment(comments.getJSONObject(name));
+					Comment comment = Comment.createComment(comments
+							.getJSONObject(name));
 					result.add(comment);
 				}
 			} catch (JSONException e) {
@@ -79,7 +81,24 @@ public class Comments implements IComments {
 
 	@Override
 	public Set<Comment> getUserComments(String login) {
-		throw new NotImplementedException();
+		JSONObject jsonObject = UtilsJson.executeQuery("comments/member/"
+				+ login, apiKey);
+		JSONObject comments = UtilsJson.getJSONObjectFromPath(jsonObject,
+				"/root/comments");
+		String[] names = JSONObject.getNames(comments);
+		Set<Comment> result = new HashSet<Comment>();
+		if (names != null) {
+			try {
+				for (String name : names) {
+					Comment comment = Comment.createComment(comments
+							.getJSONObject(name));
+					result.add(comment);
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
 	}
 
 	@Override
