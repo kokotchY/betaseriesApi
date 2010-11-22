@@ -22,14 +22,15 @@ import com.kokotchy.betaSeriesAPI.model.Comment;
 public class Comments implements IComments {
 
 	/**
-	 * TODO Fill it
+	 * Api key
 	 */
 	private String apiKey;
 
 	/**
-	 * TODO Fill it
+	 * Create new comments api with the given key
 	 * 
 	 * @param apiKey
+	 *            API key
 	 */
 	public Comments(String apiKey) {
 		this.apiKey = apiKey;

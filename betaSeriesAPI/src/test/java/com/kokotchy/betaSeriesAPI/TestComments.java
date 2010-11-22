@@ -41,7 +41,7 @@ public class TestComments extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test comments of a show
 	 */
 	public void testCommentsShow() {
 		String url = "himym";
@@ -51,7 +51,7 @@ public class TestComments extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test comments of a show equals json
 	 */
 	public void testCommentsShowEqualsJson() {
 		String url = "himym";
@@ -61,7 +61,7 @@ public class TestComments extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test comments of a show equals xml
 	 */
 	public void testCommentsShowEqualsXml() {
 		String url = "himym";
@@ -71,10 +71,7 @@ public class TestComments extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
-	 */
-	/**
-	 * TODO Fill it
+	 * Test comments of a specific episode of a show
 	 */
 	public void testCommentsShowSpecificEpisode() {
 		String url = "himym";
@@ -91,7 +88,8 @@ public class TestComments extends TestCase {
 					if (comment.equals(comment2)) {
 						assertTrue(true);
 					} else {
-						assertEquals(comment.getContent(), comment2.getContent());
+						assertEquals(comment.getContent(), comment2
+								.getContent());
 					}
 				}
 			}
@@ -102,7 +100,7 @@ public class TestComments extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test comments of a specific episode of a show equals json
 	 */
 	public void testCommentsShowSpecificEpisodeEqualsJson() {
 		String url = "himym";
@@ -116,7 +114,7 @@ public class TestComments extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test comments of a specific episode of a show equals xml
 	 */
 	public void testCommentsShowSpecificEpisodeEqualsXml() {
 		String url = "himym";
@@ -130,7 +128,7 @@ public class TestComments extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test comments of a user
 	 */
 	public void testCommentsUser() {
 		String user = "delphiki";
@@ -140,7 +138,7 @@ public class TestComments extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test comments of a user equals json
 	 */
 	public void testCommentsUserEqualsJson() {
 		String user = "delphiki";
@@ -150,7 +148,7 @@ public class TestComments extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test comments of a user equals xml
 	 */
 	public void testCommentsUserEqualsXml() {
 		String user = "delphiki";
