@@ -283,7 +283,7 @@ public class UtilsJson {
 		JSONObject object = jsonObject;
 		for (int i = 0; i < split.length - 1; i++) {
 			String part = split[i].trim();
-			if (part.length() != 0) {
+			if ((part.length() != 0) && (!object.isNull(part))) {
 				object = object.getJSONObject(part);
 			}
 		}
@@ -303,8 +303,8 @@ public class UtilsJson {
 	public static String getStringValue(JSONObject jsonObject, String name) {
 		if (jsonObject.has(name)) {
 			try {
-				return StringEscapeUtils.escapeHtml(jsonObject.getString(name))
-						.trim();
+				return StringEscapeUtils.escapeHtml(
+						jsonObject.getString(name).replace("\\r", "")).trim();
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}

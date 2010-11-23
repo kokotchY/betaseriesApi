@@ -4,6 +4,10 @@ import java.util.Set;
 
 import junit.framework.TestCase;
 
+import org.dom4j.Document;
+import org.dom4j.Node;
+import org.json.JSONObject;
+
 import com.kokotchy.betaSeriesAPI.model.Event;
 
 /**
@@ -23,6 +27,8 @@ public class TestTimeline extends TestCase {
 	 */
 	private com.kokotchy.betaSeriesAPI.api.xmlImpl.Timelines timelinesXml;
 
+	private String key;
+
 	/**
 	 *
 	 */
@@ -30,7 +36,7 @@ public class TestTimeline extends TestCase {
 	protected void setUp() throws Exception {
 		super.setUp();
 		String userDir = System.getProperty("user.dir");
-		String key = Utils.getApiKey(userDir);
+		key = Utils.getApiKey(userDir);
 		com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi.setApiKey(key);
 		com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi.setApiKey(key);
 		timelinesJson = com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi
@@ -41,6 +47,25 @@ public class TestTimeline extends TestCase {
 		UtilsJson.setDebugPath(userDir + "/src/test/resources/json/");
 		UtilsXml.setDebug(true);
 		UtilsXml.setDebugPath(userDir + "/src/test/resources/xml/");
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testTimelineEmptyJson() {
+		JSONObject jsonObject = UtilsJson.executeQuery("timeline/empty", key);
+		JSONObject comments = UtilsJson.getJSONObjectFromPath(jsonObject,
+				"/root");
+		assertTrue(comments.isNull("comments"));
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testTimelineEmptyXml() {
+		Document document = UtilsXml.executeQuery("timeline/empty", key);
+		Node node = document.selectSingleNode("/root/timeline");
+		assertFalse(node.hasContent());
 	}
 
 	/**

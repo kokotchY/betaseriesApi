@@ -3,7 +3,7 @@
  */
 package com.kokotchy.betaSeriesAPI.api;
 
-import java.util.List;
+import java.util.Set;
 
 import com.kokotchy.betaSeriesAPI.model.Comment;
 
@@ -21,7 +21,7 @@ public interface IComments {
 	 *            Url of the show
 	 * @return Comments for the given show
 	 */
-	public List<Comment> getComments(String url);
+	public Set<Comment> getComments(String url);
 
 	/**
 	 * Return the comments for the episode in the season of the show
@@ -34,7 +34,7 @@ public interface IComments {
 	 *            Episode
 	 * @return Comments for the given episode
 	 */
-	public List<Comment> getComments(String url, int season, int episode);
+	public Set<Comment> getComments(String url, int season, int episode);
 
 	/**
 	 * Return the comments of the specified member
@@ -43,7 +43,7 @@ public interface IComments {
 	 *            Login of the member
 	 * @return Comments for the member
 	 */
-	public List<Comment> getUserComments(String login);
+	public Set<Comment> getUserComments(String login);
 
 	/**
 	 * Post a comment on the given show
