@@ -10,7 +10,6 @@ import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.api.IComments;
-import com.kokotchy.betaSeriesAPI.api.NotImplementedException;
 import com.kokotchy.betaSeriesAPI.model.Comment;
 
 /**
@@ -106,33 +105,63 @@ public class Comments implements IComments {
 
 	@Override
 	public void postComment(String url, String text) {
-		throw new NotImplementedException();
+		// TODO Add the token!
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("show", url);
+		params.put("text", text);
+		UtilsJson.executeQuery("comments/post/show", apiKey, params);
 	}
 
 	@Override
 	public void postComment(String url, String text, int responseTo) {
-		throw new NotImplementedException();
+		// TODO Add the token!
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("show", url);
+		params.put("text", text);
+		params.put("in_reply_to", "" + responseTo);
+		UtilsJson.executeQuery("comments/post/show", apiKey, params);
 	}
 
 	@Override
 	public void postComment(String url, String text, int season, int episode) {
-		throw new NotImplementedException();
+		// TODO Add the token!
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("show", url);
+		params.put("text", text);
+		params.put("season", "" + season);
+		params.put("episode", "" + episode);
+		UtilsJson.executeQuery("comments/post/episode", apiKey, params);
 	}
 
 	@Override
 	public void postComment(String url, String text, int responseTo,
 			int season, int episode) {
-		throw new NotImplementedException();
+		// TODO Add the token!
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("show", url);
+		params.put("text", text);
+		params.put("season", "" + season);
+		params.put("episode", "" + episode);
+		params.put("in_reply_to", "" + responseTo);
+		UtilsJson.executeQuery("comments/post/episode", apiKey, params);
 	}
 
 	@Override
 	public void postUserComment(String login, String text) {
-		throw new NotImplementedException();
+		// TODO Add the token!
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("member", login);
+		params.put("text", text);
+		UtilsJson.executeQuery("comments/post/member", apiKey, params);
 	}
 
 	@Override
 	public void postUserComment(String login, String text, int responseTo) {
-		throw new NotImplementedException();
+		// TODO Add the token!
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("member", login);
+		params.put("text", text);
+		params.put("in_reply_to", "" + responseTo);
+		UtilsJson.executeQuery("comments/post/member", apiKey, params);
 	}
-
 }

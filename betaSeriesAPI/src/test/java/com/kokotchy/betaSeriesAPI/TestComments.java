@@ -4,6 +4,10 @@ import java.util.Set;
 
 import junit.framework.TestCase;
 
+import org.dom4j.Document;
+import org.dom4j.Node;
+import org.json.JSONObject;
+
 import com.kokotchy.betaSeriesAPI.model.Comment;
 
 /**
@@ -23,11 +27,16 @@ public class TestComments extends TestCase {
 	 */
 	private com.kokotchy.betaSeriesAPI.api.xmlImpl.Comments commentsXml;
 
+	/**
+	 *
+	 */
+	private String key;
+
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
 		String userDir = System.getProperty("user.dir");
-		String key = Utils.getApiKey(userDir);
+		key = Utils.getApiKey(userDir);
 		com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi.setApiKey(key);
 		com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi.setApiKey(key);
 		commentsJson = com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi
@@ -38,6 +47,25 @@ public class TestComments extends TestCase {
 		UtilsJson.setDebugPath(userDir + "/src/test/resources/json/");
 		UtilsXml.setDebug(true);
 		UtilsXml.setDebugPath(userDir + "/src/test/resources/xml/");
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testCommentsEmptyJson() {
+		JSONObject jsonObject = UtilsJson.executeQuery("comments/empty", key);
+		JSONObject comments = UtilsJson.getJSONObjectFromPath(jsonObject,
+				"/root/comments");
+		assertEquals(0, comments.length());
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testCommentsEmptyXml() {
+		Document document = UtilsXml.executeQuery("comments/empty", key);
+		Node node = document.selectSingleNode("/root/comments");
+		assertFalse(node.hasContent());
 	}
 
 	/**

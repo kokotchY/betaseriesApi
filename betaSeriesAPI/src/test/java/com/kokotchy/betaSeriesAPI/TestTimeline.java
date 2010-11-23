@@ -55,8 +55,8 @@ public class TestTimeline extends TestCase {
 	public void testTimelineEmptyJson() {
 		JSONObject jsonObject = UtilsJson.executeQuery("timeline/empty", key);
 		JSONObject comments = UtilsJson.getJSONObjectFromPath(jsonObject,
-				"/root");
-		assertTrue(comments.isNull("comments"));
+				"/root/timeline");
+		assertEquals(0, comments.length());
 	}
 
 	/**

@@ -31,7 +31,10 @@ public class Members implements IMembers {
 
 	/**
 	 * Token of logged user
+	 * 
+	 * @deprecated
 	 */
+	@Deprecated
 	private String token;
 
 	/**
@@ -198,8 +201,10 @@ public class Members implements IMembers {
 	/**
 	 * Return the token of the user
 	 * 
+	 * @deprecated
 	 * @return the token
 	 */
+	@Deprecated
 	public String getToken() {
 		return token;
 	}

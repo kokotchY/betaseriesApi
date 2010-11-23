@@ -39,11 +39,16 @@ public class TestMembers extends TestCase {
 	 */
 	private String token;
 
+	/**
+	 *
+	 */
+	private String key;
+
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
 		String userDir = System.getProperty("user.dir");
-		String key = Utils.getApiKey(userDir);
+		key = Utils.getApiKey(userDir);
 		File credentialsFile = new File(userDir,
 				"src/test/resources/credentials.txt");
 		String[] credentials = Utils.loadCredentials(credentialsFile);
