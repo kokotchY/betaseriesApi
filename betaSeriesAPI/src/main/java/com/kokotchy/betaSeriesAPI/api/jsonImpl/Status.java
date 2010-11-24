@@ -4,6 +4,7 @@ import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.api.IStatus;
+import com.kokotchy.betaSeriesAPI.api.factories.StatusInfoFactory;
 import com.kokotchy.betaSeriesAPI.model.StatusInfo;
 
 /**
@@ -31,7 +32,7 @@ public class Status implements IStatus {
 	@Override
 	public StatusInfo getStatus() {
 		JSONObject jsonObject = UtilsJson.executeQuery("status", apiKey);
-		return StatusInfo.createStatusInfo(jsonObject);
+		return StatusInfoFactory.createStatusInfo(jsonObject);
 	}
 
 }

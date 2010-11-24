@@ -8,7 +8,6 @@ import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
-import com.kokotchy.betaSeriesAPI.model.Change;
 import com.kokotchy.betaSeriesAPI.model.Version;
 
 /**
@@ -31,7 +30,7 @@ public class VersionFactory {
 		try {
 			for (String name : names) {
 				JSONObject changeObject = changes.getJSONObject(name);
-				version.addChange(Change.createChange(changeObject));
+				version.addChange(ChangeFactory.createChange(changeObject));
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -54,7 +53,7 @@ public class VersionFactory {
 
 		List<Node> changes = node.selectNodes("changes/change");
 		for (Node changeNode : changes) {
-			version.addChange(Change.createChange(changeNode));
+			version.addChange(ChangeFactory.createChange(changeNode));
 		}
 
 		return version;

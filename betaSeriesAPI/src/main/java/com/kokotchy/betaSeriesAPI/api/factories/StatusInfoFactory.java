@@ -37,13 +37,13 @@ public class StatusInfoFactory {
 		statusInfo.setVersion(UtilsXml.readString(apiNode, "version"));
 		List<Node> versions = apiNode.selectNodes("versions/version");
 		for (Node node : versions) {
-			Version version = Version.createVersion(node);
+			Version version = VersionFactory.createVersion(node);
 			statusInfo.addVersion(version);
 		}
 
 		List<Node> files = apiNode.selectNodes("files/file");
 		for (Node node : files) {
-			VersionFile file = VersionFile.createVersionFile(node);
+			VersionFile file = VersionFileFactory.createVersionFile(node);
 			statusInfo.addVersionFile(file);
 		}
 		return statusInfo;
@@ -74,7 +74,7 @@ public class StatusInfoFactory {
 			String[] versionsName = JSONObject.getNames(versions);
 			for (String name : versionsName) {
 				JSONObject versionObject = versions.getJSONObject(name);
-				Version version = Version.createVersion(versionObject);
+				Version version = VersionFactory.createVersion(versionObject);
 				statusInfo.addVersion(version);
 			}
 
@@ -82,7 +82,8 @@ public class StatusInfoFactory {
 			String[] filesName = JSONObject.getNames(files);
 			for (String name : filesName) {
 				JSONObject fileObject = files.getJSONObject(name);
-				VersionFile file = VersionFile.createVersionFile(fileObject);
+				VersionFile file = VersionFileFactory
+						.createVersionFile(fileObject);
 				statusInfo.addVersionFile(file);
 			}
 		} catch (JSONException e) {

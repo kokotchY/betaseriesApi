@@ -10,6 +10,7 @@ import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.api.ITimelines;
+import com.kokotchy.betaSeriesAPI.api.factories.EventFactory;
 import com.kokotchy.betaSeriesAPI.model.Event;
 
 /**
@@ -79,7 +80,8 @@ public class Timelines implements ITimelines {
 		String[] names = JSONObject.getNames(eventsList);
 		try {
 			for (String name : names) {
-				events.add(Event.createEvent(eventsList.getJSONObject(name)));
+				events.add(EventFactory.createEvent(eventsList
+						.getJSONObject(name)));
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();

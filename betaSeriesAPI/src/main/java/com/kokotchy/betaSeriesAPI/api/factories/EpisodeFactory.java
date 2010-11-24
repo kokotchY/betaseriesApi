@@ -8,7 +8,6 @@ import org.json.JSONObject;
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.model.Episode;
-import com.kokotchy.betaSeriesAPI.model.Subtitle;
 
 /**
  * @author canas
@@ -55,7 +54,7 @@ public class EpisodeFactory {
 
 		List<Node> subsNode = node.selectNodes("subs/sub");
 		for (Node sub : subsNode) {
-			episode.addSubtitle(Subtitle.createSubtitle(sub));
+			episode.addSubtitle(SubtitleFactory.createSubtitle(sub));
 		}
 
 		return episode;

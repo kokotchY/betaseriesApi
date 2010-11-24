@@ -126,7 +126,7 @@ public class StatusInfo {
 	 * 
 	 * @param databaseStatus
 	 */
-	private void setDatabaseStatus(String databaseStatus) {
+	public void setDatabaseStatus(String databaseStatus) {
 		this.databaseStatus = databaseStatus;
 	}
 
@@ -145,7 +145,7 @@ public class StatusInfo {
 	 * 
 	 * @param websiteStatus
 	 */
-	private void setWebsiteStatus(String websiteStatus) {
+	public void setWebsiteStatus(String websiteStatus) {
 		this.websiteStatus = websiteStatus;
 	}
 

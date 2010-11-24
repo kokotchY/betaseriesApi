@@ -10,6 +10,7 @@ import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.api.ISubtitles;
+import com.kokotchy.betaSeriesAPI.api.factories.SubtitleFactory;
 import com.kokotchy.betaSeriesAPI.model.Subtitle;
 import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
 
@@ -89,7 +90,7 @@ public class Subtitles implements ISubtitles {
 		String[] names = JSONObject.getNames(subtitlesList);
 		try {
 			for (String name : names) {
-				subtitles.add(Subtitle.createSubtitle(subtitlesList
+				subtitles.add(SubtitleFactory.createSubtitle(subtitlesList
 						.getJSONObject(name)));
 			}
 		} catch (JSONException e) {
@@ -125,7 +126,7 @@ public class Subtitles implements ISubtitles {
 		String[] names = JSONObject.getNames(subtitlesList);
 		try {
 			for (String name : names) {
-				subtitles.add(Subtitle.createSubtitle(subtitlesList
+				subtitles.add(SubtitleFactory.createSubtitle(subtitlesList
 						.getJSONObject(name)));
 			}
 		} catch (JSONException e) {

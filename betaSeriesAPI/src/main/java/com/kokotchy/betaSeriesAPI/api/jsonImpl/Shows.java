@@ -13,6 +13,7 @@ import org.json.JSONObject;
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.api.IShows;
 import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
+import com.kokotchy.betaSeriesAPI.api.factories.ShowFactory;
 import com.kokotchy.betaSeriesAPI.model.Season;
 import com.kokotchy.betaSeriesAPI.model.Show;
 
@@ -52,8 +53,8 @@ public class Shows implements IShows {
 		JSONObject jsonObject = UtilsJson.executeQuery("shows/display/" + url,
 				apiKey);
 		if (!UtilsJson.hasErrors(jsonObject)) {
-			return Show.createShow(UtilsJson.getJSONObjectFromPath(jsonObject,
-					"/root/show"));
+			return ShowFactory.createShow(UtilsJson.getJSONObjectFromPath(
+					jsonObject, "/root/show"));
 		}
 		return null;
 	}
@@ -68,7 +69,7 @@ public class Shows implements IShows {
 		String[] names = JSONObject.getNames(shows);
 		try {
 			for (String name : names) {
-				result.add(Show.createShow(shows.getJSONObject(name)));
+				result.add(ShowFactory.createShow(shows.getJSONObject(name)));
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -123,7 +124,8 @@ public class Shows implements IShows {
 				int episodesLength = episodesArray.length();
 				for (int j = 0; j < episodesLength; j++) {
 					JSONObject episodeObject = episodesArray.getJSONObject(j);
-					season.addEpisode(EpisodeFactory.createEpisode(episodeObject));
+					season.addEpisode(EpisodeFactory
+							.createEpisode(episodeObject));
 				}
 				result.add(season);
 			}
@@ -155,7 +157,8 @@ public class Shows implements IShows {
 						jsonObject, "/root/shows");
 				String[] names = JSONObject.getNames(showsList);
 				for (String name : names) {
-					Show show = Show.createShow(showsList.getJSONObject(name));
+					Show show = ShowFactory.createShow(showsList
+							.getJSONObject(name));
 					shows.add(show);
 				}
 			} catch (JSONException e) {

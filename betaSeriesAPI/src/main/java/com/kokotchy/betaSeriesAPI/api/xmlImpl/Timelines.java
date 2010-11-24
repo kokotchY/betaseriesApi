@@ -11,6 +11,7 @@ import org.dom4j.Node;
 
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.api.ITimelines;
+import com.kokotchy.betaSeriesAPI.api.factories.EventFactory;
 import com.kokotchy.betaSeriesAPI.model.Event;
 
 /**
@@ -77,7 +78,7 @@ public class Timelines implements ITimelines {
 		Set<Event> events = new HashSet<Event>();
 		List<Node> nodes = document.selectNodes("/root/timeline/item");
 		for (Node node : nodes) {
-			events.add(Event.createEvent(node));
+			events.add(EventFactory.createEvent(node));
 		}
 		return events;
 	}

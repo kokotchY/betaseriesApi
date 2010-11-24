@@ -13,6 +13,7 @@ import org.dom4j.Node;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.api.IShows;
 import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
+import com.kokotchy.betaSeriesAPI.api.factories.ShowFactory;
 import com.kokotchy.betaSeriesAPI.model.Season;
 import com.kokotchy.betaSeriesAPI.model.Show;
 
@@ -52,7 +53,8 @@ public class Shows implements IShows {
 		Document document = UtilsXml.executeQuery("shows/display/" + url,
 				apiKey);
 		if (!UtilsXml.hasErrors(document)) {
-			return Show.createShow(document.selectSingleNode("/root/show"));
+			return ShowFactory.createShow(document
+					.selectSingleNode("/root/show"));
 		}
 
 		return null;
@@ -65,7 +67,7 @@ public class Shows implements IShows {
 		Set<Show> result = new HashSet<Show>();
 		List<Node> nodes = document.selectNodes("/root/shows/show");
 		for (Node node : nodes) {
-			result.add(Show.createShow(node));
+			result.add(ShowFactory.createShow(node));
 		}
 		return result;
 	}
@@ -137,7 +139,7 @@ public class Shows implements IShows {
 		if (!UtilsXml.hasErrors(document)) {
 			List<Node> nodes = document.selectNodes("/root/shows/show");
 			for (Node showNode : nodes) {
-				Show show = Show.createShow(showNode);
+				Show show = ShowFactory.createShow(showNode);
 				shows.add(show);
 			}
 		}

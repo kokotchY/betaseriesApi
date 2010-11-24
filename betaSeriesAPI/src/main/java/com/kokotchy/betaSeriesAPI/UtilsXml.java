@@ -19,6 +19,7 @@ import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Node;
 
+import com.kokotchy.betaSeriesAPI.api.factories.ErrorFactory;
 import com.kokotchy.betaSeriesAPI.model.Error;
 
 /**
@@ -104,7 +105,7 @@ public class UtilsXml {
 			}
 			String xmlResponse = buffer.toString();
 			if (debug) {
-				 System.out.println("XML Response: " + xmlResponse);
+				System.out.println("XML Response: " + xmlResponse);
 			}
 			return DocumentHelper.parseText(xmlResponse);
 		} catch (MalformedURLException e) {
@@ -140,7 +141,7 @@ public class UtilsXml {
 		List<Error> errors = new LinkedList<Error>();
 		List<Node> nodes = document.selectNodes("/root/errors/error");
 		for (Node node : nodes) {
-			errors.add(Error.createError(node));
+			errors.add(ErrorFactory.createError(node));
 		}
 		return errors;
 	}

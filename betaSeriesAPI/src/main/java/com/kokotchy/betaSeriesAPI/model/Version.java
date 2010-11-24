@@ -28,7 +28,7 @@ public class Version {
 	 * @param change
 	 *            Change
 	 */
-	private void addChange(Change change) {
+	public void addChange(Change change) {
 		changes.put(change.getValue(), change);
 	}
 

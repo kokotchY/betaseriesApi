@@ -13,6 +13,7 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.api.IMembers;
 import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.MemberFactory;
+import com.kokotchy.betaSeriesAPI.api.factories.NotificationFactory;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 import com.kokotchy.betaSeriesAPI.model.Member;
 import com.kokotchy.betaSeriesAPI.model.Notification;
@@ -110,7 +111,8 @@ public class Members implements IMembers {
 			params.put("token", user);
 			document = UtilsXml.executeQuery("members/infos", apiKey, params);
 		}
-		return MemberFactory.createMember(document.selectSingleNode("/root/member"));
+		return MemberFactory.createMember(document
+				.selectSingleNode("/root/member"));
 	}
 
 	@Override
@@ -119,12 +121,14 @@ public class Members implements IMembers {
 	}
 
 	@Override
-	public List<Notification> getNotifications(String token, boolean seen, int nb) {
+	public List<Notification> getNotifications(String token, boolean seen,
+			int nb) {
 		return getNotificationsWithParameters(token, seen, nb, -1);
 	}
 
 	@Override
-	public List<Notification> getNotifications(String token, boolean seen, int nb, int lastId) {
+	public List<Notification> getNotifications(String token, boolean seen,
+			int nb, int lastId) {
 		return getNotificationsWithParameters(token, seen, nb, lastId);
 	}
 
@@ -153,8 +157,8 @@ public class Members implements IMembers {
 	 * @return List of notification
 	 */
 	@SuppressWarnings("unchecked")
-	private List<Notification> getNotificationsWithParameters(String token, Boolean seen,
-			int nb, int lastId) {
+	private List<Notification> getNotificationsWithParameters(String token,
+			Boolean seen, int nb, int lastId) {
 		Map<String, String> params = new HashMap<String, String>();
 		if (seen != null) {
 			params.put("seen", seen ? "yes" : "no");
@@ -172,7 +176,7 @@ public class Members implements IMembers {
 				.selectNodes("/root/notifications/notification");
 		List<Notification> notifications = new LinkedList<Notification>();
 		for (Node node : nodes) {
-			notifications.add(Notification.createNotification(node));
+			notifications.add(NotificationFactory.createNotification(node));
 		}
 		return notifications;
 	}

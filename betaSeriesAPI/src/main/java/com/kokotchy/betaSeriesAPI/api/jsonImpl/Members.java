@@ -14,6 +14,7 @@ import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.api.IMembers;
 import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.MemberFactory;
+import com.kokotchy.betaSeriesAPI.api.factories.NotificationFactory;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 import com.kokotchy.betaSeriesAPI.model.Member;
 import com.kokotchy.betaSeriesAPI.model.Notification;
@@ -49,8 +50,8 @@ public class Members implements IMembers {
 		JSONObject object = UtilsJson.executeQuery("members/auth", apiKey,
 				params);
 		if (!UtilsJson.hasErrors(object)) {
-			return UtilsJson.getJSONStringFromPath(object,
-					"/root/member/token");
+			return UtilsJson
+					.getJSONStringFromPath(object, "/root/member/token");
 		}
 		return null;
 	}
@@ -119,8 +120,8 @@ public class Members implements IMembers {
 			jsonObject = UtilsJson
 					.executeQuery("members/infos", apiKey, params);
 		}
-		return MemberFactory.createMember(UtilsJson.getJSONObjectFromPath(jsonObject,
-				"/root/member"));
+		return MemberFactory.createMember(UtilsJson.getJSONObjectFromPath(
+				jsonObject, "/root/member"));
 	}
 
 	@Override
@@ -129,12 +130,14 @@ public class Members implements IMembers {
 	}
 
 	@Override
-	public List<Notification> getNotifications(String token, boolean seen, int nb) {
+	public List<Notification> getNotifications(String token, boolean seen,
+			int nb) {
 		return getNotificationsWithParameters(token, seen, nb, -1);
 	}
 
 	@Override
-	public List<Notification> getNotifications(String token, boolean seen, int nb, int lastId) {
+	public List<Notification> getNotifications(String token, boolean seen,
+			int nb, int lastId) {
 		return getNotificationsWithParameters(token, seen, nb, lastId);
 	}
 
@@ -160,8 +163,8 @@ public class Members implements IMembers {
 	 *            Start of notification
 	 * @return List of notification
 	 */
-	private List<Notification> getNotificationsWithParameters(String token, Boolean seen,
-			int nb, int lastId) {
+	private List<Notification> getNotificationsWithParameters(String token,
+			Boolean seen, int nb, int lastId) {
 		Map<String, String> params = new HashMap<String, String>();
 		if (seen != null) {
 			params.put("seen", seen ? "yes" : "no");
@@ -182,8 +185,8 @@ public class Members implements IMembers {
 			int length = notificationsArray.length();
 			for (int i = 0; i < length; i++) {
 				JSONObject notification = notificationsArray.getJSONObject(i);
-				notifications
-						.add(Notification.createNotification(notification));
+				notifications.add(NotificationFactory
+						.createNotification(notification));
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();

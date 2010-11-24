@@ -4,6 +4,7 @@ import org.dom4j.Document;
 
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.api.IStatus;
+import com.kokotchy.betaSeriesAPI.api.factories.StatusInfoFactory;
 import com.kokotchy.betaSeriesAPI.model.StatusInfo;
 
 /**
@@ -32,7 +33,7 @@ public class Status implements IStatus {
 	@Override
 	public StatusInfo getStatus() {
 		Document document = UtilsXml.executeQuery("status", apiKey);
-		return StatusInfo.createStatusInfo(document);
+		return StatusInfoFactory.createStatusInfo(document);
 	}
 
 }

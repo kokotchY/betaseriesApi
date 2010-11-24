@@ -11,6 +11,7 @@ import org.dom4j.Node;
 
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.api.ISubtitles;
+import com.kokotchy.betaSeriesAPI.api.factories.SubtitleFactory;
 import com.kokotchy.betaSeriesAPI.model.Subtitle;
 import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
 
@@ -87,7 +88,7 @@ public class Subtitles implements ISubtitles {
 		Document document = UtilsXml.executeQuery(action, apiKey, params);
 		List<Node> nodes = document.selectNodes("/root/subtitles/subtitle");
 		for (Node node : nodes) {
-			subtitles.add(Subtitle.createSubtitle(node));
+			subtitles.add(SubtitleFactory.createSubtitle(node));
 		}
 		return subtitles;
 	}
@@ -117,7 +118,7 @@ public class Subtitles implements ISubtitles {
 		List<Node> nodes = document.selectNodes("/root/subtitles/subtitle");
 		Set<Subtitle> subtitles = new HashSet<Subtitle>();
 		for (Node node : nodes) {
-			subtitles.add(Subtitle.createSubtitle(node));
+			subtitles.add(SubtitleFactory.createSubtitle(node));
 		}
 		return subtitles;
 	}
