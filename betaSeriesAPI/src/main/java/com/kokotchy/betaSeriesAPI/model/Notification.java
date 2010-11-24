@@ -1,12 +1,6 @@
 package com.kokotchy.betaSeriesAPI.model;
 
-import org.dom4j.Node;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import com.kokotchy.betaSeriesAPI.HashCodeUtil;
-import com.kokotchy.betaSeriesAPI.UtilsJson;
-import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
  * Model of a notification
@@ -14,43 +8,6 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
  * @author kokotchy
  */
 public class Notification {
-
-	/**
-	 * Create a notification from json object
-	 * 
-	 * @param jsonObject
-	 *            JSON object
-	 * @return Notification
-	 */
-	public static Notification createNotification(JSONObject jsonObject) {
-		Notification notification = new Notification();
-		try {
-			notification.setId(jsonObject.getInt("id"));
-			notification.setHtml(jsonObject.getString("html"));
-			notification.setDate(jsonObject.getInt("date"));
-			notification.setSeen(UtilsJson.getJSONBooleanFromPath(jsonObject,
-					"seen"));
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
-		return notification;
-	}
-
-	/**
-	 * Create a notification from a node
-	 * 
-	 * @param node
-	 *            Node
-	 * @return Notification
-	 */
-	public static Notification createNotification(Node node) {
-		Notification notification = new Notification();
-		notification.setId(UtilsXml.readInt(node, "id"));
-		notification.setHtml(UtilsXml.readString(node, "html"));
-		notification.setDate(UtilsXml.readInt(node, "date"));
-		notification.setSeen(UtilsXml.readBoolean(node, "seen"));
-		return notification;
-	}
 
 	/**
 	 * Id of the notification

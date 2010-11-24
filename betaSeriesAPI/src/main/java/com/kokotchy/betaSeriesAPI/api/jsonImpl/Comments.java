@@ -10,6 +10,7 @@ import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.api.IComments;
+import com.kokotchy.betaSeriesAPI.api.factories.CommentFactory;
 import com.kokotchy.betaSeriesAPI.model.Comment;
 
 /**
@@ -45,7 +46,7 @@ public class Comments implements IComments {
 		if (names != null) {
 			try {
 				for (String name : names) {
-					Comment comment = Comment.createComment(comments
+					Comment comment = CommentFactory.createComment(comments
 							.getJSONObject(name));
 					result.add(comment);
 				}
@@ -70,7 +71,7 @@ public class Comments implements IComments {
 		if ((names != null) && (names.length > 0)) {
 			try {
 				for (String name : names) {
-					Comment comment = Comment.createComment(comments
+					Comment comment = CommentFactory.createComment(comments
 							.getJSONObject(name));
 					result.add(comment);
 				}
@@ -92,7 +93,7 @@ public class Comments implements IComments {
 		if (names != null) {
 			try {
 				for (String name : names) {
-					Comment comment = Comment.createComment(comments
+					Comment comment = CommentFactory.createComment(comments
 							.getJSONObject(name));
 					result.add(comment);
 				}

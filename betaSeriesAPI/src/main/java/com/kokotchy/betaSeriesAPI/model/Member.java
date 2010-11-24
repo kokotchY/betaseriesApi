@@ -3,13 +3,7 @@ package com.kokotchy.betaSeriesAPI.model;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.dom4j.Node;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import com.kokotchy.betaSeriesAPI.HashCodeUtil;
-import com.kokotchy.betaSeriesAPI.UtilsJson;
-import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
  * Model of a member
@@ -17,51 +11,6 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
  * @author kokotchy
  */
 public class Member {
-
-	/**
-	 * Create member object from json object
-	 * 
-	 * @param jsonObject
-	 *            JSON object
-	 * @return Member
-	 */
-	public static Member createMember(JSONObject jsonObject) {
-		Member member = new Member();
-		try {
-			member.setLogin(UtilsJson.getStringValue(jsonObject, "login"));
-			member.setAvatar(UtilsJson.getStringValue(jsonObject, "avatar"));
-			member.setStats(Stats.createStats(UtilsJson.getJSONObject(
-					jsonObject, "stats")));
-			JSONObject shows = UtilsJson.getJSONObject(jsonObject, "shows");
-			for (String name : JSONObject.getNames(shows)) {
-				JSONObject show = shows.getJSONObject(name);
-				member.addShow(Show.createShow(show));
-			}
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
-		return member;
-	}
-
-	/**
-	 * Create the member from the node
-	 * 
-	 * @param node
-	 *            Node
-	 * @return Member
-	 */
-	@SuppressWarnings("unchecked")
-	public static Member createMember(Node node) {
-		Member member = new Member();
-		member.setLogin(UtilsXml.readString(node, "login"));
-		member.setAvatar(UtilsXml.readString(node, "avatar"));
-		member.setStats(Stats.createStats(node.selectSingleNode("stats")));
-		List<Node> shows = node.selectNodes("shows/show");
-		for (Node show : shows) {
-			member.addShow(Show.createShow(show));
-		}
-		return member;
-	}
 
 	/**
 	 * Login of the member
@@ -75,7 +24,6 @@ public class Member {
 
 	/**
 	 * Statistics about the user
-	 * 
 	 * TODO Remove stats object an include directly in Member model
 	 */
 	private Stats stats;

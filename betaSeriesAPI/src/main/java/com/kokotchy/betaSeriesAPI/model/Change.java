@@ -1,11 +1,6 @@
 package com.kokotchy.betaSeriesAPI.model;
 
-import org.dom4j.Node;
-import org.json.JSONObject;
-
 import com.kokotchy.betaSeriesAPI.HashCodeUtil;
-import com.kokotchy.betaSeriesAPI.UtilsJson;
-import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
  * Change in the api
@@ -13,33 +8,6 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
  * @author kokotchy
  */
 public class Change {
-	/**
-	 * Create a new change from the json object
-	 * 
-	 * @param changeObject
-	 *            json object
-	 * @return Change
-	 */
-	public static Change createChange(JSONObject changeObject) {
-		Change change = new Change();
-		change.setType(UtilsJson.getStringValue(changeObject, "type"));
-		change.setValue(UtilsJson.getStringValue(changeObject, "value"));
-		return change;
-	}
-
-	/**
-	 * Create a new change from the node
-	 * 
-	 * @param node
-	 *            Node
-	 * @return Change
-	 */
-	public static Change createChange(Node node) {
-		Change change = new Change();
-		change.setType(UtilsXml.readString(node, "type"));
-		change.setValue(UtilsXml.readString(node, "value"));
-		return change;
-	}
 
 	/**
 	 * Type of change

@@ -12,6 +12,8 @@ import org.json.JSONObject;
 import com.kokotchy.betaSeriesAPI.Utils;
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.api.IMembers;
+import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
+import com.kokotchy.betaSeriesAPI.api.factories.MemberFactory;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 import com.kokotchy.betaSeriesAPI.model.Member;
 import com.kokotchy.betaSeriesAPI.model.Notification;
@@ -86,7 +88,7 @@ public class Members implements IMembers {
 			int length = episodes.length();
 			for (int i = 0; i < length; i++) {
 				JSONObject episode = episodes.getJSONObject(i);
-				result.add(Episode.createEpisode(episode));
+				result.add(EpisodeFactory.createEpisode(episode));
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -117,7 +119,7 @@ public class Members implements IMembers {
 			jsonObject = UtilsJson
 					.executeQuery("members/infos", apiKey, params);
 		}
-		return Member.createMember(UtilsJson.getJSONObjectFromPath(jsonObject,
+		return MemberFactory.createMember(UtilsJson.getJSONObjectFromPath(jsonObject,
 				"/root/member"));
 	}
 

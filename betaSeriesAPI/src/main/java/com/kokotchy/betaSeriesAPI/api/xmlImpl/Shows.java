@@ -12,7 +12,7 @@ import org.dom4j.Node;
 
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.api.IShows;
-import com.kokotchy.betaSeriesAPI.model.Episode;
+import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
 import com.kokotchy.betaSeriesAPI.model.Season;
 import com.kokotchy.betaSeriesAPI.model.Show;
 
@@ -110,7 +110,7 @@ public class Shows implements IShows {
 			Season season = new Season(UtilsXml.readInt(node, "number"));
 			List<Node> episodes = node.selectNodes("episodes/episode");
 			for (Node episodeNode : episodes) {
-				season.addEpisode(Episode.createEpisode(episodeNode));
+				season.addEpisode(EpisodeFactory.createEpisode(episodeNode));
 			}
 			result.add(season);
 		}

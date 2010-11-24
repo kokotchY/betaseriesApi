@@ -50,7 +50,7 @@ public class TestComments extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test empty comments json
 	 */
 	public void testCommentsEmptyJson() {
 		JSONObject jsonObject = UtilsJson.executeQuery("comments/empty", key);
@@ -60,7 +60,7 @@ public class TestComments extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test empty comments xml
 	 */
 	public void testCommentsEmptyXml() {
 		Document document = UtilsXml.executeQuery("comments/empty", key);

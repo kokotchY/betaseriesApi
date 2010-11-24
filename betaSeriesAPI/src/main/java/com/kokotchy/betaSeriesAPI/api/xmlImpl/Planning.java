@@ -11,6 +11,7 @@ import org.dom4j.Node;
 
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.api.IPlanning;
+import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 
 /**
@@ -88,7 +89,7 @@ public class Planning implements IPlanning {
 		List<Node> nodes = document.selectNodes("/root/planning/episode");
 		Set<Episode> episodes = new HashSet<Episode>();
 		for (Node node : nodes) {
-			episodes.add(Episode.createEpisode(node));
+			episodes.add(EpisodeFactory.createEpisode(node));
 		}
 		return episodes;
 	}

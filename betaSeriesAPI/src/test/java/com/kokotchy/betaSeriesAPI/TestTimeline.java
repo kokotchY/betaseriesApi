@@ -50,7 +50,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test empty json timeline
 	 */
 	public void testTimelineEmptyJson() {
 		JSONObject jsonObject = UtilsJson.executeQuery("timeline/empty", key);
@@ -60,7 +60,7 @@ public class TestTimeline extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test empty xml timeline
 	 */
 	public void testTimelineEmptyXml() {
 		Document document = UtilsXml.executeQuery("timeline/empty", key);

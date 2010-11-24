@@ -1,9 +1,6 @@
 package com.kokotchy.betaSeriesAPI.model;
 
-import org.dom4j.Node;
-
 import com.kokotchy.betaSeriesAPI.HashCodeUtil;
-import com.kokotchy.betaSeriesAPI.UtilsXml;
 
 /**
  * Model of an error
@@ -11,19 +8,6 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
  * @author kokotchy
  */
 public class Error {
-
-	/**
-	 * Create an error from a node
-	 * 
-	 * @param node
-	 *            Node
-	 * @return Error
-	 */
-	public static Error createError(Node node) {
-		Error error = new Error(UtilsXml.readInt(node, "#code"));
-		error.setText(node.getText());
-		return error;
-	}
 
 	/**
 	 * Code of the error

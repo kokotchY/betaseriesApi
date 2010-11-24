@@ -11,6 +11,7 @@ import org.dom4j.Node;
 
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.api.IComments;
+import com.kokotchy.betaSeriesAPI.api.factories.CommentFactory;
 import com.kokotchy.betaSeriesAPI.model.Comment;
 
 /**
@@ -62,7 +63,7 @@ public class Comments implements IComments {
 		if (!UtilsXml.hasErrors(document)) {
 			List<Node> nodes = document.selectNodes("/root/comments/comment");
 			for (Node showNode : nodes) {
-				Comment comment = Comment.createComment(showNode);
+				Comment comment = CommentFactory.createComment(showNode);
 				comments.add(comment);
 			}
 		}
@@ -80,7 +81,7 @@ public class Comments implements IComments {
 		List<Node> comments = document.selectNodes("/root/comments/comment");
 		Set<Comment> result = new HashSet<Comment>();
 		for (Node node : comments) {
-			Comment comment = Comment.createComment(node);
+			Comment comment = CommentFactory.createComment(node);
 			result.add(comment);
 		}
 		return result;
@@ -94,7 +95,7 @@ public class Comments implements IComments {
 		List<Node> nodes = document.selectNodes("/root/comments/comment");
 		Set<Comment> result = new HashSet<Comment>();
 		for (Node node : nodes) {
-			Comment comment = Comment.createComment(node);
+			Comment comment = CommentFactory.createComment(node);
 			result.add(comment);
 		}
 		return result;

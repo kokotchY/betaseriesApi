@@ -12,7 +12,7 @@ import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.api.IShows;
-import com.kokotchy.betaSeriesAPI.model.Episode;
+import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
 import com.kokotchy.betaSeriesAPI.model.Season;
 import com.kokotchy.betaSeriesAPI.model.Show;
 
@@ -123,7 +123,7 @@ public class Shows implements IShows {
 				int episodesLength = episodesArray.length();
 				for (int j = 0; j < episodesLength; j++) {
 					JSONObject episodeObject = episodesArray.getJSONObject(j);
-					season.addEpisode(Episode.createEpisode(episodeObject));
+					season.addEpisode(EpisodeFactory.createEpisode(episodeObject));
 				}
 				result.add(season);
 			}

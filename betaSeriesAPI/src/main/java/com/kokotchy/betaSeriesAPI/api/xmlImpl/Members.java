@@ -11,6 +11,8 @@ import org.dom4j.Node;
 import com.kokotchy.betaSeriesAPI.Utils;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.api.IMembers;
+import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
+import com.kokotchy.betaSeriesAPI.api.factories.MemberFactory;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 import com.kokotchy.betaSeriesAPI.model.Member;
 import com.kokotchy.betaSeriesAPI.model.Notification;
@@ -82,7 +84,7 @@ public class Members implements IMembers {
 				apiKey, params);
 		List<Node> nodes = document.selectNodes("/root/episodes/episode");
 		for (Node node : nodes) {
-			result.add(Episode.createEpisode(node));
+			result.add(EpisodeFactory.createEpisode(node));
 		}
 		return result;
 	}
@@ -108,7 +110,7 @@ public class Members implements IMembers {
 			params.put("token", user);
 			document = UtilsXml.executeQuery("members/infos", apiKey, params);
 		}
-		return Member.createMember(document.selectSingleNode("/root/member"));
+		return MemberFactory.createMember(document.selectSingleNode("/root/member"));
 	}
 
 	@Override

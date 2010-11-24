@@ -10,6 +10,7 @@ import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.api.IPlanning;
+import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 
 /**
@@ -90,7 +91,7 @@ public class Planning implements IPlanning {
 		try {
 			for (String name : names) {
 				JSONObject object = generalPlanning.getJSONObject(name);
-				episodes.add(Episode.createEpisode(object));
+				episodes.add(EpisodeFactory.createEpisode(object));
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
