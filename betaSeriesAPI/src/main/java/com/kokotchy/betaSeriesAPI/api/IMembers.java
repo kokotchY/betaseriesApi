@@ -20,13 +20,17 @@ public interface IMembers {
 	 *            Login of the user
 	 * @param password
 	 *            Password of the user
+	 * @return Token of the user. If null => not logged
 	 */
-	public boolean auth(String login, String password);
+	public String auth(String login, String password);
 
 	/**
 	 * Destroy the token of the user
+	 * 
+	 * @param token
+	 *            Toekn
 	 */
-	public void destroy();
+	public void destroy(String token);
 
 	/**
 	 * Return remaining episodes to see according to the subtitle option
@@ -45,26 +49,32 @@ public interface IMembers {
 	/**
 	 * Return the notification received by the member.
 	 * 
+	 * @param token
+	 *            Token of the logged user
 	 * @param seen
 	 *            Flag to return already seen notification or not
 	 * @return List of notifications
 	 */
-	public List<Notification> getNotifications(boolean seen);
+	public List<Notification> getNotifications(String token, boolean seen);
 
 	/**
 	 * Return the notification received by the member.
 	 * 
+	 * @param token
+	 *            Token of the logged user
 	 * @param seen
 	 *            Flag to return already seen notification or not
 	 * @param nb
 	 *            Number of notification
 	 * @return List of notifications
 	 */
-	public List<Notification> getNotifications(boolean seen, int nb);
+	public List<Notification> getNotifications(String token, boolean seen, int nb);
 
 	/**
 	 * Return the notification received by the member.
 	 * 
+	 * @param token
+	 *            Token of the logged user
 	 * @param seen
 	 *            Flag to return already seen notification or not
 	 * @param nb
@@ -73,16 +83,18 @@ public interface IMembers {
 	 *            Start of the last notification
 	 * @return List of notifications
 	 */
-	public List<Notification> getNotifications(boolean seen, int nb, int lastId);
+	public List<Notification> getNotifications(String token, boolean seen, int nb, int lastId);
 
 	/**
 	 * Return the notification received by the member.
 	 * 
+	 * @param token
+	 *            Token of the logged user
 	 * @param nb
 	 *            Number of notification
 	 * @return List of notifications
 	 */
-	public List<Notification> getNotifications(int nb);
+	public List<Notification> getNotifications(String token, int nb);
 
 	/**
 	 * Return information about the logged user
@@ -123,7 +135,6 @@ public interface IMembers {
 
 	/**
 	 * Set the episode for the given season and url as watch
-	 * 
 	 * If the watched episode didn't follow the last seen episode, all episodes
 	 * between them are marked as seen.
 	 * 

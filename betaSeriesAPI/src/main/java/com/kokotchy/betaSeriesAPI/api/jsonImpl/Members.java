@@ -30,14 +30,6 @@ public class Members implements IMembers {
 	private String apiKey;
 
 	/**
-	 * Token of logged user
-	 * 
-	 * @deprecated
-	 */
-	@Deprecated
-	private String token;
-
-	/**
 	 * Create new members api with the given key
 	 * 
 	 * @param apiKey
@@ -48,22 +40,21 @@ public class Members implements IMembers {
 	}
 
 	@Override
-	public boolean auth(String login, String password) {
+	public String auth(String login, String password) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("login", login);
 		params.put("password", Utils.getMD5(password));
 		JSONObject object = UtilsJson.executeQuery("members/auth", apiKey,
 				params);
 		if (!UtilsJson.hasErrors(object)) {
-			token = UtilsJson.getJSONStringFromPath(object,
+			return UtilsJson.getJSONStringFromPath(object,
 					"/root/member/token");
-			return true;
 		}
-		return false;
+		return null;
 	}
 
 	@Override
-	public void destroy() {
+	public void destroy(String token) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
 		UtilsJson.executeQuery("members/destroy", apiKey, params);
@@ -131,23 +122,23 @@ public class Members implements IMembers {
 	}
 
 	@Override
-	public List<Notification> getNotifications(boolean seen) {
-		return getNotificationsWithParameters(seen, -1, -1);
+	public List<Notification> getNotifications(String token, boolean seen) {
+		return getNotificationsWithParameters(token, seen, -1, -1);
 	}
 
 	@Override
-	public List<Notification> getNotifications(boolean seen, int nb) {
-		return getNotificationsWithParameters(seen, nb, -1);
+	public List<Notification> getNotifications(String token, boolean seen, int nb) {
+		return getNotificationsWithParameters(token, seen, nb, -1);
 	}
 
 	@Override
-	public List<Notification> getNotifications(boolean seen, int nb, int lastId) {
-		return getNotificationsWithParameters(seen, nb, lastId);
+	public List<Notification> getNotifications(String token, boolean seen, int nb, int lastId) {
+		return getNotificationsWithParameters(token, seen, nb, lastId);
 	}
 
 	@Override
-	public List<Notification> getNotifications(int nb) {
-		return getNotificationsWithParameters(null, nb, -1);
+	public List<Notification> getNotifications(String token, int nb) {
+		return getNotificationsWithParameters(token, null, nb, -1);
 	}
 
 	/**
@@ -167,7 +158,7 @@ public class Members implements IMembers {
 	 *            Start of notification
 	 * @return List of notification
 	 */
-	private List<Notification> getNotificationsWithParameters(Boolean seen,
+	private List<Notification> getNotificationsWithParameters(String token, Boolean seen,
 			int nb, int lastId) {
 		Map<String, String> params = new HashMap<String, String>();
 		if (seen != null) {
@@ -196,17 +187,6 @@ public class Members implements IMembers {
 			e.printStackTrace();
 		}
 		return notifications;
-	}
-
-	/**
-	 * Return the token of the user
-	 * 
-	 * @deprecated
-	 * @return the token
-	 */
-	@Deprecated
-	public String getToken() {
-		return token;
 	}
 
 	@Override
