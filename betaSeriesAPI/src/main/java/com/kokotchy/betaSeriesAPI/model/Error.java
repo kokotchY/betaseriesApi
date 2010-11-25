@@ -20,6 +20,13 @@ public class Error {
 	private String text;
 
 	/**
+	 * TODO Fill it
+	 */
+	public Error() {
+		this(null);
+	}
+
+	/**
 	 * Create the error with the given code
 	 * 
 	 * @param code
