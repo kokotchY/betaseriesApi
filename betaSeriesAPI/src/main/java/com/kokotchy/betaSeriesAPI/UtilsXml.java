@@ -9,9 +9,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.commons.lang.StringEscapeUtils;
 import org.dom4j.Document;
@@ -137,8 +138,8 @@ public class UtilsXml {
 	 * @return List of error
 	 */
 	@SuppressWarnings("unchecked")
-	public static List<Error> getErrors(Document document) {
-		List<Error> errors = new LinkedList<Error>();
+	public static Set<Error> getErrors(Document document) {
+		Set<Error> errors = new HashSet<Error>();
 		List<Node> nodes = document.selectNodes("/root/errors/error");
 		for (Node node : nodes) {
 			errors.add(ErrorFactory.createError(node));

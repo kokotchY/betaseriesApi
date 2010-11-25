@@ -9,12 +9,17 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.commons.lang.StringEscapeUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.kokotchy.betaSeriesAPI.api.factories.ErrorFactory;
+import com.kokotchy.betaSeriesAPI.model.Error;
 
 /**
  * Utils to handle json file
@@ -116,6 +121,29 @@ public class UtilsJson {
 	 */
 	public static boolean getBooleanValue(JSONObject jsonObject, String name) {
 		return getIntValue(jsonObject, name) == 1;
+	}
+
+	/**
+	 * Return the errors from the json object
+	 * 
+	 * @param jsonObject
+	 *            Json object
+	 * @return Set of error
+	 */
+	public static Set<Error> getErrors(JSONObject jsonObject) {
+		Set<Error> result = new HashSet<Error>();
+		JSONObject errors = UtilsJson.getJSONObjectFromPath(jsonObject, "/root/errors/error");
+		String[] names = JSONObject.getNames(errors);
+		if (names != null) {
+			try {
+				for (String name : names) {
+					result.add(ErrorFactory.createError(errors.getJSONObject(name)));
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
 	}
 
 	/**
