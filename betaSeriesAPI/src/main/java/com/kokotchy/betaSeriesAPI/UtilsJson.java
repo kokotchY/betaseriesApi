@@ -132,12 +132,12 @@ public class UtilsJson {
 	 */
 	public static Set<Error> getErrors(JSONObject jsonObject) {
 		Set<Error> result = new HashSet<Error>();
-		JSONObject errors = UtilsJson.getJSONObjectFromPath(jsonObject, "/root/errors/error");
+		JSONObject errors = UtilsJson.getJSONObjectFromPath(jsonObject, "/root/errors");
 		String[] names = JSONObject.getNames(errors);
 		if (names != null) {
 			try {
 				for (String name : names) {
-					result.add(ErrorFactory.createError(errors.getJSONObject(name)));
+					result.add(ErrorFactory.createError(errors.getJSONObject(name).getJSONObject("error")));
 				}
 			} catch (JSONException e) {
 				e.printStackTrace();

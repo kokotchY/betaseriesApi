@@ -34,7 +34,8 @@ public class ErrorFactory {
 	 * @return Error
 	 */
 	public static Error createError(Node node) {
-		Error error = new Error(UtilsXml.readInt(node, "#code"));
+		int code = UtilsXml.getAttributeIntValue(node);
+		Error error = new Error(code);
 		error.setText(node.getText());
 		return error;
 	}

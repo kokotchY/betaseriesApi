@@ -15,9 +15,11 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.commons.lang.StringEscapeUtils;
+import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
+import org.dom4j.Element;
 import org.dom4j.Node;
 
 import com.kokotchy.betaSeriesAPI.api.factories.ErrorFactory;
@@ -128,6 +130,27 @@ public class UtilsXml {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param node
+	 * @return
+	 */
+	public static int getAttributeIntValue(Node node) {
+		return Integer.parseInt(getAttributeStringValue(node));
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param node
+	 * @return
+	 */
+	public static String getAttributeStringValue(Node node) {
+		Attribute code = ((Element) node).attribute("code");
+		return code.getText();
 	}
 
 	/**

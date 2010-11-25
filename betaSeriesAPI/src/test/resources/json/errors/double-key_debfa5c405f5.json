@@ -1,0 +1,1 @@
+{ "root": { "code": "0", "errors": { "0": { "error": { "code": 1001, "content": "Wrong API key." } }, "1": { "error": { "code": 1002, "content": "Invalid type." } }, } } }
