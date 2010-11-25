@@ -1,0 +1,8 @@
+comments: comment*
+
+comment:
+    string login: login of the user that have posted the comment
+    int date: date of the comment
+    string text: content of the comment
+    int inner_id: internal id of the comment
+    int in_reply_to: comment id of the replied comment
