@@ -9,7 +9,9 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.model.Notification;
 
 /**
- * @author canas
+ * Notification factory
+ * 
+ * @author kokotchy
  */
 public class NotificationFactory {
 	/**

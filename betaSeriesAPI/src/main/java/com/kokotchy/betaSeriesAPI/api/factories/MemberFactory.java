@@ -11,7 +11,9 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.model.Member;
 
 /**
- * @author canas
+ * Member factory
+ * 
+ * @author kokotchy
  */
 public class MemberFactory {
 	/**

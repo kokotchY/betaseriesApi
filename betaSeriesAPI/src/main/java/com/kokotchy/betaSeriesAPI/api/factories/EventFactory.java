@@ -8,7 +8,9 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.model.Event;
 
 /**
- * @author canas
+ * Event factory
+ * 
+ * @author kokotchy
  */
 public class EventFactory {
 	/**

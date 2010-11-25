@@ -8,7 +8,9 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.model.Comment;
 
 /**
- * @author canas
+ * Comments factory
+ * 
+ * @author kokotchy
  */
 public class CommentFactory {
 	/**

@@ -8,7 +8,9 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.model.Change;
 
 /**
- * @author canas
+ * Factory to create change
+ * 
+ * @author kokotchy
  */
 public class ChangeFactory {
 	/**

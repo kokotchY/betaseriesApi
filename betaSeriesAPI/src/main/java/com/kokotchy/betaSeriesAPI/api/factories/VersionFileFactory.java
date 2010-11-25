@@ -8,10 +8,9 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.model.VersionFile;
 
 /**
- * TODO Fill it
+ * VersionFile factory
  * 
  * @author kokotchy
- * 
  */
 public class VersionFileFactory {
 	/**

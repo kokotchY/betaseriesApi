@@ -11,7 +11,9 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.model.Show;
 
 /**
- * @author canas
+ * Show factory
+ * 
+ * @author kokotchy
  */
 public class ShowFactory {
 	/**

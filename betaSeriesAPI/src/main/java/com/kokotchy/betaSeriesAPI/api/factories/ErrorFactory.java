@@ -6,7 +6,9 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.model.Error;
 
 /**
- * @author canas
+ * Error factory
+ * 
+ * @author kokotchy
  */
 public class ErrorFactory {
 	/**

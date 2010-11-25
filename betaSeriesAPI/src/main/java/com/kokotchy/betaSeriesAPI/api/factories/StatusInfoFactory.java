@@ -14,7 +14,9 @@ import com.kokotchy.betaSeriesAPI.model.Version;
 import com.kokotchy.betaSeriesAPI.model.VersionFile;
 
 /**
- * @author canas
+ * StatusInfo factory
+ * 
+ * @author kokotchy
  */
 public class StatusInfoFactory {
 

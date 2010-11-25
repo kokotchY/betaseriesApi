@@ -10,7 +10,9 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 
 /**
- * @author canas
+ * Episode factory
+ * 
+ * @author kokotchy
  */
 public class EpisodeFactory {
 	/**

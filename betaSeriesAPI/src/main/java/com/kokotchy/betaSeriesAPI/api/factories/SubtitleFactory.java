@@ -9,7 +9,9 @@ import com.kokotchy.betaSeriesAPI.model.Subtitle;
 import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
 
 /**
- * @author canas
+ * Subtitle Factory
+ * 
+ * @author kokotchy
  */
 public class SubtitleFactory {
 	/**

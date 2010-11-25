@@ -8,7 +8,9 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.model.Stats;
 
 /**
- * @author canas
+ * Stats factory
+ * 
+ * @author kokotchy
  */
 public class StatsFactory {
 	/**

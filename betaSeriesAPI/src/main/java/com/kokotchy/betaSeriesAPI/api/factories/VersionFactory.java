@@ -11,7 +11,9 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.model.Version;
 
 /**
- * @author canas
+ * Version factory
+ * 
+ * @author kokotchy
  */
 public class VersionFactory {
 	/**
