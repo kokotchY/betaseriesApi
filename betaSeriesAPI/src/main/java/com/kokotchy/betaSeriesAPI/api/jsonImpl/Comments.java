@@ -35,39 +35,17 @@ public class Comments implements IComments {
 		this.apiKey = apiKey;
 	}
 
-	@Override
-	public Set<Comment> getComments(String url) {
-		JSONObject jsonObject = UtilsJson.executeQuery("comments/show/" + url,
-				apiKey);
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
+	 * @return
+	 */
+	private Set<Comment> getComments(JSONObject jsonObject) {
 		JSONObject comments = UtilsJson.getJSONObjectFromPath(jsonObject,
 				"/root/comments");
 		String[] names = JSONObject.getNames(comments);
 		Set<Comment> result = new HashSet<Comment>();
-		if (names != null) {
-			try {
-				for (String name : names) {
-					Comment comment = CommentFactory.createComment(comments
-							.getJSONObject(name));
-					result.add(comment);
-				}
-			} catch (JSONException e) {
-				e.printStackTrace();
-			}
-		}
-		return result;
-	}
-
-	@Override
-	public Set<Comment> getComments(String url, int season, int episode) {
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("season", "" + season);
-		params.put("episode", "" + episode);
-		JSONObject jsonObject = UtilsJson.executeQuery("comments/episode/"
-				+ url, apiKey, params);
-		JSONObject comments = UtilsJson.getJSONObjectFromPath(jsonObject,
-				"/root/comments");
-		Set<Comment> result = new HashSet<Comment>();
-		String[] names = JSONObject.getNames(comments);
 		if ((names != null) && (names.length > 0)) {
 			try {
 				for (String name : names) {
@@ -83,86 +61,114 @@ public class Comments implements IComments {
 	}
 
 	@Override
+	public Set<Comment> getComments(String url) {
+		JSONObject jsonObject = UtilsJson.executeQuery("comments/show/" + url,
+				apiKey);
+		return getComments(jsonObject);
+	}
+
+	@Override
+	public Set<Comment> getComments(String url, int season, int episode) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("season", "" + season);
+		params.put("episode", "" + episode);
+		JSONObject jsonObject = UtilsJson.executeQuery("comments/episode/"
+				+ url, apiKey, params);
+		return getComments(jsonObject);
+	}
+
+	@Override
 	public Set<Comment> getUserComments(String login) {
 		JSONObject jsonObject = UtilsJson.executeQuery("comments/member/"
 				+ login, apiKey);
-		JSONObject comments = UtilsJson.getJSONObjectFromPath(jsonObject,
-				"/root/comments");
-		String[] names = JSONObject.getNames(comments);
-		Set<Comment> result = new HashSet<Comment>();
-		if (names != null) {
-			try {
-				for (String name : names) {
-					Comment comment = CommentFactory.createComment(comments
-							.getJSONObject(name));
-					result.add(comment);
-				}
-			} catch (JSONException e) {
-				e.printStackTrace();
-			}
+		return getComments(jsonObject);
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param token
+	 * @param login
+	 * @param text
+	 * @param responseTo
+	 */
+	private void postAUserComment(String token, String login, String text,
+			int responseTo) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("member", login);
+		params.put("text", text);
+		if (responseTo >= 0) {
+			params.put("in_reploy_to", "" + responseTo);
 		}
-		return result;
+		UtilsJson.executeQuery("comments/post/member", apiKey, params);
 	}
 
 	@Override
 	public void postComment(String url, String text) {
-		// TODO Add the token!
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("show", url);
-		params.put("text", text);
-		UtilsJson.executeQuery("comments/post/show", apiKey, params);
+		String token = "";
+		postComment(token, url, text, -1, -1, -1);
 	}
 
 	@Override
 	public void postComment(String url, String text, int responseTo) {
-		// TODO Add the token!
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("show", url);
-		params.put("text", text);
-		params.put("in_reply_to", "" + responseTo);
-		UtilsJson.executeQuery("comments/post/show", apiKey, params);
+		String token = "";
+		postComment(token, url, text, -1, -1, responseTo);
 	}
 
 	@Override
 	public void postComment(String url, String text, int season, int episode) {
-		// TODO Add the token!
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("show", url);
-		params.put("text", text);
-		params.put("season", "" + season);
-		params.put("episode", "" + episode);
-		UtilsJson.executeQuery("comments/post/episode", apiKey, params);
+		String token = "";
+		postComment(token, url, text, season, episode, -1);
 	}
 
 	@Override
 	public void postComment(String url, String text, int responseTo,
 			int season, int episode) {
-		// TODO Add the token!
+		String token = "";
+		postComment(token, url, text, season, episode, responseTo);
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param token
+	 * @param url
+	 * @param text
+	 * @param season
+	 * @param episode
+	 * @param responseTo
+	 */
+	private void postComment(String token, String url, String text, int season,
+			int episode, int responseTo) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("show", url);
+		String action = null;
 		params.put("text", text);
-		params.put("season", "" + season);
-		params.put("episode", "" + episode);
-		params.put("in_reply_to", "" + responseTo);
-		UtilsJson.executeQuery("comments/post/episode", apiKey, params);
+		if (season < 0 && episode < 0) {
+			action = "comments/post/show";
+			params.put("show", url);
+			if (responseTo >= 0) {
+				params.put("in_reply_to", "" + responseTo);
+			}
+		} else if (season > 0 && episode > 0) {
+			action = "comments/post/episode";
+			params.put("season", "" + season);
+			params.put("episode", "" + episode);
+			if (responseTo >= 0) {
+				params.put("in_reply_to", "" + responseTo);
+			}
+		}
+		UtilsJson.executeQuery(action, apiKey, params);
 	}
 
 	@Override
 	public void postUserComment(String login, String text) {
-		// TODO Add the token!
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("member", login);
-		params.put("text", text);
-		UtilsJson.executeQuery("comments/post/member", apiKey, params);
+		String token = "";
+		postAUserComment(token, login, text, -1);
 	}
 
 	@Override
 	public void postUserComment(String login, String text, int responseTo) {
-		// TODO Add the token!
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("member", login);
-		params.put("text", text);
-		params.put("in_reply_to", "" + responseTo);
-		UtilsJson.executeQuery("comments/post/member", apiKey, params);
+		String token = "";
+		postAUserComment(token, login, text, responseTo);
 	}
 }
