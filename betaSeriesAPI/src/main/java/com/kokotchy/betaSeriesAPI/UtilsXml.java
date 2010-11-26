@@ -227,7 +227,7 @@ public class UtilsXml {
 	public static String readString(Node node, String string) {
 		Node selectedNode = node.selectSingleNode(string);
 		if (selectedNode != null) {
-			return StringEscapeUtils.escapeHtml(selectedNode.getText()).trim();
+			return StringEscapeUtils.escapeHtml(selectedNode.getText()).trim().replace("\r", "\n");
 		}
 		return null;
 	}

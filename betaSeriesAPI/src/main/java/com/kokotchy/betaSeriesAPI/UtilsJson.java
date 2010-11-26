@@ -332,7 +332,7 @@ public class UtilsJson {
 		if (jsonObject.has(name)) {
 			try {
 				return StringEscapeUtils.escapeHtml(
-						jsonObject.getString(name).replace("\\r", "")).trim();
+						jsonObject.getString(name)).trim().replace("\r", "");
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
