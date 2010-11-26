@@ -39,6 +39,23 @@ public interface ISubtitles {
 			SubtitleLanguage subtitleLanguage);
 
 	/**
+	 * TODO Fill it
+	 * 
+	 * @param file
+	 * @return
+	 */
+	public Set<Subtitle> getSubtitlesForFile(String file);
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param file
+	 * @param subtitleLanguage
+	 * @return
+	 */
+	public Set<Subtitle> getSubtitlesForFile(String file, SubtitleLanguage subtitleLanguage);
+
+	/**
 	 * Return the subtitles retrieved by BetaSeries for the given show.
 	 * 
 	 * @param url

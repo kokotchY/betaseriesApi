@@ -33,6 +33,15 @@ public interface IMembers {
 	public void destroy(String token);
 
 	/**
+	 * TODO Fill it
+	 * 
+	 * @param token
+	 * @param identifieduser
+	 * @return
+	 */
+	public int getDateCache(String token, boolean identifieduser);
+
+	/**
 	 * Return remaining episodes to see according to the subtitle option
 	 * 
 	 * @param token
@@ -106,6 +115,16 @@ public interface IMembers {
 	public Member infos(String token);
 
 	/**
+	 * Return information about the logged user
+	 * 
+	 * @param token
+	 *            Token
+	 * @param lastCache
+	 * @return Informations about the logged user
+	 */
+	public Member infos(String token, int lastCache);
+
+	/**
 	 * Return information about the given user
 	 * 
 	 * @param user
@@ -113,6 +132,16 @@ public interface IMembers {
 	 * @return Informations about the user
 	 */
 	public Member infosOfUser(String user);
+
+	/**
+	 * Return information about the given user
+	 * 
+	 * @param user
+	 *            User to retrieve information
+	 * @param lastCache
+	 * @return Informations about the user
+	 */
+	public Member infosOfUser(String user, int lastCache);
 
 	/**
 	 * Return true if the user is still active, false otherwise
