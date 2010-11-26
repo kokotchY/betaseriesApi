@@ -64,6 +64,12 @@ public class Members implements IMembers {
 	}
 
 	@Override
+	public int getDateCache(String token, boolean identifieduser) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
 	public List<Episode> getEpisodes(String token,
 			SubtitleLanguage subtitleLanguage) {
 		String lang = null;
@@ -97,6 +103,73 @@ public class Members implements IMembers {
 		return result;
 	}
 
+	@Override
+	public List<Notification> getNotifications(String token, boolean seen) {
+		return getNotificationsWithParameters(token, seen, -1, -1);
+	}
+
+	@Override
+	public List<Notification> getNotifications(String token, boolean seen,
+			int nb) {
+		return getNotificationsWithParameters(token, seen, nb, -1);
+	}
+
+	@Override
+	public List<Notification> getNotifications(String token, boolean seen,
+			int nb, int lastId) {
+		return getNotificationsWithParameters(token, seen, nb, lastId);
+	}
+
+	@Override
+	public List<Notification> getNotifications(String token, int nb) {
+		return getNotificationsWithParameters(token, null, nb, -1);
+	}
+
+	@Override
+	public Member infos(String token) {
+		return getInfosForUser(token, true);
+	}
+
+	@Override
+	public Member infos(String token, int lastCache) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Member infosOfUser(String user) {
+		return getInfosForUser(user, false);
+	}
+
+	@Override
+	public Member infosOfUser(String user, int lastCache) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isActive(String token) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("token", token);
+		JSONObject jsonObject = UtilsJson.executeQuery("members/is_active",
+				apiKey, params);
+		return !UtilsJson.hasErrors(jsonObject);
+	}
+
+	@Override
+	public void resetViewedShow(String token, String url) {
+		setWatched(token, url, 0, 0);
+	}
+
+	@Override
+	public void setWatched(String token, String url, int season, int episode) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("season", "" + season);
+		params.put("episode", "" + episode);
+		params.put("token", token);
+		UtilsJson.executeQuery("members/watched/" + url, apiKey, params);
+	}
+
 	/**
 	 * Return the information about the user. If it is the identified user,
 	 * identifiedUser has to be true and user has to be the token. If
@@ -122,28 +195,6 @@ public class Members implements IMembers {
 		}
 		return MemberFactory.createMember(UtilsJson.getJSONObjectFromPath(
 				jsonObject, "/root/member"));
-	}
-
-	@Override
-	public List<Notification> getNotifications(String token, boolean seen) {
-		return getNotificationsWithParameters(token, seen, -1, -1);
-	}
-
-	@Override
-	public List<Notification> getNotifications(String token, boolean seen,
-			int nb) {
-		return getNotificationsWithParameters(token, seen, nb, -1);
-	}
-
-	@Override
-	public List<Notification> getNotifications(String token, boolean seen,
-			int nb, int lastId) {
-		return getNotificationsWithParameters(token, seen, nb, lastId);
-	}
-
-	@Override
-	public List<Notification> getNotifications(String token, int nb) {
-		return getNotificationsWithParameters(token, null, nb, -1);
 	}
 
 	/**
@@ -192,39 +243,6 @@ public class Members implements IMembers {
 			e.printStackTrace();
 		}
 		return notifications;
-	}
-
-	@Override
-	public Member infos(String token) {
-		return getInfosForUser(token, true);
-	}
-
-	@Override
-	public Member infosOfUser(String user) {
-		return getInfosForUser(user, false);
-	}
-
-	@Override
-	public boolean isActive(String token) {
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("token", token);
-		JSONObject jsonObject = UtilsJson.executeQuery("members/is_active",
-				apiKey, params);
-		return !UtilsJson.hasErrors(jsonObject);
-	}
-
-	@Override
-	public void resetViewedShow(String token, String url) {
-		setWatched(token, url, 0, 0);
-	}
-
-	@Override
-	public void setWatched(String token, String url, int season, int episode) {
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("season", "" + season);
-		params.put("episode", "" + episode);
-		params.put("token", token);
-		UtilsJson.executeQuery("members/watched/" + url, apiKey, params);
 	}
 
 }
