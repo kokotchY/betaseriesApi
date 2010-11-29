@@ -36,6 +36,26 @@ public class Comments implements IComments {
 		this.apiKey = apiKey;
 	}
 
+	/**
+	 * Return the comments of the document
+	 * 
+	 * @param document
+	 *            Document
+	 * @return Comments
+	 */
+	@SuppressWarnings("unchecked")
+	private Set<Comment> getComments(Document document) {
+		Set<Comment> comments = new HashSet<Comment>();
+		if (!UtilsXml.hasErrors(document)) {
+			List<Node> nodes = document.selectNodes("/root/comments/comment");
+			for (Node showNode : nodes) {
+				Comment comment = CommentFactory.createComment(showNode);
+				comments.add(comment);
+			}
+		}
+		return comments;
+	}
+
 	@Override
 	public Set<Comment> getComments(String url) {
 		Document document = UtilsXml.executeQuery("comments/show/" + url,
@@ -58,6 +78,30 @@ public class Comments implements IComments {
 		Document document = UtilsXml.executeQuery("comments/member/" + login,
 				apiKey);
 		return getComments(document);
+	}
+
+	/**
+	 * Post a comment on the profil of a member that can be a response to
+	 * another comment
+	 * 
+	 * @param token
+	 *            Token
+	 * @param login
+	 *            Login
+	 * @param text
+	 *            Content
+	 * @param responseTo
+	 *            Id of the comment
+	 */
+	private void postAUserComment(String token, String login, String text,
+			int responseTo) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("member", login);
+		params.put("text", text);
+		if (responseTo >= 0) {
+			params.put("in_reploy_to", "" + responseTo);
+		}
+		UtilsXml.executeQuery("comments/post/member", apiKey, params);
 	}
 
 	@Override
@@ -83,62 +127,6 @@ public class Comments implements IComments {
 			int season, int episode) {
 		String token = "";
 		postComment(token, url, text, season, episode, responseTo);
-	}
-
-	@Override
-	public void postUserComment(String login, String text) {
-		String token = "";
-		postAUserComment(token, login, text, -1);
-	}
-
-	@Override
-	public void postUserComment(String login, String text, int responseTo) {
-		String token = "";
-		postAUserComment(token, login, text, responseTo);
-	}
-
-	/**
-	 * Return the comments of the document
-	 * 
-	 * @param document
-	 *            Document
-	 * @return Comments
-	 */
-	@SuppressWarnings("unchecked")
-	private Set<Comment> getComments(Document document) {
-		Set<Comment> comments = new HashSet<Comment>();
-		if (!UtilsXml.hasErrors(document)) {
-			List<Node> nodes = document.selectNodes("/root/comments/comment");
-			for (Node showNode : nodes) {
-				Comment comment = CommentFactory.createComment(showNode);
-				comments.add(comment);
-			}
-		}
-		return comments;
-	}
-
-	/**
-	 * Post a comment on the profil of a member that can be a response to
-	 * another comment
-	 * 
-	 * @param token
-	 *            Token
-	 * @param login
-	 *            Login
-	 * @param text
-	 *            Content
-	 * @param responseTo
-	 *            Id of the comment
-	 */
-	private void postAUserComment(String token, String login, String text,
-			int responseTo) {
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("member", login);
-		params.put("text", text);
-		if (responseTo >= 0) {
-			params.put("in_reploy_to", "" + responseTo);
-		}
-		UtilsXml.executeQuery("comments/post/member", apiKey, params);
 	}
 
 	/**
@@ -176,6 +164,21 @@ public class Comments implements IComments {
 				params.put("in_reply_to", "" + responseTo);
 			}
 		}
-		UtilsXml.executeQuery(action, apiKey, params);
+
+		if (action != null) {
+			UtilsXml.executeQuery(action, apiKey, params);
+		}
+	}
+
+	@Override
+	public void postUserComment(String login, String text) {
+		String token = "";
+		postAUserComment(token, login, text, -1);
+	}
+
+	@Override
+	public void postUserComment(String login, String text, int responseTo) {
+		String token = "";
+		postAUserComment(token, login, text, responseTo);
 	}
 }

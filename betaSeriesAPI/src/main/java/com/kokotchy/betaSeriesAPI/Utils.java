@@ -10,7 +10,10 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Map;
+import java.util.Set;
 import java.util.Map.Entry;
+
+import com.kokotchy.betaSeriesAPI.model.Error;
 
 /**
  * Utils class
@@ -72,6 +75,29 @@ public class Utils {
 		String filename = String.format(patternFilename, action, buffer, type);
 		File file = new File(debugPath, filename);
 		return file;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param errors
+	 * @return
+	 */
+	public static String getErrorsAsString(Set<Error> errors) {
+		if (errors == null || errors.size() == 0) {
+			return "[]";
+		} else {
+			int i = 0;
+			StringBuffer buffer = new StringBuffer("[");
+			for (Error error : errors) {
+				buffer.append(error);
+				if (++i < errors.size()) {
+					buffer.append(",");
+				}
+			}
+			buffer.append("]");
+			return buffer.toString();
+		}
 	}
 
 	/**
@@ -154,7 +180,6 @@ public class Utils {
 
 	/**
 	 * Return the credentials in the file.
-	 * 
 	 * <ul>
 	 * <li>First line: user</li>
 	 * <li>Second line: plain password</li>
