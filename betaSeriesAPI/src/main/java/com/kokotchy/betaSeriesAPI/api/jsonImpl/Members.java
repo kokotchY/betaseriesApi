@@ -57,10 +57,12 @@ public class Members implements IMembers {
 	}
 
 	@Override
-	public void destroy(String token) {
+	public boolean destroy(String token) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("token", token);
 		UtilsJson.executeQuery("members/destroy", apiKey, params);
+		// TODO Check for error
+		return true;
 	}
 
 	@Override
@@ -157,17 +159,19 @@ public class Members implements IMembers {
 	}
 
 	@Override
-	public void resetViewedShow(String token, String url) {
-		setWatched(token, url, 0, 0);
+	public boolean resetViewedShow(String token, String url) {
+		return setWatched(token, url, 0, 0);
 	}
 
 	@Override
-	public void setWatched(String token, String url, int season, int episode) {
+	public boolean setWatched(String token, String url, int season, int episode) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("season", "" + season);
 		params.put("episode", "" + episode);
 		params.put("token", token);
 		UtilsJson.executeQuery("members/watched/" + url, apiKey, params);
+		// TODO Check for error
+		return true;
 	}
 
 	/**

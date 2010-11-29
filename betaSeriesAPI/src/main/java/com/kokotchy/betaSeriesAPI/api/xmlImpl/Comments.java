@@ -36,26 +36,6 @@ public class Comments implements IComments {
 		this.apiKey = apiKey;
 	}
 
-	/**
-	 * Return the comments of the document
-	 * 
-	 * @param document
-	 *            Document
-	 * @return Comments
-	 */
-	@SuppressWarnings("unchecked")
-	private Set<Comment> getComments(Document document) {
-		Set<Comment> comments = new HashSet<Comment>();
-		if (!UtilsXml.hasErrors(document)) {
-			List<Node> nodes = document.selectNodes("/root/comments/comment");
-			for (Node showNode : nodes) {
-				Comment comment = CommentFactory.createComment(showNode);
-				comments.add(comment);
-			}
-		}
-		return comments;
-	}
-
 	@Override
 	public Set<Comment> getComments(String url) {
 		Document document = UtilsXml.executeQuery("comments/show/" + url,
@@ -80,6 +60,63 @@ public class Comments implements IComments {
 		return getComments(document);
 	}
 
+	@Override
+	public boolean postComment(String url, String text) {
+		String token = "";
+		return postComment(token, url, text, -1, -1, -1);
+	}
+
+	@Override
+	public boolean postComment(String url, String text, int responseTo) {
+		String token = "";
+		return postComment(token, url, text, -1, -1, responseTo);
+	}
+
+	@Override
+	public boolean postComment(String url, String text, int season, int episode) {
+		String token = "";
+		return postComment(token, url, text, season, episode, -1);
+	}
+
+	@Override
+	public boolean postComment(String url, String text, int responseTo,
+			int season, int episode) {
+		String token = "";
+		return postComment(token, url, text, season, episode, responseTo);
+	}
+
+	@Override
+	public boolean postUserComment(String login, String text) {
+		String token = "";
+		return postAUserComment(token, login, text, -1);
+	}
+
+	@Override
+	public boolean postUserComment(String login, String text, int responseTo) {
+		String token = "";
+		return postAUserComment(token, login, text, responseTo);
+	}
+
+	/**
+	 * Return the comments of the document
+	 * 
+	 * @param document
+	 *            Document
+	 * @return Comments
+	 */
+	@SuppressWarnings("unchecked")
+	private Set<Comment> getComments(Document document) {
+		Set<Comment> comments = new HashSet<Comment>();
+		if (!UtilsXml.hasErrors(document)) {
+			List<Node> nodes = document.selectNodes("/root/comments/comment");
+			for (Node showNode : nodes) {
+				Comment comment = CommentFactory.createComment(showNode);
+				comments.add(comment);
+			}
+		}
+		return comments;
+	}
+
 	/**
 	 * Post a comment on the profil of a member that can be a response to
 	 * another comment
@@ -93,7 +130,7 @@ public class Comments implements IComments {
 	 * @param responseTo
 	 *            Id of the comment
 	 */
-	private void postAUserComment(String token, String login, String text,
+	private boolean postAUserComment(String token, String login, String text,
 			int responseTo) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("member", login);
@@ -102,31 +139,8 @@ public class Comments implements IComments {
 			params.put("in_reploy_to", "" + responseTo);
 		}
 		UtilsXml.executeQuery("comments/post/member", apiKey, params);
-	}
-
-	@Override
-	public void postComment(String url, String text) {
-		String token = "";
-		postComment(token, url, text, -1, -1, -1);
-	}
-
-	@Override
-	public void postComment(String url, String text, int responseTo) {
-		String token = "";
-		postComment(token, url, text, -1, -1, responseTo);
-	}
-
-	@Override
-	public void postComment(String url, String text, int season, int episode) {
-		String token = "";
-		postComment(token, url, text, season, episode, -1);
-	}
-
-	@Override
-	public void postComment(String url, String text, int responseTo,
-			int season, int episode) {
-		String token = "";
-		postComment(token, url, text, season, episode, responseTo);
+		// TODO Check for error
+		return true;
 	}
 
 	/**
@@ -145,8 +159,8 @@ public class Comments implements IComments {
 	 * @param responseTo
 	 *            Id of the comment
 	 */
-	private void postComment(String token, String url, String text, int season,
-			int episode, int responseTo) {
+	private boolean postComment(String token, String url, String text,
+			int season, int episode, int responseTo) {
 		Map<String, String> params = new HashMap<String, String>();
 		String action = null;
 		params.put("text", text);
@@ -164,21 +178,11 @@ public class Comments implements IComments {
 				params.put("in_reply_to", "" + responseTo);
 			}
 		}
-
+		// TODO Check for error
 		if (action != null) {
 			UtilsXml.executeQuery(action, apiKey, params);
+			return true;
 		}
-	}
-
-	@Override
-	public void postUserComment(String login, String text) {
-		String token = "";
-		postAUserComment(token, login, text, -1);
-	}
-
-	@Override
-	public void postUserComment(String login, String text, int responseTo) {
-		String token = "";
-		postAUserComment(token, login, text, responseTo);
+		return false;
 	}
 }
