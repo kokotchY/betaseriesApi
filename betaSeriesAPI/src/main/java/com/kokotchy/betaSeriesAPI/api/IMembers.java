@@ -28,16 +28,17 @@ public interface IMembers {
 	 * Destroy the token of the user
 	 * 
 	 * @param token
-	 *            Toekn
+	 *            Token
+	 * @return Token is destroyed
 	 */
-	public void destroy(String token);
+	public boolean destroy(String token);
 
 	/**
 	 * TODO Fill it
 	 * 
 	 * @param token
 	 * @param identifieduser
-	 * @return
+	 * @return Date of the cache
 	 */
 	public int getDateCache(String token, boolean identifieduser);
 
@@ -159,8 +160,9 @@ public interface IMembers {
 	 *            Token
 	 * @param url
 	 *            Url of the show
+	 * @return Viewed show reseted
 	 */
-	public void resetViewedShow(String token, String url);
+	public boolean resetViewedShow(String token, String url);
 
 	/**
 	 * Set the episode for the given season and url as watch
@@ -175,6 +177,7 @@ public interface IMembers {
 	 *            Season
 	 * @param episode
 	 *            Episode
+	 * @return Set the episode as watched
 	 */
-	public void setWatched(String token, String url, int season, int episode);
+	public boolean setWatched(String token, String url, int season, int episode);
 }

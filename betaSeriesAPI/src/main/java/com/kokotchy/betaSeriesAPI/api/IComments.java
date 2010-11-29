@@ -52,8 +52,9 @@ public interface IComments {
 	 *            Url of the show
 	 * @param text
 	 *            Comment to post
+	 * @return Comment posted
 	 */
-	public void postComment(String url, String text);
+	public boolean postComment(String url, String text);
 
 	/**
 	 * Post a comment on the given show as a response to another comment
@@ -64,8 +65,10 @@ public interface IComments {
 	 *            Text to post
 	 * @param responseTo
 	 *            Id of the comment to response to
+	 * @return
+	 *         Comment posted
 	 */
-	public void postComment(String url, String text, int responseTo);
+	public boolean postComment(String url, String text, int responseTo);
 
 	/**
 	 * Post a comment to the episode of the season of the show
@@ -78,8 +81,9 @@ public interface IComments {
 	 *            Season
 	 * @param episode
 	 *            Episode
+	 * @return Comment posted
 	 */
-	public void postComment(String url, String text, int season, int episode);
+	public boolean postComment(String url, String text, int season, int episode);
 
 	/**
 	 * Post a comment to the episode of the season of the show in response to
@@ -95,8 +99,10 @@ public interface IComments {
 	 *            Season
 	 * @param episode
 	 *            Episode
+	 * @param Comment
+	 *            posted
 	 */
-	public void postComment(String url, String text, int responseTo,
+	public boolean postComment(String url, String text, int responseTo,
 			int season, int episode);
 
 	/**
@@ -106,8 +112,9 @@ public interface IComments {
 	 *            Login of the user
 	 * @param text
 	 *            Comment
+	 * @return Comment posted
 	 */
-	public void postUserComment(String login, String text);
+	public boolean postUserComment(String login, String text);
 
 	/**
 	 * Post a comment to the user profile in response to another comment
@@ -118,6 +125,7 @@ public interface IComments {
 	 *            Comment
 	 * @param responseTo
 	 *            Id of the responsed comment
+	 * @return Comment posted
 	 */
-	public void postUserComment(String login, String text, int responseTo);
+	public boolean postUserComment(String login, String text, int responseTo);
 }
