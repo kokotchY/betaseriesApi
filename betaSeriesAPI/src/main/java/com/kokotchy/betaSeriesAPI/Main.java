@@ -1,14 +1,14 @@
 package com.kokotchy.betaSeriesAPI;
 
+import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.kokotchy.betaSeriesAPI.api.jsonImpl.Status;
+import com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 import com.kokotchy.betaSeriesAPI.model.Season;
-import com.kokotchy.betaSeriesAPI.model.StatusInfo;
-import com.kokotchy.betaSeriesAPI.model.Version;
-import com.kokotchy.betaSeriesAPI.model.VersionFile;
 
 /**
  * Start application
@@ -40,22 +40,25 @@ public class Main {
 	 * Start the application
 	 */
 	public Main() {
-		UtilsJson.setDebug(true);
-		UtilsJson.setDebugPath("/home/kokotchy/Desktop/betaseriejson/");
-		Status status = new Status(apiKey);
-		StatusInfo statusInfo = status.getStatus();
-		System.out
-				.println("Database status: " + statusInfo.getDatabaseStatus());
-		System.out.println("Website status: " + statusInfo.getWebsiteStatus());
-		Map<Integer, Version> versions = statusInfo.getVersions();
-		System.out.println("Version:");
-		for (Entry<Integer, Version> entry : versions.entrySet()) {
-			System.out.println("\t" + entry);
-		}
-		Map<String, VersionFile> files = statusInfo.getFiles();
-		System.out.println("Files:");
-		for (Entry<String, VersionFile> entry : files.entrySet()) {
-			System.out.println("\t" + entry);
+		UtilsXml.setDebug(true);
+		String[] loadCredentials = Utils.loadCredentials(new File(System
+				.getProperty("user.dir")
+				+ "/src/main/resources/credentials/", "dev042"));
+		String token = BetaSerieApi.getMembers().auth(loadCredentials[0],
+				loadCredentials[1]);
+		if (token != null) {
+			if (BetaSerieApi.getMembers().isActive(token)) {
+				String message = "I'm am a robot and I'm here to kill you!";
+				try {
+					BetaSerieApi.getComments().postUserComment(token,
+							"kokotchY", URLEncoder.encode(message, "UTF-8"));
+				} catch (UnsupportedEncodingException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} else {
+				System.out.println("Not active");
+			}
 		}
 	}
 

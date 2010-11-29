@@ -201,6 +201,7 @@ public class Utils {
 			password = readLine(reader);
 			token = readLine(reader);
 		} catch (FileNotFoundException e) {
+			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {

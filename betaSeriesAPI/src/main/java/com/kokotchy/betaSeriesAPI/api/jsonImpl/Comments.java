@@ -60,39 +60,36 @@ public class Comments implements IComments {
 	}
 
 	@Override
-	public boolean postComment(String url, String text) {
-		String token = "";
-		return postComment(token, url, text, -1, -1, -1);
+	public boolean postComment(String token, String url, String text) {
+		return postGenericComment(token, url, text, -1, -1, -1);
 	}
 
 	@Override
-	public boolean postComment(String url, String text, int responseTo) {
-		String token = "";
-		return postComment(token, url, text, -1, -1, responseTo);
+	public boolean postComment(String token, String url, String text,
+			int responseTo) {
+		return postGenericComment(token, url, text, -1, -1, responseTo);
 	}
 
 	@Override
-	public boolean postComment(String url, String text, int season, int episode) {
-		String token = "";
-		return postComment(token, url, text, season, episode, -1);
-	}
-
-	@Override
-	public boolean postComment(String url, String text, int responseTo,
+	public boolean postComment(String token, String url, String text,
 			int season, int episode) {
-		String token = "";
-		return postComment(token, url, text, season, episode, responseTo);
+		return postGenericComment(token, url, text, season, episode, -1);
 	}
 
 	@Override
-	public boolean postUserComment(String login, String text) {
-		String token = "";
+	public boolean postComment(String token, String url, String text,
+			int responseTo, int season, int episode) {
+		return postGenericComment(token, url, text, season, episode, responseTo);
+	}
+
+	@Override
+	public boolean postUserComment(String token, String login, String text) {
 		return postAUserComment(token, login, text, -1);
 	}
 
 	@Override
-	public boolean postUserComment(String login, String text, int responseTo) {
-		String token = "";
+	public boolean postUserComment(String token, String login, String text,
+			int responseTo) {
 		return postAUserComment(token, login, text, responseTo);
 	}
 
@@ -145,6 +142,8 @@ public class Comments implements IComments {
 	/**
 	 * TODO Fill it
 	 * 
+	 * TODO Found better name
+	 * 
 	 * @param token
 	 * @param url
 	 * @param text
@@ -152,7 +151,7 @@ public class Comments implements IComments {
 	 * @param episode
 	 * @param responseTo
 	 */
-	private boolean postComment(String token, String url, String text,
+	private boolean postGenericComment(String token, String url, String text,
 			int season, int episode, int responseTo) {
 		Map<String, String> params = new HashMap<String, String>();
 		String action = null;

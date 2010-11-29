@@ -54,7 +54,7 @@ public interface IComments {
 	 *            Comment to post
 	 * @return Comment posted
 	 */
-	public boolean postComment(String url, String text);
+	public boolean postComment(String token, String url, String text);
 
 	/**
 	 * Post a comment on the given show as a response to another comment
@@ -65,10 +65,10 @@ public interface IComments {
 	 *            Text to post
 	 * @param responseTo
 	 *            Id of the comment to response to
-	 * @return
-	 *         Comment posted
+	 * @return Comment posted
 	 */
-	public boolean postComment(String url, String text, int responseTo);
+	public boolean postComment(String token, String url, String text,
+			int responseTo);
 
 	/**
 	 * Post a comment to the episode of the season of the show
@@ -83,7 +83,8 @@ public interface IComments {
 	 *            Episode
 	 * @return Comment posted
 	 */
-	public boolean postComment(String url, String text, int season, int episode);
+	public boolean postComment(String token, String url, String text,
+			int season, int episode);
 
 	/**
 	 * Post a comment to the episode of the season of the show in response to
@@ -102,8 +103,8 @@ public interface IComments {
 	 * @param Comment
 	 *            posted
 	 */
-	public boolean postComment(String url, String text, int responseTo,
-			int season, int episode);
+	public boolean postComment(String token, String url, String text,
+			int responseTo, int season, int episode);
 
 	/**
 	 * Post a comment to the user profile
@@ -114,7 +115,7 @@ public interface IComments {
 	 *            Comment
 	 * @return Comment posted
 	 */
-	public boolean postUserComment(String login, String text);
+	public boolean postUserComment(String token, String login, String text);
 
 	/**
 	 * Post a comment to the user profile in response to another comment
@@ -127,5 +128,6 @@ public interface IComments {
 	 *            Id of the responsed comment
 	 * @return Comment posted
 	 */
-	public boolean postUserComment(String login, String text, int responseTo);
+	public boolean postUserComment(String token, String login, String text,
+			int responseTo);
 }

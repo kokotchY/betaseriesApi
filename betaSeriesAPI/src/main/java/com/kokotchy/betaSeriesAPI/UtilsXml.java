@@ -87,7 +87,7 @@ public class UtilsXml {
 			if (action.endsWith(".xml")) {
 				throw new RuntimeException("Don't use extension");
 			}
-			if (debug) {
+			if (debug && debugPath != null) {
 				File file = Utils
 						.getDebugFile(debugPath, action, params, "xml");
 				reader = new BufferedReader(new InputStreamReader(
@@ -227,7 +227,8 @@ public class UtilsXml {
 	public static String readString(Node node, String string) {
 		Node selectedNode = node.selectSingleNode(string);
 		if (selectedNode != null) {
-			return StringEscapeUtils.escapeHtml(selectedNode.getText()).trim().replace("\r", "\n");
+			return StringEscapeUtils.escapeHtml(selectedNode.getText()).trim()
+					.replace("\r", "\n");
 		}
 		return null;
 	}
