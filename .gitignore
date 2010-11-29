@@ -2,3 +2,4 @@ betaSeriesAPI/target
 betaSeriesAPI/apiKey.txt
 *.swp
 betaSeriesAPI/src/test/resources/credentials.txt
+betaSeriesAPI/src/main/resources/credentials/*
