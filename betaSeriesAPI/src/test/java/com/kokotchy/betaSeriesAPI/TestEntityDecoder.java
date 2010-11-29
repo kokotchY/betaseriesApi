@@ -108,8 +108,7 @@ public class TestEntityDecoder extends TestCase {
 	 * Entity convert from file
 	 */
 	public void testConvertEntityFromFile() {
-		Map<String, String> showsTitle = new HashMap<String, String>();
-		showsTitle = loadFile();
+		Map<String, String> showsTitle = loadFile();
 
 		for (Entry<String, String> entry : showsTitle.entrySet()) {
 			String beforeParsing = entry.getKey();
@@ -123,8 +122,7 @@ public class TestEntityDecoder extends TestCase {
 	 * Entity convert from source
 	 */
 	public void testConvertEntityFromSourceCode() {
-		Map<String, String> showsTitle = new HashMap<String, String>();
-		showsTitle = loadWords();
+		Map<String, String> showsTitle = loadWords();
 
 		for (Entry<String, String> entry : showsTitle.entrySet()) {
 			String beforeParsing = entry.getKey();

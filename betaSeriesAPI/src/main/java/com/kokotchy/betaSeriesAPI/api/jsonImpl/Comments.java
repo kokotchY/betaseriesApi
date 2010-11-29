@@ -157,7 +157,10 @@ public class Comments implements IComments {
 				params.put("in_reply_to", "" + responseTo);
 			}
 		}
-		UtilsJson.executeQuery(action, apiKey, params);
+
+		if (action != null) {
+			UtilsJson.executeQuery(action, apiKey, params);
+		}
 	}
 
 	@Override
