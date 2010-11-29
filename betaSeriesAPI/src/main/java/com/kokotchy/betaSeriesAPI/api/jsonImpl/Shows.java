@@ -61,20 +61,9 @@ public class Shows implements IShows {
 
 	@Override
 	public Set<Show> displayAll() {
-		Set<Show> result = new HashSet<Show>();
 		JSONObject jsonObject = UtilsJson.executeQuery("shows/display/all",
 				apiKey);
-		JSONObject shows = UtilsJson.getJSONObjectFromPath(jsonObject,
-				"/root/shows");
-		String[] names = JSONObject.getNames(shows);
-		try {
-			for (String name : names) {
-				result.add(ShowFactory.createShow(shows.getJSONObject(name)));
-			}
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
-		return result;
+		return getShows(jsonObject);
 	}
 
 	@Override
@@ -135,6 +124,33 @@ public class Shows implements IShows {
 		return result;
 	}
 
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
+	 * @return
+	 */
+	private Set<Show> getShows(JSONObject jsonObject) {
+		Set<Show> shows = new HashSet<Show>();
+		if (!UtilsJson.hasErrors(jsonObject)) {
+			try {
+				JSONObject showsList = UtilsJson.getJSONObjectFromPath(
+						jsonObject, "/root/shows");
+				String[] names = JSONObject.getNames(showsList);
+				if (names != null && names.length > 0) {
+					for (String name : names) {
+						Show show = ShowFactory.createShow(showsList
+								.getJSONObject(name));
+						shows.add(show);
+					}
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+		}
+		return shows;
+	}
+
 	@Override
 	public boolean remove(String url, String token) {
 		Map<String, String> params = new HashMap<String, String>();
@@ -150,22 +166,7 @@ public class Shows implements IShows {
 		params.put("title", title);
 		JSONObject jsonObject = UtilsJson.executeQuery("shows/search", apiKey,
 				params);
-		Set<Show> shows = new HashSet<Show>();
-		if (!UtilsJson.hasErrors(jsonObject)) {
-			try {
-				JSONObject showsList = UtilsJson.getJSONObjectFromPath(
-						jsonObject, "/root/shows");
-				String[] names = JSONObject.getNames(showsList);
-				for (String name : names) {
-					Show show = ShowFactory.createShow(showsList
-							.getJSONObject(name));
-					shows.add(show);
-				}
-			} catch (JSONException e) {
-				e.printStackTrace();
-			}
-		}
-		return shows;
+		return getShows(jsonObject);
 	}
 
 }
