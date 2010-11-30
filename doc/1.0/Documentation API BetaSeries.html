@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0036)http://api.betaseries.com/readme.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="fr_FR" style="zoom: 100%; "><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	
+	<title>Documentation API BetaSeries</title>
+	
+	<link rel="stylesheet" href="./Documentation API BetaSeries_files/readme.css" type="text/css">
+	
+	<meta name="author" content="Beta&amp;Cie">
+	
+</head>
+
+<body>
+
+<div id="wrapper">
+
+<h1>Sommaire</h1>
+
+<p>Vous trouverez ci-dessous la documentation de l'API BetaSeries:</p>
+
+<ul>
+<li><a href="http://api.betaseries.com/readme.php#presentation">Présentation</a></li>
+<li><a href="http://api.betaseries.com/readme.php#parametres">Paramètres obligatoires</a></li>
+<li><a href="http://api.betaseries.com/readme.php#comptes">Comptes de test</a></li>
+<li><a href="http://api.betaseries.com/readme.php#erreurs">Codes d'erreur</a></li>
+<li><a href="http://api.betaseries.com/readme.php#conditions">Conditions d'utilisation</a></li>
+</ul>
+
+<ul>
+<li><a href="http://api.betaseries.com/readme.php#cat-shows">Catégorie /shows/</a></li>
+<li><a href="http://api.betaseries.com/readme.php#cat-subtitles">Catégorie /subtitles/</a></li>
+<li><a href="http://api.betaseries.com/readme.php#cat-planning">Catégorie /planning/</a></li>
+<li><a href="http://api.betaseries.com/readme.php#cat-members">Catégorie /members/</a></li>
+<li><a href="http://api.betaseries.com/readme.php#cat-comments">Catégorie /comments/</a></li>
+<li><a href="http://api.betaseries.com/readme.php#cat-timeline">Catégorie /timeline/</a></li>
+</ul>
+
+<a name="presentation"></a>
+<h1>Présentation</h1>
+
+<p>Les appels à l'API doivent être faits sous la forme de requêtes HTTP en GET ou POST sur le domaine <b>api.betaseries.com</b>, par exemple :</p>
+
+<pre>GET/POST http://api.betaseries.com/shows/display/dexter.(xml|json)</pre>
+
+<p>Le format de retour est au choix XML, JSON ou JSONP, ce qui ressemble en général à ceci :</p>
+
+<pre>&lt;root&gt;
+    ( ... réponse ... )
+    &lt;code&gt;1&lt;/code&gt;
+    &lt;errors /&gt;
+&lt;/root&gt;</pre>
+
+<pre>{"root":{( ... réponse ... ),"code":1,"errors":[]}}</pre>
+
+<p>Si vous ajoutez un paramètre <i>callback</i> à votre requête HTTP, le JSON se transforme en JSONP :</p>
+
+<pre>callback({"root":{( ... réponse ... ),"code":1,"errors":[]}})</pre>
+
+<ul>
+<li>code est égal à 1 si l'appel s'est déroulé avec succès, sinon 0.</li>
+<li>errors contient plus d'informations sur les erreurs rencontrées en cas de code 0.</li>
+</ul>
+
+<p>Les retours XML ou JSON ne seront pas documentés, ils sont assez explicites. :)</p>
+
+<h2>Version et statut API</h2>
+
+<p>Pour savoir les dernières modifications des fonctions et le statut global de BetaSeries, utilisez /status :</p>
+
+<pre>GET http://api.betaseries.com/status.xml</pre>
+
+<a name="parametres"></a>
+<h1>Paramètres obligatoires</h1>
+
+<h2>Clé API</h2>
+
+<p>Pour toutes vos requêtes, vous devez mentionner votre clé API dans la requête, avec le paramètre <i>key</i> :</p>
+
+<pre>?key=&lt;key&gt;</pre>
+
+<p>Ce paramètre est obligatoire pour permettre d'éviter les éventuels abus sur l'utilisation de l'API.</p>
+
+<h2>Token membre</h2>
+
+<p>Lorsque vous avez besoin d'interagir avec un compte membre, vous devez d'abord identifier ce membre avec la fonction /members/auth. Une fois l'identification effectuée, vous récupérez un <i>token</i> qui vous servira dans toutes les requêtes suivantes, à placer en paramètre.</p>
+
+<pre>?token=&lt;token&gt;</pre>
+
+<p>Vous pouvez à tout moment détruire le token grâce à /member/destroy.</p>
+
+<h2>User-Agent</h2>
+
+<p>Il est <b>recommandé</b> de spécifier un User-Agent spécifique à votre application dans vos requêtes. De ce fait, si vous utilisez votre clé pour plusieurs applications, il nous sera plus facile de différencer votre trafic.</p>
+
+<a name="comptes"></a>
+<h1>Comptes de test</h1>
+
+<p>Pour tester vos applications des comptes de test ont été créés. Leurs données sont réinitialisées toutes les nuits à 4 heures du matin. Ces comptes sont les suivants :</p>
+
+<ul>
+<li>Login : Dev001 à Dev100</li>
+<li>Mot de passe : developer</li>
+</ul>
+
+<p>Nous vous conseillons de modifier le mot de passe du compte de test que vous souhaitez utiliser pour ne pas vous écraser entre développeurs !</p>
+
+<p><b>Note :</b> Rien ne vous empêche de créer vos propres comptes de test :) mais pensez à supprimer au maximum leurs actions pour ne pas polluer le site de fausses données.</p>
+
+<a name="erreurs"></a>
+<h1>Codes d'erreur</h1>
+
+<p>Les codes d'erreur retournés par l'API consistent en 4 caractères numériques : XYYY où X est le type d'erreur et YYY l'erreur en elle-même.</p>
+
+<pre>&lt;errors&gt;
+    &lt;error code="XYYY"&gt;Texte de l'erreur&lt;/error&gt;
+&lt;/errors&gt;</pre>
+
+<ul>
+<li><strong>1 : Erreurs API</strong></li>
+<li>1001 : Clé API invalide</li>
+<li>1002 : Type invalide</li>
+<li>1003 : Action invalide</li>
+</ul>
+
+<ul>
+<li><strong>2 : Erreurs utilisateur</strong></li>
+<li>2001 : Token utilisateur invalide.</li>
+<li>2002 : Les réglages vie privée de l'utilisateur ne permettent pas l'action</li>
+<li>2003 : La série est déjà dans le compte utilisateur</li>
+<li>2004 : La série n'est pas dans le compte utilisateur</li>
+</ul>
+
+<ul>
+<li><strong>3 : Erreurs de variable</strong></li>
+<li>3001 : Une variable est manquante</li>
+<li>3002 : Le terme doit avoir au moins 2 caractères</li>
+<li>3003 : Le paramètre doit être un nombre</li>
+<li>3004 : Valeur de la variable incorrecte</li>
+<li>3005 : Caractères non autorisés</li>
+<li>3006 : Adresse e-mail invalide</li>
+</ul>
+
+<ul>
+<li><strong>4 : Erreurs de la base</strong></li>
+<li>4001 : La série n'existe pas</li>
+<li>4002 : L'utilisateur n'existe pas</li>
+<li>4003 : Mauvais mot de passe</li>
+<li>4004 : L'utilisateur existe déjà</li>
+</ul>
+
+<a name="conditions"></a>
+<h1>Conditions d'utilisation</h1>
+
+<p>On est des mecs bien, cependant il y a quelques règles à respecter pour que cette API fonctionne au mieux :</p>
+
+<ul>
+
+	<li>Vous devez mentionner l'utilisation de BetaSeries (avec l'URL du site) sur votre application / site.</li>
+	<li>Vous ne devez pas faire plus de requêtes que nécessaire. Nous sommes très laxistes à ce sujet, cependant les brutes existent, alors je préfère prévenir.</li>
+	<li>Vous pouvez utiliser toutes les fonctions de BetaSeries via l'API sans restriction, dans une application gratuite ou payante.</li>
+	<li>Cependant, si votre application est payante, vous ne devez pas proposer le téléchargement de sous-titres puisque ce n'est pas le fruit de mon travail.</li>
+	<li>Vous devez rester joignable et garder un e-mail valide associé à votre clé API.</li>
+
+</ul>
+
+<p>En utilisant l'API avec votre clé, vous acceptez implicitement ces conditions d'utilisation.</p>
+
+<a name="cat-shows"></a>
+<h1>Catégorie /shows/</h1>
+
+<h2>/shows/search</h2>
+
+<pre>GET http://api.betaseries.com/shows/search.xml?title=&lt;search&gt;</pre>
+
+<p>Liste les séries qui contiennent exactement la portion <i>search</i> dans leur titre.</p>
+
+<pre class="return">shows: show*
+
+show:
+    string url: url of the show
+    string title: name of the show</pre>
+
+<h2>/shows/display</h2>
+
+<pre>GET http://api.betaseries.com/shows/display/&lt;url&gt;.xml</pre>
+
+<p>Donne des informations sur la série (identifiée par son <i>url</i>).</p>
+
+<p><b>Note :</b> Si <i>url</i> est à <i>all</i>, la fonction retourne toutes les séries de BetaSeries.</p>
+
+<pre class="return">show:
+    string title: title of the show
+    int id_thetvdb: id of the show on tvdb
+    string url: url of the show
+    text description: description of the show
+    enum status: status of the show (Continuing, Ended, On Hiatus, Other)
+    url banner: image of the show
+    list seasons: season*, list of seasons and number of episodes
+    list genres: genre*, list of genres
+
+string genre: a genre for the show</pre>
+
+<h2>/shows/episodes</h2>
+
+<pre>GET http://api.betaseries.com/shows/episodes/&lt;url&gt;.xml&lt;?season=N&gt;&lt;&amp;episode=N&gt;</pre>
+
+<p>Liste les épisodes d'une série donnée. Vous pouvez préciser une saison (et un épisode) en paramètre.</p>
+
+<p><b>Note :</b> Si vous spécifiez un token, vous saurez si le membre identifié a vu cet épisode ou non.</p>
+
+<pre class="return">seasons: season*
+
+season:
+    int number: number of the season
+    list episodes: episode*, list of episodes
+
+episode:
+    int episode: number of the episode
+    string number: number of the episode with the season
+    timestamp date: date of the episode
+    string title: title of the episode
+    text description: description of the episode
+    url screen: a screen of the episode
+    bool has_seen: did the user see the episode</pre>
+
+<h2>/shows/add</h2>
+
+<pre>GET http://api.betaseries.com/shows/add/&lt;url&gt;.xml</pre>
+
+<p>Ajoute la série dans le compte du membre identifié.</p>
+
+<h2>/shows/remove</h2>
+
+<pre>GET http://api.betaseries.com/shows/remove/&lt;url&gt;.xml</pre>
+
+<p>Retire la série du compte du membre identifié.</p>
+
+<a name="cat-subtitles"></a>
+<h1>Catégorie /subtitles/</h1>
+
+<h2>/subtitles/last</h2>
+
+<pre>GET http://api.betaseries.com/subtitles/last[/&lt;url&gt;].xml&lt;?number=N&gt;&lt;&amp;language=(VO|VF)&gt;</pre>
+
+<p>Affiche les derniers sous-titres récupérés par BetaSeries, dans la limite de 100. Possibilité de spécifier la langue et/ou une série en particulier.</p>
+
+<pre class="return">subtitles: subtitle*
+
+subtitle:
+    string title: title of the episode
+    int season: number of the season of the episode
+    int episode: number of the episode
+    string language: language of the subtitle
+    enum source: source of the subtitle (addic7ed, seriessub, soustitres, tvsubtitles, usub)
+    file file: name of the file of the subtitle
+    url url: url to the subtitle</pre>
+
+<h2>/subtitles/show</h2>
+
+<pre>GET http://api.betaseries.com/subtitles/show/&lt;url&gt;.xml&lt;?language=(VO|VF)&gt;&lt;&amp;season=N&gt;&lt;&amp;episode=N&gt;</pre>
+
+<p>Affiche les sous-titres récupérés par BetaSeries d'une certaine série, dans la limite de 100. Possibilité de spécifier la langue et/ou une saison, un épisode en particulier.</p>
+
+<p><b>Nouveau :</b> Vous pouvez maintenant récupérer des sous-titres directement grâce au nom des fichiers vidéo :</p>
+
+<pre>GET http://api.betaseries.com/subtitles/show.xml?file=X&lt;&amp;language=(VO|VF)&gt;</pre>
+
+<pre class="return">subtitles: subtitle*
+
+subtitle:
+    string title: title of the episode
+    int season: number of the season of the episode
+    int episode: number of the episode
+    string language: language of the subtitle
+    enum source: source of the subtitle (addic7ed, seriessub, soustitres, tvsubtitles, usub)
+    file file: name of the file of the subtitle
+    url url: url to the subtitle</pre>
+
+<a name="cat-planning"></a>
+<h1>Catégorie /planning/</h1>
+
+<h2>/planning/general</h2>
+
+<pre>GET http://api.betaseries.com/planning/general.xml</pre>
+
+<p>Affiche tous les épisodes diffusés les 8 derniers jours jusqu'aux 8 prochains jours.</p>
+
+<pre class="return">planning: episode*
+
+episode:
+    string number: number of the episode with the season
+    timestamp date: date of the episode
+    string show: name of the show of the subtitle
+    string url: url of the show
+    string title: title of the episode</pre>
+
+<h2>/planning/member</h2>
+
+<pre>GET http://api.betaseries.com/planning/member[/&lt;login&gt;].xml&lt;?view=unseen&gt;</pre>
+
+<p>Affiche le planning du membre identifié ou d'un autre membre (l'accès varie selon les options vie privée de chaque membre). Vous pouvez rajouter le paramètre <i>view</i> pour n'afficher que les épisodes encore non-vus.</p>
+
+<pre class="return">planning: episode*
+
+episode:
+    string number: number of the episode with the season
+    timestamp date: date of the episode
+    string show: name of the show of the subtitle
+    string url: url of the show
+    string title: title of the episode</pre>
+
+<a name="cat-members"></a>
+<h1>Catégorie /members/</h1>
+
+<h2>/members/auth</h2>
+
+<pre>GET http://api.betaseries.com/members/auth.xml?login=&lt;login&gt;&amp;password=&lt;md5&gt;</pre>
+
+<p>Identifie le membre avec son login et le hash MD5. Retourne le token à utiliser pour les requêtes futures.</p>
+
+<h2>/members/is_active</h2>
+
+<pre>GET http://api.betaseries.com/members/is_active.xml</pre>
+
+<p>Fonction sans action si ce n'est celle de vérifier si le token spécifié est actif.</p>
+
+<h2>/members/destroy</h2>
+
+<pre>GET http://api.betaseries.com/members/destroy.xml</pre>
+
+<p>Détruit instantanément le token spécifié.</p>
+
+<h2>/members/infos</h2>
+
+<pre>GET http://api.betaseries.com/members/infos[/&lt;login&gt;].xml&lt;?nodata=1&gt;&lt;&amp;since=N&gt;</pre>
+
+<p>Renvoie les informations principales du membre identifié ou d'un autre membre (l'accès varie selon les options vie privée de chaque membre). Si vous spécifiez le paramètre nodata, seuls le login et la date du cache seront retournés. Si vous spécifiez le paramètre since (valeur timestamp), l'API ne renverra les informations complètes que si elles ont été mises à jour depuis.</p>
+
+<pre class="return">member:
+    string login: login of the member
+    timestamp cached: date of last cached data
+    url avatar: url to the avatar
+    stats:
+        int shows: number of shows followed
+        int seasons: number of seasons
+        int episodes: number of episodes
+        string progress: general progress
+        int episodes_to_watch: number of episodes to watch
+        timestamp time_on_tv: seconds spended watching shows
+        timestamp time_to_send: remaining time to spend
+    shows: show*
+
+show:
+    string url: url of the show
+    string title: title of the show
+    boolean archive: show archived (1), or not (0)</pre>
+
+<h2>/members/episodes</h2>
+
+<pre>GET http://api.betaseries.com/members/episodes/(all|vf|vovf).xml&lt;?view=next&gt;</pre>
+
+<p>Liste les épisodes restant à regarder du membre identifié. Vous pouvez affiner par type de sous-titres : Tous (même les épisodes sans sous-titres), VF ou VF et VO. En spécifiant view=next, l'API ne retourne que le premier épisode de chaque série à regarder.</p>
+
+<pre class="return">episodes: episode*
+
+episode:
+    string show: name of the show
+    string episode: episode of the shwo with the season
+    string url: url of the show
+    string title: title of the episode
+    timestamp date: date of the episode</pre>
+
+<h2>/members/watched</h2>
+
+<pre>GET http://api.betaseries.com/members/watched/&lt;url&gt;.xml?season=&lt;N&gt;&amp;episode=&lt;N&gt;&lt;¬e=N&gt;</pre>
+
+<p>Marque l'épisode <i>episode</i> de la saison <i>season</i> de la série <i>url</i> comme vu. Vous pouvez spécifier une note entre 1 et 5.</p>
+
+<p><b>Note :</b> Si l'épisode marqué comme vu ne suit pas directement le précédent épisode vu, tous les épisodes entre les deux seront quand même marqués comme vus. Pour mettre à zéro une série, marquez l'épisode 0 de la saison 0.</p>
+
+<h2>/members/downloaded</h2>
+
+<pre>GET http://api.betaseries.com/members/downloaded/&lt;url&gt;.xml?season=&lt;N&gt;&amp;episode=&lt;N&gt;</pre>
+
+<p>Marque l'épisode <i>episode</i> de la saison <i>season</i> de la série <i>url</i> comme récupéré.</p>
+
+<h2>/members/notifications</h2>
+
+<pre>GET http://api.betaseries.com/members/notifications.xml&lt;?seen=(yes|no)&gt;&lt;&amp;number=N&gt;&lt;&amp;last_id=N&gt;</pre>
+
+<p>Afficher dans l'ordre chronologique les notifications reçues par le membre (nouveaux sous-titres, nouveaux épisodes sortis, etc.). En paramètres il peut être spécifié de ne sélectionner que les notifications déjà vues ou non vues, de commencer à partir d'un certain ID ou encore de limiter le nombre de résultats.</p>
+
+<p><b>Note :</b> Chaque notification retournée par l'API sera automatiquement marquée comme vue.</p>
+
+<pre class="return">notifications: notification*
+
+notification:
+    int id: id of the notification
+    text html: content of the notification
+    timestamp date: date of the notification
+    boolean seen: if notification is seen (1) or not (0)</pre>
+
+<h2>/members/signup</h2>
+
+<pre>GET http://api.betaseries.com/members/signup.xml?login=&lt;login&gt;&amp;password=&lt;password&gt;&amp;mail=&lt;mail&gt;</pre>
+
+<p>Crée instantanément un compte avec les identifiants et le mail spécifiés.</p>
+
+<a name="cat-comments"></a>
+<h1>Catégorie /comments/</h1>
+
+<h2>/comments/show</h2>
+
+<pre>GET http://api.betaseries.com/comments/show/&lt;url&gt;.xml</pre>
+
+<p>Affiche les commentaires de la série spécifiée.</p>
+
+<pre class="return">comments: comment*
+
+comment:
+    string login: login of the user who has posted the comment
+    int date: date of the comment
+    string text: content of the comment
+    int inner_id: internal id of the comment
+    int in_reply_to: comment id of the replied comment</pre>
+
+<h2>/comments/episode</h2>
+
+<pre>GET http://api.betaseries.com/comments/episode/&lt;url&gt;.xml?season=N&amp;episode=N</pre>
+
+<p>Affiche les commentaires de l'épisode spécifié.</p>
+
+<h2>/comments/member</h2>
+
+<pre>GET http://api.betaseries.com/comments/member/&lt;login&gt;.xml</pre>
+
+<p>Affiche les commentaires du membre spécifié.</p>
+
+<h2>/comments/post/show</h2>
+
+<pre>GET http://api.betaseries.com/comments/post/show.xml?show=X&amp;text=X&lt;&amp;in_reply_to=N&gt;</pre>
+
+<p>Poste un commentaire sur la fiche d'une série. Vous pouvez spécifier s'il s'agit d'une réponse à un autre commentaire en précisant son ID.</p>
+
+<h2>/comments/post/episode</h2>
+
+<pre>GET http://api.betaseries.com/comments/post/episode.xml?show=X&amp;season=N&amp;episode=N&amp;text=X&lt;&amp;in_reply_to=N&gt;</pre>
+
+<p>Poste un commentaire sur la fiche d'un épisode. Vous pouvez spécifier s'il s'agit d'une réponse à un autre commentaire en précisant son ID.</p>
+
+<h2>/comments/post/member</h2>
+
+<pre>GET http://api.betaseries.com/comments/post/member.xml?member=X&amp;text=X&lt;&amp;in_reply_to=N&gt;</pre>
+
+<p>Poste un commentaire sur le profil d'un membre. Vous pouvez spécifier s'il s'agit d'une réponse à un autre commentaire en précisant son ID.</p>
+
+<a name="cat-timeline"></a>
+<h1>Catégorie /timeline/</h1>
+
+<h2>/timeline/home</h2>
+
+<pre>GET http://api.betaseries.com/timeline/home.xml&lt;?number=N&gt;</pre>
+
+<p>Affiche les <i>N</i> derniers évènements du site. Maximum 100.</p>
+
+<pre class="return">timeline: item*
+
+item:
+    enum type: type of the item (friend_add, friend_delete, markas, add_serie, del_serie, archive, unarchive, recommandation,
+    				recommandation_decline, recommandation_accept, inscription, update, subtitles, comment)
+    string ref: reference for the item
+    string login: login of the user
+    text html: content of the item
+    timestamp date: date of the item</pre>
+
+<h2>/timeline/friends</h2>
+
+<pre>GET http://api.betaseries.com/timeline/friends.xml&lt;?number=N&gt;</pre>
+
+<p>Affiche les <i>N</i> derniers évènements des amis du membre identifié. Maximum 100.</p>
+
+<pre class="return">timeline: item*
+
+item:
+    enum type: type of the item (friend_add, friend_delete, markas, add_serie, del_serie, archive, unarchive, recommandation,
+    				recommandation_decline, recommandation_accept, inscription, update, subtitles, comment)
+    string ref: reference for the item
+    string login: login of the user
+    text html: content of the item
+    timestamp date: date of the item</pre>
+
+<h2>/timeline/member</h2>
+
+<pre>GET http://api.betaseries.com/timeline/member/&lt;login&gt;.xml&lt;?number=N&gt;</pre>
+
+<p>Affiche les <i>N</i> derniers évènements de <i>login</i> (l'accès varie selon les options vie privée de chaque membre). Maximum 100.</p>
+
+<pre class="return">timeline: item*
+
+item:
+    enum type: type of the item (friend_add, friend_delete, markas, add_serie, del_serie, archive, unarchive, recommandation,
+    				recommandation_decline, recommandation_accept, inscription, update, subtitles, comment)
+    string ref: reference for the item
+    string login: login of the user
+    text html: content of the item
+    timestamp date: date of the item</pre>
+
+</div>
+
+
+
+</body></html>
