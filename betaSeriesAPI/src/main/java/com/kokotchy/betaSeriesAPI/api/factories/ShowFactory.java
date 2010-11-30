@@ -68,6 +68,12 @@ public class ShowFactory {
 		for (Node nodeGenre : genres) {
 			show.addGenre(nodeGenre.getStringValue());
 		}
+		List<Node> seasons = node.selectNodes("seasons/season");
+		for (Node season : seasons) {
+			Integer seasonNb = UtilsXml.readInt(season, "number");
+			Integer nbEpisode = UtilsXml.readInt(season, "episodes");
+			show.addNumberEpisodeForSeason(seasonNb, nbEpisode);
+		}
 		show.setArchived(UtilsXml.readBoolean(node, "archive"));
 		return show;
 	}

@@ -1,6 +1,8 @@
 package com.kokotchy.betaSeriesAPI.model;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import com.kokotchy.betaSeriesAPI.HashCodeUtil;
@@ -53,6 +55,11 @@ public class Show {
 	private boolean archived;
 
 	/**
+	 *
+	 */
+	private Map<Integer, Integer> numberEpisodesBySeasons;
+
+	/**
 	 * Create a new show
 	 */
 	public Show() {
@@ -71,6 +78,7 @@ public class Show {
 		this.url = url;
 		this.title = title;
 		genres = new HashSet<String>();
+		numberEpisodesBySeasons = new HashMap<Integer, Integer>();
 	}
 
 	/**
@@ -81,6 +89,16 @@ public class Show {
 	 */
 	public void addGenre(String genre) {
 		genres.add(genre);
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param season
+	 * @param nbEpisode
+	 */
+	public void addNumberEpisodeForSeason(Integer season, Integer nbEpisode) {
+		numberEpisodesBySeasons.put(season, nbEpisode);
 	}
 
 	@Override
@@ -128,6 +146,38 @@ public class Show {
 	}
 
 	/**
+	 * TODO Fill it
+	 * 
+	 * @return Return the numberEpisodesBySeasons to get
+	 */
+	public Map<Integer, Integer> getNumberEpisodesBySeasons() {
+		return numberEpisodesBySeasons;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param season
+	 * @return
+	 */
+	public Integer getNumberEpisodesForSeason(Integer season) {
+		Integer numberEpisode = numberEpisodesBySeasons.get(season);
+		if (numberEpisode != null) {
+			return numberEpisode;
+		}
+		return 0;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @return
+	 */
+	public Integer getNumberSeason() {
+		return numberEpisodesBySeasons.size();
+	}
+
+	/**
 	 * Return the status of the show
 	 * 
 	 * @return the status
@@ -165,6 +215,7 @@ public class Show {
 		result = HashCodeUtil.hash(result, banner);
 		result = HashCodeUtil.hash(result, genres);
 		result = HashCodeUtil.hash(result, archived);
+		result = HashCodeUtil.hash(result, numberEpisodesBySeasons);
 		return result;
 	}
 

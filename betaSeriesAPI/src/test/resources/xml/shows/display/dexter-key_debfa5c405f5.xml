@@ -8,6 +8,28 @@
   <description>Based on Jeff Lindsay's novels Darkly Dreaming Dexter and Dearly Devoted Dexter this crime thriller follows Dexter Morgan. Dexter is a forensic blood spatter expert for the Miami Metro Police Department. Thanks to a code instilled in him by his foster father, Harry, he hunts down people who have escaped justice and makes sure they don't get away with a crime again.</description>
   <status>Continuing</status>
   <banner>http://www.betaseries.com/images/fonds/dexter.png</banner>
+  <seasons>
+   <season>
+    <number>1</number>
+    <episodes>12</episodes>
+   </season>
+   <season>
+    <number>2</number>
+    <episodes>12</episodes>
+   </season>
+   <season>
+    <number>3</number>
+    <episodes>12</episodes>
+   </season>
+   <season>
+    <number>4</number>
+    <episodes>12</episodes>
+   </season>
+   <season>
+    <number>5</number>
+    <episodes>12</episodes>
+   </season>
+  </seasons>
   <genres>
    <genre>Action and Adventure</genre>
    <genre>Drama</genre>

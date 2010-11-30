@@ -41,6 +41,7 @@ public interface IShows {
 
 	/**
 	 * Return the episodes of the given url
+	 * FIXME Now need a token... not normal...
 	 * 
 	 * @param url
 	 *            Url of the show
