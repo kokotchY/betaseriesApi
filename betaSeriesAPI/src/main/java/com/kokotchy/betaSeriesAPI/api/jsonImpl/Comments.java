@@ -35,64 +35,6 @@ public class Comments implements IComments {
 		this.apiKey = apiKey;
 	}
 
-	@Override
-	public Set<Comment> getComments(String url) {
-		JSONObject jsonObject = UtilsJson.executeQuery("comments/show/" + url,
-				apiKey);
-		return getComments(jsonObject);
-	}
-
-	@Override
-	public Set<Comment> getComments(String url, int season, int episode) {
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("season", "" + season);
-		params.put("episode", "" + episode);
-		JSONObject jsonObject = UtilsJson.executeQuery("comments/episode/"
-				+ url, apiKey, params);
-		return getComments(jsonObject);
-	}
-
-	@Override
-	public Set<Comment> getUserComments(String login) {
-		JSONObject jsonObject = UtilsJson.executeQuery("comments/member/"
-				+ login, apiKey);
-		return getComments(jsonObject);
-	}
-
-	@Override
-	public boolean postComment(String token, String url, String text) {
-		return postGenericComment(token, url, text, -1, -1, -1);
-	}
-
-	@Override
-	public boolean postComment(String token, String url, String text,
-			int responseTo) {
-		return postGenericComment(token, url, text, -1, -1, responseTo);
-	}
-
-	@Override
-	public boolean postComment(String token, String url, String text,
-			int season, int episode) {
-		return postGenericComment(token, url, text, season, episode, -1);
-	}
-
-	@Override
-	public boolean postComment(String token, String url, String text,
-			int responseTo, int season, int episode) {
-		return postGenericComment(token, url, text, season, episode, responseTo);
-	}
-
-	@Override
-	public boolean postUserComment(String token, String login, String text) {
-		return postAUserComment(token, login, text, -1);
-	}
-
-	@Override
-	public boolean postUserComment(String token, String login, String text,
-			int responseTo) {
-		return postAUserComment(token, login, text, responseTo);
-	}
-
 	/**
 	 * TODO Fill it
 	 * 
@@ -118,6 +60,30 @@ public class Comments implements IComments {
 		return result;
 	}
 
+	@Override
+	public Set<Comment> getComments(String url) {
+		JSONObject jsonObject = UtilsJson.executeQuery("comments/show/" + url,
+				apiKey);
+		return getComments(jsonObject);
+	}
+
+	@Override
+	public Set<Comment> getComments(String url, int season, int episode) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("season", "" + season);
+		params.put("episode", "" + episode);
+		JSONObject jsonObject = UtilsJson.executeQuery("comments/episode/"
+				+ url, apiKey, params);
+		return getComments(jsonObject);
+	}
+
+	@Override
+	public Set<Comment> getUserComments(String login) {
+		JSONObject jsonObject = UtilsJson.executeQuery("comments/member/"
+				+ login, apiKey);
+		return getComments(jsonObject);
+	}
+
 	/**
 	 * TODO Fill it
 	 * 
@@ -134,14 +100,37 @@ public class Comments implements IComments {
 		if (responseTo >= 0) {
 			params.put("in_reploy_to", "" + responseTo);
 		}
-		UtilsJson.executeQuery("comments/post/member", apiKey, params);
+		params.put("token", token);
+		JSONObject jsonObject = UtilsJson.executeQuery("comments/post/member", apiKey, params);
 		// TODO Check if there is error
 		return true;
 	}
 
+	@Override
+	public boolean postComment(String token, String url, String text) {
+		return postGenericComment(token, url, text, -1, -1, -1);
+	}
+
+	@Override
+	public boolean postComment(String token, String url, String text,
+			int responseTo) {
+		return postGenericComment(token, url, text, -1, -1, responseTo);
+	}
+
+	@Override
+	public boolean postComment(String token, String url, String text,
+			int season, int episode) {
+		return postGenericComment(token, url, text, season, episode, -1);
+	}
+
+	@Override
+	public boolean postComment(String token, String url, String text,
+			int responseTo, int season, int episode) {
+		return postGenericComment(token, url, text, season, episode, responseTo);
+	}
+
 	/**
 	 * TODO Fill it
-	 * 
 	 * TODO Found better name
 	 * 
 	 * @param token
@@ -177,5 +166,16 @@ public class Comments implements IComments {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public boolean postUserComment(String token, String login, String text) {
+		return postAUserComment(token, login, text, -1);
+	}
+
+	@Override
+	public boolean postUserComment(String token, String login, String text,
+			int responseTo) {
+		return postAUserComment(token, login, text, responseTo);
 	}
 }

@@ -1,11 +1,12 @@
 package com.kokotchy.betaSeriesAPI;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.Map;
-import java.util.Set;
 import java.util.Map.Entry;
 
-import com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi;
+import com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 import com.kokotchy.betaSeriesAPI.model.Season;
 
@@ -43,26 +44,26 @@ public class Main {
 		String[] loadCredentials = Utils.loadCredentials(new File(System
 				.getProperty("user.dir")
 				+ "/src/main/resources/credentials/", "dev042"));
-		String token = BetaSerieApi.getMembers().auth(loadCredentials[0], loadCredentials[1]);
-		System.out.println(token);
-		Set<Season> seasons = BetaSerieApi.getShows().getEpisodes(token, "dexter");
-		System.out.println("There is " + seasons.size() + " seasons");
-		// String token = BetaSerieApi.getMembers().auth(loadCredentials[0],
-		// loadCredentials[1]);
-		// if (token != null) {
-		// if (BetaSerieApi.getMembers().isActive(token)) {
-		// String message = "I'm am a robot and I'm here to kill you!";
-		// try {
-		// BetaSerieApi.getComments().postUserComment(token,
-		// "kokotchY", URLEncoder.encode(message, "UTF-8"));
-		// } catch (UnsupportedEncodingException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
-		// } else {
-		// System.out.println("Not active");
-		// }
-		// }
+		// String token = BetaSerieApi.getMembers().auth(loadCredentials[0], loadCredentials[1]);
+		// System.out.println(token);
+		// Set<Season> seasons = BetaSerieApi.getShows().getEpisodes(token, "dexter");
+		// System.out.println("There is " + seasons.size() + " seasons");
+		String token = BetaSerieApi.getMembers().auth(loadCredentials[0],
+				loadCredentials[1]);
+		if (token != null) {
+			if (BetaSerieApi.getMembers().isActive(token)) {
+				String message = "I'm am a robot and I'm here to kill you!";
+				try {
+					BetaSerieApi.getComments().postUserComment(token,
+							"kokotchY", URLEncoder.encode(message, "UTF-8"));
+				} catch (UnsupportedEncodingException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} else {
+				System.out.println("Not active");
+			}
+		}
 	}
 
 	/**
