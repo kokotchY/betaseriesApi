@@ -44,6 +44,20 @@ public class ShowFactory {
 				e.printStackTrace();
 			}
 		}
+		JSONObject seasons = UtilsJson.getJSONObject(jsonObject, "seasons");
+		if (seasons != null) {
+			String[] names = JSONObject.getNames(seasons);
+			try {
+				for (String name : names) {
+					JSONObject season = seasons.getJSONObject(name);
+					int episodes = UtilsJson.getIntValue(season, "episodes");
+					int number = UtilsJson.getIntValue(season, "number");
+					show.addNumberEpisodeForSeason(number, episodes);
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+		}
 		show.setArchived(UtilsJson.getBooleanValue(jsonObject, "archive"));
 		return show;
 	}
