@@ -53,6 +53,11 @@ public class Episode {
 	private List<Subtitle> subtitles;
 
 	/**
+	 * TODO Fill it
+	 */
+	private boolean seen;
+
+	/**
 	 * Create a new episode
 	 */
 	public Episode() {
@@ -158,7 +163,17 @@ public class Episode {
 		result = HashCodeUtil.hash(result, description);
 		result = HashCodeUtil.hash(result, screen);
 		result = HashCodeUtil.hash(result, subtitles);
+		result = HashCodeUtil.hash(result, seen);
 		return result;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @return Return the seen to get
+	 */
+	public boolean isSeen() {
+		return seen;
 	}
 
 	/**
@@ -199,6 +214,15 @@ public class Episode {
 	 */
 	public void setScreen(String screen) {
 		this.screen = screen;
+	}
+
+	/**
+	 * TODO Fill it
+	 * Set the field with the given value
+	 * seen
+	 */
+	public void setSeen(boolean seen) {
+		this.seen = seen;
 	}
 
 	/**

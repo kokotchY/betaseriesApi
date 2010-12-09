@@ -68,12 +68,27 @@ public class Shows implements IShows {
 
 	@Override
 	public Set<Season> getEpisodes(String url) {
-		return getEpisodesFromSeason(url, -1);
+		return getEpisodesFromSeason(null, url, -1);
 	}
 
 	@Override
 	public Season getEpisodes(String url, int seasonNb) {
-		Set<Season> episodesFromSeason = getEpisodesFromSeason(url, seasonNb);
+		Set<Season> episodesFromSeason = getEpisodesFromSeason(null, url, seasonNb);
+		Iterator<Season> iterator = episodesFromSeason.iterator();
+		if (iterator.hasNext()) {
+			return iterator.next();
+		}
+		return null;
+	}
+
+	@Override
+	public Set<Season> getEpisodes(String token, String url) {
+		return getEpisodesFromSeason(token, url, -1);
+	}
+
+	@Override
+	public Season getEpisodes(String token, String url, int seasonNb) {
+		Set<Season> episodesFromSeason = getEpisodesFromSeason(token, url, seasonNb);
 		Iterator<Season> iterator = episodesFromSeason.iterator();
 		if (iterator.hasNext()) {
 			return iterator.next();
@@ -85,18 +100,24 @@ public class Shows implements IShows {
 	 * Return the episodes from the given season. If seasonNb is < 0, then
 	 * retrieve all seasons
 	 * 
+	 * @param token
 	 * @param url
 	 *            Url of the show
 	 * @param seasonNb
 	 *            Number of the season
 	 * @return List of seasons with the episodes
 	 */
-	private Set<Season> getEpisodesFromSeason(String url, int seasonNb) {
+	private Set<Season> getEpisodesFromSeason(String token, String url, int seasonNb) {
 		JSONObject jsonObject = null;
 		Map<String, String> params = new HashMap<String, String>();
 		if (seasonNb > 0) {
 			params.put("season", "" + seasonNb);
 		}
+
+		if (token != null) {
+			params.put("token", token);
+		}
+
 		jsonObject = UtilsJson.executeQuery("shows/episodes/" + url, apiKey,
 				params);
 		JSONArray seasonsArray = UtilsJson.getJSONArrayFromPath(jsonObject,

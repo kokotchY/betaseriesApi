@@ -29,6 +29,7 @@ public class EpisodeFactory {
 		episode.setShowUrl(UtilsJson.getStringValue(json, "url"));
 		episode.setDate(UtilsJson.getIntValue(json, "date"));
 		episode.setTitle(UtilsJson.getStringValue(json, "title"));
+		episode.setSeen(UtilsJson.getBooleanValue(json, "has_seen"));
 		return episode;
 	}
 
@@ -58,6 +59,8 @@ public class EpisodeFactory {
 		for (Node sub : subsNode) {
 			episode.addSubtitle(SubtitleFactory.createSubtitle(sub));
 		}
+
+		episode.setSeen(UtilsXml.readBoolean(node, "has_seen"));
 
 		return episode;
 	}

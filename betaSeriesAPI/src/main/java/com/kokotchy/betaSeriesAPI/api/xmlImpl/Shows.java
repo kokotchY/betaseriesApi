@@ -87,15 +87,19 @@ public class Shows implements IShows {
 		return null;
 	}
 
-	/**
-	 * TODO Fill it
-	 * 
-	 * @param token
-	 * @param url
-	 * @return
-	 */
+	@Override
 	public Set<Season> getEpisodes(String token, String url) {
 		return getEpisodesFromSeason(token, url, -1);
+	}
+
+	@Override
+	public Season getEpisodes(String token, String url, int seasonNb) {
+		Set<Season> episodesFromSeason = getEpisodesFromSeason(token, url, seasonNb);
+		Iterator<Season> iterator = episodesFromSeason.iterator();
+		while (iterator.hasNext()) {
+			return iterator.next();
+		}
+		return null;
 	}
 
 	/**
