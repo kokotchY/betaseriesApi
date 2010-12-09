@@ -49,49 +49,6 @@ public class Subtitles implements ISubtitles {
 		return getLastSubtitlesFromShow(url, nb, subtitleLanguage);
 	}
 
-	@Override
-	public Set<Subtitle> getSubtitlesForFile(String file) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Set<Subtitle> getSubtitlesForFile(String file,
-			SubtitleLanguage subtitleLanguage) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public Set<Subtitle> show(String url, SubtitleLanguage subtitleLanguage,
-			int season, int episode) {
-		Map<String, String> params = new HashMap<String, String>();
-		if (season > 0) {
-			params.put("season", "" + season);
-		}
-		if (episode > 0) {
-			params.put("episode", "" + episode);
-		}
-		switch (subtitleLanguage) {
-		case VO:
-			params.put("language", "VO");
-			break;
-		case VF:
-			params.put("language", "VF");
-			break;
-		}
-
-		Document document = UtilsXml.executeQuery("subtitles/show/" + url,
-				apiKey, params);
-		List<Node> nodes = document.selectNodes("/root/subtitles/subtitle");
-		Set<Subtitle> subtitles = new HashSet<Subtitle>();
-		for (Node node : nodes) {
-			subtitles.add(SubtitleFactory.createSubtitle(node));
-		}
-		return subtitles;
-	}
-
 	/**
 	 * Return the last subtitles. If the url is not null, return subtitles for
 	 * the show. If the nb is greater than 0, limit the number of subtitles
@@ -130,6 +87,51 @@ public class Subtitles implements ISubtitles {
 		}
 		Document document = UtilsXml.executeQuery(action, apiKey, params);
 		List<Node> nodes = document.selectNodes("/root/subtitles/subtitle");
+		for (Node node : nodes) {
+			subtitles.add(SubtitleFactory.createSubtitle(node));
+		}
+		return subtitles;
+	}
+
+	@Override
+	public Set<Subtitle> getSubtitlesForFile(String file) {
+		Map<String, String> params = new HashMap<String, String>();
+		Document document = UtilsXml.executeQuery("subtitles/show", apiKey, params);
+		// TODO Retrieve the subtitles
+		return null;
+	}
+
+	@Override
+	public Set<Subtitle> getSubtitlesForFile(String file,
+			SubtitleLanguage subtitleLanguage) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Set<Subtitle> show(String url, SubtitleLanguage subtitleLanguage,
+			int season, int episode) {
+		Map<String, String> params = new HashMap<String, String>();
+		if (season > 0) {
+			params.put("season", "" + season);
+		}
+		if (episode > 0) {
+			params.put("episode", "" + episode);
+		}
+		switch (subtitleLanguage) {
+		case VO:
+			params.put("language", "VO");
+			break;
+		case VF:
+			params.put("language", "VF");
+			break;
+		}
+
+		Document document = UtilsXml.executeQuery("subtitles/show/" + url,
+				apiKey, params);
+		List<Node> nodes = document.selectNodes("/root/subtitles/subtitle");
+		Set<Subtitle> subtitles = new HashSet<Subtitle>();
 		for (Node node : nodes) {
 			subtitles.add(SubtitleFactory.createSubtitle(node));
 		}
