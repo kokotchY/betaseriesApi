@@ -98,7 +98,7 @@ public class Comments implements IComments {
 		params.put("member", login);
 		params.put("text", text);
 		if (responseTo >= 0) {
-			params.put("in_reploy_to", "" + responseTo);
+			params.put("in_reply_to", "" + responseTo);
 		}
 		params.put("token", token);
 		JSONObject jsonObject = UtilsJson.executeQuery("comments/post/member", apiKey, params);

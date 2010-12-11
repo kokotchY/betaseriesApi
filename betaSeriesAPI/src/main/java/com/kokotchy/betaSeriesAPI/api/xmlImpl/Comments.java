@@ -36,6 +36,26 @@ public class Comments implements IComments {
 		this.apiKey = apiKey;
 	}
 
+	/**
+	 * Return the comments of the document
+	 * 
+	 * @param document
+	 *            Document
+	 * @return Comments
+	 */
+	@SuppressWarnings("unchecked")
+	private Set<Comment> getComments(Document document) {
+		Set<Comment> comments = new HashSet<Comment>();
+		if (!UtilsXml.hasErrors(document)) {
+			List<Node> nodes = document.selectNodes("/root/comments/comment");
+			for (Node showNode : nodes) {
+				Comment comment = CommentFactory.createComment(showNode);
+				comments.add(comment);
+			}
+		}
+		return comments;
+	}
+
 	@Override
 	public Set<Comment> getComments(String url) {
 		Document document = UtilsXml.executeQuery("comments/show/" + url,
@@ -58,6 +78,33 @@ public class Comments implements IComments {
 		Document document = UtilsXml.executeQuery("comments/member/" + login,
 				apiKey);
 		return getComments(document);
+	}
+
+	/**
+	 * Post a comment on the profil of a member that can be a response to
+	 * another comment
+	 * 
+	 * @param token
+	 *            Token
+	 * @param login
+	 *            Login
+	 * @param text
+	 *            Content
+	 * @param responseTo
+	 *            Id of the comment
+	 */
+	private boolean postAUserComment(String token, String login, String text,
+			int responseTo) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("member", login);
+		params.put("text", text);
+		params.put("token", token);
+		if (responseTo >= 0) {
+			params.put("in_reply_to", "" + responseTo);
+		}
+		UtilsXml.executeQuery("comments/post/member", apiKey, params);
+		// TODO Check for error
+		return true;
 	}
 
 	@Override
@@ -83,64 +130,6 @@ public class Comments implements IComments {
 		return postGeneralComment(token, url, text, season, episode, responseTo);
 	}
 
-	@Override
-	public boolean postUserComment(String token, String login, String text) {
-		return postAUserComment(token, login, text, -1);
-	}
-
-	@Override
-	public boolean postUserComment(String token, String login, String text,
-			int responseTo) {
-		return postAUserComment(token, login, text, responseTo);
-	}
-
-	/**
-	 * Return the comments of the document
-	 * 
-	 * @param document
-	 *            Document
-	 * @return Comments
-	 */
-	@SuppressWarnings("unchecked")
-	private Set<Comment> getComments(Document document) {
-		Set<Comment> comments = new HashSet<Comment>();
-		if (!UtilsXml.hasErrors(document)) {
-			List<Node> nodes = document.selectNodes("/root/comments/comment");
-			for (Node showNode : nodes) {
-				Comment comment = CommentFactory.createComment(showNode);
-				comments.add(comment);
-			}
-		}
-		return comments;
-	}
-
-	/**
-	 * Post a comment on the profil of a member that can be a response to
-	 * another comment
-	 * 
-	 * @param token
-	 *            Token
-	 * @param login
-	 *            Login
-	 * @param text
-	 *            Content
-	 * @param responseTo
-	 *            Id of the comment
-	 */
-	private boolean postAUserComment(String token, String login, String text,
-			int responseTo) {
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("member", login);
-		params.put("text", text);
-		params.put("token", token);
-		if (responseTo >= 0) {
-			params.put("in_reploy_to", "" + responseTo);
-		}
-		UtilsXml.executeQuery("comments/post/member", apiKey, params);
-		// TODO Check for error
-		return true;
-	}
-
 	/**
 	 * Post a comment on the website.
 	 * 
@@ -162,9 +151,9 @@ public class Comments implements IComments {
 		Map<String, String> params = new HashMap<String, String>();
 		String action = null;
 		params.put("text", text);
+		params.put("show", url);
 		if (season < 0 && episode < 0) {
 			action = "comments/post/show";
-			params.put("show", url);
 			if (responseTo >= 0) {
 				params.put("in_reply_to", "" + responseTo);
 			}
@@ -176,11 +165,25 @@ public class Comments implements IComments {
 				params.put("in_reply_to", "" + responseTo);
 			}
 		}
+		if (token != null) {
+			params.put("token", token);
+		}
 		// TODO Check for error
 		if (action != null) {
 			UtilsXml.executeQuery(action, apiKey, params);
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public boolean postUserComment(String token, String login, String text) {
+		return postAUserComment(token, login, text, -1);
+	}
+
+	@Override
+	public boolean postUserComment(String token, String login, String text,
+			int responseTo) {
+		return postAUserComment(token, login, text, responseTo);
 	}
 }

@@ -109,6 +109,7 @@ public interface IComments {
 	/**
 	 * Post a comment to the user profile
 	 * 
+	 * @param token
 	 * @param login
 	 *            Login of the user
 	 * @param text
