@@ -141,6 +141,14 @@ public class TestMembers extends TestCase {
 		fail("Not implemented");
 	}
 
+	public void testNotificationSortEqualsJson() {
+		fail("Not implemented");
+	}
+
+	public void testNotificationSortEqualsXml() {
+		fail("Not implemented");
+	}
+
 	/**
 	 * TODO Fill it
 	 */
