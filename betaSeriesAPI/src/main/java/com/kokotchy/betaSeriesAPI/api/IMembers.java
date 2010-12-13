@@ -5,6 +5,7 @@ import java.util.List;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 import com.kokotchy.betaSeriesAPI.model.Member;
 import com.kokotchy.betaSeriesAPI.model.Notification;
+import com.kokotchy.betaSeriesAPI.model.SortType;
 import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
 
 /**
@@ -63,37 +64,40 @@ public interface IMembers {
 	 *            Token of the logged user
 	 * @param seen
 	 *            Flag to return already seen notification or not
-	 * @return List of notifications
-	 */
-	public List<Notification> getNotifications(String token, boolean seen);
-
-	/**
-	 * Return the notification received by the member.
-	 * 
-	 * @param token
-	 *            Token of the logged user
-	 * @param seen
-	 *            Flag to return already seen notification or not
-	 * @param nb
-	 *            Number of notification
-	 * @return List of notifications
-	 */
-	public List<Notification> getNotifications(String token, boolean seen, int nb);
-
-	/**
-	 * Return the notification received by the member.
-	 * 
-	 * @param token
-	 *            Token of the logged user
-	 * @param seen
-	 *            Flag to return already seen notification or not
 	 * @param nb
 	 *            Number of notification
 	 * @param lastId
 	 *            Start of the last notification
+	 * @param sort
 	 * @return List of notifications
 	 */
-	public List<Notification> getNotifications(String token, boolean seen, int nb, int lastId);
+	public List<Notification> getNotifications(String token, boolean seen, int nb, int lastId, SortType sort);
+
+	/**
+	 * Return the notification received by the member.
+	 * 
+	 * @param token
+	 *            Token of the logged user
+	 * @param seen
+	 *            Flag to return already seen notification or not
+	 * @param nb
+	 *            Number of notification
+	 * @param sort
+	 * @return List of notifications
+	 */
+	public List<Notification> getNotifications(String token, boolean seen, int nb, SortType sort);
+
+	/**
+	 * Return the notification received by the member.
+	 * 
+	 * @param token
+	 *            Token of the logged user
+	 * @param seen
+	 *            Flag to return already seen notification or not
+	 * @param sort
+	 * @return List of notifications
+	 */
+	public List<Notification> getNotifications(String token, boolean seen, SortType sort);
 
 	/**
 	 * Return the notification received by the member.
@@ -102,9 +106,10 @@ public interface IMembers {
 	 *            Token of the logged user
 	 * @param nb
 	 *            Number of notification
+	 * @param sort
 	 * @return List of notifications
 	 */
-	public List<Notification> getNotifications(String token, int nb);
+	public List<Notification> getNotifications(String token, int nb, SortType sort);
 
 	/**
 	 * Return information about the logged user
@@ -165,6 +170,17 @@ public interface IMembers {
 	public boolean resetViewedShow(String token, String url);
 
 	/**
+	 * TODO Fill it
+	 * 
+	 * @param token
+	 * @param url
+	 * @param season
+	 * @param episode
+	 * @return
+	 */
+	public boolean setDownloaded(String token, String url, int season, int episode);
+
+	/**
 	 * Set the episode for the given season and url as watch
 	 * If the watched episode didn't follow the last seen episode, all episodes
 	 * between them are marked as seen.
@@ -180,4 +196,14 @@ public interface IMembers {
 	 * @return Set the episode as watched
 	 */
 	public boolean setWatched(String token, String url, int season, int episode);
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param login
+	 * @param password
+	 * @param email
+	 * @return
+	 */
+	public boolean signup(String login, String password, String email);
 }

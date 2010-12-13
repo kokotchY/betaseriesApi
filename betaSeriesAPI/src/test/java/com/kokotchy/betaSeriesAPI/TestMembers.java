@@ -76,6 +76,13 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
+	 * TODO Fill it
+	 */
+	public void testDownloaded() {
+		fail("Not implemented");
+	}
+
+	/**
 	 * Test informations with xml and json
 	 */
 	public void testInfos() {
@@ -128,5 +135,16 @@ public class TestMembers extends TestCase {
 				}
 			}
 		}
+	}
+
+	public void testNotificationSort() {
+		fail("Not implemented");
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testSignup() {
+		fail("Not implemented");
 	}
 }
