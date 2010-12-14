@@ -133,23 +133,29 @@ public class UtilsXml {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return an int value from the attribute's node
 	 * 
 	 * @param node
-	 * @return
+	 *            Node
+	 * @param name
+	 *            Name of the attribute
+	 * @return Int value
 	 */
-	public static int getAttributeIntValue(Node node) {
-		return Integer.parseInt(getAttributeStringValue(node));
+	public static int getAttributeIntValue(Node node, String name) {
+		return Integer.parseInt(getAttributeStringValue(node, name));
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the string value from the attribute's node
 	 * 
 	 * @param node
-	 * @return
+	 *            Node
+	 * @param name
+	 *            Name
+	 * @return String value
 	 */
-	public static String getAttributeStringValue(Node node) {
-		Attribute code = ((Element) node).attribute("code");
+	public static String getAttributeStringValue(Node node, String name) {
+		Attribute code = ((Element) node).attribute(name);
 		return code.getText();
 	}
 

@@ -14,10 +14,11 @@ import com.kokotchy.betaSeriesAPI.model.Error;
  */
 public class ErrorFactory {
 	/**
-	 * TODO Fill it
+	 * Create an error from a json object
 	 * 
 	 * @param jsonObject
-	 * @return
+	 *            Json object
+	 * @return Error
 	 */
 	public static Error createError(JSONObject jsonObject) {
 		Error error = new Error();
@@ -34,7 +35,7 @@ public class ErrorFactory {
 	 * @return Error
 	 */
 	public static Error createError(Node node) {
-		int code = UtilsXml.getAttributeIntValue(node);
+		int code = UtilsXml.getAttributeIntValue(node, "code");
 		Error error = new Error(code);
 		error.setText(node.getText());
 		return error;

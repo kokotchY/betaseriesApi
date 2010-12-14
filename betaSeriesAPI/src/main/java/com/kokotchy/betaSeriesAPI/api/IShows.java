@@ -61,11 +61,13 @@ public interface IShows {
 	public Season getEpisodes(String url, int seasonNb);
 
 	/**
-	 * TODO Fill it
+	 * Return the seasons for the logged user for the given show
 	 * 
 	 * @param token
+	 *            Token of the user
 	 * @param url
-	 * @return
+	 *            Url of the show
+	 * @return Seasons of the show
 	 */
 	public Set<Season> getEpisodes(String token, String url);
 

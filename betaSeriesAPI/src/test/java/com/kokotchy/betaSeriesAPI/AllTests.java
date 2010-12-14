@@ -4,17 +4,16 @@ import junit.framework.Test;
 import junit.framework.TestSuite;
 
 /**
- * TODO Fill it
+ * Test suite for all tests
  * 
  * @author kokotchy
- * 
  */
 public class AllTests {
 
 	/**
-	 * TODO Fill it
+	 * Suite case
 	 * 
-	 * @return
+	 * @return Suite Case
 	 */
 	public static Test suite() {
 		TestSuite suite = new TestSuite("Test for com.kokotchy.betaSeriesAPI");

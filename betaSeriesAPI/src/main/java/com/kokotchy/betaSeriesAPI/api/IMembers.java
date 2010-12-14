@@ -35,10 +35,12 @@ public interface IMembers {
 	public boolean destroy(String token);
 
 	/**
-	 * TODO Fill it
+	 * Return the date of the last modification of the user account
 	 * 
 	 * @param token
+	 *            Token
 	 * @param identifieduser
+	 *            If the user is identified or not
 	 * @return Date of the cache
 	 */
 	public int getDateCache(String token, boolean identifieduser);
@@ -170,13 +172,17 @@ public interface IMembers {
 	public boolean resetViewedShow(String token, String url);
 
 	/**
-	 * TODO Fill it
+	 * Set the episode as downloaded
 	 * 
 	 * @param token
+	 *            Token of the user
 	 * @param url
+	 *            Url of the show
 	 * @param season
+	 *            Season number
 	 * @param episode
-	 * @return
+	 *            Episode number
+	 * @return If the episode is marked as downloaded
 	 */
 	public boolean setDownloaded(String token, String url, int season, int episode);
 
@@ -198,12 +204,15 @@ public interface IMembers {
 	public boolean setWatched(String token, String url, int season, int episode);
 
 	/**
-	 * TODO Fill it
+	 * Create an account with the credentials and the email
 	 * 
 	 * @param login
+	 *            Login
 	 * @param password
+	 *            Password
 	 * @param email
-	 * @return
+	 *            Email
+	 * @return True if account is created, false otherwise
 	 */
 	public boolean signup(String login, String password, String email);
 }

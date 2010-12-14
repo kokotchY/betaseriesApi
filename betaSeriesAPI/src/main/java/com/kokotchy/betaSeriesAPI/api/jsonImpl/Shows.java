@@ -146,10 +146,11 @@ public class Shows implements IShows {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the shows from the json object
 	 * 
 	 * @param jsonObject
-	 * @return
+	 *            Json object
+	 * @return Shows
 	 */
 	private Set<Show> getShows(JSONObject jsonObject) {
 		Set<Show> shows = new HashSet<Show>();

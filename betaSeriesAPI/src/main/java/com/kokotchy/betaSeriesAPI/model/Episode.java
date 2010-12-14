@@ -53,7 +53,7 @@ public class Episode {
 	private List<Subtitle> subtitles;
 
 	/**
-	 * TODO Fill it
+	 * Episode is seen or not
 	 */
 	private boolean seen;
 
@@ -168,9 +168,9 @@ public class Episode {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return if the episode is seen
 	 * 
-	 * @return Return the seen to get
+	 * @return Return if the episode is seen
 	 */
 	public boolean isSeen() {
 		return seen;
@@ -217,15 +217,18 @@ public class Episode {
 	}
 
 	/**
-	 * TODO Fill it
-	 * Set the field with the given value
-	 * seen
+	 * Set the seen state of the episode
+	 * 
+	 * @param seen
+	 *            State
 	 */
 	public void setSeen(boolean seen) {
 		this.seen = seen;
 	}
 
 	/**
+	 * Set the show
+	 * 
 	 * @param show
 	 *            the show to set
 	 */

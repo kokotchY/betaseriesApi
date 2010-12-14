@@ -9,20 +9,17 @@ import org.junit.Before;
 import com.kokotchy.betaSeriesAPI.model.Error;
 
 /**
- * @author canas
+ * Test error handling
+ * 
+ * @author kokotchy
  */
 public class TestErrors extends TestCase {
 
 	/**
-	 *
+	 * Api key
 	 */
 	private String key;
 
-	/**
-	 * TODO Fill it
-	 * 
-	 * @throws java.lang.Exception
-	 */
 	@Override
 	@Before
 	public void setUp() throws Exception {
@@ -35,7 +32,7 @@ public class TestErrors extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test double error
 	 */
 	public void testDoubleError() {
 		Set<Error> errorsJson = UtilsJson.getErrors(UtilsJson.executeQuery("errors/simple", key));
@@ -44,7 +41,7 @@ public class TestErrors extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test double error equals json
 	 */
 	public void testDoubleErrorEqualsJson() {
 		Set<Error> errorsJson2 = UtilsJson.getErrors(UtilsJson.executeQuery("errors/simple", key));
@@ -53,7 +50,7 @@ public class TestErrors extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test double error equals xml
 	 */
 	public void testDoubleErrorEqualsXml() {
 		Set<Error> errorsXml2 = UtilsXml.getErrors(UtilsXml.executeQuery("errors/double", key));
@@ -62,7 +59,7 @@ public class TestErrors extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test simple error
 	 */
 	public void testSimpleError() {
 		Set<Error> errorsJson = UtilsJson.getErrors(UtilsJson.executeQuery("errors/simple", key));
@@ -71,7 +68,7 @@ public class TestErrors extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test a simple error equals json
 	 */
 	public void testSimpleErrorEqualsJson() {
 		Set<Error> errorsJson2 = UtilsJson.getErrors(UtilsJson.executeQuery("errors/simple", key));
@@ -80,7 +77,7 @@ public class TestErrors extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test a simple error equals xml
 	 */
 	public void testSimpleErrorEqualsXml() {
 		Set<Error> errorsXml2 = UtilsXml.getErrors(UtilsXml.executeQuery("errors/simple", key));

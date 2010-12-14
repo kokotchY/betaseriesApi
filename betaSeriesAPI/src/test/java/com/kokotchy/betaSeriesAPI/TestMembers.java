@@ -40,7 +40,7 @@ public class TestMembers extends TestCase {
 	private String token;
 
 	/**
-	 *
+	 * Api key
 	 */
 	private String key;
 
@@ -76,7 +76,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Testing set an episode as downloaded
 	 */
 	public void testDownloaded() {
 		fail("Not implemented");
@@ -137,20 +137,29 @@ public class TestMembers extends TestCase {
 		}
 	}
 
+	/**
+	 * Test nofication sorting
+	 */
 	public void testNotificationSort() {
 		fail("Not implemented");
 	}
 
+	/**
+	 * Test notification sorting with equals json
+	 */
 	public void testNotificationSortEqualsJson() {
 		fail("Not implemented");
 	}
 
+	/**
+	 * Test notification sorting
+	 */
 	public void testNotificationSortEqualsXml() {
 		fail("Not implemented");
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test the signup of an account
 	 */
 	public void testSignup() {
 		fail("Not implemented");

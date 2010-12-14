@@ -39,19 +39,22 @@ public interface ISubtitles {
 			SubtitleLanguage subtitleLanguage);
 
 	/**
-	 * TODO Fill it
+	 * Return the subtitles for the given file
 	 * 
 	 * @param file
-	 * @return
+	 *            File
+	 * @return Subtitles
 	 */
 	public Set<Subtitle> getSubtitlesForFile(String file);
 
 	/**
-	 * TODO Fill it
+	 * Return the subtitle for the given file and with the specified language
 	 * 
 	 * @param file
+	 *            Name of the file
 	 * @param subtitleLanguage
-	 * @return
+	 *            Language of the subtitle
+	 * @return Subtitles
 	 */
 	public Set<Subtitle> getSubtitlesForFile(String file, SubtitleLanguage subtitleLanguage);
 

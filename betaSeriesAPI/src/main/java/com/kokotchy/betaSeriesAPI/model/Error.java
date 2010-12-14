@@ -20,7 +20,7 @@ public class Error {
 	private String text;
 
 	/**
-	 * TODO Fill it
+	 * Create an error
 	 */
 	public Error() {
 		this(null);

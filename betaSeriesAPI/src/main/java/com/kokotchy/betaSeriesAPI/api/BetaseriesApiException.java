@@ -18,14 +18,15 @@ public class BetaseriesApiException extends RuntimeException {
 	private static final long serialVersionUID = -1719473867281748759L;
 
 	/**
-	 *
+	 * Errors
 	 */
 	private Set<Error> errors;
 
 	/**
-	 * TODO Fill it
+	 * Create a new exception with the given errors
 	 * 
 	 * @param errors
+	 *            Errors
 	 */
 	public BetaseriesApiException(Set<Error> errors) {
 		super("Error with the api: " + Utils.getErrorsAsString(errors));
@@ -33,7 +34,7 @@ public class BetaseriesApiException extends RuntimeException {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the errors
 	 * 
 	 * @return Return the errors to get
 	 */
@@ -41,12 +42,4 @@ public class BetaseriesApiException extends RuntimeException {
 		return errors;
 	}
 
-	/**
-	 * TODO Fill it
-	 * Set the field with the given value
-	 * errors
-	 */
-	public void setErrors(Set<Error> errors) {
-		this.errors = errors;
-	}
 }

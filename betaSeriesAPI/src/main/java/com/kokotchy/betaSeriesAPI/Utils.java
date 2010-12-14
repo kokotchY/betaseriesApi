@@ -78,10 +78,11 @@ public class Utils {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the error as a string
 	 * 
 	 * @param errors
-	 * @return
+	 *            Errors
+	 * @return String representation of the errors
 	 */
 	public static String getErrorsAsString(Set<Error> errors) {
 		if (errors == null || errors.size() == 0) {

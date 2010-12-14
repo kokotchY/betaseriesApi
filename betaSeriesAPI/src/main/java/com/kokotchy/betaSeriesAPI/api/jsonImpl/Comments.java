@@ -36,10 +36,11 @@ public class Comments implements IComments {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the comments from the json object
 	 * 
 	 * @param jsonObject
-	 * @return
+	 *            Json object
+	 * @return Comments
 	 */
 	private Set<Comment> getComments(JSONObject jsonObject) {
 		JSONObject comments = UtilsJson.getJSONObjectFromPath(jsonObject,
@@ -85,12 +86,18 @@ public class Comments implements IComments {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Post a comment on a user profile
+	 * TODO Parsing the message (with some encoder)
 	 * 
 	 * @param token
+	 *            Token of the user
 	 * @param login
+	 *            Login of the member to post the message
 	 * @param text
+	 *            Content of the message
 	 * @param responseTo
+	 *            Id of the comment responded
+	 * @return True if the comment is posted, false otherwise
 	 */
 	private boolean postAUserComment(String token, String login, String text,
 			int responseTo) {
@@ -130,15 +137,25 @@ public class Comments implements IComments {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Post a comment
 	 * TODO Found better name
+	 * <ul>
+	 * <li>season and episode >= 0 => post a comment on the episode page</li>
+	 * <li>season and episode < 0 => post on the show page
+	 * </ul>
 	 * 
 	 * @param token
+	 *            Token of the user
 	 * @param url
+	 *            Url of the show
 	 * @param text
+	 *            Text of the message
 	 * @param season
+	 *            Numbebr of the season
 	 * @param episode
+	 *            Number of the episode
 	 * @param responseTo
+	 *            Id of the comment htat is responsed
 	 */
 	private boolean postGenericComment(String token, String url, String text,
 			int season, int episode, int responseTo) {

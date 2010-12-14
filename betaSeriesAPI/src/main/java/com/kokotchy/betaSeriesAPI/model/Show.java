@@ -55,7 +55,7 @@ public class Show {
 	private boolean archived;
 
 	/**
-	 *
+	 * Number of episodes by seasons
 	 */
 	private Map<Integer, Integer> numberEpisodesBySeasons;
 
@@ -92,10 +92,12 @@ public class Show {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Add the number of episode for the given season
 	 * 
 	 * @param season
+	 *            Season number
 	 * @param nbEpisode
+	 *            Number of episode
 	 */
 	public void addNumberEpisodeForSeason(Integer season, Integer nbEpisode) {
 		numberEpisodesBySeasons.put(season, nbEpisode);
@@ -146,19 +148,20 @@ public class Show {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the number of episodes by seasons
 	 * 
-	 * @return Return the numberEpisodesBySeasons to get
+	 * @return Number of episodes by seasons
 	 */
 	public Map<Integer, Integer> getNumberEpisodesBySeasons() {
 		return numberEpisodesBySeasons;
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the number of episodes for the given season
 	 * 
 	 * @param season
-	 * @return
+	 *            Season
+	 * @return Number of episode for the given season
 	 */
 	public Integer getNumberEpisodesForSeason(Integer season) {
 		Integer numberEpisode = numberEpisodesBySeasons.get(season);
@@ -169,7 +172,7 @@ public class Show {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the number of season
 	 * 
 	 * @return
 	 */
