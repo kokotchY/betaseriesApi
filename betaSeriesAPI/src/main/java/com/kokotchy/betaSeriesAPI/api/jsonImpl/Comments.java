@@ -1,5 +1,7 @@
 package com.kokotchy.betaSeriesAPI.api.jsonImpl;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -87,7 +89,6 @@ public class Comments implements IComments {
 
 	/**
 	 * Post a comment on a user profile
-	 * TODO Parsing the message (with some encoder)
 	 * 
 	 * @param token
 	 *            Token of the user
@@ -103,7 +104,13 @@ public class Comments implements IComments {
 			int responseTo) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("member", login);
-		params.put("text", text);
+		String encode = text;
+		try {
+			encode = URLEncoder.encode(text, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		params.put("text", encode);
 		if (responseTo >= 0) {
 			params.put("in_reply_to", "" + responseTo);
 		}

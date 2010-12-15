@@ -1,5 +1,7 @@
 package com.kokotchy.betaSeriesAPI.api.xmlImpl;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -97,7 +99,13 @@ public class Comments implements IComments {
 			int responseTo) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("member", login);
-		params.put("text", text);
+		String encode = text;
+		try {
+			encode = URLEncoder.encode(text, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		params.put("text", encode);
 		params.put("token", token);
 		if (responseTo >= 0) {
 			params.put("in_reply_to", "" + responseTo);
