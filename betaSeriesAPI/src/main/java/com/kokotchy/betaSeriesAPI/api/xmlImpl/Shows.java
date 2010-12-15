@@ -11,6 +11,7 @@ import org.dom4j.Document;
 import org.dom4j.Node;
 
 import com.kokotchy.betaSeriesAPI.UtilsXml;
+import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.api.IShows;
 import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.ShowFactory;
@@ -42,7 +43,7 @@ public class Shows implements IShows {
 	@Override
 	public boolean add(String url, String token) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("token", token);
+		params.put(Constants.TOKEN, token);
 		Document document = UtilsXml.executeQuery("shows/add/" + url, apiKey,
 				params);
 		return !UtilsXml.hasErrors(document);
@@ -118,17 +119,17 @@ public class Shows implements IShows {
 		Document document = null;
 		Map<String, String> params = new HashMap<String, String>();
 		if (token != null) {
-			params.put("token", token);
+			params.put(Constants.TOKEN, token);
 		}
 		if (seasonNb > 0) {
-			params.put("season", "" + seasonNb);
+			params.put(Constants.SEASON, "" + seasonNb);
 		}
 		document = UtilsXml.executeQuery("shows/episodes/" + url, apiKey,
 				params);
 		List<Node> seasons = document.selectNodes("/root/seasons/season");
 		Set<Season> result = new HashSet<Season>();
 		for (Node node : seasons) {
-			Season season = new Season(UtilsXml.readInt(node, "number"));
+			Season season = new Season(UtilsXml.readInt(node, Constants.NUMBER));
 			List<Node> episodes = node.selectNodes("episodes/episode");
 			for (Node episodeNode : episodes) {
 				season.addEpisode(EpisodeFactory.createEpisode(episodeNode));
@@ -141,7 +142,7 @@ public class Shows implements IShows {
 	@Override
 	public boolean remove(String url, String token) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("token", token);
+		params.put(Constants.TOKEN, token);
 		Document document = UtilsXml.executeQuery("shows/remove/" + url,
 				apiKey, params);
 		return !UtilsXml.hasErrors(document);
@@ -151,7 +152,7 @@ public class Shows implements IShows {
 	@Override
 	public Set<Show> search(String title) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("title", title);
+		params.put(Constants.SHOW_TITLE, title);
 		Document document = UtilsXml.executeQuery("shows/search", apiKey,
 				params);
 		Set<Show> shows = new HashSet<Show>();

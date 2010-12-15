@@ -11,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
+import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.api.IShows;
 import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.ShowFactory;
@@ -42,7 +43,7 @@ public class Shows implements IShows {
 	@Override
 	public boolean add(String url, String token) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("token", token);
+		params.put(Constants.TOKEN, token);
 		JSONObject jsonObject = UtilsJson.executeQuery("shows/add/" + url,
 				apiKey, params);
 		return !UtilsJson.hasErrors(jsonObject);
@@ -111,11 +112,11 @@ public class Shows implements IShows {
 		JSONObject jsonObject = null;
 		Map<String, String> params = new HashMap<String, String>();
 		if (seasonNb > 0) {
-			params.put("season", "" + seasonNb);
+			params.put(Constants.SEASON, "" + seasonNb);
 		}
 
 		if (token != null) {
-			params.put("token", token);
+			params.put(Constants.TOKEN, token);
 		}
 
 		jsonObject = UtilsJson.executeQuery("shows/episodes/" + url, apiKey,
@@ -128,9 +129,9 @@ public class Shows implements IShows {
 			for (int i = 0; i < seasonsLength; i++) {
 				JSONObject seasonObject = seasonsArray.getJSONObject(i);
 				Season season = new Season(UtilsJson.getIntValue(seasonObject,
-						"number"));
+						Constants.LIMIT));
 				JSONArray episodesArray = UtilsJson.getJSONArray(seasonObject,
-						"episodes");
+						Constants.EPISODES);
 				int episodesLength = episodesArray.length();
 				for (int j = 0; j < episodesLength; j++) {
 					JSONObject episodeObject = episodesArray.getJSONObject(j);
@@ -176,7 +177,7 @@ public class Shows implements IShows {
 	@Override
 	public boolean remove(String url, String token) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("token", token);
+		params.put(Constants.TOKEN, token);
 		JSONObject jsonObject = UtilsJson.executeQuery("shows/remove/" + url,
 				apiKey, params);
 		return !UtilsJson.hasErrors(jsonObject);
@@ -185,7 +186,7 @@ public class Shows implements IShows {
 	@Override
 	public Set<Show> search(String title) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("title", title);
+		params.put(Constants.SHOW_TITLE, title);
 		JSONObject jsonObject = UtilsJson.executeQuery("shows/search", apiKey,
 				params);
 		return getShows(jsonObject);

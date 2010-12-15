@@ -122,4 +122,18 @@ public class Constants {
 	 */
 	public static final String VIEW = "view";
 
+	/**
+	 * TODO Fill it
+	 */
+	public static final String SHOW_TITLE = "title";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String EPISODES = "episodes";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String NUMBER = "number";
 }
