@@ -108,7 +108,18 @@ public class Constants {
 	public static final String MEMBER_LOGIN = "login";
 
 	/**
-	 *
+	 * TODO Fill it
 	 */
 	public static final String ERROR_CODE = "code";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String UNSEEN = "unseen";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String VIEW = "view";
+
 }

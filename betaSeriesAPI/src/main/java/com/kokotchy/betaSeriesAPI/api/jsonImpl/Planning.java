@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
+import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.api.IPlanning;
 import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
 import com.kokotchy.betaSeriesAPI.model.Episode;
@@ -73,10 +74,10 @@ public class Planning implements IPlanning {
 			Map<String, String> params = new HashMap<String, String>();
 			String action;
 			if (unseen != null && unseen) {
-				params.put("view", "unseen");
+				params.put(Constants.VIEW, Constants.UNSEEN);
 			}
 			if (identifiedUser) {
-				params.put("token", token);
+				params.put(Constants.TOKEN, token);
 				action = "planning/member";
 			} else {
 				action = "planning/member/" + token;
