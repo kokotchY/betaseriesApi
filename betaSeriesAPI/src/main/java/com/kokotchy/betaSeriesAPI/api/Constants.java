@@ -41,4 +41,74 @@ public class Constants {
 	 * TODO Fill it
 	 */
 	public static final String COMMENT_MEMBER = "member";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String MEMBER_LAST_ID = "last_id";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String LIMIT = "number";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String ORDER_DESC = "desc";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String ORDER_ASC = "asc";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String SORT = "sort";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String NO = "no";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String YES = "yes";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String SEEN = "seen";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String LANG_ALL = "all";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String LANG_VOVF = "vovf";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String LANG_VF = "vf";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String MEMBER_PASSWORD = "password";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String MEMBER_LOGIN = "login";
+
+	/**
+	 *
+	 */
+	public static final String ERROR_CODE = "code";
 }

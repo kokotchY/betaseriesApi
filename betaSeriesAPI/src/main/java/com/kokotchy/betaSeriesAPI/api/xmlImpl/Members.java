@@ -10,6 +10,7 @@ import org.dom4j.Node;
 
 import com.kokotchy.betaSeriesAPI.Utils;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
+import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.api.IMembers;
 import com.kokotchy.betaSeriesAPI.api.NotImplementedException;
 import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
@@ -46,8 +47,8 @@ public class Members implements IMembers {
 	@Override
 	public String auth(String login, String password) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("login", login);
-		params.put("password", Utils.getMD5(password));
+		params.put(Constants.MEMBER_LOGIN, login);
+		params.put(Constants.MEMBER_PASSWORD, Utils.getMD5(password));
 		Document document = UtilsXml.executeQuery("members/auth", apiKey,
 				params);
 		if (!UtilsXml.hasErrors(document)) {
@@ -60,7 +61,7 @@ public class Members implements IMembers {
 	@Override
 	public boolean destroy(String token) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("token", token);
+		params.put(Constants.TOKEN, token);
 		UtilsXml.executeQuery("members/destroy", apiKey, params);
 		// TODO Check for error
 		return true;
@@ -79,18 +80,18 @@ public class Members implements IMembers {
 		String lang = null;
 		switch (subtitleLanguage) {
 		case VF:
-			lang = "vf";
+			lang = Constants.LANG_VF;
 			break;
 		case VOVF:
-			lang = "vovf";
+			lang = Constants.LANG_VOVF;
 			break;
 		case ALL:
-			lang = "all";
+			lang = Constants.LANG_ALL;
 			break;
 		}
 		List<Episode> result = new LinkedList<Episode>();
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("token", token);
+		params.put(Constants.TOKEN, token);
 		Document document = UtilsXml.executeQuery("members/episodes/" + lang,
 				apiKey, params);
 		List<Node> nodes = document.selectNodes("/root/episodes/episode");
@@ -118,7 +119,7 @@ public class Members implements IMembers {
 			document = UtilsXml.executeQuery("members/infos/" + user, apiKey);
 		} else {
 			Map<String, String> params = new HashMap<String, String>();
-			params.put("token", user);
+			params.put(Constants.TOKEN, user);
 			document = UtilsXml.executeQuery("members/infos", apiKey, params);
 		}
 		return MemberFactory.createMember(document
@@ -172,26 +173,26 @@ public class Members implements IMembers {
 			Boolean seen, int nb, int lastId, SortType sort) {
 		Map<String, String> params = new HashMap<String, String>();
 		if (seen != null) {
-			params.put("seen", seen ? "yes" : "no");
+			params.put(Constants.SEEN, seen ? Constants.YES : Constants.NO);
 		}
 
 		switch (sort) {
 		case ASC:
-			params.put("sort", "asc");
+			params.put(Constants.SORT, Constants.ORDER_ASC);
 			break;
 		case DESC:
-			params.put("sort", "desc");
+			params.put(Constants.SORT, Constants.ORDER_DESC);
 			break;
 		default:
 		}
 
 		if (nb > 0) {
-			params.put("number", "" + nb);
+			params.put(Constants.LIMIT, "" + nb);
 		}
 		if (lastId > 0) {
-			params.put("last_id", "" + lastId);
+			params.put(Constants.MEMBER_LAST_ID, "" + lastId);
 		}
-		params.put("token", token);
+		params.put(Constants.TOKEN, token);
 		Document document = UtilsXml.executeQuery("members/notifications",
 				apiKey, params);
 		List<Node> nodes = document
@@ -228,11 +229,11 @@ public class Members implements IMembers {
 	@Override
 	public boolean isActive(String token) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("token", token);
+		params.put(Constants.TOKEN, token);
 		Document document = UtilsXml.executeQuery("members/is_active", apiKey,
 				params);
 		Node node = document.selectSingleNode("/root");
-		return UtilsXml.readBoolean(node, "code");
+		return UtilsXml.readBoolean(node, Constants.ERROR_CODE);
 	}
 
 	@Override
@@ -243,9 +244,9 @@ public class Members implements IMembers {
 	@Override
 	public boolean setDownloaded(String token, String url, int season, int episode) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("season", "" + season);
-		params.put("episode", "" + episode);
-		params.put("token", token);
+		params.put(Constants.SEASON, "" + season);
+		params.put(Constants.EPISODE, "" + episode);
+		params.put(Constants.TOKEN, token);
 		UtilsXml.executeQuery("members/downloaded/" + url, apiKey, params);
 		// TODO Check for error
 		return true;
@@ -254,9 +255,9 @@ public class Members implements IMembers {
 	@Override
 	public boolean setWatched(String token, String url, int season, int episode) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("season", "" + season);
-		params.put("episode", "" + episode);
-		params.put("token", token);
+		params.put(Constants.SEASON, "" + season);
+		params.put(Constants.EPISODE, "" + episode);
+		params.put(Constants.TOKEN, token);
 		UtilsXml.executeQuery("members/watched/" + url, apiKey, params);
 		// TODO Check for error
 		return true;
