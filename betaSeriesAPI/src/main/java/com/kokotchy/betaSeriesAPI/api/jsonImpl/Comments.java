@@ -11,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
+import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.api.IComments;
 import com.kokotchy.betaSeriesAPI.api.factories.CommentFactory;
 import com.kokotchy.betaSeriesAPI.model.Comment;
@@ -73,8 +74,8 @@ public class Comments implements IComments {
 	@Override
 	public Set<Comment> getComments(String url, int season, int episode) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("season", "" + season);
-		params.put("episode", "" + episode);
+		params.put(Constants.SEASON, "" + season);
+		params.put(Constants.EPISODE, "" + episode);
 		JSONObject jsonObject = UtilsJson.executeQuery("comments/episode/"
 				+ url, apiKey, params);
 		return getComments(jsonObject);
@@ -103,18 +104,18 @@ public class Comments implements IComments {
 	private boolean postAUserComment(String token, String login, String text,
 			int responseTo) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("member", login);
+		params.put(Constants.COMMENT_MEMBER, login);
 		String encode = text;
 		try {
 			encode = URLEncoder.encode(text, "UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-		params.put("text", encode);
+		params.put(Constants.COMMENT_TEXT, encode);
 		if (responseTo >= 0) {
-			params.put("in_reply_to", "" + responseTo);
+			params.put(Constants.COMMENT_IN_REPLY_TO, "" + responseTo);
 		}
-		params.put("token", token);
+		params.put(Constants.TOKEN, token);
 		JSONObject jsonObject = UtilsJson.executeQuery("comments/post/member", apiKey, params);
 		// TODO Check if there is error
 		return true;
@@ -168,20 +169,28 @@ public class Comments implements IComments {
 			int season, int episode, int responseTo) {
 		Map<String, String> params = new HashMap<String, String>();
 		String action = null;
-		params.put("text", text);
+		String encoded = text;
+		try {
+			encoded = URLEncoder.encode(text, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		params.put(Constants.COMMENT_TEXT, encoded);
+		params.put(Constants.SHOW, url);
 		if (season < 0 && episode < 0) {
 			action = "comments/post/show";
-			params.put("show", url);
-			if (responseTo >= 0) {
-				params.put("in_reply_to", "" + responseTo);
-			}
 		} else if (season > 0 && episode > 0) {
 			action = "comments/post/episode";
-			params.put("season", "" + season);
-			params.put("episode", "" + episode);
-			if (responseTo >= 0) {
-				params.put("in_reply_to", "" + responseTo);
-			}
+			params.put(Constants.SEASON, "" + season);
+			params.put(Constants.EPISODE, "" + episode);
+		}
+
+		if (responseTo >= 0) {
+			params.put(Constants.COMMENT_IN_REPLY_TO, "" + responseTo);
+		}
+
+		if (token != null) {
+			params.put(Constants.TOKEN, token);
 		}
 
 		// TODO Check if there is error

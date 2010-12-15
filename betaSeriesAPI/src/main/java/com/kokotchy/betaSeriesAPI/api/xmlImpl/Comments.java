@@ -12,6 +12,7 @@ import org.dom4j.Document;
 import org.dom4j.Node;
 
 import com.kokotchy.betaSeriesAPI.UtilsXml;
+import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.api.IComments;
 import com.kokotchy.betaSeriesAPI.api.factories.CommentFactory;
 import com.kokotchy.betaSeriesAPI.model.Comment;
@@ -68,8 +69,8 @@ public class Comments implements IComments {
 	@Override
 	public Set<Comment> getComments(String url, int season, int episode) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("season", "" + season);
-		params.put("episode", "" + episode);
+		params.put(Constants.SEASON, "" + season);
+		params.put(Constants.EPISODE, "" + episode);
 		Document document = UtilsXml.executeQuery("comments/episode/" + url,
 				apiKey, params);
 		return getComments(document);
@@ -98,17 +99,17 @@ public class Comments implements IComments {
 	private boolean postAUserComment(String token, String login, String text,
 			int responseTo) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("member", login);
+		params.put(Constants.COMMENT_MEMBER, login);
 		String encode = text;
 		try {
 			encode = URLEncoder.encode(text, "UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-		params.put("text", encode);
-		params.put("token", token);
+		params.put(Constants.COMMENT_TEXT, encode);
+		params.put(Constants.TOKEN, token);
 		if (responseTo >= 0) {
-			params.put("in_reply_to", "" + responseTo);
+			params.put(Constants.COMMENT_IN_REPLY_TO, "" + responseTo);
 		}
 		UtilsXml.executeQuery("comments/post/member", apiKey, params);
 		// TODO Check for error
@@ -158,24 +159,30 @@ public class Comments implements IComments {
 			int season, int episode, int responseTo) {
 		Map<String, String> params = new HashMap<String, String>();
 		String action = null;
-		params.put("text", text);
-		params.put("show", url);
+		String encode = text;
+		try {
+			encode = URLEncoder.encode(text, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		params.put(Constants.COMMENT_TEXT, encode);
+		params.put(Constants.SHOW, url);
 		if (season < 0 && episode < 0) {
 			action = "comments/post/show";
-			if (responseTo >= 0) {
-				params.put("in_reply_to", "" + responseTo);
-			}
 		} else if (season > 0 && episode > 0) {
 			action = "comments/post/episode";
-			params.put("season", "" + season);
-			params.put("episode", "" + episode);
-			if (responseTo >= 0) {
-				params.put("in_reply_to", "" + responseTo);
-			}
+			params.put(Constants.SEASON, "" + season);
+			params.put(Constants.EPISODE, "" + episode);
 		}
+
 		if (token != null) {
-			params.put("token", token);
+			params.put(Constants.TOKEN, token);
 		}
+
+		if (responseTo >= 0) {
+			params.put(Constants.COMMENT_IN_REPLY_TO, "" + responseTo);
+		}
+
 		// TODO Check for error
 		if (action != null) {
 			UtilsXml.executeQuery(action, apiKey, params);
