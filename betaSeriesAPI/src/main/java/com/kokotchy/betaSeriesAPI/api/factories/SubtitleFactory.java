@@ -22,7 +22,7 @@ public class SubtitleFactory {
 	/**
 	 * TODO Fill it
 	 */
-	private static final String FILE = "file";
+	private static final String FILE = "filename";
 
 	/**
 	 * TODO Fill it
@@ -65,6 +65,11 @@ public class SubtitleFactory {
 	private static final String TITLE = "title";
 
 	/**
+	 * TODO Fill it
+	 */
+	private static final String QUALITY = "quality";
+
+	/**
 	 * Create a subtitle from the json object
 	 * 
 	 * @param jsonObject
@@ -95,6 +100,7 @@ public class SubtitleFactory {
 		subtitle.setSource(UtilsJson.getStringValue(jsonObject, SOURCE));
 		subtitle.setFile(UtilsJson.getStringValue(jsonObject, FILE));
 		subtitle.setUrl(UtilsJson.getStringValue(jsonObject, URL));
+		subtitle.setQuality(UtilsJson.getIntValue(jsonObject, QUALITY));
 
 		return subtitle;
 	}
@@ -130,6 +136,7 @@ public class SubtitleFactory {
 		subtitle.setSource(UtilsXml.readString(node, SOURCE));
 		subtitle.setFile(UtilsXml.readString(node, FILE));
 		subtitle.setUrl(UtilsXml.readString(node, URL));
+		subtitle.setQuality(UtilsXml.readInt(node, QUALITY));
 
 		return subtitle;
 	}

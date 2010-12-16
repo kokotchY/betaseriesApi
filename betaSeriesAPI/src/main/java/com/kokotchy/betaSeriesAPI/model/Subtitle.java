@@ -40,10 +40,14 @@ public class Subtitle {
 	private String file;
 
 	/**
-	 * Url to the subtitle
-	 * TODO Change to url
+	 * Url to the subtitle TODO Change to url
 	 */
 	private String url;
+
+	/**
+	 * TODO Fill it
+	 */
+	private int quality;
 
 	@Override
 	public boolean equals(Object obj) {
@@ -78,6 +82,15 @@ public class Subtitle {
 	 */
 	public SubtitleLanguage getLanguage() {
 		return language;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @return the quality
+	 */
+	public int getQuality() {
+		return quality;
 	}
 
 	/**
@@ -157,6 +170,16 @@ public class Subtitle {
 	 */
 	public void setLanguage(SubtitleLanguage language) {
 		this.language = language;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param quality
+	 *            the quality to set
+	 */
+	public void setQuality(int quality) {
+		this.quality = quality;
 	}
 
 	/**

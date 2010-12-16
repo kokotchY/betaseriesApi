@@ -61,8 +61,12 @@ public class EpisodeFactory {
 	private static final String SHOW = "show";
 
 	/**
-	 * Create a new episode from the json object
-	 * TODO Not the same as the other
+	 * TODO Fill it
+	 */
+	private static final String DOWNLOADED = "downloaded";
+
+	/**
+	 * Create a new episode from the json object TODO Not the same as the other
 	 * 
 	 * @param json
 	 *            json object
@@ -76,6 +80,7 @@ public class EpisodeFactory {
 		episode.setDate(UtilsJson.getIntValue(json, DATE));
 		episode.setTitle(UtilsJson.getStringValue(json, TITLE));
 		episode.setSeen(UtilsJson.getBooleanValue(json, HAS_SEEN));
+		episode.setDownloaded(UtilsJson.getBooleanValue(json, DOWNLOADED));
 		return episode;
 	}
 
@@ -100,6 +105,7 @@ public class EpisodeFactory {
 		episode.setScreen(UtilsXml.readString(node, SCREEN));
 		episode.setShow(UtilsXml.readString(node, SHOW));
 		episode.setShowUrl(UtilsXml.readString(node, URL));
+		episode.setDownloaded(UtilsXml.readBoolean(node, DOWNLOADED));
 
 		List<Node> subsNode = node.selectNodes("subs/sub");
 		for (Node sub : subsNode) {

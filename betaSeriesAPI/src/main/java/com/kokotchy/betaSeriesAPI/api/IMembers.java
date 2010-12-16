@@ -60,6 +60,17 @@ public interface IMembers {
 			SubtitleLanguage subtitleLanguage);
 
 	/**
+	 * TODO Fill it
+	 * 
+	 * @param token
+	 * @param subtitleLanguage
+	 * @param onlyNext
+	 * @return
+	 */
+	public List<Episode> getEpisodes(String token,
+			SubtitleLanguage subtitleLanguage, boolean onlyNext);
+
+	/**
 	 * Return the notification received by the member.
 	 * 
 	 * @param token
@@ -73,7 +84,8 @@ public interface IMembers {
 	 * @param sort
 	 * @return List of notifications
 	 */
-	public List<Notification> getNotifications(String token, boolean seen, int nb, int lastId, SortType sort);
+	public List<Notification> getNotifications(String token, boolean seen,
+			int nb, int lastId, SortType sort);
 
 	/**
 	 * Return the notification received by the member.
@@ -87,7 +99,8 @@ public interface IMembers {
 	 * @param sort
 	 * @return List of notifications
 	 */
-	public List<Notification> getNotifications(String token, boolean seen, int nb, SortType sort);
+	public List<Notification> getNotifications(String token, boolean seen,
+			int nb, SortType sort);
 
 	/**
 	 * Return the notification received by the member.
@@ -99,7 +112,8 @@ public interface IMembers {
 	 * @param sort
 	 * @return List of notifications
 	 */
-	public List<Notification> getNotifications(String token, boolean seen, SortType sort);
+	public List<Notification> getNotifications(String token, boolean seen,
+			SortType sort);
 
 	/**
 	 * Return the notification received by the member.
@@ -111,7 +125,8 @@ public interface IMembers {
 	 * @param sort
 	 * @return List of notifications
 	 */
-	public List<Notification> getNotifications(String token, int nb, SortType sort);
+	public List<Notification> getNotifications(String token, int nb,
+			SortType sort);
 
 	/**
 	 * Return information about the logged user
@@ -184,12 +199,13 @@ public interface IMembers {
 	 *            Episode number
 	 * @return If the episode is marked as downloaded
 	 */
-	public boolean setDownloaded(String token, String url, int season, int episode);
+	public boolean setDownloaded(String token, String url, int season,
+			int episode);
 
 	/**
-	 * Set the episode for the given season and url as watch
-	 * If the watched episode didn't follow the last seen episode, all episodes
-	 * between them are marked as seen.
+	 * Set the episode for the given season and url as watch If the watched
+	 * episode didn't follow the last seen episode, all episodes between them
+	 * are marked as seen.
 	 * 
 	 * @param token
 	 *            Token of the user

@@ -151,4 +151,14 @@ public class Constants {
 	 * TODO Fill it
 	 */
 	public static final String SUBTITLE_LANG_VO = "VO";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String MEMBER_VIEW = "view";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String MEMBER_NEXT = "next";
 }

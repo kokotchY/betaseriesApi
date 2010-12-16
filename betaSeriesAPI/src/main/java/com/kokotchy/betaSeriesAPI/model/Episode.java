@@ -58,6 +58,11 @@ public class Episode {
 	private boolean seen;
 
 	/**
+	 * TODO Fill it
+	 */
+	private boolean downloaded;
+
+	/**
 	 * Create a new episode
 	 */
 	public Episode() {
@@ -168,6 +173,24 @@ public class Episode {
 	}
 
 	/**
+	 * TODO Fill it
+	 * 
+	 * @return
+	 */
+	public boolean hasSubtitle() {
+		return subtitles.size() > 0;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @return the downloaded
+	 */
+	public boolean isDownloaded() {
+		return downloaded;
+	}
+
+	/**
 	 * Return if the episode is seen
 	 * 
 	 * @return Return if the episode is seen
@@ -194,6 +217,16 @@ public class Episode {
 	 */
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param downloaded
+	 *            the downloaded to set
+	 */
+	public void setDownloaded(boolean downloaded) {
+		this.downloaded = downloaded;
 	}
 
 	/**
