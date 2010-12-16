@@ -11,7 +11,6 @@ import com.kokotchy.betaSeriesAPI.model.StatusInfo;
  * Status of the website
  * 
  * @author kokotchy
- * 
  */
 public class Status implements IStatus {
 

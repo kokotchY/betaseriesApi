@@ -10,6 +10,7 @@ import org.dom4j.Document;
 import org.dom4j.Node;
 
 import com.kokotchy.betaSeriesAPI.UtilsXml;
+import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.api.ISubtitles;
 import com.kokotchy.betaSeriesAPI.api.factories.SubtitleFactory;
 import com.kokotchy.betaSeriesAPI.model.Subtitle;
@@ -66,15 +67,15 @@ public class Subtitles implements ISubtitles {
 			SubtitleLanguage subtitleLanguage) {
 		Map<String, String> params = new HashMap<String, String>();
 		if (nb > 0) {
-			params.put("number", "" + nb);
+			params.put(Constants.LIMIT, "" + nb);
 		}
 
 		switch (subtitleLanguage) {
 		case VO:
-			params.put("language", "VO");
+			params.put(Constants.SUBTITLE_LANGUAGE, Constants.SUBTITLE_LANG_VO);
 			break;
 		case VF:
-			params.put("language", "VF");
+			params.put(Constants.SUBTITLE_LANGUAGE, Constants.SUBTITLE_LANG_VF);
 			break;
 		}
 

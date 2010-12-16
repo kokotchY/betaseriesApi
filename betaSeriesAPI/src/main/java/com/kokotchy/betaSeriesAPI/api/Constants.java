@@ -136,4 +136,19 @@ public class Constants {
 	 * TODO Fill it
 	 */
 	public static final String NUMBER = "number";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String SUBTITLE_LANGUAGE = "language";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String SUBTITLE_LANG_VF = "VF";
+
+	/**
+	 * TODO Fill it
+	 */
+	public static final String SUBTITLE_LANG_VO = "VO";
 }
