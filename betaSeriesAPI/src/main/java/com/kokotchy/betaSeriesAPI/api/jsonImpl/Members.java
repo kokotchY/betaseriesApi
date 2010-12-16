@@ -64,19 +64,21 @@ public class Members implements IMembers {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.TOKEN, token);
 		UtilsJson.executeQuery("members/destroy", apiKey, params);
-		// TODO Check for error
+		// FIXME Check for error
 		return true;
 	}
 
 	@Override
 	public int getDateCache(String token, boolean identifieduser) {
 		// TODO Auto-generated method stub
+		// FIXME Check for error
 		return 0;
 	}
 
 	@Override
 	public List<Episode> getEpisodes(String token,
 			SubtitleLanguage subtitleLanguage) {
+		// FIXME Check for error
 		String lang = null;
 		switch (subtitleLanguage) {
 		case VF:
@@ -113,6 +115,7 @@ public class Members implements IMembers {
 	 * identifiedUser has to be true and user has to be the token. If
 	 * identifiedUser is false, then the user is the login of the user to
 	 * retrieve.
+	 * FIXME Check for error
 	 * 
 	 * @param user
 	 *            User or token to retrieve
@@ -165,6 +168,7 @@ public class Members implements IMembers {
 	 * <li>nb greater than 0</li>
 	 * <li>lastId greater than 0</li>
 	 * </ul>
+	 * FIXME Check for error
 	 * 
 	 * @param seen
 	 *            If the notification has to be already seen or not
@@ -224,6 +228,7 @@ public class Members implements IMembers {
 	@Override
 	public Member infos(String token, int lastCache) {
 		// TODO Auto-generated method stub
+		// FIXME Check for error
 		return null;
 	}
 
@@ -235,6 +240,7 @@ public class Members implements IMembers {
 	@Override
 	public Member infosOfUser(String user, int lastCache) {
 		// TODO Auto-generated method stub
+		// FIXME Check for error
 		return null;
 	}
 
@@ -259,6 +265,7 @@ public class Members implements IMembers {
 		params.put(Constants.EPISODE, "" + episode);
 		params.put(Constants.TOKEN, token);
 		UtilsJson.executeQuery("members/downloaded/" + url, apiKey, params);
+		// FIXME Check for error
 		return true;
 	}
 
@@ -269,13 +276,14 @@ public class Members implements IMembers {
 		params.put(Constants.EPISODE, "" + episode);
 		params.put(Constants.TOKEN, token);
 		UtilsJson.executeQuery("members/watched/" + url, apiKey, params);
-		// TODO Check for error
+		// FIXME Check for error
 		return true;
 	}
 
 	@Override
 	public boolean signup(String login, String password, String email) {
 		throw new NotImplementedException();
+		// FIXME Check for error
 	}
 
 }

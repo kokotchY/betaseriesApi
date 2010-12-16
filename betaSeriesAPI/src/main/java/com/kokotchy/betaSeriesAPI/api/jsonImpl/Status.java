@@ -31,6 +31,7 @@ public class Status implements IStatus {
 	@Override
 	public StatusInfo getStatus() {
 		JSONObject jsonObject = UtilsJson.executeQuery("status", apiKey);
+		// FIXME Check for error
 		return StatusInfoFactory.createStatusInfo(jsonObject);
 	}
 

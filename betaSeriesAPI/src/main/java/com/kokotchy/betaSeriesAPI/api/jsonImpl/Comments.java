@@ -40,6 +40,7 @@ public class Comments implements IComments {
 
 	/**
 	 * Return the comments from the json object
+	 * FIXME Check for error
 	 * 
 	 * @param jsonObject
 	 *            Json object
@@ -66,6 +67,7 @@ public class Comments implements IComments {
 
 	@Override
 	public Set<Comment> getComments(String url) {
+		// FIXME Check for error
 		JSONObject jsonObject = UtilsJson.executeQuery("comments/show/" + url,
 				apiKey);
 		return getComments(jsonObject);
@@ -73,6 +75,7 @@ public class Comments implements IComments {
 
 	@Override
 	public Set<Comment> getComments(String url, int season, int episode) {
+		// FIXME Check for error
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.SEASON, "" + season);
 		params.put(Constants.EPISODE, "" + episode);
@@ -83,6 +86,7 @@ public class Comments implements IComments {
 
 	@Override
 	public Set<Comment> getUserComments(String login) {
+		// FIXME Check for error
 		JSONObject jsonObject = UtilsJson.executeQuery("comments/member/"
 				+ login, apiKey);
 		return getComments(jsonObject);
@@ -90,6 +94,7 @@ public class Comments implements IComments {
 
 	/**
 	 * Post a comment on a user profile
+	 * FIXME Check for error
 	 * 
 	 * @param token
 	 *            Token of the user
@@ -117,7 +122,6 @@ public class Comments implements IComments {
 		}
 		params.put(Constants.TOKEN, token);
 		JSONObject jsonObject = UtilsJson.executeQuery("comments/post/member", apiKey, params);
-		// TODO Check if there is error
 		return true;
 	}
 
@@ -147,6 +151,7 @@ public class Comments implements IComments {
 	/**
 	 * Post a comment
 	 * TODO Found better name
+	 * FIXME Check for error
 	 * <ul>
 	 * <li>season and episode >= 0 => post a comment on the episode page</li>
 	 * <li>season and episode < 0 => post on the show page
@@ -193,7 +198,6 @@ public class Comments implements IComments {
 			params.put(Constants.TOKEN, token);
 		}
 
-		// TODO Check if there is error
 		if (action != null) {
 			UtilsJson.executeQuery(action, apiKey, params);
 			return true;

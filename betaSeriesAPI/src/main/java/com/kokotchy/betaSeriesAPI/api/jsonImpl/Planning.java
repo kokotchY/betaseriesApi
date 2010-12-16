@@ -56,6 +56,7 @@ public class Planning implements IPlanning {
 	 * planning. Unseen parameter used to select only unseen episodes. Token is
 	 * used for the identified user if identifiedUser, or the login of the user
 	 * if not identifiedUser
+	 * FIXME Check for error
 	 * 
 	 * @param unseen
 	 *            Only uneseen erpisode

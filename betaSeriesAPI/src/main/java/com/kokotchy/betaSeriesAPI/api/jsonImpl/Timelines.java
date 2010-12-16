@@ -38,6 +38,7 @@ public class Timelines implements ITimelines {
 
 	@Override
 	public Set<Event> getFriendsTimeline(String token) {
+		// FIXME Check for error
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.TOKEN, token);
 		return getTimeline(UtilsJson.executeQuery("timeline/friends", apiKey,
@@ -46,6 +47,7 @@ public class Timelines implements ITimelines {
 
 	@Override
 	public Set<Event> getFriendsTimeline(String token, int nb) {
+		// FIXME Check for error
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.TOKEN, token);
 		params.put(Constants.LIMIT, "" + nb);
@@ -60,6 +62,7 @@ public class Timelines implements ITimelines {
 
 	@Override
 	public Set<Event> getHomeTimeline(int nb) {
+		// FIXME Check for error
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.LIMIT, "" + nb);
 		return getTimeline(UtilsJson.executeQuery("timeline/home", apiKey,
@@ -68,6 +71,7 @@ public class Timelines implements ITimelines {
 
 	/**
 	 * Return the timeline from the document
+	 * FIXME Check for error
 	 * 
 	 * @param jsonObject
 	 *            Json object
@@ -97,6 +101,7 @@ public class Timelines implements ITimelines {
 
 	@Override
 	public Set<Event> getTimelineOfUser(String user, int nb) {
+		// FIXME Check for error
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.LIMIT, "" + nb);
 		return getTimeline(UtilsJson.executeQuery("timeline/member/" + user,

@@ -62,6 +62,7 @@ public class Shows implements IShows {
 
 	@Override
 	public Set<Show> displayAll() {
+		// FIXME Check for error
 		JSONObject jsonObject = UtilsJson.executeQuery("shows/display/all",
 				apiKey);
 		return getShows(jsonObject);
@@ -74,6 +75,7 @@ public class Shows implements IShows {
 
 	@Override
 	public Season getEpisodes(String url, int seasonNb) {
+		// FIXME Check for error
 		Set<Season> episodesFromSeason = getEpisodesFromSeason(null, url, seasonNb);
 		Iterator<Season> iterator = episodesFromSeason.iterator();
 		if (iterator.hasNext()) {
@@ -89,6 +91,7 @@ public class Shows implements IShows {
 
 	@Override
 	public Season getEpisodes(String token, String url, int seasonNb) {
+		// FIXME Check for error
 		Set<Season> episodesFromSeason = getEpisodesFromSeason(token, url, seasonNb);
 		Iterator<Season> iterator = episodesFromSeason.iterator();
 		if (iterator.hasNext()) {
@@ -100,6 +103,7 @@ public class Shows implements IShows {
 	/**
 	 * Return the episodes from the given season. If seasonNb is < 0, then
 	 * retrieve all seasons
+	 * FIXME Check for error
 	 * 
 	 * @param token
 	 * @param url
@@ -148,6 +152,7 @@ public class Shows implements IShows {
 
 	/**
 	 * Return the shows from the json object
+	 * FIXME Check for error
 	 * 
 	 * @param jsonObject
 	 *            Json object

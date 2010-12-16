@@ -52,6 +52,7 @@ public class Subtitles implements ISubtitles {
 	/**
 	 * Return the last subtitles. If the url is not null, return subtitles for
 	 * the show. If the nb is greater than 0, limit the number of subtitles
+	 * FIXME Check for error
 	 * 
 	 * @param url
 	 *            Url of the show
@@ -103,6 +104,7 @@ public class Subtitles implements ISubtitles {
 	@Override
 	public Set<Subtitle> getSubtitlesForFile(String file) {
 		// TODO Auto-generated method stub
+		// FIXME Check for error
 		return null;
 	}
 
@@ -110,12 +112,14 @@ public class Subtitles implements ISubtitles {
 	public Set<Subtitle> getSubtitlesForFile(String file,
 			SubtitleLanguage subtitleLanguage) {
 		// TODO Auto-generated method stub
+		// FIXME Check for error
 		return null;
 	}
 
 	@Override
 	public Set<Subtitle> show(String url, SubtitleLanguage subtitleLanguage,
 			int season, int episode) {
+		// FIXME Check for error
 		Map<String, String> params = new HashMap<String, String>();
 		if (season > 0) {
 			params.put(Constants.SEASON, "" + season);
