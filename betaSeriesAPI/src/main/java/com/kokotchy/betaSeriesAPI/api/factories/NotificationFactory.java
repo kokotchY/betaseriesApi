@@ -15,6 +15,26 @@ import com.kokotchy.betaSeriesAPI.model.Notification;
  */
 public class NotificationFactory {
 	/**
+	 * TODO Fill it
+	 */
+	private static final String SEEN = "seen";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String DATE = "date";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String HTML = "html";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String ID = "id";
+
+	/**
 	 * Create a notification from json object
 	 * 
 	 * @param jsonObject
@@ -24,11 +44,11 @@ public class NotificationFactory {
 	public static Notification createNotification(JSONObject jsonObject) {
 		Notification notification = new Notification();
 		try {
-			notification.setId(jsonObject.getInt("id"));
-			notification.setHtml(jsonObject.getString("html"));
-			notification.setDate(jsonObject.getInt("date"));
+			notification.setId(jsonObject.getInt(ID));
+			notification.setHtml(jsonObject.getString(HTML));
+			notification.setDate(jsonObject.getInt(DATE));
 			notification.setSeen(UtilsJson.getJSONBooleanFromPath(jsonObject,
-					"seen"));
+					SEEN));
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
@@ -44,10 +64,10 @@ public class NotificationFactory {
 	 */
 	public static Notification createNotification(Node node) {
 		Notification notification = new Notification();
-		notification.setId(UtilsXml.readInt(node, "id"));
-		notification.setHtml(UtilsXml.readString(node, "html"));
-		notification.setDate(UtilsXml.readInt(node, "date"));
-		notification.setSeen(UtilsXml.readBoolean(node, "seen"));
+		notification.setId(UtilsXml.readInt(node, ID));
+		notification.setHtml(UtilsXml.readString(node, HTML));
+		notification.setDate(UtilsXml.readInt(node, DATE));
+		notification.setSeen(UtilsXml.readBoolean(node, SEEN));
 		return notification;
 	}
 }

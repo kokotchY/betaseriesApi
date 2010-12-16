@@ -17,6 +17,16 @@ import com.kokotchy.betaSeriesAPI.model.Version;
  */
 public class VersionFactory {
 	/**
+	 * TODO Fill it
+	 */
+	private static final String CHANGES = "changes";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String DATE = "date";
+
+	/**
 	 * Create a new version from the json object
 	 * 
 	 * @param versionObject
@@ -25,9 +35,9 @@ public class VersionFactory {
 	 */
 	public static Version createVersion(JSONObject versionObject) {
 		Version version = new Version();
-		version.setDate(UtilsJson.getIntValue(versionObject, "date"));
+		version.setDate(UtilsJson.getIntValue(versionObject, DATE));
 
-		JSONObject changes = UtilsJson.getJSONObject(versionObject, "changes");
+		JSONObject changes = UtilsJson.getJSONObject(versionObject, CHANGES);
 		String[] names = JSONObject.getNames(changes);
 		try {
 			for (String name : names) {
@@ -51,7 +61,7 @@ public class VersionFactory {
 	@SuppressWarnings("unchecked")
 	public static Version createVersion(Node node) {
 		Version version = new Version();
-		version.setDate(UtilsXml.readInt(node, "date"));
+		version.setDate(UtilsXml.readInt(node, DATE));
 
 		List<Node> changes = node.selectNodes("changes/change");
 		for (Node changeNode : changes) {

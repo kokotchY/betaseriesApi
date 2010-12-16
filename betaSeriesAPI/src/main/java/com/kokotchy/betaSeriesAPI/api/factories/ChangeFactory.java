@@ -14,6 +14,16 @@ import com.kokotchy.betaSeriesAPI.model.Change;
  */
 public class ChangeFactory {
 	/**
+	 * TODO Fill it
+	 */
+	private static final String VALUE = "value";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String TYPE = "type";
+
+	/**
 	 * Create a new change from the json object
 	 * 
 	 * @param changeObject
@@ -22,8 +32,8 @@ public class ChangeFactory {
 	 */
 	public static Change createChange(JSONObject changeObject) {
 		Change change = new Change();
-		change.setType(UtilsJson.getStringValue(changeObject, "type"));
-		change.setValue(UtilsJson.getStringValue(changeObject, "value"));
+		change.setType(UtilsJson.getStringValue(changeObject, TYPE));
+		change.setValue(UtilsJson.getStringValue(changeObject, VALUE));
 		return change;
 	}
 
@@ -36,8 +46,8 @@ public class ChangeFactory {
 	 */
 	public static Change createChange(Node node) {
 		Change change = new Change();
-		change.setType(UtilsXml.readString(node, "type"));
-		change.setValue(UtilsXml.readString(node, "value"));
+		change.setType(UtilsXml.readString(node, TYPE));
+		change.setValue(UtilsXml.readString(node, VALUE));
 		return change;
 	}
 }

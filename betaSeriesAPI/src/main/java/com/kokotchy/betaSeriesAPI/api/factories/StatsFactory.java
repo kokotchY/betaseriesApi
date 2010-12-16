@@ -14,6 +14,41 @@ import com.kokotchy.betaSeriesAPI.model.Stats;
  */
 public class StatsFactory {
 	/**
+	 * TODO Fill it
+	 */
+	private static final String TIME_TO_SPEND = "time_to_spend";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String TIME_ON_TV = "time_on_tv";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String EPISODES_TO_WATCH = "episodes_to_watch";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String PROGRESS = "progress";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String EPISODES = "episodes";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String SEASONS = "seasons";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String SHOWS = "shows";
+
+	/**
 	 * Create stats from json Object
 	 * 
 	 * @param jsonObject
@@ -23,13 +58,13 @@ public class StatsFactory {
 	public static Stats createStats(JSONObject jsonObject) {
 		Stats stats = new Stats();
 		try {
-			stats.setShows(jsonObject.getInt("shows"));
-			stats.setSeasons(jsonObject.getInt("seasons"));
-			stats.setEpisodes(jsonObject.getInt("episodes"));
-			stats.setProgress(jsonObject.getString("progress"));
-			stats.setEpisodesToWatch(jsonObject.getInt("episodes_to_watch"));
-			stats.setTimeOnTv(jsonObject.getInt("time_on_tv"));
-			stats.setTimeToSpend(jsonObject.getInt("time_to_spend"));
+			stats.setShows(jsonObject.getInt(SHOWS));
+			stats.setSeasons(jsonObject.getInt(SEASONS));
+			stats.setEpisodes(jsonObject.getInt(EPISODES));
+			stats.setProgress(jsonObject.getString(PROGRESS));
+			stats.setEpisodesToWatch(jsonObject.getInt(EPISODES_TO_WATCH));
+			stats.setTimeOnTv(jsonObject.getInt(TIME_ON_TV));
+			stats.setTimeToSpend(jsonObject.getInt(TIME_TO_SPEND));
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
@@ -45,13 +80,13 @@ public class StatsFactory {
 	 */
 	public static Stats createStats(Node node) {
 		Stats stats = new Stats();
-		stats.setShows(UtilsXml.readInt(node, "shows"));
-		stats.setSeasons(UtilsXml.readInt(node, "seasons"));
-		stats.setEpisodes(UtilsXml.readInt(node, "episodes"));
-		stats.setProgress(UtilsXml.readString(node, "progress"));
-		stats.setEpisodesToWatch(UtilsXml.readInt(node, "episodes_to_watch"));
-		stats.setTimeOnTv(UtilsXml.readInt(node, "time_on_tv"));
-		stats.setTimeToSpend(UtilsXml.readInt(node, "time_to_spend"));
+		stats.setShows(UtilsXml.readInt(node, SHOWS));
+		stats.setSeasons(UtilsXml.readInt(node, SEASONS));
+		stats.setEpisodes(UtilsXml.readInt(node, EPISODES));
+		stats.setProgress(UtilsXml.readString(node, PROGRESS));
+		stats.setEpisodesToWatch(UtilsXml.readInt(node, EPISODES_TO_WATCH));
+		stats.setTimeOnTv(UtilsXml.readInt(node, TIME_ON_TV));
+		stats.setTimeToSpend(UtilsXml.readInt(node, TIME_TO_SPEND));
 		return stats;
 	}
 }

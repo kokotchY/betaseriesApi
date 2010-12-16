@@ -17,6 +17,26 @@ import com.kokotchy.betaSeriesAPI.model.Member;
  */
 public class MemberFactory {
 	/**
+	 * TODO Fill it
+	 */
+	private static final String SHOWS = "shows";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String STATS = "stats";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String AVATAR = "avatar";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String LOGIN = "login";
+
+	/**
 	 * Create member object from json object
 	 * 
 	 * @param jsonObject
@@ -26,11 +46,11 @@ public class MemberFactory {
 	public static Member createMember(JSONObject jsonObject) {
 		Member member = new Member();
 		try {
-			member.setLogin(UtilsJson.getStringValue(jsonObject, "login"));
-			member.setAvatar(UtilsJson.getStringValue(jsonObject, "avatar"));
+			member.setLogin(UtilsJson.getStringValue(jsonObject, LOGIN));
+			member.setAvatar(UtilsJson.getStringValue(jsonObject, AVATAR));
 			member.setStats(StatsFactory.createStats(UtilsJson.getJSONObject(
-					jsonObject, "stats")));
-			JSONObject shows = UtilsJson.getJSONObject(jsonObject, "shows");
+					jsonObject, STATS)));
+			JSONObject shows = UtilsJson.getJSONObject(jsonObject, SHOWS);
 			for (String name : JSONObject.getNames(shows)) {
 				JSONObject show = shows.getJSONObject(name);
 				member.addShow(ShowFactory.createShow(show));
@@ -51,10 +71,10 @@ public class MemberFactory {
 	@SuppressWarnings("unchecked")
 	public static Member createMember(Node node) {
 		Member member = new Member();
-		member.setLogin(UtilsXml.readString(node, "login"));
-		member.setAvatar(UtilsXml.readString(node, "avatar"));
+		member.setLogin(UtilsXml.readString(node, LOGIN));
+		member.setAvatar(UtilsXml.readString(node, AVATAR));
 		member.setStats(StatsFactory
-				.createStats(node.selectSingleNode("stats")));
+				.createStats(node.selectSingleNode(STATS)));
 		List<Node> shows = node.selectNodes("shows/show");
 		for (Node show : shows) {
 			member.addShow(ShowFactory.createShow(show));

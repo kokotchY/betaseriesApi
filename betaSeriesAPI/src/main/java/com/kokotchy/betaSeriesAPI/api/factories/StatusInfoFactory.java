@@ -21,6 +21,31 @@ import com.kokotchy.betaSeriesAPI.model.VersionFile;
 public class StatusInfoFactory {
 
 	/**
+	 * TODO Fill it
+	 */
+	private static final String FILES = "files";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String VERSIONS = "versions";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String VERSION = "version";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String DATABASE = "database";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String STATUS = "status";
+
+	/**
 	 * Create the status informations from the document
 	 * 
 	 * @param document
@@ -31,12 +56,12 @@ public class StatusInfoFactory {
 	public static StatusInfo createStatusInfo(Document document) {
 		StatusInfo statusInfo = new StatusInfo();
 		Node websiteNode = document.selectSingleNode("/root/website");
-		statusInfo.setWebsiteStatus(UtilsXml.readString(websiteNode, "status"));
+		statusInfo.setWebsiteStatus(UtilsXml.readString(websiteNode, STATUS));
 		statusInfo.setDatabaseStatus(UtilsXml.readString(websiteNode,
-				"database"));
+				DATABASE));
 
 		Node apiNode = document.selectSingleNode("/root/api");
-		statusInfo.setVersion(UtilsXml.readString(apiNode, "version"));
+		statusInfo.setVersion(UtilsXml.readString(apiNode, VERSION));
 		List<Node> versions = apiNode.selectNodes("versions/version");
 		for (Node node : versions) {
 			Version version = VersionFactory.createVersion(node);
@@ -63,16 +88,16 @@ public class StatusInfoFactory {
 		JSONObject websiteObject = UtilsJson.getJSONObjectFromPath(jsonObject,
 				"/root/website");
 		statusInfo.setWebsiteStatus(UtilsJson.getStringValue(websiteObject,
-				"status"));
+				STATUS));
 		statusInfo.setDatabaseStatus(UtilsJson.getStringValue(websiteObject,
-				"database"));
+				DATABASE));
 
 		JSONObject apiObject = UtilsJson.getJSONObjectFromPath(jsonObject,
 				"/root/api");
-		statusInfo.setVersion(UtilsJson.getStringValue(apiObject, "version"));
+		statusInfo.setVersion(UtilsJson.getStringValue(apiObject, VERSION));
 		try {
 			JSONObject versions = UtilsJson
-					.getJSONObject(apiObject, "versions");
+					.getJSONObject(apiObject, VERSIONS);
 			String[] versionsName = JSONObject.getNames(versions);
 			for (String name : versionsName) {
 				JSONObject versionObject = versions.getJSONObject(name);
@@ -80,7 +105,7 @@ public class StatusInfoFactory {
 				statusInfo.addVersion(version);
 			}
 
-			JSONObject files = UtilsJson.getJSONObject(apiObject, "files");
+			JSONObject files = UtilsJson.getJSONObject(apiObject, FILES);
 			String[] filesName = JSONObject.getNames(files);
 			for (String name : filesName) {
 				JSONObject fileObject = files.getJSONObject(name);

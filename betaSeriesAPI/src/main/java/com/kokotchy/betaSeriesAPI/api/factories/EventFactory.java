@@ -14,6 +14,31 @@ import com.kokotchy.betaSeriesAPI.model.Event;
  */
 public class EventFactory {
 	/**
+	 * TODO Fill it
+	 */
+	private static final String DATE = "date";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String HTML = "html";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String LOGIN = "login";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String REF = "ref";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String TYPE = "type";
+
+	/**
 	 * Create an event from a json object
 	 * 
 	 * @param jsonObject
@@ -22,11 +47,11 @@ public class EventFactory {
 	 */
 	public static Event createEvent(JSONObject jsonObject) {
 		Event event = new Event();
-		event.setType(UtilsJson.getStringValue(jsonObject, "type"));
-		event.setRef(UtilsJson.getStringValue(jsonObject, "ref"));
-		event.setLogin(UtilsJson.getStringValue(jsonObject, "login"));
-		event.setHtml(UtilsJson.getStringValue(jsonObject, "html"));
-		event.setDate(UtilsJson.getIntValue(jsonObject, "date"));
+		event.setType(UtilsJson.getStringValue(jsonObject, TYPE));
+		event.setRef(UtilsJson.getStringValue(jsonObject, REF));
+		event.setLogin(UtilsJson.getStringValue(jsonObject, LOGIN));
+		event.setHtml(UtilsJson.getStringValue(jsonObject, HTML));
+		event.setDate(UtilsJson.getIntValue(jsonObject, DATE));
 		return event;
 	}
 
@@ -39,11 +64,11 @@ public class EventFactory {
 	 */
 	public static Event createEvent(Node node) {
 		Event event = new Event();
-		event.setType(UtilsXml.readString(node, "type"));
-		event.setRef(UtilsXml.readString(node, "ref"));
-		event.setLogin(UtilsXml.readString(node, "login"));
-		event.setHtml(UtilsXml.readString(node, "html"));
-		event.setDate(UtilsXml.readInt(node, "date"));
+		event.setType(UtilsXml.readString(node, TYPE));
+		event.setRef(UtilsXml.readString(node, REF));
+		event.setLogin(UtilsXml.readString(node, LOGIN));
+		event.setHtml(UtilsXml.readString(node, HTML));
+		event.setDate(UtilsXml.readInt(node, DATE));
 		return event;
 	}
 }

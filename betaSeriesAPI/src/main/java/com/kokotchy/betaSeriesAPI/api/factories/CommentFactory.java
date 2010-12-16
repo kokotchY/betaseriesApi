@@ -14,6 +14,31 @@ import com.kokotchy.betaSeriesAPI.model.Comment;
  */
 public class CommentFactory {
 	/**
+	 * TODO Fill it
+	 */
+	private static final String IN_REPLY_TO = "in_reply_to";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String LOGIN = "login";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String INNER_ID = "inner_id";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String DATE = "date";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String TEXT = "text";
+
+	/**
 	 * Create a comment from the json object
 	 * 
 	 * @param jsonObject
@@ -22,11 +47,11 @@ public class CommentFactory {
 	 */
 	public static Comment createComment(JSONObject jsonObject) {
 		Comment comment = new Comment();
-		comment.setContent(UtilsJson.getStringValue(jsonObject, "text"));
-		comment.setDate(UtilsJson.getIntValue(jsonObject, "date"));
-		comment.setInnerId(UtilsJson.getIntValue(jsonObject, "inner_id"));
-		comment.setLogin(UtilsJson.getStringValue(jsonObject, "login"));
-		comment.setReplyToId(UtilsJson.getIntValue(jsonObject, "in_reply_to"));
+		comment.setContent(UtilsJson.getStringValue(jsonObject, TEXT));
+		comment.setDate(UtilsJson.getIntValue(jsonObject, DATE));
+		comment.setInnerId(UtilsJson.getIntValue(jsonObject, INNER_ID));
+		comment.setLogin(UtilsJson.getStringValue(jsonObject, LOGIN));
+		comment.setReplyToId(UtilsJson.getIntValue(jsonObject, IN_REPLY_TO));
 		return comment;
 	}
 
@@ -39,11 +64,11 @@ public class CommentFactory {
 	 */
 	public static Comment createComment(Node node) {
 		Comment comment = new Comment();
-		comment.setContent(UtilsXml.readString(node, "text"));
-		comment.setDate(UtilsXml.readInt(node, "date"));
-		comment.setInnerId(UtilsXml.readInt(node, "inner_id"));
-		comment.setLogin(UtilsXml.readString(node, "login"));
-		comment.setReplyToId(UtilsXml.readInt(node, "in_reply_to"));
+		comment.setContent(UtilsXml.readString(node, TEXT));
+		comment.setDate(UtilsXml.readInt(node, DATE));
+		comment.setInnerId(UtilsXml.readInt(node, INNER_ID));
+		comment.setLogin(UtilsXml.readString(node, LOGIN));
+		comment.setReplyToId(UtilsXml.readInt(node, IN_REPLY_TO));
 		return comment;
 	}
 }

@@ -16,7 +16,53 @@ import com.kokotchy.betaSeriesAPI.model.Episode;
  */
 public class EpisodeFactory {
 	/**
+	 * TODO Fill it
+	 */
+	private static final String SCREEN = "screen";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String DESCRIPTION = "description";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String EPISODE = "episode";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String HAS_SEEN = "has_seen";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String TITLE = "title";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String DATE = "date";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String URL = "url";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String NUMBER = "number";
+
+	/**
+	 * TODO Fill it
+	 */
+	private static final String SHOW = "show";
+
+	/**
 	 * Create a new episode from the json object
+	 * TODO Not the same as the other
 	 * 
 	 * @param json
 	 *            json object
@@ -24,12 +70,12 @@ public class EpisodeFactory {
 	 */
 	public static Episode createEpisode(JSONObject json) {
 		Episode episode = new Episode();
-		episode.setShow(UtilsJson.getStringValue(json, "show"));
-		episode.setNb(UtilsJson.getStringValue(json, "number"));
-		episode.setShowUrl(UtilsJson.getStringValue(json, "url"));
-		episode.setDate(UtilsJson.getIntValue(json, "date"));
-		episode.setTitle(UtilsJson.getStringValue(json, "title"));
-		episode.setSeen(UtilsJson.getBooleanValue(json, "has_seen"));
+		episode.setShow(UtilsJson.getStringValue(json, SHOW));
+		episode.setNb(UtilsJson.getStringValue(json, NUMBER));
+		episode.setShowUrl(UtilsJson.getStringValue(json, URL));
+		episode.setDate(UtilsJson.getIntValue(json, DATE));
+		episode.setTitle(UtilsJson.getStringValue(json, TITLE));
+		episode.setSeen(UtilsJson.getBooleanValue(json, HAS_SEEN));
 		return episode;
 	}
 
@@ -43,24 +89,24 @@ public class EpisodeFactory {
 	@SuppressWarnings("unchecked")
 	public static Episode createEpisode(Node node) {
 		Episode episode = new Episode();
-		String number = UtilsXml.readString(node, "number");
+		String number = UtilsXml.readString(node, NUMBER);
 		if (number == null) {
-			number = UtilsXml.readString(node, "episode");
+			number = UtilsXml.readString(node, EPISODE);
 		}
 		episode.setNb(number);
-		episode.setDate(UtilsXml.readInt(node, "date"));
-		episode.setTitle(UtilsXml.readString(node, "title"));
-		episode.setDescription(UtilsXml.readString(node, "description"));
-		episode.setScreen(UtilsXml.readString(node, "screen"));
-		episode.setShow(UtilsXml.readString(node, "show"));
-		episode.setShowUrl(UtilsXml.readString(node, "url"));
+		episode.setDate(UtilsXml.readInt(node, DATE));
+		episode.setTitle(UtilsXml.readString(node, TITLE));
+		episode.setDescription(UtilsXml.readString(node, DESCRIPTION));
+		episode.setScreen(UtilsXml.readString(node, SCREEN));
+		episode.setShow(UtilsXml.readString(node, SHOW));
+		episode.setShowUrl(UtilsXml.readString(node, URL));
 
 		List<Node> subsNode = node.selectNodes("subs/sub");
 		for (Node sub : subsNode) {
 			episode.addSubtitle(SubtitleFactory.createSubtitle(sub));
 		}
 
-		episode.setSeen(UtilsXml.readBoolean(node, "has_seen"));
+		episode.setSeen(UtilsXml.readBoolean(node, HAS_SEEN));
 
 		return episode;
 	}
