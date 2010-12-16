@@ -190,6 +190,7 @@ public class Shows implements IShows {
 
 	@Override
 	public Set<Show> search(String title) {
+		// FIXME Check for errors
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.SHOW_TITLE, title);
 		JSONObject jsonObject = UtilsJson.executeQuery("shows/search", apiKey,
