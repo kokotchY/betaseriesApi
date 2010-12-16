@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
+import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.api.ITimelines;
 import com.kokotchy.betaSeriesAPI.api.factories.EventFactory;
 import com.kokotchy.betaSeriesAPI.model.Event;
@@ -17,7 +18,6 @@ import com.kokotchy.betaSeriesAPI.model.Event;
  * Timeline API
  * 
  * @author kokotchy
- * 
  */
 public class Timelines implements ITimelines {
 
@@ -39,7 +39,7 @@ public class Timelines implements ITimelines {
 	@Override
 	public Set<Event> getFriendsTimeline(String token) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("token", token);
+		params.put(Constants.TOKEN, token);
 		return getTimeline(UtilsJson.executeQuery("timeline/friends", apiKey,
 				params));
 	}
@@ -47,8 +47,8 @@ public class Timelines implements ITimelines {
 	@Override
 	public Set<Event> getFriendsTimeline(String token, int nb) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("token", token);
-		params.put("number", "" + nb);
+		params.put(Constants.TOKEN, token);
+		params.put(Constants.LIMIT, "" + nb);
 		return getTimeline(UtilsJson.executeQuery("timeline/friends", apiKey,
 				params));
 	}
@@ -61,7 +61,7 @@ public class Timelines implements ITimelines {
 	@Override
 	public Set<Event> getHomeTimeline(int nb) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("number", "" + nb);
+		params.put(Constants.LIMIT, "" + nb);
 		return getTimeline(UtilsJson.executeQuery("timeline/home", apiKey,
 				params));
 	}
@@ -98,7 +98,7 @@ public class Timelines implements ITimelines {
 	@Override
 	public Set<Event> getTimelineOfUser(String user, int nb) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("number", "" + nb);
+		params.put(Constants.LIMIT, "" + nb);
 		return getTimeline(UtilsJson.executeQuery("timeline/member/" + user,
 				apiKey, params));
 	}

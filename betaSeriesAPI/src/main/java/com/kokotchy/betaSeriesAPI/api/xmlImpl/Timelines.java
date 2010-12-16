@@ -10,6 +10,7 @@ import org.dom4j.Document;
 import org.dom4j.Node;
 
 import com.kokotchy.betaSeriesAPI.UtilsXml;
+import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.api.ITimelines;
 import com.kokotchy.betaSeriesAPI.api.factories.EventFactory;
 import com.kokotchy.betaSeriesAPI.model.Event;
@@ -39,7 +40,7 @@ public class Timelines implements ITimelines {
 	@Override
 	public Set<Event> getFriendsTimeline(String token) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("token", token);
+		params.put(Constants.TOKEN, token);
 		return getTimeline(UtilsXml.executeQuery("timeline/friends", apiKey,
 				params));
 	}
@@ -47,8 +48,8 @@ public class Timelines implements ITimelines {
 	@Override
 	public Set<Event> getFriendsTimeline(String token, int nb) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("token", token);
-		params.put("number", "" + nb);
+		params.put(Constants.TOKEN, token);
+		params.put(Constants.LIMIT, "" + nb);
 		return getTimeline(UtilsXml.executeQuery("timeline/friends", apiKey,
 				params));
 	}
@@ -61,7 +62,7 @@ public class Timelines implements ITimelines {
 	@Override
 	public Set<Event> getHomeTimeline(int nb) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("number", "" + nb);
+		params.put(Constants.LIMIT, "" + nb);
 		return getTimeline(UtilsXml.executeQuery("timeline/home", apiKey,
 				params));
 	}
@@ -92,7 +93,7 @@ public class Timelines implements ITimelines {
 	@Override
 	public Set<Event> getTimelineOfUser(String user, int nb) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("number", "" + nb);
+		params.put(Constants.LIMIT, "" + nb);
 		return getTimeline(UtilsXml.executeQuery("timeline/member/" + user,
 				apiKey, params));
 	}
