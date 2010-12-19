@@ -56,7 +56,11 @@ public class TestMembers extends TestCase {
 	 * Testing set an episode as downloaded
 	 */
 	public void testDownloaded() {
-		fail("Not implemented");
+		boolean downloadedXml = membersXml
+				.setDownloaded(token, "firefly", 1, 1);
+		boolean downloadedJson = membersJson.setDownloaded(token, "firefly", 1,
+				1);
+		assertEquals(downloadedXml, downloadedJson);
 	}
 
 	/**

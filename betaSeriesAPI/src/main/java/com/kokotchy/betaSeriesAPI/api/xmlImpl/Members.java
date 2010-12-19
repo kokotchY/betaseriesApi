@@ -153,9 +153,13 @@ public class Members implements IMembers {
 		params.put(Constants.SEASON, "" + season);
 		params.put(Constants.EPISODE, "" + episode);
 		params.put(Constants.TOKEN, token);
-		UtilsXml.executeQuery("members/downloaded/" + url, apiKey, params);
-		// TODO Check for error
-		return true;
+		Document document = UtilsXml.executeQuery("members/downloaded/" + url,
+				apiKey, params);
+		if (!UtilsXml.hasErrors(document)) {
+			Node root = document.selectSingleNode("/root");
+			return UtilsXml.readBoolean(root, "downloaded");
+		}
+		return false;
 	}
 
 	@Override
