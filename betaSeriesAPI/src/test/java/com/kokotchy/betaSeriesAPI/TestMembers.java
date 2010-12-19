@@ -1,11 +1,14 @@
 package com.kokotchy.betaSeriesAPI;
 
 import java.io.File;
+import java.util.Set;
 
 import junit.framework.TestCase;
 
 import com.kokotchy.betaSeriesAPI.model.Member;
+import com.kokotchy.betaSeriesAPI.model.Notification;
 import com.kokotchy.betaSeriesAPI.model.Show;
+import com.kokotchy.betaSeriesAPI.model.SortType;
 
 /**
  * Test members api
@@ -121,22 +124,34 @@ public class TestMembers extends TestCase {
 	/**
 	 * Test nofication sorting
 	 */
-	public void testNotificationSort() {
-		fail("Not implemented");
+	public void testNotificationAlreadySeen() {
+		Set<Notification> notificationsJson = membersJson.getNotifications(
+				token, true, SortType.NONE);
+		Set<Notification> notificationsXml = membersXml.getNotifications(token,
+				true, SortType.NONE);
+		assertEquals(notificationsXml, notificationsJson);
 	}
 
 	/**
-	 * Test notification sorting with equals json
+	 * Test nofication sorting
 	 */
-	public void testNotificationSortEqualsJson() {
-		fail("Not implemented");
+	public void testNotificationSortAlreadySeenSortAsc() {
+		Set<Notification> notificationsJson = membersJson.getNotifications(
+				token, true, SortType.ASC);
+		Set<Notification> notificationsXml = membersXml.getNotifications(token,
+				true, SortType.ASC);
+		assertEquals(notificationsXml, notificationsJson);
 	}
 
 	/**
-	 * Test notification sorting
+	 * Test nofication sorting
 	 */
-	public void testNotificationSortEqualsXml() {
-		fail("Not implemented");
+	public void testNotificationSortAlreadySeenSortDesc() {
+		Set<Notification> notificationsJson = membersJson.getNotifications(
+				token, true, SortType.DESC);
+		Set<Notification> notificationsXml = membersXml.getNotifications(token,
+				true, SortType.DESC);
+		assertEquals(notificationsXml, notificationsJson);
 	}
 
 	/**

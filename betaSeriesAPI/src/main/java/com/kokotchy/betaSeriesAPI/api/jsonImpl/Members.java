@@ -1,9 +1,11 @@
 package com.kokotchy.betaSeriesAPI.api.jsonImpl;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -88,25 +90,25 @@ public class Members implements IMembers {
 	}
 
 	@Override
-	public List<Notification> getNotifications(String token, boolean seen,
+	public Set<Notification> getNotifications(String token, boolean seen,
 			int nb, int lastId, SortType sort) {
 		return getNotificationsWithParameters(token, seen, nb, lastId, sort);
 	}
 
 	@Override
-	public List<Notification> getNotifications(String token, boolean seen,
+	public Set<Notification> getNotifications(String token, boolean seen,
 			int nb, SortType sort) {
 		return getNotificationsWithParameters(token, seen, nb, -1, sort);
 	}
 
 	@Override
-	public List<Notification> getNotifications(String token, boolean seen,
+	public Set<Notification> getNotifications(String token, boolean seen,
 			SortType sort) {
 		return getNotificationsWithParameters(token, seen, -1, -1, sort);
 	}
 
 	@Override
-	public List<Notification> getNotifications(String token, int nb,
+	public Set<Notification> getNotifications(String token, int nb,
 			SortType sort) {
 		return getNotificationsWithParameters(token, null, nb, -1, sort);
 	}
@@ -269,7 +271,7 @@ public class Members implements IMembers {
 	 * @param sort
 	 * @return List of notification
 	 */
-	private List<Notification> getNotificationsWithParameters(String token,
+	private Set<Notification> getNotificationsWithParameters(String token,
 			Boolean seen, int nb, int lastId, SortType sort) {
 		Map<String, String> params = new HashMap<String, String>();
 		if (seen != null) {
@@ -292,22 +294,26 @@ public class Members implements IMembers {
 			params.put(Constants.MEMBER_LAST_ID, "" + lastId);
 		}
 		params.put(Constants.TOKEN, token);
-		List<Notification> notifications = new LinkedList<Notification>();
+		Set<Notification> result = new HashSet<Notification>();
 		JSONObject jsonObject = UtilsJson.executeQuery("members/notifications",
 				apiKey, params);
-		JSONArray notificationsArray = UtilsJson.getJSONArrayFromPath(
-				jsonObject, "/root/notifications");
+		// JSONArray notificationsArray = UtilsJson.getJSONArrayFromPath(
+		// jsonObject, "/root/notifications");
+		JSONObject notifications = UtilsJson.getJSONObjectFromPath(jsonObject,
+				"/root/notifications");
+		String[] names = JSONObject.getNames(notifications);
 		try {
-			int length = notificationsArray.length();
+			int length = names.length;
 			for (int i = 0; i < length; i++) {
-				JSONObject notification = notificationsArray.getJSONObject(i);
-				notifications.add(NotificationFactory
-						.createNotification(notification));
+				JSONObject notification = notifications.getJSONObject(names[i]);
+				result
+						.add(NotificationFactory
+								.createNotification(notification));
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		return notifications;
+		return result;
 	}
 
 }

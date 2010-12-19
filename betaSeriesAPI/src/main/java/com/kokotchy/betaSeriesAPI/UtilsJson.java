@@ -132,12 +132,14 @@ public class UtilsJson {
 	 */
 	public static Set<Error> getErrors(JSONObject jsonObject) {
 		Set<Error> result = new HashSet<Error>();
-		JSONObject errors = UtilsJson.getJSONObjectFromPath(jsonObject, "/root/errors");
+		JSONObject errors = UtilsJson.getJSONObjectFromPath(jsonObject,
+				"/root/errors");
 		String[] names = JSONObject.getNames(errors);
 		if (names != null) {
 			try {
 				for (String name : names) {
-					result.add(ErrorFactory.createError(errors.getJSONObject(name).getJSONObject("error")));
+					result.add(ErrorFactory.createError(errors.getJSONObject(
+							name).getJSONObject("error")));
 				}
 			} catch (JSONException e) {
 				e.printStackTrace();
@@ -297,28 +299,6 @@ public class UtilsJson {
 	}
 
 	/**
-	 * Return the last object from the path
-	 * 
-	 * @param jsonObject
-	 *            Json object
-	 * @param split
-	 *            Part of the apth
-	 * @return Json Object
-	 * @throws JSONException
-	 */
-	private static JSONObject getLastObject(JSONObject jsonObject,
-			String[] split) throws JSONException {
-		JSONObject object = jsonObject;
-		for (int i = 0; i < split.length - 1; i++) {
-			String part = split[i].trim();
-			if ((part.length() != 0) && (!object.isNull(part))) {
-				object = object.getJSONObject(part);
-			}
-		}
-		return object;
-	}
-
-	/**
 	 * Return the string value from the json object
 	 * 
 	 * @param jsonObject
@@ -331,8 +311,10 @@ public class UtilsJson {
 	public static String getStringValue(JSONObject jsonObject, String name) {
 		if (jsonObject.has(name)) {
 			try {
-				return StringEscapeUtils.escapeHtml(
-						jsonObject.getString(name)).trim().replace("\r", "");
+				return StringEscapeUtils.unescapeHtml(
+						StringEscapeUtils
+								.escapeHtml(jsonObject.getString(name))).trim()
+						.replace("\r", "");
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
@@ -369,5 +351,27 @@ public class UtilsJson {
 	 */
 	public static void setDebugPath(String debugPath) {
 		UtilsJson.debugPath = debugPath;
+	}
+
+	/**
+	 * Return the last object from the path
+	 * 
+	 * @param jsonObject
+	 *            Json object
+	 * @param split
+	 *            Part of the apth
+	 * @return Json Object
+	 * @throws JSONException
+	 */
+	private static JSONObject getLastObject(JSONObject jsonObject,
+			String[] split) throws JSONException {
+		JSONObject object = jsonObject;
+		for (int i = 0; i < split.length - 1; i++) {
+			String part = split[i].trim();
+			if ((part.length() != 0) && (!object.isNull(part))) {
+				object = object.getJSONObject(part);
+			}
+		}
+		return object;
 	}
 }

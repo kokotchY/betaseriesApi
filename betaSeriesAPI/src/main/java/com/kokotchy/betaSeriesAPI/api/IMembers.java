@@ -1,6 +1,7 @@
 package com.kokotchy.betaSeriesAPI.api;
 
 import java.util.List;
+import java.util.Set;
 
 import com.kokotchy.betaSeriesAPI.model.Episode;
 import com.kokotchy.betaSeriesAPI.model.Member;
@@ -88,7 +89,7 @@ public interface IMembers {
 	 * @param sort
 	 * @return List of notifications
 	 */
-	public List<Notification> getNotifications(String token, boolean seen,
+	public Set<Notification> getNotifications(String token, boolean seen,
 			int nb, int lastId, SortType sort);
 
 	/**
@@ -103,7 +104,7 @@ public interface IMembers {
 	 * @param sort
 	 * @return List of notifications
 	 */
-	public List<Notification> getNotifications(String token, boolean seen,
+	public Set<Notification> getNotifications(String token, boolean seen,
 			int nb, SortType sort);
 
 	/**
@@ -116,7 +117,7 @@ public interface IMembers {
 	 * @param sort
 	 * @return List of notifications
 	 */
-	public List<Notification> getNotifications(String token, boolean seen,
+	public Set<Notification> getNotifications(String token, boolean seen,
 			SortType sort);
 
 	/**
@@ -129,7 +130,7 @@ public interface IMembers {
 	 * @param sort
 	 * @return List of notifications
 	 */
-	public List<Notification> getNotifications(String token, int nb,
+	public Set<Notification> getNotifications(String token, int nb,
 			SortType sort);
 
 	/**

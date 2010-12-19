@@ -22,6 +22,44 @@ import org.apache.commons.lang.StringEscapeUtils;
 public class TestEntityDecoder extends TestCase {
 
 	/**
+	 * Entity convert from file
+	 */
+	public void testConvertEntityFromFile() {
+		Map<String, String> showsTitle = loadFile();
+
+		for (Entry<String, String> entry : showsTitle.entrySet()) {
+			String beforeParsing = entry.getKey();
+			String afterParsing = entry.getValue();
+			String parsed = StringEscapeUtils.escapeHtml(beforeParsing);
+			assertEquals(afterParsing, parsed);
+		}
+	}
+
+	/**
+	 * Entity convert from source
+	 */
+	public void testConvertEntityFromSourceCode() {
+		Map<String, String> showsTitle = loadWords();
+
+		for (Entry<String, String> entry : showsTitle.entrySet()) {
+			String beforeParsing = entry.getKey();
+			String afterParsing = entry.getValue();
+			String parsed = StringEscapeUtils.escapeHtml(beforeParsing);
+			assertEquals(afterParsing, parsed);
+		}
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testEntityDecoding() {
+		String jsonString = StringEscapeUtils
+				.escapeHtml("Nouvel &eacute;pisode : Spartacus S01E08 - Mark of the Brotherhood");
+		String xmlString = "Nouvel &amp;eacute;pisode : Spartacus S01E08 - Mark of the Brotherhood";
+		assertEquals(xmlString, jsonString);
+	}
+
+	/**
 	 * Load the string to test from a file
 	 * 
 	 * @return List of string to test
@@ -102,33 +140,5 @@ public class TestEntityDecoder extends TestCase {
 		result.put("Türkisch für Anfänger",
 				"T&uuml;rkisch f&uuml;r Anf&auml;nger");
 		return result;
-	}
-
-	/**
-	 * Entity convert from file
-	 */
-	public void testConvertEntityFromFile() {
-		Map<String, String> showsTitle = loadFile();
-
-		for (Entry<String, String> entry : showsTitle.entrySet()) {
-			String beforeParsing = entry.getKey();
-			String afterParsing = entry.getValue();
-			String parsed = StringEscapeUtils.escapeHtml(beforeParsing);
-			assertEquals(afterParsing, parsed);
-		}
-	}
-
-	/**
-	 * Entity convert from source
-	 */
-	public void testConvertEntityFromSourceCode() {
-		Map<String, String> showsTitle = loadWords();
-
-		for (Entry<String, String> entry : showsTitle.entrySet()) {
-			String beforeParsing = entry.getKey();
-			String afterParsing = entry.getValue();
-			String parsed = StringEscapeUtils.escapeHtml(beforeParsing);
-			assertEquals(afterParsing, parsed);
-		}
 	}
 }

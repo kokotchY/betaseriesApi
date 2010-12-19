@@ -1,9 +1,11 @@
 package com.kokotchy.betaSeriesAPI.api.xmlImpl;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.dom4j.Document;
 import org.dom4j.Node;
@@ -86,25 +88,25 @@ public class Members implements IMembers {
 	}
 
 	@Override
-	public List<Notification> getNotifications(String token, boolean seen,
+	public Set<Notification> getNotifications(String token, boolean seen,
 			int nb, int lastId, SortType sort) {
 		return getNotificationsWithParameters(token, seen, nb, lastId, sort);
 	}
 
 	@Override
-	public List<Notification> getNotifications(String token, boolean seen,
+	public Set<Notification> getNotifications(String token, boolean seen,
 			int nb, SortType sort) {
 		return getNotificationsWithParameters(token, seen, nb, -1, sort);
 	}
 
 	@Override
-	public List<Notification> getNotifications(String token, boolean seen,
+	public Set<Notification> getNotifications(String token, boolean seen,
 			SortType sort) {
 		return getNotificationsWithParameters(token, seen, -1, -1, sort);
 	}
 
 	@Override
-	public List<Notification> getNotifications(String token, int nb,
+	public Set<Notification> getNotifications(String token, int nb,
 			SortType sort) {
 		return getNotificationsWithParameters(token, null, nb, -1, sort);
 	}
@@ -253,7 +255,7 @@ public class Members implements IMembers {
 	 * @return List of notification
 	 */
 	@SuppressWarnings("unchecked")
-	private List<Notification> getNotificationsWithParameters(String token,
+	private Set<Notification> getNotificationsWithParameters(String token,
 			Boolean seen, int nb, int lastId, SortType sort) {
 		Map<String, String> params = new HashMap<String, String>();
 		if (seen != null) {
@@ -281,7 +283,7 @@ public class Members implements IMembers {
 				apiKey, params);
 		List<Node> nodes = document
 				.selectNodes("/root/notifications/notification");
-		List<Notification> notifications = new LinkedList<Notification>();
+		Set<Notification> notifications = new HashSet<Notification>();
 		for (Node node : nodes) {
 			notifications.add(NotificationFactory.createNotification(node));
 		}

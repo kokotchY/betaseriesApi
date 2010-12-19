@@ -23,23 +23,6 @@ public class TestShows extends TestCase {
 	 */
 	private com.kokotchy.betaSeriesAPI.api.xmlImpl.Shows showsXml;
 
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp();
-		String userDir = System.getProperty("user.dir");
-		String key = Utils.getApiKey(userDir);
-		com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi.setApiKey(key);
-		com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi.setApiKey(key);
-		showsJson = com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi
-				.getShows();
-		showsXml = com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi
-				.getShows();
-		UtilsJson.setDebug(true);
-		UtilsJson.setDebugPath(userDir + "/src/test/resources/json/");
-		UtilsXml.setDebug(true);
-		UtilsXml.setDebugPath(userDir + "/src/test/resources/xml/");
-	}
-
 	/**
 	 * Test display of all shows
 	 */
@@ -51,12 +34,12 @@ public class TestShows extends TestCase {
 		for (Show show : displayAllXml) {
 			for (Show show2 : displayAllJson) {
 				if (show2.getUrl().equals(show.getUrl())) {
-					// if (show.equals(show2)) {
-					// assertTrue(true);
-					// } else {
-					// fail("Not equals " + show + "," + show2);
-					// }
-					assertEquals(show, show2);
+					if (show.equals(show2)) {
+						assertTrue(true);
+					} else {
+						fail("Not equals " + show + "," + show2);
+					}
+					// assertEquals(show, show2);
 				}
 			}
 		}
@@ -152,5 +135,22 @@ public class TestShows extends TestCase {
 		Set<Show> searchXml = showsXml.search("dexter");
 		Set<Show> searchXml2 = showsXml.search("dexter");
 		assertEquals(searchXml, searchXml2);
+	}
+
+	@Override
+	protected void setUp() throws Exception {
+		super.setUp();
+		String userDir = System.getProperty("user.dir");
+		String key = Utils.getApiKey(userDir);
+		com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi.setApiKey(key);
+		com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi.setApiKey(key);
+		showsJson = com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi
+				.getShows();
+		showsXml = com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi
+				.getShows();
+		UtilsJson.setDebug(true);
+		UtilsJson.setDebugPath(userDir + "/src/test/resources/json/");
+		UtilsXml.setDebug(true);
+		UtilsXml.setDebugPath(userDir + "/src/test/resources/xml/");
 	}
 }
