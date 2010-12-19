@@ -60,12 +60,16 @@ public interface IMembers {
 			SubtitleLanguage subtitleLanguage);
 
 	/**
-	 * TODO Fill it
+	 * Return the episodes for the given language. If onlyNext is specified,
+	 * return one episode by show that aren't already seen.
 	 * 
 	 * @param token
+	 *            Token of the user
 	 * @param subtitleLanguage
+	 *            Language of the subtitle
 	 * @param onlyNext
-	 * @return
+	 *            If only one episode has to be returned by show
+	 * @return List of episode
 	 */
 	public List<Episode> getEpisodes(String token,
 			SubtitleLanguage subtitleLanguage, boolean onlyNext);

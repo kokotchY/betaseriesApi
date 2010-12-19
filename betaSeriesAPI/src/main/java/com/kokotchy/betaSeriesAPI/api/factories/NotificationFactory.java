@@ -6,6 +6,7 @@ import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
+import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.model.Notification;
 
 /**
@@ -14,26 +15,6 @@ import com.kokotchy.betaSeriesAPI.model.Notification;
  * @author kokotchy
  */
 public class NotificationFactory {
-	/**
-	 * TODO Fill it
-	 */
-	private static final String SEEN = "seen";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String DATE = "date";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String HTML = "html";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String ID = "id";
-
 	/**
 	 * Create a notification from json object
 	 * 
@@ -44,11 +25,11 @@ public class NotificationFactory {
 	public static Notification createNotification(JSONObject jsonObject) {
 		Notification notification = new Notification();
 		try {
-			notification.setId(jsonObject.getInt(ID));
-			notification.setHtml(jsonObject.getString(HTML));
-			notification.setDate(jsonObject.getInt(DATE));
+			notification.setId(jsonObject.getInt(Constants.ID));
+			notification.setHtml(jsonObject.getString(Constants.HTML));
+			notification.setDate(jsonObject.getInt(Constants.DATE));
 			notification.setSeen(UtilsJson.getJSONBooleanFromPath(jsonObject,
-					SEEN));
+					Constants.SEEN));
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
@@ -64,10 +45,10 @@ public class NotificationFactory {
 	 */
 	public static Notification createNotification(Node node) {
 		Notification notification = new Notification();
-		notification.setId(UtilsXml.readInt(node, ID));
-		notification.setHtml(UtilsXml.readString(node, HTML));
-		notification.setDate(UtilsXml.readInt(node, DATE));
-		notification.setSeen(UtilsXml.readBoolean(node, SEEN));
+		notification.setId(UtilsXml.readInt(node, Constants.ID));
+		notification.setHtml(UtilsXml.readString(node, Constants.HTML));
+		notification.setDate(UtilsXml.readInt(node, Constants.DATE));
+		notification.setSeen(UtilsXml.readBoolean(node, Constants.SEEN));
 		return notification;
 	}
 }

@@ -8,6 +8,7 @@ import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
+import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.model.Member;
 
 /**
@@ -16,26 +17,6 @@ import com.kokotchy.betaSeriesAPI.model.Member;
  * @author kokotchy
  */
 public class MemberFactory {
-	/**
-	 * TODO Fill it
-	 */
-	private static final String SHOWS = "shows";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String STATS = "stats";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String AVATAR = "avatar";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String LOGIN = "login";
-
 	/**
 	 * Create member object from json object
 	 * 
@@ -46,11 +27,14 @@ public class MemberFactory {
 	public static Member createMember(JSONObject jsonObject) {
 		Member member = new Member();
 		try {
-			member.setLogin(UtilsJson.getStringValue(jsonObject, LOGIN));
-			member.setAvatar(UtilsJson.getStringValue(jsonObject, AVATAR));
+			member.setLogin(UtilsJson.getStringValue(jsonObject,
+					Constants.LOGIN));
+			member.setAvatar(UtilsJson.getStringValue(jsonObject,
+					Constants.AVATAR));
 			member.setStats(StatsFactory.createStats(UtilsJson.getJSONObject(
-					jsonObject, STATS)));
-			JSONObject shows = UtilsJson.getJSONObject(jsonObject, SHOWS);
+					jsonObject, Constants.STATS)));
+			JSONObject shows = UtilsJson.getJSONObject(jsonObject,
+					Constants.SHOWS);
 			for (String name : JSONObject.getNames(shows)) {
 				JSONObject show = shows.getJSONObject(name);
 				member.addShow(ShowFactory.createShow(show));
@@ -71,10 +55,10 @@ public class MemberFactory {
 	@SuppressWarnings("unchecked")
 	public static Member createMember(Node node) {
 		Member member = new Member();
-		member.setLogin(UtilsXml.readString(node, LOGIN));
-		member.setAvatar(UtilsXml.readString(node, AVATAR));
-		member.setStats(StatsFactory
-				.createStats(node.selectSingleNode(STATS)));
+		member.setLogin(UtilsXml.readString(node, Constants.LOGIN));
+		member.setAvatar(UtilsXml.readString(node, Constants.AVATAR));
+		member.setStats(StatsFactory.createStats(node
+				.selectSingleNode(Constants.STATS)));
 		List<Node> shows = node.selectNodes("shows/show");
 		for (Node show : shows) {
 			member.addShow(ShowFactory.createShow(show));

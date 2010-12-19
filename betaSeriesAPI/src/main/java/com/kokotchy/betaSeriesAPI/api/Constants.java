@@ -7,158 +7,155 @@ package com.kokotchy.betaSeriesAPI.api;
  */
 public class Constants {
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String EPISODE = "episode";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String SEASON = "season";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String SHOW = "show";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String TOKEN = "token";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String COMMENT_IN_REPLY_TO = "in_reply_to";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String COMMENT_TEXT = "text";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String COMMENT_MEMBER = "member";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String MEMBER_LAST_ID = "last_id";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String LIMIT = "number";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String ORDER_DESC = "desc";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String ORDER_ASC = "asc";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String SORT = "sort";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String NO = "no";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String YES = "yes";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String SEEN = "seen";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String LANG_ALL = "all";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String LANG_VOVF = "vovf";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String LANG_VF = "vf";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String MEMBER_PASSWORD = "password";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String MEMBER_LOGIN = "login";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String ERROR_CODE = "code";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String UNSEEN = "unseen";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String VIEW = "view";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String SHOW_TITLE = "title";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String EPISODES = "episodes";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String NUMBER = "number";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String SUBTITLE_LANGUAGE = "language";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String SUBTITLE_LANG_VF = "VF";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String SUBTITLE_LANG_VO = "VO";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String MEMBER_VIEW = "view";
 
-	/**
-	 * TODO Fill it
-	 */
 	public static final String MEMBER_NEXT = "next";
+
+	public static final String VALUE = "value";
+
+	public static final String TYPE = "type";
+
+	public static final String IN_REPLY_TO = "in_reply_to";
+
+	public static final String LOGIN = "login";
+
+	public static final String INNER_ID = "inner_id";
+
+	public static final String DATE = "date";
+
+	public static final String TEXT = "text";
+
+	public static final String SCREEN = "screen";
+
+	public static final String DESCRIPTION = "description";
+
+	public static final String HAS_SEEN = "has_seen";
+
+	public static final String TITLE = "title";
+
+	public static final String URL = "url";
+
+	public static final String DOWNLOADED = "downloaded";
+
+	public static final String CONTENT = "content";
+
+	public static final String CODE = "code";
+
+	public static final String HTML = "html";
+
+	public static final String REF = "ref";
+
+	public static final String SHOWS = "shows";
+
+	public static final String STATS = "stats";
+
+	public static final String AVATAR = "avatar";
+
+	public static final String ID = "id";
+
+	public static final String ARCHIVE = "archive";
+
+	public static final String SEASONS = "seasons";
+
+	public static final String GENRES = "genres";
+
+	public static final String ID_THETVDB = "id_thetvdb";
+
+	public static final String BANNER = "banner";
+
+	public static final String STATUS = "status";
+
+	public static final String TIME_TO_SPEND = "time_to_spend";
+
+	public static final String TIME_ON_TV = "time_on_tv";
+
+	public static final String EPISODES_TO_WATCH = "episodes_to_watch";
+
+	public static final String PROGRESS = "progress";
+
+	public static final String FILES = "files";
+
+	public static final String VERSIONS = "versions";
+
+	public static final String VERSION = "version";
+
+	public static final String DATABASE = "database";
+
+	public static final String FILE = "filename";
+
+	public static final String SOURCE = "source";
+
+	public static final String VOVF = "VOVF";
+
+	public static final String VO = "VO";
+
+	public static final String VF = "VF";
+
+	public static final String LANGUAGE = "language";
+
+	public static final String QUALITY = "quality";
+
+	public static final String CHANGES = "changes";
+
+	public static final String NAME = "name";
+
+	public static final String LAST_CHANGE = "last_change";
 }

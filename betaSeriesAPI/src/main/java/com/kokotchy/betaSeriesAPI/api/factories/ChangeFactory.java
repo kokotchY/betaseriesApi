@@ -5,6 +5,7 @@ import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
+import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.model.Change;
 
 /**
@@ -13,15 +14,6 @@ import com.kokotchy.betaSeriesAPI.model.Change;
  * @author kokotchy
  */
 public class ChangeFactory {
-	/**
-	 * TODO Fill it
-	 */
-	private static final String VALUE = "value";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String TYPE = "type";
 
 	/**
 	 * Create a new change from the json object
@@ -32,8 +24,10 @@ public class ChangeFactory {
 	 */
 	public static Change createChange(JSONObject changeObject) {
 		Change change = new Change();
-		change.setType(UtilsJson.getStringValue(changeObject, TYPE));
-		change.setValue(UtilsJson.getStringValue(changeObject, VALUE));
+		change.setType(UtilsJson.getStringValue(changeObject, Constants.TYPE));
+		change
+				.setValue(UtilsJson.getStringValue(changeObject,
+						Constants.VALUE));
 		return change;
 	}
 
@@ -46,8 +40,8 @@ public class ChangeFactory {
 	 */
 	public static Change createChange(Node node) {
 		Change change = new Change();
-		change.setType(UtilsXml.readString(node, TYPE));
-		change.setValue(UtilsXml.readString(node, VALUE));
+		change.setType(UtilsXml.readString(node, Constants.TYPE));
+		change.setValue(UtilsXml.readString(node, Constants.VALUE));
 		return change;
 	}
 }

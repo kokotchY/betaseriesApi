@@ -9,6 +9,7 @@ import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
+import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.model.StatusInfo;
 import com.kokotchy.betaSeriesAPI.model.Version;
 import com.kokotchy.betaSeriesAPI.model.VersionFile;
@@ -19,32 +20,6 @@ import com.kokotchy.betaSeriesAPI.model.VersionFile;
  * @author kokotchy
  */
 public class StatusInfoFactory {
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String FILES = "files";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String VERSIONS = "versions";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String VERSION = "version";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String DATABASE = "database";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String STATUS = "status";
-
 	/**
 	 * Create the status informations from the document
 	 * 
@@ -56,12 +31,13 @@ public class StatusInfoFactory {
 	public static StatusInfo createStatusInfo(Document document) {
 		StatusInfo statusInfo = new StatusInfo();
 		Node websiteNode = document.selectSingleNode("/root/website");
-		statusInfo.setWebsiteStatus(UtilsXml.readString(websiteNode, STATUS));
+		statusInfo.setWebsiteStatus(UtilsXml.readString(websiteNode,
+				Constants.STATUS));
 		statusInfo.setDatabaseStatus(UtilsXml.readString(websiteNode,
-				DATABASE));
+				Constants.DATABASE));
 
 		Node apiNode = document.selectSingleNode("/root/api");
-		statusInfo.setVersion(UtilsXml.readString(apiNode, VERSION));
+		statusInfo.setVersion(UtilsXml.readString(apiNode, Constants.VERSION));
 		List<Node> versions = apiNode.selectNodes("versions/version");
 		for (Node node : versions) {
 			Version version = VersionFactory.createVersion(node);
@@ -88,16 +64,17 @@ public class StatusInfoFactory {
 		JSONObject websiteObject = UtilsJson.getJSONObjectFromPath(jsonObject,
 				"/root/website");
 		statusInfo.setWebsiteStatus(UtilsJson.getStringValue(websiteObject,
-				STATUS));
+				Constants.STATUS));
 		statusInfo.setDatabaseStatus(UtilsJson.getStringValue(websiteObject,
-				DATABASE));
+				Constants.DATABASE));
 
 		JSONObject apiObject = UtilsJson.getJSONObjectFromPath(jsonObject,
 				"/root/api");
-		statusInfo.setVersion(UtilsJson.getStringValue(apiObject, VERSION));
+		statusInfo.setVersion(UtilsJson.getStringValue(apiObject,
+				Constants.VERSION));
 		try {
-			JSONObject versions = UtilsJson
-					.getJSONObject(apiObject, VERSIONS);
+			JSONObject versions = UtilsJson.getJSONObject(apiObject,
+					Constants.VERSIONS);
 			String[] versionsName = JSONObject.getNames(versions);
 			for (String name : versionsName) {
 				JSONObject versionObject = versions.getJSONObject(name);
@@ -105,7 +82,8 @@ public class StatusInfoFactory {
 				statusInfo.addVersion(version);
 			}
 
-			JSONObject files = UtilsJson.getJSONObject(apiObject, FILES);
+			JSONObject files = UtilsJson.getJSONObject(apiObject,
+					Constants.FILES);
 			String[] filesName = JSONObject.getNames(files);
 			for (String name : filesName) {
 				JSONObject fileObject = files.getJSONObject(name);

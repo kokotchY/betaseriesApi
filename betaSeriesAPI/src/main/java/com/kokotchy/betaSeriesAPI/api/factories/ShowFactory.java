@@ -8,6 +8,7 @@ import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
+import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.model.Show;
 
 /**
@@ -17,61 +18,6 @@ import com.kokotchy.betaSeriesAPI.model.Show;
  */
 public class ShowFactory {
 	/**
-	 * TODO Fill it
-	 */
-	private static final String ARCHIVE = "archive";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String NUMBER = "number";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String EPISODES = "episodes";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String SEASONS = "seasons";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String GENRES = "genres";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String ID_THETVDB = "id_thetvdb";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String BANNER = "banner";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String STATUS = "status";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String DESCRIPTION = "description";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String URL = "url";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String TITLE = "title";
-
-	/**
 	 * Create a show from json object
 	 * 
 	 * @param jsonObject
@@ -80,15 +26,15 @@ public class ShowFactory {
 	 */
 	public static Show createShow(JSONObject jsonObject) {
 		Show show = new Show();
-		show.setTitle(UtilsJson.getStringValue(jsonObject, TITLE));
-		show.setUrl(UtilsJson.getStringValue(jsonObject, URL));
-		show
-				.setDescription(UtilsJson.getStringValue(jsonObject,
-				DESCRIPTION));
-		show.setStatus(UtilsJson.getStringValue(jsonObject, STATUS));
-		show.setBanner(UtilsJson.getStringValue(jsonObject, BANNER));
-		show.setIdTvdb(UtilsJson.getIntValue(jsonObject, ID_THETVDB));
-		JSONObject genres = UtilsJson.getJSONObject(jsonObject, GENRES);
+		show.setTitle(UtilsJson.getStringValue(jsonObject, Constants.TITLE));
+		show.setUrl(UtilsJson.getStringValue(jsonObject, Constants.URL));
+		show.setDescription(UtilsJson.getStringValue(jsonObject,
+				Constants.DESCRIPTION));
+		show.setStatus(UtilsJson.getStringValue(jsonObject, Constants.STATUS));
+		show.setBanner(UtilsJson.getStringValue(jsonObject, Constants.BANNER));
+		show.setIdTvdb(UtilsJson.getIntValue(jsonObject, Constants.ID_THETVDB));
+		JSONObject genres = UtilsJson.getJSONObject(jsonObject,
+				Constants.GENRES);
 		if (genres != null) {
 			String[] names = JSONObject.getNames(genres);
 			try {
@@ -99,21 +45,25 @@ public class ShowFactory {
 				e.printStackTrace();
 			}
 		}
-		JSONObject seasons = UtilsJson.getJSONObject(jsonObject, SEASONS);
+		JSONObject seasons = UtilsJson.getJSONObject(jsonObject,
+				Constants.SEASONS);
 		if (seasons != null) {
 			String[] names = JSONObject.getNames(seasons);
 			try {
 				for (String name : names) {
 					JSONObject season = seasons.getJSONObject(name);
-					int episodes = UtilsJson.getIntValue(season, EPISODES);
-					int number = UtilsJson.getIntValue(season, NUMBER);
+					int episodes = UtilsJson.getIntValue(season,
+							Constants.EPISODES);
+					int number = UtilsJson
+							.getIntValue(season, Constants.NUMBER);
 					show.addNumberEpisodeForSeason(number, episodes);
 				}
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
 		}
-		show.setArchived(UtilsJson.getBooleanValue(jsonObject, ARCHIVE));
+		show.setArchived(UtilsJson.getBooleanValue(jsonObject,
+				Constants.ARCHIVE));
 		return show;
 	}
 
@@ -127,23 +77,23 @@ public class ShowFactory {
 	@SuppressWarnings("unchecked")
 	public static Show createShow(Node node) {
 		Show show = new Show();
-		show.setTitle(UtilsXml.readString(node, TITLE));
-		show.setUrl(UtilsXml.readString(node, URL));
-		show.setDescription(UtilsXml.readString(node, DESCRIPTION));
-		show.setStatus(UtilsXml.readString(node, STATUS));
-		show.setBanner(UtilsXml.readString(node, BANNER));
-		show.setIdTvdb(UtilsXml.readInt(node, ID_THETVDB));
+		show.setTitle(UtilsXml.readString(node, Constants.TITLE));
+		show.setUrl(UtilsXml.readString(node, Constants.URL));
+		show.setDescription(UtilsXml.readString(node, Constants.DESCRIPTION));
+		show.setStatus(UtilsXml.readString(node, Constants.STATUS));
+		show.setBanner(UtilsXml.readString(node, Constants.BANNER));
+		show.setIdTvdb(UtilsXml.readInt(node, Constants.ID_THETVDB));
 		List<Node> genres = node.selectNodes("genres/genre");
 		for (Node nodeGenre : genres) {
 			show.addGenre(nodeGenre.getStringValue());
 		}
 		List<Node> seasons = node.selectNodes("seasons/season");
 		for (Node season : seasons) {
-			Integer seasonNb = UtilsXml.readInt(season, NUMBER);
-			Integer nbEpisode = UtilsXml.readInt(season, EPISODES);
+			Integer seasonNb = UtilsXml.readInt(season, Constants.NUMBER);
+			Integer nbEpisode = UtilsXml.readInt(season, Constants.EPISODES);
 			show.addNumberEpisodeForSeason(seasonNb, nbEpisode);
 		}
-		show.setArchived(UtilsXml.readBoolean(node, ARCHIVE));
+		show.setArchived(UtilsXml.readBoolean(node, Constants.ARCHIVE));
 		return show;
 	}
 }

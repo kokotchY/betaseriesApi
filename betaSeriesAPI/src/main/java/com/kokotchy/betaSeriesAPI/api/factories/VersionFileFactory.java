@@ -5,6 +5,7 @@ import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
+import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.model.VersionFile;
 
 /**
@@ -13,16 +14,6 @@ import com.kokotchy.betaSeriesAPI.model.VersionFile;
  * @author kokotchy
  */
 public class VersionFileFactory {
-	/**
-	 * TODO Fill it
-	 */
-	private static final String NAME = "name";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String LAST_CHANGE = "last_change";
-
 	/**
 	 * Create a new VersionFile from the json object
 	 * 
@@ -33,8 +24,9 @@ public class VersionFileFactory {
 	public static VersionFile createVersionFile(JSONObject fileObject) {
 		VersionFile versionFile = new VersionFile();
 		versionFile.setLastChange(UtilsJson.getIntValue(fileObject,
-				LAST_CHANGE));
-		versionFile.setName(UtilsJson.getStringValue(fileObject, NAME));
+				Constants.LAST_CHANGE));
+		versionFile.setName(UtilsJson
+				.getStringValue(fileObject, Constants.NAME));
 		return versionFile;
 	}
 
@@ -47,8 +39,9 @@ public class VersionFileFactory {
 	 */
 	public static VersionFile createVersionFile(Node node) {
 		VersionFile versionFile = new VersionFile();
-		versionFile.setLastChange(UtilsXml.readInt(node, LAST_CHANGE));
-		versionFile.setName(UtilsXml.readString(node, NAME));
+		versionFile
+				.setLastChange(UtilsXml.readInt(node, Constants.LAST_CHANGE));
+		versionFile.setName(UtilsXml.readString(node, Constants.NAME));
 		return versionFile;
 	}
 }

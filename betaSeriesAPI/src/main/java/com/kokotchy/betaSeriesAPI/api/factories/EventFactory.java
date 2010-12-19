@@ -5,6 +5,7 @@ import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
+import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.model.Event;
 
 /**
@@ -14,31 +15,6 @@ import com.kokotchy.betaSeriesAPI.model.Event;
  */
 public class EventFactory {
 	/**
-	 * TODO Fill it
-	 */
-	private static final String DATE = "date";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String HTML = "html";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String LOGIN = "login";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String REF = "ref";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String TYPE = "type";
-
-	/**
 	 * Create an event from a json object
 	 * 
 	 * @param jsonObject
@@ -47,11 +23,11 @@ public class EventFactory {
 	 */
 	public static Event createEvent(JSONObject jsonObject) {
 		Event event = new Event();
-		event.setType(UtilsJson.getStringValue(jsonObject, TYPE));
-		event.setRef(UtilsJson.getStringValue(jsonObject, REF));
-		event.setLogin(UtilsJson.getStringValue(jsonObject, LOGIN));
-		event.setHtml(UtilsJson.getStringValue(jsonObject, HTML));
-		event.setDate(UtilsJson.getIntValue(jsonObject, DATE));
+		event.setType(UtilsJson.getStringValue(jsonObject, Constants.TYPE));
+		event.setRef(UtilsJson.getStringValue(jsonObject, Constants.REF));
+		event.setLogin(UtilsJson.getStringValue(jsonObject, Constants.LOGIN));
+		event.setHtml(UtilsJson.getStringValue(jsonObject, Constants.HTML));
+		event.setDate(UtilsJson.getIntValue(jsonObject, Constants.DATE));
 		return event;
 	}
 
@@ -64,11 +40,11 @@ public class EventFactory {
 	 */
 	public static Event createEvent(Node node) {
 		Event event = new Event();
-		event.setType(UtilsXml.readString(node, TYPE));
-		event.setRef(UtilsXml.readString(node, REF));
-		event.setLogin(UtilsXml.readString(node, LOGIN));
-		event.setHtml(UtilsXml.readString(node, HTML));
-		event.setDate(UtilsXml.readInt(node, DATE));
+		event.setType(UtilsXml.readString(node, Constants.TYPE));
+		event.setRef(UtilsXml.readString(node, Constants.REF));
+		event.setLogin(UtilsXml.readString(node, Constants.LOGIN));
+		event.setHtml(UtilsXml.readString(node, Constants.HTML));
+		event.setDate(UtilsXml.readInt(node, Constants.DATE));
 		return event;
 	}
 }

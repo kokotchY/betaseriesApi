@@ -5,6 +5,7 @@ import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
+import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.model.Comment;
 
 /**
@@ -13,30 +14,6 @@ import com.kokotchy.betaSeriesAPI.model.Comment;
  * @author kokotchy
  */
 public class CommentFactory {
-	/**
-	 * TODO Fill it
-	 */
-	private static final String IN_REPLY_TO = "in_reply_to";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String LOGIN = "login";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String INNER_ID = "inner_id";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String DATE = "date";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String TEXT = "text";
 
 	/**
 	 * Create a comment from the json object
@@ -47,11 +24,15 @@ public class CommentFactory {
 	 */
 	public static Comment createComment(JSONObject jsonObject) {
 		Comment comment = new Comment();
-		comment.setContent(UtilsJson.getStringValue(jsonObject, TEXT));
-		comment.setDate(UtilsJson.getIntValue(jsonObject, DATE));
-		comment.setInnerId(UtilsJson.getIntValue(jsonObject, INNER_ID));
-		comment.setLogin(UtilsJson.getStringValue(jsonObject, LOGIN));
-		comment.setReplyToId(UtilsJson.getIntValue(jsonObject, IN_REPLY_TO));
+		comment
+				.setContent(UtilsJson
+						.getStringValue(jsonObject, Constants.TEXT));
+		comment.setDate(UtilsJson.getIntValue(jsonObject, Constants.DATE));
+		comment.setInnerId(UtilsJson
+				.getIntValue(jsonObject, Constants.INNER_ID));
+		comment.setLogin(UtilsJson.getStringValue(jsonObject, Constants.LOGIN));
+		comment.setReplyToId(UtilsJson.getIntValue(jsonObject,
+				Constants.IN_REPLY_TO));
 		return comment;
 	}
 
@@ -64,11 +45,11 @@ public class CommentFactory {
 	 */
 	public static Comment createComment(Node node) {
 		Comment comment = new Comment();
-		comment.setContent(UtilsXml.readString(node, TEXT));
-		comment.setDate(UtilsXml.readInt(node, DATE));
-		comment.setInnerId(UtilsXml.readInt(node, INNER_ID));
-		comment.setLogin(UtilsXml.readString(node, LOGIN));
-		comment.setReplyToId(UtilsXml.readInt(node, IN_REPLY_TO));
+		comment.setContent(UtilsXml.readString(node, Constants.TEXT));
+		comment.setDate(UtilsXml.readInt(node, Constants.DATE));
+		comment.setInnerId(UtilsXml.readInt(node, Constants.INNER_ID));
+		comment.setLogin(UtilsXml.readString(node, Constants.LOGIN));
+		comment.setReplyToId(UtilsXml.readInt(node, Constants.IN_REPLY_TO));
 		return comment;
 	}
 }

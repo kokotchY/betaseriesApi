@@ -5,6 +5,7 @@ import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
+import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.model.Error;
 
 /**
@@ -14,16 +15,6 @@ import com.kokotchy.betaSeriesAPI.model.Error;
  */
 public class ErrorFactory {
 	/**
-	 * TODO Fill it
-	 */
-	private static final String CONTENT = "content";
-
-	/**
-	 * TODO Fill it
-	 */
-	private static final String CODE = "code";
-
-	/**
 	 * Create an error from a json object
 	 * 
 	 * @param jsonObject
@@ -32,8 +23,8 @@ public class ErrorFactory {
 	 */
 	public static Error createError(JSONObject jsonObject) {
 		Error error = new Error();
-		error.setCode(UtilsJson.getIntValue(jsonObject, CODE));
-		error.setText(UtilsJson.getStringValue(jsonObject, CONTENT));
+		error.setCode(UtilsJson.getIntValue(jsonObject, Constants.CODE));
+		error.setText(UtilsJson.getStringValue(jsonObject, Constants.CONTENT));
 		return error;
 	}
 
@@ -45,7 +36,7 @@ public class ErrorFactory {
 	 * @return Error
 	 */
 	public static Error createError(Node node) {
-		int code = UtilsXml.getAttributeIntValue(node, CODE);
+		int code = UtilsXml.getAttributeIntValue(node, Constants.CODE);
 		Error error = new Error(code);
 		error.setText(node.getText());
 		return error;
