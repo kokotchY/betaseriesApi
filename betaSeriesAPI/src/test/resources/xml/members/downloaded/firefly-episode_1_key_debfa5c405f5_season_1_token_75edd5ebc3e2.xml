@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
  <key>debfa5c405f5</key>
- <member>
-  <login>delphiki</login>
-  <cached>1292549739</cached>
- </member>
+ <token>75edd5ebc3e2</token>
+ <downloaded>1</downloaded>
  <code>1</code>
  <errors/>
 </root>

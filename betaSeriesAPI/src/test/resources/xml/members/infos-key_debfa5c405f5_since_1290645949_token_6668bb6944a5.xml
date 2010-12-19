@@ -4,18 +4,23 @@
  <token>6668bb6944a5</token>
  <member>
   <login>kokotchY</login>
-  <cached>1290645949</cached>
+  <cached>1292751932</cached>
   <avatar></avatar>
   <stats>
-   <shows>54</shows>
-   <seasons>178</seasons>
-   <episodes>2949</episodes>
-   <progress>95,71 %</progress>
-   <episodes_to_watch>135</episodes_to_watch>
-   <time_on_tv>143350</time_on_tv>
-   <time_to_spend>6420</time_to_spend>
+   <shows>55</shows>
+   <seasons>181</seasons>
+   <episodes>3021</episodes>
+   <progress>95,66 %</progress>
+   <episodes_to_watch>140</episodes_to_watch>
+   <time_on_tv>147490</time_on_tv>
+   <time_to_spend>6750</time_to_spend>
   </stats>
   <shows>
+   <show>
+    <url>community</url>
+    <title>Community</title>
+    <archive>0</archive>
+   </show>
    <show>
     <url>futurama</url>
     <title>Futurama</title>
@@ -84,6 +89,11 @@
    <show>
     <url>dexter</url>
     <title>Dexter</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>eureka</url>
+    <title>Eureka</title>
     <archive>0</archive>
    </show>
    <show>
@@ -184,11 +194,6 @@
    <show>
     <url>eleventhhourus</url>
     <title>Eleventh Hour (US)</title>
-    <archive>1</archive>
-   </show>
-   <show>
-    <url>eureka</url>
-    <title>Eureka</title>
     <archive>1</archive>
    </show>
    <show>

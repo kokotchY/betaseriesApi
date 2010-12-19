@@ -3,251 +3,6 @@
  <key>debfa5c405f5</key>
  <planning>
   <episode>
-   <number>S06E08</number>
-   <date>1289257200</date>
-   <show>How I Met Your Mother</show>
-   <url>himym</url>
-   <title>Natural History</title>
-  </episode>
-  <episode>
-   <number>S03E01</number>
-   <date>1289257200</date>
-   <show>How Not to Live Your Life</show>
-   <url>hownottoliveyourlife</url>
-   <title>Don's New Job</title>
-  </episode>
-  <episode>
-   <number>S03E02</number>
-   <date>1289257200</date>
-   <show>How Not to Live Your Life</show>
-   <url>hownottoliveyourlife</url>
-   <title>Don's Angry Girlfriend</title>
-  </episode>
-  <episode>
-   <number>S02E07</number>
-   <date>1289343600</date>
-   <show>Stargate Universe</show>
-   <url>stargateuniverse</url>
-   <title>The Greater Good</title>
-  </episode>
-  <episode>
-   <number>S03E06</number>
-   <date>1289516400</date>
-   <show>Fringe</show>
-   <url>fringe</url>
-   <title>6995 kHz</title>
-  </episode>
-  <episode>
-   <number>S04E08</number>
-   <date>1289516400</date>
-   <show>The Big Bang Theory</show>
-   <url>bigbangtheory</url>
-   <title>The 21-Second Excitation</title>
-  </episode>
-  <episode>
-   <number>S09E10</number>
-   <date>1289516400</date>
-   <show>Naruto: Shippuuden</show>
-   <url>narutoshippuuden</url>
-   <title>Animal District</title>
-  </episode>
-  <episode>
-   <number>S10E08</number>
-   <date>1289602800</date>
-   <show>Smallville</show>
-   <url>smallville</url>
-   <title>Abandoned</title>
-  </episode>
-  <episode>
-   <number>S06E08</number>
-   <date>1289602800</date>
-   <show>Supernatural</show>
-   <url>supernatural</url>
-   <title>All Dogs Go to Heaven </title>
-  </episode>
-  <episode>
-   <number>S05E08</number>
-   <date>1289775600</date>
-   <show>Dexter</show>
-   <url>dexter</url>
-   <title>Take It!</title>
-  </episode>
-  <episode>
-   <number>S04E08</number>
-   <date>1289862000</date>
-   <show>Chuck</show>
-   <url>chuck</url>
-   <title>Chuck Versus the Fear of Death</title>
-  </episode>
-  <episode>
-   <number>S06E09</number>
-   <date>1289862000</date>
-   <show>How I Met Your Mother</show>
-   <url>himym</url>
-   <title>Glitter</title>
-  </episode>
-  <episode>
-   <number>S03E03</number>
-   <date>1289862000</date>
-   <show>How Not to Live Your Life</show>
-   <url>hownottoliveyourlife</url>
-   <title>Don's Posh Weekend</title>
-  </episode>
-  <episode>
-   <number>S02E08</number>
-   <date>1289948400</date>
-   <show>Stargate Universe</show>
-   <url>stargateuniverse</url>
-   <title>Malice</title>
-  </episode>
-  <episode>
-   <number>S03E07</number>
-   <date>1290121200</date>
-   <show>Fringe</show>
-   <url>fringe</url>
-   <title>The Abducted</title>
-  </episode>
-  <episode>
-   <number>S09E11</number>
-   <date>1290121200</date>
-   <show>Naruto: Shippuuden</show>
-   <url>narutoshippuuden</url>
-   <title>Ah, Medicinal Pill of Youth</title>
-  </episode>
-  <episode>
-   <number>S04E09</number>
-   <date>1290121200</date>
-   <show>The Big Bang Theory</show>
-   <url>bigbangtheory</url>
-   <title>The Boyfriend Complexity </title>
-  </episode>
-  <episode>
-   <number>S10E09</number>
-   <date>1290207600</date>
-   <show>Smallville</show>
-   <url>smallville</url>
-   <title>Patriot</title>
-  </episode>
-  <episode>
-   <number>S06E09</number>
-   <date>1290207600</date>
-   <show>Supernatural</show>
-   <url>supernatural</url>
-   <title>Clap Your Hands If You Believe</title>
-  </episode>
-  <episode>
-   <number>S05E09</number>
-   <date>1290380400</date>
-   <show>Dexter</show>
-   <url>dexter</url>
-   <title>Teenage Wasteland</title>
-  </episode>
-  <episode>
-   <number>S04E09</number>
-   <date>1290466800</date>
-   <show>Chuck</show>
-   <url>chuck</url>
-   <title>Chuck Versus Phase Three</title>
-  </episode>
-  <episode>
-   <number>S06E10</number>
-   <date>1290466800</date>
-   <show>How I Met Your Mother</show>
-   <url>himym</url>
-   <title>Blitzgiving</title>
-  </episode>
-  <episode>
-   <number>S03E04</number>
-   <date>1290466800</date>
-   <show>How Not to Live Your Life</show>
-   <url>hownottoliveyourlife</url>
-   <title>Series 3, Episode 4</title>
-  </episode>
-  <episode>
-   <number>S02E09</number>
-   <date>1290553200</date>
-   <show>Stargate Universe</show>
-   <url>stargateuniverse</url>
-   <title>Visitation</title>
-  </episode>
-  <episode>
-   <number>S09E12</number>
-   <date>1290726000</date>
-   <show>Naruto: Shippuuden</show>
-   <url>narutoshippuuden</url>
-   <title>Tale of the Gutsy Teacher and Student Ninja - Part 1</title>
-  </episode>
-  <episode>
-   <number>S09E13</number>
-   <date>1290726000</date>
-   <show>Naruto: Shippuuden</show>
-   <url>narutoshippuuden</url>
-   <title>Tale of the Gutsy Teacher and Student Ninja - Part 2</title>
-  </episode>
-  <episode>
-   <number>S05E10</number>
-   <date>1290985200</date>
-   <show>Dexter</show>
-   <url>dexter</url>
-   <title>In the Beginning</title>
-  </episode>
-  <episode>
-   <number>S04E10</number>
-   <date>1291071600</date>
-   <show>Chuck</show>
-   <url>chuck</url>
-   <title>Chuck Versus the Leftovers</title>
-  </episode>
-  <episode>
-   <number>S03E05</number>
-   <date>1291071600</date>
-   <show>How Not to Live Your Life</show>
-   <url>hownottoliveyourlife</url>
-   <title>Series 3, Episode 5</title>
-  </episode>
-  <episode>
-   <number>S02E10</number>
-   <date>1291158000</date>
-   <show>Stargate Universe</show>
-   <url>stargateuniverse</url>
-   <title>Resurgence (1)</title>
-  </episode>
-  <episode>
-   <number>S09E14</number>
-   <date>1291330800</date>
-   <show>Naruto: Shippuuden</show>
-   <url>narutoshippuuden</url>
-   <title>Sasuke's Paw Encyclopedia</title>
-  </episode>
-  <episode>
-   <number>S03E08</number>
-   <date>1291330800</date>
-   <show>Fringe</show>
-   <url>fringe</url>
-   <title>Entrada</title>
-  </episode>
-  <episode>
-   <number>S10E10</number>
-   <date>1291417200</date>
-   <show>Smallville</show>
-   <url>smallville</url>
-   <title>Luthor</title>
-  </episode>
-  <episode>
-   <number>S06E10</number>
-   <date>1291417200</date>
-   <show>Supernatural</show>
-   <url>supernatural</url>
-   <title>Caged Heat</title>
-  </episode>
-  <episode>
-   <number>S05E11</number>
-   <date>1291590000</date>
-   <show>Dexter</show>
-   <url>dexter</url>
-   <title>Hop A Freighter</title>
-  </episode>
-  <episode>
    <number>S06E11</number>
    <date>1291676400</date>
    <show>How I Met Your Mother</show>
@@ -255,18 +10,18 @@
    <title>The Mermaid Theory</title>
   </episode>
   <episode>
+   <number>S03E06</number>
+   <date>1291676400</date>
+   <show>How Not to Live Your Life</show>
+   <url>hownottoliveyourlife</url>
+   <title>Don Does Therapy</title>
+  </episode>
+  <episode>
    <number>S04E10</number>
    <date>1291762800</date>
    <show>Eureka</show>
    <url>eureka</url>
-   <title>O Little Town…</title>
-  </episode>
-  <episode>
-   <number>S04E10</number>
-   <date>1291935600</date>
-   <show>The Big Bang Theory</show>
-   <url>bigbangtheory</url>
-   <title>The Alien Parasite Hypothesis </title>
+   <title>O Little Town</title>
   </episode>
   <episode>
    <number>S09E15</number>
@@ -274,6 +29,13 @@
    <show>Naruto: Shippuuden</show>
    <url>narutoshippuuden</url>
    <title>Naruto and the Old Soldier</title>
+  </episode>
+  <episode>
+   <number>S03E09</number>
+   <date>1291935600</date>
+   <show>Fringe</show>
+   <url>fringe</url>
+   <title>Marionette</title>
   </episode>
   <episode>
    <number>S06E11</number>
@@ -290,25 +52,46 @@
    <title>Icarus</title>
   </episode>
   <episode>
-   <number>S05E12</number>
-   <date>1292194800</date>
-   <show>Dexter</show>
-   <url>dexter</url>
-   <title>Through a Glass, Darkly</title>
+   <number>S06E12</number>
+   <date>1292281200</date>
+   <show>How I Met Your Mother</show>
+   <url>himym</url>
+   <title>False Positive</title>
+  </episode>
+  <episode>
+   <number>S03E07</number>
+   <date>1292281200</date>
+   <show>How Not to Live Your Life</show>
+   <url>hownottoliveyourlife</url>
+   <title>Don the Musical</title>
   </episode>
   <episode>
    <number>S09E16</number>
    <date>1292540400</date>
    <show>Naruto: Shippuuden</show>
    <url>narutoshippuuden</url>
-   <title>TBA</title>
+   <title>Kakashi's Love Song</title>
+  </episode>
+  <episode>
+   <number>S04E11</number>
+   <date>1292540400</date>
+   <show>The Big Bang Theory</show>
+   <url>bigbangtheory</url>
+   <title>The Justice League Recombination</title>
   </episode>
   <episode>
    <number>S09E17</number>
    <date>1293145200</date>
    <show>Naruto: Shippuuden</show>
    <url>narutoshippuuden</url>
-   <title>TBA</title>
+   <title>The Chronicles of Neji</title>
+  </episode>
+  <episode>
+   <number>S06E13</number>
+   <date>1294095600</date>
+   <show>How I Met Your Mother</show>
+   <url>himym</url>
+   <title>Bad News</title>
   </episode>
   <episode>
    <number>S02E01</number>
@@ -318,25 +101,46 @@
    <title>Red Rain</title>
   </episode>
   <episode>
+   <number>S04E12</number>
+   <date>1294354800</date>
+   <show>The Big Bang Theory</show>
+   <url>bigbangtheory</url>
+   <title>The Bus Pants Utilization</title>
+  </episode>
+  <episode>
+   <number>S09E18</number>
+   <date>1294354800</date>
+   <show>Naruto: Shippuuden</show>
+   <url>narutoshippuuden</url>
+   <title>The Man Who Died Twice</title>
+  </episode>
+  <episode>
    <number>S04E01</number>
    <date>1294614000</date>
    <show>Californication</show>
    <url>californication</url>
-   <title>TBA</title>
+   <title>Exile On Main St.</title>
   </episode>
   <episode>
    <number>S02E02</number>
    <date>1294786800</date>
    <show>V (2009)</show>
    <url>v2009</url>
-   <title></title>
+   <title>Serpent's Tooth</title>
+  </episode>
+  <episode>
+   <number>S09E19</number>
+   <date>1294959600</date>
+   <show>Naruto: Shippuuden</show>
+   <url>narutoshippuuden</url>
+   <title>The Worst Three-Legged Race</title>
   </episode>
   <episode>
    <number>S04E02</number>
    <date>1295305200</date>
    <show>Californication</show>
    <url>californication</url>
-   <title>TBA</title>
+   <title>Suicide Solution</title>
   </episode>
   <episode>
    <number>S04E11</number>
@@ -350,56 +154,154 @@
    <date>1295391600</date>
    <show>V (2009)</show>
    <url>v2009</url>
-   <title></title>
+   <title>Laid Bear</title>
+  </episode>
+  <episode>
+   <number>S09E20</number>
+   <date>1295564400</date>
+   <show>Naruto: Shippuuden</show>
+   <url>narutoshippuuden</url>
+   <title>Cooperation, Team 10</title>
+  </episode>
+  <episode>
+   <number>S02E01</number>
+   <date>1295650800</date>
+   <show>Spartacus</show>
+   <url>spartacus</url>
+   <title>TBA</title>
+  </episode>
+  <episode>
+   <number>S03E10</number>
+   <date>1295650800</date>
+   <show>Fringe</show>
+   <url>fringe</url>
+   <title>Firefly</title>
   </episode>
   <episode>
    <number>S04E03</number>
    <date>1295910000</date>
    <show>Californication</show>
    <url>californication</url>
-   <title>TBA</title>
+   <title>Home Sweet Home</title>
   </episode>
   <episode>
    <number>S02E04</number>
    <date>1295996400</date>
    <show>V (2009)</show>
    <url>v2009</url>
-   <title></title>
+   <title>Unholy Alliance</title>
+  </episode>
+  <episode>
+   <number>S09E21</number>
+   <date>1296169200</date>
+   <show>Naruto: Shippuuden</show>
+   <url>narutoshippuuden</url>
+   <title>Rush Into the Darkness</title>
+  </episode>
+  <episode>
+   <number>S10E12</number>
+   <date>1296255600</date>
+   <show>Smallville</show>
+   <url>smallville</url>
+   <title>Collateral</title>
+  </episode>
+  <episode>
+   <number>S06E12</number>
+   <date>1296255600</date>
+   <show>Supernatural</show>
+   <url>supernatural</url>
+   <title>Like A Virgin</title>
   </episode>
   <episode>
    <number>S04E04</number>
    <date>1296514800</date>
    <show>Californication</show>
    <url>californication</url>
-   <title>TBA</title>
+   <title>Monkey Business</title>
+  </episode>
+  <episode>
+   <number>S10E13</number>
+   <date>1296860400</date>
+   <show>Smallville</show>
+   <url>smallville</url>
+   <title>Beacon</title>
+  </episode>
+  <episode>
+   <number>S06E13</number>
+   <date>1296860400</date>
+   <show>Supernatural</show>
+   <url>supernatural</url>
+   <title>Unforgiven</title>
   </episode>
   <episode>
    <number>S04E05</number>
    <date>1297119600</date>
    <show>Californication</show>
    <url>californication</url>
-   <title>TBA</title>
+   <title>Freeze Frame</title>
+  </episode>
+  <episode>
+   <number>S10E14</number>
+   <date>1297465200</date>
+   <show>Smallville</show>
+   <url>smallville</url>
+   <title>Masquerade</title>
+  </episode>
+  <episode>
+   <number>S06E14</number>
+   <date>1297465200</date>
+   <show>Supernatural</show>
+   <url>supernatural</url>
+   <title>Mannequin 3: The Reckoning</title>
   </episode>
   <episode>
    <number>S04E06</number>
    <date>1297724400</date>
    <show>Californication</show>
    <url>californication</url>
-   <title>TBA</title>
+   <title>Lawyers, Guns and Money</title>
+  </episode>
+  <episode>
+   <number>S10E15</number>
+   <date>1298070000</date>
+   <show>Smallville</show>
+   <url>smallville</url>
+   <title>Fortune</title>
+  </episode>
+  <episode>
+   <number>S06E15</number>
+   <date>1298070000</date>
+   <show>Supernatural</show>
+   <url>supernatural</url>
+   <title>The French Mistake</title>
   </episode>
   <episode>
    <number>S04E07</number>
    <date>1298329200</date>
    <show>Californication</show>
    <url>californication</url>
-   <title>TBA</title>
+   <title>The Rescued</title>
+  </episode>
+  <episode>
+   <number>S10E16</number>
+   <date>1298674800</date>
+   <show>Smallville</show>
+   <url>smallville</url>
+   <title>Scion</title>
   </episode>
   <episode>
    <number>S04E08</number>
    <date>1298934000</date>
    <show>Californication</show>
    <url>californication</url>
-   <title>TBA</title>
+   <title>Lights. Camera. A**hole </title>
+  </episode>
+  <episode>
+   <number>S10E17</number>
+   <date>1299279600</date>
+   <show>Smallville</show>
+   <url>smallville</url>
+   <title>Booster</title>
   </episode>
   <episode>
    <number>S04E09</number>
@@ -413,7 +315,7 @@
    <date>1300143600</date>
    <show>Californication</show>
    <url>californication</url>
-   <title>TBA</title>
+   <title>The Trial</title>
   </episode>
   <episode>
    <number>S04E11</number>

@@ -4,11 +4,67 @@
  <token>6668bb6944a5</token>
  <episodes>
   <episode>
+   <show>Community</show>
+   <episode>S02E10</episode>
+   <url>community</url>
+   <title>Mixology Certification</title>
+   <date>1291244400</date>
+   <downloaded>1</downloaded>
+   <subs>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/290564</url>
+     <filename>Community_2x10_HDTV.LOL.fr.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/287792</url>
+     <filename>Community_2x10_HDTV.LOL.en.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VOVF</language>
+     <url>http://www.betaseries.com/srt/290501</url>
+     <filename>Community.2x10.ENFR.FBK.zip</filename>
+     <source>soustitres</source>
+     <quality>5</quality>
+    </sub>
+   </subs>
+  </episode>
+  <episode>
+   <show>Community</show>
+   <episode>S02E11</episode>
+   <url>community</url>
+   <title>Abed's Uncontrollable Christmas</title>
+   <date>1291849200</date>
+   <downloaded>1</downloaded>
+   <subs>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/292916</url>
+     <filename>Community_2x11_HDTV.FBK.fr.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VOVF</language>
+     <url>http://www.betaseries.com/srt/292874</url>
+     <filename>Community.2x11.ENFR.FBK.zip</filename>
+     <source>soustitres</source>
+     <quality>5</quality>
+    </sub>
+   </subs>
+  </episode>
+  <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S01E05</episode>
    <url>ghostintheshellstandalonecomplex</url>
    <title>Decoy</title>
    <date>1035846000</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -16,6 +72,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Meme</title>
    <date>1036450800</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -23,6 +80,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Idolater</title>
    <date>1037055600</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -30,6 +88,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Missing Hearts</title>
    <date>1037660400</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -37,6 +96,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Chat! Chat! Chat!</title>
    <date>1038265200</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -44,6 +104,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Jungle Cruise</title>
    <date>1038870000</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -51,6 +112,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Portraitz</title>
    <date>1039474800</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -58,6 +120,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Escape From</title>
    <date>1040079600</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -65,6 +128,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Not Equal</title>
    <date>1040684400</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -72,6 +136,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>¥€$</title>
    <date>1041289200</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -79,6 +144,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Machines Désirantes</title>
    <date>1041894000</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -86,6 +152,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Ag20</title>
    <date>1042498800</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -93,6 +160,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Angel's Share</title>
    <date>1043103600</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -100,6 +168,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Lost Heritage</title>
    <date>1043708400</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -107,6 +176,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Captivated</title>
    <date>1044313200</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -114,6 +184,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Re-view</title>
    <date>1044918000</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -121,6 +192,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Eraser</title>
    <date>1045522800</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -128,6 +200,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Scandal</title>
    <date>1046127600</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -135,6 +208,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Equinox</title>
    <date>1046732400</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -142,6 +216,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Annihilation</title>
    <date>1047337200</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -149,6 +224,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Barrage</title>
    <date>1047942000</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -156,27 +232,31 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Stand Alone Complex</title>
    <date>1048546800</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E01</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>Reboot</title>
+   <title>Reembody</title>
    <date>1072911600</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E02</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>I, Glutton</title>
+   <title>Night Cruise</title>
    <date>1072911600</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E03</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>Saturday Night, Sunday Morning</title>
+   <title>Cash Eye</title>
    <date>1076108400</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -184,6 +264,7 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Natural Enemy</title>
    <date>1076108400</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
@@ -191,792 +272,276 @@
    <url>ghostintheshellstandalonecomplex</url>
    <title>Those With a Motive</title>
    <date>1078527600</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E06</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>Latent Heat Source</title>
+   <title>Excavation</title>
    <date>1078527600</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E07</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>Rhapsodies Are the Tune of a Fallen Country</title>
+   <title>239Pu</title>
    <date>1080943200</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E08</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>Vegetarian Dinner</title>
+   <title>Fake Food</title>
    <date>1080943200</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E09</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>A Hope Named Hopelessness</title>
+   <title>Ambivalence</title>
    <date>1083967200</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E10</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>One Angry Man</title>
+   <title>Trial</title>
    <date>1083967200</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E11</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>Grass Labyrinth</title>
+   <title>Affection</title>
    <date>1086386400</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E12</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>For the Nameless</title>
+   <title>Selecon</title>
    <date>1086386400</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E13</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>Face</title>
+   <title>Make Up</title>
    <date>1088805600</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E14</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>Watch Out for the Left Eye</title>
+   <title>Poker Face</title>
    <date>1088805600</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E15</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>The Machines Afternoon</title>
+   <title>Pat</title>
    <date>1091829600</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E16</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>Being There</title>
+   <title>Another Chance</title>
    <date>1091829600</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E17</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>Close Mother, Child Bonds</title>
+   <title>Red Data</title>
    <date>1094248800</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E18</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>Wings of Desire</title>
+   <title>Trans Parent</title>
    <date>1094248800</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E19</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>Glass Labyrinth</title>
+   <title>Chain Reaction</title>
    <date>1096668000</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E20</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>Confusion in the Northern Frontier</title>
+   <title>Fabricate Fog</title>
    <date>1096668000</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E21</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>Routed</title>
+   <title>Embarrassment</title>
    <date>1099695600</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E22</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>Deserted Streets</title>
+   <title>Reveral Process</title>
    <date>1099695600</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E23</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>The Day the Bridge Came Crashing Down</title>
+   <title>Martial Law</title>
    <date>1102114800</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E24</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>The Dejima Air Raid</title>
+   <title>Nuclear Power</title>
    <date>1102114800</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E25</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>That Side of Paradise</title>
+   <title>This Side of Justice</title>
    <date>1105138800</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Ghost in the Shell: Stand Alone Complex</show>
    <episode>S02E26</episode>
    <url>ghostintheshellstandalonecomplex</url>
-   <title>A Return to Patriotism</title>
+   <title>Endless Gig</title>
    <date>1105138800</date>
+   <downloaded>0</downloaded>
   </episode>
   <episode>
    <show>Human Target (2010)</show>
-   <episode>S02E01</episode>
+   <episode>S02E05</episode>
    <url>humantarget2010</url>
-   <title>Ilsa Pucci</title>
-   <date>1289948400</date>
+   <title>Dead Head</title>
+   <date>1292367600</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/282024</url>
-     <filename>Human Target_2x01_HDTV.Human.Targe[...].en.zip</filename>
+     <url>http://www.betaseries.com/srt/292755</url>
+     <filename>Human Target_2x05_HDTV.LOL.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
    </subs>
   </episode>
   <episode>
    <show>It's Always Sunny in Philadelphia</show>
-   <episode>S04E01</episode>
+   <episode>S06E11</episode>
    <url>itsalwayssunnyinphiladelphia</url>
-   <title>Mac and Dennis: Manhunters</title>
-   <date>1221688800</date>
+   <title>The Gang Gets Stranded in the Woods</title>
+   <date>1291244400</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>It's Always Sunny in Philadelphia</show>
-   <episode>S04E02</episode>
+   <episode>S06E12</episode>
    <url>itsalwayssunnyinphiladelphia</url>
-   <title>The Gang Solves The Gas Crisis</title>
-   <date>1221688800</date>
+   <title>Dee Gives Birth</title>
+   <date>1291849200</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>It's Always Sunny in Philadelphia</show>
-   <episode>S04E03</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>America's Next Top Paddy's Billboard Model Contest</title>
-   <date>1222293600</date>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S04E04</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>Mac's Banging the Waitress</title>
-   <date>1222293600</date>
-   <subs>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/34196</url>
-     <filename>Its Always Sunny in Philadelphia_4[...]_en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S04E05</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>Mac &amp; Charlie Die (1)</title>
-   <date>1222898400</date>
-   <subs>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/14081</url>
-     <filename>It s Always Sunny in Philadelphia_[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/14075</url>
-     <filename>It s Always Sunny in Philadelphia_[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/14074</url>
-     <filename>It s Always Sunny in Philadelphia_[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/14015</url>
-     <filename>It s Always Sunny in Philadelphia_[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/14014</url>
-     <filename>It s Always Sunny in Philadelphia_[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S04E06</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>Mac &amp; Charlie Die (2)</title>
-   <date>1222898400</date>
-   <subs>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/63351</url>
-     <filename>Its Always Sunny in Philadelphia_4[...]_en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S04E07</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>Who Pooped the Bed? </title>
-   <date>1223503200</date>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S04E08</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>Paddy's Pub: The Worst Bar in Philadelphia </title>
-   <date>1224108000</date>
-   <subs>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/138871</url>
-     <filename>Its Always Sunny in Philadelphia_4[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/14076</url>
-     <filename>It s Always Sunny in Philadelphia_[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/14013</url>
-     <filename>It s Always Sunny in Philadelphia_[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S04E09</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>Dennis Reynolds: An Erotic Life</title>
-   <date>1224712800</date>
-   <subs>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/14145</url>
-     <filename>It s Always Sunny in Philadelphia_[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S04E10</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>Sweet Dee Has A Heart Attack</title>
-   <date>1225321200</date>
-   <subs>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/17066</url>
-     <filename>It s Always Sunny in Philadelphia_[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/14079</url>
-     <filename>It s Always Sunny in Philadelphia_[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S04E11</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>The Gang Cracks The Liberty Bell</title>
-   <date>1225926000</date>
-   <subs>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/17257</url>
-     <filename>It s Always Sunny in Philadelphia_[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S04E12</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>The Gang Gets Extreme: Home Makeover Edition</title>
-   <date>1226530800</date>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S04E13</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>The Nightman Cometh</title>
-   <date>1227135600</date>
-   <subs>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/30266</url>
-     <filename>Its Always Sunny in Philadelphia_4[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/14317</url>
-     <filename>It s Always Sunny in Philadelphia_[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/14316</url>
-     <filename>It s Always Sunny in Philadelphia_[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S05E01</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>The Gang Exploits the Mortgage Crisis</title>
-   <date>1253138400</date>
-   <subs>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/146305</url>
-     <filename>Its Always Sunny in Philadelphia_5[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/145885</url>
-     <filename>Its Always Sunny in Philadelphia_5[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/58885</url>
-     <filename>Its Always Sunny in Philadelphia_5[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S05E02</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>The Gang Hits the Road</title>
-   <date>1253743200</date>
-   <subs>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/152288</url>
-     <filename>Its Always Sunny in Philadelphia_5[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/63183</url>
-     <filename>Its Always Sunny in Philadelphia_5[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S05E03</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>The Great Recession</title>
-   <date>1254348000</date>
-   <subs>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/153489</url>
-     <filename>It s Always Sunny in Philadelphia_[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/152304</url>
-     <filename>Its Always Sunny in Philadelphia_5[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/152307</url>
-     <filename>Its Always Sunny in Philadelphia_5[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S05E04</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>The Gang Gives Frank an Intervention</title>
-   <date>1254952800</date>
-   <subs>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/155993</url>
-     <filename>It s Always Sunny in Philadelphia_[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/153465</url>
-     <filename>It s Always Sunny in Philadelphia_[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S05E05</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>The Waitress Is Getting Married</title>
-   <date>1255557600</date>
-   <subs>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/156445</url>
-     <filename>It s Always Sunny in Philadelphia_[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/153458</url>
-     <filename>It s Always Sunny in Philadelphia_[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S05E06</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>The World Series Defense</title>
-   <date>1256162400</date>
-   <subs>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/157936</url>
-     <filename>It s Always Sunny in Philadelphia_[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S05E07</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>The Gang Wrestles for the Troops</title>
-   <date>1256770800</date>
-   <subs>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/214378</url>
-     <filename>Its.Always.Sunny.in.Philadelphia.S[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/159721</url>
-     <filename>It s Always Sunny in Philadelphia_[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S05E08</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>Paddy's Pub: Home of the Original Kitten Mittens</title>
-   <date>1257375600</date>
-   <subs>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/153134</url>
-     <filename>It s Always Sunny in Philadelphia_[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S05E09</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>Mac and Dennis Break Up</title>
-   <date>1257980400</date>
-   <subs>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/152281</url>
-     <filename>Its Always Sunny in Philadelphia_5[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S05E10</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>The D.E.N.N.I.S. System</title>
-   <date>1258585200</date>
-   <subs>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/152274</url>
-     <filename>Its Always Sunny in Philadelphia_5[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S05E11</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>Mac and Charlie Write a Movie</title>
-   <date>1259794800</date>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S05E12</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>The Gang Reignites the Rivalry</title>
-   <date>1260399600</date>
-   <subs>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/239772</url>
-     <filename>Its Always Sunny in Philadelphia_5[...]_fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/235019</url>
-     <filename>Its Always Sunny in Philadelphia_5[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/166693</url>
-     <filename>It s Always Sunny in Philadelphia_[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S05E13</episode>
+   <episode>S06E13</episode>
    <url>itsalwayssunnyinphiladelphia</url>
    <title>A Very Sunny Christmas</title>
-   <date>1258412400</date>
+   <date>1292454000</date>
+   <downloaded>0</downloaded>
+  </episode>
+  <episode>
+   <show>Nikita</show>
+   <episode>S01E11</episode>
+   <url>nikita</url>
+   <title>All the Way</title>
+   <date>1291849200</date>
+   <downloaded>0</downloaded>
    <subs>
     <sub>
      <language>VF</language>
-     <url>http://www.betaseries.com/srt/211330</url>
-     <filename>Its.Always.Sunny.in.Philadelphia.S[...].fr.zip</filename>
+     <url>http://www.betaseries.com/srt/291250</url>
+     <filename>Nikita_1x11_HDTV.Fever.fr.zip</filename>
      <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/145969</url>
-     <filename>Its Always Sunny in Philadelphia_5[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S06E01</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>Mac Fights Gay Marriage</title>
-   <date>1284588000</date>
-   <subs>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/273372</url>
-     <filename>Its.Always.Sunny.In.Philadelphia.6[...]DDY.zip</filename>
-     <source>soustitres</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S06E02</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>Dennis Gets Divorced</title>
-   <date>1285192800</date>
-   <subs>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/252211</url>
-     <filename>Its Always Sunny in Philadelphia_6[...].en.zip</filename>
-     <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
-     <url>http://www.betaseries.com/srt/274044</url>
-     <filename>Its.Always.Sunny.In.Philadelphia.6[...]DDY.zip</filename>
-     <source>soustitres</source>
+     <url>http://www.betaseries.com/srt/291103</url>
+     <filename>Nikita_1x11_HDTV.1.0.fr(1).zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S06E03</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>The Gang Buys a Boat</title>
-   <date>1285797600</date>
-   <subs>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/256845</url>
-     <filename>Its Always Sunny in Philadelphia_6[...].en.zip</filename>
+     <url>http://www.betaseries.com/srt/290599</url>
+     <filename>Nikita_1x11_HDTV.FEVER.en.zip</filename>
      <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/278825</url>
-     <filename>Its.Always.Sunny.In.Philadelphia.6[...]DDY.zip</filename>
-     <source>soustitres</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S06E04</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>Mac's Big Break</title>
-   <date>1286402400</date>
-   <subs>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/260639</url>
-     <filename>Its Always Sunny in Philadelphia_6[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S06E05</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>Mac and Charlie: White Trash</title>
-   <date>1287007200</date>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S06E06</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>Mac's Mom Burns Her House Down</title>
-   <date>1287612000</date>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S06E07</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>Who Got Dee Pregnant?</title>
-   <date>1288216800</date>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S06E08</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>The Gang Gets a New Member</title>
-   <date>1288825200</date>
-   <subs>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/277866</url>
-     <filename>Its Always Sunny in Philadelphia_6[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S06E09</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>Dee Reynolds: Shaping America's Youth</title>
-   <date>1289430000</date>
-  </episode>
-  <episode>
-   <show>It's Always Sunny in Philadelphia</show>
-   <episode>S06E10</episode>
-   <url>itsalwayssunnyinphiladelphia</url>
-   <title>Charlie Kelly: King of the Rats</title>
-   <date>1290034800</date>
-  </episode>
-  <episode>
-   <show>No Ordinary Family</show>
-   <episode>S01E07</episode>
-   <url>noordinaryfamily</url>
-   <title>No Ordinary Mobster</title>
-   <date>1289862000</date>
-   <subs>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/281898</url>
-     <filename>No Ordinary Family_1x07_HDTV.LOL.e[...].en.zip</filename>
-     <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
    </subs>
   </episode>
   <episode>
    <show>The Event</show>
-   <episode>S01E08</episode>
+   <episode>S01E10</episode>
    <url>theevent</url>
-   <title>For the Good of Our Country</title>
-   <date>1289775600</date>
+   <title>Everything Will Change</title>
+   <date>1290985200</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VF</language>
-     <url>http://www.betaseries.com/srt/282318</url>
-     <filename>The Event_1x08_HDTV.rossi66.fr.zip</filename>
+     <url>http://www.betaseries.com/srt/287316</url>
+     <filename>The Event_1x10_720p.WEB-DL.SURFER.[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/287246</url>
+     <filename>The Event_1x10_HDTV.LoL.fr.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/280869</url>
-     <filename>The Event_1x08_HDTV.LOL.en.zip</filename>
+     <url>http://www.betaseries.com/srt/286966</url>
+     <filename>The Event_1x10_HDTV.LOL.en.zip</filename>
      <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/280841</url>
-     <filename>The Event - 01x08 - For the Good o[...]try.srt</filename>
-     <source>addic7ed</source>
+     <quality>1</quality>
     </sub>
    </subs>
   </episode>
@@ -986,36 +551,42 @@
    <url>thepillarsoftheearth</url>
    <title>Legacy</title>
    <date>1281909600</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/241697</url>
      <filename>The.Pillars.of.the.Earth.S01E05.72[...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/240164</url>
      <filename>The Pillars Of The Earth_1x05_HDTV[...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/239730</url>
      <filename>The Pillars Of The Earth_1x05_HDTV[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/239660</url>
      <filename>The Pillars Of The Earth_1x05_HDTV[...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/277887</url>
      <filename>The.Pillars.of.The.Earth.1x05.FR.F[...]FBK.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
@@ -1025,30 +596,35 @@
    <url>thepillarsoftheearth</url>
    <title>Witchcraft</title>
    <date>1282514400</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/244518</url>
      <filename>The Pillars Of The Earth_1x06_HDTV[...](1).zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/244098</url>
      <filename>The Pillars Of The Earth_1x06_HDTV[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/243818</url>
      <filename>The Pillars Of The Earth_1x06_HDTV[...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/243748</url>
      <filename>The.Pillars.of.the.Earth.S01E06.72[...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
    </subs>
   </episode>
@@ -1058,24 +634,28 @@
    <url>thepillarsoftheearth</url>
    <title>New Beginnings</title>
    <date>1283119200</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/247339</url>
      <filename>The Pillars Of The Earth_1x07-08_7[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/246884</url>
      <filename>The Pillars Of The Earth_1x07-08_7[...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/246758</url>
      <filename>The Pillars Of The Earth_1x07-08_7[...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
    </subs>
   </episode>
@@ -1085,63 +665,66 @@
    <url>thepillarsoftheearth</url>
    <title>The Work of Angels</title>
    <date>1283119200</date>
+   <downloaded>0</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/247038</url>
      <filename>The Pillars Of The Earth_1x08_HDTV[...](1).zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/247031</url>
      <filename>The Pillars Of The Earth_1x08_HDTV[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/245708</url>
      <filename>The.Pillars.of.the.Earth.S01E08.HD[...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
    </subs>
   </episode>
   <episode>
    <show>Undercovers</show>
-   <episode>S01E08</episode>
+   <episode>S01E09</episode>
    <url>undercovers</url>
-   <title>Crashed</title>
-   <date>1289343600</date>
+   <title>A Night to Forget</title>
+   <date>1291158000</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VF</language>
-     <url>http://www.betaseries.com/srt/282843</url>
-     <filename>Undercovers_1x08_HDTV.LOL.fr.zip</filename>
+     <url>http://www.betaseries.com/srt/292818</url>
+     <filename>Undercovers_1x09_HDTV.LOL.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/278132</url>
-     <filename>Undercovers_1x08_HDTV.en.zip</filename>
+     <url>http://www.betaseries.com/srt/287652</url>
+     <filename>Undercovers_1x09_HDTV.LOL.en.zip</filename>
      <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/278041</url>
-     <filename>Undercovers - 01x08 - Crashed.srt</filename>
-     <source>addic7ed</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VOVF</language>
-     <url>http://www.betaseries.com/srt/281618</url>
-     <filename>Undercovers.1x08.ENFR.AGT.zip</filename>
+     <url>http://www.betaseries.com/srt/292790</url>
+     <filename>Undercovers.1x09.ENFR.AGT.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
     <sub>
      <language>VOVF</language>
-     <url>http://www.betaseries.com/srt/281604</url>
-     <filename>Undercovers.1x08.ENFR.AGT.zip</filename>
+     <url>http://www.betaseries.com/srt/292783</url>
+     <filename>Undercovers.1x09.ENFR.AGT.zip</filename>
      <source>usub</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
@@ -1151,120 +734,104 @@
    <url>caprica</url>
    <title>False Labor</title>
    <date>1288044000</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/272035</url>
      <filename>Caprica_1x13_HDTV.Caprica - 1x13 -[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/272707</url>
      <filename>Caprica_1x13_HDTV.FQM.1.0.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/271160</url>
      <filename>Caprica_1x13_720p HDTV.FQM.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/271020</url>
      <filename>Caprica_1x13_HDTV.FQM.fr(1).zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/270467</url>
      <filename>Caprica_1x13_HDTV.FQM.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/270852</url>
      <filename>Caprica_1x13_720p HDTV.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VOVF</language>
      <url>http://www.betaseries.com/srt/274667</url>
      <filename>Caprica.1x13.ENFR.FBK.zip</filename>
      <source>soustitres</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>Chuck</show>
-   <episode>S04E08</episode>
-   <url>chuck</url>
-   <title>Chuck Versus the Fear of Death</title>
-   <date>1289775600</date>
-   <subs>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/281177</url>
-     <filename>Chuck_4x08_720p HDTV.DiMENSiON.fr.[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/281184</url>
-     <filename>Chuck_4x08_HDTV.LOL.fr(1).zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/281044</url>
-     <filename>Chuck_4x08_HDTV.LOL.fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/281037</url>
-     <filename>Chuck_4x08_720p HDTV.Dimension.fr.[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/281135</url>
-     <filename>Chuck.4x08.FR.FBK.zip</filename>
-     <source>soustitres</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/280813</url>
-     <filename>Chuck_4x08_HDTV.LOL.en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/281149</url>
-     <filename>Chuck.4x08.FR.FBK.zip</filename>
-     <source>usub</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
   <episode>
    <show>Criminal Minds</show>
-   <episode>S06E09</episode>
+   <episode>S06E10</episode>
    <url>criminalminds</url>
-   <title>Into The Woods</title>
-   <date>1289948400</date>
+   <title>What Happens at Home</title>
+   <date>1291762800</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/281926</url>
-     <filename>Criminal Minds_6x09_HDTV.en.zip</filename>
+     <url>http://www.betaseries.com/srt/290438</url>
+     <filename>Criminal Minds_6x10_HDTV.lol.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/281842</url>
-     <filename>Criminal Minds_6x09_HDTV.FQM.en.zip</filename>
+     <url>http://www.betaseries.com/srt/290088</url>
+     <filename>Criminal Minds_6x10_HDTV.LOL.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+   </subs>
+  </episode>
+  <episode>
+   <show>Criminal Minds</show>
+   <episode>S06E11</episode>
+   <url>criminalminds</url>
+   <title>25 to Life</title>
+   <date>1292367600</date>
+   <downloaded>1</downloaded>
+   <subs>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/292811</url>
+     <filename>Criminal Minds_6x11_HDTV.LOL.en(1)[...](1).zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/292685</url>
+     <filename>Criminal Minds_6x11_HDTV.LOL.en.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
    </subs>
   </episode>
@@ -1274,48 +841,56 @@
    <url>dexter</url>
    <title>If I Had a Hammer</title>
    <date>1257030000</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/142765</url>
      <filename>Dexter_4x06_HDTV.Xvid-SYS.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/143413</url>
      <filename>Dexter_4x06_720p HDTV.DIMENSION.en[...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/142753</url>
      <filename>Dexter_4x06_720p HDTV.DIMENSION.fr[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/142741</url>
      <filename>Dexter_4x06_HDTV.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/142711</url>
      <filename>Dexter_4x06_HDTV.SYS.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/142729</url>
      <filename>Dexter_4x06_HDTV.SYS.en(1).zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/186174</url>
      <filename>Dexter.4x06.FR.FBK.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
@@ -1325,48 +900,56 @@
    <url>dexter</url>
    <title>Slack Tide</title>
    <date>1257634800</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/145951</url>
      <filename>Dexter_4x07_HDTV.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/145993</url>
      <filename>Dexter_4x07_HDTV.dexter.s04e07.hdt[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/145879</url>
      <filename>Dexter_4x07_HDTV.FQM.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/145831</url>
      <filename>Dexter_4x07_720p HDTV.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/145693</url>
      <filename>Dexter_4x07_HDTV.FQM.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/145813</url>
      <filename>Dexter_4x07_720p HDTV.RED.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/186167</url>
      <filename>Dexter.4x07.FR.FBK.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
@@ -1376,48 +959,56 @@
    <url>dexter</url>
    <title>Road Kill</title>
    <date>1258239600</date>
+   <downloaded>0</downloaded>
    <subs>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/149203</url>
      <filename>Dexter_4x08_HDTV.Dexter.S04E08.HDT[...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/150796</url>
      <filename>Dexter_4x08_HDTV.Dexter.S04E08.HDT[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/149167</url>
      <filename>Dexter_4x08_720p HDTV.DIMENSION.fr[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/149149</url>
      <filename>Dexter_4x08_HDTV.SYS.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/148879</url>
      <filename>Dexter_4x08_HDTV.SYS.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/148903</url>
      <filename>Dexter_4x08_720p HDTV.dimension.en[...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/186160</url>
      <filename>Dexter.4x08.FR.FBK.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
@@ -1427,60 +1018,70 @@
    <url>dexter</url>
    <title>Hungry Man</title>
    <date>1258844400</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/152187</url>
      <filename>Dexter_4x09_HDTV.Xvid-sys.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/152189</url>
      <filename>Dexter_4x09_HDTV.Xvid-sys.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/152597</url>
      <filename>Dexter_4x09_HDTV.Dexter.S04E09.HDT[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/152115</url>
      <filename>Dexter_4x09_HDTV.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/152095</url>
      <filename>Dexter_4x09_720p HDTV.Dexter - 04x[...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/152133</url>
      <filename>Dexter_4x09_720p HDTV.DIMENSION.fr[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/152070</url>
      <filename>Dexter_4x09_HDTV.SYS.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/152088</url>
      <filename>Dexter_4x09_HDTV.Dexter - 04x09 - [...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/186153</url>
      <filename>Dexter.4x09.FR.FBK.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
@@ -1490,42 +1091,49 @@
    <url>dexter</url>
    <title>Lost Boys</title>
    <date>1259449200</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/153687</url>
      <filename>Dexter_4x10_HDTV.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/153740</url>
      <filename>Dexter_4x10_HDTV.FQM.fr(1).zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/153674</url>
      <filename>Dexter_4x10_HDTV.FQM.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/153594</url>
      <filename>Dexter_4x10_HDTV.fqm.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/153667</url>
      <filename>Dexter_4x10_720p HDTV.RED.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/186146</url>
      <filename>Dexter.4x10.FR.FBK.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
@@ -1535,48 +1143,56 @@
    <url>dexter</url>
    <title>Hello, Dexter Morgan</title>
    <date>1260054000</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/155221</url>
      <filename>Dexter_4x11_720p HDTV.SYS.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/155228</url>
      <filename>Dexter_4x11_HDTV.SYS.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/155219</url>
      <filename>Dexter_4x11_HDTV.SYS.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/155212</url>
      <filename>Dexter_4x11_720p HDTV.SYS.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/155056</url>
      <filename>Dexter_4x11_720p HDTV.Dexter - 04x[...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/155063</url>
      <filename>Dexter_4x11_HDTV.Dexter - 04x11 - [...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/186139</url>
      <filename>Dexter.4x11.FR.FBK.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
@@ -1586,48 +1202,56 @@
    <url>dexter</url>
    <title>The Getaway</title>
    <date>1260658800</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/156984</url>
      <filename>Dexter_4x12_720p HDTV.RED.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/157040</url>
      <filename>Dexter_4x12_720p HDTV.RED.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/156970</url>
      <filename>Dexter_4x12_HDTV.Xvid-Sys.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/156809</url>
      <filename>Dexter_4x12_HDTV.SYS.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/156795</url>
      <filename>Dexter_4x12_720p HDTV.RED.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/156802</url>
      <filename>Dexter_4x12_HDTV.Arie.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/186132</url>
      <filename>Dexter.4x12.FR.FBK.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
@@ -1637,48 +1261,56 @@
    <url>dexter</url>
    <title>My Bad</title>
    <date>1285452000</date>
+   <downloaded>0</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/253457</url>
      <filename>Dexter_5x01_HDTV.fqm.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/253464</url>
      <filename>Dexter_5x01_720p HDTV.orenji.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/253415</url>
      <filename>Dexter_5x01_720p HDTV.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/253401</url>
      <filename>Dexter_5x01_HDTV.Dexter S05E01.VOS[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/253198</url>
      <filename>Dexter_5x01_HDTV.FQM.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/253226</url>
      <filename>Dexter_5x01_720p HDTV.ORENJI.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/254815</url>
      <filename>Dexter.5x01.FR.FBK.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
@@ -1688,30 +1320,42 @@
    <url>dexter</url>
    <title>Hello Bandit</title>
    <date>1286056800</date>
+   <downloaded>0</downloaded>
    <subs>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/283445</url>
+     <filename>Dexter_5x02_HDTV.fqm.fr(2).zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/257671</url>
      <filename>Dexter_5x02_HDTV.FQM.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/257636</url>
      <filename>Dexter_5x02_HDTV.Dexter S05E02.VOS[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/257622</url>
      <filename>Dexter_5x02_HDTV.fqm.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/258385</url>
      <filename>Dexter.5x02.FR.FBK.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
@@ -1721,48 +1365,56 @@
    <url>dexter</url>
    <title>Practically Perfect</title>
    <date>1286661600</date>
+   <downloaded>0</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/261941</url>
      <filename>Dexter_5x03_HDTV.2HD.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/262410</url>
      <filename>Dexter_5x03_HDTV.HDTV.2HD.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/261290</url>
      <filename>Dexter_5x03_HDTV.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/261269</url>
      <filename>Dexter_5x03_HDTV.HDTV.2HD.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/261164</url>
      <filename>Dexter_5x03_720p HDTV.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/261171</url>
      <filename>Dexter_5x03_720p HDTV.Dexter.S05E0[...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/261850</url>
      <filename>Dexter.5x03.FR.FBK.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
@@ -1772,72 +1424,84 @@
    <url>dexter</url>
    <title>Beauty and the Beast</title>
    <date>1287266400</date>
+   <downloaded>0</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/265105</url>
      <filename>Dexter_5x04_HDTV.1.0.fr(1).zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/265070</url>
      <filename>Dexter_5x04_HDTV.LOL.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/265056</url>
      <filename>Dexter_5x04_720p HDTV.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/265042</url>
      <filename>Dexter_5x04_HDTV.FQM.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/265133</url>
      <filename>Dexter_5x04_HDTV.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/265168</url>
      <filename>Dexter_5x04_HDTV.fr(1).zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/265014</url>
      <filename>Dexter - 05x04 - Beauty and the Be[...]ast.srt</filename>
      <source>addic7ed</source>
+     <quality>3</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/266064</url>
      <filename>Dexter_5x04_HDTV.FQM.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/266057</url>
      <filename>Dexter_5x04_720p HDTV.IMMERSE.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/265210</url>
      <filename>Dexter_5x04_HDTV.Dexter S05E04.FQM[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/266015</url>
      <filename>Dexter.5x04.FR.FBK.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
@@ -1847,54 +1511,63 @@
    <url>dexter</url>
    <title>First Blood</title>
    <date>1287871200</date>
+   <downloaded>0</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/269116</url>
      <filename>Dexter_5x05_HDTV.Dexter S05E05 hdt[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/269158</url>
      <filename>Dexter_5x05_HDTV.Dexter.S05E05.Fir[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/269914</url>
      <filename>Dexter_5x05_HDTV.FQM.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/269095</url>
      <filename>Dexter_5x05_HDTV.Dexter S05E05.FQM[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/269074</url>
      <filename>Dexter_5x05_HDTV.LOL.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/268976</url>
      <filename>Dexter_5x05_HDTV.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/269039</url>
      <filename>Dexter_5x05_720p HDTV.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/270047</url>
      <filename>Dexter.5x05.FR.FBK.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
@@ -1904,42 +1577,49 @@
    <url>dexter</url>
    <title>Everything is Illumenated</title>
    <date>1288476000</date>
+   <downloaded>0</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/272945</url>
      <filename>Dexter_5x06_HDTV.Dexter S05E06.FQM[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/273225</url>
      <filename>Dexter_5x06_720p HDTV.720p.HDTV.X2[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/272896</url>
      <filename>Dexter_5x06_720p HDTV.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/272770</url>
      <filename>Dexter_5x06_HDTV.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/272749</url>
      <filename>Dexter - 05x06 - Everything Is Ill[...]ted.srt</filename>
      <source>addic7ed</source>
+     <quality>3</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/273113</url>
      <filename>Dexter.5x06.FR.FBK.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
@@ -1949,54 +1629,63 @@
    <url>dexter</url>
    <title>Circle Us</title>
    <date>1289084400</date>
+   <downloaded>0</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/276669</url>
      <filename>Dexter_5x07_720p HDTV.CTU.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/276697</url>
      <filename>Dexter_5x07_HDTV.Dexter S05E07.Fev[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/276732</url>
      <filename>Dexter_5x07_HDTV.FEVER.fr(1).zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/276641</url>
      <filename>Dexter_5x07_HDTV.FEVER.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/276627</url>
      <filename>Dexter_5x07_HDTV.Dexter S05E07.FRE[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/276452</url>
      <filename>Dexter - 05x07 - Circle Us.srt</filename>
      <source>addic7ed</source>
+     <quality>3</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/276466</url>
      <filename>Dexter_5x07_HDTV.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/277341</url>
      <filename>Dexter.5x07.FR.FBK.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
@@ -2006,238 +1695,484 @@
    <url>dexter</url>
    <title>Take It!</title>
    <date>1289689200</date>
+   <downloaded>0</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/280449</url>
      <filename>Dexter_5x08_720p HDTV.ctu.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/280519</url>
      <filename>Dexter_5x08_HDTV.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/280442</url>
      <filename>Dexter_5x08_HDTV.S05E08.FQM.Take I[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/280435</url>
      <filename>Dexter_5x08_HDTV.S05E08.FQM.TAKE I[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
      <url>http://www.betaseries.com/srt/280337</url>
      <filename>Dexter_5x08_HDTV.FQM.en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/281611</url>
      <filename>Dexter.5x08.FR.FBK.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
+    </sub>
+   </subs>
+  </episode>
+  <episode>
+   <show>Dexter</show>
+   <episode>S05E09</episode>
+   <url>dexter</url>
+   <title>Teenage Wasteland</title>
+   <date>1290294000</date>
+   <downloaded>0</downloaded>
+   <subs>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/284187</url>
+     <filename>Dexter_5x09_HDTV.Dexter S05E09 HDT[...].fr.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/284145</url>
+     <filename>Dexter_5x09_HDTV.Dexter S05E09 Fev[...].fr.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/283893</url>
+     <filename>Dexter_5x09_HDTV.FEVER.en.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/285076</url>
+     <filename>Dexter.5x09.FR.FBK.zip</filename>
+     <source>soustitres</source>
+     <quality>5</quality>
+    </sub>
+   </subs>
+  </episode>
+  <episode>
+   <show>Dexter</show>
+   <episode>S05E10</episode>
+   <url>dexter</url>
+   <title>In the Beginning</title>
+   <date>1290898800</date>
+   <downloaded>0</downloaded>
+   <subs>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/286812</url>
+     <filename>Dexter_5x10_HDTV.fqm.en.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/286763</url>
+     <filename>Dexter_5x10_720p HDTV.addic7ed.fr.[...].fr.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/286707</url>
+     <filename>Dexter_5x10_720p HDTV.dexter.s05e1[...].en.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/287197</url>
+     <filename>Dexter.5x10.FR.FBK.zip</filename>
+     <source>soustitres</source>
+     <quality>5</quality>
+    </sub>
+   </subs>
+  </episode>
+  <episode>
+   <show>Dexter</show>
+   <episode>S05E11</episode>
+   <url>dexter</url>
+   <title>Hop a Freighter</title>
+   <date>1291503600</date>
+   <downloaded>0</downloaded>
+   <subs>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/289689</url>
+     <filename>Dexter_5x11_720p HDTV.fr.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/289717</url>
+     <filename>Dexter_5x11_HDTV.nocomment.fr.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/290480</url>
+     <filename>Dexter_5x11_HDTV.fqm.fr.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/289220</url>
+     <filename>Dexter_5x11_720p HDTV.Immerse.fr.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/289157</url>
+     <filename>Dexter_5x11_HDTV.Dexter 5X11.HDTV.[...].fr.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/289059</url>
+     <filename>Dexter_5x11_HDTV.LOL.en.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/289073</url>
+     <filename>Dexter_5x11_720p HDTV.en.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/289129</url>
+     <filename>Dexter_5x11_HDTV.dexter.s05e11.hdt[...].fr.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/289661</url>
+     <filename>Dexter.5x11.FR.FBK.zip</filename>
+     <source>soustitres</source>
+     <quality>5</quality>
+    </sub>
+   </subs>
+  </episode>
+  <episode>
+   <show>Dexter</show>
+   <episode>S05E12</episode>
+   <url>dexter</url>
+   <title>The Big One</title>
+   <date>1292108400</date>
+   <downloaded>0</downloaded>
+   <subs>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/291887</url>
+     <filename>Dexter_5x12_HDTV.LOL.en.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/291915</url>
+     <filename>Dexter_5x12_720p HDTV.immerse.en.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/291866</url>
+     <filename>Dexter_5x12_HDTV.FQM.en(1).zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/291859</url>
+     <filename>Dexter_5x12_720p HDTV.IMMERSE.en.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/292475</url>
+     <filename>Dexter_5x12_HDTV.fqm.fr(2).zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/291936</url>
+     <filename>Dexter_5x12_HDTV.fqm.en.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/291964</url>
+     <filename>Dexter_5x12_HDTV.fqm.fr(1).zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/291845</url>
+     <filename>Dexter_5x12_HDTV.FQM.en.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/292398</url>
+     <filename>Dexter_5x12_HDTV.FQM.fr.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/292020</url>
+     <filename>Dexter_5x12_HDTV.Dexter.S05E12.HDT[...].en.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/292006</url>
+     <filename>Dexter_5x12_HDTV.fr(2).zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/292440</url>
+     <filename>Dexter.5x12.FR.FBK.zip</filename>
+     <source>soustitres</source>
+     <quality>5</quality>
+    </sub>
+   </subs>
+  </episode>
+  <episode>
+   <show>Eureka</show>
+   <episode>S04E10</episode>
+   <url>eureka</url>
+   <title>O Little Town</title>
+   <date>1291676400</date>
+   <downloaded>1</downloaded>
+   <subs>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/293483</url>
+     <filename>Eureka_4x10_HDTV.POW4.fr.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/290018</url>
+     <filename>Eureka_4x10_HDTV.Eureka.S04E10.HDT[...].en.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
    </subs>
   </episode>
   <episode>
    <show>Fringe</show>
-   <episode>S03E07</episode>
+   <episode>S03E09</episode>
    <url>fringe</url>
-   <title>The Abducted</title>
-   <date>1290034800</date>
+   <title>Marionette</title>
+   <date>1291849200</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VF</language>
-     <url>http://www.betaseries.com/srt/283123</url>
-     <filename>Fringe_3x07_fr.zip</filename>
+     <url>http://www.betaseries.com/srt/290900</url>
+     <filename>Fringe_3x09_HDTV.LOL.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/282913</url>
-     <filename>Fringe_3x07_HDTV.en.zip</filename>
+     <url>http://www.betaseries.com/srt/291019</url>
+     <filename>Fringe_3x09_HDTV.FQM.en(1).zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/290837</url>
+     <filename>Fringe_3x09_HDTV.Lol.fr.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/282976</url>
-     <filename>Fringe - 03x07 - The Abducted.srt</filename>
-     <source>addic7ed</source>
+     <url>http://www.betaseries.com/srt/290711</url>
+     <filename>Fringe_3x09_HDTV.FQM.en.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/283116</url>
-     <filename>Fringe.3x07.EN.Liai-U.zip</filename>
+     <url>http://www.betaseries.com/srt/290627</url>
+     <filename>Fringe_3x09_HDTV.LOL.en.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VOVF</language>
+     <url>http://www.betaseries.com/srt/291523</url>
+     <filename>Fringe.3x09.ENFR.Liai-U.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
    </subs>
-  </episode>
-  <episode>
-   <show>House</show>
-   <episode>S07E07</episode>
-   <url>house</url>
-   <title>A Pox on Our House</title>
-   <date>1289775600</date>
-   <subs>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/281282</url>
-     <filename>House M.D._7x07_HDTV.LOL - TAG.fr([...](1).zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/281275</url>
-     <filename>House M.D._7x07_HDTV.LOL - TAG.fr.[...].fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/281107</url>
-     <filename>House M.D._7x07_HDTV.LOL.fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VF</language>
-     <url>http://www.betaseries.com/srt/281051</url>
-     <filename>House M.D._7x07_HDTV.lol.fr.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/280834</url>
-     <filename>House M.D._7x07_HDTV.LOL.en(1).zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>Lie to Me</show>
-   <episode>S03E06</episode>
-   <url>lietome</url>
-   <title>Beyond Belief</title>
-   <date>1289775600</date>
   </episode>
   <episode>
    <show>NCIS: Los Angeles</show>
-   <episode>S02E09</episode>
+   <episode>S02E11</episode>
    <url>ncislosangeles</url>
-   <title>Absolution</title>
-   <date>1289862000</date>
+   <title>Disorder</title>
+   <date>1292281200</date>
+   <downloaded>0</downloaded>
    <subs>
     <sub>
      <language>VF</language>
-     <url>http://www.betaseries.com/srt/282430</url>
-     <filename>NCIS Los Angeles_2x09_HDTV.EZTV.fr[...].fr.zip</filename>
+     <url>http://www.betaseries.com/srt/293406</url>
+     <filename>NCIS Los Angeles_2x11_HDTV.LOL.fr.[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/281492</url>
-     <filename>NCIS Los Angeles_2x09_HDTV.en.zip</filename>
+     <url>http://www.betaseries.com/srt/292846</url>
+     <filename>NCIS Los Angeles_2x11_HDTV.LOL.en.[...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VOVF</language>
+     <url>http://www.betaseries.com/srt/293399</url>
+     <filename>NCIS.Los.Angeles.2x11.ENFR.UT-U.zip</filename>
+     <source>soustitres</source>
+     <quality>5</quality>
+    </sub>
+    <sub>
+     <language>VOVF</language>
+     <url>http://www.betaseries.com/srt/293413</url>
+     <filename>NCIS.Los.Angeles.2x11.ENFR.UC.zip</filename>
+     <source>usub</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
   <episode>
    <show>The Big Bang Theory</show>
-   <episode>S04E09</episode>
+   <episode>S04E11</episode>
    <url>bigbangtheory</url>
-   <title>The Boyfriend Complexity </title>
-   <date>1290034800</date>
+   <title>The Justice League Recombination</title>
+   <date>1292454000</date>
+   <downloaded>0</downloaded>
    <subs>
     <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/282451</url>
-     <filename>The Big Bang Theory_4x09_720p HDTV[...].en.zip</filename>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/293161</url>
+     <filename>The Big Bang Theory_4x11_HDTV.FEVE[...](1).zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/282395</url>
-     <filename>The Big Bang Theory_4x09_HDTV.19.1[...].en.zip</filename>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/293224</url>
+     <filename>The Big Bang Theory_4x11_HDTV.addi[...].fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/282297</url>
-     <filename>The Big Bang Theory_4x09_HDTV.FQM.[...](1).zip</filename>
+     <url>http://www.betaseries.com/srt/293042</url>
+     <filename>The Big Bang Theory_4x11_HDTV.FEVE[...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VO</language>
-     <url>http://www.betaseries.com/srt/282941</url>
-     <filename>The Big Bang Theory - 04x09 - The [...]ity.srt</filename>
-     <source>addic7ed</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>The Mentalist</show>
-   <episode>S03E09</episode>
-   <url>thementalist</url>
-   <title>Red Moon</title>
-   <date>1290034800</date>
-   <subs>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/283060</url>
-     <filename>The Mentalist_3x09_HDTV.Fever.en.zip</filename>
+     <url>http://www.betaseries.com/srt/293035</url>
+     <filename>The Big Bang Theory_4x11_720p HDTV[...].en.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/282465</url>
-     <filename>The Mentalist_3x09_HDTV.en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/282458</url>
-     <filename>The Mentalist_3x09_720p HDTV.iMMER[...].en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/282402</url>
-     <filename>The Mentalist_3x09_HDTV.fever.en.zip</filename>
-     <source>tvsubtitles</source>
-    </sub>
-    <sub>
-     <language>VO</language>
-     <url>http://www.betaseries.com/srt/283067</url>
-     <filename>The Mentalist - 03x09 - Red Moon.srt</filename>
-     <source>addic7ed</source>
-    </sub>
-   </subs>
-  </episode>
-  <episode>
-   <show>The Office US</show>
-   <episode>S07E08</episode>
-   <url>theofficeus</url>
-   <title>Viewing Party</title>
-   <date>1289430000</date>
-   <subs>
-    <sub>
-     <language>VOVF</language>
-     <url>http://www.betaseries.com/srt/282283</url>
-     <filename>The.Office.U.S.7x08.ENFR.FBK.zip</filename>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/293525</url>
+     <filename>The.Big.Bang.Theory.4x11.FR.TBBT.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
+    </sub>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/293532</url>
+     <filename>The.Big.Bang.Theory.4x11.FR.TBBT.zip</filename>
+     <source>usub</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>
   <episode>
-   <show>The Office US</show>
-   <episode>S07E09</episode>
-   <url>theofficeus</url>
-   <title>Wuphf.com</title>
-   <date>1290034800</date>
+   <show>The Simpsons</show>
+   <episode>S22E09</episode>
+   <url>simpsons</url>
+   <title>Donnie Fatso</title>
+   <date>1292108400</date>
+   <downloaded>1</downloaded>
+   <subs>
+    <sub>
+     <language>VF</language>
+     <url>http://www.betaseries.com/srt/293112</url>
+     <filename>The Simpsons_22x09_HDTV.DIMENSION.[...].fr.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+    <sub>
+     <language>VO</language>
+     <url>http://www.betaseries.com/srt/292573</url>
+     <filename>The Simpsons_22x09_HDTV.en.zip</filename>
+     <source>tvsubtitles</source>
+     <quality>1</quality>
+    </sub>
+   </subs>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2245,6 +2180,7 @@
    <url>thesopranos</url>
    <title>No Show</title>
    <date>1032645600</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2252,6 +2188,7 @@
    <url>thesopranos</url>
    <title>Christopher</title>
    <date>1033250400</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2259,6 +2196,7 @@
    <url>thesopranos</url>
    <title>The Weight</title>
    <date>1033855200</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2266,6 +2204,7 @@
    <url>thesopranos</url>
    <title>Pie-O-My</title>
    <date>1034460000</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2273,6 +2212,7 @@
    <url>thesopranos</url>
    <title>Everybody Hurts</title>
    <date>1035064800</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2280,6 +2220,7 @@
    <url>thesopranos</url>
    <title>Watching Too Much Television</title>
    <date>1035669600</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2287,6 +2228,7 @@
    <url>thesopranos</url>
    <title>Mergers &amp; Acquisitions</title>
    <date>1036278000</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2294,6 +2236,7 @@
    <url>thesopranos</url>
    <title>Whoever Did This</title>
    <date>1036882800</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2301,6 +2244,7 @@
    <url>thesopranos</url>
    <title>The Strong, Silent Type</title>
    <date>1037487600</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2308,6 +2252,7 @@
    <url>thesopranos</url>
    <title>Calling All Cars</title>
    <date>1038092400</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2315,6 +2260,7 @@
    <url>thesopranos</url>
    <title>Eloise</title>
    <date>1038697200</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2322,6 +2268,7 @@
    <url>thesopranos</url>
    <title>Whitecaps</title>
    <date>1039302000</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2329,6 +2276,7 @@
    <url>thesopranos</url>
    <title>Two Tonys</title>
    <date>1078614000</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2336,6 +2284,7 @@
    <url>thesopranos</url>
    <title>Rat Pack</title>
    <date>1079218800</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2343,6 +2292,7 @@
    <url>thesopranos</url>
    <title>Where's Johnny?</title>
    <date>1079823600</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2350,6 +2300,7 @@
    <url>thesopranos</url>
    <title>All Happy Families...</title>
    <date>1080428400</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2357,6 +2308,7 @@
    <url>thesopranos</url>
    <title>Irregular Around the Margins</title>
    <date>1081029600</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2364,6 +2316,7 @@
    <url>thesopranos</url>
    <title>Sentimental Education</title>
    <date>1081634400</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2371,6 +2324,7 @@
    <url>thesopranos</url>
    <title>In Camelot</title>
    <date>1082239200</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2378,6 +2332,7 @@
    <url>thesopranos</url>
    <title>Marco Polo</title>
    <date>1082844000</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2385,6 +2340,7 @@
    <url>thesopranos</url>
    <title>Unidentified Black Male</title>
    <date>1083448800</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2392,6 +2348,7 @@
    <url>thesopranos</url>
    <title>Cold Cuts</title>
    <date>1084053600</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2399,6 +2356,7 @@
    <url>thesopranos</url>
    <title>The Test Dream</title>
    <date>1084658400</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2406,6 +2364,7 @@
    <url>thesopranos</url>
    <title>Long Term Parking</title>
    <date>1085263200</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2413,6 +2372,7 @@
    <url>thesopranos</url>
    <title>All Due Respect</title>
    <date>1086472800</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2420,6 +2380,7 @@
    <url>thesopranos</url>
    <title>Members Only</title>
    <date>1142118000</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2427,6 +2388,7 @@
    <url>thesopranos</url>
    <title>Join the Club</title>
    <date>1142722800</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2434,6 +2396,7 @@
    <url>thesopranos</url>
    <title>Mayham</title>
    <date>1143327600</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2441,6 +2404,7 @@
    <url>thesopranos</url>
    <title>The Fleshy Part of the Thigh</title>
    <date>1143928800</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2448,6 +2412,7 @@
    <url>thesopranos</url>
    <title>Mr. and Mrs. Sacramoni Request</title>
    <date>1144533600</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2455,6 +2420,7 @@
    <url>thesopranos</url>
    <title>Live Free or Die</title>
    <date>1145138400</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2462,6 +2428,7 @@
    <url>thesopranos</url>
    <title>Luxury Lounge</title>
    <date>1145743200</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2469,6 +2436,7 @@
    <url>thesopranos</url>
    <title>Johnny Cakes</title>
    <date>1146348000</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2476,6 +2444,7 @@
    <url>thesopranos</url>
    <title>The Ride</title>
    <date>1146952800</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2483,6 +2452,7 @@
    <url>thesopranos</url>
    <title>Moe n' Joe</title>
    <date>1147557600</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2490,12 +2460,14 @@
    <url>thesopranos</url>
    <title>Cold Stones</title>
    <date>1148162400</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/30494</url>
      <filename>The Sopranos_6x11_DVD.TOPAZ.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
    </subs>
   </episode>
@@ -2505,6 +2477,7 @@
    <url>thesopranos</url>
    <title>Kaisha</title>
    <date>1149372000</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2512,6 +2485,7 @@
    <url>thesopranos</url>
    <title>Soprano Home Movies</title>
    <date>1175983200</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2519,6 +2493,7 @@
    <url>thesopranos</url>
    <title>Stage 5</title>
    <date>1176588000</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2526,6 +2501,7 @@
    <url>thesopranos</url>
    <title>Remember When</title>
    <date>1177192800</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2533,6 +2509,7 @@
    <url>thesopranos</url>
    <title>Chasing It</title>
    <date>1177797600</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2540,6 +2517,7 @@
    <url>thesopranos</url>
    <title>Walk Like a Man</title>
    <date>1178402400</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2547,6 +2525,7 @@
    <url>thesopranos</url>
    <title>Kennedy and Heidi</title>
    <date>1179007200</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2554,18 +2533,21 @@
    <url>thesopranos</url>
    <title>The Second Coming</title>
    <date>1179612000</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/19837</url>
      <filename>The Sopranos_6x19_HDTV.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/19839</url>
      <filename>The Sopranos_6x19_HDTV.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
    </subs>
   </episode>
@@ -2575,6 +2557,7 @@
    <url>thesopranos</url>
    <title>The Blue Comet</title>
    <date>1180821600</date>
+   <downloaded>1</downloaded>
   </episode>
   <episode>
    <show>The Sopranos</show>
@@ -2582,12 +2565,14 @@
    <url>thesopranos</url>
    <title>Made in America</title>
    <date>1181426400</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/68321</url>
      <filename>The Sopranos_6x21_DVDRip.WIDE.fr.zip</filename>
      <source>tvsubtitles</source>
+     <quality>1</quality>
     </sub>
    </subs>
   </episode>
@@ -2597,24 +2582,28 @@
    <url>v2009</url>
    <title>Red Sky</title>
    <date>1274133600</date>
+   <downloaded>1</downloaded>
    <subs>
     <sub>
      <language>VOVF</language>
      <url>http://www.betaseries.com/srt/225587</url>
      <filename>V.2009.1x12.ENFR.LEZ.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
     <sub>
      <language>VF</language>
      <url>http://www.betaseries.com/srt/225144</url>
      <filename>V.2009.1x12.FR.WOPT.zip</filename>
      <source>soustitres</source>
+     <quality>5</quality>
     </sub>
     <sub>
      <language>VOVF</language>
      <url>http://www.betaseries.com/srt/225589</url>
      <filename>V.112.VOVF.zip</filename>
      <source>usub</source>
+     <quality>5</quality>
     </sub>
    </subs>
   </episode>

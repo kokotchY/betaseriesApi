@@ -147,6 +147,10 @@
    <title>Accidentally on Purpose</title>
   </show>
   <show>
+   <url>accused</url>
+   <title>Accused</title>
+  </show>
+  <show>
    <url>acertainmagicalindex</url>
    <title>A Certain Magical Index</title>
   </show>
@@ -197,6 +201,10 @@
   <show>
    <url>air</url>
    <title>Air</title>
+  </show>
+  <show>
+   <url>air-crash-investigation-mayday</url>
+   <title>Air Crash Investigation - Mayday</title>
   </show>
   <show>
    <url>air-master</url>
@@ -293,6 +301,10 @@
   <show>
    <url>allymcbeal</url>
    <title>Ally McBeal</title>
+  </show>
+  <show>
+   <url>alphas</url>
+   <title>Alphas</title>
   </show>
   <show>
    <url>amaenaideyo</url>
@@ -607,8 +619,16 @@
    <title>Banner of the Stars</title>
   </show>
   <show>
+   <url>bartender</url>
+   <title>Bartender</title>
+  </show>
+  <show>
    <url>basiliskkouganinjascrolls</url>
    <title>Basilisk! Kouga Ninja Scrolls</title>
+  </show>
+  <show>
+   <url>basquash</url>
+   <title>Basquash!</title>
   </show>
   <show>
    <url>bastard</url>
@@ -645,6 +665,10 @@
   <show>
    <url>baywatch</url>
    <title>Baywatch</title>
+  </show>
+  <show>
+   <url>bbc-proms</url>
+   <title>BBC Proms</title>
   </show>
   <show>
    <url>beastmaster</url>
@@ -799,6 +823,10 @@
    <title>Black Butler</title>
   </show>
   <show>
+   <url>black-rock-shooter</url>
+   <title>Black Rock Shooter</title>
+  </show>
+  <show>
    <url>blackadder</url>
    <title>Blackadder</title>
   </show>
@@ -893,6 +921,10 @@
   <show>
    <url>bluewaterhigh</url>
    <title>Blue Water High</title>
+  </show>
+  <show>
+   <url>bo-selecta</url>
+   <title>Bo' Selecta!</title>
   </show>
   <show>
    <url>boardwalkempire</url>
@@ -1111,6 +1143,14 @@
    <title>Captain Harlock SSX</title>
   </show>
   <show>
+   <url>captain-tsubasa</url>
+   <title>Captain Tsubasa</title>
+  </show>
+  <show>
+   <url>captain-tsubasa-road-to-2002</url>
+   <title>Captain Tsubasa Road to 2002</title>
+  </show>
+  <show>
    <url>captainherlocktheendlessodyssey</url>
    <title>Captain Herlock - The endless odyssey</title>
   </show>
@@ -1237,6 +1277,14 @@
   <show>
    <url>chuck</url>
    <title>Chuck</title>
+  </show>
+  <show>
+   <url>churchills-bodyguard</url>
+   <title>Churchill's Bodyguard</title>
+  </show>
+  <show>
+   <url>city-of-vice</url>
+   <title>City of Vice</title>
   </show>
   <show>
    <url>cityhomicide</url>
@@ -1955,6 +2003,10 @@
    <title>Excel Saga</title>
   </show>
   <show>
+   <url>exile</url>
+   <title>Exile</title>
+  </show>
+  <show>
    <url>extras</url>
    <title>Extras</title>
   </show>
@@ -2211,8 +2263,16 @@
    <title>From the Earth to the Moon</title>
   </show>
   <show>
+   <url>fruits-basket</url>
+   <title>Fruits Basket</title>
+  </show>
+  <show>
    <url>full-house-korean</url>
    <title>Full House (Korean)</title>
+  </show>
+  <show>
+   <url>full-moon-wo-sagashite</url>
+   <title>Full Moon wo Sagashite</title>
   </show>
   <show>
    <url>fullhouse1985</url>
@@ -2463,6 +2523,10 @@
    <title>Goosebumps</title>
   </show>
   <show>
+   <url>gordons-great-escape</url>
+   <title>Gordon's Great Escape</title>
+  </show>
+  <show>
    <url>gossipgirl</url>
    <title>Gossip Girl</title>
   </show>
@@ -2485,6 +2549,10 @@
   <show>
    <url>greek</url>
    <title>Greek</title>
+  </show>
+  <show>
+   <url>green-green</url>
+   <title>Green Green</title>
   </show>
   <show>
    <url>greenacres</url>
@@ -2613,6 +2681,10 @@
   <show>
    <url>hakuouki-shinsengumi-kitan</url>
    <title>Hakuouki: Shinsengumi Kitan</title>
+  </show>
+  <show>
+   <url>hana-yori-dango-2005</url>
+   <title>Hana Yori Dango (2005)</title>
   </show>
   <show>
    <url>hanaukyo-maid-team</url>
@@ -2763,6 +2835,14 @@
    <title>Hellcats</title>
   </show>
   <show>
+   <url>hells-kitchen</url>
+   <title>Hell's Kitchen</title>
+  </show>
+  <show>
+   <url>hells-kitchen-uk</url>
+   <title>Hell's Kitchen (UK)</title>
+  </show>
+  <show>
    <url>hellsing</url>
    <title>Hellsing</title>
   </show>
@@ -2875,12 +2955,20 @@
    <title>Hitched</title>
   </show>
   <show>
+   <url>hitlers-bodyguard</url>
+   <title>Hitler's Bodyguard</title>
+  </show>
+  <show>
    <url>hollyoaks</url>
    <title>Hollyoaks</title>
   </show>
   <show>
    <url>homicide</url>
    <title>Homicide</title>
+  </show>
+  <show>
+   <url>honey-and-clover</url>
+   <title>Honey and Clover</title>
   </show>
   <show>
    <url>honeyishrunkthekids</url>
@@ -2895,6 +2983,10 @@
    <title>Hope Springs</title>
   </show>
   <show>
+   <url>horrible-histories</url>
+   <title>Horrible Histories</title>
+  </show>
+  <show>
    <url>hotelbabylon</url>
    <title>Hotel Babylon</title>
   </show>
@@ -2907,12 +2999,20 @@
    <title>House</title>
   </show>
   <show>
+   <url>house-of-cards</url>
+   <title>House Of Cards</title>
+  </show>
+  <show>
    <url>house-of-five-leaves</url>
    <title>House of Five Leaves</title>
   </show>
   <show>
    <url>houseofsaddam</url>
    <title>House Of Saddam</title>
+  </show>
+  <show>
+   <url>how-its-made</url>
+   <title>How It's Made</title>
   </show>
   <show>
    <url>howdoyousolveaproblemlikemaria</url>
@@ -2971,6 +3071,10 @@
    <title>Hustle</title>
   </show>
   <show>
+   <url>hyperdrive</url>
+   <title>Hyperdrive</title>
+  </show>
+  <show>
    <url>hyperpolice</url>
    <title>Hyper Police</title>
   </show>
@@ -3013,6 +3117,10 @@
   <show>
    <url>ilaetaitunefoislesexplorateurs</url>
    <title>Il était une fois... les Explorateurs</title>
+  </show>
+  <show>
+   <url>im-alan-partridge</url>
+   <title>I'm Alan Partridge</title>
   </show>
   <show>
    <url>immortalgrandprix</url>
@@ -3167,6 +3275,10 @@
    <title>Jayce and the Wheeled Warriors</title>
   </show>
   <show>
+   <url>jeanne-serge</url>
+   <title>Jeanne &amp; Serge</title>
+  </show>
+  <show>
    <url>jekyll</url>
    <title>Jekyll</title>
   </show>
@@ -3217,6 +3329,10 @@
   <show>
    <url>jonathancreek</url>
    <title>Jonathan Creek</title>
+  </show>
+  <show>
+   <url>josephine-ange-gardien</url>
+   <title>Joséphine, Ange-Gardien</title>
   </show>
   <show>
    <url>journeyman</url>
@@ -3319,6 +3435,10 @@
    <title>Kamichu!</title>
   </show>
   <show>
+   <url>kamikaze-kaitou-jeanne</url>
+   <title>Kamikaze Kaitou Jeanne</title>
+  </show>
+  <show>
    <url>kamisama-kazoku</url>
    <title>Kamisama Kazoku</title>
   </show>
@@ -3339,12 +3459,24 @@
    <title>Kanokon</title>
   </show>
   <show>
+   <url>kanon</url>
+   <title>Kanon</title>
+  </show>
+  <show>
+   <url>kanon-2006</url>
+   <title>Kanon (2006)</title>
+  </show>
+  <show>
    <url>kara-no-kyoukai</url>
    <title>Kara no Kyoukai</title>
   </show>
   <show>
    <url>karas</url>
    <title>Karas</title>
+  </show>
+  <show>
+   <url>karei-naru-ichizoku</url>
+   <title>Karei naru Ichizoku</title>
   </show>
   <show>
    <url>karin</url>
@@ -3439,6 +3571,10 @@
    <title>Kimi ni Todoke</title>
   </show>
   <show>
+   <url>kindaichi-shonen-no-jikenbo</url>
+   <title>Kindaichi Shonen no Jikenbo</title>
+  </show>
+  <show>
    <url>king</url>
    <title>King</title>
   </show>
@@ -3483,6 +3619,10 @@
    <title>Kiss Dum Engage Planet</title>
   </show>
   <show>
+   <url>kitchen-nightmares</url>
+   <title>Kitchen Nightmares</title>
+  </show>
+  <show>
    <url>kitchenconfidential</url>
    <title>Kitchen Confidential</title>
   </show>
@@ -3503,6 +3643,10 @@
    <title>Knots Landing</title>
   </show>
   <show>
+   <url>knowing-me-knowing-you-with-alan-partridge</url>
+   <title>Knowing Me, Knowing You with Alan Partridge</title>
+  </show>
+  <show>
    <url>kobato</url>
    <title>Kobato</title>
   </show>
@@ -3513,6 +3657,10 @@
   <show>
    <url>kogepan</url>
    <title>Kogepan</title>
+  </show>
+  <show>
+   <url>koh-lanta</url>
+   <title>Koh Lanta</title>
   </show>
   <show>
    <url>koharu-biyori</url>
@@ -3599,6 +3747,10 @@
    <title>Kyouran Kazoku Nikki</title>
   </show>
   <show>
+   <url>la-cite-des-hommes</url>
+   <title>La cité des hommes</title>
+  </show>
+  <show>
    <url>la-ink</url>
    <title>L.A. Ink</title>
   </show>
@@ -3633,6 +3785,10 @@
   <show>
    <url>largowinch</url>
    <title>Largo Winch</title>
+  </show>
+  <show>
+   <url>lark-rise-to-candleford</url>
+   <title>Lark Rise to Candleford</title>
   </show>
   <show>
    <url>lassie1997</url>
@@ -3687,6 +3843,10 @@
    <title>Le coeur a ses raisons</title>
   </show>
   <show>
+   <url>le-destin-de-lisa</url>
+   <title>Le destin de Lisa</title>
+  </show>
+  <show>
    <url>lebureau</url>
    <title>Le Bureau</title>
   </show>
@@ -3705,6 +3865,10 @@
   <show>
    <url>legionofsuperheroes</url>
    <title>Legion of Super Heroes</title>
+  </show>
+  <show>
+   <url>les-lascars</url>
+   <title>Les Lascars</title>
   </show>
   <show>
    <url>les-miserables</url>
@@ -3829,6 +3993,10 @@
   <show>
    <url>lizziemcguire</url>
    <title>Lizzie McGuire</title>
+  </show>
+  <show>
+   <url>locked-up-abroad</url>
+   <title>locked up Abroad</title>
   </show>
   <show>
    <url>loisandclark</url>
@@ -4243,6 +4411,10 @@
    <title>Michiko to Hatchin</title>
   </show>
   <show>
+   <url>mid-morning-matters-with-alan-partridge</url>
+   <title>Mid Morning Matters with Alan Partridge</title>
+  </show>
+  <show>
    <url>midori-no-hibi</url>
    <title>Midori no Hibi</title>
   </show>
@@ -4469,6 +4641,10 @@
   <show>
    <url>moonlighting</url>
    <title>Moonlighting</title>
+  </show>
+  <show>
+   <url>moot-moot</url>
+   <title>Moot-Moot</title>
   </show>
   <show>
    <url>mop-girl</url>
@@ -4721,6 +4897,10 @@
   <show>
    <url>nieaunder7</url>
    <title>NieA Under 7</title>
+  </show>
+  <show>
+   <url>night-head-genesis</url>
+   <title>Night Head Genesis</title>
   </show>
   <show>
    <url>night-stalker</url>
@@ -4983,6 +5163,10 @@
    <title>Painkiller Jane</title>
   </show>
   <show>
+   <url>pair-of-kings</url>
+   <title>Pair Of Kings</title>
+  </show>
+  <show>
    <url>pandemic</url>
    <title>Pandemic</title>
   </show>
@@ -5035,6 +5219,10 @@
    <title>Parks and Recreation</title>
   </show>
   <show>
+   <url>party-animals</url>
+   <title>Party Animals</title>
+  </show>
+  <show>
    <url>partydown</url>
    <title>Party Down</title>
   </show>
@@ -5065,6 +5253,10 @@
   <show>
    <url>perfect-couples</url>
    <title>Perfect Couples</title>
+  </show>
+  <show>
+   <url>perfect-strangers</url>
+   <title>Perfect Strangers</title>
   </show>
   <show>
    <url>persona-trinity-soul</url>
@@ -5135,6 +5327,10 @@
    <title>Planetes</title>
   </show>
   <show>
+   <url>playmakers</url>
+   <title>Playmakers</title>
+  </show>
+  <show>
    <url>pointpleasant</url>
    <title>Point Pleasant</title>
   </show>
@@ -5153,6 +5349,10 @@
   <show>
    <url>poleposition</url>
    <title>Pole Position</title>
+  </show>
+  <show>
+   <url>police-squad</url>
+   <title>Police Squad!</title>
   </show>
   <show>
    <url>poltergeistthelegacy</url>
@@ -5349,6 +5549,14 @@
   <show>
    <url>raisingthebar</url>
    <title>Raising the Bar</title>
+  </show>
+  <show>
+   <url>rake</url>
+   <title>Rake</title>
+  </show>
+  <show>
+   <url>ramsays-kitchen-nightmares</url>
+   <title>Ramsay's Kitchen Nightmares</title>
   </show>
   <show>
    <url>ranma</url>
@@ -5567,6 +5775,10 @@
    <title>Rosario + Vampire</title>
   </show>
   <show>
+   <url>rose-of-versailles</url>
+   <title>Rose of Versailles</title>
+  </show>
+  <show>
    <url>roseanne</url>
    <title>Roseanne</title>
   </show>
@@ -5597,6 +5809,10 @@
   <show>
    <url>rumiko-takahashi-anthology</url>
    <title>Rumiko Takahashi Anthology</title>
+  </show>
+  <show>
+   <url>runaway</url>
+   <title>Runaway</title>
   </show>
   <show>
    <url>rune-soldier</url>
@@ -5689,6 +5905,10 @@
   <show>
    <url>samurai-deeper-kyo</url>
    <title>Samurai Deeper Kyo</title>
+  </show>
+  <show>
+   <url>samurai-jack</url>
+   <title>Samurai Jack</title>
   </show>
   <show>
    <url>samurai7</url>
@@ -5873,6 +6093,10 @@
   <show>
    <url>sharpe</url>
    <title>Sharpe</title>
+  </show>
+  <show>
+   <url>shasta-mcnasty</url>
+   <title>Shasta McNasty</title>
   </show>
   <show>
    <url>shattered</url>
@@ -6087,6 +6311,10 @@
    <title>Sliders</title>
   </show>
   <show>
+   <url>slings-arrows</url>
+   <title>Slings &amp; Arrows</title>
+  </show>
+  <show>
    <url>smallville</url>
    <title>Smallville</title>
   </show>
@@ -6113,6 +6341,10 @@
   <show>
    <url>sonic-x</url>
    <title>Sonic X</title>
+  </show>
+  <show>
+   <url>sonny-spoon</url>
+   <title>Sonny Spoon</title>
   </show>
   <show>
    <url>sonny-with-a-chance</url>
@@ -6241,6 +6473,10 @@
   <show>
    <url>spartacus</url>
    <title>Spartacus</title>
+  </show>
+  <show>
+   <url>spartacus-gods-of-the-arena</url>
+   <title>Spartacus: Gods of the Arena</title>
   </show>
   <show>
    <url>spawn</url>
@@ -6435,6 +6671,10 @@
    <title>Strawberry Panic</title>
   </show>
   <show>
+   <url>street-hawk</url>
+   <title>Street Hawk</title>
+  </show>
+  <show>
    <url>streetfighteriiv</url>
    <title>Street Fighter II: V</title>
   </show>
@@ -6501,6 +6741,10 @@
   <show>
    <url>supernatural</url>
    <title>Supernatural</title>
+  </show>
+  <show>
+   <url>supernatural-the-animation</url>
+   <title>Supernatural the Animation</title>
   </show>
   <show>
    <url>surface</url>
@@ -6719,6 +6963,10 @@
    <title>The Borgias</title>
   </show>
   <show>
+   <url>the-cambridge-spies</url>
+   <title>The Cambridge Spies</title>
+  </show>
+  <show>
    <url>the-collector</url>
    <title>The Collector</title>
   </show>
@@ -6737,6 +6985,10 @@
   <show>
    <url>the-defenders-2010</url>
    <title>The Defenders (2010)</title>
+  </show>
+  <show>
+   <url>the-devils-whore</url>
+   <title>The Devil's Whore</title>
   </show>
   <show>
    <url>the-first-men-in-the-moon</url>
@@ -6795,6 +7047,10 @@
    <title>The Legend of the Legendary Heroes</title>
   </show>
   <show>
+   <url>the-littles</url>
+   <title>The Littles</title>
+  </show>
+  <show>
    <url>the-murdoch-mysteries</url>
    <title>The Murdoch Mysteries</title>
   </show>
@@ -6851,6 +7107,14 @@
    <title>The Suite Life on Deck</title>
   </show>
   <show>
+   <url>the-third</url>
+   <title>The Third</title>
+  </show>
+  <show>
+   <url>the-trip</url>
+   <title>The Trip</title>
+  </show>
+  <show>
    <url>the-twelve-kingdoms</url>
    <title>The Twelve Kingdoms</title>
   </show>
@@ -6861,6 +7125,10 @@
   <show>
    <url>the-wild-wild-west</url>
    <title>The Wild Wild West</title>
+  </show>
+  <show>
+   <url>the-wwe-experience</url>
+   <title>The WWE Experience</title>
   </show>
   <show>
    <url>the10thkingdom</url>
@@ -7599,6 +7867,10 @@
    <title>Threshold</title>
   </show>
   <show>
+   <url>thunderbirds</url>
+   <title>Thunderbirds</title>
+  </show>
+  <show>
    <url>thunderinparadise</url>
    <title>Thunder in Paradise</title>
   </show>
@@ -7625,6 +7897,10 @@
   <show>
    <url>timonpumbaa</url>
    <title>Timon &amp; Pumbaa</title>
+  </show>
+  <show>
+   <url>tinker-tailor-soldier-spy</url>
+   <title>Tinker, Tailor, Soldier, Spy</title>
   </show>
   <show>
    <url>tinman</url>
@@ -7677,6 +7953,10 @@
   <show>
    <url>tonagura</url>
    <title>Tonagura</title>
+  </show>
+  <show>
+   <url>top-gear-us</url>
+   <title>Top Gear (US)</title>
   </show>
   <show>
    <url>topchef</url>
@@ -7847,12 +8127,20 @@
    <title>Tytania</title>
   </show>
   <show>
+   <url>ufo-robot-grendizer</url>
+   <title>UFO Robot Grendizer</title>
+  </show>
+  <show>
    <url>uglyamericans</url>
    <title>Ugly Americans</title>
   </show>
   <show>
    <url>uglybetty</url>
    <title>Ugly Betty</title>
+  </show>
+  <show>
+   <url>ultimate-muscle-the-kinnikuman-legacy</url>
+   <title>Ultimate Muscle: The Kinnikuman Legacy</title>
   </show>
   <show>
    <url>ultimateforce</url>
@@ -7925,6 +8213,10 @@
   <show>
    <url>urda</url>
    <title>Urda</title>
+  </show>
+  <show>
+   <url>uta-kata</url>
+   <title>Uta Kata</title>
   </show>
   <show>
    <url>utawarerumono</url>
@@ -8065,6 +8357,38 @@
   <show>
    <url>warrentheape</url>
    <title>Warren the Ape</title>
+  </show>
+  <show>
+   <url>warriors</url>
+   <title>Warriors</title>
+  </show>
+  <show>
+   <url>warriors-bbc</url>
+   <title>Warriors (BBC)</title>
+  </show>
+  <show>
+   <url>wcw-clash-of-the-champions</url>
+   <title>WCW Clash of the Champions</title>
+  </show>
+  <show>
+   <url>wcw-main-event</url>
+   <title>WCW Main Event</title>
+  </show>
+  <show>
+   <url>wcw-monday-nitro</url>
+   <title>WCW Monday Nitro</title>
+  </show>
+  <show>
+   <url>wcw-saturday-night</url>
+   <title>WCW Saturday Night</title>
+  </show>
+  <show>
+   <url>wcw-thunder</url>
+   <title>WCW Thunder</title>
+  </show>
+  <show>
+   <url>wcw-worldwide</url>
+   <title>WCW WorldWide</title>
   </show>
   <show>
    <url>web-therapy</url>
@@ -8231,12 +8555,92 @@
    <title>Worst Week</title>
   </show>
   <show>
+   <url>wwe-after-burn</url>
+   <title>WWE After Burn</title>
+  </show>
+  <show>
+   <url>wwe-confidential</url>
+   <title>WWE Confidential</title>
+  </show>
+  <show>
+   <url>wwe-excess</url>
+   <title>WWE Excess</title>
+  </show>
+  <show>
+   <url>wwe-friday-night-smackdown</url>
+   <title>WWE Friday Night SmackDown</title>
+  </show>
+  <show>
+   <url>wwe-monday-night-raw</url>
+   <title>WWE Monday Night RAW</title>
+  </show>
+  <show>
+   <url>wwe-nxt</url>
+   <title>WWE NXT</title>
+  </show>
+  <show>
+   <url>wwe-pay-per-view</url>
+   <title>WWE Pay-Per-View</title>
+  </show>
+  <show>
+   <url>wwe-raw-is-war</url>
+   <title>WWE Raw is War</title>
+  </show>
+  <show>
+   <url>wwe-the-bottom-line</url>
+   <title>WWE The Bottom Line</title>
+  </show>
+  <show>
+   <url>wwe-tough-enough</url>
+   <title>WWE Tough Enough</title>
+  </show>
+  <show>
+   <url>wwe-velocity</url>
+   <title>WWE Velocity</title>
+  </show>
+  <show>
+   <url>wwf-jakked</url>
+   <title>WWF Jakked</title>
+  </show>
+  <show>
+   <url>wwf-livewire</url>
+   <title>WWF Livewire</title>
+  </show>
+  <show>
+   <url>wwf-monday-night-raw</url>
+   <title>WWF Monday Night Raw</title>
+  </show>
+  <show>
+   <url>wwf-saturday-nights-main-event</url>
+   <title>WWF Saturday Night's Main Event</title>
+  </show>
+  <show>
+   <url>wwf-shotgun-saturday-night</url>
+   <title>WWF Shotgun Saturday Night</title>
+  </show>
+  <show>
+   <url>wwf-superstars</url>
+   <title>WWF Superstars</title>
+  </show>
+  <show>
+   <url>wwf-superstars-of-wrestling</url>
+   <title>WWF Superstars of Wrestling</title>
+  </show>
+  <show>
+   <url>wwf-wrestling-challenge</url>
+   <title>WWF Wrestling Challenge</title>
+  </show>
+  <show>
    <url>wwish</url>
    <title>W~Wish</title>
   </show>
   <show>
    <url>x</url>
    <title>X</title>
+  </show>
+  <show>
+   <url>xamd-lost-memories</url>
+   <title>Xam'd: Lost Memories</title>
   </show>
   <show>
    <url>xenawarriorprincess</url>
@@ -8369,6 +8773,10 @@
   <show>
    <url>zettaireido</url>
    <title>Zettai Reido</title>
+  </show>
+  <show>
+   <url>zipang</url>
+   <title>Zipang</title>
   </show>
   <show>
    <url>zoids-genesis</url>

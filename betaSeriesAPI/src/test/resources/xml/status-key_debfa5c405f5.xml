@@ -9,6 +9,105 @@
   <version>1.0</version>
   <versions>
    <version>
+    <date>20101209</date>
+    <changes>
+     <change>
+      <type>Updated</type>
+      <value>readme</value>
+     </change>
+     <change>
+      <type>Updated</type>
+      <value>members/episodes</value>
+     </change>
+     <change>
+      <type>Updated</type>
+      <value>subtitles/last</value>
+     </change>
+     <change>
+      <type>Updated</type>
+      <value>subtitles/show</value>
+     </change>
+     <change>
+      <type>Updated</type>
+      <value>comments/post</value>
+     </change>
+    </changes>
+   </version>
+   <version>
+    <date>20101207</date>
+    <changes>
+     <change>
+      <type>Updated</type>
+      <value>readme</value>
+     </change>
+    </changes>
+   </version>
+   <version>
+    <date>20101202</date>
+    <changes>
+     <change>
+      <type>Updated</type>
+      <value>members/notifications</value>
+     </change>
+     <change>
+      <type>Updated</type>
+      <value>readme</value>
+     </change>
+    </changes>
+   </version>
+   <version>
+    <date>20101130</date>
+    <changes>
+     <change>
+      <type>Updated</type>
+      <value>comments/post</value>
+     </change>
+     <change>
+      <type>Updated</type>
+      <value>readme</value>
+     </change>
+    </changes>
+   </version>
+   <version>
+    <date>20101129</date>
+    <changes>
+     <change>
+      <type>Updated</type>
+      <value>shows/display</value>
+     </change>
+     <change>
+      <type>Updated</type>
+      <value>readme</value>
+     </change>
+    </changes>
+   </version>
+   <version>
+    <date>20101128</date>
+    <changes>
+     <change>
+      <type>Updated</type>
+      <value>shows/episodes</value>
+     </change>
+     <change>
+      <type>Updated</type>
+      <value>readme</value>
+     </change>
+    </changes>
+   </version>
+   <version>
+    <date>20101125</date>
+    <changes>
+     <change>
+      <type>New</type>
+      <value>members/downloaded</value>
+     </change>
+     <change>
+      <type>Updated</type>
+      <value>members/episodes</value>
+     </change>
+    </changes>
+   </version>
+   <version>
     <date>20101114</date>
     <changes>
      <change>
@@ -95,11 +194,11 @@
   <files>
    <file>
     <name>shows</name>
-    <last_change>1289736087</last_change>
+    <last_change>1291585002</last_change>
    </file>
    <file>
     <name>members</name>
-    <last_change>1290244622</last_change>
+    <last_change>1291917227</last_change>
    </file>
    <file>
     <name>timeline</name>
@@ -107,15 +206,15 @@
    </file>
    <file>
     <name>subtitles</name>
-    <last_change>1289043184</last_change>
+    <last_change>1291917227</last_change>
    </file>
    <file>
     <name>planning</name>
-    <last_change>1287163864</last_change>
+    <last_change>1290513695</last_change>
    </file>
    <file>
     <name>comments</name>
-    <last_change>1287164370</last_change>
+    <last_change>1291917227</last_change>
    </file>
   </files>
  </api>

@@ -3,24 +3,10 @@
  <key>debfa5c405f5</key>
  <timeline>
   <item>
-   <date>1289986543</date>
-   <html>a gagn&amp;eacute; le badge Confirm&amp;eacute;.</html>
+   <date>1289467560</date>
+   <html>a gagn&amp;eacute; le badge Martine Aubry.</html>
    <type>badge</type>
-   <ref>confirme</ref>
-   <login>delphiki</login>
-  </item>
-  <item>
-   <date>1289986543</date>
-   <html>a gagn&amp;eacute; le badge Surbooking.</html>
-   <type>badge</type>
-   <ref>surbooking</ref>
-   <login>delphiki</login>
-  </item>
-  <item>
-   <date>1289721759</date>
-   <html>a gagn&amp;eacute; le badge Junior.</html>
-   <type>badge</type>
-   <ref>junior</ref>
+   <ref>martine_aubry</ref>
    <login>delphiki</login>
   </item>
   <item>
@@ -31,31 +17,31 @@
    <login>delphiki</login>
   </item>
   <item>
-   <date>1289467560</date>
-   <html>a gagn&amp;eacute; le badge Martine Aubry.</html>
+   <date>1289467558</date>
+   <html>a gagn&amp;eacute; le badge Flashmob.</html>
    <type>badge</type>
-   <ref>martine_aubry</ref>
+   <ref>flashmob</ref>
    <login>delphiki</login>
   </item>
   <item>
    <date>1289467558</date>
-   <html>a gagn&amp;eacute; le badge D&amp;eacute;butant.</html>
+   <html>a gagn&amp;eacute; le badge Einstein.</html>
    <type>badge</type>
-   <ref>debutant</ref>
+   <ref>einstein</ref>
    <login>delphiki</login>
   </item>
   <item>
    <date>1289467558</date>
-   <html>a gagn&amp;eacute; le badge Amateur.</html>
+   <html>a gagn&amp;eacute; le badge Planqu&amp;eacute;.</html>
    <type>badge</type>
-   <ref>amateur</ref>
+   <ref>planque</ref>
    <login>delphiki</login>
   </item>
   <item>
    <date>1289467558</date>
-   <html>a gagn&amp;eacute; le badge Rattrapage.</html>
+   <html>a gagn&amp;eacute; le badge Ecole buissoni&amp;egrave;re.</html>
    <type>badge</type>
-   <ref>rattrapage</ref>
+   <ref>ecole_buissoniere</ref>
    <login>delphiki</login>
   </item>
   <item>
@@ -67,9 +53,23 @@
   </item>
   <item>
    <date>1289467558</date>
-   <html>a gagn&amp;eacute; le badge Ecole buissoni&amp;egrave;re.</html>
+   <html>a gagn&amp;eacute; le badge Rattrapage.</html>
    <type>badge</type>
-   <ref>ecole_buissoniere</ref>
+   <ref>rattrapage</ref>
+   <login>delphiki</login>
+  </item>
+  <item>
+   <date>1289467558</date>
+   <html>a gagn&amp;eacute; le badge Amateur.</html>
+   <type>badge</type>
+   <ref>amateur</ref>
+   <login>delphiki</login>
+  </item>
+  <item>
+   <date>1289467558</date>
+   <html>a gagn&amp;eacute; le badge D&amp;eacute;butant.</html>
+   <type>badge</type>
+   <ref>debutant</ref>
    <login>delphiki</login>
   </item>
  </timeline>

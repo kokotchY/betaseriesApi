@@ -7,9 +7,20 @@
    <season>1</season>
    <episode>0</episode>
    <language>VF</language>
+   <source>tvsubtitles</source>
+   <file>Dexter_1x00_HDTV.fr.zip</file>
+   <url>http://www.betaseries.com/srt/292216</url>
+   <quality>1</quality>
+  </subtitle>
+  <subtitle>
+   <title>Dexter</title>
+   <season>1</season>
+   <episode>0</episode>
+   <language>VF</language>
    <source>soustitres</source>
    <file>Dexter.S01.DVDRip.ORPHEUS.FR.zip</file>
    <url>http://www.betaseries.com/srt/186090</url>
+   <quality>5</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
@@ -19,6 +30,7 @@
    <source>soustitres</source>
    <file>Dexter.S01.DVDRip.SAiNTS.FR.zip</file>
    <url>http://www.betaseries.com/srt/186083</url>
+   <quality>5</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
@@ -28,6 +40,7 @@
    <source>soustitres</source>
    <file>Dexter.S01.HR.FR.zip</file>
    <url>http://www.betaseries.com/srt/186076</url>
+   <quality>5</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
@@ -37,6 +50,7 @@
    <source>soustitres</source>
    <file>Dexter.S01.HDTV.FR.zip</file>
    <url>http://www.betaseries.com/srt/186069</url>
+   <quality>5</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
@@ -46,6 +60,7 @@
    <source>soustitres</source>
    <file>Dexter.S01.DSP.HDTV.FR.zip</file>
    <url>http://www.betaseries.com/srt/186062</url>
+   <quality>5</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
@@ -55,6 +70,7 @@
    <source>tvsubtitles</source>
    <file>Dexter_1x01_HDTV.HV.fr.zip</file>
    <url>http://www.betaseries.com/srt/115473</url>
+   <quality>1</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
@@ -64,6 +80,7 @@
    <source>tvsubtitles</source>
    <file>Dexter_1x02_HDTV.KYR.fr.zip</file>
    <url>http://www.betaseries.com/srt/115459</url>
+   <quality>1</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
@@ -73,6 +90,7 @@
    <source>tvsubtitles</source>
    <file>Dexter_1x03_HDTV.LIO.fr.zip</file>
    <url>http://www.betaseries.com/srt/115445</url>
+   <quality>1</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
@@ -82,6 +100,7 @@
    <source>tvsubtitles</source>
    <file>Dexter_1x04_HDTV.HV.fr.zip</file>
    <url>http://www.betaseries.com/srt/115431</url>
+   <quality>1</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
@@ -91,6 +110,7 @@
    <source>tvsubtitles</source>
    <file>Dexter_1x05_HDTV.NoTV.fr.zip</file>
    <url>http://www.betaseries.com/srt/115417</url>
+   <quality>1</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
@@ -100,6 +120,7 @@
    <source>tvsubtitles</source>
    <file>Dexter_1x06_HDTV.LOL.fr.zip</file>
    <url>http://www.betaseries.com/srt/115410</url>
+   <quality>1</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
@@ -109,6 +130,7 @@
    <source>tvsubtitles</source>
    <file>Dexter_1x07_HDTV.LOL.fr.zip</file>
    <url>http://www.betaseries.com/srt/115403</url>
+   <quality>1</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
@@ -118,6 +140,7 @@
    <source>tvsubtitles</source>
    <file>Dexter_1x08_HDTV.LOL.fr.zip</file>
    <url>http://www.betaseries.com/srt/115389</url>
+   <quality>1</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
@@ -127,6 +150,7 @@
    <source>tvsubtitles</source>
    <file>Dexter_1x09_HDTV.LOL.fr.zip</file>
    <url>http://www.betaseries.com/srt/115375</url>
+   <quality>1</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
@@ -136,6 +160,7 @@
    <source>tvsubtitles</source>
    <file>Dexter_1x10_HDTV.LOL.fr.zip</file>
    <url>http://www.betaseries.com/srt/115361</url>
+   <quality>1</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
@@ -145,6 +170,7 @@
    <source>tvsubtitles</source>
    <file>Dexter_1x11_HDTV.LOL.fr.zip</file>
    <url>http://www.betaseries.com/srt/115347</url>
+   <quality>1</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
@@ -154,6 +180,7 @@
    <source>tvsubtitles</source>
    <file>Dexter_1x12_HDTV.LOL.fr.zip</file>
    <url>http://www.betaseries.com/srt/115333</url>
+   <quality>1</quality>
   </subtitle>
  </subtitles>
  <code>1</code>

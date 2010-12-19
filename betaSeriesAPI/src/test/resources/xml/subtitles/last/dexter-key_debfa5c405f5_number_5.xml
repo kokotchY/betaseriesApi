@@ -5,47 +5,52 @@
   <subtitle>
    <title>Dexter</title>
    <season>5</season>
-   <episode>8</episode>
+   <episode>12</episode>
+   <language>VF</language>
+   <source>tvsubtitles</source>
+   <file>Dexter_5x12_HDTV.fqm.fr(2).zip</file>
+   <url>http://www.betaseries.com/srt/292475</url>
+   <quality>1</quality>
+  </subtitle>
+  <subtitle>
+   <title>Dexter</title>
+   <season>5</season>
+   <episode>12</episode>
    <language>VF</language>
    <source>soustitres</source>
-   <file>Dexter.5x08.FR.FBK.zip</file>
-   <url>http://www.betaseries.com/srt/281611</url>
+   <file>Dexter.5x12.FR.FBK.zip</file>
+   <url>http://www.betaseries.com/srt/292440</url>
+   <quality>5</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
    <season>5</season>
-   <episode>8</episode>
+   <episode>12</episode>
    <language>VF</language>
    <source>tvsubtitles</source>
-   <file>Dexter_5x08_HDTV.fr.zip</file>
-   <url>http://www.betaseries.com/srt/280519</url>
+   <file>Dexter_5x12_HDTV.FQM.fr.zip</file>
+   <url>http://www.betaseries.com/srt/292398</url>
+   <quality>1</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
-   <season>5</season>
-   <episode>8</episode>
+   <season>3</season>
+   <episode>12</episode>
    <language>VF</language>
    <source>tvsubtitles</source>
-   <file>Dexter_5x08_HDTV.S05E08.FQM.Take It.fr.zip</file>
-   <url>http://www.betaseries.com/srt/280442</url>
+   <file>Dexter_3x12_HDTV.FQM.fr.zip</file>
+   <url>http://www.betaseries.com/srt/292391</url>
+   <quality>1</quality>
   </subtitle>
   <subtitle>
    <title>Dexter</title>
-   <season>5</season>
-   <episode>8</episode>
+   <season>1</season>
+   <episode>0</episode>
    <language>VF</language>
    <source>tvsubtitles</source>
-   <file>Dexter_5x08_720p HDTV.ctu.fr.zip</file>
-   <url>http://www.betaseries.com/srt/280449</url>
-  </subtitle>
-  <subtitle>
-   <title>Dexter</title>
-   <season>5</season>
-   <episode>8</episode>
-   <language>VF</language>
-   <source>tvsubtitles</source>
-   <file>Dexter_5x08_HDTV.S05E08.FQM.TAKE IT.fr.zip</file>
-   <url>http://www.betaseries.com/srt/280435</url>
+   <file>Dexter_1x00_HDTV.fr.zip</file>
+   <url>http://www.betaseries.com/srt/292216</url>
+   <quality>1</quality>
   </subtitle>
  </subtitles>
  <code>1</code>

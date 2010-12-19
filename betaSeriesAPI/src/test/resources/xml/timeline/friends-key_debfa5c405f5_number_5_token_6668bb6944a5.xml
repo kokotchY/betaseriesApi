@@ -4,74 +4,39 @@
  <token>6668bb6944a5</token>
  <timeline>
   <item>
-   <date>1290209459</date>
-   <html>a gagn&amp;eacute; le badge Jerry Seinfeld.</html>
+   <date>1292758851</date>
+   <html>a gagn&amp;eacute; le badge D&amp;eacute;veloppeur.</html>
    <type>badge</type>
-   <ref>jerry_seinfeld</ref>
+   <ref>developpeur</ref>
    <login>kokotchY</login>
   </item>
   <item>
-   <date>1290209047</date>
-   <html>est maintenant ami avec Valpha.</html>
-   <type>friend_add</type>
-   <ref>Valpha</ref>
-   <login>kokotchY</login>
-  </item>
-  <item>
-   <date>1290208961</date>
-   <html>vient de regarder The Simpsons S22E05 - Lisa Simpson, This Isn't Your Life.</html>
-   <type>markas</type>
-   <ref>The Simpsons</ref>
-   <login>kokotchY</login>
-  </item>
-  <item>
-   <date>1290208951</date>
-   <html>vient de regarder NCIS S08E08 - Enemies Foreign (1).</html>
+   <date>1292675338</date>
+   <html>vient de regarder NCIS S08E10 - False Witness.</html>
    <type>markas</type>
    <ref>NCIS</ref>
    <login>kokotchY</login>
   </item>
   <item>
-   <date>1290208942</date>
-   <html>vient de regarder How I Met Your Mother S06E09 - Glitter.</html>
+   <date>1292675332</date>
+   <html>vient de regarder How I Met Your Mother S06E12 - False Positive.</html>
    <type>markas</type>
    <ref>How I Met Your Mother</ref>
    <login>kokotchY</login>
   </item>
   <item>
-   <date>1290208919</date>
-   <html>vient de regarder It's Always Sunny in Philadelphia S03E08 - Frank Sets Sweet Dee On Fire.</html>
+   <date>1292536221</date>
+   <html>vient de regarder The Office US S07E12 - Classy Christmas (2).</html>
    <type>markas</type>
-   <ref>It's Always Sunny in Philadelphia</ref>
+   <ref>The Office US</ref>
    <login>kokotchY</login>
   </item>
   <item>
-   <date>1290117476</date>
-   <html>a ajout&amp;eacute; la s&amp;eacute;rie Battlestar Galactica &amp;agrave; sa liste.</html>
-   <type>add_serie</type>
-   <ref>Battlestar Galactica</ref>
-   <login>Valpha</login>
-  </item>
-  <item>
-   <date>1290117395</date>
-   <html>a gagn&amp;eacute; le badge Confirm&amp;eacute;.</html>
-   <type>badge</type>
-   <ref>confirme</ref>
-   <login>Valpha</login>
-  </item>
-  <item>
-   <date>1290117268</date>
-   <html>a ajout&amp;eacute; la s&amp;eacute;rie K-ON &amp;agrave; sa liste.</html>
-   <type>add_serie</type>
-   <ref>K-ON</ref>
-   <login>Valpha</login>
-  </item>
-  <item>
-   <date>1290117089</date>
-   <html>est maintenant ami avec kokotchY.</html>
-   <type>friend_add</type>
-   <ref>kokotchY</ref>
-   <login>Valpha</login>
+   <date>1292536196</date>
+   <html>vient de regarder Warehouse 13 S02E13 - Secret Santa.</html>
+   <type>markas</type>
+   <ref>Warehouse 13</ref>
+   <login>kokotchY</login>
   </item>
  </timeline>
  <code>1</code>
