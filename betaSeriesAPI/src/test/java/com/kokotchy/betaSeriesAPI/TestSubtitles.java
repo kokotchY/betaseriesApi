@@ -4,6 +4,7 @@ import java.util.Set;
 
 import junit.framework.TestCase;
 
+import com.kokotchy.betaSeriesAPI.api.ISubtitles;
 import com.kokotchy.betaSeriesAPI.model.Subtitle;
 import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
 
@@ -17,12 +18,12 @@ public class TestSubtitles extends TestCase {
 	/**
 	 * Subtitles api for json
 	 */
-	private com.kokotchy.betaSeriesAPI.api.jsonImpl.Subtitles subtitlesJson;
+	private ISubtitles subtitlesJson;
 
 	/**
 	 * Subtitles api for xml
 	 */
-	private com.kokotchy.betaSeriesAPI.api.xmlImpl.Subtitles subtitlesXml;
+	private ISubtitles subtitlesXml;
 
 	@Override
 	protected void setUp() throws Exception {

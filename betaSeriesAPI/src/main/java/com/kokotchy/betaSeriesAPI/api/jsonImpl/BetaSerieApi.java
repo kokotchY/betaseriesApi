@@ -1,5 +1,13 @@
 package com.kokotchy.betaSeriesAPI.api.jsonImpl;
 
+import com.kokotchy.betaSeriesAPI.api.IComments;
+import com.kokotchy.betaSeriesAPI.api.IMembers;
+import com.kokotchy.betaSeriesAPI.api.IPlanning;
+import com.kokotchy.betaSeriesAPI.api.IShows;
+import com.kokotchy.betaSeriesAPI.api.IStatus;
+import com.kokotchy.betaSeriesAPI.api.ISubtitles;
+import com.kokotchy.betaSeriesAPI.api.ITimelines;
+
 /**
  * Json api for Beta Serie
  * 
@@ -15,44 +23,44 @@ public class BetaSerieApi {
 	/**
 	 * Members
 	 */
-	private static Members members;
+	private static IMembers members;
 
 	/**
 	 * Comments
 	 */
-	private static Comments comments;
+	private static IComments comments;
 
 	/**
 	 * Planning
 	 */
-	private static Planning planning;
+	private static IPlanning planning;
 
 	/**
 	 * Shows
 	 */
-	private static Shows shows;
+	private static IShows shows;
 
 	/**
 	 * Status
 	 */
-	private static Status status;
+	private static IStatus status;
 
 	/**
 	 * Subtitles
 	 */
-	private static Subtitles subtitles;
+	private static ISubtitles subtitles;
 
 	/**
 	 * Timeline
 	 */
-	private static Timelines timeline;
+	private static ITimelines timeline;
 
 	/**
 	 * Return the comments api object
 	 * 
 	 * @return the comments
 	 */
-	public static Comments getComments() {
+	public static IComments getComments() {
 		if (comments == null) {
 			comments = new Comments(apiKey);
 		}
@@ -64,7 +72,7 @@ public class BetaSerieApi {
 	 * 
 	 * @return the members
 	 */
-	public static Members getMembers() {
+	public static IMembers getMembers() {
 		if (members == null) {
 			members = new Members(apiKey);
 		}
@@ -76,7 +84,7 @@ public class BetaSerieApi {
 	 * 
 	 * @return the planning
 	 */
-	public static Planning getPlanning() {
+	public static IPlanning getPlanning() {
 		if (planning == null) {
 			planning = new Planning(apiKey);
 		}
@@ -88,7 +96,7 @@ public class BetaSerieApi {
 	 * 
 	 * @return the shows
 	 */
-	public static Shows getShows() {
+	public static IShows getShows() {
 		if (shows == null) {
 			shows = new Shows(apiKey);
 		}
@@ -100,7 +108,7 @@ public class BetaSerieApi {
 	 * 
 	 * @return the status
 	 */
-	public static Status getStatus() {
+	public static IStatus getStatus() {
 		if (status == null) {
 			status = new Status(apiKey);
 		}
@@ -112,7 +120,7 @@ public class BetaSerieApi {
 	 * 
 	 * @return the subtitles
 	 */
-	public static Subtitles getSubtitles() {
+	public static ISubtitles getSubtitles() {
 		if (subtitles == null) {
 			subtitles = new Subtitles(apiKey);
 		}
@@ -124,7 +132,7 @@ public class BetaSerieApi {
 	 * 
 	 * @return the timelines
 	 */
-	public static Timelines getTimelines() {
+	public static ITimelines getTimelines() {
 		if (timeline == null) {
 			timeline = new Timelines(apiKey);
 		}

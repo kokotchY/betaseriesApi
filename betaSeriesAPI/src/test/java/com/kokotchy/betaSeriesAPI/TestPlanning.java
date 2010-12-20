@@ -4,6 +4,7 @@ import java.util.Set;
 
 import junit.framework.TestCase;
 
+import com.kokotchy.betaSeriesAPI.api.IPlanning;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 
 /**
@@ -16,12 +17,12 @@ public class TestPlanning extends TestCase {
 	/**
 	 * Comments api for json
 	 */
-	private com.kokotchy.betaSeriesAPI.api.jsonImpl.Planning planningJson;
+	private IPlanning planningJson;
 
 	/**
 	 * Comments api for xml
 	 */
-	private com.kokotchy.betaSeriesAPI.api.xmlImpl.Planning planningXml;
+	private IPlanning planningXml;
 
 	@Override
 	protected void setUp() throws Exception {

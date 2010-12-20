@@ -8,6 +8,7 @@ import org.dom4j.Document;
 import org.dom4j.Node;
 import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.api.ITimelines;
 import com.kokotchy.betaSeriesAPI.model.Event;
 
 /**
@@ -20,12 +21,12 @@ public class TestTimeline extends TestCase {
 	/**
 	 * Timeline api for json
 	 */
-	private com.kokotchy.betaSeriesAPI.api.jsonImpl.Timelines timelinesJson;
+	private ITimelines timelinesJson;
 
 	/**
 	 * Timeline api for xml
 	 */
-	private com.kokotchy.betaSeriesAPI.api.xmlImpl.Timelines timelinesXml;
+	private ITimelines timelinesXml;
 
 	private String key;
 

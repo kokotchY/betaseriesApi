@@ -8,6 +8,7 @@ import org.dom4j.Document;
 import org.dom4j.Node;
 import org.json.JSONObject;
 
+import com.kokotchy.betaSeriesAPI.api.IComments;
 import com.kokotchy.betaSeriesAPI.model.Comment;
 
 /**
@@ -20,12 +21,12 @@ public class TestComments extends TestCase {
 	/**
 	 * Comments api for json
 	 */
-	private com.kokotchy.betaSeriesAPI.api.jsonImpl.Comments commentsJson;
+	private IComments commentsJson;
 
 	/**
 	 * Comments api for xml
 	 */
-	private com.kokotchy.betaSeriesAPI.api.xmlImpl.Comments commentsXml;
+	private IComments commentsXml;
 
 	/**
 	 *

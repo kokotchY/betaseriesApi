@@ -2,6 +2,7 @@ package com.kokotchy.betaSeriesAPI;
 
 import junit.framework.TestCase;
 
+import com.kokotchy.betaSeriesAPI.api.IStatus;
 import com.kokotchy.betaSeriesAPI.model.StatusInfo;
 
 /**
@@ -14,12 +15,12 @@ public class TestStatus extends TestCase {
 	/**
 	 * Status api for json
 	 */
-	private com.kokotchy.betaSeriesAPI.api.jsonImpl.Status statusJson;
+	private IStatus statusJson;
 
 	/**
 	 * Status api for xml
 	 */
-	private com.kokotchy.betaSeriesAPI.api.xmlImpl.Status statusXml;
+	private IStatus statusXml;
 
 	@Override
 	protected void setUp() throws Exception {

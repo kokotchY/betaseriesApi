@@ -4,6 +4,7 @@ import java.util.Set;
 
 import junit.framework.TestCase;
 
+import com.kokotchy.betaSeriesAPI.api.IShows;
 import com.kokotchy.betaSeriesAPI.model.Show;
 
 /**
@@ -16,12 +17,29 @@ public class TestShows extends TestCase {
 	/**
 	 * Shows api for json
 	 */
-	private com.kokotchy.betaSeriesAPI.api.jsonImpl.Shows showsJson;
+	private IShows showsJson;
 
 	/**
 	 * Shows api for xml
 	 */
-	private com.kokotchy.betaSeriesAPI.api.xmlImpl.Shows showsXml;
+	private IShows showsXml;
+
+	@Override
+	protected void setUp() throws Exception {
+		super.setUp();
+		String userDir = System.getProperty("user.dir");
+		String key = Utils.getApiKey(userDir);
+		com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi.setApiKey(key);
+		com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi.setApiKey(key);
+		showsJson = com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi
+				.getShows();
+		showsXml = com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi
+				.getShows();
+		UtilsJson.setDebug(true);
+		UtilsJson.setDebugPath(userDir + "/src/test/resources/json/");
+		UtilsXml.setDebug(true);
+		UtilsXml.setDebugPath(userDir + "/src/test/resources/xml/");
+	}
 
 	/**
 	 * Test display of all shows
@@ -135,22 +153,5 @@ public class TestShows extends TestCase {
 		Set<Show> searchXml = showsXml.search("dexter");
 		Set<Show> searchXml2 = showsXml.search("dexter");
 		assertEquals(searchXml, searchXml2);
-	}
-
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp();
-		String userDir = System.getProperty("user.dir");
-		String key = Utils.getApiKey(userDir);
-		com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi.setApiKey(key);
-		com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi.setApiKey(key);
-		showsJson = com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi
-				.getShows();
-		showsXml = com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi
-				.getShows();
-		UtilsJson.setDebug(true);
-		UtilsJson.setDebugPath(userDir + "/src/test/resources/json/");
-		UtilsXml.setDebug(true);
-		UtilsXml.setDebugPath(userDir + "/src/test/resources/xml/");
 	}
 }
