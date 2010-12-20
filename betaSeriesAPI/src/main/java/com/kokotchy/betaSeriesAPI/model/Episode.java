@@ -58,7 +58,7 @@ public class Episode {
 	private boolean seen;
 
 	/**
-	 * TODO Fill it
+	 * Episode is downloaded by the user or not
 	 */
 	private boolean downloaded;
 
@@ -173,18 +173,18 @@ public class Episode {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return true if the episode has subtitles, false otherwise
 	 * 
-	 * @return
+	 * @return True if episode has subtitles
 	 */
 	public boolean hasSubtitle() {
 		return subtitles.size() > 0;
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return true if the episode is downloaded, false otherwise
 	 * 
-	 * @return the downloaded
+	 * @return If episode is downloaded
 	 */
 	public boolean isDownloaded() {
 		return downloaded;
@@ -220,10 +220,10 @@ public class Episode {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Set the downloaded state of the episode
 	 * 
 	 * @param downloaded
-	 *            the downloaded to set
+	 *            the state to set
 	 */
 	public void setDownloaded(boolean downloaded) {
 		this.downloaded = downloaded;

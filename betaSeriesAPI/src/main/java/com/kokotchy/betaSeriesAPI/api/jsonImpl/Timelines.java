@@ -38,7 +38,6 @@ public class Timelines implements ITimelines {
 
 	@Override
 	public Set<Event> getFriendsTimeline(String token) {
-		// FIXME Check for error
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.TOKEN, token);
 		return getTimeline(UtilsJson.executeQuery("timeline/friends", apiKey,
@@ -47,7 +46,6 @@ public class Timelines implements ITimelines {
 
 	@Override
 	public Set<Event> getFriendsTimeline(String token, int nb) {
-		// FIXME Check for error
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.TOKEN, token);
 		params.put(Constants.LIMIT, "" + nb);
@@ -62,7 +60,6 @@ public class Timelines implements ITimelines {
 
 	@Override
 	public Set<Event> getHomeTimeline(int nb) {
-		// FIXME Check for error
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.LIMIT, "" + nb);
 		return getTimeline(UtilsJson.executeQuery("timeline/home", apiKey,
@@ -71,26 +68,28 @@ public class Timelines implements ITimelines {
 
 	/**
 	 * Return the timeline from the document
-	 * FIXME Check for error
 	 * 
 	 * @param jsonObject
 	 *            Json object
 	 * @return List of event
 	 */
 	private Set<Event> getTimeline(JSONObject jsonObject) {
-		Set<Event> events = new HashSet<Event>();
-		JSONObject eventsList = UtilsJson.getJSONObjectFromPath(jsonObject,
-				"/root/timeline");
-		String[] names = JSONObject.getNames(eventsList);
-		try {
-			for (String name : names) {
-				events.add(EventFactory.createEvent(eventsList
-						.getJSONObject(name)));
+		if (!UtilsJson.hasErrors(jsonObject)) {
+			Set<Event> events = new HashSet<Event>();
+			JSONObject eventsList = UtilsJson.getJSONObjectFromPath(jsonObject,
+					"/root/timeline");
+			String[] names = JSONObject.getNames(eventsList);
+			try {
+				for (String name : names) {
+					events.add(EventFactory.createEvent(eventsList
+							.getJSONObject(name)));
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
 			}
-		} catch (JSONException e) {
-			e.printStackTrace();
+			return events;
 		}
-		return events;
+		return null;
 	}
 
 	@Override
@@ -101,7 +100,6 @@ public class Timelines implements ITimelines {
 
 	@Override
 	public Set<Event> getTimelineOfUser(String user, int nb) {
-		// FIXME Check for error
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.LIMIT, "" + nb);
 		return getTimeline(UtilsJson.executeQuery("timeline/member/" + user,

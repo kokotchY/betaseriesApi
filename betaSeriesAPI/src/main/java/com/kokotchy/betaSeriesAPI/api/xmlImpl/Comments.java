@@ -111,9 +111,8 @@ public class Comments implements IComments {
 		if (responseTo >= 0) {
 			params.put(Constants.COMMENT_IN_REPLY_TO, "" + responseTo);
 		}
-		UtilsXml.executeQuery("comments/post/member", apiKey, params);
-		// TODO Check for error
-		return true;
+		Document document = UtilsXml.executeQuery("comments/post/member", apiKey, params);
+		return !UtilsXml.hasErrors(document);
 	}
 
 	@Override
@@ -183,10 +182,9 @@ public class Comments implements IComments {
 			params.put(Constants.COMMENT_IN_REPLY_TO, "" + responseTo);
 		}
 
-		// TODO Check for error
 		if (action != null) {
-			UtilsXml.executeQuery(action, apiKey, params);
-			return true;
+			Document document = UtilsXml.executeQuery(action, apiKey, params);
+			return !UtilsXml.hasErrors(document);
 		}
 		return false;
 	}

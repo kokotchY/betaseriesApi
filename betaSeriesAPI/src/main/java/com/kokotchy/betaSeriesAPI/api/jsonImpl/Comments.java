@@ -40,34 +40,35 @@ public class Comments implements IComments {
 
 	/**
 	 * Return the comments from the json object
-	 * FIXME Check for error
 	 * 
 	 * @param jsonObject
 	 *            Json object
 	 * @return Comments
 	 */
 	private Set<Comment> getComments(JSONObject jsonObject) {
-		JSONObject comments = UtilsJson.getJSONObjectFromPath(jsonObject,
-				"/root/comments");
-		String[] names = JSONObject.getNames(comments);
-		Set<Comment> result = new HashSet<Comment>();
-		if ((names != null) && (names.length > 0)) {
-			try {
-				for (String name : names) {
-					Comment comment = CommentFactory.createComment(comments
-							.getJSONObject(name));
-					result.add(comment);
+		if (!UtilsJson.hasErrors(jsonObject)) {
+			JSONObject comments = UtilsJson.getJSONObjectFromPath(jsonObject,
+					"/root/comments");
+			String[] names = JSONObject.getNames(comments);
+			Set<Comment> result = new HashSet<Comment>();
+			if ((names != null) && (names.length > 0)) {
+				try {
+					for (String name : names) {
+						Comment comment = CommentFactory.createComment(comments
+								.getJSONObject(name));
+						result.add(comment);
+					}
+				} catch (JSONException e) {
+					e.printStackTrace();
 				}
-			} catch (JSONException e) {
-				e.printStackTrace();
 			}
+			return result;
 		}
-		return result;
+		return null;
 	}
 
 	@Override
 	public Set<Comment> getComments(String url) {
-		// FIXME Check for error
 		JSONObject jsonObject = UtilsJson.executeQuery("comments/show/" + url,
 				apiKey);
 		return getComments(jsonObject);
@@ -75,7 +76,6 @@ public class Comments implements IComments {
 
 	@Override
 	public Set<Comment> getComments(String url, int season, int episode) {
-		// FIXME Check for error
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.SEASON, "" + season);
 		params.put(Constants.EPISODE, "" + episode);
@@ -86,7 +86,6 @@ public class Comments implements IComments {
 
 	@Override
 	public Set<Comment> getUserComments(String login) {
-		// FIXME Check for error
 		JSONObject jsonObject = UtilsJson.executeQuery("comments/member/"
 				+ login, apiKey);
 		return getComments(jsonObject);
@@ -94,7 +93,6 @@ public class Comments implements IComments {
 
 	/**
 	 * Post a comment on a user profile
-	 * FIXME Check for error
 	 * 
 	 * @param token
 	 *            Token of the user
@@ -122,7 +120,7 @@ public class Comments implements IComments {
 		}
 		params.put(Constants.TOKEN, token);
 		JSONObject jsonObject = UtilsJson.executeQuery("comments/post/member", apiKey, params);
-		return true;
+		return !UtilsJson.hasErrors(jsonObject);
 	}
 
 	@Override
@@ -151,7 +149,6 @@ public class Comments implements IComments {
 	/**
 	 * Post a comment
 	 * TODO Found better name
-	 * FIXME Check for error
 	 * <ul>
 	 * <li>season and episode >= 0 => post a comment on the episode page</li>
 	 * <li>season and episode < 0 => post on the show page
@@ -199,8 +196,8 @@ public class Comments implements IComments {
 		}
 
 		if (action != null) {
-			UtilsJson.executeQuery(action, apiKey, params);
-			return true;
+			JSONObject jsonObject = UtilsJson.executeQuery(action, apiKey, params);
+			return !UtilsJson.hasErrors(jsonObject);
 		}
 		return false;
 	}

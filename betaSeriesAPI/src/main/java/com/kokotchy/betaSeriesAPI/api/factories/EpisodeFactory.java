@@ -18,7 +18,6 @@ import com.kokotchy.betaSeriesAPI.model.Episode;
 public class EpisodeFactory {
 	/**
 	 * Create a new episode from the json object
-	 * 
 	 * TODO Not the same as the other
 	 * 
 	 * @param json
@@ -57,7 +56,7 @@ public class EpisodeFactory {
 		episode.setTitle(UtilsXml.readString(node, Constants.TITLE));
 		episode
 				.setDescription(UtilsXml
-						.readString(node, Constants.DESCRIPTION));
+				.readString(node, Constants.DESCRIPTION));
 		episode.setScreen(UtilsXml.readString(node, Constants.SCREEN));
 		episode.setShow(UtilsXml.readString(node, Constants.SHOW));
 		episode.setShowUrl(UtilsXml.readString(node, Constants.URL));

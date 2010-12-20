@@ -52,7 +52,6 @@ public class Subtitles implements ISubtitles {
 	/**
 	 * Return the last subtitles. If the url is not null, return subtitles for
 	 * the show. If the nb is greater than 0, limit the number of subtitles
-	 * FIXME Check for error
 	 * 
 	 * @param url
 	 *            Url of the show
@@ -86,19 +85,21 @@ public class Subtitles implements ISubtitles {
 			action = "subtitles/last";
 		}
 		JSONObject jsonObject = UtilsJson.executeQuery(action, apiKey, params);
-
-		JSONObject subtitlesList = UtilsJson.getJSONObjectFromPath(jsonObject,
-				"/root/subtitles");
-		String[] names = JSONObject.getNames(subtitlesList);
-		try {
-			for (String name : names) {
-				subtitles.add(SubtitleFactory.createSubtitle(subtitlesList
-						.getJSONObject(name)));
+		if (!UtilsJson.hasErrors(jsonObject)) {
+			JSONObject subtitlesList = UtilsJson.getJSONObjectFromPath(jsonObject,
+					"/root/subtitles");
+			String[] names = JSONObject.getNames(subtitlesList);
+			try {
+				for (String name : names) {
+					subtitles.add(SubtitleFactory.createSubtitle(subtitlesList
+							.getJSONObject(name)));
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
 			}
-		} catch (JSONException e) {
-			e.printStackTrace();
+			return subtitles;
 		}
-		return subtitles;
+		return null;
 	}
 
 	@Override
@@ -119,7 +120,6 @@ public class Subtitles implements ISubtitles {
 	@Override
 	public Set<Subtitle> show(String url, SubtitleLanguage subtitleLanguage,
 			int season, int episode) {
-		// FIXME Check for error
 		Map<String, String> params = new HashMap<String, String>();
 		if (season > 0) {
 			params.put(Constants.SEASON, "" + season);
@@ -138,18 +138,21 @@ public class Subtitles implements ISubtitles {
 
 		JSONObject jsonObject = UtilsJson.executeQuery("subtitles/show/" + url,
 				apiKey, params);
-		JSONObject subtitlesList = UtilsJson.getJSONObjectFromPath(jsonObject,
-				"/root/subtitles");
-		Set<Subtitle> subtitles = new HashSet<Subtitle>();
-		String[] names = JSONObject.getNames(subtitlesList);
-		try {
-			for (String name : names) {
-				subtitles.add(SubtitleFactory.createSubtitle(subtitlesList
-						.getJSONObject(name)));
+		if (!UtilsJson.hasErrors(jsonObject)) {
+			JSONObject subtitlesList = UtilsJson.getJSONObjectFromPath(jsonObject,
+					"/root/subtitles");
+			Set<Subtitle> subtitles = new HashSet<Subtitle>();
+			String[] names = JSONObject.getNames(subtitlesList);
+			try {
+				for (String name : names) {
+					subtitles.add(SubtitleFactory.createSubtitle(subtitlesList
+							.getJSONObject(name)));
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
 			}
-		} catch (JSONException e) {
-			e.printStackTrace();
+			return subtitles;
 		}
-		return subtitles;
+		return null;
 	}
 }

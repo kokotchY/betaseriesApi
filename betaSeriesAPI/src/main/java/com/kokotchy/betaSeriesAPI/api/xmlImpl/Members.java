@@ -87,6 +87,62 @@ public class Members implements IMembers {
 		return getEpisodes2(token, subtitleLanguage, onlyNext);
 	}
 
+	@SuppressWarnings("unchecked")
+	private List<Episode> getEpisodes2(String token,
+			SubtitleLanguage subtitleLanguage, boolean onlyNext) {
+		// TODO Test for this method
+		String lang = null;
+		switch (subtitleLanguage) {
+		case VF:
+			lang = Constants.LANG_VF;
+			break;
+		case VOVF:
+			lang = Constants.LANG_VOVF;
+			break;
+		case ALL:
+			lang = Constants.LANG_ALL;
+			break;
+		}
+		List<Episode> result = new LinkedList<Episode>();
+		Map<String, String> params = new HashMap<String, String>();
+		params.put(Constants.TOKEN, token);
+		if (onlyNext) {
+			params.put(Constants.MEMBER_VIEW, Constants.MEMBER_NEXT);
+		}
+		Document document = UtilsXml.executeQuery("members/episodes/" + lang,
+				apiKey, params);
+		List<Node> nodes = document.selectNodes("/root/episodes/episode");
+		for (Node node : nodes) {
+			result.add(EpisodeFactory.createEpisode(node));
+		}
+		return result;
+	}
+
+	/**
+	 * Return the information about the user. If it is the identified user,
+	 * identifiedUser has to be true and user has to be the token. If
+	 * identifiedUser is false, then the user is the login of the user to
+	 * retrieve.
+	 * 
+	 * @param user
+	 *            User or token to retrieve
+	 * @param identifiedUser
+	 *            If user if the user or the token
+	 * @return Member informations
+	 */
+	private Member getInfosForUser(String user, boolean identifiedUser) {
+		Document document;
+		if (!identifiedUser) {
+			document = UtilsXml.executeQuery("members/infos/" + user, apiKey);
+		} else {
+			Map<String, String> params = new HashMap<String, String>();
+			params.put(Constants.TOKEN, user);
+			document = UtilsXml.executeQuery("members/infos", apiKey, params);
+		}
+		return MemberFactory.createMember(document
+				.selectSingleNode("/root/member"));
+	}
+
 	@Override
 	public Set<Notification> getNotifications(String token, boolean seen,
 			int nb, int lastId, SortType sort) {
@@ -109,6 +165,62 @@ public class Members implements IMembers {
 	public Set<Notification> getNotifications(String token, int nb,
 			SortType sort) {
 		return getNotificationsWithParameters(token, null, nb, -1, sort);
+	}
+
+	/**
+	 * Return the notifications with the given parameter. Conditions for the
+	 * parameters to be used:
+	 * <ul>
+	 * <li>seen has not to be null</li>
+	 * <li>nb greater than 0</li>
+	 * <li>lastId greater than 0</li>
+	 * </ul>
+	 * 
+	 * @param token
+	 *            Token of the logged user
+	 * @param seen
+	 *            If the notification has to be already seen or not
+	 * @param nb
+	 *            Number of notification
+	 * @param lastId
+	 *            Start of notification
+	 * @param sort
+	 * @return List of notification
+	 */
+	@SuppressWarnings("unchecked")
+	private Set<Notification> getNotificationsWithParameters(String token,
+			Boolean seen, int nb, int lastId, SortType sort) {
+		Map<String, String> params = new HashMap<String, String>();
+		if (seen != null) {
+			params.put(Constants.SEEN, seen ? Constants.YES : Constants.NO);
+		}
+
+		switch (sort) {
+		case ASC:
+			params.put(Constants.SORT, Constants.ORDER_ASC);
+			break;
+		case DESC:
+			params.put(Constants.SORT, Constants.ORDER_DESC);
+			break;
+		default:
+		}
+
+		if (nb > 0) {
+			params.put(Constants.LIMIT, "" + nb);
+		}
+		if (lastId > 0) {
+			params.put(Constants.MEMBER_LAST_ID, "" + lastId);
+		}
+		params.put(Constants.TOKEN, token);
+		Document document = UtilsXml.executeQuery("members/notifications",
+				apiKey, params);
+		List<Node> nodes = document
+				.selectNodes("/root/notifications/notification");
+		Set<Notification> notifications = new HashSet<Notification>();
+		for (Node node : nodes) {
+			notifications.add(NotificationFactory.createNotification(node));
+		}
+		return notifications;
 	}
 
 	@Override
@@ -178,115 +290,5 @@ public class Members implements IMembers {
 	@Override
 	public boolean signup(String login, String password, String email) {
 		throw new NotImplementedException();
-	}
-
-	private List<Episode> getEpisodes2(String token,
-			SubtitleLanguage subtitleLanguage, boolean onlyNext) {
-		String lang = null;
-		switch (subtitleLanguage) {
-		case VF:
-			lang = Constants.LANG_VF;
-			break;
-		case VOVF:
-			lang = Constants.LANG_VOVF;
-			break;
-		case ALL:
-			lang = Constants.LANG_ALL;
-			break;
-		}
-		List<Episode> result = new LinkedList<Episode>();
-		Map<String, String> params = new HashMap<String, String>();
-		params.put(Constants.TOKEN, token);
-		if (onlyNext) {
-			params.put(Constants.MEMBER_VIEW, Constants.MEMBER_NEXT);
-		}
-		Document document = UtilsXml.executeQuery("members/episodes/" + lang,
-				apiKey, params);
-		List<Node> nodes = document.selectNodes("/root/episodes/episode");
-		for (Node node : nodes) {
-			result.add(EpisodeFactory.createEpisode(node));
-		}
-		return result;
-	}
-
-	/**
-	 * Return the information about the user. If it is the identified user,
-	 * identifiedUser has to be true and user has to be the token. If
-	 * identifiedUser is false, then the user is the login of the user to
-	 * retrieve.
-	 * 
-	 * @param user
-	 *            User or token to retrieve
-	 * @param identifiedUser
-	 *            If user if the user or the token
-	 * @return Member informations
-	 */
-	private Member getInfosForUser(String user, boolean identifiedUser) {
-		Document document;
-		if (!identifiedUser) {
-			document = UtilsXml.executeQuery("members/infos/" + user, apiKey);
-		} else {
-			Map<String, String> params = new HashMap<String, String>();
-			params.put(Constants.TOKEN, user);
-			document = UtilsXml.executeQuery("members/infos", apiKey, params);
-		}
-		return MemberFactory.createMember(document
-				.selectSingleNode("/root/member"));
-	}
-
-	/**
-	 * Return the notifications with the given parameter. Conditions for the
-	 * parameters to be used:
-	 * <ul>
-	 * <li>seen has not to be null</li>
-	 * <li>nb greater than 0</li>
-	 * <li>lastId greater than 0</li>
-	 * </ul>
-	 * 
-	 * @param token
-	 *            Token of the logged user
-	 * @param seen
-	 *            If the notification has to be already seen or not
-	 * @param nb
-	 *            Number of notification
-	 * @param lastId
-	 *            Start of notification
-	 * @param sort
-	 * @return List of notification
-	 */
-	@SuppressWarnings("unchecked")
-	private Set<Notification> getNotificationsWithParameters(String token,
-			Boolean seen, int nb, int lastId, SortType sort) {
-		Map<String, String> params = new HashMap<String, String>();
-		if (seen != null) {
-			params.put(Constants.SEEN, seen ? Constants.YES : Constants.NO);
-		}
-
-		switch (sort) {
-		case ASC:
-			params.put(Constants.SORT, Constants.ORDER_ASC);
-			break;
-		case DESC:
-			params.put(Constants.SORT, Constants.ORDER_DESC);
-			break;
-		default:
-		}
-
-		if (nb > 0) {
-			params.put(Constants.LIMIT, "" + nb);
-		}
-		if (lastId > 0) {
-			params.put(Constants.MEMBER_LAST_ID, "" + lastId);
-		}
-		params.put(Constants.TOKEN, token);
-		Document document = UtilsXml.executeQuery("members/notifications",
-				apiKey, params);
-		List<Node> nodes = document
-				.selectNodes("/root/notifications/notification");
-		Set<Notification> notifications = new HashSet<Notification>();
-		for (Node node : nodes) {
-			notifications.add(NotificationFactory.createNotification(node));
-		}
-		return notifications;
 	}
 }

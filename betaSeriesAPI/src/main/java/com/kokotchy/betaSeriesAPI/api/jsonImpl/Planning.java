@@ -56,7 +56,6 @@ public class Planning implements IPlanning {
 	 * planning. Unseen parameter used to select only unseen episodes. Token is
 	 * used for the identified user if identifiedUser, or the login of the user
 	 * if not identifiedUser
-	 * FIXME Check for error
 	 * 
 	 * @param unseen
 	 *            Only uneseen erpisode
@@ -86,18 +85,21 @@ public class Planning implements IPlanning {
 			jsonObject = UtilsJson.executeQuery(action, apiKey, params);
 		}
 
-		JSONObject generalPlanning = UtilsJson.getJSONObjectFromPath(
-				jsonObject, "/root/planning");
-		String[] names = JSONObject.getNames(generalPlanning);
-		Set<Episode> episodes = new HashSet<Episode>();
-		try {
-			for (String name : names) {
-				JSONObject object = generalPlanning.getJSONObject(name);
-				episodes.add(EpisodeFactory.createEpisode(object));
+		if (!UtilsJson.hasErrors(jsonObject)) {
+			JSONObject generalPlanning = UtilsJson.getJSONObjectFromPath(
+					jsonObject, "/root/planning");
+			String[] names = JSONObject.getNames(generalPlanning);
+			Set<Episode> episodes = new HashSet<Episode>();
+			try {
+				for (String name : names) {
+					JSONObject object = generalPlanning.getJSONObject(name);
+					episodes.add(EpisodeFactory.createEpisode(object));
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
 			}
-		} catch (JSONException e) {
-			e.printStackTrace();
+			return episodes;
 		}
-		return episodes;
+		return null;
 	}
 }

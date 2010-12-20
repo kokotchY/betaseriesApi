@@ -62,7 +62,6 @@ public class Shows implements IShows {
 
 	@Override
 	public Set<Show> displayAll() {
-		// FIXME Check for error
 		JSONObject jsonObject = UtilsJson.executeQuery("shows/display/all",
 				apiKey);
 		return getShows(jsonObject);
@@ -75,11 +74,12 @@ public class Shows implements IShows {
 
 	@Override
 	public Season getEpisodes(String url, int seasonNb) {
-		// FIXME Check for error
 		Set<Season> episodesFromSeason = getEpisodesFromSeason(null, url, seasonNb);
-		Iterator<Season> iterator = episodesFromSeason.iterator();
-		if (iterator.hasNext()) {
-			return iterator.next();
+		if (episodesFromSeason != null) {
+			Iterator<Season> iterator = episodesFromSeason.iterator();
+			if (iterator.hasNext()) {
+				return iterator.next();
+			}
 		}
 		return null;
 	}
@@ -91,11 +91,12 @@ public class Shows implements IShows {
 
 	@Override
 	public Season getEpisodes(String token, String url, int seasonNb) {
-		// FIXME Check for error
 		Set<Season> episodesFromSeason = getEpisodesFromSeason(token, url, seasonNb);
-		Iterator<Season> iterator = episodesFromSeason.iterator();
-		if (iterator.hasNext()) {
-			return iterator.next();
+		if (episodesFromSeason != null) {
+			Iterator<Season> iterator = episodesFromSeason.iterator();
+			if (iterator.hasNext()) {
+				return iterator.next();
+			}
 		}
 		return null;
 	}
@@ -103,7 +104,6 @@ public class Shows implements IShows {
 	/**
 	 * Return the episodes from the given season. If seasonNb is < 0, then
 	 * retrieve all seasons
-	 * FIXME Check for error
 	 * 
 	 * @param token
 	 * @param url
@@ -125,34 +125,36 @@ public class Shows implements IShows {
 
 		jsonObject = UtilsJson.executeQuery("shows/episodes/" + url, apiKey,
 				params);
-		JSONArray seasonsArray = UtilsJson.getJSONArrayFromPath(jsonObject,
-				"/root/seasons");
-		Set<Season> result = new HashSet<Season>();
-		try {
-			int seasonsLength = seasonsArray.length();
-			for (int i = 0; i < seasonsLength; i++) {
-				JSONObject seasonObject = seasonsArray.getJSONObject(i);
-				Season season = new Season(UtilsJson.getIntValue(seasonObject,
-						Constants.LIMIT));
-				JSONArray episodesArray = UtilsJson.getJSONArray(seasonObject,
-						Constants.EPISODES);
-				int episodesLength = episodesArray.length();
-				for (int j = 0; j < episodesLength; j++) {
-					JSONObject episodeObject = episodesArray.getJSONObject(j);
-					season.addEpisode(EpisodeFactory
-							.createEpisode(episodeObject));
+		if (!UtilsJson.hasErrors(jsonObject)) {
+			JSONArray seasonsArray = UtilsJson.getJSONArrayFromPath(jsonObject,
+					"/root/seasons");
+			Set<Season> result = new HashSet<Season>();
+			try {
+				int seasonsLength = seasonsArray.length();
+				for (int i = 0; i < seasonsLength; i++) {
+					JSONObject seasonObject = seasonsArray.getJSONObject(i);
+					Season season = new Season(UtilsJson.getIntValue(seasonObject,
+							Constants.LIMIT));
+					JSONArray episodesArray = UtilsJson.getJSONArray(seasonObject,
+							Constants.EPISODES);
+					int episodesLength = episodesArray.length();
+					for (int j = 0; j < episodesLength; j++) {
+						JSONObject episodeObject = episodesArray.getJSONObject(j);
+						season.addEpisode(EpisodeFactory
+								.createEpisode(episodeObject));
+					}
+					result.add(season);
 				}
-				result.add(season);
+			} catch (JSONException e) {
+				e.printStackTrace();
 			}
-		} catch (JSONException e) {
-			e.printStackTrace();
+			return result;
 		}
-		return result;
+		return null;
 	}
 
 	/**
 	 * Return the shows from the json object
-	 * FIXME Check for error
 	 * 
 	 * @param jsonObject
 	 *            Json object
@@ -175,8 +177,9 @@ public class Shows implements IShows {
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
+			return shows;
 		}
-		return shows;
+		return null;
 	}
 
 	@Override
@@ -190,7 +193,6 @@ public class Shows implements IShows {
 
 	@Override
 	public Set<Show> search(String title) {
-		// FIXME Check for errors
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.SHOW_TITLE, title);
 		JSONObject jsonObject = UtilsJson.executeQuery("shows/search", apiKey,

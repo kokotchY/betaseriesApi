@@ -65,9 +65,8 @@ public class Members implements IMembers {
 	public boolean destroy(String token) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.TOKEN, token);
-		UtilsJson.executeQuery("members/destroy", apiKey, params);
-		// FIXME Check for error
-		return true;
+		JSONObject jsonObject = UtilsJson.executeQuery("members/destroy", apiKey, params);
+		return !UtilsJson.hasErrors(jsonObject);
 	}
 
 	@Override
@@ -87,6 +86,86 @@ public class Members implements IMembers {
 	public List<Episode> getEpisodes(String token,
 			SubtitleLanguage subtitleLanguage, boolean onlyNext) {
 		return getEpisodes2(token, subtitleLanguage, onlyNext);
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param token
+	 * @param subtitleLanguage
+	 * @param onlyNext
+	 * @return
+	 */
+	private List<Episode> getEpisodes2(String token,
+			SubtitleLanguage subtitleLanguage, boolean onlyNext) {
+		String lang = null;
+		switch (subtitleLanguage) {
+		case VF:
+			lang = Constants.LANG_VF;
+			break;
+		case VOVF:
+			lang = Constants.LANG_VOVF;
+			break;
+		case ALL:
+			lang = Constants.LANG_ALL;
+			break;
+		}
+		List<Episode> result = new LinkedList<Episode>();
+		Map<String, String> params = new HashMap<String, String>();
+		params.put(Constants.TOKEN, token);
+		if (onlyNext) {
+			params.put(Constants.VIEW, Constants.MEMBER_NEXT);
+		}
+		JSONObject jsonObject = UtilsJson.executeQuery("members/episodes/"
+				+ lang, apiKey, params);
+		if (!UtilsJson.hasErrors(jsonObject)) {
+			try {
+				JSONArray episodes = UtilsJson.getJSONArrayFromPath(jsonObject,
+						"/root/episodes");
+				int length = episodes.length();
+				for (int i = 0; i < length; i++) {
+					JSONObject episode = episodes.getJSONObject(i);
+					result.add(EpisodeFactory.createEpisode(episode));
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+		} /*
+		 * else {
+		 * throw new BetaseriesApiException(UtilsJson.getErrors(jsonObject));
+		 * }
+		 */
+		return result;
+	}
+
+	/**
+	 * Return the information about the user. If it is the identified user,
+	 * identifiedUser has to be true and user has to be the token. If
+	 * identifiedUser is false, then the user is the login of the user to
+	 * retrieve.
+	 * 
+	 * @param user
+	 *            User or token to retrieve
+	 * @param identifiedUser
+	 *            If user if the user or the token
+	 * @return Member informations
+	 */
+	private Member getInfosForUser(String user, boolean identifiedUser) {
+		JSONObject jsonObject;
+		if (!identifiedUser) {
+			jsonObject = UtilsJson
+					.executeQuery("members/infos/" + user, apiKey);
+		} else {
+			Map<String, String> params = new HashMap<String, String>();
+			params.put(Constants.TOKEN, user);
+			jsonObject = UtilsJson
+					.executeQuery("members/infos", apiKey, params);
+		}
+		if (!UtilsJson.hasErrors(jsonObject)) {
+			return MemberFactory.createMember(UtilsJson.getJSONObjectFromPath(
+					jsonObject, "/root/member"));
+		}
+		return null;
 	}
 
 	@Override
@@ -111,6 +190,72 @@ public class Members implements IMembers {
 	public Set<Notification> getNotifications(String token, int nb,
 			SortType sort) {
 		return getNotificationsWithParameters(token, null, nb, -1, sort);
+	}
+
+	/**
+	 * Return the notifications with the given parameter. Conditions for the
+	 * parameters to be used:
+	 * <ul>
+	 * <li>seen has not to be null</li>
+	 * <li>nb greater than 0</li>
+	 * <li>lastId greater than 0</li>
+	 * </ul>
+	 * 
+	 * @param seen
+	 *            If the notification has to be already seen or not
+	 * @param nb
+	 *            Number of notification
+	 * @param lastId
+	 *            Start of notification
+	 * @param sort
+	 * @return List of notification
+	 */
+	private Set<Notification> getNotificationsWithParameters(String token,
+			Boolean seen, int nb, int lastId, SortType sort) {
+		Map<String, String> params = new HashMap<String, String>();
+		if (seen != null) {
+			params.put(Constants.SEEN, seen ? Constants.YES : Constants.NO);
+		}
+
+		switch (sort) {
+		case ASC:
+			params.put(Constants.SORT, Constants.ORDER_ASC);
+			break;
+		case DESC:
+			params.put(Constants.SORT, Constants.ORDER_DESC);
+		default:
+		}
+
+		if (nb > 0) {
+			params.put(Constants.LIMIT, "" + nb);
+		}
+		if (lastId > 0) {
+			params.put(Constants.MEMBER_LAST_ID, "" + lastId);
+		}
+		params.put(Constants.TOKEN, token);
+		Set<Notification> result = new HashSet<Notification>();
+		JSONObject jsonObject = UtilsJson.executeQuery("members/notifications",
+				apiKey, params);
+		// JSONArray notificationsArray = UtilsJson.getJSONArrayFromPath(
+		// jsonObject, "/root/notifications");
+		if (!UtilsJson.hasErrors(jsonObject)) {
+			JSONObject notifications = UtilsJson.getJSONObjectFromPath(jsonObject,
+					"/root/notifications");
+			String[] names = JSONObject.getNames(notifications);
+			try {
+				int length = names.length;
+				for (int i = 0; i < length; i++) {
+					JSONObject notification = notifications.getJSONObject(names[i]);
+					result
+							.add(NotificationFactory
+							.createNotification(notification));
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			return result;
+		}
+		return null;
 	}
 
 	@Override
@@ -158,9 +303,8 @@ public class Members implements IMembers {
 		params.put(Constants.SEASON, "" + season);
 		params.put(Constants.EPISODE, "" + episode);
 		params.put(Constants.TOKEN, token);
-		UtilsJson.executeQuery("members/downloaded/" + url, apiKey, params);
-		// FIXME Check for error
-		return true;
+		JSONObject jsonObject = UtilsJson.executeQuery("members/downloaded/" + url, apiKey, params);
+		return !UtilsJson.hasErrors(jsonObject);
 	}
 
 	@Override
@@ -169,151 +313,14 @@ public class Members implements IMembers {
 		params.put(Constants.SEASON, "" + season);
 		params.put(Constants.EPISODE, "" + episode);
 		params.put(Constants.TOKEN, token);
-		UtilsJson.executeQuery("members/watched/" + url, apiKey, params);
-		// FIXME Check for error
-		return true;
+		JSONObject jsonObject = UtilsJson.executeQuery("members/watched/" + url, apiKey, params);
+		return !UtilsJson.hasErrors(jsonObject);
 	}
 
 	@Override
 	public boolean signup(String login, String password, String email) {
 		throw new NotImplementedException();
 		// FIXME Check for error
-	}
-
-	/**
-	 * TODO Fill it
-	 * 
-	 * @param token
-	 * @param subtitleLanguage
-	 * @param onlyNext
-	 * @return
-	 */
-	private List<Episode> getEpisodes2(String token,
-			SubtitleLanguage subtitleLanguage, boolean onlyNext) {
-		// FIXME Check for error
-		String lang = null;
-		switch (subtitleLanguage) {
-		case VF:
-			lang = Constants.LANG_VF;
-			break;
-		case VOVF:
-			lang = Constants.LANG_VOVF;
-			break;
-		case ALL:
-			lang = Constants.LANG_ALL;
-			break;
-		}
-		List<Episode> result = new LinkedList<Episode>();
-		Map<String, String> params = new HashMap<String, String>();
-		params.put(Constants.TOKEN, token);
-		if (onlyNext) {
-			params.put(Constants.VIEW, Constants.MEMBER_NEXT);
-		}
-		JSONObject jsonObject = UtilsJson.executeQuery("members/episodes/"
-				+ lang, apiKey, params);
-		try {
-			JSONArray episodes = UtilsJson.getJSONArrayFromPath(jsonObject,
-					"/root/episodes");
-			int length = episodes.length();
-			for (int i = 0; i < length; i++) {
-				JSONObject episode = episodes.getJSONObject(i);
-				result.add(EpisodeFactory.createEpisode(episode));
-			}
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
-
-	/**
-	 * Return the information about the user. If it is the identified user,
-	 * identifiedUser has to be true and user has to be the token. If
-	 * identifiedUser is false, then the user is the login of the user to
-	 * retrieve. FIXME Check for error
-	 * 
-	 * @param user
-	 *            User or token to retrieve
-	 * @param identifiedUser
-	 *            If user if the user or the token
-	 * @return Member informations
-	 */
-	private Member getInfosForUser(String user, boolean identifiedUser) {
-		JSONObject jsonObject;
-		if (!identifiedUser) {
-			jsonObject = UtilsJson
-					.executeQuery("members/infos/" + user, apiKey);
-		} else {
-			Map<String, String> params = new HashMap<String, String>();
-			params.put(Constants.TOKEN, user);
-			jsonObject = UtilsJson
-					.executeQuery("members/infos", apiKey, params);
-		}
-		return MemberFactory.createMember(UtilsJson.getJSONObjectFromPath(
-				jsonObject, "/root/member"));
-	}
-
-	/**
-	 * Return the notifications with the given parameter. Conditions for the
-	 * parameters to be used:
-	 * <ul>
-	 * <li>seen has not to be null</li>
-	 * <li>nb greater than 0</li>
-	 * <li>lastId greater than 0</li>
-	 * </ul>
-	 * FIXME Check for error
-	 * 
-	 * @param seen
-	 *            If the notification has to be already seen or not
-	 * @param nb
-	 *            Number of notification
-	 * @param lastId
-	 *            Start of notification
-	 * @param sort
-	 * @return List of notification
-	 */
-	private Set<Notification> getNotificationsWithParameters(String token,
-			Boolean seen, int nb, int lastId, SortType sort) {
-		Map<String, String> params = new HashMap<String, String>();
-		if (seen != null) {
-			params.put(Constants.SEEN, seen ? Constants.YES : Constants.NO);
-		}
-
-		switch (sort) {
-		case ASC:
-			params.put(Constants.SORT, Constants.ORDER_ASC);
-			break;
-		case DESC:
-			params.put(Constants.SORT, Constants.ORDER_DESC);
-		default:
-		}
-
-		if (nb > 0) {
-			params.put(Constants.LIMIT, "" + nb);
-		}
-		if (lastId > 0) {
-			params.put(Constants.MEMBER_LAST_ID, "" + lastId);
-		}
-		params.put(Constants.TOKEN, token);
-		Set<Notification> result = new HashSet<Notification>();
-		JSONObject jsonObject = UtilsJson.executeQuery("members/notifications",
-				apiKey, params);
-		// JSONArray notificationsArray = UtilsJson.getJSONArrayFromPath(
-		// jsonObject, "/root/notifications");
-		JSONObject notifications = UtilsJson.getJSONObjectFromPath(jsonObject,
-				"/root/notifications");
-		String[] names = JSONObject.getNames(notifications);
-		try {
-			int length = names.length;
-			for (int i = 0; i < length; i++) {
-				JSONObject notification = notifications.getJSONObject(names[i]);
-				result
-						.add(NotificationFactory
-								.createNotification(notification));
-			}
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
-		return result;
 	}
 
 }

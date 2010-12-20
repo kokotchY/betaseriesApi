@@ -24,7 +24,6 @@ public class Member {
 
 	/**
 	 * Statistics about the user
-	 * TODO Remove stats object an include directly in Member model
 	 */
 	private Stats stats;
 
