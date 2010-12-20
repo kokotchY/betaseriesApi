@@ -6,6 +6,7 @@ import java.util.Set;
 import junit.framework.TestCase;
 
 import com.kokotchy.betaSeriesAPI.api.IMembers;
+import com.kokotchy.betaSeriesAPI.model.Friend;
 import com.kokotchy.betaSeriesAPI.model.Member;
 import com.kokotchy.betaSeriesAPI.model.Notification;
 import com.kokotchy.betaSeriesAPI.model.Show;
@@ -48,29 +49,6 @@ public class TestMembers extends TestCase {
 	 */
 	private String key;
 
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp();
-		String userDir = System.getProperty("user.dir");
-		key = Utils.getApiKey(userDir);
-		File credentialsFile = new File(userDir,
-				"src/test/resources/credentials.txt");
-		String[] credentials = Utils.loadCredentials(credentialsFile);
-		login = credentials[0];
-		password = credentials[1];
-		token = credentials[2];
-		com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi.setApiKey(key);
-		com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi.setApiKey(key);
-		membersJson = com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi
-				.getMembers();
-		membersXml = com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi
-				.getMembers();
-		UtilsJson.setDebug(true);
-		UtilsJson.setDebugPath(userDir + "/src/test/resources/json/");
-		UtilsXml.setDebug(true);
-		UtilsXml.setDebugPath(userDir + "/src/test/resources/xml/");
-	}
-
 	/**
 	 * Test authentication of the user
 	 */
@@ -94,21 +72,27 @@ public class TestMembers extends TestCase {
 	 * TODO Fill it
 	 */
 	public void testFriends() {
-		fail("Not implemented");
+		Set<Friend> friendsJson = membersJson.getFriends(token);
+		Set<Friend> friendsXml = membersXml.getFriends(token);
+		assertEquals(friendsXml, friendsJson);
 	}
 
 	/**
 	 * TODO Fill it
 	 */
 	public void testFriendsEqualsJson() {
-		fail("Not implemented");
+		Set<Friend> friendsJson = membersJson.getFriends(token);
+		Set<Friend> friendsJson2 = membersJson.getFriends(token);
+		assertEquals(friendsJson, friendsJson2);
 	}
 
 	/**
 	 * TODO Fill it
 	 */
 	public void testFriendsEqualsXml() {
-		fail("Not implemented");
+		Set<Friend> friendsXml2 = membersXml.getFriends(token);
+		Set<Friend> friendsXml = membersXml.getFriends(token);
+		assertEquals(friendsXml, friendsXml2);
 	}
 
 	/**
@@ -229,5 +213,28 @@ public class TestMembers extends TestCase {
 
 	public void testUserFriendsEqualsXml() {
 		fail("Not implemented");
+	}
+
+	@Override
+	protected void setUp() throws Exception {
+		super.setUp();
+		String userDir = System.getProperty("user.dir");
+		key = Utils.getApiKey(userDir);
+		File credentialsFile = new File(userDir,
+				"src/test/resources/credentials.txt");
+		String[] credentials = Utils.loadCredentials(credentialsFile);
+		login = credentials[0];
+		password = credentials[1];
+		token = credentials[2];
+		com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi.setApiKey(key);
+		com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi.setApiKey(key);
+		membersJson = com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi
+				.getMembers();
+		membersXml = com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi
+				.getMembers();
+		UtilsJson.setDebug(true);
+		UtilsJson.setDebugPath(userDir + "/src/test/resources/json/");
+		UtilsXml.setDebug(true);
+		UtilsXml.setDebugPath(userDir + "/src/test/resources/xml/");
 	}
 }

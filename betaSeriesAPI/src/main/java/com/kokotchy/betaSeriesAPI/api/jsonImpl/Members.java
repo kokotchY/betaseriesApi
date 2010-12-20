@@ -17,6 +17,7 @@ import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.api.IMembers;
 import com.kokotchy.betaSeriesAPI.api.NotImplementedException;
 import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
+import com.kokotchy.betaSeriesAPI.api.factories.FriendFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.MemberFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.NotificationFactory;
 import com.kokotchy.betaSeriesAPI.model.Episode;
@@ -66,7 +67,8 @@ public class Members implements IMembers {
 	public boolean destroy(String token) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.TOKEN, token);
-		JSONObject jsonObject = UtilsJson.executeQuery("members/destroy", apiKey, params);
+		JSONObject jsonObject = UtilsJson.executeQuery("members/destroy",
+				apiKey, params);
 		return !UtilsJson.hasErrors(jsonObject);
 	}
 
@@ -86,6 +88,127 @@ public class Members implements IMembers {
 	public List<Episode> getEpisodes(String token,
 			SubtitleLanguage subtitleLanguage, boolean onlyNext) {
 		return getEpisodes2(token, subtitleLanguage, onlyNext);
+	}
+
+	@Override
+	public Set<Friend> getFriends(String token) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("token", token);
+		JSONObject jsonObject = UtilsJson.executeQuery("members/friends",
+				apiKey, params);
+		if (!UtilsJson.hasErrors(jsonObject)) {
+			Set<Friend> result = new HashSet<Friend>();
+			JSONObject friends = UtilsJson.getJSONObjectFromPath(jsonObject,
+					"/root/friends");
+			String[] names = JSONObject.getNames(friends);
+			try {
+				for (String name : names) {
+					String friend = friends.getString(name);
+					result.add(FriendFactory.createFriend(friend));
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			return result;
+		}
+		return null;
+	}
+
+	@Override
+	public Set<Notification> getNotifications(String token, boolean seen,
+			int nb, int lastId, SortType sort) {
+		return getNotificationsWithParameters(token, seen, nb, lastId, sort);
+	}
+
+	@Override
+	public Set<Notification> getNotifications(String token, boolean seen,
+			int nb, SortType sort) {
+		return getNotificationsWithParameters(token, seen, nb, -1, sort);
+	}
+
+	@Override
+	public Set<Notification> getNotifications(String token, boolean seen,
+			SortType sort) {
+		return getNotificationsWithParameters(token, seen, -1, -1, sort);
+	}
+
+	@Override
+	public Set<Notification> getNotifications(String token, int nb,
+			SortType sort) {
+		return getNotificationsWithParameters(token, null, nb, -1, sort);
+	}
+
+	@Override
+	public Set<Friend> getUserFriends(String user) {
+		throw new NotImplementedException();
+	}
+
+	@Override
+	public Member infos(String token) {
+		return getInfosForUser(token, true);
+	}
+
+	@Override
+	public Member infos(String token, int lastCache) {
+		throw new NotImplementedException();
+	}
+
+	@Override
+	public Member infosOfUser(String user) {
+		return getInfosForUser(user, false);
+	}
+
+	@Override
+	public Member infosOfUser(String user, int lastCache) {
+		throw new NotImplementedException();
+	}
+
+	@Override
+	public boolean isActive(String token) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put(Constants.TOKEN, token);
+		JSONObject jsonObject = UtilsJson.executeQuery("members/is_active",
+				apiKey, params);
+		return !UtilsJson.hasErrors(jsonObject);
+	}
+
+	@Override
+	public boolean rate(String token, String url, int season, int episode,
+			int note) {
+		throw new NotImplementedException();
+	}
+
+	@Override
+	public boolean resetViewedShow(String token, String url) {
+		return setWatched(token, url, 0, 0);
+	}
+
+	@Override
+	public boolean setDownloaded(String token, String url, int season,
+			int episode) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put(Constants.SEASON, "" + season);
+		params.put(Constants.EPISODE, "" + episode);
+		params.put(Constants.TOKEN, token);
+		JSONObject jsonObject = UtilsJson.executeQuery("members/downloaded/"
+				+ url, apiKey, params);
+		return !UtilsJson.hasErrors(jsonObject);
+	}
+
+	@Override
+	public boolean setWatched(String token, String url, int season, int episode) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put(Constants.SEASON, "" + season);
+		params.put(Constants.EPISODE, "" + episode);
+		params.put(Constants.TOKEN, token);
+		JSONObject jsonObject = UtilsJson.executeQuery(
+				"members/watched/" + url, apiKey, params);
+		return !UtilsJson.hasErrors(jsonObject);
+	}
+
+	@Override
+	public boolean signup(String login, String password, String email) {
+		throw new NotImplementedException();
 	}
 
 	/**
@@ -131,16 +254,10 @@ public class Members implements IMembers {
 				e.printStackTrace();
 			}
 		} /*
-		 * else {
-		 * throw new BetaseriesApiException(UtilsJson.getErrors(jsonObject));
-		 * }
+		 * else { throw new
+		 * BetaseriesApiException(UtilsJson.getErrors(jsonObject)); }
 		 */
 		return result;
-	}
-
-	@Override
-	public Set<Friend> getFriends(String token) {
-		throw new NotImplementedException();
 	}
 
 	/**
@@ -171,30 +288,6 @@ public class Members implements IMembers {
 					jsonObject, "/root/member"));
 		}
 		return null;
-	}
-
-	@Override
-	public Set<Notification> getNotifications(String token, boolean seen,
-			int nb, int lastId, SortType sort) {
-		return getNotificationsWithParameters(token, seen, nb, lastId, sort);
-	}
-
-	@Override
-	public Set<Notification> getNotifications(String token, boolean seen,
-			int nb, SortType sort) {
-		return getNotificationsWithParameters(token, seen, nb, -1, sort);
-	}
-
-	@Override
-	public Set<Notification> getNotifications(String token, boolean seen,
-			SortType sort) {
-		return getNotificationsWithParameters(token, seen, -1, -1, sort);
-	}
-
-	@Override
-	public Set<Notification> getNotifications(String token, int nb,
-			SortType sort) {
-		return getNotificationsWithParameters(token, null, nb, -1, sort);
 	}
 
 	/**
@@ -244,15 +337,15 @@ public class Members implements IMembers {
 		// JSONArray notificationsArray = UtilsJson.getJSONArrayFromPath(
 		// jsonObject, "/root/notifications");
 		if (!UtilsJson.hasErrors(jsonObject)) {
-			JSONObject notifications = UtilsJson.getJSONObjectFromPath(jsonObject,
-					"/root/notifications");
+			JSONObject notifications = UtilsJson.getJSONObjectFromPath(
+					jsonObject, "/root/notifications");
 			String[] names = JSONObject.getNames(notifications);
 			try {
 				int length = names.length;
 				for (int i = 0; i < length; i++) {
-					JSONObject notification = notifications.getJSONObject(names[i]);
-					result
-							.add(NotificationFactory
+					JSONObject notification = notifications
+							.getJSONObject(names[i]);
+					result.add(NotificationFactory
 							.createNotification(notification));
 				}
 			} catch (JSONException e) {
@@ -261,76 +354,6 @@ public class Members implements IMembers {
 			return result;
 		}
 		return null;
-	}
-
-	@Override
-	public Set<Friend> getUserFriends(String user) {
-		throw new NotImplementedException();
-	}
-
-	@Override
-	public Member infos(String token) {
-		return getInfosForUser(token, true);
-	}
-
-	@Override
-	public Member infos(String token, int lastCache) {
-		throw new NotImplementedException();
-	}
-
-	@Override
-	public Member infosOfUser(String user) {
-		return getInfosForUser(user, false);
-	}
-
-	@Override
-	public Member infosOfUser(String user, int lastCache) {
-		throw new NotImplementedException();
-	}
-
-	@Override
-	public boolean isActive(String token) {
-		Map<String, String> params = new HashMap<String, String>();
-		params.put(Constants.TOKEN, token);
-		JSONObject jsonObject = UtilsJson.executeQuery("members/is_active",
-				apiKey, params);
-		return !UtilsJson.hasErrors(jsonObject);
-	}
-
-	@Override
-	public boolean rate(String token, String url, int season, int episode, int note) {
-		throw new NotImplementedException();
-	}
-
-	@Override
-	public boolean resetViewedShow(String token, String url) {
-		return setWatched(token, url, 0, 0);
-	}
-
-	@Override
-	public boolean setDownloaded(String token, String url, int season,
-			int episode) {
-		Map<String, String> params = new HashMap<String, String>();
-		params.put(Constants.SEASON, "" + season);
-		params.put(Constants.EPISODE, "" + episode);
-		params.put(Constants.TOKEN, token);
-		JSONObject jsonObject = UtilsJson.executeQuery("members/downloaded/" + url, apiKey, params);
-		return !UtilsJson.hasErrors(jsonObject);
-	}
-
-	@Override
-	public boolean setWatched(String token, String url, int season, int episode) {
-		Map<String, String> params = new HashMap<String, String>();
-		params.put(Constants.SEASON, "" + season);
-		params.put(Constants.EPISODE, "" + episode);
-		params.put(Constants.TOKEN, token);
-		JSONObject jsonObject = UtilsJson.executeQuery("members/watched/" + url, apiKey, params);
-		return !UtilsJson.hasErrors(jsonObject);
-	}
-
-	@Override
-	public boolean signup(String login, String password, String email) {
-		throw new NotImplementedException();
 	}
 
 }
