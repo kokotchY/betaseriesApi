@@ -20,6 +20,7 @@ import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.MemberFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.NotificationFactory;
 import com.kokotchy.betaSeriesAPI.model.Episode;
+import com.kokotchy.betaSeriesAPI.model.Friend;
 import com.kokotchy.betaSeriesAPI.model.Member;
 import com.kokotchy.betaSeriesAPI.model.Notification;
 import com.kokotchy.betaSeriesAPI.model.SortType;
@@ -71,9 +72,8 @@ public class Members implements IMembers {
 
 	@Override
 	public int getDateCache(String token, boolean identifieduser) {
-		// TODO Auto-generated method stub
 		// FIXME Check for error
-		return 0;
+		throw new NotImplementedException();
 	}
 
 	@Override
@@ -136,6 +136,11 @@ public class Members implements IMembers {
 		 * }
 		 */
 		return result;
+	}
+
+	@Override
+	public Set<Friend> getFriends(String token) {
+		throw new NotImplementedException();
 	}
 
 	/**
@@ -259,15 +264,18 @@ public class Members implements IMembers {
 	}
 
 	@Override
+	public Set<Friend> getUserFriends(String user) {
+		throw new NotImplementedException();
+	}
+
+	@Override
 	public Member infos(String token) {
 		return getInfosForUser(token, true);
 	}
 
 	@Override
 	public Member infos(String token, int lastCache) {
-		// TODO Auto-generated method stub
-		// FIXME Check for error
-		return null;
+		throw new NotImplementedException();
 	}
 
 	@Override
@@ -277,9 +285,7 @@ public class Members implements IMembers {
 
 	@Override
 	public Member infosOfUser(String user, int lastCache) {
-		// TODO Auto-generated method stub
-		// FIXME Check for error
-		return null;
+		throw new NotImplementedException();
 	}
 
 	@Override
@@ -289,6 +295,11 @@ public class Members implements IMembers {
 		JSONObject jsonObject = UtilsJson.executeQuery("members/is_active",
 				apiKey, params);
 		return !UtilsJson.hasErrors(jsonObject);
+	}
+
+	@Override
+	public boolean rate(String token, String url, int season, int episode, int note) {
+		throw new NotImplementedException();
 	}
 
 	@Override
@@ -320,7 +331,6 @@ public class Members implements IMembers {
 	@Override
 	public boolean signup(String login, String password, String email) {
 		throw new NotImplementedException();
-		// FIXME Check for error
 	}
 
 }

@@ -13,6 +13,7 @@ import org.dom4j.Node;
 import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.api.IShows;
+import com.kokotchy.betaSeriesAPI.api.NotImplementedException;
 import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.ShowFactory;
 import com.kokotchy.betaSeriesAPI.model.Season;
@@ -137,6 +138,11 @@ public class Shows implements IShows {
 			result.add(season);
 		}
 		return result;
+	}
+
+	@Override
+	public boolean recommend(String token, String url, String login) {
+		throw new NotImplementedException();
 	}
 
 	@Override

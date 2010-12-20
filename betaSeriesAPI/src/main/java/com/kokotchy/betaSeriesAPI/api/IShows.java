@@ -82,6 +82,16 @@ public interface IShows {
 	public Season getEpisodes(String token, String url, int seasonNb);
 
 	/**
+	 * TODO Fill it
+	 * 
+	 * @param token
+	 * @param url
+	 * @param login
+	 * @return
+	 */
+	public boolean recommend(String token, String url, String login);
+
+	/**
 	 * Remove the show from the logged user
 	 * 
 	 * @param url

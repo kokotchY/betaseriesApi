@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.kokotchy.betaSeriesAPI.model.Episode;
+import com.kokotchy.betaSeriesAPI.model.Friend;
 import com.kokotchy.betaSeriesAPI.model.Member;
 import com.kokotchy.betaSeriesAPI.model.Notification;
 import com.kokotchy.betaSeriesAPI.model.SortType;
@@ -76,6 +77,14 @@ public interface IMembers {
 			SubtitleLanguage subtitleLanguage, boolean onlyNext);
 
 	/**
+	 * TODO Fill it
+	 * 
+	 * @param token
+	 * @return
+	 */
+	public Set<Friend> getFriends(String token);
+
+	/**
 	 * Return the notification received by the member.
 	 * 
 	 * @param token
@@ -134,6 +143,14 @@ public interface IMembers {
 			SortType sort);
 
 	/**
+	 * TODO Fill it
+	 * 
+	 * @param user
+	 * @return
+	 */
+	public Set<Friend> getUserFriends(String user);
+
+	/**
 	 * Return information about the logged user
 	 * 
 	 * @param token
@@ -179,6 +196,18 @@ public interface IMembers {
 	 * @return True if active, false otherwise
 	 */
 	public boolean isActive(String token);
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param token
+	 * @param url
+	 * @param season
+	 * @param episode
+	 * @param note
+	 * @return
+	 */
+	public boolean rate(String token, String url, int season, int episode, int note);
 
 	/**
 	 * Reset the serie

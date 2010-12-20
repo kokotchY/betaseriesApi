@@ -91,6 +91,27 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
+	 * TODO Fill it
+	 */
+	public void testFriends() {
+		fail("Not implemented");
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testFriendsEqualsJson() {
+		fail("Not implemented");
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testFriendsEqualsXml() {
+		fail("Not implemented");
+	}
+
+	/**
 	 * Test informations with xml and json
 	 */
 	public void testInfos() {
@@ -179,9 +200,34 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
+	 * TODO Fill it
+	 */
+	public void testRate() {
+		fail("Not implemented");
+	}
+
+	/**
 	 * Test the signup of an account
 	 */
 	public void testSignup() {
+		fail("Not implemented");
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testUserFriends() {
+		fail("Not implemented");
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testUserFriendsEqualsJson() {
+		fail("Not implemented");
+	}
+
+	public void testUserFriendsEqualsXml() {
 		fail("Not implemented");
 	}
 }

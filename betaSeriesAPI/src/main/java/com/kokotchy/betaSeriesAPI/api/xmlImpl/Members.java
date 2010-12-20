@@ -19,6 +19,7 @@ import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.MemberFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.NotificationFactory;
 import com.kokotchy.betaSeriesAPI.model.Episode;
+import com.kokotchy.betaSeriesAPI.model.Friend;
 import com.kokotchy.betaSeriesAPI.model.Member;
 import com.kokotchy.betaSeriesAPI.model.Notification;
 import com.kokotchy.betaSeriesAPI.model.SortType;
@@ -71,8 +72,7 @@ public class Members implements IMembers {
 
 	@Override
 	public int getDateCache(String token, boolean identifieduser) {
-		// TODO Auto-generated method stub
-		return 0;
+		throw new NotImplementedException();
 	}
 
 	@Override
@@ -116,6 +116,11 @@ public class Members implements IMembers {
 			result.add(EpisodeFactory.createEpisode(node));
 		}
 		return result;
+	}
+
+	@Override
+	public Set<Friend> getFriends(String token) {
+		throw new NotImplementedException();
 	}
 
 	/**
@@ -224,25 +229,28 @@ public class Members implements IMembers {
 	}
 
 	@Override
+	public Set<Friend> getUserFriends(String user) {
+		throw new NotImplementedException();
+	}
+
+	@Override
 	public Member infos(String token) {
 		return getInfosForUser(token, true);
 	}
 
 	@Override
 	public Member infos(String token, int lastCache) {
-		// TODO Auto-generated method stub
-		return null;
+		throw new NotImplementedException();
 	}
 
 	@Override
 	public Member infosOfUser(String user) {
-		return getInfosForUser(user, false);
+		throw new NotImplementedException();
 	}
 
 	@Override
 	public Member infosOfUser(String user, int lastCache) {
-		// TODO Auto-generated method stub
-		return null;
+		throw new NotImplementedException();
 	}
 
 	@Override
@@ -253,6 +261,11 @@ public class Members implements IMembers {
 				params);
 		Node node = document.selectSingleNode("/root");
 		return UtilsXml.readBoolean(node, Constants.ERROR_CODE);
+	}
+
+	@Override
+	public boolean rate(String token, String url, int season, int episode, int note) {
+		throw new NotImplementedException();
 	}
 
 	@Override

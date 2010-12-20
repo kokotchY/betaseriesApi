@@ -42,6 +42,13 @@ public class TestShows extends TestCase {
 	}
 
 	/**
+	 * TODO Fill it
+	 */
+	public void testRecommend() {
+		fail("Not implemented");
+	}
+
+	/**
 	 * Test display of all shows
 	 */
 	public void testShowsDisplayAll() {
