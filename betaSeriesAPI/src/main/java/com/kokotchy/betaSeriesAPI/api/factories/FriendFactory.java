@@ -3,18 +3,18 @@ package com.kokotchy.betaSeriesAPI.api.factories;
 import com.kokotchy.betaSeriesAPI.model.Friend;
 
 /**
- * TODO Fill it
+ * Friend factory
  * 
  * @author kokotchy
- * 
  */
 public class FriendFactory {
 
 	/**
-	 * TODO Fill it
+	 * Create a friend from the login
 	 * 
 	 * @param name
-	 * @return
+	 *            Name of the friend
+	 * @return Friend
 	 */
 	public static Friend createFriend(String name) {
 		Friend friend = new Friend();
