@@ -204,10 +204,10 @@ public interface IMembers {
 	 * @param url
 	 * @param season
 	 * @param episode
-	 * @param note
+	 * @param rate
 	 * @return
 	 */
-	public boolean rate(String token, String url, int season, int episode, int note);
+	public boolean rate(String token, String url, int season, int episode, int rate);
 
 	/**
 	 * Reset the serie

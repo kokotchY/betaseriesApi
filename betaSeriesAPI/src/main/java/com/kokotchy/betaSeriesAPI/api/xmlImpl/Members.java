@@ -89,129 +89,6 @@ public class Members implements IMembers {
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
-	public Set<Friend> getFriends(String token) {
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("token", token);
-		Document document = UtilsXml.executeQuery("members/friends", apiKey,
-				params);
-		if (!UtilsXml.hasErrors(document)) {
-			Set<Friend> result = new HashSet<Friend>();
-			List<Node> friends = document.selectNodes("/root/friends/friend");
-			for (Node node : friends) {
-				String text = node.getText();
-				Friend friend = FriendFactory.createFriend(text);
-				result.add(friend);
-			}
-			return result;
-		}
-		return null;
-	}
-
-	@Override
-	public Set<Notification> getNotifications(String token, boolean seen,
-			int nb, int lastId, SortType sort) {
-		return getNotificationsWithParameters(token, seen, nb, lastId, sort);
-	}
-
-	@Override
-	public Set<Notification> getNotifications(String token, boolean seen,
-			int nb, SortType sort) {
-		return getNotificationsWithParameters(token, seen, nb, -1, sort);
-	}
-
-	@Override
-	public Set<Notification> getNotifications(String token, boolean seen,
-			SortType sort) {
-		return getNotificationsWithParameters(token, seen, -1, -1, sort);
-	}
-
-	@Override
-	public Set<Notification> getNotifications(String token, int nb,
-			SortType sort) {
-		return getNotificationsWithParameters(token, null, nb, -1, sort);
-	}
-
-	@Override
-	public Set<Friend> getUserFriends(String user) {
-		throw new NotImplementedException();
-	}
-
-	@Override
-	public Member infos(String token) {
-		return getInfosForUser(token, true);
-	}
-
-	@Override
-	public Member infos(String token, int lastCache) {
-		throw new NotImplementedException();
-	}
-
-	@Override
-	public Member infosOfUser(String user) {
-		throw new NotImplementedException();
-	}
-
-	@Override
-	public Member infosOfUser(String user, int lastCache) {
-		throw new NotImplementedException();
-	}
-
-	@Override
-	public boolean isActive(String token) {
-		Map<String, String> params = new HashMap<String, String>();
-		params.put(Constants.TOKEN, token);
-		Document document = UtilsXml.executeQuery("members/is_active", apiKey,
-				params);
-		Node node = document.selectSingleNode("/root");
-		return UtilsXml.readBoolean(node, Constants.ERROR_CODE);
-	}
-
-	@Override
-	public boolean rate(String token, String url, int season, int episode,
-			int note) {
-		throw new NotImplementedException();
-	}
-
-	@Override
-	public boolean resetViewedShow(String token, String url) {
-		return setWatched(token, url, 0, 0);
-	}
-
-	@Override
-	public boolean setDownloaded(String token, String url, int season,
-			int episode) {
-		Map<String, String> params = new HashMap<String, String>();
-		params.put(Constants.SEASON, "" + season);
-		params.put(Constants.EPISODE, "" + episode);
-		params.put(Constants.TOKEN, token);
-		Document document = UtilsXml.executeQuery("members/downloaded/" + url,
-				apiKey, params);
-		if (!UtilsXml.hasErrors(document)) {
-			Node root = document.selectSingleNode("/root");
-			return UtilsXml.readBoolean(root, "downloaded");
-		}
-		return false;
-	}
-
-	@Override
-	public boolean setWatched(String token, String url, int season, int episode) {
-		Map<String, String> params = new HashMap<String, String>();
-		params.put(Constants.SEASON, "" + season);
-		params.put(Constants.EPISODE, "" + episode);
-		params.put(Constants.TOKEN, token);
-		Document document = UtilsXml.executeQuery("members/watched/" + url,
-				apiKey, params);
-		// TODO Check for error
-		return !UtilsXml.hasErrors(document);
-	}
-
-	@Override
-	public boolean signup(String login, String password, String email) {
-		throw new NotImplementedException();
-	}
-
-	@SuppressWarnings("unchecked")
 	private List<Episode> getEpisodes2(String token,
 			SubtitleLanguage subtitleLanguage, boolean onlyNext) {
 		// TODO Test for this method
@@ -242,6 +119,26 @@ public class Members implements IMembers {
 		return result;
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public Set<Friend> getFriends(String token) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("token", token);
+		Document document = UtilsXml.executeQuery("members/friends", apiKey,
+				params);
+		if (!UtilsXml.hasErrors(document)) {
+			Set<Friend> result = new HashSet<Friend>();
+			List<Node> friends = document.selectNodes("/root/friends/friend");
+			for (Node node : friends) {
+				String text = node.getText();
+				Friend friend = FriendFactory.createFriend(text);
+				result.add(friend);
+			}
+			return result;
+		}
+		return null;
+	}
+
 	/**
 	 * Return the information about the user. If it is the identified user,
 	 * identifiedUser has to be true and user has to be the token. If
@@ -265,6 +162,30 @@ public class Members implements IMembers {
 		}
 		return MemberFactory.createMember(document
 				.selectSingleNode("/root/member"));
+	}
+
+	@Override
+	public Set<Notification> getNotifications(String token, boolean seen,
+			int nb, int lastId, SortType sort) {
+		return getNotificationsWithParameters(token, seen, nb, lastId, sort);
+	}
+
+	@Override
+	public Set<Notification> getNotifications(String token, boolean seen,
+			int nb, SortType sort) {
+		return getNotificationsWithParameters(token, seen, nb, -1, sort);
+	}
+
+	@Override
+	public Set<Notification> getNotifications(String token, boolean seen,
+			SortType sort) {
+		return getNotificationsWithParameters(token, seen, -1, -1, sort);
+	}
+
+	@Override
+	public Set<Notification> getNotifications(String token, int nb,
+			SortType sort) {
+		return getNotificationsWithParameters(token, null, nb, -1, sort);
 	}
 
 	/**
@@ -321,5 +242,94 @@ public class Members implements IMembers {
 			notifications.add(NotificationFactory.createNotification(node));
 		}
 		return notifications;
+	}
+
+	@Override
+	public Set<Friend> getUserFriends(String user) {
+		throw new NotImplementedException();
+	}
+
+	@Override
+	public Member infos(String token) {
+		return getInfosForUser(token, true);
+	}
+
+	@Override
+	public Member infos(String token, int lastCache) {
+		throw new NotImplementedException();
+	}
+
+	@Override
+	public Member infosOfUser(String user) {
+		throw new NotImplementedException();
+	}
+
+	@Override
+	public Member infosOfUser(String user, int lastCache) {
+		throw new NotImplementedException();
+	}
+
+	@Override
+	public boolean isActive(String token) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put(Constants.TOKEN, token);
+		Document document = UtilsXml.executeQuery("members/is_active", apiKey,
+				params);
+		Node node = document.selectSingleNode("/root");
+		return UtilsXml.readBoolean(node, Constants.ERROR_CODE);
+	}
+
+	@Override
+	public boolean rate(String token, String url, int season, int episode,
+			int rate) {
+		if (rate > 0 && rate <= 5) {
+			Map<String, String> params = new HashMap<String, String>();
+			params.put(Constants.TOKEN, token);
+			params.put(Constants.SEASON, "" + season);
+			params.put(Constants.EPISODE, "" + episode);
+			params.put(Constants.RATE, "" + rate);
+			Document document = UtilsXml.executeQuery("members/note/" + url, apiKey, params);
+			// TODO Check result
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean resetViewedShow(String token, String url) {
+		return setWatched(token, url, 0, 0);
+	}
+
+	@Override
+	public boolean setDownloaded(String token, String url, int season,
+			int episode) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put(Constants.SEASON, "" + season);
+		params.put(Constants.EPISODE, "" + episode);
+		params.put(Constants.TOKEN, token);
+		Document document = UtilsXml.executeQuery("members/downloaded/" + url,
+				apiKey, params);
+		if (!UtilsXml.hasErrors(document)) {
+			Node root = document.selectSingleNode("/root");
+			return UtilsXml.readBoolean(root, "downloaded");
+		}
+		return false;
+	}
+
+	@Override
+	public boolean setWatched(String token, String url, int season, int episode) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put(Constants.SEASON, "" + season);
+		params.put(Constants.EPISODE, "" + episode);
+		params.put(Constants.TOKEN, token);
+		Document document = UtilsXml.executeQuery("members/watched/" + url,
+				apiKey, params);
+		// TODO Check for error
+		return !UtilsXml.hasErrors(document);
+	}
+
+	@Override
+	public boolean signup(String login, String password, String email) {
+		throw new NotImplementedException();
 	}
 }
