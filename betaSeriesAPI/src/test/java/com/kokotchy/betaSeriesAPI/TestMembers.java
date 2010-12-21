@@ -92,7 +92,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test friends
 	 */
 	public void testFriends() {
 		Set<Friend> friendsJson = membersJson.getFriends(token);
@@ -101,7 +101,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test equals set with json
 	 */
 	public void testFriendsEqualsJson() {
 		Set<Friend> friendsJson = membersJson.getFriends(token);
@@ -110,7 +110,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test equals set with xml
 	 */
 	public void testFriendsEqualsXml() {
 		Set<Friend> friendsXml2 = membersXml.getFriends(token);
@@ -207,16 +207,15 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test the rate of an episode
 	 */
 	public void testRate() {
-		fail("Not implemented");
 		assertTrue(membersJson.rate(token, "firefly", 1, 1, 5));
 		assertTrue(membersXml.rate(token, "firefly", 1, 1, 5));
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test that rating isn't possible with a rate below 1
 	 */
 	public void testRateLessZero() {
 		assertFalse(membersJson.rate(token, "firefly", 1, 1, 0));
@@ -224,7 +223,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test that rating isn't possible with a rate after 5
 	 */
 	public void testRateMoreFive() {
 		assertFalse(membersJson.rate(token, "firefly", 1, 1, 6));
@@ -239,19 +238,22 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test friends of a user
 	 */
 	public void testUserFriends() {
 		fail("Not implemented");
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test friends of a user equals json
 	 */
 	public void testUserFriendsEqualsJson() {
 		fail("Not implemented");
 	}
 
+	/**
+	 * Test friends of a user equals xml
+	 */
 	public void testUserFriendsEqualsXml() {
 		fail("Not implemented");
 	}

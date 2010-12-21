@@ -77,10 +77,11 @@ public interface IMembers {
 			SubtitleLanguage subtitleLanguage, boolean onlyNext);
 
 	/**
-	 * TODO Fill it
+	 * Return the friends of the logged user
 	 * 
 	 * @param token
-	 * @return
+	 *            Token of the user
+	 * @return Friends
 	 */
 	public Set<Friend> getFriends(String token);
 
@@ -143,10 +144,11 @@ public interface IMembers {
 			SortType sort);
 
 	/**
-	 * TODO Fill it
+	 * Return the friends of a user
 	 * 
 	 * @param user
-	 * @return
+	 *            User
+	 * @return Friends of the user
 	 */
 	public Set<Friend> getUserFriends(String user);
 
@@ -198,14 +200,19 @@ public interface IMembers {
 	public boolean isActive(String token);
 
 	/**
-	 * TODO Fill it
+	 * Rate the given episode for the logged user
 	 * 
 	 * @param token
+	 *            Token of the user
 	 * @param url
+	 *            Url of the show
 	 * @param season
+	 *            Season of the episode
 	 * @param episode
+	 *            Episode to rate
 	 * @param rate
-	 * @return
+	 *            Rating
+	 * @return True if the rate with error, false otherwise
 	 */
 	public boolean rate(String token, String url, int season, int episode, int rate);
 
