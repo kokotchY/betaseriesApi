@@ -160,4 +160,6 @@ public class Constants {
 	public static final String LAST_CHANGE = "last_change";
 
 	public static final String RATE = "note";
+
+	public static final String FRIEND = "friend";
 }
