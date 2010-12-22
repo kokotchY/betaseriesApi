@@ -3,6 +3,7 @@ package com.kokotchy.betaSeriesAPI.api.factories;
 import java.util.List;
 
 import org.dom4j.Node;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
@@ -18,7 +19,6 @@ import com.kokotchy.betaSeriesAPI.model.Episode;
 public class EpisodeFactory {
 	/**
 	 * Create a new episode from the json object
-	 * TODO Not the same as the other
 	 * 
 	 * @param json
 	 *            json object
@@ -26,14 +26,33 @@ public class EpisodeFactory {
 	 */
 	public static Episode createEpisode(JSONObject json) {
 		Episode episode = new Episode();
-		episode.setShow(UtilsJson.getStringValue(json, Constants.SHOW));
-		episode.setNb(UtilsJson.getStringValue(json, Constants.NUMBER));
-		episode.setShowUrl(UtilsJson.getStringValue(json, Constants.URL));
+		String nb = UtilsJson.getStringValue(json, Constants.NUMBER);
+		if (nb == null) {
+			nb = UtilsJson.getStringValue(json, Constants.EPISODE);
+		}
+		episode.setNb(nb);
 		episode.setDate(UtilsJson.getIntValue(json, Constants.DATE));
 		episode.setTitle(UtilsJson.getStringValue(json, Constants.TITLE));
-		episode.setSeen(UtilsJson.getBooleanValue(json, Constants.HAS_SEEN));
+		episode.setDescription(UtilsJson.getStringValue(json, Constants.DESCRIPTION));
+		episode.setScreen(UtilsJson.getStringValue(json, Constants.SCREEN));
+		episode.setShow(UtilsJson.getStringValue(json, Constants.SHOW));
+		episode.setShowUrl(UtilsJson.getStringValue(json, Constants.URL));
 		episode.setDownloaded(UtilsJson.getBooleanValue(json,
 				Constants.DOWNLOADED));
+
+		JSONObject subs = UtilsJson.getJSONObject(json, "subs");
+		if (subs != null) {
+			String[] names = JSONObject.getNames(subs);
+			try {
+				for (String name : names) {
+					episode.addSubtitle(SubtitleFactory.createSubtitle(subs.getJSONObject(name)));
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+		}
+		episode.setSeen(UtilsJson.getBooleanValue(json, Constants.HAS_SEEN));
+
 		return episode;
 	}
 
