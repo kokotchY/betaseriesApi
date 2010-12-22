@@ -81,6 +81,60 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
+	 * TODO Fill it
+	 */
+	public void testDateCacheIdentifiedUser() {
+		int dateCacheJson = membersJson.getDateCache(token, true);
+		int dateCacheXml = membersXml.getDateCache(token, true);
+		assertEquals(dateCacheXml, dateCacheJson);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testDateCacheIdentifiedUserEqualsJson() {
+		int dateCacheJson = membersJson.getDateCache(token, true);
+		int dateCacheJson2 = membersJson.getDateCache(token, true);
+		assertEquals(dateCacheJson, dateCacheJson2);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testDateCacheIdentifiedUserEqualsXml() {
+		int dateCacheXml = membersXml.getDateCache(token, true);
+		int dateCacheXml2 = membersXml.getDateCache(token, true);
+		assertEquals(dateCacheXml, dateCacheXml2);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testDateCacheUser() {
+		int dateCacheJson = membersJson.getDateCache("delphiki", false);
+		int dateCacheXml = membersXml.getDateCache("delphiki", false);
+		assertEquals(dateCacheXml, dateCacheJson);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testDateCacheUserEqualsJson() {
+		int dateCacheJson = membersJson.getDateCache("delphiki", false);
+		int dateCacheJson2 = membersJson.getDateCache("delphiki", false);
+		assertEquals(dateCacheJson, dateCacheJson2);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testDateCacheUserEqualsXml() {
+		int dateCacheXml = membersXml.getDateCache("delphiki", false);
+		int dateCacheXml2 = membersXml.getDateCache("delphiki", false);
+		assertEquals(dateCacheXml, dateCacheXml2);
+	}
+
+	/**
 	 * Testing set an episode as downloaded
 	 */
 	public void testDownloaded() {

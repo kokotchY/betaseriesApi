@@ -73,7 +73,20 @@ public class Members implements IMembers {
 
 	@Override
 	public int getDateCache(String token, boolean identifieduser) {
-		throw new NotImplementedException();
+		Map<String, String> params = new HashMap<String, String>();
+		params.put(Constants.NO_DATA, "1");
+		String action;
+		if (identifieduser) {
+			action = "members/infos";
+			params.put(Constants.TOKEN, token);
+		} else {
+			action = "members/infos/" + token;
+		}
+		Document document = UtilsXml.executeQuery(action, apiKey, params);
+		if (!UtilsXml.hasErrors(document)) {
+			return UtilsXml.readInt(document, Constants.CACHED);
+		}
+		return -1;
 	}
 
 	@Override

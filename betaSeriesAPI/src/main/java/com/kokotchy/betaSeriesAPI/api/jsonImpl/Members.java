@@ -74,8 +74,20 @@ public class Members implements IMembers {
 
 	@Override
 	public int getDateCache(String token, boolean identifieduser) {
-		// FIXME Check for error
-		throw new NotImplementedException();
+		Map<String, String> params = new HashMap<String, String>();
+		params.put(Constants.NO_DATA, "1");
+		String action;
+		if (identifieduser) {
+			action = "members/infos";
+			params.put(Constants.TOKEN, token);
+		} else {
+			action = "members/infos/" + token;
+		}
+		JSONObject jsonObject = UtilsJson.executeQuery(action, apiKey, params);
+		if (!UtilsJson.hasErrors(jsonObject)) {
+			return UtilsJson.getIntValue(jsonObject, Constants.CACHED);
+		}
+		return -1;
 	}
 
 	@Override

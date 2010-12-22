@@ -162,4 +162,8 @@ public class Constants {
 	public static final String RATE = "note";
 
 	public static final String FRIEND = "friend";
+
+	public static final String NO_DATA = "nodata";
+
+	public static final String CACHED = "cached";
 }
