@@ -295,7 +295,9 @@ public class TestMembers extends TestCase {
 	 * Test friends of a user
 	 */
 	public void testUserFriends() {
-		fail("Not implemented");
+		Set<Friend> friendsJson = membersJson.getUserFriends("dev042");
+		Set<Friend> friendsXml = membersXml.getUserFriends("dev042");
+		assertEquals(friendsXml, friendsJson);
 	}
 
 	/**

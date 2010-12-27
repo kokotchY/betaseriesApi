@@ -297,7 +297,24 @@ public class Members implements IMembers {
 
 	@Override
 	public Set<Friend> getUserFriends(String user) {
-		throw new NotImplementedException();
+		JSONObject jsonObject = UtilsJson.executeQuery("members/friends/dev042", apiKey);
+		Set<Friend> result = new HashSet<Friend>();
+		if (!UtilsJson.hasErrors(jsonObject)) {
+			JSONObject friends = UtilsJson.getJSONObjectFromPath(jsonObject, "/root/friends");
+			String[] names = JSONObject.getNames(friends);
+			try {
+				for (String name : names) {
+					String friendName = friends.getString(name);
+					Friend friend = FriendFactory.createFriend(friendName);
+					result.add(friend);
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+
+			return result;
+		}
+		return null;
 	}
 
 	@Override

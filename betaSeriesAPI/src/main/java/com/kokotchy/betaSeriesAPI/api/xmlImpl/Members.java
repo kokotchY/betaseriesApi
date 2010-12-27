@@ -257,9 +257,21 @@ public class Members implements IMembers {
 		return notifications;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public Set<Friend> getUserFriends(String user) {
-		throw new NotImplementedException();
+		Document document = UtilsXml.executeQuery("members/friends/" + user, apiKey);
+		if (!UtilsXml.hasErrors(document)) {
+			Set<Friend> result = new HashSet<Friend>();
+			List<Node> friends = document.selectNodes("/root/friends/friend");
+			for (Node node : friends) {
+				String text = node.getText();
+				Friend friend = FriendFactory.createFriend(text);
+				result.add(friend);
+			}
+			return result;
+		}
+		return null;
 	}
 
 	@Override
