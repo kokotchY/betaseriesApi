@@ -166,4 +166,6 @@ public class Constants {
 	public static final String NO_DATA = "nodata";
 
 	public static final String CACHED = "cached";
+
+	public static final String SINCE = "since";
 }

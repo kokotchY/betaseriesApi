@@ -185,15 +185,19 @@ public class Members implements IMembers {
 	 *            User or token to retrieve
 	 * @param identifiedUser
 	 *            If user if the user or the token
+	 * @param lastcache
 	 * @return Member informations
 	 */
-	private Member getInfosForUser(String user, boolean identifiedUser) {
+	private Member getInfosForUser(String user, boolean identifiedUser, int lastcache) {
 		JSONObject jsonObject;
+		Map<String, String> params = new HashMap<String, String>();
+		if (lastcache > 0) {
+			params.put(Constants.SINCE, "" + lastcache);
+		}
 		if (!identifiedUser) {
 			jsonObject = UtilsJson
-					.executeQuery("members/infos/" + user, apiKey);
+					.executeQuery("members/infos/" + user, apiKey, params);
 		} else {
-			Map<String, String> params = new HashMap<String, String>();
 			params.put(Constants.TOKEN, user);
 			jsonObject = UtilsJson
 					.executeQuery("members/infos", apiKey, params);
@@ -321,22 +325,22 @@ public class Members implements IMembers {
 
 	@Override
 	public Member infos(String token) {
-		return getInfosForUser(token, true);
+		return getInfosForUser(token, true, -1);
 	}
 
 	@Override
 	public Member infos(String token, int lastCache) {
-		throw new NotImplementedException();
+		return getInfosForUser(token, true, lastCache);
 	}
 
 	@Override
 	public Member infosOfUser(String user) {
-		return getInfosForUser(user, false);
+		return getInfosForUser(user, false, -1);
 	}
 
 	@Override
 	public Member infosOfUser(String user, int lastCache) {
-		throw new NotImplementedException();
+		return getInfosForUser(user, false, lastCache);
 	}
 
 	@Override
