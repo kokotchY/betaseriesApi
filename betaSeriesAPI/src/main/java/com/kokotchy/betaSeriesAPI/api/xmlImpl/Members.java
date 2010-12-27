@@ -274,7 +274,7 @@ public class Members implements IMembers {
 
 	@Override
 	public Member infosOfUser(String user) {
-		throw new NotImplementedException();
+		return getInfosForUser(user, false);
 	}
 
 	@Override
