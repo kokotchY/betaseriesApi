@@ -304,13 +304,17 @@ public class TestMembers extends TestCase {
 	 * Test friends of a user equals json
 	 */
 	public void testUserFriendsEqualsJson() {
-		fail("Not implemented");
+		Set<Friend> friendsJson = membersJson.getUserFriends("dev042");
+		Set<Friend> friendsJson2 = membersJson.getUserFriends("dev042");
+		assertEquals(friendsJson, friendsJson2);
 	}
 
 	/**
 	 * Test friends of a user equals xml
 	 */
 	public void testUserFriendsEqualsXml() {
-		fail("Not implemented");
+		Set<Friend> friendsXml2 = membersXml.getUserFriends("dev042");
+		Set<Friend> friendsXml = membersXml.getUserFriends("dev042");
+		assertEquals(friendsXml, friendsXml2);
 	}
 }
