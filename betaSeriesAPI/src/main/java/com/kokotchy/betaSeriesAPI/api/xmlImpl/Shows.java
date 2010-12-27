@@ -145,8 +145,7 @@ public class Shows implements IShows {
 		params.put(Constants.TOKEN, token);
 		params.put(Constants.FRIEND, login);
 		Document document = UtilsXml.executeQuery("shows/recommend/" + url, apiKey, params);
-		// TODO Check result
-		return true;
+		return !UtilsXml.hasErrors(document);
 	}
 
 	@Override

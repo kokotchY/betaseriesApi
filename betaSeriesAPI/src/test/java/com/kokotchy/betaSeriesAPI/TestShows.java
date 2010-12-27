@@ -1,5 +1,6 @@
 package com.kokotchy.betaSeriesAPI;
 
+import java.io.File;
 import java.util.Set;
 
 import junit.framework.TestCase;
@@ -24,11 +25,20 @@ public class TestShows extends TestCase {
 	 */
 	private IShows showsXml;
 
+	/**
+	 *
+	 */
+	private String token;
+
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
 		String userDir = System.getProperty("user.dir");
 		String key = Utils.getApiKey(userDir);
+		File credentialsFile = new File(userDir,
+				"src/test/resources/credentials.txt");
+		String[] credentials = Utils.loadCredentials(credentialsFile);
+		token = credentials[2];
 		com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi.setApiKey(key);
 		com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi.setApiKey(key);
 		showsJson = com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi
@@ -45,7 +55,11 @@ public class TestShows extends TestCase {
 	 * TODO Fill it
 	 */
 	public void testRecommend() {
-		fail("Not implemented");
+		boolean recommendJson = showsJson.recommend(token, "a-developers-life", "kokotchY");
+		boolean recommendXml = showsXml.recommend(token, "a-developers-life", "kokotchY");
+		assertEquals(recommendXml, recommendJson);
+		assertTrue(recommendJson);
+		assertTrue(recommendXml);
 	}
 
 	/**

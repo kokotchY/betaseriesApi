@@ -188,8 +188,7 @@ public class Shows implements IShows {
 		params.put(Constants.TOKEN, token);
 		params.put(Constants.FRIEND, login);
 		JSONObject jsonObject = UtilsJson.executeQuery("shows/recommend/" + url, apiKey, params);
-		// TODO Check result
-		return true;
+		return !UtilsJson.hasErrors(jsonObject);
 	}
 
 	@Override
