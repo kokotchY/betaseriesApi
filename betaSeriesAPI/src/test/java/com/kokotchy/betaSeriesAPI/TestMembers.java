@@ -301,6 +301,17 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
+	 * TODO Fill it
+	 */
+	public void testUserFriendsEmpty() {
+		Set<Friend> friendsJson = membersJson.getUserFriends("dev002");
+		Set<Friend> friendsXml = membersXml.getUserFriends("dev002");
+		assertEquals(friendsXml, friendsJson);
+		assertEquals(0, friendsJson.size());
+		assertEquals(0, friendsXml.size());
+	}
+
+	/**
 	 * Test friends of a user equals json
 	 */
 	public void testUserFriendsEqualsJson() {
