@@ -2,12 +2,9 @@ package com.kokotchy.betaSeriesAPI.api.jsonImpl;
 
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -91,13 +88,13 @@ public class Members implements IMembers {
 	}
 
 	@Override
-	public List<Episode> getEpisodes(String token,
+	public Set<Episode> getEpisodes(String token,
 			SubtitleLanguage subtitleLanguage) {
 		return getEpisodes2(token, subtitleLanguage, false);
 	}
 
 	@Override
-	public List<Episode> getEpisodes(String token,
+	public Set<Episode> getEpisodes(String token,
 			SubtitleLanguage subtitleLanguage, boolean onlyNext) {
 		return getEpisodes2(token, subtitleLanguage, onlyNext);
 	}
@@ -110,7 +107,7 @@ public class Members implements IMembers {
 	 * @param onlyNext
 	 * @return
 	 */
-	private List<Episode> getEpisodes2(String token,
+	private Set<Episode> getEpisodes2(String token,
 			SubtitleLanguage subtitleLanguage, boolean onlyNext) {
 		String lang = null;
 		switch (subtitleLanguage) {
@@ -124,7 +121,7 @@ public class Members implements IMembers {
 			lang = Constants.LANG_ALL;
 			break;
 		}
-		List<Episode> result = new LinkedList<Episode>();
+		Set<Episode> result = new HashSet<Episode>();
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.TOKEN, token);
 		if (onlyNext) {
@@ -134,12 +131,14 @@ public class Members implements IMembers {
 				+ lang, apiKey, params);
 		if (!UtilsJson.hasErrors(jsonObject)) {
 			try {
-				JSONArray episodes = UtilsJson.getJSONArrayFromPath(jsonObject,
+				JSONObject episodes = UtilsJson.getJSONObjectFromPath(jsonObject,
 						"/root/episodes");
-				int length = episodes.length();
-				for (int i = 0; i < length; i++) {
-					JSONObject episode = episodes.getJSONObject(i);
-					result.add(EpisodeFactory.createEpisode(episode));
+				String[] names = JSONObject.getNames(episodes);
+				if (names != null && names.length > 0) {
+					for (String name : names) {
+						JSONObject episode = episodes.getJSONObject(name);
+						result.add(EpisodeFactory.createEpisode(episode));
+					}
 				}
 			} catch (JSONException e) {
 				e.printStackTrace();

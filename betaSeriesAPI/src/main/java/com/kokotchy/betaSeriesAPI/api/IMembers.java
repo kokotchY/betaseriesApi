@@ -1,6 +1,5 @@
 package com.kokotchy.betaSeriesAPI.api;
 
-import java.util.List;
 import java.util.Set;
 
 import com.kokotchy.betaSeriesAPI.model.Episode;
@@ -58,7 +57,7 @@ public interface IMembers {
 	 *            of episode to watch
 	 * @return List of remaining episodes to watch
 	 */
-	public List<Episode> getEpisodes(String token,
+	public Set<Episode> getEpisodes(String token,
 			SubtitleLanguage subtitleLanguage);
 
 	/**
@@ -73,7 +72,7 @@ public interface IMembers {
 	 *            If only one episode has to be returned by show
 	 * @return List of episode
 	 */
-	public List<Episode> getEpisodes(String token,
+	public Set<Episode> getEpisodes(String token,
 			SubtitleLanguage subtitleLanguage, boolean onlyNext);
 
 	/**

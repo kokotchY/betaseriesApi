@@ -1,7 +1,7 @@
 package com.kokotchy.betaSeriesAPI.model;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.kokotchy.betaSeriesAPI.HashCodeUtil;
 
@@ -50,7 +50,7 @@ public class Episode {
 	/**
 	 * List of subtitles for the episodes
 	 */
-	private List<Subtitle> subtitles;
+	private Set<Subtitle> subtitles;
 
 	/**
 	 * Episode is seen or not
@@ -66,7 +66,7 @@ public class Episode {
 	 * Create a new episode
 	 */
 	public Episode() {
-		subtitles = new LinkedList<Subtitle>();
+		subtitles = new HashSet<Subtitle>();
 	}
 
 	/**
@@ -144,7 +144,7 @@ public class Episode {
 	 * 
 	 * @return the subtitles
 	 */
-	public List<Subtitle> getSubtitles() {
+	public Set<Subtitle> getSubtitles() {
 		return subtitles;
 	}
 

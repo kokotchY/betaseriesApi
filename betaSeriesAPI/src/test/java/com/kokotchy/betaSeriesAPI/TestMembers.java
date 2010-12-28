@@ -6,11 +6,13 @@ import java.util.Set;
 import junit.framework.TestCase;
 
 import com.kokotchy.betaSeriesAPI.api.IMembers;
+import com.kokotchy.betaSeriesAPI.model.Episode;
 import com.kokotchy.betaSeriesAPI.model.Friend;
 import com.kokotchy.betaSeriesAPI.model.Member;
 import com.kokotchy.betaSeriesAPI.model.Notification;
 import com.kokotchy.betaSeriesAPI.model.Show;
 import com.kokotchy.betaSeriesAPI.model.SortType;
+import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
 
 /**
  * Test members api
@@ -143,6 +145,87 @@ public class TestMembers extends TestCase {
 		boolean downloadedJson = membersJson.setDownloaded(token, "firefly", 1,
 				1);
 		assertEquals(downloadedXml, downloadedJson);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testEpisodesAllSubtitles() {
+		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.ALL);
+		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.ALL);
+		assertEquals(episodesXml, episodesJson);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testEpisodesAllSubtitlesEqualsJson() {
+		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.ALL);
+		Set<Episode> episodesJson2 = membersJson.getEpisodes(token, SubtitleLanguage.ALL);
+		assertEquals(episodesJson, episodesJson2);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testEpisodesAllSubtitlesEqualsXml() {
+		Set<Episode> episodesXml2 = membersXml.getEpisodes(token, SubtitleLanguage.ALL);
+		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.ALL);
+		assertEquals(episodesXml, episodesXml2);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testEpisodesVfSubtitles() {
+		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VF);
+		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.VF);
+		assertEquals(episodesXml, episodesJson);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testEpisodesVfSubtitlesEqualsJson() {
+		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VF);
+		Set<Episode> episodesJson2 = membersJson.getEpisodes(token, SubtitleLanguage.VF);
+		assertEquals(episodesJson, episodesJson2);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testEpisodesVfSubtitlesEqualsXml() {
+		Set<Episode> episodesXml2 = membersJson.getEpisodes(token, SubtitleLanguage.VF);
+		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.VF);
+		assertEquals(episodesXml, episodesXml2);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testEpisodesVoVfSubtitles() {
+		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VOVF);
+		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.VOVF);
+		assertEquals(episodesXml, episodesJson);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testEpisodesVoVfSubtitlesEqualsJson() {
+		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VOVF);
+		Set<Episode> episodesJson2 = membersJson.getEpisodes(token, SubtitleLanguage.VOVF);
+		assertEquals(episodesJson, episodesJson2);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testEpisodesVoVfSubtitlesEqualsXml() {
+		Set<Episode> episodesXml2 = membersXml.getEpisodes(token, SubtitleLanguage.VOVF);
+		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.VOVF);
+		assertEquals(episodesXml, episodesXml2);
 	}
 
 	/**

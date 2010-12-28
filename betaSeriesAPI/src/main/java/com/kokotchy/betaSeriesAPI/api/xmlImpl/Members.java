@@ -2,7 +2,6 @@ package com.kokotchy.betaSeriesAPI.api.xmlImpl;
 
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -90,19 +89,19 @@ public class Members implements IMembers {
 	}
 
 	@Override
-	public List<Episode> getEpisodes(String token,
+	public Set<Episode> getEpisodes(String token,
 			SubtitleLanguage subtitleLanguage) {
 		return getEpisodes2(token, subtitleLanguage, false);
 	}
 
 	@Override
-	public List<Episode> getEpisodes(String token,
+	public Set<Episode> getEpisodes(String token,
 			SubtitleLanguage subtitleLanguage, boolean onlyNext) {
 		return getEpisodes2(token, subtitleLanguage, onlyNext);
 	}
 
 	@SuppressWarnings("unchecked")
-	private List<Episode> getEpisodes2(String token,
+	private Set<Episode> getEpisodes2(String token,
 			SubtitleLanguage subtitleLanguage, boolean onlyNext) {
 		// TODO Test for this method
 		String lang = null;
@@ -117,7 +116,7 @@ public class Members implements IMembers {
 			lang = Constants.LANG_ALL;
 			break;
 		}
-		List<Episode> result = new LinkedList<Episode>();
+		Set<Episode> result = new HashSet<Episode>();
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.TOKEN, token);
 		if (onlyNext) {
