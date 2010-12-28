@@ -177,6 +177,15 @@ public class TestMembers extends TestCase {
 	/**
 	 * TODO Fill it
 	 */
+	public void testEpisodesAllSubtitlesOnlyNext() {
+		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.ALL, true);
+		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.ALL, true);
+		assertEquals(episodesXml, episodesJson);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
 	public void testEpisodesVfSubtitles() {
 		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VF);
 		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.VF);
@@ -204,6 +213,15 @@ public class TestMembers extends TestCase {
 	/**
 	 * TODO Fill it
 	 */
+	public void testEpisodesVfSubtitlesOnlyNext() {
+		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VF, true);
+		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.VF, true);
+		assertEquals(episodesXml, episodesJson);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
 	public void testEpisodesVoVfSubtitles() {
 		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VOVF);
 		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.VOVF);
@@ -226,6 +244,15 @@ public class TestMembers extends TestCase {
 		Set<Episode> episodesXml2 = membersXml.getEpisodes(token, SubtitleLanguage.VOVF);
 		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.VOVF);
 		assertEquals(episodesXml, episodesXml2);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testEpisodesVoVfSubtitlesOnlyNext() {
+		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VOVF, true);
+		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.VOVF, true);
+		assertEquals(episodesXml, episodesJson);
 	}
 
 	/**
