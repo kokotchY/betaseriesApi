@@ -3,7 +3,6 @@ package com.kokotchy.betaSeriesAPI.api.factories;
 import java.util.List;
 
 import org.dom4j.Node;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
@@ -42,13 +41,9 @@ public class EpisodeFactory {
 
 		JSONObject subs = UtilsJson.getJSONObject(json, "subs");
 		if (subs != null) {
-			String[] names = JSONObject.getNames(subs);
-			try {
-				for (String name : names) {
-					episode.addSubtitle(SubtitleFactory.createSubtitle(subs.getJSONObject(name)));
-				}
-			} catch (JSONException e) {
-				e.printStackTrace();
+			JSONObject[] array = UtilsJson.getArray(subs);
+			for (JSONObject jsonObject : array) {
+				episode.addSubtitle(SubtitleFactory.createSubtitle(jsonObject));
 			}
 		}
 		episode.setSeen(UtilsJson.getBooleanValue(json, Constants.HAS_SEEN));

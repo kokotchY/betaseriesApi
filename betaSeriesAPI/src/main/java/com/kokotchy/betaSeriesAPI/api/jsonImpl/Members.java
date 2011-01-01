@@ -133,13 +133,20 @@ public class Members implements IMembers {
 			try {
 				JSONObject episodes = UtilsJson.getJSONObjectFromPath(jsonObject,
 						"/root/episodes");
-				String[] names = JSONObject.getNames(episodes);
-				if (names != null && names.length > 0) {
-					for (String name : names) {
-						JSONObject episode = episodes.getJSONObject(name);
-						result.add(EpisodeFactory.createEpisode(episode));
-					}
+				int idx = 0;
+				boolean hasElement = episodes.has("" + idx);
+				while (hasElement) {
+					JSONObject episode = episodes.getJSONObject("" + idx++);
+					result.add(EpisodeFactory.createEpisode(episode));
+					hasElement = episodes.has("" + idx);
 				}
+				// String[] names = JSONObject.getNames(episodes);
+				// if (names != null && names.length > 0) {
+				// for (String name : names) {
+				// JSONObject episode = episodes.getJSONObject(name);
+				// result.add(EpisodeFactory.createEpisode(episode));
+				// }
+				// }
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}

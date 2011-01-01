@@ -3,7 +3,6 @@ package com.kokotchy.betaSeriesAPI.api.factories;
 import java.util.List;
 
 import org.dom4j.Node;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
@@ -26,21 +25,16 @@ public class MemberFactory {
 	 */
 	public static Member createMember(JSONObject jsonObject) {
 		Member member = new Member();
-		try {
-			member.setLogin(UtilsJson.getStringValue(jsonObject,
-					Constants.LOGIN));
-			member.setAvatar(UtilsJson.getStringValue(jsonObject,
-					Constants.AVATAR));
-			member.setStats(StatsFactory.createStats(UtilsJson.getJSONObject(
-					jsonObject, Constants.STATS)));
-			JSONObject shows = UtilsJson.getJSONObject(jsonObject,
-					Constants.SHOWS);
-			for (String name : JSONObject.getNames(shows)) {
-				JSONObject show = shows.getJSONObject(name);
-				member.addShow(ShowFactory.createShow(show));
-			}
-		} catch (JSONException e) {
-			e.printStackTrace();
+		member.setLogin(UtilsJson.getStringValue(jsonObject,
+				Constants.LOGIN));
+		member.setAvatar(UtilsJson.getStringValue(jsonObject,
+				Constants.AVATAR));
+		member.setStats(StatsFactory.createStats(UtilsJson.getJSONObject(
+				jsonObject, Constants.STATS)));
+		JSONObject shows = UtilsJson.getJSONObject(jsonObject,
+				Constants.SHOWS);
+		for (JSONObject show : UtilsJson.getArray(shows)) {
+			member.addShow(ShowFactory.createShow(show));
 		}
 		return member;
 	}

@@ -36,6 +36,7 @@ public class ShowFactory {
 		JSONObject genres = UtilsJson.getJSONObject(jsonObject,
 				Constants.GENRES);
 		if (genres != null) {
+			JSONObject[] array = UtilsJson.getArray(genres);
 			String[] names = JSONObject.getNames(genres);
 			try {
 				for (String name : names) {
