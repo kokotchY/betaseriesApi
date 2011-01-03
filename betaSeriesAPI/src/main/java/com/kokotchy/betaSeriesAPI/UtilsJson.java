@@ -119,8 +119,18 @@ public class UtilsJson {
 	 * @return
 	 */
 	public static JSONObject[] getArray(JSONObject jsonObject) {
+		return getArray(jsonObject, 0);
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param seasons
+	 * @param startIdx
+	 */
+	public static JSONObject[] getArray(JSONObject jsonObject, int startIdx) {
 		List<JSONObject> list = new LinkedList<JSONObject>();
-		int idx = 0;
+		int idx = startIdx;
 		boolean hasElement = jsonObject.has("" + idx);
 		try {
 			while (hasElement) {

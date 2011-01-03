@@ -36,31 +36,27 @@ public class ShowFactory {
 		JSONObject genres = UtilsJson.getJSONObject(jsonObject,
 				Constants.GENRES);
 		if (genres != null) {
-			JSONObject[] array = UtilsJson.getArray(genres);
-			String[] names = JSONObject.getNames(genres);
+			int idx = 0;
+			boolean hasElement = genres.has("" + idx);
 			try {
-				for (String name : names) {
-					show.addGenre(genres.getString(name));
+				while (hasElement) {
+					show.addGenre(genres.getString("" + idx++));
+					hasElement = genres.has("" + idx);
 				}
-			} catch (JSONException e) {
-				e.printStackTrace();
+			} catch (JSONException e1) {
+				e1.printStackTrace();
 			}
 		}
 		JSONObject seasons = UtilsJson.getJSONObject(jsonObject,
 				Constants.SEASONS);
 		if (seasons != null) {
-			String[] names = JSONObject.getNames(seasons);
-			try {
-				for (String name : names) {
-					JSONObject season = seasons.getJSONObject(name);
-					int episodes = UtilsJson.getIntValue(season,
-							Constants.EPISODES);
-					int number = UtilsJson
-							.getIntValue(season, Constants.NUMBER);
-					show.addNumberEpisodeForSeason(number, episodes);
-				}
-			} catch (JSONException e) {
-				e.printStackTrace();
+			JSONObject[] array = UtilsJson.getArray(seasons, 1);
+			for (JSONObject season : array) {
+				int episodes = UtilsJson.getIntValue(season,
+						Constants.EPISODES);
+				int number = UtilsJson
+						.getIntValue(season, Constants.NUMBER);
+				show.addNumberEpisodeForSeason(number, episodes);
 			}
 		}
 		show.setArchived(UtilsJson.getBooleanValue(jsonObject,

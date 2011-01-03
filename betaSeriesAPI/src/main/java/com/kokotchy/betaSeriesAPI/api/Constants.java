@@ -133,6 +133,9 @@ public class Constants {
 
 	public static final String FILES = "files";
 
+	/**
+	 * TODO Move to another file! It's the name of the element to retrieve and not a constant for a field
+	 */
 	public static final String VERSIONS = "versions";
 
 	public static final String VERSION = "version";
