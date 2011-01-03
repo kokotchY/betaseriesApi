@@ -1,5 +1,6 @@
 package com.kokotchy.betaSeriesAPI.api.factories;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.dom4j.Document;
@@ -74,10 +75,15 @@ public class StatusInfoFactory {
 				Constants.VERSION));
 		JSONObject versions = UtilsJson.getJSONObject(apiObject,
 				Constants.VERSIONS);
-		JSONObject[] array = UtilsJson.getArray(versions);
-		for (JSONObject versionObject : array) {
-			Version version = VersionFactory.createVersion(versionObject);
-			statusInfo.addVersion(version);
+		Iterator<Object> keys = versions.keys();
+		try {
+			while (keys.hasNext()) {
+				JSONObject versionObject = versions.getJSONObject(keys.next().toString());
+				Version version = VersionFactory.createVersion(versionObject);
+				statusInfo.addVersion(version);
+			}
+		} catch (JSONException e1) {
+			e1.printStackTrace();
 		}
 
 		JSONObject files = UtilsJson.getJSONObject(apiObject,

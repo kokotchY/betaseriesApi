@@ -1,9 +1,12 @@
 package com.kokotchy.betaSeriesAPI;
 
+import java.util.Map.Entry;
+
 import junit.framework.TestCase;
 
 import com.kokotchy.betaSeriesAPI.api.IStatus;
 import com.kokotchy.betaSeriesAPI.model.StatusInfo;
+import com.kokotchy.betaSeriesAPI.model.Version;
 
 /**
  * Test status api
@@ -48,6 +51,20 @@ public class TestStatus extends TestCase {
 		assertEquals(statusInfoXml.getFiles().size(), statusInfoJson.getFiles().size());
 		assertEquals(statusInfoXml.getFiles(), statusInfoJson.getFiles());
 		assertEquals(statusInfoXml.getVersions().size(), statusInfoJson.getVersions().size());
+		int nb = 0;
+		for (Entry<Integer, Version> entry : statusInfoXml.getVersions().entrySet()) {
+			for (Entry<Integer, Version> entry2 : statusInfoXml.getVersions().entrySet()) {
+				if (entry2.getKey().equals(entry.getKey())) {
+					if (entry.getValue().equals(entry2.getValue())) {
+						assertTrue(true);
+						nb++;
+					} else {
+						fail("Not equals " + entry + "," + entry2);
+					}
+				}
+			}
+		}
+		assertEquals(statusInfoJson.getVersions().size(), nb);
 		assertEquals(statusInfoXml.getVersions(), statusInfoJson.getVersions());
 		assertEquals(statusInfoXml, statusInfoJson);
 	}
