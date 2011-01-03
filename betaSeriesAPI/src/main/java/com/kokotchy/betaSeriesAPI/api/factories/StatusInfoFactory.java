@@ -72,21 +72,21 @@ public class StatusInfoFactory {
 				"/root/api");
 		statusInfo.setVersion(UtilsJson.getStringValue(apiObject,
 				Constants.VERSION));
-		try {
-			JSONObject versions = UtilsJson.getJSONObject(apiObject,
-					Constants.VERSIONS);
-			String[] versionsName = JSONObject.getNames(versions);
-			for (String name : versionsName) {
-				JSONObject versionObject = versions.getJSONObject(name);
-				Version version = VersionFactory.createVersion(versionObject);
-				statusInfo.addVersion(version);
-			}
+		JSONObject versions = UtilsJson.getJSONObject(apiObject,
+				Constants.VERSIONS);
+		JSONObject[] array = UtilsJson.getArray(versions);
+		for (JSONObject versionObject : array) {
+			Version version = VersionFactory.createVersion(versionObject);
+			statusInfo.addVersion(version);
+		}
 
-			JSONObject files = UtilsJson.getJSONObject(apiObject,
-					Constants.FILES);
-			String[] filesName = JSONObject.getNames(files);
-			for (String name : filesName) {
-				JSONObject fileObject = files.getJSONObject(name);
+		JSONObject files = UtilsJson.getJSONObject(apiObject,
+				Constants.FILES);
+		// JSONObject[] fileArray = UtilsJson.getArray(files);
+		String[] filesName = new String[] { "comments", "members", "planning", "shows", "subtitles", "timeline" };
+		try {
+			for (String filename : filesName) {
+				JSONObject fileObject = files.getJSONObject(filename);
 				VersionFile file = VersionFileFactory
 						.createVersionFile(fileObject);
 				statusInfo.addVersionFile(file);
