@@ -53,13 +53,13 @@ public class TestStatus extends TestCase {
 		assertEquals(statusInfoXml.getVersions().size(), statusInfoJson.getVersions().size());
 		int nb = 0;
 		for (Entry<Integer, Version> entry : statusInfoXml.getVersions().entrySet()) {
-			for (Entry<Integer, Version> entry2 : statusInfoXml.getVersions().entrySet()) {
+			for (Entry<Integer, Version> entry2 : statusInfoJson.getVersions().entrySet()) {
 				if (entry2.getKey().equals(entry.getKey())) {
 					if (entry.getValue().equals(entry2.getValue())) {
 						assertTrue(true);
 						nb++;
 					} else {
-						fail("Not equals " + entry + "," + entry2);
+						fail("Not equals " + entry.getValue() + "," + entry2.getValue());
 					}
 				}
 			}
