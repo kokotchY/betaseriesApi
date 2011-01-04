@@ -163,16 +163,15 @@ public class Shows implements IShows {
 	private Set<Show> getShows(JSONObject jsonObject) {
 		Set<Show> shows = new HashSet<Show>();
 		if (!UtilsJson.hasErrors(jsonObject)) {
+			// try {
+			JSONObject showsList = UtilsJson.getJSONObjectFromPath(
+					jsonObject, "/root/shows");
+			Iterator<?> iterator = showsList.keys();
 			try {
-				JSONObject showsList = UtilsJson.getJSONObjectFromPath(
-						jsonObject, "/root/shows");
-				String[] names = JSONObject.getNames(showsList);
-				if (names != null && names.length > 0) {
-					for (String name : names) {
-						Show show = ShowFactory.createShow(showsList
-								.getJSONObject(name));
-						shows.add(show);
-					}
+				while (iterator.hasNext()) {
+					String key = (String) iterator.next();
+					Show show = ShowFactory.createShow(showsList.getJSONObject(key));
+					shows.add(show);
 				}
 			} catch (JSONException e) {
 				e.printStackTrace();

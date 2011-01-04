@@ -290,17 +290,16 @@ public class Members implements IMembers {
 		Set<Friend> result = new HashSet<Friend>();
 		if (!UtilsJson.hasErrors(jsonObject)) {
 			JSONObject friends = UtilsJson.getJSONObjectFromPath(jsonObject, "/root/friends");
-			String[] names = JSONObject.getNames(friends);
-			if (names != null && names.length > 0) {
-				try {
-					for (String name : names) {
-						String friendName = friends.getString(name);
-						Friend friend = FriendFactory.createFriend(friendName);
-						result.add(friend);
-					}
-				} catch (JSONException e) {
-					e.printStackTrace();
+			Iterator<?> iterator = friends.keys();
+			try {
+				while (iterator.hasNext()) {
+					String name = (String) iterator.next();
+					String friendName = friends.getString(name);
+					Friend friend = FriendFactory.createFriend(friendName);
+					result.add(friend);
 				}
+			} catch (JSONException e) {
+				e.printStackTrace();
 			}
 
 			return result;

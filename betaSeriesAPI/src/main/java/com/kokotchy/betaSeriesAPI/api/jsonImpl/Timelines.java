@@ -5,7 +5,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
@@ -78,14 +77,9 @@ public class Timelines implements ITimelines {
 			Set<Event> events = new HashSet<Event>();
 			JSONObject eventsList = UtilsJson.getJSONObjectFromPath(jsonObject,
 					"/root/timeline");
-			String[] names = JSONObject.getNames(eventsList);
-			try {
-				for (String name : names) {
-					events.add(EventFactory.createEvent(eventsList
-							.getJSONObject(name)));
-				}
-			} catch (JSONException e) {
-				e.printStackTrace();
+			JSONObject[] array = UtilsJson.getArray(eventsList);
+			for (JSONObject object : array) {
+				events.add(EventFactory.createEvent(object));
 			}
 			return events;
 		}

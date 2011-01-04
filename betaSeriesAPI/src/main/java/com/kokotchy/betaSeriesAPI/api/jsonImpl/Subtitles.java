@@ -5,7 +5,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
@@ -88,14 +87,9 @@ public class Subtitles implements ISubtitles {
 		if (!UtilsJson.hasErrors(jsonObject)) {
 			JSONObject subtitlesList = UtilsJson.getJSONObjectFromPath(jsonObject,
 					"/root/subtitles");
-			String[] names = JSONObject.getNames(subtitlesList);
-			try {
-				for (String name : names) {
-					subtitles.add(SubtitleFactory.createSubtitle(subtitlesList
-							.getJSONObject(name)));
-				}
-			} catch (JSONException e) {
-				e.printStackTrace();
+			JSONObject[] array = UtilsJson.getArray(subtitlesList);
+			for (JSONObject object : array) {
+				subtitles.add(SubtitleFactory.createSubtitle(object));
 			}
 			return subtitles;
 		}
@@ -142,14 +136,9 @@ public class Subtitles implements ISubtitles {
 			JSONObject subtitlesList = UtilsJson.getJSONObjectFromPath(jsonObject,
 					"/root/subtitles");
 			Set<Subtitle> subtitles = new HashSet<Subtitle>();
-			String[] names = JSONObject.getNames(subtitlesList);
-			try {
-				for (String name : names) {
-					subtitles.add(SubtitleFactory.createSubtitle(subtitlesList
-							.getJSONObject(name)));
-				}
-			} catch (JSONException e) {
-				e.printStackTrace();
+			JSONObject[] array = UtilsJson.getArray(subtitlesList);
+			for (JSONObject object : array) {
+				subtitles.add(SubtitleFactory.createSubtitle(object));
 			}
 			return subtitles;
 		}

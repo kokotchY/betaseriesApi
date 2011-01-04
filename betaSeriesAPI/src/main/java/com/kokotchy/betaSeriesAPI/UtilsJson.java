@@ -168,16 +168,13 @@ public class UtilsJson {
 		Set<Error> result = new HashSet<Error>();
 		JSONObject errors = UtilsJson.getJSONObjectFromPath(jsonObject,
 				"/root/errors");
-		String[] names = JSONObject.getNames(errors);
-		if (names != null) {
-			try {
-				for (String name : names) {
-					result.add(ErrorFactory.createError(errors.getJSONObject(
-							name).getJSONObject("error")));
-				}
-			} catch (JSONException e) {
-				e.printStackTrace();
+		JSONObject[] array = UtilsJson.getArray(errors);
+		try {
+			for (JSONObject object : array) {
+				result.add(ErrorFactory.createError(object.getJSONObject("error")));
 			}
+		} catch (JSONException e) {
+			e.printStackTrace();
 		}
 		return result;
 	}

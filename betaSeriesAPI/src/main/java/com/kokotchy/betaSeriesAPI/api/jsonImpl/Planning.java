@@ -5,7 +5,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
@@ -88,15 +87,10 @@ public class Planning implements IPlanning {
 		if (!UtilsJson.hasErrors(jsonObject)) {
 			JSONObject generalPlanning = UtilsJson.getJSONObjectFromPath(
 					jsonObject, "/root/planning");
-			String[] names = JSONObject.getNames(generalPlanning);
 			Set<Episode> episodes = new HashSet<Episode>();
-			try {
-				for (String name : names) {
-					JSONObject object = generalPlanning.getJSONObject(name);
-					episodes.add(EpisodeFactory.createEpisode(object));
-				}
-			} catch (JSONException e) {
-				e.printStackTrace();
+			JSONObject[] array = UtilsJson.getArray(generalPlanning);
+			for (JSONObject object : array) {
+				episodes.add(EpisodeFactory.createEpisode(object));
 			}
 			return episodes;
 		}
