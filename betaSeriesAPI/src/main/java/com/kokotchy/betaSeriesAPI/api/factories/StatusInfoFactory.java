@@ -75,10 +75,11 @@ public class StatusInfoFactory {
 				Constants.VERSION));
 		JSONObject versions = UtilsJson.getJSONObject(apiObject,
 				Constants.VERSIONS);
-		Iterator<Object> keys = versions.keys();
+		Iterator<?> keys = versions.keys();
 		try {
 			while (keys.hasNext()) {
-				JSONObject versionObject = versions.getJSONObject(keys.next().toString());
+				String key = (String) keys.next();
+				JSONObject versionObject = versions.getJSONObject(key);
 				Version version = VersionFactory.createVersion(versionObject);
 				statusInfo.addVersion(version);
 			}

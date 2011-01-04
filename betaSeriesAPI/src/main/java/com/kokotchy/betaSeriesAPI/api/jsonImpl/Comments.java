@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.kokotchy.betaSeriesAPI.UtilsJson;
@@ -49,18 +48,11 @@ public class Comments implements IComments {
 		if (!UtilsJson.hasErrors(jsonObject)) {
 			JSONObject comments = UtilsJson.getJSONObjectFromPath(jsonObject,
 					"/root/comments");
-			String[] names = JSONObject.getNames(comments);
+			JSONObject[] array = UtilsJson.getArray(comments);
 			Set<Comment> result = new HashSet<Comment>();
-			if ((names != null) && (names.length > 0)) {
-				try {
-					for (String name : names) {
-						Comment comment = CommentFactory.createComment(comments
-								.getJSONObject(name));
-						result.add(comment);
-					}
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
+			for (JSONObject commentObject : array) {
+				Comment comment = CommentFactory.createComment(commentObject);
+				result.add(comment);
 			}
 			return result;
 		}

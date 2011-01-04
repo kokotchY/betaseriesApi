@@ -2,6 +2,7 @@ package com.kokotchy.betaSeriesAPI.api.jsonImpl;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
@@ -130,25 +131,11 @@ public class Members implements IMembers {
 		JSONObject jsonObject = UtilsJson.executeQuery("members/episodes/"
 				+ lang, apiKey, params);
 		if (!UtilsJson.hasErrors(jsonObject)) {
-			try {
-				JSONObject episodes = UtilsJson.getJSONObjectFromPath(jsonObject,
-						"/root/episodes");
-				int idx = 0;
-				boolean hasElement = episodes.has("" + idx);
-				while (hasElement) {
-					JSONObject episode = episodes.getJSONObject("" + idx++);
-					result.add(EpisodeFactory.createEpisode(episode));
-					hasElement = episodes.has("" + idx);
-				}
-				// String[] names = JSONObject.getNames(episodes);
-				// if (names != null && names.length > 0) {
-				// for (String name : names) {
-				// JSONObject episode = episodes.getJSONObject(name);
-				// result.add(EpisodeFactory.createEpisode(episode));
-				// }
-				// }
-			} catch (JSONException e) {
-				e.printStackTrace();
+			JSONObject episodes = UtilsJson.getJSONObjectFromPath(jsonObject,
+					"/root/episodes");
+			JSONObject[] array = UtilsJson.getArray(episodes);
+			for (JSONObject episode : array) {
+				result.add(EpisodeFactory.createEpisode(episode));
 			}
 		} /*
 		 * else { throw new
@@ -167,9 +154,10 @@ public class Members implements IMembers {
 			Set<Friend> result = new HashSet<Friend>();
 			JSONObject friends = UtilsJson.getJSONObjectFromPath(jsonObject,
 					"/root/friends");
-			String[] names = JSONObject.getNames(friends);
+			Iterator<?> iterator = friends.keys();
 			try {
-				for (String name : names) {
+				while (iterator.hasNext()) {
+					String name = (String) iterator.next();
 					String friend = friends.getString(name);
 					result.add(FriendFactory.createFriend(friend));
 				}
@@ -283,22 +271,13 @@ public class Members implements IMembers {
 		Set<Notification> result = new HashSet<Notification>();
 		JSONObject jsonObject = UtilsJson.executeQuery("members/notifications",
 				apiKey, params);
-		// JSONArray notificationsArray = UtilsJson.getJSONArrayFromPath(
-		// jsonObject, "/root/notifications");
 		if (!UtilsJson.hasErrors(jsonObject)) {
 			JSONObject notifications = UtilsJson.getJSONObjectFromPath(
 					jsonObject, "/root/notifications");
-			String[] names = JSONObject.getNames(notifications);
-			try {
-				int length = names.length;
-				for (int i = 0; i < length; i++) {
-					JSONObject notification = notifications
-							.getJSONObject(names[i]);
-					result.add(NotificationFactory
-							.createNotification(notification));
-				}
-			} catch (JSONException e) {
-				e.printStackTrace();
+			JSONObject[] array = UtilsJson.getArray(notifications);
+			for (JSONObject notification : array) {
+				result.add(NotificationFactory
+						.createNotification(notification));
 			}
 			return result;
 		}
