@@ -174,8 +174,10 @@ public class UtilsJson {
 				"/root/errors");
 		JSONObject[] array = UtilsJson.getArray(errors);
 		try {
-			for (JSONObject object : array) {
-				result.add(ErrorFactory.createError(object.getJSONObject("error")));
+			if (array.length > 0) {
+				for (JSONObject object : array) {
+					result.add(ErrorFactory.createError(object.getJSONObject("error")));
+				}
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();

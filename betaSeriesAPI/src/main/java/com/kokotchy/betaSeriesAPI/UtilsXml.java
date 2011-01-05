@@ -170,8 +170,10 @@ public class UtilsXml {
 	public static Set<Error> getErrors(Document document) {
 		Set<Error> errors = new HashSet<Error>();
 		List<Node> nodes = document.selectNodes("/root/errors/error");
-		for (Node node : nodes) {
-			errors.add(ErrorFactory.createError(node));
+		if (nodes.size() > 0) {
+			for (Node node : nodes) {
+				errors.add(ErrorFactory.createError(node));
+			}
 		}
 		return errors;
 	}
