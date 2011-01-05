@@ -101,12 +101,15 @@ public class Members implements IMembers {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the list of episodes to watch for the logged user. The language of the subtitle is specified with subtitleLanguage. If onlyNext is set, only the first episode by show is returned.
 	 * 
 	 * @param token
+	 *            Token of the user
 	 * @param subtitleLanguage
+	 *            Language of the subtitles
 	 * @param onlyNext
-	 * @return
+	 *            If set, only one episode by show
+	 * @return List of show
 	 */
 	private Set<Episode> getEpisodesList(String token,
 			SubtitleLanguage subtitleLanguage, boolean onlyNext) {

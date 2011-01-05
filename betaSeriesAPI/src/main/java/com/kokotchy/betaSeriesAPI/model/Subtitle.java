@@ -45,7 +45,7 @@ public class Subtitle {
 	private String url;
 
 	/**
-	 * TODO Fill it
+	 * Quality of a subtitle (from 1 to 5)
 	 */
 	private int quality;
 
@@ -85,7 +85,7 @@ public class Subtitle {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the quality of the subtitle
 	 * 
 	 * @return the quality
 	 */
@@ -173,7 +173,7 @@ public class Subtitle {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Set the quality of a subtitle
 	 * 
 	 * @param quality
 	 *            the quality to set

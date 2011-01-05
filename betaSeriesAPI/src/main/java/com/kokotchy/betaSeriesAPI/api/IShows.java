@@ -82,12 +82,15 @@ public interface IShows {
 	public Season getEpisodes(String token, String url, int seasonNb);
 
 	/**
-	 * TODO Fill it
+	 * Recommend a show to a usre
 	 * 
 	 * @param token
+	 *            Token of the identified user
 	 * @param url
+	 *            Url of the show
 	 * @param login
-	 * @return
+	 *            Login of the user to who the show is recommended
+	 * @return True if the show is successfully recommended, false otherwise
 	 */
 	public boolean recommend(String token, String url, String login);
 

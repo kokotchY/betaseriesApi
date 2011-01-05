@@ -83,7 +83,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test the date of the cache of an identified user
 	 */
 	public void testDateCacheIdentifiedUser() {
 		int dateCacheJson = membersJson.getDateCache(token, true);
@@ -92,7 +92,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test the date of the cache of an identified user equals json
 	 */
 	public void testDateCacheIdentifiedUserEqualsJson() {
 		int dateCacheJson = membersJson.getDateCache(token, true);
@@ -101,7 +101,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test the date of the cache of an identified user equals xml
 	 */
 	public void testDateCacheIdentifiedUserEqualsXml() {
 		int dateCacheXml = membersXml.getDateCache(token, true);
@@ -110,7 +110,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test the date of the cache of a user
 	 */
 	public void testDateCacheUser() {
 		int dateCacheJson = membersJson.getDateCache("delphiki", false);
@@ -119,7 +119,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test the date of the cache of a user equals json
 	 */
 	public void testDateCacheUserEqualsJson() {
 		int dateCacheJson = membersJson.getDateCache("delphiki", false);
@@ -128,7 +128,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test the date of the cache of a user equals xml
 	 */
 	public void testDateCacheUserEqualsXml() {
 		int dateCacheXml = membersXml.getDateCache("delphiki", false);
@@ -148,7 +148,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test retrieve episodes with all kind of subtitles
 	 */
 	public void testEpisodesAllSubtitles() {
 		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.ALL);
@@ -157,7 +157,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test retrieve episodes with all kind of subtitles equals json
 	 */
 	public void testEpisodesAllSubtitlesEqualsJson() {
 		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.ALL);
@@ -166,7 +166,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test retrieve episodes with all kind of subtitles equals xml
 	 */
 	public void testEpisodesAllSubtitlesEqualsXml() {
 		Set<Episode> episodesXml2 = membersXml.getEpisodes(token, SubtitleLanguage.ALL);
@@ -175,7 +175,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test retrieve only next episode for each show with all kind of subtitles
 	 */
 	public void testEpisodesAllSubtitlesOnlyNext() {
 		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.ALL, true);
@@ -184,7 +184,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test VF subtitles for the episodes
 	 */
 	public void testEpisodesVfSubtitles() {
 		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VF);
@@ -193,7 +193,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test VF subtitles for the episodes equals json
 	 */
 	public void testEpisodesVfSubtitlesEqualsJson() {
 		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VF);
@@ -202,7 +202,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test VF subtitles for the episodes equals xml
 	 */
 	public void testEpisodesVfSubtitlesEqualsXml() {
 		Set<Episode> episodesXml2 = membersJson.getEpisodes(token, SubtitleLanguage.VF);
@@ -211,7 +211,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test VF subtitles for the only next episodes
 	 */
 	public void testEpisodesVfSubtitlesOnlyNext() {
 		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VF, true);
@@ -220,7 +220,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test VO/VF subtitles for the episodes
 	 */
 	public void testEpisodesVoVfSubtitles() {
 		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VOVF);
@@ -229,7 +229,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test VO/VF subtitles for the episodes equals json
 	 */
 	public void testEpisodesVoVfSubtitlesEqualsJson() {
 		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VOVF);
@@ -238,7 +238,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test VO/VF subtitles for the episodes equals xml
 	 */
 	public void testEpisodesVoVfSubtitlesEqualsXml() {
 		Set<Episode> episodesXml2 = membersXml.getEpisodes(token, SubtitleLanguage.VOVF);
@@ -247,7 +247,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test VO/VF subtitles for only the next episode
 	 */
 	public void testEpisodesVoVfSubtitlesOnlyNext() {
 		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VOVF, true);
@@ -411,7 +411,7 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test empty user friend
 	 */
 	public void testUserFriendsEmpty() {
 		Set<Friend> friendsJson = membersJson.getUserFriends("dev002");

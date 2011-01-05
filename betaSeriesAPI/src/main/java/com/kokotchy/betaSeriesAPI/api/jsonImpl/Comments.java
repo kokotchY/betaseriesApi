@@ -140,7 +140,6 @@ public class Comments implements IComments {
 
 	/**
 	 * Post a comment
-	 * TODO Found better name
 	 * <ul>
 	 * <li>season and episode >= 0 => post a comment on the episode page</li>
 	 * <li>season and episode < 0 => post on the show page

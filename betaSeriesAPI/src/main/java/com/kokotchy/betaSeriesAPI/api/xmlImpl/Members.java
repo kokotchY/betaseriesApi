@@ -91,19 +91,29 @@ public class Members implements IMembers {
 	@Override
 	public Set<Episode> getEpisodes(String token,
 			SubtitleLanguage subtitleLanguage) {
-		return getEpisodes2(token, subtitleLanguage, false);
+		return getEpisodesList(token, subtitleLanguage, false);
 	}
 
 	@Override
 	public Set<Episode> getEpisodes(String token,
 			SubtitleLanguage subtitleLanguage, boolean onlyNext) {
-		return getEpisodes2(token, subtitleLanguage, onlyNext);
+		return getEpisodesList(token, subtitleLanguage, onlyNext);
 	}
 
+	/**
+	 * Return the list of episodes to watch for the logged user. The language of the subtitle is specified with subtitleLanguage. If onlyNext is set, only the first episode by show is returned.
+	 * 
+	 * @param token
+	 *            Token of the user
+	 * @param subtitleLanguage
+	 *            Language of the subtitles
+	 * @param onlyNext
+	 *            If set, only one episode by show
+	 * @return List of show
+	 */
 	@SuppressWarnings("unchecked")
-	private Set<Episode> getEpisodes2(String token,
+	private Set<Episode> getEpisodesList(String token,
 			SubtitleLanguage subtitleLanguage, boolean onlyNext) {
-		// TODO Test for this method
 		String lang = null;
 		switch (subtitleLanguage) {
 		case VF:

@@ -113,20 +113,24 @@ public class UtilsJson {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return an array from the json object starting at the 0 index
 	 * 
 	 * @param jsonObject
-	 * @return
+	 *            Json object
+	 * @return Array of json object
 	 */
 	public static JSONObject[] getArray(JSONObject jsonObject) {
 		return getArray(jsonObject, 0);
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return an array of json object from the given json object by starting at the given index
 	 * 
-	 * @param seasons
+	 * @param jsonObject
+	 *            Json object
 	 * @param startIdx
+	 *            Index to start
+	 * @return Array of json object
 	 */
 	public static JSONObject[] getArray(JSONObject jsonObject, int startIdx) {
 		List<JSONObject> list = new LinkedList<JSONObject>();

@@ -3,14 +3,14 @@ package com.kokotchy.betaSeriesAPI.model;
 import com.kokotchy.betaSeriesAPI.HashCodeUtil;
 
 /**
- * TODO Fill it
+ * Model of a friend
  * 
  * @author kokotchy
  */
 public class Friend {
 
 	/**
-	 * TODO Fill it
+	 * Name of a friend
 	 */
 	private String name;
 
@@ -23,7 +23,7 @@ public class Friend {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Return the name of the friend
 	 * 
 	 * @return the name
 	 */
@@ -39,7 +39,7 @@ public class Friend {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Set the name of the friend
 	 * 
 	 * @param name
 	 *            the name to set
