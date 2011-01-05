@@ -91,13 +91,13 @@ public class Members implements IMembers {
 	@Override
 	public Set<Episode> getEpisodes(String token,
 			SubtitleLanguage subtitleLanguage) {
-		return getEpisodes2(token, subtitleLanguage, false);
+		return getEpisodesList(token, subtitleLanguage, false);
 	}
 
 	@Override
 	public Set<Episode> getEpisodes(String token,
 			SubtitleLanguage subtitleLanguage, boolean onlyNext) {
-		return getEpisodes2(token, subtitleLanguage, onlyNext);
+		return getEpisodesList(token, subtitleLanguage, onlyNext);
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class Members implements IMembers {
 	 * @param onlyNext
 	 * @return
 	 */
-	private Set<Episode> getEpisodes2(String token,
+	private Set<Episode> getEpisodesList(String token,
 			SubtitleLanguage subtitleLanguage, boolean onlyNext) {
 		String lang = null;
 		switch (subtitleLanguage) {
