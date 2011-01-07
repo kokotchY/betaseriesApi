@@ -52,7 +52,7 @@ public class TestShows extends TestCase {
 	}
 
 	/**
-	 * TODO Fill it
+	 * Test the recommendation of a show
 	 */
 	public void testRecommend() {
 		boolean recommendJson = showsJson.recommend(token, "a-developers-life", "kokotchY");
