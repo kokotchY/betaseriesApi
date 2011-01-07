@@ -88,8 +88,10 @@ public class Subtitles implements ISubtitles {
 		}
 		Document document = UtilsXml.executeQuery(action, apiKey, params);
 		List<Node> nodes = document.selectNodes("/root/subtitles/subtitle");
-		for (Node node : nodes) {
-			subtitles.add(SubtitleFactory.createSubtitle(node));
+		if (nodes.size() > 0) {
+			for (Node node : nodes) {
+				subtitles.add(SubtitleFactory.createSubtitle(node));
+			}
 		}
 		return subtitles;
 	}
@@ -133,8 +135,10 @@ public class Subtitles implements ISubtitles {
 				apiKey, params);
 		List<Node> nodes = document.selectNodes("/root/subtitles/subtitle");
 		Set<Subtitle> subtitles = new HashSet<Subtitle>();
-		for (Node node : nodes) {
-			subtitles.add(SubtitleFactory.createSubtitle(node));
+		if (nodes.size() > 0) {
+			for (Node node : nodes) {
+				subtitles.add(SubtitleFactory.createSubtitle(node));
+			}
 		}
 		return subtitles;
 	}

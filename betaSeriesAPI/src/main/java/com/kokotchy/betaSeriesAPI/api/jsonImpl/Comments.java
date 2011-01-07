@@ -50,9 +50,11 @@ public class Comments implements IComments {
 					"/root/comments");
 			JSONObject[] array = UtilsJson.getArray(comments);
 			Set<Comment> result = new HashSet<Comment>();
-			for (JSONObject commentObject : array) {
-				Comment comment = CommentFactory.createComment(commentObject);
-				result.add(comment);
+			if (array.length > 0) {
+				for (JSONObject commentObject : array) {
+					Comment comment = CommentFactory.createComment(commentObject);
+					result.add(comment);
+				}
 			}
 			return result;
 		}

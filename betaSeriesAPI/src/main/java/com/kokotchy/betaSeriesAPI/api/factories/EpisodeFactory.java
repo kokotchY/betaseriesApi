@@ -42,8 +42,10 @@ public class EpisodeFactory {
 		JSONObject subs = UtilsJson.getJSONObject(json, "subs");
 		if (subs != null) {
 			JSONObject[] array = UtilsJson.getArray(subs);
-			for (JSONObject jsonObject : array) {
-				episode.addSubtitle(SubtitleFactory.createSubtitle(jsonObject));
+			if (array.length > 0) {
+				for (JSONObject jsonObject : array) {
+					episode.addSubtitle(SubtitleFactory.createSubtitle(jsonObject));
+				}
 			}
 		}
 		episode.setSeen(UtilsJson.getBooleanValue(json, Constants.HAS_SEEN));
@@ -77,8 +79,10 @@ public class EpisodeFactory {
 		episode.setDownloaded(UtilsXml.readBoolean(node, Constants.DOWNLOADED));
 
 		List<Node> subsNode = node.selectNodes("subs/sub");
-		for (Node sub : subsNode) {
-			episode.addSubtitle(SubtitleFactory.createSubtitle(sub));
+		if (subsNode.size() > 0) {
+			for (Node sub : subsNode) {
+				episode.addSubtitle(SubtitleFactory.createSubtitle(sub));
+			}
 		}
 
 		episode.setSeen(UtilsXml.readBoolean(node, Constants.HAS_SEEN));

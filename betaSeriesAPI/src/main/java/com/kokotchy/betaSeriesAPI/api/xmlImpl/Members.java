@@ -135,8 +135,10 @@ public class Members implements IMembers {
 		Document document = UtilsXml.executeQuery("members/episodes/" + lang,
 				apiKey, params);
 		List<Node> nodes = document.selectNodes("/root/episodes/episode");
-		for (Node node : nodes) {
-			result.add(EpisodeFactory.createEpisode(node));
+		if (nodes.size() > 0) {
+			for (Node node : nodes) {
+				result.add(EpisodeFactory.createEpisode(node));
+			}
 		}
 		return result;
 	}
@@ -151,10 +153,12 @@ public class Members implements IMembers {
 		if (!UtilsXml.hasErrors(document)) {
 			Set<Friend> result = new HashSet<Friend>();
 			List<Node> friends = document.selectNodes("/root/friends/friend");
-			for (Node node : friends) {
-				String text = node.getText();
-				Friend friend = FriendFactory.createFriend(text);
-				result.add(friend);
+			if (friends.size() > 0) {
+				for (Node node : friends) {
+					String text = node.getText();
+					Friend friend = FriendFactory.createFriend(text);
+					result.add(friend);
+				}
 			}
 			return result;
 		}
@@ -264,8 +268,10 @@ public class Members implements IMembers {
 		List<Node> nodes = document
 				.selectNodes("/root/notifications/notification");
 		Set<Notification> notifications = new HashSet<Notification>();
-		for (Node node : nodes) {
-			notifications.add(NotificationFactory.createNotification(node));
+		if (nodes.size() > 0) {
+			for (Node node : nodes) {
+				notifications.add(NotificationFactory.createNotification(node));
+			}
 		}
 		return notifications;
 	}
@@ -277,10 +283,12 @@ public class Members implements IMembers {
 		if (!UtilsXml.hasErrors(document)) {
 			Set<Friend> result = new HashSet<Friend>();
 			List<Node> friends = document.selectNodes("/root/friends/friend");
-			for (Node node : friends) {
-				String text = node.getText();
-				Friend friend = FriendFactory.createFriend(text);
-				result.add(friend);
+			if (friends.size() > 0) {
+				for (Node node : friends) {
+					String text = node.getText();
+					Friend friend = FriendFactory.createFriend(text);
+					result.add(friend);
+				}
 			}
 			return result;
 		}

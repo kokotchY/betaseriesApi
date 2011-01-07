@@ -51,9 +51,11 @@ public class Comments implements IComments {
 		Set<Comment> comments = new HashSet<Comment>();
 		if (!UtilsXml.hasErrors(document)) {
 			List<Node> nodes = document.selectNodes("/root/comments/comment");
-			for (Node showNode : nodes) {
-				Comment comment = CommentFactory.createComment(showNode);
-				comments.add(comment);
+			if (nodes.size() > 0) {
+				for (Node showNode : nodes) {
+					Comment comment = CommentFactory.createComment(showNode);
+					comments.add(comment);
+				}
 			}
 		}
 		return comments;

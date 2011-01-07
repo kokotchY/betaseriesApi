@@ -33,8 +33,11 @@ public class MemberFactory {
 				jsonObject, Constants.STATS)));
 		JSONObject shows = UtilsJson.getJSONObject(jsonObject,
 				Constants.SHOWS);
-		for (JSONObject show : UtilsJson.getArray(shows)) {
-			member.addShow(ShowFactory.createShow(show));
+		JSONObject[] array = UtilsJson.getArray(shows);
+		if (array.length > 0) {
+			for (JSONObject show : array) {
+				member.addShow(ShowFactory.createShow(show));
+			}
 		}
 		return member;
 	}
@@ -54,8 +57,10 @@ public class MemberFactory {
 		member.setStats(StatsFactory.createStats(node
 				.selectSingleNode(Constants.STATS)));
 		List<Node> shows = node.selectNodes("shows/show");
-		for (Node show : shows) {
-			member.addShow(ShowFactory.createShow(show));
+		if (shows.size() > 0) {
+			for (Node show : shows) {
+				member.addShow(ShowFactory.createShow(show));
+			}
 		}
 		return member;
 	}

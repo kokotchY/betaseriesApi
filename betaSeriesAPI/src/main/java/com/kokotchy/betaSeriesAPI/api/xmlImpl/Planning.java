@@ -89,8 +89,10 @@ public class Planning implements IPlanning {
 
 		List<Node> nodes = document.selectNodes("/root/planning/episode");
 		Set<Episode> episodes = new HashSet<Episode>();
-		for (Node node : nodes) {
-			episodes.add(EpisodeFactory.createEpisode(node));
+		if (nodes.size() > 0) {
+			for (Node node : nodes) {
+				episodes.add(EpisodeFactory.createEpisode(node));
+			}
 		}
 		return episodes;
 	}

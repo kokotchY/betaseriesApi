@@ -51,12 +51,14 @@ public class ShowFactory {
 				Constants.SEASONS);
 		if (seasons != null) {
 			JSONObject[] array = UtilsJson.getArray(seasons, 1);
-			for (JSONObject season : array) {
-				int episodes = UtilsJson.getIntValue(season,
-						Constants.EPISODES);
-				int number = UtilsJson
-						.getIntValue(season, Constants.NUMBER);
-				show.addNumberEpisodeForSeason(number, episodes);
+			if (array.length > 0) {
+				for (JSONObject season : array) {
+					int episodes = UtilsJson.getIntValue(season,
+							Constants.EPISODES);
+					int number = UtilsJson
+							.getIntValue(season, Constants.NUMBER);
+					show.addNumberEpisodeForSeason(number, episodes);
+				}
 			}
 		}
 		show.setArchived(UtilsJson.getBooleanValue(jsonObject,
@@ -81,14 +83,18 @@ public class ShowFactory {
 		show.setBanner(UtilsXml.readString(node, Constants.BANNER));
 		show.setIdTvdb(UtilsXml.readInt(node, Constants.ID_THETVDB));
 		List<Node> genres = node.selectNodes("genres/genre");
-		for (Node nodeGenre : genres) {
-			show.addGenre(nodeGenre.getStringValue());
+		if (genres.size() > 0) {
+			for (Node nodeGenre : genres) {
+				show.addGenre(nodeGenre.getStringValue());
+			}
 		}
 		List<Node> seasons = node.selectNodes("seasons/season");
-		for (Node season : seasons) {
-			Integer seasonNb = UtilsXml.readInt(season, Constants.NUMBER);
-			Integer nbEpisode = UtilsXml.readInt(season, Constants.EPISODES);
-			show.addNumberEpisodeForSeason(seasonNb, nbEpisode);
+		if (seasons.size() > 0) {
+			for (Node season : seasons) {
+				Integer seasonNb = UtilsXml.readInt(season, Constants.NUMBER);
+				Integer nbEpisode = UtilsXml.readInt(season, Constants.EPISODES);
+				show.addNumberEpisodeForSeason(seasonNb, nbEpisode);
+			}
 		}
 		show.setArchived(UtilsXml.readBoolean(node, Constants.ARCHIVE));
 		return show;

@@ -88,8 +88,10 @@ public class Subtitles implements ISubtitles {
 			JSONObject subtitlesList = UtilsJson.getJSONObjectFromPath(jsonObject,
 					"/root/subtitles");
 			JSONObject[] array = UtilsJson.getArray(subtitlesList);
-			for (JSONObject object : array) {
-				subtitles.add(SubtitleFactory.createSubtitle(object));
+			if (array.length > 0) {
+				for (JSONObject object : array) {
+					subtitles.add(SubtitleFactory.createSubtitle(object));
+				}
 			}
 			return subtitles;
 		}
@@ -137,8 +139,10 @@ public class Subtitles implements ISubtitles {
 					"/root/subtitles");
 			Set<Subtitle> subtitles = new HashSet<Subtitle>();
 			JSONObject[] array = UtilsJson.getArray(subtitlesList);
-			for (JSONObject object : array) {
-				subtitles.add(SubtitleFactory.createSubtitle(object));
+			if (array.length > 0) {
+				for (JSONObject object : array) {
+					subtitles.add(SubtitleFactory.createSubtitle(object));
+				}
 			}
 			return subtitles;
 		}

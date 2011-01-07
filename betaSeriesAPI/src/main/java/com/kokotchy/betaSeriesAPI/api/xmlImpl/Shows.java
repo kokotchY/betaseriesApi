@@ -67,8 +67,10 @@ public class Shows implements IShows {
 		Document document = UtilsXml.executeQuery("shows/display/all", apiKey);
 		Set<Show> result = new HashSet<Show>();
 		List<Node> nodes = document.selectNodes("/root/shows/show");
-		for (Node node : nodes) {
-			result.add(ShowFactory.createShow(node));
+		if (nodes.size() > 0) {
+			for (Node node : nodes) {
+				result.add(ShowFactory.createShow(node));
+			}
 		}
 		return result;
 	}
@@ -128,13 +130,15 @@ public class Shows implements IShows {
 				params);
 		List<Node> seasons = document.selectNodes("/root/seasons/season");
 		Set<Season> result = new HashSet<Season>();
-		for (Node node : seasons) {
-			Season season = new Season(UtilsXml.readInt(node, Constants.NUMBER));
-			List<Node> episodes = node.selectNodes("episodes/episode");
-			for (Node episodeNode : episodes) {
-				season.addEpisode(EpisodeFactory.createEpisode(episodeNode));
+		if (seasons.size() > 0) {
+			for (Node node : seasons) {
+				Season season = new Season(UtilsXml.readInt(node, Constants.NUMBER));
+				List<Node> episodes = node.selectNodes("episodes/episode");
+				for (Node episodeNode : episodes) {
+					season.addEpisode(EpisodeFactory.createEpisode(episodeNode));
+				}
+				result.add(season);
 			}
-			result.add(season);
 		}
 		return result;
 	}
@@ -167,9 +171,11 @@ public class Shows implements IShows {
 		Set<Show> shows = new HashSet<Show>();
 		if (!UtilsXml.hasErrors(document)) {
 			List<Node> nodes = document.selectNodes("/root/shows/show");
-			for (Node showNode : nodes) {
-				Show show = ShowFactory.createShow(showNode);
-				shows.add(show);
+			if (nodes.size() > 0) {
+				for (Node showNode : nodes) {
+					Show show = ShowFactory.createShow(showNode);
+					shows.add(show);
+				}
 			}
 		}
 		return shows;

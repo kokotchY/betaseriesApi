@@ -137,8 +137,10 @@ public class Members implements IMembers {
 			JSONObject episodes = UtilsJson.getJSONObjectFromPath(jsonObject,
 					"/root/episodes");
 			JSONObject[] array = UtilsJson.getArray(episodes);
-			for (JSONObject episode : array) {
-				result.add(EpisodeFactory.createEpisode(episode));
+			if (array.length > 0) {
+				for (JSONObject episode : array) {
+					result.add(EpisodeFactory.createEpisode(episode));
+				}
 			}
 		} /*
 		 * else { throw new
@@ -278,9 +280,11 @@ public class Members implements IMembers {
 			JSONObject notifications = UtilsJson.getJSONObjectFromPath(
 					jsonObject, "/root/notifications");
 			JSONObject[] array = UtilsJson.getArray(notifications);
-			for (JSONObject notification : array) {
-				result.add(NotificationFactory
-						.createNotification(notification));
+			if (array.length > 0) {
+				for (JSONObject notification : array) {
+					result.add(NotificationFactory
+							.createNotification(notification));
+				}
 			}
 			return result;
 		}

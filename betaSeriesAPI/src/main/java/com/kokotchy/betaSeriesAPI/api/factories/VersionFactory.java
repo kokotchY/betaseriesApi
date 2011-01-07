@@ -58,8 +58,10 @@ public class VersionFactory {
 		version.setDate(UtilsXml.readInt(node, Constants.DATE));
 
 		List<Node> changes = node.selectNodes("changes/change");
-		for (Node changeNode : changes) {
-			version.addChange(ChangeFactory.createChange(changeNode));
+		if (changes.size() > 0) {
+			for (Node changeNode : changes) {
+				version.addChange(ChangeFactory.createChange(changeNode));
+			}
 		}
 
 		return version;

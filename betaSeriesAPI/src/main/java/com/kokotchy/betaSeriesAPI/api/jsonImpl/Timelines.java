@@ -78,8 +78,10 @@ public class Timelines implements ITimelines {
 			JSONObject eventsList = UtilsJson.getJSONObjectFromPath(jsonObject,
 					"/root/timeline");
 			JSONObject[] array = UtilsJson.getArray(eventsList);
-			for (JSONObject object : array) {
-				events.add(EventFactory.createEvent(object));
+			if (array.length > 0) {
+				for (JSONObject object : array) {
+					events.add(EventFactory.createEvent(object));
+				}
 			}
 			return events;
 		}

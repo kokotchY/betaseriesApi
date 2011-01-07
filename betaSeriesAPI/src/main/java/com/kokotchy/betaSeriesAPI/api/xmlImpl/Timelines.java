@@ -78,8 +78,10 @@ public class Timelines implements ITimelines {
 	private Set<Event> getTimeline(Document document) {
 		Set<Event> events = new HashSet<Event>();
 		List<Node> nodes = document.selectNodes("/root/timeline/item");
-		for (Node node : nodes) {
-			events.add(EventFactory.createEvent(node));
+		if (nodes.size() > 0) {
+			for (Node node : nodes) {
+				events.add(EventFactory.createEvent(node));
+			}
 		}
 		return events;
 	}

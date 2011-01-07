@@ -89,8 +89,10 @@ public class Planning implements IPlanning {
 					jsonObject, "/root/planning");
 			Set<Episode> episodes = new HashSet<Episode>();
 			JSONObject[] array = UtilsJson.getArray(generalPlanning);
-			for (JSONObject object : array) {
-				episodes.add(EpisodeFactory.createEpisode(object));
+			if (array.length > 0) {
+				for (JSONObject object : array) {
+					episodes.add(EpisodeFactory.createEpisode(object));
+				}
 			}
 			return episodes;
 		}

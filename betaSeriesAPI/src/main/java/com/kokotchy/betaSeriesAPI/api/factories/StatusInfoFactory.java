@@ -40,15 +40,19 @@ public class StatusInfoFactory {
 		Node apiNode = document.selectSingleNode("/root/api");
 		statusInfo.setVersion(UtilsXml.readString(apiNode, Constants.VERSION));
 		List<Node> versions = apiNode.selectNodes("versions/version");
-		for (Node node : versions) {
-			Version version = VersionFactory.createVersion(node);
-			statusInfo.addVersion(version);
+		if (versions.size() > 0) {
+			for (Node node : versions) {
+				Version version = VersionFactory.createVersion(node);
+				statusInfo.addVersion(version);
+			}
 		}
 
 		List<Node> files = apiNode.selectNodes("files/file");
-		for (Node node : files) {
-			VersionFile file = VersionFileFactory.createVersionFile(node);
-			statusInfo.addVersionFile(file);
+		if (files.size() > 0) {
+			for (Node node : files) {
+				VersionFile file = VersionFileFactory.createVersionFile(node);
+				statusInfo.addVersionFile(file);
+			}
 		}
 		return statusInfo;
 	}
