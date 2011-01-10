@@ -65,11 +65,11 @@ public class SubtitleFactory {
 	 */
 	public static Subtitle createSubtitle(Node node) {
 		Subtitle subtitle = new Subtitle();
-		subtitle.setTitle(UtilsXml.readString(node, Constants.TITLE));
-		subtitle.setSeason(UtilsXml.readInt(node, Constants.SEASON));
-		subtitle.setEpisode(UtilsXml.readInt(node, Constants.EPISODE));
+		subtitle.setTitle(UtilsXml.getString(node, Constants.TITLE));
+		subtitle.setSeason(UtilsXml.getInt(node, Constants.SEASON));
+		subtitle.setEpisode(UtilsXml.getInt(node, Constants.EPISODE));
 
-		String language = UtilsXml.readString(node, Constants.LANGUAGE);
+		String language = UtilsXml.getString(node, Constants.LANGUAGE);
 		if (language != null) {
 			if (language.equals(Constants.VF)) {
 				subtitle.setLanguage(SubtitleLanguage.VF);
@@ -84,10 +84,10 @@ public class SubtitleFactory {
 			subtitle.setLanguage(SubtitleLanguage.UNKNOWN);
 		}
 
-		subtitle.setSource(UtilsXml.readString(node, Constants.SOURCE));
-		subtitle.setFile(UtilsXml.readString(node, Constants.FILE));
-		subtitle.setUrl(UtilsXml.readString(node, Constants.URL));
-		subtitle.setQuality(UtilsXml.readInt(node, Constants.QUALITY));
+		subtitle.setSource(UtilsXml.getString(node, Constants.SOURCE));
+		subtitle.setFile(UtilsXml.getString(node, Constants.FILE));
+		subtitle.setUrl(UtilsXml.getString(node, Constants.URL));
+		subtitle.setQuality(UtilsXml.getInt(node, Constants.QUALITY));
 
 		return subtitle;
 	}

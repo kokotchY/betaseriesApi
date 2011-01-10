@@ -52,8 +52,8 @@ public class MemberFactory {
 	@SuppressWarnings("unchecked")
 	public static Member createMember(Node node) {
 		Member member = new Member();
-		member.setLogin(UtilsXml.readString(node, Constants.LOGIN));
-		member.setAvatar(UtilsXml.readString(node, Constants.AVATAR));
+		member.setLogin(UtilsXml.getString(node, Constants.LOGIN));
+		member.setAvatar(UtilsXml.getString(node, Constants.AVATAR));
 		member.setStats(StatsFactory.createStats(node
 				.selectSingleNode(Constants.STATS)));
 		List<Node> shows = node.selectNodes("shows/show");

@@ -45,11 +45,11 @@ public class CommentFactory {
 	 */
 	public static Comment createComment(Node node) {
 		Comment comment = new Comment();
-		comment.setContent(UtilsXml.readString(node, Constants.TEXT));
-		comment.setDate(UtilsXml.readInt(node, Constants.DATE));
-		comment.setInnerId(UtilsXml.readInt(node, Constants.INNER_ID));
-		comment.setLogin(UtilsXml.readString(node, Constants.LOGIN));
-		comment.setReplyToId(UtilsXml.readInt(node, Constants.IN_REPLY_TO));
+		comment.setContent(UtilsXml.getString(node, Constants.TEXT));
+		comment.setDate(UtilsXml.getInt(node, Constants.DATE));
+		comment.setInnerId(UtilsXml.getInt(node, Constants.INNER_ID));
+		comment.setLogin(UtilsXml.getString(node, Constants.LOGIN));
+		comment.setReplyToId(UtilsXml.getInt(node, Constants.IN_REPLY_TO));
 		return comment;
 	}
 }

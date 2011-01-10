@@ -83,7 +83,7 @@ public class Members implements IMembers {
 		}
 		Document document = UtilsXml.executeQuery(action, apiKey, params);
 		if (!UtilsXml.hasErrors(document)) {
-			return UtilsXml.readInt(document, Constants.CACHED);
+			return UtilsXml.getInt(document, Constants.CACHED);
 		}
 		return -1;
 	}
@@ -322,7 +322,7 @@ public class Members implements IMembers {
 		Document document = UtilsXml.executeQuery("members/is_active", apiKey,
 				params);
 		Node node = document.selectSingleNode("/root");
-		return UtilsXml.readBoolean(node, Constants.ERROR_CODE);
+		return UtilsXml.getBoolean(node, Constants.ERROR_CODE);
 	}
 
 	@Override
@@ -357,7 +357,7 @@ public class Members implements IMembers {
 				apiKey, params);
 		if (!UtilsXml.hasErrors(document)) {
 			Node root = document.selectSingleNode("/root");
-			return UtilsXml.readBoolean(root, "downloaded");
+			return UtilsXml.getBoolean(root, "downloaded");
 		}
 		return false;
 	}

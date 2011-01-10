@@ -40,8 +40,8 @@ public class ChangeFactory {
 	 */
 	public static Change createChange(Node node) {
 		Change change = new Change();
-		change.setType(UtilsXml.readString(node, Constants.TYPE));
-		change.setValue(UtilsXml.readString(node, Constants.VALUE));
+		change.setType(UtilsXml.getString(node, Constants.TYPE));
+		change.setValue(UtilsXml.getString(node, Constants.VALUE));
 		return change;
 	}
 }

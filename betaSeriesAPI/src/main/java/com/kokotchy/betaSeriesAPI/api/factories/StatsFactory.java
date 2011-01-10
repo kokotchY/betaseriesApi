@@ -47,14 +47,14 @@ public class StatsFactory {
 	 */
 	public static Stats createStats(Node node) {
 		Stats stats = new Stats();
-		stats.setShows(UtilsXml.readInt(node, Constants.SHOWS));
-		stats.setSeasons(UtilsXml.readInt(node, Constants.SEASONS));
-		stats.setEpisodes(UtilsXml.readInt(node, Constants.EPISODES));
-		stats.setProgress(UtilsXml.readString(node, Constants.PROGRESS));
-		stats.setEpisodesToWatch(UtilsXml.readInt(node,
+		stats.setShows(UtilsXml.getInt(node, Constants.SHOWS));
+		stats.setSeasons(UtilsXml.getInt(node, Constants.SEASONS));
+		stats.setEpisodes(UtilsXml.getInt(node, Constants.EPISODES));
+		stats.setProgress(UtilsXml.getString(node, Constants.PROGRESS));
+		stats.setEpisodesToWatch(UtilsXml.getInt(node,
 				Constants.EPISODES_TO_WATCH));
-		stats.setTimeOnTv(UtilsXml.readInt(node, Constants.TIME_ON_TV));
-		stats.setTimeToSpend(UtilsXml.readInt(node, Constants.TIME_TO_SPEND));
+		stats.setTimeOnTv(UtilsXml.getInt(node, Constants.TIME_ON_TV));
+		stats.setTimeToSpend(UtilsXml.getInt(node, Constants.TIME_TO_SPEND));
 		return stats;
 	}
 }

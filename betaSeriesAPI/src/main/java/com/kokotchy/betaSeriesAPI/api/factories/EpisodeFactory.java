@@ -63,20 +63,20 @@ public class EpisodeFactory {
 	@SuppressWarnings("unchecked")
 	public static Episode createEpisode(Node node) {
 		Episode episode = new Episode();
-		String number = UtilsXml.readString(node, Constants.NUMBER);
+		String number = UtilsXml.getString(node, Constants.NUMBER);
 		if (number == null) {
-			number = UtilsXml.readString(node, Constants.EPISODE);
+			number = UtilsXml.getString(node, Constants.EPISODE);
 		}
 		episode.setNb(number);
-		episode.setDate(UtilsXml.readInt(node, Constants.DATE));
-		episode.setTitle(UtilsXml.readString(node, Constants.TITLE));
+		episode.setDate(UtilsXml.getInt(node, Constants.DATE));
+		episode.setTitle(UtilsXml.getString(node, Constants.TITLE));
 		episode
 				.setDescription(UtilsXml
-				.readString(node, Constants.DESCRIPTION));
-		episode.setScreen(UtilsXml.readString(node, Constants.SCREEN));
-		episode.setShow(UtilsXml.readString(node, Constants.SHOW));
-		episode.setShowUrl(UtilsXml.readString(node, Constants.URL));
-		episode.setDownloaded(UtilsXml.readBoolean(node, Constants.DOWNLOADED));
+				.getString(node, Constants.DESCRIPTION));
+		episode.setScreen(UtilsXml.getString(node, Constants.SCREEN));
+		episode.setShow(UtilsXml.getString(node, Constants.SHOW));
+		episode.setShowUrl(UtilsXml.getString(node, Constants.URL));
+		episode.setDownloaded(UtilsXml.getBoolean(node, Constants.DOWNLOADED));
 
 		List<Node> subsNode = node.selectNodes("subs/sub");
 		if (subsNode.size() > 0) {
@@ -85,7 +85,7 @@ public class EpisodeFactory {
 			}
 		}
 
-		episode.setSeen(UtilsXml.readBoolean(node, Constants.HAS_SEEN));
+		episode.setSeen(UtilsXml.getBoolean(node, Constants.HAS_SEEN));
 
 		return episode;
 	}

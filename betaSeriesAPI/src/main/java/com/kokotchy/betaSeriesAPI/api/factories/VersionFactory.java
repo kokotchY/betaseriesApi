@@ -55,7 +55,7 @@ public class VersionFactory {
 	@SuppressWarnings("unchecked")
 	public static Version createVersion(Node node) {
 		Version version = new Version();
-		version.setDate(UtilsXml.readInt(node, Constants.DATE));
+		version.setDate(UtilsXml.getInt(node, Constants.DATE));
 
 		List<Node> changes = node.selectNodes("changes/change");
 		if (changes.size() > 0) {

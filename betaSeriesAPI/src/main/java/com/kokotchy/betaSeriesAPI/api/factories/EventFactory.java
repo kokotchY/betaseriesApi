@@ -40,11 +40,11 @@ public class EventFactory {
 	 */
 	public static Event createEvent(Node node) {
 		Event event = new Event();
-		event.setType(UtilsXml.readString(node, Constants.TYPE));
-		event.setRef(UtilsXml.readString(node, Constants.REF));
-		event.setLogin(UtilsXml.readString(node, Constants.LOGIN));
-		event.setHtml(UtilsXml.readString(node, Constants.HTML));
-		event.setDate(UtilsXml.readInt(node, Constants.DATE));
+		event.setType(UtilsXml.getString(node, Constants.TYPE));
+		event.setRef(UtilsXml.getString(node, Constants.REF));
+		event.setLogin(UtilsXml.getString(node, Constants.LOGIN));
+		event.setHtml(UtilsXml.getString(node, Constants.HTML));
+		event.setDate(UtilsXml.getInt(node, Constants.DATE));
 		return event;
 	}
 }

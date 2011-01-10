@@ -132,7 +132,7 @@ public class Shows implements IShows {
 		Set<Season> result = new HashSet<Season>();
 		if (seasons.size() > 0) {
 			for (Node node : seasons) {
-				Season season = new Season(UtilsXml.readInt(node, Constants.NUMBER));
+				Season season = new Season(UtilsXml.getInt(node, Constants.NUMBER));
 				List<Node> episodes = node.selectNodes("episodes/episode");
 				for (Node episodeNode : episodes) {
 					season.addEpisode(EpisodeFactory.createEpisode(episodeNode));

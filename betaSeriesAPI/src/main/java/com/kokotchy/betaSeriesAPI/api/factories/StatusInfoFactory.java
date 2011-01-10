@@ -32,13 +32,13 @@ public class StatusInfoFactory {
 	public static StatusInfo createStatusInfo(Document document) {
 		StatusInfo statusInfo = new StatusInfo();
 		Node websiteNode = document.selectSingleNode("/root/website");
-		statusInfo.setWebsiteStatus(UtilsXml.readString(websiteNode,
+		statusInfo.setWebsiteStatus(UtilsXml.getString(websiteNode,
 				Constants.STATUS));
-		statusInfo.setDatabaseStatus(UtilsXml.readString(websiteNode,
+		statusInfo.setDatabaseStatus(UtilsXml.getString(websiteNode,
 				Constants.DATABASE));
 
 		Node apiNode = document.selectSingleNode("/root/api");
-		statusInfo.setVersion(UtilsXml.readString(apiNode, Constants.VERSION));
+		statusInfo.setVersion(UtilsXml.getString(apiNode, Constants.VERSION));
 		List<Node> versions = apiNode.selectNodes("versions/version");
 		if (versions.size() > 0) {
 			for (Node node : versions) {

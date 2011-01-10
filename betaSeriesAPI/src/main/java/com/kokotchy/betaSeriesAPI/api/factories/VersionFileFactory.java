@@ -40,8 +40,8 @@ public class VersionFileFactory {
 	public static VersionFile createVersionFile(Node node) {
 		VersionFile versionFile = new VersionFile();
 		versionFile
-				.setLastChange(UtilsXml.readInt(node, Constants.LAST_CHANGE));
-		versionFile.setName(UtilsXml.readString(node, Constants.NAME));
+				.setLastChange(UtilsXml.getInt(node, Constants.LAST_CHANGE));
+		versionFile.setName(UtilsXml.getString(node, Constants.NAME));
 		return versionFile;
 	}
 }

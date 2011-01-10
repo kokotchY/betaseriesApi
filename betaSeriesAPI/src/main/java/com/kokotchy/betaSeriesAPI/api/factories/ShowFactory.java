@@ -76,12 +76,12 @@ public class ShowFactory {
 	@SuppressWarnings("unchecked")
 	public static Show createShow(Node node) {
 		Show show = new Show();
-		show.setTitle(UtilsXml.readString(node, Constants.TITLE));
-		show.setUrl(UtilsXml.readString(node, Constants.URL));
-		show.setDescription(UtilsXml.readString(node, Constants.DESCRIPTION));
-		show.setStatus(UtilsXml.readString(node, Constants.STATUS));
-		show.setBanner(UtilsXml.readString(node, Constants.BANNER));
-		show.setIdTvdb(UtilsXml.readInt(node, Constants.ID_THETVDB));
+		show.setTitle(UtilsXml.getString(node, Constants.TITLE));
+		show.setUrl(UtilsXml.getString(node, Constants.URL));
+		show.setDescription(UtilsXml.getString(node, Constants.DESCRIPTION));
+		show.setStatus(UtilsXml.getString(node, Constants.STATUS));
+		show.setBanner(UtilsXml.getString(node, Constants.BANNER));
+		show.setIdTvdb(UtilsXml.getInt(node, Constants.ID_THETVDB));
 		List<Node> genres = node.selectNodes("genres/genre");
 		if (genres.size() > 0) {
 			for (Node nodeGenre : genres) {
@@ -91,12 +91,12 @@ public class ShowFactory {
 		List<Node> seasons = node.selectNodes("seasons/season");
 		if (seasons.size() > 0) {
 			for (Node season : seasons) {
-				Integer seasonNb = UtilsXml.readInt(season, Constants.NUMBER);
-				Integer nbEpisode = UtilsXml.readInt(season, Constants.EPISODES);
+				Integer seasonNb = UtilsXml.getInt(season, Constants.NUMBER);
+				Integer nbEpisode = UtilsXml.getInt(season, Constants.EPISODES);
 				show.addNumberEpisodeForSeason(seasonNb, nbEpisode);
 			}
 		}
-		show.setArchived(UtilsXml.readBoolean(node, Constants.ARCHIVE));
+		show.setArchived(UtilsXml.getBoolean(node, Constants.ARCHIVE));
 		return show;
 	}
 }

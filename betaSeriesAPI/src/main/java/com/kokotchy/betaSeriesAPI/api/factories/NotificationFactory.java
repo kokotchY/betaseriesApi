@@ -45,10 +45,10 @@ public class NotificationFactory {
 	 */
 	public static Notification createNotification(Node node) {
 		Notification notification = new Notification();
-		notification.setId(UtilsXml.readInt(node, Constants.ID));
-		notification.setHtml(UtilsXml.readString(node, Constants.HTML));
-		notification.setDate(UtilsXml.readInt(node, Constants.DATE));
-		notification.setSeen(UtilsXml.readBoolean(node, Constants.SEEN));
+		notification.setId(UtilsXml.getInt(node, Constants.ID));
+		notification.setHtml(UtilsXml.getString(node, Constants.HTML));
+		notification.setDate(UtilsXml.getInt(node, Constants.DATE));
+		notification.setSeen(UtilsXml.getBoolean(node, Constants.SEEN));
 		return notification;
 	}
 }
