@@ -52,6 +52,16 @@ public class Season {
 	}
 
 	/**
+	 * TODO Fill it
+	 * 
+	 * @param childPosition
+	 * @return
+	 */
+	public Object getEpisode(int childPosition) {
+		return getEpisode("S" + getNumber(number) + "E" + getNumber(childPosition));
+	}
+
+	/**
 	 * Return the episode with the given number
 	 * 
 	 * @param number
@@ -78,6 +88,19 @@ public class Season {
 	 */
 	public int getNumber() {
 		return number;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param number
+	 * @return
+	 */
+	private String getNumber(int number) {
+		if (number < 10) {
+			return "0" + number;
+		}
+		return "" + number;
 	}
 
 	@Override
