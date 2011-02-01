@@ -2,10 +2,12 @@ package com.kokotchy.betaSeriesAPI;
 
 import java.io.File;
 import java.util.Set;
+import java.util.Map.Entry;
 
 import junit.framework.TestCase;
 
 import com.kokotchy.betaSeriesAPI.api.IShows;
+import com.kokotchy.betaSeriesAPI.model.Episode;
 import com.kokotchy.betaSeriesAPI.model.Season;
 import com.kokotchy.betaSeriesAPI.model.Show;
 
@@ -141,6 +143,17 @@ public class TestShows extends TestCase {
 					if (season.equals(season2)) {
 						assertTrue(true);
 					} else {
+						for (Entry<String, Episode> entry : season.getEpisodes().entrySet()) {
+							for (Entry<String, Episode> entry2 : season2.getEpisodes().entrySet()) {
+								if (entry.getKey().equals(entry2.getKey())) {
+									if (entry.getValue().equals(entry2.getValue())) {
+										assertTrue(true);
+									} else {
+										fail("Episode not equals " + entry.getValue() + ", " + entry2.getValue());
+									}
+								}
+							}
+						}
 						fail("Not equals " + season + ", " + season2);
 					}
 				}
