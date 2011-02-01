@@ -6,7 +6,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -126,27 +125,21 @@ public class Shows implements IShows {
 		jsonObject = UtilsJson.executeQuery("shows/episodes/" + url, apiKey,
 				params);
 		if (!UtilsJson.hasErrors(jsonObject)) {
-			JSONArray seasonsArray = UtilsJson.getJSONArrayFromPath(jsonObject,
-					"/root/seasons");
+			JSONObject[] seasonArray = UtilsJson.getArray(UtilsJson.getJSONObjectFromPath(jsonObject, "/root/seasons"));
 			Set<Season> result = new HashSet<Season>();
-			try {
-				int seasonsLength = seasonsArray.length();
-				for (int i = 0; i < seasonsLength; i++) {
-					JSONObject seasonObject = seasonsArray.getJSONObject(i);
-					Season season = new Season(UtilsJson.getIntValue(seasonObject,
-							Constants.LIMIT));
-					JSONArray episodesArray = UtilsJson.getJSONArray(seasonObject,
-							Constants.EPISODES);
-					int episodesLength = episodesArray.length();
-					for (int j = 0; j < episodesLength; j++) {
-						JSONObject episodeObject = episodesArray.getJSONObject(j);
-						season.addEpisode(EpisodeFactory
-								.createEpisode(episodeObject));
-					}
-					result.add(season);
+			int seasonsLength = seasonArray.length;
+			for (int i = 0; i < seasonsLength; i++) {
+				JSONObject seasonObject = seasonArray[i];
+				Season season = new Season(UtilsJson.getIntValue(seasonObject,
+						Constants.LIMIT));
+				JSONObject[] episodesArray = UtilsJson.getArray(UtilsJson.getJSONObject(seasonObject, Constants.EPISODES));
+				int episodesLength = episodesArray.length;
+				for (int j = 0; j < episodesLength; j++) {
+					JSONObject episodeObject = episodesArray[j];
+					season.addEpisode(EpisodeFactory
+							.createEpisode(episodeObject));
 				}
-			} catch (JSONException e) {
-				e.printStackTrace();
+				result.add(season);
 			}
 			return result;
 		}

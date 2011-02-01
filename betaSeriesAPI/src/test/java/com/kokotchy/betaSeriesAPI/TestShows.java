@@ -6,6 +6,7 @@ import java.util.Set;
 import junit.framework.TestCase;
 
 import com.kokotchy.betaSeriesAPI.api.IShows;
+import com.kokotchy.betaSeriesAPI.model.Season;
 import com.kokotchy.betaSeriesAPI.model.Show;
 
 /**
@@ -129,6 +130,23 @@ public class TestShows extends TestCase {
 		Show dexterXml = showsXml.display("dexter");
 		Show dexterXml2 = showsXml.display("dexter");
 		assertEquals(dexterXml, dexterXml2);
+	}
+
+	public void testShowsEpisodes() {
+		Set<Season> episodesJson = showsJson.getEpisodes("dexter");
+		Set<Season> episodesXml = showsXml.getEpisodes("dexter");
+		for (Season season : episodesXml) {
+			for (Season season2 : episodesJson) {
+				if (season2.getNumber() == season.getNumber()) {
+					if (season.equals(season2)) {
+						assertTrue(true);
+					} else {
+						fail("Not equals " + season + ", " + season2);
+					}
+				}
+			}
+		}
+		assertEquals(episodesXml, episodesJson);
 	}
 
 	/**
