@@ -16,6 +16,15 @@ import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
  */
 public interface IMembers {
 	/**
+	 * TODO Fill it
+	 * 
+	 * @param token
+	 * @param login
+	 * @return
+	 */
+	public boolean addFriend(String token, String login);
+
+	/**
 	 * Auth the user with his login and password
 	 * 
 	 * @param login
@@ -34,6 +43,14 @@ public interface IMembers {
 	 * @return Token is destroyed
 	 */
 	public boolean destroy(String token);
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param token
+	 * @return
+	 */
+	public Set<String> getBadges(String token);
 
 	/**
 	 * Return the date of the last modification of the user account
@@ -143,6 +160,14 @@ public interface IMembers {
 			SortType sort);
 
 	/**
+	 * TODO Fill it
+	 * 
+	 * @param login
+	 * @return
+	 */
+	public Set<String> getUserBadges(String login);
+
+	/**
 	 * Return the friends of a user
 	 * 
 	 * @param user
@@ -216,6 +241,15 @@ public interface IMembers {
 	public boolean rate(String token, String url, int season, int episode, int rate);
 
 	/**
+	 * TODO Fill it
+	 * 
+	 * @param token
+	 * @param login
+	 * @return
+	 */
+	public boolean removeFriend(String token, String login);
+
+	/**
 	 * Reset the serie
 	 * 
 	 * @param token
@@ -225,6 +259,14 @@ public interface IMembers {
 	 * @return Viewed show reseted
 	 */
 	public boolean resetViewedShow(String token, String url);
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param login
+	 * @return
+	 */
+	public Set<String> search(String login);
 
 	/**
 	 * Set the episode as downloaded

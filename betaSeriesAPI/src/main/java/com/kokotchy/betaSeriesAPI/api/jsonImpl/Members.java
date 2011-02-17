@@ -48,6 +48,11 @@ public class Members implements IMembers {
 	}
 
 	@Override
+	public boolean addFriend(String token, String login) {
+		throw new NotImplementedException();
+	}
+
+	@Override
 	public String auth(String login, String password) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.MEMBER_LOGIN, login);
@@ -68,6 +73,11 @@ public class Members implements IMembers {
 		JSONObject jsonObject = UtilsJson.executeQuery("members/destroy",
 				apiKey, params);
 		return !UtilsJson.hasErrors(jsonObject);
+	}
+
+	@Override
+	public Set<String> getBadges(String token) {
+		throw new NotImplementedException();
 	}
 
 	@Override
@@ -292,6 +302,11 @@ public class Members implements IMembers {
 	}
 
 	@Override
+	public Set<String> getUserBadges(String login) {
+		throw new NotImplementedException();
+	}
+
+	@Override
 	public Set<Friend> getUserFriends(String user) {
 		JSONObject jsonObject = UtilsJson.executeQuery("members/friends/" + user, apiKey);
 		Set<Friend> result = new HashSet<Friend>();
@@ -360,8 +375,18 @@ public class Members implements IMembers {
 	}
 
 	@Override
+	public boolean removeFriend(String token, String login) {
+		throw new NotImplementedException();
+	}
+
+	@Override
 	public boolean resetViewedShow(String token, String url) {
 		return setWatched(token, url, 0, 0);
+	}
+
+	@Override
+	public Set<String> search(String login) {
+		throw new NotImplementedException();
 	}
 
 	@Override

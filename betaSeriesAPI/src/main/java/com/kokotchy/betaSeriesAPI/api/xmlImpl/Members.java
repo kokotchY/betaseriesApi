@@ -48,6 +48,11 @@ public class Members implements IMembers {
 	}
 
 	@Override
+	public boolean addFriend(String token, String login) {
+		throw new NotImplementedException();
+	}
+
+	@Override
 	public String auth(String login, String password) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put(Constants.MEMBER_LOGIN, login);
@@ -68,6 +73,11 @@ public class Members implements IMembers {
 		Document document = UtilsXml.executeQuery("members/destroy", apiKey,
 				params);
 		return !UtilsXml.hasErrors(document);
+	}
+
+	@Override
+	public Set<String> getBadges(String token) {
+		throw new NotImplementedException();
 	}
 
 	@Override
@@ -276,6 +286,11 @@ public class Members implements IMembers {
 		return notifications;
 	}
 
+	@Override
+	public Set<String> getUserBadges(String login) {
+		throw new NotImplementedException();
+	}
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public Set<Friend> getUserFriends(String user) {
@@ -342,8 +357,18 @@ public class Members implements IMembers {
 	}
 
 	@Override
+	public boolean removeFriend(String token, String login) {
+		throw new NotImplementedException();
+	}
+
+	@Override
 	public boolean resetViewedShow(String token, String url) {
 		return setWatched(token, url, 0, 0);
+	}
+
+	@Override
+	public Set<String> search(String login) {
+		throw new NotImplementedException();
 	}
 
 	@Override

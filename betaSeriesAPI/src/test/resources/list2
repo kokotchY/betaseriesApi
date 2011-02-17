@@ -1,3 +1,10 @@
+!!! Need to set the episode as seen
 members/note/firefly|key=debfa5c405f5&token=82eb53485ae9&season=1&episode=1&note=5
 members/note/firefly|key=debfa5c405f5&token=82eb53485ae9&season=1&episode=1&note=6
 members/note/firefly|key=debfa5c405f5&token=82eb53485ae9&season=1&episode=1&note=0
+members/badges/kokotchy|key=debfa5c405f5
+members/badges|key=debfa5c405f5&token=82eb53485ae9
+members/add/kokotchy|key=debfa5c405f5&token=82eb53485ae9
+members/delete/kokotchy|key=debfa5c405f5&token=82eb53485ae9
+members/search|key=debfa5c405f5&login=koko
+members/search|key=debfa5c405f5&login=Dev
