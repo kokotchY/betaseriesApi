@@ -1,0 +1,41 @@
+[betaseries] Demande de rajouts
+===============================
+
+31/01/2011
+----------
+
+- add attribute _hasDownloadedOption_ in /members/infos
+- add attribute _nbrFriends_ in /members/infos
+
+01/02/2011
+----------
+- add attribute is_in_account when doing a query on shows/display
+
+06/02/2011
+----------
+- new action members/search
+- add attribute _summary_ in /members/notifications
+
+[betaseries] Script qui ne marche plus
+======================================
+
+19/01/2011
+----------
+- need to specify the show when trying to retrieve the subtitles for a show
+
+[betaseries] Amelioration de l'API php
+=================================================
+
+18/01/2011
+----------
+- new action members/(add,delete)
+- new action members/badges
+- add number of badges
+
+[betaseries] Manque d'info dans les timelines
+=============================================
+
+18/01/2011
+----------
+- update timeline/\*
+
