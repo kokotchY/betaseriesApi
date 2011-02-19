@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <key>debfa5c405f5</key>
+ <token>6668bb6944a5</token>
+ <badges>
+  <badge>
+   <code>debutant</code>
+   <name>Débutant</name>
+   <description>Vous avez regardé votre premier épisode. Bienvenue sur BetaSeries !</description>
+   <date>1289430097</date>
+  </badge>
+  <badge>
+   <code>amateur</code>
+   <name>Amateur</name>
+   <description>Votre dixième série ajoutée, vous commencez à avoir un profil intéressant.</description>
+   <date>1289430097</date>
+  </badge>
+  <badge>
+   <code>glandeur</code>
+   <name>Glandeur</name>
+   <description>Quand on passe sa soirée à regarder 4 épisodes, faut pas s'étonner de ce qu'on dit.</description>
+   <date>1289430098</date>
+  </badge>
+  <badge>
+   <code>rattrapage</code>
+   <name>Rattrapage</name>
+   <description>3 épisodes d'une même série à la suite... On a une série à rattraper, à ce que je vois.</description>
+   <date>1289430100</date>
+  </badge>
+  <badge>
+   <code>serievore</code>
+   <name>Sérievore</name>
+   <description>Un mois s'est écoulé et 30 épisodes ont été regardés, vous avez le double-clic facile.</description>
+   <date>1289430100</date>
+  </badge>
+  <badge>
+   <code>ecole_buissoniere</code>
+   <name>Ecole buissonière</name>
+   <description>Vous osez regarder encore des séries après 3 heures du matin, en pleine semaine...</description>
+   <date>1289430100</date>
+  </badge>
+  <badge>
+   <code>planque</code>
+   <name>Planqué</name>
+   <description>Ces douze dernières heures vous avez regardé 4 épisodes. Faites quelque chose de votre vie.</description>
+   <date>1289430100</date>
+  </badge>
+  <badge>
+   <code>marathonien</code>
+   <name>Marathonien</name>
+   <description>Vous avez regardé 6 épisodes en plein dimanche, c'est un grand chelem !</description>
+   <date>1289430100</date>
+  </badge>
+  <badge>
+   <code>le_millier</code>
+   <name>Le millier</name>
+   <description>Ça y est, vous avez vu plus de 1000 épisodes de séries télé. Sale geek.</description>
+   <date>1289430101</date>
+  </badge>
+  <badge>
+   <code>einstein</code>
+   <name>Einstein</name>
+   <description>Une semaine, dix épisodes. Il va falloir relativiser le temps, et votre vie.</description>
+   <date>1289430101</date>
+  </badge>
+  <badge>
+   <code>flashmob</code>
+   <name>Flashmob</name>
+   <description>Vous avez regardé le même épisode que 75 personnes ce jour-là, vous êtes à la mode.</description>
+   <date>1289430124</date>
+  </badge>
+  <badge>
+   <code>vieux_briscard</code>
+   <name>Vieux briscard</name>
+   <description>Cela fait un an que vous êtes inscrit sur BetaSeries, ça se fête.</description>
+   <date>1289430125</date>
+  </badge>
+  <badge>
+   <code>surbooking</code>
+   <name>Surbooking</name>
+   <description>Woh, 12 badges sur votre profil, on va plus avoir la place pour d'autres.</description>
+   <date>1289430125</date>
+  </badge>
+  <badge>
+   <code>martine_aubry</code>
+   <name>Martine Aubry</name>
+   <description>Vous avez regardé plus de 35 heures d'épisodes. C'est la lutte...</description>
+   <date>1289430125</date>
+  </badge>
+  <badge>
+   <code>junior</code>
+   <name>Junior</name>
+   <description>Vous avez regardé 10 épisodes de 10 séries différentes, bon début.</description>
+   <date>1289650244</date>
+  </badge>
+  <badge>
+   <code>confirme</code>
+   <name>Confirmé</name>
+   <description>25 séries regardées, vous commencez à devenir accro, faites attention !</description>
+   <date>1289819412</date>
+  </badge>
+  <badge>
+   <code>senior</code>
+   <name>Senior</name>
+   <description>50 séries, on ne peut plus vous arrêter. Continuez, après tout, ça ne nous dérange pas.</description>
+   <date>1289847320</date>
+  </badge>
+  <badge>
+   <code>parrain</code>
+   <name>Parrain</name>
+   <description>Vous avez parrainé un ami sur BetaSeries, maintenant il faut s'en occuper.</description>
+   <date>1290113627</date>
+  </badge>
+  <badge>
+   <code>capitaine_spock</code>
+   <name>Capitaine Spock</name>
+   <description>Vous suivez 5 séries fantastiques, attention aux extra-terrestres.</description>
+   <date>1290113628</date>
+  </badge>
+  <badge>
+   <code>jerry_seinfeld</code>
+   <name>Jerry Seinfeld</name>
+   <description>10 séries humoristiques, on a un peu peur pour vous, respirez de temps en temps.</description>
+   <date>1290209459</date>
+  </badge>
+  <badge>
+   <code>drama_queen</code>
+   <name>Drama Queen</name>
+   <description>10 drama dans votre compte ? Faudra prévoir les mouchoirs la prochaine fois.</description>
+   <date>1290336608</date>
+  </badge>
+  <badge>
+   <code>developpeur</code>
+   <name>Développeur</name>
+   <description>Vous utilisez vos petites mains pleines de doigts pour améliorer l'écosystème de BetaSeries. Merci mille fois !</description>
+   <date>1292758851</date>
+  </badge>
+ </badges>
+ <code>1</code>
+ <errors/>
+</root>
