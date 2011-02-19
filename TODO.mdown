@@ -5,7 +5,9 @@
 ----------
 
 - add attribute _hasDownloadedOption_ in /members/infos
+  located in /root/member/options/downloaded
 - add attribute _nbrFriends_ in /members/infos
+  located in /root/member/stats/friends
 
 01/02/2011
 ----------
