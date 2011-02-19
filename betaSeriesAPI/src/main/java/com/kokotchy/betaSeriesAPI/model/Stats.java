@@ -45,6 +45,16 @@ public class Stats {
 	 */
 	private int timeToSpend;
 
+	/**
+	 * TODO Fill it
+	 */
+	private int nbFriends;
+
+	/**
+	 * TODO Fill it
+	 */
+	private int nbBadges;
+
 	@Override
 	public boolean equals(Object obj) {
 		if (!(obj instanceof Stats)) {
@@ -69,6 +79,24 @@ public class Stats {
 	 */
 	public int getEpisodesToWatch() {
 		return episodesToWatch;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @return Return the nbBadges to get
+	 */
+	public int getNbBadges() {
+		return nbBadges;
+	}
+
+	/**
+	 * TODO Fill it
+	 * 
+	 * @return Return the nbFriends to get
+	 */
+	public int getNbFriends() {
+		return nbFriends;
 	}
 
 	/**
@@ -126,6 +154,7 @@ public class Stats {
 		result = HashCodeUtil.hash(result, episodesToWatch);
 		result = HashCodeUtil.hash(result, timeOnTv);
 		result = HashCodeUtil.hash(result, timeToSpend);
+		result = HashCodeUtil.hash(result, nbFriends);
 		return result;
 	}
 
@@ -147,6 +176,24 @@ public class Stats {
 	 */
 	public void setEpisodesToWatch(int episodesToWatch) {
 		this.episodesToWatch = episodesToWatch;
+	}
+
+	/**
+	 * TODO Fill it
+	 * Set the field with the given value
+	 * nbBadges
+	 */
+	public void setNbBadges(int nbBadges) {
+		this.nbBadges = nbBadges;
+	}
+
+	/**
+	 * TODO Fill it
+	 * Set the field with the given value
+	 * nbFriends
+	 */
+	public void setNbFriends(int nbFriends) {
+		this.nbFriends = nbFriends;
 	}
 
 	/**

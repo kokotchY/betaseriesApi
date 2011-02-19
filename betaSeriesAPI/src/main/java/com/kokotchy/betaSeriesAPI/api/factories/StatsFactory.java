@@ -32,6 +32,8 @@ public class StatsFactory {
 					.getInt(Constants.EPISODES_TO_WATCH));
 			stats.setTimeOnTv(jsonObject.getInt(Constants.TIME_ON_TV));
 			stats.setTimeToSpend(jsonObject.getInt(Constants.TIME_TO_SPEND));
+			stats.setNbFriends(jsonObject.getInt(Constants.NB_FRIENDS));
+			stats.setNbBadges(jsonObject.getInt(Constants.NB_BADGES));
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
@@ -55,6 +57,8 @@ public class StatsFactory {
 				Constants.EPISODES_TO_WATCH));
 		stats.setTimeOnTv(UtilsXml.getInt(node, Constants.TIME_ON_TV));
 		stats.setTimeToSpend(UtilsXml.getInt(node, Constants.TIME_TO_SPEND));
+		stats.setNbFriends(UtilsXml.getInt(node, Constants.NB_FRIENDS));
+		stats.setNbBadges(UtilsXml.getInt(node, Constants.NB_BADGES));
 		return stats;
 	}
 }

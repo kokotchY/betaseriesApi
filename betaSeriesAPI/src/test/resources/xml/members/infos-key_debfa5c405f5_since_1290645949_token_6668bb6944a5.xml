@@ -4,18 +4,35 @@
  <token>6668bb6944a5</token>
  <member>
   <login>kokotchY</login>
-  <cached>1292751932</cached>
+  <cached>1297859842</cached>
   <avatar></avatar>
   <stats>
-   <shows>55</shows>
-   <seasons>181</seasons>
-   <episodes>3021</episodes>
-   <progress>95,66 %</progress>
-   <episodes_to_watch>140</episodes_to_watch>
-   <time_on_tv>147490</time_on_tv>
-   <time_to_spend>6750</time_to_spend>
+   <friends>2</friends>
+   <shows>61</shows>
+   <seasons>196</seasons>
+   <episodes>3309</episodes>
+   <progress>93,13 %</progress>
+   <episodes_to_watch>247</episodes_to_watch>
+   <time_on_tv>163135</time_on_tv>
+   <time_to_spend>13140</time_to_spend>
+   <badges>22</badges>
   </stats>
   <shows>
+   <show>
+    <url>betteroffted</url>
+    <title>Better Off Ted</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>boardwalkempire</url>
+    <title>Boardwalk Empire</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>breakingbad</url>
+    <title>Breaking Bad</title>
+    <archive>0</archive>
+   </show>
    <show>
     <url>community</url>
     <title>Community</title>
@@ -52,6 +69,16 @@
     <archive>0</archive>
    </show>
    <show>
+    <url>spartacus-gods-of-the-arena</url>
+    <title>Spartacus: Gods of the Arena</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>stargatesg1</url>
+    <title>Stargate SG1</title>
+    <archive>0</archive>
+   </show>
+   <show>
     <url>theevent</url>
     <title>The Event</title>
     <archive>0</archive>
@@ -59,6 +86,11 @@
    <show>
     <url>thepillarsoftheearth</url>
     <title>The Pillars of the Earth</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>thewalkingdead</url>
+    <title>The Walking Dead</title>
     <archive>0</archive>
    </show>
    <show>
@@ -104,6 +136,11 @@
    <show>
     <url>fringe</url>
     <title>Fringe</title>
+    <archive>0</archive>
+   </show>
+   <show>
+    <url>greek</url>
+    <title>Greek</title>
     <archive>0</archive>
    </show>
    <show>
@@ -212,11 +249,6 @@
     <archive>1</archive>
    </show>
    <show>
-    <url>greek</url>
-    <title>Greek</title>
-    <archive>1</archive>
-   </show>
-   <show>
     <url>heroes</url>
     <title>Heroes</title>
     <archive>1</archive>
@@ -292,6 +324,10 @@
     <archive>1</archive>
    </show>
   </shows>
+  <options>
+   <downloaded>1</downloaded>
+   <notation>1</notation>
+  </options>
  </member>
  <code>1</code>
  <errors/>

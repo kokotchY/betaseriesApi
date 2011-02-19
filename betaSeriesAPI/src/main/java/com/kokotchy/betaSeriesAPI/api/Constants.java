@@ -173,4 +173,8 @@ public class Constants {
 	public static final String SINCE = "since";
 
 	public static final String SUBTITLE_FILE = "file";
+
+	public static final String NB_FRIENDS = "friends";
+
+	public static final String NB_BADGES = "badges";
 }
