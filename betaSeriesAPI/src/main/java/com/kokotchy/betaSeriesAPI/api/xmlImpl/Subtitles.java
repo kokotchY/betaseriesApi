@@ -96,19 +96,47 @@ public class Subtitles implements ISubtitles {
 		return subtitles;
 	}
 
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param file
+	 * @param subtitleLanguage
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	private Set<Subtitle> getSubtitles(String file, SubtitleLanguage subtitleLanguage) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put(Constants.SUBTITLE_FILE, file);
+		if (subtitleLanguage != null) {
+			switch (subtitleLanguage) {
+			case VO:
+				params.put(Constants.LANGUAGE, "VO");
+				break;
+			case VF:
+				params.put(Constants.LANGUAGE, "VF");
+				break;
+			}
+		}
+		Document document = UtilsXml.executeQuery("subtitles/show", apiKey, params);
+		List<Node> nodes = document.selectNodes("/root/subtitles/subtitle");
+		Set<Subtitle> subtitles = new HashSet<Subtitle>();
+		if (nodes.size() > 0) {
+			for (Node node : nodes) {
+				subtitles.add(SubtitleFactory.createSubtitle(node));
+			}
+		}
+		return subtitles;
+	}
+
 	@Override
 	public Set<Subtitle> getSubtitlesForFile(String file) {
-		Map<String, String> params = new HashMap<String, String>();
-		Document document = UtilsXml.executeQuery("subtitles/show", apiKey, params);
-		// TODO Retrieve the subtitles
-		return null;
+		return getSubtitles(file, null);
 	}
 
 	@Override
 	public Set<Subtitle> getSubtitlesForFile(String file,
 			SubtitleLanguage subtitleLanguage) {
-		// TODO Auto-generated method stub
-		return null;
+		return getSubtitles(file, subtitleLanguage);
 	}
 
 	@SuppressWarnings("unchecked")

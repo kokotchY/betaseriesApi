@@ -43,6 +43,68 @@ public class TestSubtitles extends TestCase {
 	}
 
 	/**
+	 * TODO Fill it
+	 */
+	public void testSubtitlesFromFilename() {
+		String filename = "How.I.Met.Your.Mother.S06E16.HDTV.XviD-LOL.avi";
+		Set<Subtitle> subtitlesFromFileJson = subtitlesJson.getSubtitlesForFile(filename);
+		Set<Subtitle> subtitlesFromFileXml = subtitlesXml.getSubtitlesForFile(filename);
+		assertEquals(subtitlesFromFileXml.size(), subtitlesFromFileJson.size());
+		assertEquals(subtitlesFromFileXml, subtitlesFromFileJson);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testSubtitlesFromFilenameEqualsJson() {
+		String filename = "How.I.Met.Your.Mother.S06E16.HDTV.XviD-LOL.avi";
+		Set<Subtitle> subtitlesFromFileJson = subtitlesJson.getSubtitlesForFile(filename);
+		Set<Subtitle> subtitlesFromFileJson2 = subtitlesJson.getSubtitlesForFile(filename);
+		assertEquals(subtitlesFromFileJson, subtitlesFromFileJson2);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testSubtitlesFromFilenameEqualsXml() {
+		String filename = "How.I.Met.Your.Mother.S06E16.HDTV.XviD-LOL.avi";
+		Set<Subtitle> subtitlesFromFileXml = subtitlesXml.getSubtitlesForFile(filename);
+		Set<Subtitle> subtitlesFromFileXml2 = subtitlesXml.getSubtitlesForFile(filename);
+		assertEquals(subtitlesFromFileXml, subtitlesFromFileXml2);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testSubtitlesFromFilenameVF() {
+		String filename = "How.I.Met.Your.Mother.S06E16.HDTV.XviD-LOL.avi";
+		Set<Subtitle> subtitlesFromFileXml = subtitlesXml.getSubtitlesForFile(filename, SubtitleLanguage.VF);
+		Set<Subtitle> subtitlesFromFileJson = subtitlesJson.getSubtitlesForFile(filename, SubtitleLanguage.VF);
+		assertEquals(subtitlesFromFileXml.size(), subtitlesFromFileJson.size());
+		assertEquals(subtitlesFromFileXml, subtitlesFromFileJson);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testSubtitlesFromFilenameVFEqualsJson() {
+		String filename = "How.I.Met.Your.Mother.S06E16.HDTV.XviD-LOL.avi";
+		Set<Subtitle> subtitlesFromFileJson2 = subtitlesJson.getSubtitlesForFile(filename, SubtitleLanguage.VF);
+		Set<Subtitle> subtitlesFromFileJson = subtitlesJson.getSubtitlesForFile(filename, SubtitleLanguage.VF);
+		assertEquals(subtitlesFromFileJson, subtitlesFromFileJson2);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testSubtitlesFromFilenameVFEqualsXml() {
+		String filename = "How.I.Met.Your.Mother.S06E16.HDTV.XviD-LOL.avi";
+		Set<Subtitle> subtitlesFromFileXml2 = subtitlesXml.getSubtitlesForFile(filename, SubtitleLanguage.VF);
+		Set<Subtitle> subtitlesFromFileXml = subtitlesXml.getSubtitlesForFile(filename, SubtitleLanguage.VF);
+		assertEquals(subtitlesFromFileXml, subtitlesFromFileXml2);
+	}
+
+	/**
 	 * Test the last subtitles
 	 */
 	public void testSubtitlesLast() {
@@ -50,6 +112,7 @@ public class TestSubtitles extends TestCase {
 				SubtitleLanguage.ALL);
 		Set<Subtitle> lastSubtitlesXml = subtitlesXml.getLastSubtitles(5,
 				SubtitleLanguage.ALL);
+		assertEquals(lastSubtitlesXml.size(), lastSubtitlesJson.size());
 		assertEquals(lastSubtitlesXml, lastSubtitlesJson);
 	}
 
@@ -87,6 +150,7 @@ public class TestSubtitles extends TestCase {
 				season, episode);
 		Set<Subtitle> subtitlesListJson = subtitlesJson.show(url, subtitle,
 				season, episode);
+		assertEquals(subtitlesListXml.size(), subtitlesListJson.size());
 		assertEquals(subtitlesListXml, subtitlesListJson);
 	}
 

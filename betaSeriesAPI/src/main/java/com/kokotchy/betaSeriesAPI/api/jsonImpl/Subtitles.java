@@ -98,19 +98,47 @@ public class Subtitles implements ISubtitles {
 		return null;
 	}
 
+	/**
+	 * TODO Fill it
+	 * 
+	 * @param file
+	 * @param subtitleLanguage
+	 * @return
+	 */
+	private Set<Subtitle> getSubtitles(String file, SubtitleLanguage subtitleLanguage) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put(Constants.SUBTITLE_FILE, file);
+		if (subtitleLanguage != null) {
+			switch (subtitleLanguage) {
+			case VO:
+				params.put(Constants.LANGUAGE, "VO");
+				break;
+			case VF:
+				params.put(Constants.LANGUAGE, "VF");
+				break;
+			}
+		}
+		JSONObject jsonObject = UtilsJson.executeQuery("subtitles/show", apiKey, params);
+		JSONObject subtitles = UtilsJson.getJSONObjectFromPath(jsonObject, "/root/subtitles/");
+		JSONObject[] array = UtilsJson.getArray(subtitles);
+		Set<Subtitle> result = new HashSet<Subtitle>();
+		if (!UtilsJson.hasErrors(jsonObject)) {
+			for (JSONObject subtitle : array) {
+				result.add(SubtitleFactory.createSubtitle(subtitle));
+			}
+		}
+		return result;
+	}
+
 	@Override
 	public Set<Subtitle> getSubtitlesForFile(String file) {
-		// TODO Auto-generated method stub
-		// FIXME Check for error
-		return null;
+		return getSubtitles(file, null);
 	}
 
 	@Override
 	public Set<Subtitle> getSubtitlesForFile(String file,
 			SubtitleLanguage subtitleLanguage) {
-		// TODO Auto-generated method stub
-		// FIXME Check for error
-		return null;
+		return getSubtitles(file, subtitleLanguage);
 	}
 
 	@Override

@@ -48,7 +48,11 @@ public class SubtitleFactory {
 
 		subtitle.setSource(UtilsJson.getStringValue(jsonObject,
 				Constants.SOURCE));
-		subtitle.setFile(UtilsJson.getStringValue(jsonObject, Constants.FILE));
+		String file = UtilsJson.getStringValue(jsonObject, Constants.SUBTITLE_FILE);
+		if (file == null) {
+			file = UtilsJson.getStringValue(jsonObject, Constants.FILE);
+		}
+		subtitle.setFile(file);
 		subtitle.setUrl(UtilsJson.getStringValue(jsonObject, Constants.URL));
 		subtitle.setQuality(UtilsJson
 				.getIntValue(jsonObject, Constants.QUALITY));
@@ -85,7 +89,11 @@ public class SubtitleFactory {
 		}
 
 		subtitle.setSource(UtilsXml.getString(node, Constants.SOURCE));
-		subtitle.setFile(UtilsXml.getString(node, Constants.FILE));
+		String file = UtilsXml.getString(node, Constants.SUBTITLE_FILE);
+		if (file == null) {
+			file = UtilsXml.getString(node, Constants.FILE);
+		}
+		subtitle.setFile(file);
 		subtitle.setUrl(UtilsXml.getString(node, Constants.URL));
 		subtitle.setQuality(UtilsXml.getInt(node, Constants.QUALITY));
 

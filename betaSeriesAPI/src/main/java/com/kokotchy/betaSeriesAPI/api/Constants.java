@@ -171,4 +171,6 @@ public class Constants {
 	public static final String CACHED = "cached";
 
 	public static final String SINCE = "since";
+
+	public static final String SUBTITLE_FILE = "file";
 }
