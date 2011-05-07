@@ -1,12 +1,10 @@
 package com.kokotchy.betaSeriesAPI;
 
 import java.io.File;
-import java.util.List;
+import java.util.Set;
 
 import com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi;
-import com.kokotchy.betaSeriesAPI.model.Episode;
-import com.kokotchy.betaSeriesAPI.model.Subtitle;
-import com.kokotchy.betaSeriesAPI.model.SubtitleLanguage;
+import com.kokotchy.betaSeriesAPI.model.Friend;
 
 /**
  * Start application
@@ -35,27 +33,10 @@ public class Main {
 				+ "/src/main/resources/credentials/", "kokotchy"));
 		String token = BetaSerieApi.getMembers().auth(loadCredentials[0],
 				loadCredentials[1]);
-		if (token != null) {
-			List<Episode> episodes = BetaSerieApi.getMembers().getEpisodes(
-					token, SubtitleLanguage.ALL, true);
-			for (Episode episode : episodes) {
-				if (episode.isDownloaded()) {
-					List<Subtitle> subtitles = episode.getSubtitles();
-					int nbSub = subtitles.size();
-					System.out.println(episode.getShow() + " - "
-							+ episode.getTitle() + " with " + nbSub
-							+ " subtitles and is downloaded");
-					if (episode.hasSubtitle()) {
-						System.out.println("There is " + subtitles.size()
-								+ " subtitles:");
-						for (Subtitle subtitle : subtitles) {
-							System.out.println("- [" + subtitle.getQuality()
-									+ "] " + subtitle.getFile() + " in "
-									+ subtitle.getLanguage());
-						}
-					}
-				}
-			}
+		Set<Friend> friends = BetaSerieApi.getMembers().getFriends(token);
+		System.out.println("There is " + friends.size() + " friends:");
+		for (Friend friend : friends) {
+			System.out.println("- " + friend.getName());
 		}
 	}
 }
