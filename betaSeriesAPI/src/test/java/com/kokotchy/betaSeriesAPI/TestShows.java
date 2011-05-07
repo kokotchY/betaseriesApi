@@ -2,13 +2,10 @@ package com.kokotchy.betaSeriesAPI;
 
 import java.io.File;
 import java.util.Set;
-import java.util.Map.Entry;
 
 import junit.framework.TestCase;
 
 import com.kokotchy.betaSeriesAPI.api.IShows;
-import com.kokotchy.betaSeriesAPI.model.Episode;
-import com.kokotchy.betaSeriesAPI.model.Season;
 import com.kokotchy.betaSeriesAPI.model.Show;
 
 /**
@@ -33,33 +30,14 @@ public class TestShows extends TestCase {
 	 */
 	private String token;
 
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp();
-		String userDir = System.getProperty("user.dir");
-		String key = Utils.getApiKey(userDir);
-		File credentialsFile = new File(userDir,
-				"src/test/resources/credentials.txt");
-		String[] credentials = Utils.loadCredentials(credentialsFile);
-		token = credentials[2];
-		com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi.setApiKey(key);
-		com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi.setApiKey(key);
-		showsJson = com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi
-				.getShows();
-		showsXml = com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi
-				.getShows();
-		UtilsJson.setDebug(true);
-		UtilsJson.setDebugPath(userDir + "/src/test/resources/json/");
-		UtilsXml.setDebug(true);
-		UtilsXml.setDebugPath(userDir + "/src/test/resources/xml/");
-	}
-
 	/**
 	 * Test the recommendation of a show
 	 */
 	public void testRecommend() {
-		boolean recommendJson = showsJson.recommend(token, "a-developers-life", "kokotchY");
-		boolean recommendXml = showsXml.recommend(token, "a-developers-life", "kokotchY");
+		boolean recommendJson = showsJson.recommend(token, "a-developers-life",
+				"kokotchY");
+		boolean recommendXml = showsXml.recommend(token, "a-developers-life",
+				"kokotchY");
 		assertEquals(recommendXml, recommendJson);
 		assertTrue(recommendJson);
 		assertTrue(recommendXml);
@@ -134,34 +112,6 @@ public class TestShows extends TestCase {
 		assertEquals(dexterXml, dexterXml2);
 	}
 
-	public void testShowsEpisodes() {
-		Set<Season> episodesJson = showsJson.getEpisodes("dexter");
-		Set<Season> episodesXml = showsXml.getEpisodes("dexter");
-		for (Season season : episodesXml) {
-			for (Season season2 : episodesJson) {
-				if (season2.getNumber() == season.getNumber()) {
-					if (season.equals(season2)) {
-						assertTrue(true);
-					} else {
-						for (Entry<String, Episode> entry : season.getEpisodes().entrySet()) {
-							for (Entry<String, Episode> entry2 : season2.getEpisodes().entrySet()) {
-								if (entry.getKey().equals(entry2.getKey())) {
-									if (entry.getValue().equals(entry2.getValue())) {
-										assertTrue(true);
-									} else {
-										fail("Episode not equals " + entry.getValue() + ", " + entry2.getValue());
-									}
-								}
-							}
-						}
-						fail("Not equals " + season + ", " + season2);
-					}
-				}
-			}
-		}
-		assertEquals(episodesXml, episodesJson);
-	}
-
 	/**
 	 * Test equals of two shows
 	 */
@@ -178,6 +128,35 @@ public class TestShows extends TestCase {
 		show2.setArchived(false);
 		assertNotSame(show, show2);
 	}
+
+	// public void testShowsEpisodes() {
+	// Set<Season> episodesJson = showsJson.getEpisodes("dexter");
+	// Set<Season> episodesXml = showsXml.getEpisodes("dexter");
+	// for (Season season : episodesXml) {
+	// for (Season season2 : episodesJson) {
+	// if (season2.getNumber() == season.getNumber()) {
+	// if (season.equals(season2)) {
+	// assertTrue(true);
+	// } else {
+	// for (Entry<String, Episode> entry : season.getEpisodes().entrySet()) {
+	// for (Entry<String, Episode> entry2 : season2.getEpisodes().entrySet()) {
+	// if (entry.getKey().equals(entry2.getKey())) {
+	// if (entry.getValue().equals(entry2.getValue())) {
+	// assertTrue(true);
+	// } else {
+	// fail("Episode not equals " + entry.getValue() + ", " +
+	// entry2.getValue());
+	// }
+	// }
+	// }
+	// }
+	// fail("Not equals " + season + ", " + season2);
+	// }
+	// }
+	// }
+	// }
+	// assertEquals(episodesXml, episodesJson);
+	// }
 
 	/**
 	 * Test the search
@@ -205,5 +184,26 @@ public class TestShows extends TestCase {
 		Set<Show> searchXml = showsXml.search("dexter");
 		Set<Show> searchXml2 = showsXml.search("dexter");
 		assertEquals(searchXml, searchXml2);
+	}
+
+	@Override
+	protected void setUp() throws Exception {
+		super.setUp();
+		String userDir = System.getProperty("user.dir");
+		String key = Utils.getApiKey(userDir);
+		File credentialsFile = new File(userDir,
+				"src/test/resources/credentials.txt");
+		String[] credentials = Utils.loadCredentials(credentialsFile);
+		token = credentials[2];
+		com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi.setApiKey(key);
+		com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi.setApiKey(key);
+		showsJson = com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi
+				.getShows();
+		showsXml = com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi
+				.getShows();
+		UtilsJson.setDebug(true);
+		UtilsJson.setDebugPath(userDir + "/src/test/resources/json/");
+		UtilsXml.setDebug(true);
+		UtilsXml.setDebugPath(userDir + "/src/test/resources/xml/");
 	}
 }

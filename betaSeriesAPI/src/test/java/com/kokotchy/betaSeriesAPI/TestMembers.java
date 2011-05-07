@@ -51,29 +51,6 @@ public class TestMembers extends TestCase {
 	 */
 	private String key;
 
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp();
-		String userDir = System.getProperty("user.dir");
-		key = Utils.getApiKey(userDir);
-		File credentialsFile = new File(userDir,
-				"src/test/resources/credentials.txt");
-		String[] credentials = Utils.loadCredentials(credentialsFile);
-		login = credentials[0];
-		password = credentials[1];
-		token = credentials[2];
-		com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi.setApiKey(key);
-		com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi.setApiKey(key);
-		membersJson = com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi
-				.getMembers();
-		membersXml = com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi
-				.getMembers();
-		UtilsJson.setDebug(true);
-		UtilsJson.setDebugPath(userDir + "/src/test/resources/json/");
-		UtilsXml.setDebug(true);
-		UtilsXml.setDebugPath(userDir + "/src/test/resources/xml/");
-	}
-
 	/**
 	 * Test authentication of the user
 	 */
@@ -151,8 +128,10 @@ public class TestMembers extends TestCase {
 	 * Test retrieve episodes with all kind of subtitles
 	 */
 	public void testEpisodesAllSubtitles() {
-		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.ALL);
-		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.ALL);
+		Set<Episode> episodesJson = membersJson.getEpisodes(token,
+				SubtitleLanguage.ALL);
+		Set<Episode> episodesXml = membersXml.getEpisodes(token,
+				SubtitleLanguage.ALL);
 		assertEquals(episodesXml, episodesJson);
 	}
 
@@ -160,8 +139,10 @@ public class TestMembers extends TestCase {
 	 * Test retrieve episodes with all kind of subtitles equals json
 	 */
 	public void testEpisodesAllSubtitlesEqualsJson() {
-		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.ALL);
-		Set<Episode> episodesJson2 = membersJson.getEpisodes(token, SubtitleLanguage.ALL);
+		Set<Episode> episodesJson = membersJson.getEpisodes(token,
+				SubtitleLanguage.ALL);
+		Set<Episode> episodesJson2 = membersJson.getEpisodes(token,
+				SubtitleLanguage.ALL);
 		assertEquals(episodesJson, episodesJson2);
 	}
 
@@ -169,8 +150,10 @@ public class TestMembers extends TestCase {
 	 * Test retrieve episodes with all kind of subtitles equals xml
 	 */
 	public void testEpisodesAllSubtitlesEqualsXml() {
-		Set<Episode> episodesXml2 = membersXml.getEpisodes(token, SubtitleLanguage.ALL);
-		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.ALL);
+		Set<Episode> episodesXml2 = membersXml.getEpisodes(token,
+				SubtitleLanguage.ALL);
+		Set<Episode> episodesXml = membersXml.getEpisodes(token,
+				SubtitleLanguage.ALL);
 		assertEquals(episodesXml, episodesXml2);
 	}
 
@@ -178,8 +161,10 @@ public class TestMembers extends TestCase {
 	 * Test retrieve only next episode for each show with all kind of subtitles
 	 */
 	public void testEpisodesAllSubtitlesOnlyNext() {
-		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.ALL, true);
-		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.ALL, true);
+		Set<Episode> episodesJson = membersJson.getEpisodes(token,
+				SubtitleLanguage.ALL, true);
+		Set<Episode> episodesXml = membersXml.getEpisodes(token,
+				SubtitleLanguage.ALL, true);
 		assertEquals(episodesXml, episodesJson);
 	}
 
@@ -187,8 +172,10 @@ public class TestMembers extends TestCase {
 	 * Test VF subtitles for the episodes
 	 */
 	public void testEpisodesVfSubtitles() {
-		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VF);
-		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.VF);
+		Set<Episode> episodesJson = membersJson.getEpisodes(token,
+				SubtitleLanguage.VF);
+		Set<Episode> episodesXml = membersXml.getEpisodes(token,
+				SubtitleLanguage.VF);
 		assertEquals(episodesXml, episodesJson);
 	}
 
@@ -196,8 +183,10 @@ public class TestMembers extends TestCase {
 	 * Test VF subtitles for the episodes equals json
 	 */
 	public void testEpisodesVfSubtitlesEqualsJson() {
-		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VF);
-		Set<Episode> episodesJson2 = membersJson.getEpisodes(token, SubtitleLanguage.VF);
+		Set<Episode> episodesJson = membersJson.getEpisodes(token,
+				SubtitleLanguage.VF);
+		Set<Episode> episodesJson2 = membersJson.getEpisodes(token,
+				SubtitleLanguage.VF);
 		assertEquals(episodesJson, episodesJson2);
 	}
 
@@ -205,8 +194,10 @@ public class TestMembers extends TestCase {
 	 * Test VF subtitles for the episodes equals xml
 	 */
 	public void testEpisodesVfSubtitlesEqualsXml() {
-		Set<Episode> episodesXml2 = membersJson.getEpisodes(token, SubtitleLanguage.VF);
-		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.VF);
+		Set<Episode> episodesXml2 = membersJson.getEpisodes(token,
+				SubtitleLanguage.VF);
+		Set<Episode> episodesXml = membersXml.getEpisodes(token,
+				SubtitleLanguage.VF);
 		assertEquals(episodesXml, episodesXml2);
 	}
 
@@ -214,8 +205,10 @@ public class TestMembers extends TestCase {
 	 * Test VF subtitles for the only next episodes
 	 */
 	public void testEpisodesVfSubtitlesOnlyNext() {
-		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VF, true);
-		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.VF, true);
+		Set<Episode> episodesJson = membersJson.getEpisodes(token,
+				SubtitleLanguage.VF, true);
+		Set<Episode> episodesXml = membersXml.getEpisodes(token,
+				SubtitleLanguage.VF, true);
 		assertEquals(episodesXml, episodesJson);
 	}
 
@@ -223,8 +216,10 @@ public class TestMembers extends TestCase {
 	 * Test VO/VF subtitles for the episodes
 	 */
 	public void testEpisodesVoVfSubtitles() {
-		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VOVF);
-		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.VOVF);
+		Set<Episode> episodesJson = membersJson.getEpisodes(token,
+				SubtitleLanguage.VOVF);
+		Set<Episode> episodesXml = membersXml.getEpisodes(token,
+				SubtitleLanguage.VOVF);
 		assertEquals(episodesXml, episodesJson);
 	}
 
@@ -232,8 +227,10 @@ public class TestMembers extends TestCase {
 	 * Test VO/VF subtitles for the episodes equals json
 	 */
 	public void testEpisodesVoVfSubtitlesEqualsJson() {
-		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VOVF);
-		Set<Episode> episodesJson2 = membersJson.getEpisodes(token, SubtitleLanguage.VOVF);
+		Set<Episode> episodesJson = membersJson.getEpisodes(token,
+				SubtitleLanguage.VOVF);
+		Set<Episode> episodesJson2 = membersJson.getEpisodes(token,
+				SubtitleLanguage.VOVF);
 		assertEquals(episodesJson, episodesJson2);
 	}
 
@@ -241,8 +238,10 @@ public class TestMembers extends TestCase {
 	 * Test VO/VF subtitles for the episodes equals xml
 	 */
 	public void testEpisodesVoVfSubtitlesEqualsXml() {
-		Set<Episode> episodesXml2 = membersXml.getEpisodes(token, SubtitleLanguage.VOVF);
-		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.VOVF);
+		Set<Episode> episodesXml2 = membersXml.getEpisodes(token,
+				SubtitleLanguage.VOVF);
+		Set<Episode> episodesXml = membersXml.getEpisodes(token,
+				SubtitleLanguage.VOVF);
 		assertEquals(episodesXml, episodesXml2);
 	}
 
@@ -250,8 +249,10 @@ public class TestMembers extends TestCase {
 	 * Test VO/VF subtitles for only the next episode
 	 */
 	public void testEpisodesVoVfSubtitlesOnlyNext() {
-		Set<Episode> episodesJson = membersJson.getEpisodes(token, SubtitleLanguage.VOVF, true);
-		Set<Episode> episodesXml = membersXml.getEpisodes(token, SubtitleLanguage.VOVF, true);
+		Set<Episode> episodesJson = membersJson.getEpisodes(token,
+				SubtitleLanguage.VOVF, true);
+		Set<Episode> episodesXml = membersXml.getEpisodes(token,
+				SubtitleLanguage.VOVF, true);
 		assertEquals(episodesXml, episodesJson);
 	}
 
@@ -395,13 +396,6 @@ public class TestMembers extends TestCase {
 	}
 
 	/**
-	 * Test the signup of an account
-	 */
-	public void testSignup() {
-		fail("Not implemented");
-	}
-
-	/**
 	 * Test friends of a user
 	 */
 	public void testUserFriends() {
@@ -409,6 +403,13 @@ public class TestMembers extends TestCase {
 		Set<Friend> friendsXml = membersXml.getUserFriends("dev042");
 		assertEquals(friendsXml, friendsJson);
 	}
+
+	// /**
+	// * Test the signup of an account
+	// */
+	// public void testSignup() {
+	// fail("Not implemented");
+	// }
 
 	/**
 	 * Test empty user friend
@@ -437,5 +438,28 @@ public class TestMembers extends TestCase {
 		Set<Friend> friendsXml2 = membersXml.getUserFriends("dev042");
 		Set<Friend> friendsXml = membersXml.getUserFriends("dev042");
 		assertEquals(friendsXml, friendsXml2);
+	}
+
+	@Override
+	protected void setUp() throws Exception {
+		super.setUp();
+		String userDir = System.getProperty("user.dir");
+		key = Utils.getApiKey(userDir);
+		File credentialsFile = new File(userDir,
+				"src/test/resources/credentials.txt");
+		String[] credentials = Utils.loadCredentials(credentialsFile);
+		login = credentials[0];
+		password = credentials[1];
+		token = credentials[2];
+		com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi.setApiKey(key);
+		com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi.setApiKey(key);
+		membersJson = com.kokotchy.betaSeriesAPI.api.jsonImpl.BetaSerieApi
+				.getMembers();
+		membersXml = com.kokotchy.betaSeriesAPI.api.xmlImpl.BetaSerieApi
+				.getMembers();
+		UtilsJson.setDebug(true);
+		UtilsJson.setDebugPath(userDir + "/src/test/resources/json/");
+		UtilsXml.setDebug(true);
+		UtilsXml.setDebugPath(userDir + "/src/test/resources/xml/");
 	}
 }
