@@ -160,6 +160,19 @@ public class UtilsXml {
 	}
 
 	/**
+	 * Read a boolean from the node
+	 * 
+	 * @param node
+	 *            Node
+	 * @param name
+	 *            Name of the key
+	 * @return True if the value is 1, false otherwise
+	 */
+	public static boolean getBoolean(Node node, String name) {
+		return getInt(node, name) == 1;
+	}
+
+	/**
 	 * Return the errors from the document
 	 * 
 	 * @param document
@@ -179,30 +192,19 @@ public class UtilsXml {
 	}
 
 	/**
-	 * Return true if the document has errors, false otherwise
-	 * 
-	 * @param document
-	 *            Document to check
-	 * @return True if there is errors, false otherwise
-	 */
-	@SuppressWarnings("unchecked")
-	public static boolean hasErrors(Document document) {
-		// return document.selectSingleNode("/root/code").getText().equals("0");
-		List<Node> selectNodes = document.selectNodes("/root/errors/error");
-		return selectNodes.size() > 0;
-	}
-
-	/**
-	 * Read a boolean from the node
+	 * TODO Fill it
 	 * 
 	 * @param node
-	 *            Node
 	 * @param name
-	 *            Name of the key
-	 * @return True if the value is 1, false otherwise
+	 * @return
 	 */
-	public static boolean getBoolean(Node node, String name) {
-		return getInt(node, name) == 1;
+	public static float getFloat(Node node, String name) {
+		String text = getString(node, name);
+		if (text != null) {
+			return Float.parseFloat(text);
+		} else {
+			return -1;
+		}
 	}
 
 	/**
@@ -243,6 +245,20 @@ public class UtilsXml {
 					.trim().replace("\r", "\n");
 		}
 		return null;
+	}
+
+	/**
+	 * Return true if the document has errors, false otherwise
+	 * 
+	 * @param document
+	 *            Document to check
+	 * @return True if there is errors, false otherwise
+	 */
+	@SuppressWarnings("unchecked")
+	public static boolean hasErrors(Document document) {
+		// return document.selectSingleNode("/root/code").getText().equals("0");
+		List<Node> selectNodes = document.selectNodes("/root/errors/error");
+		return selectNodes.size() > 0;
 	}
 
 	/**

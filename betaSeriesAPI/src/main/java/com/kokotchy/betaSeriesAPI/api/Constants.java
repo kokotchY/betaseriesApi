@@ -177,4 +177,10 @@ public class Constants {
 	public static final String NB_FRIENDS = "friends";
 
 	public static final String NB_BADGES = "badges";
+
+	public static final String NOTE_MEMBERS = "members";
+
+	public static final String NOTE_SELF = "self";
+
+	public static final String NOTE_MEAN = "mean";
 }

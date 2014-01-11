@@ -6,6 +6,7 @@ import java.util.Set;
 import junit.framework.TestCase;
 
 import com.kokotchy.betaSeriesAPI.api.IMembers;
+import com.kokotchy.betaSeriesAPI.model.Badge;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 import com.kokotchy.betaSeriesAPI.model.Friend;
 import com.kokotchy.betaSeriesAPI.model.Member;
@@ -80,6 +81,26 @@ public class TestMembers extends TestCase {
 	public void testAuth() {
 		assertEquals(membersXml.auth(login, password), membersJson.auth(login,
 				password));
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testBadges() {
+		String token = "";
+		Set<Badge> badgesJson = membersJson.getBadges(token);
+		Set<Badge> badgesXml = membersXml.getBadges(token);
+		assertEquals(badgesXml, badgesJson);
+	}
+
+	/**
+	 * TODO Fill it
+	 */
+	public void testBadgesUser() {
+		String login = "dev042";
+		Set<Badge> badgesJson = membersJson.getUserBadges(login);
+		Set<Badge> badgesXml = membersXml.getUserBadges(login);
+		assertEquals(badgesXml, badgesJson);
 	}
 
 	/**

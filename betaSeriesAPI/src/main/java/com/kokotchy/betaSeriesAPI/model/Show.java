@@ -60,6 +60,11 @@ public class Show {
 	private Map<Integer, Integer> numberEpisodesBySeasons;
 
 	/**
+	 *
+	 */
+	private Note note;
+
+	/**
 	 * Create a new show
 	 */
 	public Show() {

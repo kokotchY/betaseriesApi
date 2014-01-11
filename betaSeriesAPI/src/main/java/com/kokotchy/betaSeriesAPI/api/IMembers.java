@@ -2,6 +2,7 @@ package com.kokotchy.betaSeriesAPI.api;
 
 import java.util.Set;
 
+import com.kokotchy.betaSeriesAPI.model.Badge;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 import com.kokotchy.betaSeriesAPI.model.Friend;
 import com.kokotchy.betaSeriesAPI.model.Member;
@@ -50,7 +51,7 @@ public interface IMembers {
 	 * @param token
 	 * @return
 	 */
-	public Set<String> getBadges(String token);
+	public Set<Badge> getBadges(String token);
 
 	/**
 	 * Return the date of the last modification of the user account
@@ -165,7 +166,7 @@ public interface IMembers {
 	 * @param login
 	 * @return
 	 */
-	public Set<String> getUserBadges(String login);
+	public Set<Badge> getUserBadges(String login);
 
 	/**
 	 * Return the friends of a user

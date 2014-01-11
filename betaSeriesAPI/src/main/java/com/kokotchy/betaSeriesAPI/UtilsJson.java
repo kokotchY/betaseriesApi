@@ -186,6 +186,24 @@ public class UtilsJson {
 	}
 
 	/**
+	 * TODO Fill it
+	 * 
+	 * @param jsonObject
+	 * @param name
+	 * @return
+	 */
+	public static float getFloatValue(JSONObject jsonObject, String name) {
+		if (jsonObject.has(name)) {
+			try {
+				return Float.valueOf(jsonObject.getString(name));
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+		}
+		return -1;
+	}
+
+	/**
 	 * Return the int value with the given name
 	 * 
 	 * @param jsonObject

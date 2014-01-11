@@ -14,10 +14,12 @@ import com.kokotchy.betaSeriesAPI.UtilsJson;
 import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.api.IMembers;
 import com.kokotchy.betaSeriesAPI.api.NotImplementedException;
+import com.kokotchy.betaSeriesAPI.api.factories.BadgeFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.FriendFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.MemberFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.NotificationFactory;
+import com.kokotchy.betaSeriesAPI.model.Badge;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 import com.kokotchy.betaSeriesAPI.model.Friend;
 import com.kokotchy.betaSeriesAPI.model.Member;
@@ -76,8 +78,20 @@ public class Members implements IMembers {
 	}
 
 	@Override
-	public Set<String> getBadges(String token) {
-		throw new NotImplementedException();
+	public Set<Badge> getBadges(String token) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put(Constants.TOKEN, token);
+		JSONObject jsonObject = UtilsJson.executeQuery("members/badges", apiKey, params);
+		Set<Badge> badges = new HashSet<Badge>();
+		if (!UtilsJson.hasErrors(jsonObject)) {
+			JSONObject[] array = UtilsJson.getArray(jsonObject);
+			if (array.length > 0) {
+				for (JSONObject badge : array) {
+					badges.add(BadgeFactory.createBadge(badge));
+				}
+			}
+		}
+		return badges;
 	}
 
 	@Override
@@ -302,8 +316,17 @@ public class Members implements IMembers {
 	}
 
 	@Override
-	public Set<String> getUserBadges(String login) {
-		throw new NotImplementedException();
+	public Set<Badge> getUserBadges(String login) {
+		Map<String, String> params = new HashMap<String, String>();
+		JSONObject jsonObject = UtilsJson.executeQuery("members/badges/login", apiKey, params);
+		Set<Badge> badges = new HashSet<Badge>();
+		if (!UtilsJson.hasErrors(jsonObject)) {
+			JSONObject[] array = UtilsJson.getArray(jsonObject);
+			for (JSONObject badge : array) {
+				badges.add(BadgeFactory.createBadge(badge));
+			}
+		}
+		return badges;
 	}
 
 	@Override

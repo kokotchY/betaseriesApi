@@ -14,10 +14,12 @@ import com.kokotchy.betaSeriesAPI.UtilsXml;
 import com.kokotchy.betaSeriesAPI.api.Constants;
 import com.kokotchy.betaSeriesAPI.api.IMembers;
 import com.kokotchy.betaSeriesAPI.api.NotImplementedException;
+import com.kokotchy.betaSeriesAPI.api.factories.BadgeFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.EpisodeFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.FriendFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.MemberFactory;
 import com.kokotchy.betaSeriesAPI.api.factories.NotificationFactory;
+import com.kokotchy.betaSeriesAPI.model.Badge;
 import com.kokotchy.betaSeriesAPI.model.Episode;
 import com.kokotchy.betaSeriesAPI.model.Friend;
 import com.kokotchy.betaSeriesAPI.model.Member;
@@ -75,9 +77,22 @@ public class Members implements IMembers {
 		return !UtilsXml.hasErrors(document);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public Set<String> getBadges(String token) {
-		throw new NotImplementedException();
+	public Set<Badge> getBadges(String token) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put(Constants.TOKEN, token);
+		Document document = UtilsXml.executeQuery("members/badges", apiKey, params);
+		Set<Badge> badges = new HashSet<Badge>();
+		List<Node> nodes = document.selectNodes("/root/badges/badge");
+		if (!UtilsXml.hasErrors(document)) {
+			if (nodes.size() > 0) {
+				for (Node badge : nodes) {
+					badges.add(BadgeFactory.createBadge(badge));
+				}
+			}
+		}
+		return badges;
 	}
 
 	@Override
@@ -286,9 +301,21 @@ public class Members implements IMembers {
 		return notifications;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public Set<String> getUserBadges(String login) {
-		throw new NotImplementedException();
+	public Set<Badge> getUserBadges(String login) {
+		Map<String, String> params = new HashMap<String, String>();
+		Document document = UtilsXml.executeQuery("members/badges/login", apiKey, params);
+		List<Node> nodes = document.selectNodes("/root/badges/badge");
+		Set<Badge> badges = new HashSet<Badge>();
+		if (!UtilsXml.hasErrors(document)) {
+			if (nodes.size() > 0) {
+				for (Node badge : nodes) {
+					badges.add(BadgeFactory.createBadge(badge));
+				}
+			}
+		}
+		return badges;
 	}
 
 	@SuppressWarnings("unchecked")
